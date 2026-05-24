@@ -47,6 +47,7 @@ Each pass is a real artifact in this directory · NONE are deleted. The founder 
 | 5 | **[`05_EXCLUSIVE_LISTING_PROPOSAL.md`](05_EXCLUSIVE_LISTING_PROPOSAL.md)** | **DEFINITIVE board pitch (pass 5)** | **CORRECTED · disposition assignment · exclusive listing · commission at closing · ALL prior content carried forward** | ✅ **[`05_EXCLUSIVE_LISTING_PROPOSAL.pdf`](05_EXCLUSIVE_LISTING_PROPOSAL.pdf)** |
 | 6 | **[`06_REP_AGREEMENT.md`](06_REP_AGREEMENT.md)** | **DEFINITIVE executable agreement (pass 5)** | **Exclusive listing representation agreement · 11 sections · commission structure · performance gates · Hedera anchor** | ✅ **[`06_REP_AGREEMENT.pdf`](06_REP_AGREEMENT.pdf)** |
 | 7 | **[`07_QUALIFICATION_STATEMENT.md`](07_QUALIFICATION_STATEMENT.md)** | **DEFINITIVE board diligence response (pass 6)** | **Qualification statement · operator lineage doctrine · vocabulary as credential · 24 operational disciplines · 14 receipted proofs · session-shipped work · standing-by close** | ✅ **[`07_QUALIFICATION_STATEMENT.pdf`](07_QUALIFICATION_STATEMENT.pdf)** |
+| 8 | **[`08_BUYER_PROFILE.md`](08_BUYER_PROFILE.md)** | **DEFINITIVE buyer profile + ICP (pass 7)** | **Why buys / who buys · 5 buyer personas · 8 vertical targets · ~80 named target companies · clean ICP · broker outreach engine · PASS doctrine filters · persona-sequencing matrix · 90-day engagement plan** | ✅ **[`08_BUYER_PROFILE.pdf`](08_BUYER_PROFILE.pdf)** |
 
 `build_pdf.py` regenerates the PDFs from the markdown sources: `python3 build_pdf.py --all`
 
@@ -77,6 +78,12 @@ This is the BROKER MODEL · not the vendor model. Broker absorbs the build cost 
 After receiving the listing package · the board asked the standard Class A 5-cap qualification question: *"has the builder actually closed deals · operated under pressure · managed books and records · underwritten risk · executed assignments in the real world."* The founder responded with the answer pattern: reframe from "can the builder code" to "can the builder understand operational trust · assignment pressure · books-and-records · real-world execution." Then he demonstrated the proof: *the vocabulary itself is the credential* — probability of close · deal energy · books and records · validator weight · trust temperature — these are operator-lineage terms · not SaaS jargon.
 
 I formalized the response with the receipted-proof layer added (14 board-verifiable claims · each resolving to a commit hash · Hedera anchor · public URL · or ENS record). Narrative without receipts = vibes. Narrative WITH receipts = qualification.
+
+### Pass 6 → Pass 7 (lesson: WHO BUYS · the money question)
+
+After qualification was answered · the board asked the money question: *"why buys and who buys the asset · profile of our buyer."* The founder wrote the complete ICP doctrine in response: 8 risks they avoid · the trigger sentence ("we cannot prove what our AI did") · the proof-layer positioning · 5 buyer personas (Founder/CEO=best · COO=strong · GC/Compliance=very strong in regulated · CFO=economic gate · AI Product Owner=technical champion) · 8 vertical targets · clean ICP · the close moment ("the AI agent is now part of my business · I need books and records on what it does").
+
+I formalized as `08_BUYER_PROFILE.md` and added the broker-side execution layer: persona-sequencing matrix (founder-led 60-90d vs enterprise-led 120-180d), channel-by-persona outreach matrix, per-persona OM messaging deltas, ~80 named target companies across 8 verticals, PASS doctrine filters (5 walk-from + 5 engage-hard criteria), 90-day engagement expectations. The buyer profile is the engine for Stream 3 (Generate Offers) of the rep agreement.
 
 ---
 
@@ -154,9 +161,10 @@ For board review · read in this order:
 
 1. **`05_EXCLUSIVE_LISTING_PROPOSAL.pdf`** (start here · the DEFINITIVE board-facing pitch · disposition engagement)
 2. **`07_QUALIFICATION_STATEMENT.pdf`** (the board diligence response · operator lineage · 14 receipted proofs)
-3. **`06_REP_AGREEMENT.pdf`** (the executable exclusive listing agreement)
-4. **`04_BOARD_PROPOSAL.pdf`** (comp set + risk flags · reference only · engagement model superseded by 05)
-5. **`03_BUILD_PROPOSAL.md`** (build doctrine reference · what the broker builds as listing prep)
+3. **`08_BUYER_PROFILE.pdf`** (the money question · 5 personas · 8 verticals · ~80 target companies · broker outreach engine)
+4. **`06_REP_AGREEMENT.pdf`** (the executable exclusive listing agreement)
+5. **`04_BOARD_PROPOSAL.pdf`** (comp set + risk flags · reference only · engagement model superseded by 05)
+6. **`03_BUILD_PROPOSAL.md`** (build doctrine reference · what the broker builds as listing prep)
 
 For internal use only:
 - **`00_PRE-MARKET_FLIGHT_SHEET.md`** (operator analysis · DO NOT share with competing vendors or client legal)
@@ -169,6 +177,7 @@ Superseded (kept for record only · do NOT distribute as current):
 
 ## Cross-references (memory entries that codify this work)
 
+- `defendableos-buyer-profile-icp-doctrine-2026-05-24` · **WHY buys / WHO buys · 5 personas · 8 verticals · ~80 named buyers · clean ICP · proof-layer positioning · broker outreach engine**
 - `defendableos-qualification-doctrine-operator-lineage-2026-05-24` · **operator lineage NOT theory · vocabulary as credential · 14 receipted proofs · qualification statement structure**
 - `defendableos-disposition-listing-engagement-2026-05-24` · **THE engagement model · disposition · exclusive broker · commission at closing**
 - `defendableos-comp-set-board-pitch-doctrine-2026-05-24` · the 10-comp set · 4 risk flags
