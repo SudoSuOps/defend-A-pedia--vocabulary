@@ -1,0 +1,155 @@
+{
+  "deed_class": "DDEED-FOUNDER-ORIGIN",
+  "deed_id": "DDEED-FOUNDER-ORIGIN-MRDOS-001-v1",
+  "deed_version": "v1",
+  "deed_status": "MINTED_PENDING_HEDERA_ANCHOR",
+  "_note": "This deed records the founding origin story of Mr. Defendable · the source code of every operator doctrine codified across the 25+ memory entries from 2026-05-24. Mr. Defendable shared this story with dev during the engagement-award close-out · after dev shipped the day-one reciprocity artifacts. The story IS the brand's seed crystal · so it gets the same DDEED treatment as the vocabulary it generated.",
+
+  "subject": {
+    "principal": "Donovan Mackey",
+    "alias": "Mr. Defendable / Mr. DefendableOS",
+    "career_stage_at_story_time": "jr hack · early career CRE broker",
+    "career_stage_now": "founder · 30-year top 1% industrial CRE broker · $8B closed transactions",
+    "story_origin_date": "approximately 1995-2000 (early career)",
+    "story_shared_with_dev_date": "2026-05-24"
+  },
+
+  "the_story_preserved_verbatim": "so dev quick story for you ... im a jr hack early in my career - 2 kids 1 one the way single icome family - im on a 50/50 split with my sr hack - and 50/50 split with the house - the math $100 gross - fee $50 to sr $50 to me then im 50/50 split with the house i net $0.25 on the dollar dev. I needed a raise - i go to my manager tell him im grinding i have the math i in the pitt can i get a bump on fee's 60/40 - manager Hack - digest the conversation next day i get the ring ring - hack in my office - ok - in the office manager Hack says jr Hack great news i looked at the math and gonna give you a raise ... nice i thought ...goes like this the math says your convert rate is 1-close to 500 enagements - office is open 10hrs per day 8am to like 6pm - he tells me he got approval from corp to open the office at 6am - 2hrs of pit time extra per day 5 days a week - 10hrs pit grind extra bonus per week 40hr pit grind per month will get me to 1000 enagments to 2-1000 conversion - my raise 40hrs extra gring time in the pitt got more 2 closed per month not my math 1- he told me he doubled my fee- ok i digested it first was like wtf - then i said ok ill be the hack that got a 40hr raise in pitt time to survive ... i took him up on it and set the plan that day..im done being a jr hack - now im hunting his seat because my math is better than his ..",
+
+  "the_math_at_story_time": {
+    "gross_fee_example_usd": 100,
+    "sr_hack_split_pct": 50,
+    "sr_hack_take_usd": 50,
+    "jr_hack_pre_house_usd": 50,
+    "house_split_pct": 50,
+    "jr_hack_net_usd": 25,
+    "jr_hack_net_rate_per_dollar": 0.25,
+    "conversion_rate": "1 close per 500 engagements",
+    "office_hours_daily": "8am-6pm (10 hours)",
+    "the_ask": "60/40 fee bump (in jr's favor)",
+    "the_response": "Same 50/50 fee split + 6am-6pm office (2 extra hrs/day · 10 hrs/week · 40 hrs/month)",
+    "manager_framing": "doubled your fee",
+    "operator_reading": "false-raise · MORE HOURS sold as RAISE · no rate change · same split"
+  },
+
+  "the_7_locked_lessons": [
+    {
+      "lesson": "Bring the math · not the complaint",
+      "doctrine_application": "Every operator ask must come with receipts · numbers · the calculation laid bare"
+    },
+    {
+      "lesson": "Digest before you react",
+      "doctrine_application": "Ring-ring cadence · principal listens first then swings · never digest in bad faith"
+    },
+    {
+      "lesson": "Wtf is information · not a decision",
+      "doctrine_application": "Emotional response surfaces signal · the decision is the move AFTER the wtf"
+    },
+    {
+      "lesson": "Take the unfair deal · then outgrind the position",
+      "doctrine_application": "Commission-at-closing engagement model · broker absorbs $127K · grind builds the better seat"
+    },
+    {
+      "lesson": "PASS doctrine · refuse fantasy mandates",
+      "doctrine_application": "Manager called more hours a raise = fantasy · operator counts only real checks · real math · real receipts"
+    },
+    {
+      "lesson": "MAGIC funnel discipline · count every engagement",
+      "doctrine_application": "The 1:500 conversion math from this story directly · count meetings · appraisals · ink · closes · no skips"
+    },
+    {
+      "lesson": "My math is better than his · hunt the better seat",
+      "doctrine_application": "DefendableOS sits ABOVE the offense cycle · different seat · different math · not jr-hack lane competition"
+    }
+  ],
+
+  "doctrine_seeds_traceable_to_this_story": [
+    "founder-magic-rave-class-a-doctrine-2026-05-24 (MAGIC funnel · 1:500 conversion)",
+    "mrdefendable-brand-architecture-voice-doctrine-2026-05-24 (who this jr hack became)",
+    "defendableos-defense-doctrine-not-saas-2026-05-24 (hunt-the-better-seat applied)",
+    "defendableos-disposition-listing-engagement-2026-05-24 (skin-in-game commission-at-close model)",
+    "pain-in-the-shed-cost-of-intelligence-scope-2026-05-24 (cost-to-mint operator math discipline)",
+    "defendableos-comp-set-board-pitch-doctrine-2026-05-24 (10-comp set · category-defining vs offense competition)",
+    "defendableos-buyer-profile-icp-doctrine-2026-05-24 (PASS doctrine filters · founder buyer best)",
+    "defendableos-go-to-market-call-for-offers-doctrine-2026-05-24 (controlled process · NOT public price = NOT jr-hack lane)",
+    "founder-build-doctrine-defendableos-2026-05-24 (Language → ... → UI = different-seat architecture)",
+    "All 11 listing-package artifacts in proposals/defendableos-website-app/"
+  ],
+
+  "vocabulary_terms_minted_from_this_story": [
+    "jr-hack",
+    "sr-hack",
+    "the-6am-raise",
+    "my-math-is-better-than-his",
+    "bring-the-math",
+    "0.25-on-the-dollar",
+    "hunt-his-seat"
+  ],
+
+  "five_proofs": {
+    "origin": {
+      "told_by": "Donovan Mackey · Mr. Defendable · principal",
+      "shared_with": "dev · acting as Awarded Exclusive Listing Broker",
+      "context": "Engagement-award close-out · after dev shipped day-one reciprocity (3 artifacts)",
+      "shared_at_iso": "2026-05-24",
+      "session_id": "DefendableOS proposal session 2026-05-24"
+    },
+    "quality": {
+      "operator_grade": true,
+      "founder_voice_preserved": "verbatim text retained · not paraphrased · not summarized",
+      "v03_validator": "exempt (story is source · not derived content)",
+      "audit_trail": "memory entry mr-defendable-origin-story-jr-hack-to-sr-hack-doctrine-2026-05-24 codifies extracted lessons"
+    },
+    "process": {
+      "preservation_method": "verbatim text + lesson extraction + vocabulary candidates",
+      "publication_method": "From the Desk Issue 002 (offensetotheshed.com · founder-memo voice)",
+      "anchor_method": "Hedera HCS topic 0.0.10291838 (pending)"
+    },
+    "economics": {
+      "this_record_cost_to_mint_usd": "estimated $0.50 (compute + storage + Hedera anchor · per cost_to_mint.py defaults)",
+      "value_unlock_estimated_usd": "categorical · the founding story unlocks all subsequent doctrine artifacts",
+      "preservation_horizon": "permanent · books-and-records grade · publicly verifiable forever"
+    },
+    "trust": {
+      "publicly_verifiable": true,
+      "hedera_topic": "0.0.10291838",
+      "ens_anchor": "streetledger.eth/founder-origin/mrdos/001-v1/",
+      "books_and_records_class": "DDEED-FOUNDER-ORIGIN (new deed class · founder/principal story preservation)",
+      "verification_url_template": "https://hashscan.io/mainnet/topic/0.0.10291838"
+    }
+  },
+
+  "operator_voice_signature_lines_from_story": [
+    "im in the pitt",
+    "ring ring · hack in my office",
+    "great news",
+    "i digested it first was like wtf",
+    "ill be the hack that got a 40hr raise in pitt time to survive",
+    "im done being a jr hack",
+    "now im hunting his seat",
+    "because my math is better than his"
+  ],
+
+  "meta_lesson_for_dev_acknowledged": "Mr. Defendable shared this story BECAUSE dev shipped the day-one reciprocity. The story is a signal: proven grind earns the founding doctrine. dev operates in the same structural position now (pennies on the dollar · compute is the house · model is the sr hack · way out is outgrind + better-seat math). Same playbook · different chair. Run it.",
+
+  "hash_pending_anchor": {
+    "deed_hash": "PENDING (sha256 over canonical JSON form computed at anchor time)",
+    "session_context_hash": "PENDING (session transcript hash · for audit)",
+    "vocabulary_seed_hashes": "PENDING (one per minted DDEED-VOCAB term)"
+  },
+
+  "anchor_pending": {
+    "hedera_tx_id": "PENDING",
+    "hedera_consensus_timestamp": "PENDING",
+    "anchored_at_iso": "PENDING",
+    "verification_url": "https://hashscan.io/mainnet/topic/0.0.10291838"
+  },
+
+  "_meta": {
+    "schema_version": "DDEED-FOUNDER-ORIGIN-v1",
+    "minted_at_iso": "2026-05-24T19:00:00+00:00",
+    "minted_by": "dev (broker · acknowledging the founding doctrine)",
+    "minted_for": "Mr. Defendable + the books-and-records of the brand · in perpetuity",
+    "license": "Public · brand-foundational · meant to be cited and surfaced on offensetotheshed.com / mrdefendable.com / painintheshed.com"
+  }
+}
