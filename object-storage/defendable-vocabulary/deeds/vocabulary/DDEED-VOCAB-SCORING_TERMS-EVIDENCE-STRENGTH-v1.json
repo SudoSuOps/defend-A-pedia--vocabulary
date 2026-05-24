@@ -1,0 +1,103 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1",
+  "category": "scoring_terms",
+  "created_at": "2026-05-24T15:33:21.522504+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/scoring_terms/evidence-strength",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/scoring_terms/evidence-strength/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1-20260524T15332152249Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:32abbe62694a858f6ef8f69305e9018db60230f3367685912e25c52281cf6c9e",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "evidence-strength",
+  "street_source_ens": null,
+  "subject": {
+    "category": "scoring_terms",
+    "definitions": {
+      "client": "Evidence Strength is how strong the evidence is behind every verdict. We count the citations \u00b7 weight them by source quality (EDGAR > Wikipedia > Reddit) \u00b7 and apply a freshness penalty (stale evidence loses weight). The dial shows you whether your verdict is backed by gold-standard receipts or by thin air. Anything below 0.4 doesn't even qualify for our refinery \u00b7 we'd be building on sand.",
+      "cre_operator": "In CRE this is the **comp set quality**. A deal pencils on the strength of its comp set \u00b7 5 same-submarket recent sales is strong \u00b7 1 stale out-of-state comp is thin \u00b7 the broker who pencils against thin comps eats the failed listing. Evidence Strength is the comp-set quality score for the agent economy. Strong evidence backs the verdict the way 5 fresh comps back a cap rate.",
+      "defendableos": "Evidence Strength is a 0-1 dial computed from three multiplicative factors:\n\n```\nevidence_strength = color_evidence_count_normalized \u00d7 mean_source_weight \u00d7 (1 - staleness_penalty)\n```\n\nWhere:\n- `color_evidence_count_normalized` = min(evidence_count / 5, 1.0) (5 is the canonical baseline)\n- `mean_source_weight` = the average of source weights (EDGAR 0.90 \u00b7 OpenAlex 0.85 \u00b7 CRE News 0.65 \u00b7 Reddit 0.50 \u00b7 etc.)\n- `staleness_penalty` = (days_since_oldest_source / 30) * 0.4 capped at 0.4\n\nThe threshold for refinery eligibility is `evidence_strength \u2265 0.4` (below 0.4, SwarmFixer cannot run on the pair).",
+      "street": "\"How strong is the evidence?\" That's the discriminator question on every Tribunal verdict review. **Evidence Strength** is the 0-1 dial that measures how well-supported a pair candidate's evidence base is \u00b7 count of independent citations \u00d7 mean source quality \u00d7 freshness. Thin evidence cap-rates the verdict. Strong evidence unlocks promotion."
+    },
+    "related_terms": [
+      "repair-lift",
+      "validator-confidence",
+      "risk-temperature",
+      "pair-candidate",
+      "swarmfixer"
+    ],
+    "slug": "evidence-strength",
+    "term": "Evidence Strength"
+  },
+  "supersedes": null,
+  "term": "Evidence Strength",
+  "updated_at": "2026-05-24T15:33:21.783326+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

@@ -1,0 +1,103 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1",
+  "category": "scoring_terms",
+  "created_at": "2026-05-24T15:33:21.527432+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/scoring_terms/validator-confidence",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/scoring_terms/validator-confidence/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1-20260524T15332152742Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:d0a4f5bde5e98373fb445c500f9fcf8a422042815cccee581f048bec4b3864d1",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "validator-confidence",
+  "street_source_ens": null,
+  "subject": {
+    "category": "scoring_terms",
+    "definitions": {
+      "client": "Validator Confidence is the trust score on a verdict. We don't just take the model's word \u00b7 we run a 12-check chain on every verdict (7 must-pass \u00b7 5 advisory) and we weight the evidence quality. The dial shows you whether we're confident in the call. Below 0.6 \u00b7 we don't promote \u00b7 even if the lift number looks great. The dial protects you from over-confident wrong answers.",
+      "cre_operator": "In CRE this is the **lender's confidence score** on a deal package. The numbers might pencil \u00b7 the comps might support \u00b7 but if the lender's underwriter has questions about the rent roll, the tenant credit, the title report, the appraisal date \u00b7 the confidence score drops \u00b7 the LTV gets capped \u00b7 the rate goes up. The number alone isn't enough \u00b7 the EVIDENCE behind the number matters. Validator Confidence is the lender's read on whether the receipts support the verdict.",
+      "defendableos": "Validator Confidence is a 0-1 dial computed from two inputs: the 12-check validator chain pass rate (7 critical + 5 advisory) and the mean source weight of the evidence backing the verdict. The formula is:\n\n```\nvalidator_confidence = (critical_pass_rate \u00d7 0.7) + (advisory_pass_rate \u00d7 0.2) + (mean_source_weight \u00d7 0.1)\n```\n\nThe threshold for `jelly-repaired/` promotion is `validator_confidence \u2265 0.6` (paired with `repair_lift \u2265 0.10`). Both must clear \u00b7 neither is sufficient alone.",
+      "street": "\"What's the validator confidence?\" That's the second question after the lift. **Validator Confidence** is the 0-1 dial showing how much trust the validator chain places in a given verdict. Computed from the 12-check pass rate weighted by the source quality. A pair with a great lift but low validator confidence doesn't promote \u00b7 the chain doesn't believe in the math."
+    },
+    "related_terms": [
+      "repair-lift",
+      "evidence-strength",
+      "risk-temperature",
+      "pair-candidate",
+      "swarmfixer"
+    ],
+    "slug": "validator-confidence",
+    "term": "Validator Confidence"
+  },
+  "supersedes": null,
+  "term": "Validator Confidence",
+  "updated_at": "2026-05-24T15:33:21.787170+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

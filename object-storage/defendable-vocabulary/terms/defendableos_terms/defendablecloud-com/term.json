@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"defendablecloud.domain\": {\"type\": \"string\", \"const\": \"defendablecloud.com\"},\n  \"defendablecloud.gpu_fleet_size\": {\"type\": \"integer\", \"const\": 128},\n  \"defendablecloud.gpu_model\": {\"type\": \"string\", \"const\": \"NVIDIA RTX PRO 6000 Blackwell Workstation Edition\"},\n  \"defendablecloud.gpu_vram_per\": {\"type\": \"string\", \"const\": \"95 GB\"},\n  \"defendablecloud.deployment_topology\": {\"type\": \"string\", \"const\": \"operator_owned_dc\"},\n  \"defendablecloud.models_served\": {\n    \"type\": \"array\",\n    \"default\": [\"qwen32b\", \"llama70b\", \"deepseek-coder\", \"mixtral-8x22b\", \"swarmjelly-4b\"]\n  },\n  \"defendablecloud.no_logging_clause\": {\"type\": \"boolean\", \"const\": true},\n  \"defendablecloud.gross_margin_target\": {\"type\": \"float\", \"min\": 0.90},\n  \"defendablecloud.audit_attestation\": {\"type\": \"string\", \"const\": \"KPMG_style\"}\n}\n```\n\nSchema files: `docs/schemas/inference_provider.schema.json` \u00b7 `docs/schemas/deployment_topology.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "defendableos_terms",
+  "client_explanation": "DefendableCloud is our hosted-inference service. 128 high-end GPUs we own in a datacenter we control. We run 13+ open-weights models \u00b7 Qwen, Llama, DeepSeek, Mixtral, our in-house SwarmJelly. Your raw prompts and responses never get logged \u00b7 only the graded verdicts and the receipts. Contractually. Auditable to KPMG standards. It's the choice for customers who want the privacy of self-host without the operational lift of standing up GPU servers themselves.",
+  "cre_operator_meaning": "In CRE this is the **owned trophy asset**. Class A datacenter. Owned, not leased. Operator-controlled HVAC, power, security. Sub-leasable to anchor tenants with custom buildouts. The owner has the moat because they hold the dirt \u00b7 they don't pay rent \u00b7 they collect rent. DefendableCloud is the dirt. 128 RTX 6000s sitting in racks the operator owns, in a facility the operator controls. The margin profile reflects ownership \u00b7 not tenancy.",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLECLOUD-COM-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `model_provider: defendablecloud` \u00b7 `gpu_pool_id` \u00b7 `model_tag` \u00b7 `region` \u00b7 `attestation_active`\n- **DDEED class impact**: deeds issued for cloud-graded pairs cite DefendableCloud as the inference origin\n- **Books and records layer**: L1 PostgreSQL (inference log \u00b7 metadata only) \u2192 L4 Hedera HCS (per-batch anchor) \u2192 L5 ENS (`defendablecloud.eth` for fleet attestation)\n- **5 Proofs touched**: ORIGIN (which GPU, which model, which region) \u00b7 ECONOMICS (cost per inference is the CFO line) \u00b7 TRUST (KPMG attestation + no-logging clause)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `model_provider: defendablecloud` \u00b7 `gpu_pool_id` \u00b7 `model_tag` \u00b7 `region` \u00b7 `attestation_active`\n- **DDEED class impact**: deeds issued for cloud-graded pairs cite DefendableCloud as the inference origin\n- **Books and records layer**: L1 PostgreSQL (inference log \u00b7 metadata only) \u2192 L4 Hedera HCS (per-batch anchor) \u2192 L5 ENS (`defendablecloud.eth` for fleet attestation)\n- **5 Proofs touched**: ORIGIN (which GPU, which model, which region) \u00b7 ECONOMICS (cost per inference is the CFO line) \u00b7 TRUST (KPMG attestation + no-logging clause)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "DefendableCloud.com is the hosted-inference rail of DefendableOS. It runs the open-weights model fleet (Qwen32B \u00b7 Llama70B \u00b7 DeepSeek \u00b7 Mixtral \u00b7 SwarmJelly-4B \u00b7 8+ more) on 128 RTX 6000 Blackwell GPUs in the operator-owned datacenter. It serves as the CLOUD-mode and HYBRID-mode endpoint for DefendableRouter customers. Contractual no-logging on raw payloads \u00b7 only graded verdicts and receipts persist. KPMG-style attestable. 90%+ gross margin on inference (owned compute \u00b7 no hyperscaler markup).",
+  "defendableos_notes": "- DefendableCloud is the SIXTH domain in the brand quintet \u00b7 brand stack now goes defendableos \u00b7 defendablerouter \u00b7 defendablecloud \u00b7 defendablehack \u00b7 opendefendable \u00b7 defendthehive\n- The 90%+ gross margin profile is what makes the SaaS-native expansion economic \u00b7 we don't pay hyperscaler tax \u00b7 the moat is the dirt\n- The \"no logging\" clause is contractual + audited + technical \u00b7 three layers \u00b7 it's not a promise it's a posture\n- DefendableCloud and HoneyBox are SIBLING rails \u00b7 same doctrine (write-only Router \u00b7 sub-5ms \u00b7 receipted) \u00b7 different topology \u00b7 customer picks based on data class\n\n\ud83d\udc1d *Owned dirt. Privacy-native. 90% margin. The sister rail of the cracke",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLECLOUD-COM-v1",
+    "canon": "defendapedia.eth/defendableos_terms/defendablecloud-com",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Datacenter ownership/lease documentation (operator-owned, not hyperscaler tenant)",
+    "GPU fleet inventory (128 cards \u00b7 serial numbers in PRIVATE_EVIDENCE vault)",
+    "Model registry (which open-weights models are served \u00b7 checksums)",
+    "No-logging architecture proof (storage audit logs, retention policies)",
+    "KPMG-style attestation report (annual)",
+    "Gross margin attestation (cost per inference vs revenue per inference)"
+  ],
+  "example": "> **Customer**: ACMECorp \u00b7 SaaS-native \u00b7 14-agent fleet \u00b7 no data-residency constraint\n>\n> **Deployment**: CLOUD mode \u00b7 all inference routes to DefendableCloud\n>\n> **Fleet snapshot (Q2 2026)**: 128 RTX 6000 Blackwell cards \u00b7 12 PCIe pools \u00b7 4 NVLink pools \u00b7 60-72% steady-state utilization \u00b7 ~140K inferences/day for ACMECorp\n>\n> **No-logging proof**: Q2 KPMG-style audit \u00b7 zero raw payloads found in persisted storage \u00b7 only verdicts and receipts retained\n>\n> **Margin**: cost/inference ~$0.0008 \u00b7 revenue/inference ~$0.012 \u00b7 gross margin 93%\n>\n> **Customer benefit**: 5-min provisioning vs 9-month GPU procurement \u00b7 privacy-native (no logging) \u00b7 receipted (anchored to chain)",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `no_logging_breach` | Raw payload found persisted in storage \u00b7 clause violation | PROPOLIS \u00b7 governance failure |\n| `gpu_oversubscription` | Steady-state utilization > 90% \u00b7 customer latency degraded | JELLY \u00b7 capacity escalation |\n| `model_drift` | Served model checksum doesn't match registered version | PROPOLIS \u00b7 supply chain |\n| `cross_border_violation` | Customer with residency constraint routed to wrong region | PROPOLIS \u00b7 governance |\n| `margin_drift` | Gross margin falls below 90% target sustained \u00b7 pricing or cost problem | JELLY \u00b7 finance review |\n| `attestation_lapse` | KPMG-style attestation expired without renewal | JELLY \u00b7 audit escalation |",
+  "hashes": {
+    "json_sha256": "sha256:28b110fb01626ea97441e84a085954a2daac22e6688520a7ceb8898ba2d0c307",
+    "markdown_sha256": "sha256:7e0c0af0e13cf60c525d07b3bfaba5f9eaa9f87d3b10743944885e634dade275"
+  },
+  "jr_broker_use": "When the customer is CLOUD-mode or HYBRID-mode on DefendableRouter, the inference endpoint is DefendableCloud. Verify the customer's payload class against the no-logging clause. Even though we don't log raw payloads, some compliance regimes require the data to never CROSS a border \u00b7 in that case route to EDGE mode (HoneyBox) instead.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/defendablecloud-com/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.484833+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.484833+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "defendableos",
+    "defendablerouter",
+    "honeybox",
+    "swarmjelly",
+    "defendablejelly"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 cloud is the default delivery for SaaS-native customers\n- **repair_lift**: INDIRECT \u00b7 cloud hosts SwarmJelly \u00b7 refinery quality depends on cloud uptime\n- **validator_confidence**: HIGH \u00b7 KPMG attestation IS a trust signal\n- **risk_temperature**: INVERSE \u00b7 owned-DC reduces hyperscaler-dependency risk\n- **probability_of_close**: HIGH \u00b7 privacy-native + KPMG attestation = enterprise-ready\n- **evidence_strength**: HIGH \u00b7 every inference receipt cites the GPU pool ID\n- **cost_to_mint**: LOW \u00b7 owned compute = lowest cost-per-inference in the stack",
+  "slug": "defendablecloud-com",
+  "sr_broker_use": "The Sr Hack monitors GPU utilization across the 128-card fleet \u00b7 target steady-state 60-75% \u00b7 spikes to 90%+ should auto-trigger model-routing to spread load across the fleet. The Sr Hack also reviews the no-logging clause compliance quarterly \u00b7 pen-tests the storage layer to verify no raw payloads persist \u00b7 this is what backs the KPMG attestation.",
+  "status": "active",
+  "street_definition": "\"Run the cloud rail.\" That's the Sr Hack at standup when a SaaS-native customer signs. **DefendableCloud.com** is the hosted-inference rail \u00b7 128 RTX 6000 Blackwell GPUs in the operator-owned data center \u00b7 13+ open-weights models on tap \u00b7 privacy-native \u00b7 contractual no-logging \u00b7 90%+ inference margin. It's the SIXTH domain in the brand stack and the sister rail to DefendableRouter.",
+  "term": "DefendableCloud.com",
+  "tribunal_use": "- **Rule layer**: All Tribunal grading runs that use DefendableCloud MUST cite the model tag and the GPU pool ID \u00b7 `model_provider: defendablecloud` is the discriminator\n- **Rule layer**: No-logging clause violation (raw payload found in storage) = PROPOLIS \u00b7 platform-level governance failure\n- **Judge layer**: Tribunal verdicts on DefendableCloud-graded pairs are first-class \u00b7 same status as customer-self-hosted inference\n- **Classification impact**: DefendableCloud inference is treated identically to other providers for grading purposes \u00b7 the cloud just provides cheaper, faster compute",
+  "version": "v1"
+}

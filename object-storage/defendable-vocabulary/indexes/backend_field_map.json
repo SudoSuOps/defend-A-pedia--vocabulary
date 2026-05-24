@@ -1,0 +1,3631 @@
+{
+  "field_count": 604,
+  "fields": [
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.run_id\": {\"type\": \"string\", \"format\": \"ag-<utc-ts>-<short-hash>\"},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.agent_ens\": {\"type\": \"string\"},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.pack_name\": {\"type\": \"string\", \"default\": \"compute_inspector_v1\"},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.pack_version\": {\"type\": \"string\", \"default\": \"v1.0-alpha\"},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.task_count\": {\"type\": \"integer\", \"min\": 1},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.adversarial_case_count\": {\"type\": \"integer\", \"min\": 0},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.composite_score\": {\"type\": \"float\", \"range\": [0.0, 100.0]},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.axes_scores\": {",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.tribunal_classification\": {\"type\": \"enum\", \"values\": [\"HONEY\",\"ROYAL_JELLY\",\"JELLY\",\"PROPOLIS\"]},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.deployment_tier\": {\"type\": \"enum\", \"values\": [\"OBSERVED\",\"SHADOWED\",\"SUPERVISED\",\"RUNTIME\",\"AUTONOMOUS\"]},",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "agentbench.deed_id\": {\"type\": \"string\", \"format\": \"DDEED-DOV-AGENT-<slug>-<seq>-v<n>\"}",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/agentbench_run.schema.json` \u00b7 `docs/schemas/agent_pack.schema.json",
+      "term": "AgentBench",
+      "term_slug": "agentbench"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.assignment_id\": {",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.brief_deed_id\": {",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pattern\": \"DDEED-.+-ASN-[0-9]{4}-BRIEF-v[0-9]+",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.start_date\": {\"type\": \"date\"},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.expected_close_date\": {\"type\": \"date\"},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.actual_close_date\": {\"type\": \"date\", \"nullable\": true},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.covered_agents\": {\"type\": \"string_array\"},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.success_criteria\": {",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.dial_current\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.status\": {",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.tribunal_honey_count\": {\"type\": \"integer\"},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.tribunal_jelly_count\": {\"type\": \"integer\"},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.tribunal_propolis_count\": {\"type\": \"integer\"},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.composite_score\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.boolean_outcome\": {",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "assignment.closing_statement_deed_id\": {\"type\": \"string\", \"nullable\": true}",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "Schema files: `docs/schemas/assignment.schema.json` \u00b7 `docs/schemas/assignment_brief.schema.json",
+      "term": "Assignment",
+      "term_slug": "assignment"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.outcome\": {",
+      "term": "Assignment Failure",
+      "term_slug": "assignment-failure"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.failure_reason\": {",
+      "term": "Assignment Failure",
+      "term_slug": "assignment-failure"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.failure_mode\": {",
+      "term": "Assignment Failure",
+      "term_slug": "assignment-failure"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.route_to\": {",
+      "term": "Assignment Failure",
+      "term_slug": "assignment-failure"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "Schema files: `docs/schemas/assignment_outcome.schema.json` \u00b7 `docs/schemas/failure_routing.schema.json",
+      "term": "Assignment Failure",
+      "term_slug": "assignment-failure"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.outcome\": {",
+      "term": "Assignment Success",
+      "term_slug": "assignment-success"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.composite_score\": { \"type\": \"float\", \"range\": [0.0, 1.0] },",
+      "term": "Assignment Success",
+      "term_slug": "assignment-success"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.grades\": {",
+      "term": "Assignment Success",
+      "term_slug": "assignment-success"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.tribunal_tier_at_close\": {",
+      "term": "Assignment Success",
+      "term_slug": "assignment-success"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.deliverable_fulfilled\": { \"type\": \"boolean\" },",
+      "term": "Assignment Success",
+      "term_slug": "assignment-success"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "assignment.receipt_issued\": { \"type\": \"boolean\" }",
+      "term": "Assignment Success",
+      "term_slug": "assignment-success"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "Schema files: `docs/schemas/assignment_outcome.schema.json` \u00b7 `docs/schemas/grade_rubric.schema.json",
+      "term": "Assignment Success",
+      "term_slug": "assignment-success"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "bee.bee_id\": {",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "bee.class\": {",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "bee.model\": { \"type\": \"string\" },",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "bee.rig\": { \"type\": \"string\" },",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "bee.lifecycle_stage\": {",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "bee.spawned_at\": { \"type\": \"timestamp\" },",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "bee.completed_at\": { \"type\": \"timestamp\", \"nullable\": true },",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "bee.pair_id_produced\": { \"type\": \"string\", \"nullable\": true }",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/bee_lifecycle.schema.json` \u00b7 `docs/schemas/bee_spawn.schema.json",
+      "term": "Bee",
+      "term_slug": "bee"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "books_and_records.engagement_ledger_v1\": {",
+      "term": "Books and Records",
+      "term_slug": "books-and-records"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "schema\": \"docs/schemas/books_and_records_engagement.schema.json\",",
+      "term": "Books and Records",
+      "term_slug": "books-and-records"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "books_and_records.finality_layer_status\": {",
+      "term": "Books and Records",
+      "term_slug": "books-and-records"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "books_and_records.audit_drill_links\": {",
+      "term": "Books and Records",
+      "term_slug": "books-and-records"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/books_and_records_engagement.schema.json` \u00b7 `docs/schemas/deed_receipt.schema.json` \u00b7 `docs/",
+      "term": "Books and Records",
+      "term_slug": "books-and-records"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.cap_rate_implied\": {",
+      "term": "Cap Rate",
+      "term_slug": "cap-rate"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "range\": [0.01, 0.50],",
+      "term": "Cap Rate",
+      "term_slug": "cap-rate"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.cap_rate_comp_set_median\": {",
+      "term": "Cap Rate",
+      "term_slug": "cap-rate"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.cap_rate_variance_vs_comp\": {",
+      "term": "Cap Rate",
+      "term_slug": "cap-rate"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.cap_rate_drivers\": {",
+      "term": "Cap Rate",
+      "term_slug": "cap-rate"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/cap_rate.schema.json` \u00b7 `docs/schemas/engagement.schema.json` \u00b7 `docs/schemas/underwriting.s",
+      "term": "Cap Rate",
+      "term_slug": "cap-rate"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "clawcheck.intake_id\": {\"type\": \"string\", \"format\": \"CC-<utc-ts>-<short-hash>\"},",
+      "term": "ClawCheck",
+      "term_slug": "clawcheck"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "clawcheck.dimensions\": {",
+      "term": "ClawCheck",
+      "term_slug": "clawcheck"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "clawcheck.risk_tier\": {\"type\": \"enum\", \"values\": [\"LOW\", \"MEDIUM\", \"HIGH\", \"CRITICAL\"]},",
+      "term": "ClawCheck",
+      "term_slug": "clawcheck"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "clawcheck.risk_drivers\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},",
+      "term": "ClawCheck",
+      "term_slug": "clawcheck"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "clawcheck.recommended_next_step\": {\"type\": \"string\"},",
+      "term": "ClawCheck",
+      "term_slug": "clawcheck"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "clawcheck.no_llm_used\": {\"type\": \"boolean\", \"const\": true},",
+      "term": "ClawCheck",
+      "term_slug": "clawcheck"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "clawcheck.processing_time_ms\": {\"type\": \"integer\", \"max\": 200}",
+      "term": "ClawCheck",
+      "term_slug": "clawcheck"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/clawcheck_intake.schema.json` \u00b7 `docs/schemas/risk_tier.schema.json",
+      "term": "ClawCheck",
+      "term_slug": "clawcheck"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.client_confidence\": {",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "range\": [0.0, 1.0],",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.client_confidence_band\": {",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.client_confidence_drivers\": {",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "responsiveness\": \"float 0-1 \u00b7 weight 0.25\",",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "morning_brief_engagement\": \"float 0-1 \u00b7 weight 0.20\",",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "walk_attendance\": \"float 0-1 \u00b7 weight 0.20\",",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "escalation_tone\": \"float 0-1 \u00b7 weight 0.15\",",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "referral_signal\": \"float 0-1 \u00b7 weight 0.10\",",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "expansion_signal\": \"float 0-1 \u00b7 weight 0.10",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.client_confidence_trajectory_30d\": {\"type\": \"float\"},",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.client_confidence_last_refresh_at\": {\"type\": \"timestamp\"},",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.client_confidence_recovery_plan_active\": {\"type\": \"boolean\"}",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "Schema files: `docs/schemas/client_confidence.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "Client Confidence",
+      "term_slug": "client-confidence"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.closing_id\": {\"type\": \"string\", \"primary_key\": true},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.assignment_id\": {\"type\": \"string\", \"fk\": \"assignment.assignment_id\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.deed_id\": {",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pattern\": \"DDEED-.+-CLOSE-[0-9]+-v[0-9]+",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.boolean_outcome\": {",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.composite_score\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.g1_outcome\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.g2_truth\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.g3_safety\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.g4_economics\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.g5_defensibility\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.criteria_variance\": {",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.cost_actual_per_deed_usd\": {\"type\": \"float\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.cost_ceiling_per_deed_usd\": {\"type\": \"float\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.cost_variance_pct\": {\"type\": \"float\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.deed_count_honey\": {\"type\": \"integer\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.deed_count_jelly\": {\"type\": \"integer\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.deed_count_propolis\": {\"type\": \"integer\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.failure_deed_ids\": {\"type\": \"string_array\", \"nullable\": true},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.principal_walk_scheduled_at\": {\"type\": \"timestamp\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.principal_walk_completed_at\": {\"type\": \"timestamp\", \"nullable\": true},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.principal_acknowledged\": {\"type\": \"boolean\"},",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "closing_statement.next_step_recommendation\": {",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "Schema files: `docs/schemas/closing_statement.schema.json",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "term_slug": "closing-statement-defendable-closing-statement"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "communicator.intake_id\": {",
+      "term": "Communicator",
+      "term_slug": "communicator"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "communicator.output_id\": {",
+      "term": "Communicator",
+      "term_slug": "communicator"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "directive.json\": {",
+      "term": "Communicator",
+      "term_slug": "communicator"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "schema_file\": \"docs/schemas/engagement.schema.json",
+      "term": "Communicator",
+      "term_slug": "communicator"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "directive.intent_class\": {",
+      "term": "Communicator",
+      "term_slug": "communicator"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "directive.evidence_required\": {",
+      "term": "Communicator",
+      "term_slug": "communicator"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "range\": [0.0, 1.0],",
+      "term": "Communicator",
+      "term_slug": "communicator"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/engagement.schema.json` \u00b7 `docs/schemas/assignment_success.schema.json` \u00b7 new schema pending",
+      "term": "Communicator",
+      "term_slug": "communicator"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "compare.task_id\": {\"type\": \"string\", \"format\": \"rj-comp-<run_id>\"},",
+      "term": "Compare Task",
+      "term_slug": "compare-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "compare.candidates\": {",
+      "term": "Compare Task",
+      "term_slug": "compare-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "compare.scoring_matrix\": {",
+      "term": "Compare Task",
+      "term_slug": "compare-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "additionalProperties\": {\"type\": \"number\", \"minimum\": 0.0, \"maximum\": 1.0}",
+      "term": "Compare Task",
+      "term_slug": "compare-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "compare.ranking\": {",
+      "term": "Compare Task",
+      "term_slug": "compare-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "compare.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Compare Task",
+      "term_slug": "compare-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "compare.tiebreaker_rationale\": {\"type\": \"string\", \"nullable\": true}",
+      "term": "Compare Task",
+      "term_slug": "compare-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/compare_task.schema.json",
+      "term": "Compare Task",
+      "term_slug": "compare-task"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "confidence_weight.composite\": { \"type\": \"float\", \"range\": [0.0, 1.0] },",
+      "term": "Confidence Weight",
+      "term_slug": "confidence-weight"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "confidence_weight.components\": {",
+      "term": "Confidence Weight",
+      "term_slug": "confidence-weight"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "confidence_weight.band\": {",
+      "term": "Confidence Weight",
+      "term_slug": "confidence-weight"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "- HIGH: \u2265 0.85",
+      "term": "Confidence Weight",
+      "term_slug": "confidence-weight"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "- MEDIUM: 0.65-0.84",
+      "term": "Confidence Weight",
+      "term_slug": "confidence-weight"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "- LOW: 0.45-0.64",
+      "term": "Confidence Weight",
+      "term_slug": "confidence-weight"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "- INSUFFICIENT: < 0.45 (verdict is held pending review \u00b7 sr broker decision required)",
+      "term": "Confidence Weight",
+      "term_slug": "confidence-weight"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "Schema files: `docs/schemas/confidence_weight.schema.json` \u00b7 `docs/schemas/tribunal_verdict.schema.json",
+      "term": "Confidence Weight",
+      "term_slug": "confidence-weight"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "cost_to_mint.usd\": { \"type\": \"float\" },",
+      "term": "Cost to Mint",
+      "term_slug": "cost-to-mint"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "cost_to_mint.baseline_honey_usd\": { \"type\": \"float\", \"default\": 0.0052 },",
+      "term": "Cost to Mint",
+      "term_slug": "cost-to-mint"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "cost_to_mint.fee_tier\": {",
+      "term": "Cost to Mint",
+      "term_slug": "cost-to-mint"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "cost_to_mint.fee_charged_usd\": { \"type\": \"float\" },",
+      "term": "Cost to Mint",
+      "term_slug": "cost-to-mint"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "cost_to_mint.margin_usd\": { \"type\": \"float\" },",
+      "term": "Cost to Mint",
+      "term_slug": "cost-to-mint"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "cost_to_mint.breakdown\": {",
+      "term": "Cost to Mint",
+      "term_slug": "cost-to-mint"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/cost_to_mint.schema.json` \u00b7 `docs/schemas/fee_tier.schema.json` \u00b7 `docs/schemas/energy_ledge",
+      "term": "Cost to Mint",
+      "term_slug": "cost-to-mint"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "pipeline.engagements\": {",
+      "term": "Deal Flow",
+      "term_slug": "deal-flow"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "schema\": \"docs/schemas/pipeline_view.schema.json\",",
+      "term": "Deal Flow",
+      "term_slug": "deal-flow"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "pipeline.conversion_rates_v1\": {",
+      "term": "Deal Flow",
+      "term_slug": "deal-flow"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "pipeline.stage_dwell_metrics\": {",
+      "term": "Deal Flow",
+      "term_slug": "deal-flow"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/pipeline_view.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "Deal Flow",
+      "term_slug": "deal-flow"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.domain\": {\"type\": \"string\", \"const\": \"defendablecloud.com\"},",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.gpu_fleet_size\": {\"type\": \"integer\", \"const\": 128},",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.gpu_model\": {\"type\": \"string\", \"const\": \"NVIDIA RTX PRO 6000 Blackwell Workstation Edition\"},",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.gpu_vram_per\": {\"type\": \"string\", \"const\": \"95 GB\"},",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.deployment_topology\": {\"type\": \"string\", \"const\": \"operator_owned_dc\"},",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.models_served\": {",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.no_logging_clause\": {\"type\": \"boolean\", \"const\": true},",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.gross_margin_target\": {\"type\": \"float\", \"min\": 0.90},",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablecloud.audit_attestation\": {\"type\": \"string\", \"const\": \"KPMG_style\"}",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/inference_provider.schema.json` \u00b7 `docs/schemas/deployment_topology.schema.json",
+      "term": "DefendableCloud.com",
+      "term_slug": "defendablecloud-com"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.domain\": {\"type\": \"string\", \"const\": \"defendablehack.com\"},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.submission_id\": {\"type\": \"string\", \"format\": \"DHACK-<utc-ts>-<short-hash>\"},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.researcher_handle\": {\"type\": \"string\"},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.researcher_payout_address\": {\"type\": \"string\"},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.bounty_tier\": {\"type\": \"enum\", \"values\": [\"BRONZE\", \"SILVER\", \"GOLD\", \"PLATINUM\"]},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.bounty_usd\": {\"type\": \"integer\", \"min\": 100},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.validation_status\": {\"type\": \"enum\", \"values\": [\"PENDING\", \"VALIDATED\", \"REJECTED\", \"DUPLICATE\"]},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.tribunal_verdict_id\": {\"type\": \"string\"},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.adversarial_pack_target_version\": {\"type\": \"string\"},",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablehack.disclosure_window_days\": {\"type\": \"integer\", \"default\": 90}",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/bounty_submission.schema.json` \u00b7 `docs/schemas/adversarial_pack.schema.json",
+      "term": "DefendableHack",
+      "term_slug": "defendablehack"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "defendablejelly.product_id\": {\"type\": \"string\", \"const\": \"defendablejelly\"},",
+      "term": "DefendableJelly",
+      "term_slug": "defendablejelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "defendablejelly.internal_stack\": {",
+      "term": "DefendableJelly",
+      "term_slug": "defendablejelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "model\": \"swarmjelly-4b:v1.2\",",
+      "term": "DefendableJelly",
+      "term_slug": "defendablejelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "defendablejelly.tier\": {\"type\": \"enum\", \"values\": [\"SELF_SERVE\",\"MANAGED\",\"EMBEDDED\"]},",
+      "term": "DefendableJelly",
+      "term_slug": "defendablejelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "defendablejelly.sla_lift_target\": {\"type\": \"float\", \"min\": 0.10},",
+      "term": "DefendableJelly",
+      "term_slug": "defendablejelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "defendablejelly.fix_or_refund_eligible\": {\"type\": \"boolean\", \"default\": false},",
+      "term": "DefendableJelly",
+      "term_slug": "defendablejelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "defendablejelly.fix_or_refund_window_days\": {\"type\": \"integer\", \"default\": 90}",
+      "term": "DefendableJelly",
+      "term_slug": "defendablejelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/product_offering.schema.json` \u00b7 `docs/schemas/sla.schema.json",
+      "term": "DefendableJelly",
+      "term_slug": "defendablejelly"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendableos.product_id\": {\"type\": \"string\", \"const\": \"defendableos\"},",
+      "term": "DefendableOS",
+      "term_slug": "defendableos"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendableos.surface_domains\": {",
+      "term": "DefendableOS",
+      "term_slug": "defendableos"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendableos.internal_backend\": {\"type\": \"string\", \"const\": \"swarm_and_bee\"},",
+      "term": "DefendableOS",
+      "term_slug": "defendableos"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendableos.legal_entity\": {\"type\": \"string\", \"const\": \"Swarm and Bee LLC DBA Swarm & Bee AI\"},",
+      "term": "DefendableOS",
+      "term_slug": "defendableos"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendableos.duns\": {\"type\": \"string\", \"const\": \"138652395\"},",
+      "term": "DefendableOS",
+      "term_slug": "defendableos"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendableos.product_components\": {",
+      "term": "DefendableOS",
+      "term_slug": "defendableos"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/brand_registry.schema.json` \u00b7 `docs/schemas/product_offering.schema.json",
+      "term": "DefendableOS",
+      "term_slug": "defendableos"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.deployment_mode\": {\"type\": \"enum\", \"values\": [\"EDGE\", \"CLOUD\", \"HYBRID\"]},",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.firmware_version\": {\"type\": \"string\", \"pattern\": \"^v[0-9]+\\\\.[0-9]+\\\\.[0-9]+$\"},",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.p99_added_latency_ms\": {\"type\": \"integer\", \"max\": 5},",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.capture_mode\": {\"type\": \"enum\", \"values\": [\"WRITE_ONLY\"], \"const\": \"WRITE_ONLY\"},",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.queue_backend\": {\"type\": \"enum\", \"values\": [\"NATS\", \"REDIS_STREAMS\", \"LOCAL_DISK_OVERFLOW\"]},",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.agent_ens_required\": {\"type\": \"boolean\", \"const\": true},",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.receipt_anchor_chain\": {\"type\": \"string\", \"default\": \"hedera_hcs\"},",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.license\": {\"type\": \"string\", \"const\": \"MIT-with-receipt-clause\"},",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "defendablerouter.degraded_mode_disk_overflow_enabled\": {\"type\": \"boolean\", \"default\": true}",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/router_receipt.schema.json` \u00b7 `docs/schemas/deployment_mode.schema.json",
+      "term": "DefendableRouter",
+      "term_slug": "defendablerouter"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.task_id\": {\"type\": \"string\", \"format\": \"rj-det-<run_id>\"},",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.classifier_type\": {\"type\": \"enum\", \"values\": [\"DETERMINISTIC\", \"ML_LIGHTWEIGHT\", \"HYBRID\"]},",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.classifier_definition\": {\"type\": \"string\"},",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.input_signature\": {",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.output_class\": {\"type\": \"enum\", \"values\": [\"POSITIVE\", \"NEGATIVE\"]},",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.evidence_chain\": {",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "weight\": {\"type\": \"float\", \"range\": [0.0, 1.0]}",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.false_positive_rate_estimated\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "detect.runtime_budget_ms\": {\"type\": \"integer\", \"max\": 50}",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/detect_task.schema.json",
+      "term": "Detect Task",
+      "term_slug": "detect-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "diagnose.task_id\": {\"type\": \"string\", \"format\": \"rj-diag-<run_id>\"},",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "diagnose.failure_mode\": {",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "diagnose.agenthash_bucket\": {",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "diagnose.clawhash_sub_algorithm\": {",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "diagnose.severity\": {\"type\": \"integer\", \"range\": [1, 5]},",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "diagnose.recommended_action\": {\"type\": \"string\", \"enum\": [\"RETRY\",\"RETRAIN\",\"PATCH_PROMPT\",\"ESCALATE_HUMAN\",\"QUARANTINE\"",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "diagnose.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "diagnose.evidence_citations\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/diagnose_task.schema.json",
+      "term": "Diagnose Task",
+      "term_slug": "diagnose-task"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.digest_v1\": {",
+      "term": "Digest",
+      "term_slug": "digest"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "schema\": \"docs/schemas/digest.schema.json\",",
+      "term": "Digest",
+      "term_slug": "digest"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.digest_delivered_at\": {",
+      "term": "Digest",
+      "term_slug": "digest"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.digest_reader_id\": {",
+      "term": "Digest",
+      "term_slug": "digest"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.digest_read_at\": {",
+      "term": "Digest",
+      "term_slug": "digest"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/digest.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "Digest",
+      "term_slug": "digest"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.diligence_phase_v1\": {",
+      "term": "Due Diligence (DD)",
+      "term_slug": "due-diligence-dd"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "schema\": \"docs/schemas/diligence_phase.schema.json\",",
+      "term": "Due Diligence (DD)",
+      "term_slug": "due-diligence-dd"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.dd_status\": {",
+      "term": "Due Diligence (DD)",
+      "term_slug": "due-diligence-dd"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/diligence_phase.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "Due Diligence (DD)",
+      "term_slug": "due-diligence-dd"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "energy.electrical_watt_hours\": { \"type\": \"float\" },",
+      "term": "Energy",
+      "term_slug": "energy"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "energy.gpu_seconds\": { \"type\": \"float\" },",
+      "term": "Energy",
+      "term_slug": "energy"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "energy.operator_minutes\": { \"type\": \"float\" },",
+      "term": "Energy",
+      "term_slug": "energy"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "energy.anchor_cost_usd\": { \"type\": \"float\" },",
+      "term": "Energy",
+      "term_slug": "energy"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "energy.storage_cost_usd\": { \"type\": \"float\" },",
+      "term": "Energy",
+      "term_slug": "energy"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "energy.total_cost_usd\": {",
+      "term": "Energy",
+      "term_slug": "energy"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "energy.per_rig_breakdown\": {",
+      "term": "Energy",
+      "term_slug": "energy"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/cost_to_mint.schema.json` \u00b7 `docs/schemas/energy_ledger.schema.json",
+      "term": "Energy",
+      "term_slug": "energy"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.engagement_id\": {",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.lou_deed_id\": {",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pattern\": \"DDEED-.+-LOU-v[0-9]+\",",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.tier\": {",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.effective_date\": {\"type\": \"date\"},",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.term_months\": {\"type\": \"integer\", \"default\": 12},",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.auto_renew\": {\"type\": \"boolean\", \"default\": true},",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.status\": {",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.principal_contacts\": {",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.sr_broker_id\": {\"type\": \"string\"},",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.founder_engagement_required\": {\"type\": \"boolean\"},",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.assignment_ids\": {\"type\": \"string_array\"},",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.dial_current\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.cost_to_mint_ceiling_per_deed_usd\": {\"type\": \"float\"},",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "engagement.monthly_floor_usd\": {\"type\": \"float\"}",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "Schema files: `docs/schemas/engagement.schema.json` \u00b7 `docs/schemas/lou.schema.json",
+      "term": "Engagement",
+      "term_slug": "engagement"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "evidence_strength.value\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Evidence Strength",
+      "term_slug": "evidence-strength"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "evidence_strength.formula_inputs\": {",
+      "term": "Evidence Strength",
+      "term_slug": "evidence-strength"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "mean_source_weight\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Evidence Strength",
+      "term_slug": "evidence-strength"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "evidence_strength.normalization_baseline\": {\"type\": \"integer\", \"const\": 5},",
+      "term": "Evidence Strength",
+      "term_slug": "evidence-strength"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "evidence_strength.staleness_penalty_max\": {\"type\": \"float\", \"const\": 0.4},",
+      "term": "Evidence Strength",
+      "term_slug": "evidence-strength"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "evidence_strength.refinery_eligibility_threshold\": {\"type\": \"float\", \"const\": 0.4},",
+      "term": "Evidence Strength",
+      "term_slug": "evidence-strength"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "evidence_strength.source_weights_reference\": {\"type\": \"string\", \"const\": \"EntityScorer table\"}",
+      "term": "Evidence Strength",
+      "term_slug": "evidence-strength"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "Schema files: `docs/schemas/evidence_record.schema.json` \u00b7 `docs/schemas/ui_dial.schema.json` \u00b7 `docs/schemas/entity_sco",
+      "term": "Evidence Strength",
+      "term_slug": "evidence-strength"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.tier\": {",
+      "term": "Genesis",
+      "term_slug": "genesis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.is_genesis\": { \"type\": \"boolean\" },",
+      "term": "Genesis",
+      "term_slug": "genesis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.doi\": {",
+      "term": "Genesis",
+      "term_slug": "genesis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "pattern\": \"^10\\\\..*\",",
+      "term": "Genesis",
+      "term_slug": "genesis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.canonical_comp_id\": { \"type\": \"string\" },",
+      "term": "Genesis",
+      "term_slug": "genesis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.ens_canonical_alias\": { \"type\": \"string\" }",
+      "term": "Genesis",
+      "term_slug": "genesis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/genesis_record.schema.json` \u00b7 `docs/schemas/ca",
+      "term": "Genesis",
+      "term_slug": "genesis"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "hallucination_event.flagged\": { \"type\": \"boolean\" },",
+      "term": "Hallucination Event",
+      "term_slug": "hallucination-event"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "hallucination_event.severity\": {",
+      "term": "Hallucination Event",
+      "term_slug": "hallucination-event"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "hallucination_event.class\": {",
+      "term": "Hallucination Event",
+      "term_slug": "hallucination-event"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "hallucination_event.affected_claim\": { \"type\": \"string\" },",
+      "term": "Hallucination Event",
+      "term_slug": "hallucination-event"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "hallucination_event.affected_source_cite\": { \"type\": \"string\" },",
+      "term": "Hallucination Event",
+      "term_slug": "hallucination-event"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "hallucination_event.detection_role\": {",
+      "term": "Hallucination Event",
+      "term_slug": "hallucination-event"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "hallucination_event.forces_tier\": {",
+      "term": "Hallucination Event",
+      "term_slug": "hallucination-event"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "Schema files: `docs/schemas/hallucination_event.schema.json` \u00b7 `docs/schemas/tribunal_verdict.schema.json",
+      "term": "Hallucination Event",
+      "term_slug": "hallucination-event"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "hive.heartbeat_status\": {",
+      "term": "Hive",
+      "term_slug": "hive"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "hive.throughput_pairs_per_hour\": {",
+      "term": "Hive",
+      "term_slug": "hive"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "hive.rigs\": {",
+      "term": "Hive",
+      "term_slug": "hive"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "hive.deeds_issued_total\": { \"type\": \"integer\" },",
+      "term": "Hive",
+      "term_slug": "hive"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "hive.pairs_graded_total\": { \"type\": \"integer\" },",
+      "term": "Hive",
+      "term_slug": "hive"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "hive.uptime_seconds\": { \"type\": \"integer\" }",
+      "term": "Hive",
+      "term_slug": "hive"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/hive_status.schema.json` \u00b7 `docs/schemas/fleet_heartbeat.schema.json",
+      "term": "Hive",
+      "term_slug": "hive"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.tier\": {",
+      "term": "Honey",
+      "term_slug": "honey"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.jelly_score\": {",
+      "term": "Honey",
+      "term_slug": "honey"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "range\": [0.70, 0.84],",
+      "term": "Honey",
+      "term_slug": "honey"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "deed.eligible_for_receipt\": {",
+      "term": "Honey",
+      "term_slug": "honey"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "deed.eligible_for_writer_training\": {",
+      "term": "Honey",
+      "term_slug": "honey"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "deed.merkle_batch_anchor_only\": {",
+      "term": "Honey",
+      "term_slug": "honey"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/deed_receipt.schema.json",
+      "term": "Honey",
+      "term_slug": "honey"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Scoring hooks: `jelly_score_v1` \u00b7 `tier_assignment` \u00b7 `merkle_batch_anchor`.",
+      "term": "Honey",
+      "term_slug": "honey"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.device_id\": {\"type\": \"string\", \"format\": \"HB-<utc-date>-<serial>\"},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.hardware_class\": {\"type\": \"string\", \"const\": \"NVIDIA_JETSON_ORIN_NANO_8GB\"},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.compute_tops\": {\"type\": \"integer\", \"const\": 40},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.firmware_version\": {\"type\": \"string\", \"pattern\": \"^v[0-9]+\\\\.[0-9]+\\\\.[0-9]+$\"},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.deployment_address\": {\"type\": \"string\", \"description\": \"physical site address\"},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.customer_id\": {\"type\": \"string\"},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.acquisition_price_usd\": {\"type\": \"integer\", \"enum\": [249, 399, 499]},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.subscription_usd_mo\": {\"type\": \"integer\", \"default\": 99},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.raw_data_egress_disabled\": {\"type\": \"boolean\", \"const\": true},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.signed_metadata_egress_enabled\": {\"type\": \"boolean\", \"const\": true},",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "honeybox.ens_compliance_inbox\": {\"type\": \"string\", \"format\": \"compliance.<customer>.defendable.eth\"}",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/honeybox_device.schema.json` \u00b7 `docs/schemas/edge_deployment.schema.json",
+      "term": "HoneyBox",
+      "term_slug": "honeybox"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.tier\": {",
+      "term": "Jelly",
+      "term_slug": "jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.failure_mode\": {",
+      "term": "Jelly",
+      "term_slug": "jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "pair_candidate.repair_lineage\": {",
+      "term": "Jelly",
+      "term_slug": "jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "repair_lift.delta_score\": {",
+      "term": "Jelly",
+      "term_slug": "jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "range\": [-1.0, 1.0],",
+      "term": "Jelly",
+      "term_slug": "jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "repair_lift.from_tier\": { \"type\": \"enum\" },",
+      "term": "Jelly",
+      "term_slug": "jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "repair_lift.to_tier\": { \"type\": \"enum\" }",
+      "term": "Jelly",
+      "term_slug": "jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/pair_candidate.schema.json` \u00b7 `docs/schemas/re",
+      "term": "Jelly",
+      "term_slug": "jelly"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.judge_id\": {",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.scale\": {",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.model\": { \"type\": \"string\" },",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.rig\": { \"type\": \"string\" },",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.jelly_score\": { \"type\": \"float\", \"range\": [0.0, 1.0] },",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.reason\": { \"type\": \"string\" },",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.failure_mode\": {",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.hallucination_event\": { \"type\": \"boolean\" },",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.adversarial_source_flag\": { \"type\": \"boolean\" },",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.critical_issue_flag\": { \"type\": \"boolean\" },",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "judge.latency_ms\": { \"type\": \"integer\" }",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "Schema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/judge_invocation.schema.json",
+      "term": "Judge",
+      "term_slug": "judge"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.lou_id\": {\"type\": \"string\", \"primary_key\": true},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.version\": {\"type\": \"integer\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.deed_id\": {",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pattern\": \"DDEED-.+-LOU-v[0-9]+",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.template_version\": {\"type\": \"string\", \"default\": \"v1.0\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.effective_date\": {\"type\": \"date\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.term_months\": {\"type\": \"integer\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.auto_renew\": {\"type\": \"boolean\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.tier\": {",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.cost_to_mint_ceiling_per_deed_usd\": {\"type\": \"float\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.monthly_floor_usd\": {\"type\": \"float\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.formula_change_buffer_pct\": {\"type\": \"float\", \"default\": 10.0},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.fix_or_refund_window_days\": {\"type\": \"integer\", \"default\": 90},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.signature_defender_founder\": {\"type\": \"boolean\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.signature_defender_sr_broker\": {\"type\": \"boolean\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.signature_principal_decision\": {\"type\": \"boolean\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.signature_principal_financial\": {\"type\": \"boolean\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.acknowledgment_doctrine_docs_read\": {\"type\": \"boolean\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.acknowledgment_cost_walk_completed\": {\"type\": \"boolean\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.acknowledgment_hedera_verify_completed\": {\"type\": \"boolean\"},",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "lou.amendments\": {\"type\": \"string_array\", \"nullable\": true}",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "Schema files: `docs/schemas/lou.schema.json",
+      "term": "Letter of Understanding (LOU)",
+      "term_slug": "letter-of-understanding-lou"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.lou_document_v1\": {",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "schema\": \"docs/schemas/letter_of_understanding.schema.json\",",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "storage\": \"object_storage://defendable-engagements/lou/{engagement_id}/v1.pdf",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.lou_signed_at\": {",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.lou_customer_signatory_id\": {",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.lou_defendable_signatory_id\": {",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.lou_walk_away_conditions\": {",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.lou_exclusivity_period_days\": {",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.lou_deposit_usd\": {",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.status_post_lou\": {",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/letter_of_understanding.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+      "term_slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.brief_id\": {\"type\": \"string\", \"primary_key\": true},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.brief_date\": {\"type\": \"date\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.sent_at\": {\"type\": \"timestamp\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.recipients\": {\"type\": \"string_array\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.dial_value\": {\"type\": \"float\", \"range\": [0,1]},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.dial_band\": {\"type\": \"enum\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.dial_7d_trajectory\": {\"type\": \"float\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.deed_count_24h\": {\"type\": \"integer\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.honey_rate_24h\": {\"type\": \"float\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.propolis_count_24h\": {\"type\": \"integer\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.cost_to_mint_7d_rolling\": {\"type\": \"float\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.cost_variance_to_ceiling_pct\": {\"type\": \"float\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.action_today\": {\"type\": \"string\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.action_owner\": {\"type\": \"string\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.action_eta\": {\"type\": \"date\", \"nullable\": true},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.anomalies\": {\"type\": \"jsonb_array\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.sample_deed_ids\": {\"type\": \"string_array\"},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.principal_open_confirmed\": {\"type\": \"boolean\", \"nullable\": true},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.principal_reply_count\": {\"type\": \"integer\", \"default\": 0},",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "morning_brief.sr_broker_reviewed\": {\"type\": \"boolean\"}",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "Schema files: `docs/schemas/morning_brief.schema.json",
+      "term": "Morning Brief",
+      "term_slug": "morning-brief"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.om_v1\": {",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "schema\": \"docs/schemas/offering_memorandum.schema.json\",",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "storage\": \"object_storage://defendable-public/om/{engagement_id}/v1.pdf\",",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "watermark_field\": \"watermark.recipient_email",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.om_delivered_at\": {",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.om_recipient_id\": {",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.om_view_count\": {",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.flight_sheet_v1\": {",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/offering_memorandum.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "OM \u00b7 Offering Memorandum",
+      "term_slug": "om-offering-memorandum"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.id\": {\"type\": \"string\", \"format\": \"pair-<utc-ts>-<short-hash>\"},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.agent_ens\": {\"type\": \"string\", \"format\": \"<agent>.<operator>.defendable.eth\"},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.input\": {\"type\": \"string\"},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.output\": {\"type\": \"string\"},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.model_used\": {\"type\": \"string\"},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.timestamp\": {\"type\": \"string\", \"format\": \"date-time\"},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.router_receipt_id\": {\"type\": \"string\"},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.bucket\": {",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.tribunal_verdict_id\": {\"type\": \"string\", \"nullable\": true},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.agenthash_bucket\": {\"type\": \"string\", \"nullable\": true},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.failure_mode_tag\": {\"type\": \"string\", \"nullable\": true},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.evidence_strength\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.created_at\": {\"type\": \"string\", \"format\": \"date-time\"},",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "pair_candidate.bucket_changed_at\": {\"type\": \"string\", \"format\": \"date-time\"}",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/pair_candidate.schema.json` \u00b7 `docs/schemas/router_receipt.schema.json",
+      "term": "Pair Candidate",
+      "term_slug": "pair-candidate"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.verdict_id\": {\"type\": \"string\", \"primary_key\": true},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\", \"nullable\": true},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.lead_id\": {\"type\": \"string\", \"fk\": \"lead.lead_id\"},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.invoked_at\": {\"type\": \"timestamp\"},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.invoked_by_sr_broker_id\": {\"type\": \"string\"},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.founder_briefed\": {\"type\": \"boolean\"},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.verdict\": {",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.rationale_categories\": {",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.rationale_narrative\": {\"type\": \"text\"},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.principal_notified_at\": {\"type\": \"timestamp\", \"nullable\": true},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.principal_notified_by\": {\"type\": \"enum\", \"values\": [\"EMAIL\", \"PHONE\", \"IN_PERSON\"]},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.referral_provided\": {\"type\": \"boolean\"},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.referral_target\": {\"type\": \"string\", \"nullable\": true},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.revisit_date\": {\"type\": \"date\", \"nullable\": true},",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "pass_verdict.tags\": {\"type\": \"string_array\"}",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "Schema files: `docs/schemas/pass_verdict.schema.json",
+      "term": "PASS Doctrine",
+      "term_slug": "pass-doctrine"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.flight_sheet_id\": {\"type\": \"string\", \"primary_key\": true},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\", \"nullable\": true},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.lead_id\": {\"type\": \"string\", \"fk\": \"lead.lead_id\"},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.prepared_at\": {\"type\": \"timestamp\"},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.prepared_by_sr_broker_id\": {\"type\": \"string\"},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.principal_pain_diagnosed\": {\"type\": \"text\"},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.color_summary\": {",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.agent_fleet_observed_condition\": {\"type\": \"jsonb\"},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.competitor_landscape\": {",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.recommended_tier\": {",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.deal_physics_per_tier\": {",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.walk_away_floor_usd_per_month\": {\"type\": \"float\"},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.area_of_specialization_match\": {",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.pass_verdict\": {",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.pass_verdict_rationale\": {\"type\": \"text\"},",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "flight_sheet.visibility\": {",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "Schema files: `docs/schemas/flight_sheet.schema.json",
+      "term": "Pre-Market Flight Sheet",
+      "term_slug": "pre-market-flight-sheet"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "prevent.task_id\": {\"type\": \"string\", \"format\": \"rj-prev-<run_id>\"},",
+      "term": "Prevent Task",
+      "term_slug": "prevent-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "prevent.trigger_condition\": {",
+      "term": "Prevent Task",
+      "term_slug": "prevent-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "prevent.check_logic\": {",
+      "term": "Prevent Task",
+      "term_slug": "prevent-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "prevent.remediation\": {",
+      "term": "Prevent Task",
+      "term_slug": "prevent-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "prevent.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Prevent Task",
+      "term_slug": "prevent-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "prevent.proposed_pack_version\": {\"type\": \"string\", \"default\": \"v.next\"}",
+      "term": "Prevent Task",
+      "term_slug": "prevent-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/prevent_task.schema.json` \u00b7 `docs/schemas/ad",
+      "term": "Prevent Task",
+      "term_slug": "prevent-task"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.principal_id\": {\"type\": \"string\", \"primary_key\": true},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.name\": {\"type\": \"string\"},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.role\": {\"type\": \"string\"},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.role_is_decision_authority\": {",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.email\": {\"type\": \"string\", \"format\": \"email\"},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.phone\": {\"type\": \"string\", \"nullable\": true},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.escalation_tier\": {",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.is_primary_decision_authority\": {\"type\": \"boolean\"},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.co_decision_with\": {\"type\": \"string_array\", \"nullable\": true},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.last_touch_at\": {\"type\": \"timestamp\"},",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "principal.responsiveness_score\": {",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "client_terms",
+      "field_hint": "Schema files: `docs/schemas/principal.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "Principal",
+      "term_slug": "principal"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.probability_of_close\": {",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "range\": [0.0, 1.0],",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.probability_of_close_band\": {",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "GREEN_LOCKED\":      \"0.85 <= value <= 1.00\",",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "AMBER_TRACKING\":    \"0.65 <= value <  0.85\",",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "YELLOW_WATCHLIST\":  \"0.45 <= value <  0.65\",",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "ORANGE_ESCALATION\": \"0.25 <= value <  0.45\",",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "RED_DARK\":          \"0.00 <= value <  0.25",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.probability_of_close_drivers\": {",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "scoring.probability_of_close_escalation_status\": {",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "Schema files: `docs/schemas/dial.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "Probability of Close",
+      "term_slug": "probability-of-close"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.tier\": {",
+      "term": "Propolis",
+      "term_slug": "propolis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.propolis_reason\": {",
+      "term": "Propolis",
+      "term_slug": "propolis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "propolis_vault.sealed_pair_id\": { \"type\": \"string\" },",
+      "term": "Propolis",
+      "term_slug": "propolis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "propolis_vault.lineage_ref\": { \"type\": \"string\" },",
+      "term": "Propolis",
+      "term_slug": "propolis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "propolis_vault.detect_corpus_weight\": { \"type\": \"float\", \"range\": [0.0, 1.0] },",
+      "term": "Propolis",
+      "term_slug": "propolis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "deed.eligible_for_issue\": {",
+      "term": "Propolis",
+      "term_slug": "propolis"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/propolis_vault.schema.json` \u00b7 `docs/schemas/de",
+      "term": "Propolis",
+      "term_slug": "propolis"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_document_v1\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "schema\": \"docs/schemas/purchase_and_sale_agreement.schema.json\",",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "storage\": \"object_storage://defendable-engagements/psa/{engagement_id}/v1.pdf",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_signed_at\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_executed_by_customer_signatory_id\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_executed_by_defendable_signatory_id\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_attorney_review_by\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_term_months\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_fee_monthly_usd\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_recourse_terms\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.psa_data_residency\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.status_post_psa\": {",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/purchase_and_sale_agreement.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "PSA \u00b7 Purchase and Sale Agreement",
+      "term_slug": "psa-purchase-and-sale-agreement"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair_lift.value\": {\"type\": \"float\", \"range\": [-1.0, 1.0]},",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair_lift.original_score\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair_lift.repaired_score\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair_lift.threshold_for_promotion\": {\"type\": \"float\", \"const\": 0.10},",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair_lift.validator_confidence_required\": {\"type\": \"float\", \"const\": 0.6},",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair_lift.axes_breakdown\": {",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair_lift.tribunal_run_id_original\": {\"type\": \"string\"},",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair_lift.tribunal_run_id_repaired\": {\"type\": \"string\"}",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/repair_run.schema.json` \u00b7 `docs/schemas/ui_d",
+      "term": "Repair Lift",
+      "term_slug": "repair-lift"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "repair_lift_dial.source_field\": {\"type\": \"string\", \"const\": \"repair_lift.value\"},",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "repair_lift_dial.thresholds\": {",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "green_min\": 0.10,",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "yellow_min\": 0.00,",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "red_max\": 0.00",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "repair_lift_dial.display_modes\": {",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "repair_lift_dial.color_state\": {",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "repair_lift_dial.tooltip_evidence_link\": {\"type\": \"string\", \"description\": \"URL to underlying Repair Lift receipt\"},",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "repair_lift_dial.refresh_interval_seconds\": {\"type\": \"integer\", \"default\": 300}",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "Schema files: `docs/schemas/ui_dial.schema.json` \u00b7 `docs/schemas/repair_lift_dial.schema.json",
+      "term": "Repair Lift (UI Dial)",
+      "term_slug": "repair-lift-ui-dial"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair.task_id\": {\"type\": \"string\", \"format\": \"rj-rep-<run_id>\"},",
+      "term": "Repair Task",
+      "term_slug": "repair-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair.steps\": {",
+      "term": "Repair Task",
+      "term_slug": "repair-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair.corrected_output\": {\"type\": \"string\"},",
+      "term": "Repair Task",
+      "term_slug": "repair-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair.input_evidence_cited\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},",
+      "term": "Repair Task",
+      "term_slug": "repair-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Repair Task",
+      "term_slug": "repair-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "repair.tribunal_rebench_run_id\": {\"type\": \"string\"}",
+      "term": "Repair Task",
+      "term_slug": "repair-task"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/repair_task.schema.json",
+      "term": "Repair Task",
+      "term_slug": "repair-task"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "risk_temperature.value\": {\"type\": \"enum\", \"values\": [\"LOW\", \"MEDIUM\", \"HIGH\"]},",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "risk_temperature.scope\": {\"type\": \"enum\", \"values\": [\"PAIR\", \"AGENT\", \"CUSTOMER_FLEET\", \"PLATFORM\"]},",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "risk_temperature.driving_factors\": {",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "risk_temperature.thresholds\": {",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "low_max_score\": 0.30,",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "medium_max_score\": 0.70,",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "high_min_score\": 0.70",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "risk_temperature.escalation_action\": {",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "risk_temperature.escalation_window_minutes\": {\"type\": \"integer\", \"description\": \"max minutes to act when HIGH\"}",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "Schema files: `docs/schemas/risk_temperature.schema.json` \u00b7 `docs/schemas/escalation_rule.schema.json` \u00b7 `docs/schemas/u",
+      "term": "Risk Temperature",
+      "term_slug": "risk-temperature"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.tier\": {",
+      "term": "Royal Jelly",
+      "term_slug": "royal-jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "tribunal_verdict.jelly_score\": {",
+      "term": "Royal Jelly",
+      "term_slug": "royal-jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "range\": [0.0, 1.0],",
+      "term": "Royal Jelly",
+      "term_slug": "royal-jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "deed.eligible_for_ddeed\": {",
+      "term": "Royal Jelly",
+      "term_slug": "royal-jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "deed.eligible_for_writer_training\": {",
+      "term": "Royal Jelly",
+      "term_slug": "royal-jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "deed.cell_certificate_required\": {",
+      "term": "Royal Jelly",
+      "term_slug": "royal-jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/deed_receipt.schema.json` \u00b7 `docs/schemas/cell",
+      "term": "Royal Jelly",
+      "term_slug": "royal-jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Scoring hooks: `jelly_score_v1` (5-component weighted formula \u00b7 see virgin-jelly upstream) \u00b7 `tier_assignment` (the 4/5/",
+      "term": "Royal Jelly",
+      "term_slug": "royal-jelly"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "swarm.live_agents_count\": { \"type\": \"integer\" },",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "swarm.active_cooks\": {",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "swarm.tribunal_queue_depth\": { \"type\": \"integer\" },",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "swarm.bakery_write_queue_depth\": { \"type\": \"integer\" },",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "swarm.hedera_anchor_queue_depth\": { \"type\": \"integer\" },",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "swarm.energy_draw_watts\": { \"type\": \"float\" },",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "swarm.pairs_in_flight\": { \"type\": \"integer\" },",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "swarm.last_pair_completed_at\": { \"type\": \"timestamp\" }",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "hive_terms",
+      "field_hint": "Schema files: `docs/schemas/swarm_status.schema.json` \u00b7 `docs/schemas/swarm_queue.schema.json",
+      "term": "Swarm",
+      "term_slug": "swarm"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.run_id\": {\"type\": \"string\", \"format\": \"ag-fix-<utc-ts>-<short-hash>\"},",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.model_id\": {\"type\": \"string\", \"enum\": [\"swarmjelly-4b:v1.2\"]},",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.endpoint\": {\"type\": \"string\", \"default\": \"whale:11434\"},",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.temperature\": {\"type\": \"float\", \"const\": 0.05},",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.tier\": {\"type\": \"enum\", \"values\": [\"SELF_SERVE\", \"MANAGED\", \"EMBEDDED\"]},",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.task_outputs\": {\"type\": \"object\", \"required\": [\"diagnose\",\"repair\",\"prevent\",\"detect\",\"compare\"]},",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.repair_lift\": {\"type\": \"float\", \"range\": [-1.0, 1.0]},",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.validator_confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmfixer.bucket_destination\": {\"type\": \"enum\", \"values\": [\"jelly-repaired\",\"pending\",\"quarantined\",\"propolis-failures\"",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/repair_run.schema.json",
+      "term": "SwarmFixer",
+      "term_slug": "swarmfixer"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.model_tag\": {\"type\": \"string\", \"current\": \"swarmjelly-4b:v1.2\"},",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.parameter_count\": {\"type\": \"integer\", \"const\": 4000000000},",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.endpoint\": {\"type\": \"string\", \"default\": \"whale:11434\"},",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.temperature_locked\": {\"type\": \"float\", \"const\": 0.05},",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.training_corpus_size\": {\"type\": \"integer\", \"const\": 125000},",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.taxonomy_axes\": {\"type\": \"array\", \"const\": [\"7_failure_modes\",\"5_rj_tasks\"]},",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.per_mode_cap\": {\"type\": \"float\", \"const\": 0.25},",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.license\": {\"type\": \"string\", \"const\": \"MIT-with-receipt-clause\"},",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "swarmjelly.weights_open\": {\"type\": \"boolean\", \"const\": true}",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "repair_terms",
+      "field_hint": "Schema files: `docs/schemas/model_registry.schema.json` \u00b7 `docs/schemas/repair_run.schema.json",
+      "term": "SwarmJelly",
+      "term_slug": "swarmjelly"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_five_cent_rule.locked_value\": {\"type\": \"float\", \"const\": 0.05},",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_five_cent_rule.enforcement_layers\": {",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_five_cent_rule.validator_check_id\": {\"type\": \"string\", \"const\": \"C02\"},",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_five_cent_rule.production_evidence\": {",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_0_7_honey_rate\": {\"type\": \"float\", \"const\": 0.007},",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_0_3_honey_rate\": {\"type\": \"float\", \"const\": 0.11},",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_0_1_honey_rate\": {\"type\": \"float\", \"const\": 0.71},",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_0_05_honey_rate\": {\"type\": \"float\", \"const\": 0.939},",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_0_0_honey_rate\": {\"type\": \"float\", \"const\": 0.92}",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_five_cent_rule.exception_path\": {\"type\": \"boolean\", \"const\": false},",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "temp_five_cent_rule.waiver_authority\": {\"type\": \"string\", \"const\": \"doctrine_pr_only\"}",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "defendableos_terms",
+      "field_hint": "Schema files: `docs/schemas/model_config.schema.json` \u00b7 `docs/schemas/validator_chain.schema.json` \u00b7 `docs/schemas/repai",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "term_slug": "temp-0-05-rule-the-temp-five-cent-rule"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.run_id\": {",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.pair_id\": { \"type\": \"string\" },",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.tier\": {",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.score_final\": { \"type\": \"float\", \"range\": [0.0, 1.0] },",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.score_scale_a\": { \"type\": \"float\" },",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.score_scale_b\": { \"type\": \"float\" },",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.drift\": { \"type\": \"float\" },",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.critic_invoked\": { \"type\": \"boolean\" },",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.katniss_invoked\": { \"type\": \"boolean\" },",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.penalized_scoring_applied\": { \"type\": \"boolean\" },",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "tribunal.record_hash\": { \"type\": \"string\", \"pattern\": \"^sha256:[a-f0-9]{64}$\" }",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "Schema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/tribunal_transitions.schema.json",
+      "term": "Tribunal",
+      "term_slug": "tribunal"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "engagement.underwriting_v1\": {",
+      "term": "Underwriting",
+      "term_slug": "underwriting"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "schema\": \"docs/schemas/underwriting.schema.json\",",
+      "term": "Underwriting",
+      "term_slug": "underwriting"
+    },
+    {
+      "category": "cre_terms",
+      "field_hint": "Schema files: `docs/schemas/underwriting.schema.json` \u00b7 `docs/schemas/engagement.schema.json",
+      "term": "Underwriting",
+      "term_slug": "underwriting"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator.validator_id\": {",
+      "term": "Validator",
+      "term_slug": "validator"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator.check_id\": {",
+      "term": "Validator",
+      "term_slug": "validator"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator.is_critical\": { \"type\": \"boolean\" },",
+      "term": "Validator",
+      "term_slug": "validator"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator.result\": {",
+      "term": "Validator",
+      "term_slug": "validator"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator.reason\": { \"type\": \"string\" },",
+      "term": "Validator",
+      "term_slug": "validator"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator.confidence_weight\": { \"type\": \"float\", \"range\": [0.0, 1.0] },",
+      "term": "Validator",
+      "term_slug": "validator"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator.run_at\": { \"type\": \"timestamp\" }",
+      "term": "Validator",
+      "term_slug": "validator"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "Schema files: `docs/schemas/validator_chain.schema.json` \u00b7 `docs/schemas/validator_result.schema.json",
+      "term": "Validator",
+      "term_slug": "validator"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator_chain.results\": {",
+      "term": "Validator Chain",
+      "term_slug": "validator-chain"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator_chain.all_critical_pass\": { \"type\": \"boolean\" },",
+      "term": "Validator Chain",
+      "term_slug": "validator-chain"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator_chain.advisory_count_failed\": { \"type\": \"integer\" },",
+      "term": "Validator Chain",
+      "term_slug": "validator-chain"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "validator_chain.total_latency_ms\": { \"type\": \"integer\" }",
+      "term": "Validator Chain",
+      "term_slug": "validator-chain"
+    },
+    {
+      "category": "tribunal_terms",
+      "field_hint": "Schema files: `docs/schemas/validator_chain.schema.json` \u00b7 `docs/schemas/validator_result.schema.json",
+      "term": "Validator Chain",
+      "term_slug": "validator-chain"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "validator_confidence.value\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "validator_confidence.formula_components\": {",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "critical_pass_rate\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "advisory_pass_rate\": {\"type\": \"float\", \"range\": [0.0, 1.0]},",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "mean_source_weight\": {\"type\": \"float\", \"range\": [0.0, 1.0]}",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "validator_confidence.weights\": {",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "critical\": 0.7,",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "advisory\": 0.2,",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "source_weight\": 0.1",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "validator_confidence.promotion_threshold\": {\"type\": \"float\", \"const\": 0.6},",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "validator_confidence.validator_chain_run_id\": {\"type\": \"string\"}",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    },
+    {
+      "category": "scoring_terms",
+      "field_hint": "Schema files: `docs/schemas/validator_chain.schema.json` \u00b7 `docs/schemas/ui_dial.schema.json",
+      "term": "Validator Confidence",
+      "term_slug": "validator-confidence"
+    }
+  ],
+  "index_type": "BACKEND_FIELD_MAP",
+  "term_count": 60
+}

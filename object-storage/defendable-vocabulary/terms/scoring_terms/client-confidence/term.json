@@ -1,0 +1,79 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"scoring.client_confidence\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"precision\": 2,\n    \"visibility\": \"OPERATOR_ONLY\",\n    \"scoring_hook\": \"relationship_pulse\",\n    \"refresh_cadence\": \"weekly_friday_plus_on_demand\"\n  },\n  \"scoring.client_confidence_band\": {\n    \"type\": \"enum\",\n    \"values\": [\"GREEN_LOCKED\", \"AMBER_TRACKING\", \"YELLOW_WATCHLIST\", \"ORANGE_ESCALATION\", \"RED_DARK\"]\n  },\n  \"scoring.client_confidence_drivers\": {\n    \"type\": \"jsonb\",\n    \"shape\": {\n      \"responsiveness\": \"float 0-1 \u00b7 weight 0.25\",\n      \"morning_brief_engagement\": \"float 0-1 \u00b7 weight 0.20\",\n      \"walk_attendance\": \"float 0-1 \u00b7 weight 0.20\",\n      \"escalation_tone\": \"float 0-1 \u00b7 weight 0.15\",\n      \"referral_signal\": \"float 0-1 \u00b7 weight 0.10\",\n      \"expansion_signal\": \"float 0-1 \u00b7 weight 0.10\"\n    }\n  },\n  \"scoring.client_confidence_trajectory_30d\": {\"type\": \"float\"},\n  \"scoring.client_confidence_last_refresh_at\": {\"type\": \"timestamp\"},\n  \"scoring.client_confidence_recovery_plan_active\": {\"type\": \"boolean\"}\n}\n```\n\nSchema files: `docs/schemas/client_confidence.schema.json` \u00b7 `docs/schemas/engagement.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "scoring_terms",
+  "client_explanation": "We don't surface the **Client Confidence** dial to you directly \u00b7 it's an internal operator metric \u00b7 the way a CRE broker tracks \"is the seller still happy\" separately from \"does the deal still pencil.\" Surfacing it raw would be like a CRE broker telling the seller \"I'm scoring your engagement-mood at 0.62 this week\" \u2014 useful internally \u00b7 weird externally.\n\nWhat you DO see is the OUTPUT of the client-confidence tracking:\n\n- Your sr broker calls more often when client confidence drifts (it's a relationship signal \u00b7 so the response is a relationship action)\n- Your Morning Brief evolves to address concerns we sense before you raise them\n- Founder gets cc'd on more events when the dial dips\n- We proactively re-walk LOU sections or doctrine pieces if we sense gaps in alignment\n\nThe dial drives our cadence and our care. It doesn't drive a dashboard you watch. You watch your Probability of Close (the deal-math dial). We watch your Client Confidence (the relationship-pulse dial). Together they keep both sides of the engagement healthy.",
+  "cre_operator_meaning": "A sr broker in CRE knows the deal can pencil mathematically AND still die from low client confidence. The seller can be right \u00b7 the comps can support \u00b7 the buyer pool can be deep \u00b7 and the seller can still pull the listing because they lost confidence in the broker.\n\nThe healthy CRE broker tracks both metrics implicitly: the deal-math (is this trade close-able) AND the client-pulse (does the principal still believe in me \u00b7 in my team \u00b7 in my recommendation). When the client-pulse dies \u00b7 the deal-math doesn't matter. The relationship is the moat.\n\nWe mirror this exactly. Client Confidence is the relationship-pulse dial \u00b7 tracked separately from Probability of Close (which is the deal-math dial).",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-CLIENT-CONFIDENCE-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- CC drops trigger rule-layer flags on under-engagement deeds for QA validator review\n- CC trajectory is part of the annual engagement-calibration deed (`DDEED-{org}-CALIB-{slug}-{year}-v1`)\n- Books-and-records: L1 + L3 weekly snapshots \u00b7 L4 Hedera anchor only on calibration deed\n- 5 Proofs touched: PROCESS (relationship lineage is part of engagement process) \u00b7 TRUST (CC is the trust-side mirror of validator-confidence)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- CC drops trigger rule-layer flags on under-engagement deeds for QA validator review\n- CC trajectory is part of the annual engagement-calibration deed (`DDEED-{org}-CALIB-{slug}-{year}-v1`)\n- Books-and-records: L1 + L3 weekly snapshots \u00b7 L4 Hedera anchor only on calibration deed\n- 5 Proofs touched: PROCESS (relationship lineage is part of engagement process) \u00b7 TRUST (CC is the trust-side mirror of validator-confidence)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "**Client Confidence** in DefendableOS is the modeled relationship-pulse number (float 0-1) for a given engagement \u00b7 measuring the principal's confidence in the Defender as a counterparty. Computed weekly \u00b7 refreshed on-demand on material relationship events \u00b7 surfaced privately to the sr broker (NOT to the principal \u00b7 principal pulse is operator information).\n\nComputed as a 5-driver weighted composite:\n- `responsiveness` \u00b7 25% (avg response time to sr broker outreach \u00b7 last 30 days)\n- `morning_brief_engagement` \u00b7 20% (open rate \u00b7 reply rate \u00b7 acknowledgment rate)\n- `walk_attendance` \u00b7 20% (showed for scheduled walks \u00b7 scheduled walks promptly \u00b7 principal-acknowledgments captured within SLA)\n- `escalation_tone` \u00b7 15% (qualitative \u00b7 sr broker scores after each escalation \u00b7 \"principal trusted our framing\" / \"principal pushed back hard\" / \"principal seemed skeptical\")\n- `referral_signal` \u00b7 10% (did the principal refer anyone to us \u00b7 did they mention us positively in industry contexts)\n- `expansion_signal` \u00b7 10% (did the principal upgrade tier \u00b7 expand fleet coverage \u00b7 add assignments)\n\nBucketed into 5 bands using the same thresholds as Probability of Close (GREEN_LOCKED \u00b7 AMBER_TRACKING \u00b7 YELLOW_WATCHLIST \u00b7 ORANGE_ESCALATION \u00b7 RED_DARK). The bands are operator-internal \u00b7 NEVER surfaced to the principal directly.",
+  "defendableos_notes": "- CC is the leading indicator. PoC is the lagging indicator. The sr broker who learns to read CC moves earlier than the sr broker who only watches PoC.\n- The dial is INTERNAL by design. Surfacing it would distort it (principals would optimize for the score instead of just being themselves). It's the same reason a CRE broker doesn't tell the seller \"I'm scoring your engagement-mood today.\"\n- CC and PoC together are the engagement's two-sided pulse. High both = healthy. High PoC + low CC = relationship-at-risk. Low PoC + high CC = recoverable. Low both = consider PASS-pivot.\n- The annual calibration of CC predictions vs actual relationship outcomes (renewal vs churn) is part of the engagement-level calibration deed. Long-run \u00b7 CC accuracy compounds into the firm's institutional relationship-IQ.\n\n\ud83d\udc1d *Two dials \u00b7 one engagement \u00b7 the relationship and the math both have t",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-CLIENT-CONFIDENCE-v1",
+    "canon": "defendapedia.eth/scoring_terms/client-confidence",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Responsiveness data captured from email/calendar system (no manual entry)",
+    "Morning brief open/reply/ack data captured automatically",
+    "Walk attendance + ack timestamp data captured automatically",
+    "Escalation tone scored within 24 hours of every escalation by the sr broker on the call",
+    "Referral and expansion signals logged in CRM with date \u00b7 context \u00b7 principal-quote (if any)",
+    "\u2265 4 weekly snapshots before CC is considered stabilized for a new engagement"
+  ],
+  "example": "> Engagement: ENG-DOV-LOGISTICS-ACME-0001\n>\n> Current Client Confidence: **0.81** \u00b7 AMBER \u00b7 TRACKING (operator-internal \u00b7 NOT surfaced to principal)\n>\n> Drivers:\n> - `responsiveness` 0.91 (avg response 4.3 hrs \u00b7 excellent)\n> - `morning_brief_engagement` 0.88 (94% open rate \u00b7 23% reply rate over 90 days)\n> - `walk_attendance` 1.00 (4 of 4 scheduled walks attended on time \u00b7 all acks within 7 days)\n> - `escalation_tone` 0.72 (last escalation: principal pushed back hard on cost variance \u00b7 ultimately accepted our framing but the tone was edgier than prior)\n> - `referral_signal` 0.40 (no referrals to date \u00b7 neutral \u00b7 not concerning for 6-mo engagement)\n> - `expansion_signal` 0.65 (T3 \u2192 T3+ upgrade in active discussion \u00b7 positive signal)\n>\n> Composite: 0.81\n>\n> 30-day trajectory: -0.04 (slight drift \u00b7 attributable to single edgy escalation \u00b7 not a recovery-plan trigger yet \u00b7 sr broker noting)\n>\n> Cross-analysis with PoC dial (0.78 AMBER): CC slightly higher than PoC \u00b7 consistent with the cost-variance being an operational issue we're actively fixing \u00b7 principal's confidence is in the apparatus + relationship \u00b7 the deal-math will recover with the routing tune.\n>\n> Sr broker action: continue weekly cadence \u00b7 re-evaluate CC after next walk (post-routing-tune).",
+  "failure_modes_raw": "| Mode | Tribunal class |\n|---|---|\n| `cc_surfaced_to_principal` (raw dial shown to principal) | PROPOLIS \u00b7 trust breach \u00b7 sr broker review |\n| `cc_inflated_by_sr_broker` (qualitative drivers boosted without evidence) | PROPOLIS \u00b7 founder review |\n| `cc_recovery_skipped` (CC dropped to YELLOW \u00b7 no recovery plan authored within 7 days) | JELLY \u00b7 sr broker coaching |\n| `cc_red_silent` (CC dropped to RED \u00b7 founder not notified) | PROPOLIS \u00b7 founder review \u00b7 likely relationship emergency |\n| `cc_decoupled_from_poc` (CC high \u00b7 PoC low \u00b7 or vice versa \u00b7 no cross-analysis done) | JELLY \u00b7 sr broker cross-analysis required |",
+  "hashes": {
+    "json_sha256": "sha256:3c4f9b24673b84f959a87353cdf80edf88d541930df3a0bc2b233b6e5f3ae2f9",
+    "markdown_sha256": "sha256:1a2262f516bf5e1dc1ae74a18d81472c9a827562ddc5afe2567cd78f4b2ee6f0"
+  },
+  "jr_broker_use": "- Capture relationship signals \u00b7 responsiveness \u00b7 brief-engagement \u00b7 tone after every touch\n- Log the `escalation_tone` score after every escalation call \u00b7 honestly \u00b7 including when it went poorly on our side\n- Track referral and expansion signals when they happen \u00b7 they're rare but high-weight\n- Don't tell the principal about the dial \u00b7 violation = JELLY at minimum \u00b7 PROPOLIS if framed as a \"scorecard\"\n- Escalate client-confidence drops to sr broker immediately \u00b7 they often precede dial drops on PoC\n\nThe jr broker is the relationship-listening apparatus. You're the ones who catch the qualitative signals the dashboards can't.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/client-confidence/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.521218+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.521218+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "probability-of-close",
+    "assignment-success",
+    "engagement",
+    "principal",
+    "morning-brief",
+    "closing-statement",
+    "pass-doctrine"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH (low CC engagements close at lower HONEY rates regardless of validator-confidence)\n- **repair_lift**: HIGH (CC-recovery interventions often lift PoC alongside)\n- **validator_confidence**: ORTHOGONAL (CC and validator-confidence are independent metrics by design)\n- **risk_temperature**: INVERSE (low CC = elevated relationship risk)\n- **probability_of_close**: PREDICTIVE (CC drops typically precede PoC drops by 30-60 days)\n- **evidence_strength**: HIGH (CC trajectory is a strong engagement-health evidence class)\n- **cost_to_mint**: NEUTRAL (CC tracking is operator margin \u00b7 amortized)",
+  "slug": "client-confidence",
+  "sr_broker_use": "- Reviews client-confidence weekly across the entire book (Friday cadence \u00b7 same as PoC dial)\n- Cross-references with Probability of Close \u00b7 high-PoC + low-CC engagements are at risk\n- Initiates **client-confidence recovery plans** when an engagement drops into YELLOW or worse:\n  - Identifies the under-weight driver\n  - Authors a relationship-action plan (more calls \u00b7 founder-touch \u00b7 re-walk \u00b7 in-person visit)\n  - Tracks recovery over 4-6 weeks\n- Owns the principal-trust-recovery posture after any FAILED \u00b7 DARK close\n- Notifies founder on any RED \u00b7 DARK CC dial \u00b7 this is relationship-emergency territory\n\nThe sr broker uses CC as the early-warning system. CC typically drops 30-60 days before PoC drops \u00b7 giving the sr broker a window to recover the relationship before the deal-math suffers.",
+  "status": "active",
+  "street_definition": "\"How confident is the principal?\" \u2014 the founder asks the sr broker before scheduling any QBR.\n\n**Client Confidence** is the symmetric dial \u00b7 measuring how confident the PRINCIPAL is in OUR engagement \u00b7 separate from how confident WE are in the validator chain. The validator-confidence dial measures the apparatus. The client-confidence dial measures the relationship.\n\nBoth dials matter. A high validator-confidence + low client-confidence engagement is a relationship at risk \u00b7 regardless of how well the work is grading. A healthy engagement carries both dials above 0.70.",
+  "term": "Client Confidence",
+  "tribunal_use": "The Tribunal doesn't grade client-confidence directly \u00b7 but supports it:\n- Aggregated CC pattern analysis becomes calibration corpus for future intake screening (which signals predict high/low CC engagements)\n- CC drops trigger Tribunal rule-layer to flag related deed-quality for QA validator review (sometimes CC drops because the work is actually slipping \u00b7 sometimes because the relationship is independently souring)\n- Quarterly CC trends across the book feed founder-level dashboard",
+  "version": "v1"
+}

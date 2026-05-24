@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"defendableos.product_id\": {\"type\": \"string\", \"const\": \"defendableos\"},\n  \"defendableos.surface_domains\": {\n    \"type\": \"array\",\n    \"default\": [\n      \"defendableos.com\",\n      \"defendablerouter.com\",\n      \"defendablecloud.com\",\n      \"defendablehack.com\",\n      \"defendableos.eth\",\n      \"swarmbee.defendable.eth\"\n    ]\n  },\n  \"defendableos.internal_backend\": {\"type\": \"string\", \"const\": \"swarm_and_bee\"},\n  \"defendableos.legal_entity\": {\"type\": \"string\", \"const\": \"Swarm and Bee LLC DBA Swarm & Bee AI\"},\n  \"defendableos.duns\": {\"type\": \"string\", \"const\": \"138652395\"},\n  \"defendableos.product_components\": {\n    \"type\": \"array\",\n    \"default\": [\"DefendableRouter\", \"DefendableJelly\", \"DefendableHack\", \"DefendableCloud\", \"HoneyBox\", \"ClawCheck\", \"AgentBench\"]\n  }\n}\n```\n\nSchema files: `docs/schemas/brand_registry.schema.json` \u00b7 `docs/schemas/product_offering.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "defendableos_terms",
+  "client_explanation": "DefendableOS is the defense layer for your AI fleet. Your agents do the offense (the actual work). DefendableOS captures every call, grades it, fixes the weak ones, surfaces the failures, and anchors the receipts. We're not an AI agent vendor \u00b7 we don't sell the brains. We sell the defense around the brains you already bought. Five-minute install at the edge. Sub-5ms latency overhead. Receipts you can verify on a public chain.",
+  "cre_operator_meaning": "In CRE, the brand is the listing. The listing is what the buyer reads. Behind the listing is the operating company \u00b7 the asset management team \u00b7 the construction crew \u00b7 the leasing brokers \u00b7 the property accountants. The buyer doesn't care about the org chart \u00b7 they care about the asset. DefendableOS is the asset. Swarm & Bee is the org chart behind it. The customer never sees the org chart \u00b7 they see the building.",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEOS-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: every deed cites `issuing_party: defendableos` \u00b7 backed by `legal_entity: Swarm and Bee LLC`\n- **DDEED class impact**: all DDEED classes are scoped under the DefendableOS brand \u00b7 the receipt-clause license is held by the legal entity\n- **Books and records layer**: L1 PostgreSQL (brand registry) \u2192 L4 Hedera HCS (canonical surface list anchor) \u2192 L5 ENS (defendableos.eth)\n- **5 Proofs touched**: TRUST (the brand and legal entity backing every receipt) \u00b7 ORIGIN (the issuing party on every deed)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: every deed cites `issuing_party: defendableos` \u00b7 backed by `legal_entity: Swarm and Bee LLC`\n- **DDEED class impact**: all DDEED classes are scoped under the DefendableOS brand \u00b7 the receipt-clause license is held by the legal entity\n- **Books and records layer**: L1 PostgreSQL (brand registry) \u2192 L4 Hedera HCS (canonical surface list anchor) \u2192 L5 ENS (defendableos.eth)\n- **5 Proofs touched**: TRUST (the brand and legal entity backing every receipt) \u00b7 ORIGIN (the issuing party on every deed)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "DefendableOS is the public-facing brand and consumer-facing product layer for the entire defense stack. It binds DefendableRouter (capture middleware) + SwarmFixer/DefendableJelly (the agent refinery) + DefendableHack (the bounty rail) + DefendableCloud (the hosted-inference rail) + HoneyBox (the edge appliance) + ClawCheck (the intake) + AgentBench (the bench) into one consumable platform. The internal backend (Swarm & Bee) builds and operates it \u00b7 DefendableOS is what the customer signs for, pays for, and references in their AP system.",
+  "defendableos_notes": "- The brand quintet is LOCKED \u00b7 5 audience surfaces (defendableos.com \u00b7 defendablerouter.com \u00b7 defendablecloud.com \u00b7 defendablehack.com \u00b7 defendthehive related)\n- The customer NEVER sees the Swarm & Bee name in production \u00b7 this is intentional \u00b7 the brand surface is DefendableOS \u00b7 the operating company is Swarm & Bee LLC\n- DefendableOS is the LISTING \u00b7 Swarm & Bee is the BROKERAGE \u00b7 the customer signs with the listing \u00b7 the brokerage is the org chart behind it\n\n\ud83d\udc1d *DefendableOS is what the customer signs. Swarm & Bee is who runs the",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEOS-v1",
+    "canon": "defendapedia.eth/defendableos_terms/defendableos",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Legal entity registration (Swarm and Bee LLC \u00b7 Florida)",
+    "D-U-N-S number (138652395)",
+    "Canonical product component list",
+    "Surface-domain registry (the 5-6 domain ENS bridges)",
+    "Brand-discipline audit log (monthly review)"
+  ],
+  "example": "> **Customer-facing surface (correct)**: \"We deployed DefendableOS at the edge of RegionalInsurer's claims-triage stack \u00b7 the DefendableRouter captures all 40 agent calls per second \u00b7 DefendableJelly refines the JELLY-grade outputs \u00b7 weekly receipts anchored on DefendableOS.eth.\"\n>\n> **Customer-facing surface (incorrect \u00b7 drift)**: \"Swarm & Bee's SwarmFixer service refined the claims-triage agent outputs.\"\n>\n> **Internal surface (correct)**: \"SH4 ran the SwarmFixer refinery on the JELLY batch \u00b7 SwarmJelly-4B at whale:11434 \u00b7 TEMP=0.05 \u00b7 47 Royal Jelly Records produced.\"",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `internal_brand_in_customer_surface` | Customer-facing artifact says \"Swarm & Bee\" instead of \"DefendableOS\" | JELLY \u00b7 marketing audit |\n| `component_alias_drift` | Component referred to by an internal codename in customer surface | JELLY \u00b7 marketing audit |\n| `unregistered_component_claim` | Customer offering refers to a component not in the canonical list | PROPOLIS \u00b7 governance violation |\n| `legal_entity_drift` | Contract cites a non-canonical legal entity | PROPOLIS \u00b7 contract escalation |",
+  "hashes": {
+    "json_sha256": "sha256:97e066180e89956ab57511b88e36f43c9589212c8ebe8d75a5680e75f11e8032",
+    "markdown_sha256": "sha256:73fce92555f31b77eea1cf330691e1f4eaec5e60137bf121222b7c9b1babced1"
+  },
+  "jr_broker_use": "When you talk to a customer, you talk DefendableOS. NEVER Swarm & Bee in customer-facing surfaces \u00b7 that's the org chart, not the listing. Use DefendableOS in: the LOU, the dashboard, the invoice, the slide deck, the press release. Use Swarm & Bee in: internal Slack, the operator's flightsheet, the engineering wiki, the model registry.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/defendableos/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.486891+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.486891+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "defendablerouter",
+    "defendablecloud-com",
+    "defendablehack",
+    "honeybox",
+    "clawcheck",
+    "agentbench",
+    "defendablejelly"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 brand integrity IS the customer's mental model\n- **repair_lift**: NEUTRAL \u00b7 brand is upstream of refinery operations\n- **validator_confidence**: HIGH \u00b7 brand consistency IS a trust signal\n- **risk_temperature**: INVERSE \u00b7 clean brand = clean accountability chain\n- **probability_of_close**: HIGH \u00b7 one brand to remember \u00b7 easier to sign\n- **evidence_strength**: HIGH \u00b7 canonical brand registry is the source of truth\n- **cost_to_mint**: NEUTRAL",
+  "slug": "defendableos",
+  "sr_broker_use": "The Sr Hack ensures the brand discipline holds across every surface \u00b7 marketing site copy \u00b7 sales decks \u00b7 customer onboarding emails \u00b7 API documentation \u00b7 runtime dashboards. A single page that says \"Swarm & Bee\" instead of \"DefendableOS\" confuses the buyer about who they're paying. Sr Hack audits the brand monthly \u00b7 catches drift before it ships.",
+  "status": "active",
+  "street_definition": "\"What do you build?\" \"DefendableOS.\" That's the founder's answer at every CRE-broker happy hour, every angel pitch, every customer intro. **DefendableOS** is the public-facing brand for the defense layer of the AI economy. Inside the building we call it the Swarm & Bee backend \u00b7 in the marketplace we call it DefendableOS. One product surface. One trust contract. One brand.",
+  "term": "DefendableOS",
+  "tribunal_use": "- **Rule layer**: Customer-facing deliverables MUST cite \"DefendableOS\" not \"Swarm & Bee\" (brand compliance check)\n- **Rule layer**: Component product names (DefendableRouter \u00b7 DefendableJelly \u00b7 etc.) MUST match the canonical list \u00b7 no aliases in customer surfaces\n- **Judge layer**: Tribunal doesn't grade brand directly \u00b7 it grades the deliverable's overall coherence \u00b7 brand confusion is a coherence failure\n- **Classification impact**: Customer-facing artifact with brand drift drops to JELLY pending marketing review",
+  "version": "v1"
+}

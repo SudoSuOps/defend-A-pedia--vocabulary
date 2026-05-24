@@ -1,0 +1,108 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-SWARMFIXER-v1",
+  "category": "repair_terms",
+  "created_at": "2026-05-24T15:33:21.517658+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-SWARMFIXER-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/repair_terms/swarmfixer",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/repair_terms/swarmfixer/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-SWARMFIXER-v1-20260524T15332151764Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:5a7289722dbdcae376cda87a7ed5847587ebaed22c0155a4a07060e66ff190d4",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "swarmfixer",
+  "street_source_ens": null,
+  "subject": {
+    "category": "repair_terms",
+    "definitions": {
+      "client": "SwarmFixer is the part of DefendableOS that fixes the agents you're already running. When your AI agent ships a low-quality answer \u00b7 or a borderline one \u00b7 we don't throw it away and we don't ship it. We refine it. Five outputs come back: what went wrong \u00b7 how to fix it \u00b7 how to prevent the next one \u00b7 how to detect it next time \u00b7 and how the fix compares to the original. You pay for the lift \u00b7 not the diagnosis. If we don't move the number \u00b7 the embedded tier refunds.",
+      "cre_operator": "In CRE you have the **listing broker** and you have the **rehab crew**. The listing broker brings the deal in. The rehab crew makes the asset rentable. SwarmFixer is the rehab crew of the agent economy. Tenant moved out \u00b7 roof leaking \u00b7 rent roll thin \u00b7 the building doesn't pencil. The rehab crew comes in \u00b7 scopes the work \u00b7 executes the repair \u00b7 the building re-leases at a higher cap-rate-compressed comp. The lift is what makes the deal. **Repair Lift is NOI for agents.**",
+      "defendableos": "SwarmFixer is the in-house repair service that consumes Jelly-tier pair candidates and produces Royal Jelly Records via a strict 5-task output: DIAGNOSE \u00b7 REPAIR \u00b7 PREVENT \u00b7 DETECT \u00b7 COMPARE. It runs on **SwarmJelly-4B** at `whale:11434` with TEMP locked at 0.05. It ships in three commercial tiers \u00b7 Self-serve ($99-$499/mo) \u00b7 Managed ($2K-$10K/mo) \u00b7 Embedded ($50K-$250K ARR with 90-day Fix-or-Refund). Every successful refinery run produces a DDEED-DOV-REPAIR anchored on Hedera HCS.",
+      "street": "\"Push it to the fixer.\" That's the line a Sr Hack uses when a Tribunal verdict comes back JELLY and the pair needs work. SwarmFixer is the **agent refinery** \u00b7 the production layer that takes a low-grade agent output and turns it into a defendable Royal Jelly Record. Not a chatbot. Not a model wrapper. A refinery."
+    },
+    "related_terms": [
+      "swarmjelly",
+      "defendablejelly",
+      "repair-lift",
+      "pair-candidate",
+      "diagnose-task",
+      "repair-task",
+      "prevent-task",
+      "detect-task",
+      "compare-task",
+      "temp-five-cent-rule"
+    ],
+    "slug": "swarmfixer",
+    "term": "SwarmFixer"
+  },
+  "supersedes": null,
+  "term": "SwarmFixer",
+  "updated_at": "2026-05-24T15:33:21.780960+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

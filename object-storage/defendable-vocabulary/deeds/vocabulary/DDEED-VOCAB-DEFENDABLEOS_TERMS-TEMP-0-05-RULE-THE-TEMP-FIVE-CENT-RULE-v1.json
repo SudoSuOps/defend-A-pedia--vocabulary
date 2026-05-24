@@ -1,0 +1,102 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-TEMP-0-05-RULE-THE-TEMP-FIVE-CENT-RULE-v1",
+  "category": "defendableos_terms",
+  "created_at": "2026-05-24T15:33:21.490182+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-TEMP-0-05-RULE-THE-TEMP-FIVE-CENT-RULE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/defendableos_terms/temp-0-05-rule-the-temp-five-cent-rule",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/defendableos_terms/temp-0-05-rule-the-temp-five-cent-rule/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-TEMP-0-05-RULE-THE-TEMP-FIVE-CENT-RULE-v1-20260524T15332149016Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:d758939ebaf6fd37482a79c7c76d3f81a6fd91779b7f8e424193dae4dc140ead",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "temp-0-05-rule-the-temp-five-cent-rule",
+  "street_source_ens": null,
+  "subject": {
+    "category": "defendableos_terms",
+    "definitions": {
+      "client": "The TEMP 0.05 Rule is the locked setting on our refinery model. Temperature is a knob that controls how random a language model is \u00b7 higher temperature, more creative, more wrong. Lower temperature, more boring, more correct. For refinery work, we want correct. We tested \u00b7 at the default 0.7, we got it right 0.7% of the time. At 0.05, we get it right 93.9% of the time. So we lock it. Every receipt cites the temperature \u00b7 you can verify \u00b7 we can't fake it.",
+      "cre_operator": "In CRE the TEMP 0.05 Rule is the **rate-lock at signing**. The lender locks the rate at the commitment letter \u00b7 not at closing \u00b7 not \"we'll lock when rates look good\" \u00b7 at signing. Why? Because the deal pencils against a specific rate \u00b7 the entire underwriting depends on it \u00b7 if the rate moves, the deal stops penciling. Locking is the discipline that makes the deal close. TEMP 0.05 is the rate lock for the refinery. Move it, the deal stops penciling.",
+      "defendableos": "The TEMP 0.05 Rule is the locked operational doctrine for ALL SwarmJelly model inference. The temperature parameter passed to the SwarmJelly endpoint MUST be 0.05 for any inference call participating in a SwarmFixer Royal Jelly Record. Production evidence backs the rule: at TEMP=0.7, the Honey rate is 0.7% (catastrophic). At TEMP=0.05, the Honey rate is 93.9% (production-grade). The rule is enforced at three layers: env var, runtime config, request payload. The validator chain Check C02 rejects any inference receipt with TEMP \u2260 0.05.",
+      "street": "\"TEMP equals five cents.\" That's the locked production rule. **The TEMP 0.05 Rule** is the constitutional setting for every SwarmJelly inference call \u00b7 every SwarmFixer refinery run \u00b7 every cook script \u00b7 every runtime config. 0.05. No exceptions. No tuning preference. No \"let's try 0.1 for diversity.\" Read the env. Read the config. Read the request payload. If any of the three reads \u2260 0.05, ABORT."
+    },
+    "related_terms": [
+      "swarmjelly",
+      "swarmfixer",
+      "defendablejelly",
+      "repair-lift"
+    ],
+    "slug": "temp-0-05-rule-the-temp-five-cent-rule",
+    "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)"
+  },
+  "supersedes": null,
+  "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+  "updated_at": "2026-05-24T15:33:21.750674+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

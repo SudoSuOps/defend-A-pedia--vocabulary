@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"pair_candidate.id\": {\"type\": \"string\", \"format\": \"pair-<utc-ts>-<short-hash>\"},\n  \"pair_candidate.agent_ens\": {\"type\": \"string\", \"format\": \"<agent>.<operator>.defendable.eth\"},\n  \"pair_candidate.input\": {\"type\": \"string\"},\n  \"pair_candidate.output\": {\"type\": \"string\"},\n  \"pair_candidate.model_used\": {\"type\": \"string\"},\n  \"pair_candidate.timestamp\": {\"type\": \"string\", \"format\": \"date-time\"},\n  \"pair_candidate.router_receipt_id\": {\"type\": \"string\"},\n  \"pair_candidate.bucket\": {\n    \"type\": \"enum\",\n    \"values\": [\"pending\", \"honey\", \"jelly\", \"jelly-repaired\", \"propolis-failures\", \"quarantined\"]\n  },\n  \"pair_candidate.tribunal_verdict_id\": {\"type\": \"string\", \"nullable\": true},\n  \"pair_candidate.agenthash_bucket\": {\"type\": \"string\", \"nullable\": true},\n  \"pair_candidate.failure_mode_tag\": {\"type\": \"string\", \"nullable\": true},\n  \"pair_candidate.evidence_strength\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"pair_candidate.created_at\": {\"type\": \"string\", \"format\": \"date-time\"},\n  \"pair_candidate.bucket_changed_at\": {\"type\": \"string\", \"format\": \"date-time\"}\n}\n```\n\nSchema files: `docs/schemas/pair_candidate.schema.json` \u00b7 `docs/schemas/router_receipt.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "A Pair Candidate is one of your AI agent's calls \u00b7 with our metadata around it. We capture every call your agent makes (we don't slow it down \u00b7 sub-5ms \u00b7 invisible to the agent). Then overnight we grade it, route it to one of 6 buckets based on quality, and either ship a deed (Honey) \u00b7 refine it (Jelly) \u00b7 or flag it for the AdversarialPack (Propolis). Your morning brief shows the bucket flow from the prior 24 hours.",
+  "cre_operator_meaning": "In CRE the Pair Candidate is the **deal in the pipeline**. Some deals are still in discovery (pending) \u00b7 some are signed and producing (Honey) \u00b7 some are stuck in DD (Jelly) \u00b7 some need workout (jelly-repaired) \u00b7 some blew up (Propolis) \u00b7 some are quarantined for fraud review. The pipeline isn't a list \u00b7 it's a stack of folders \u00b7 each folder has a label \u00b7 the label IS the state. No separate state machine \u00b7 the folder is the truth.",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `pair_candidate.id` \u00b7 `pair_candidate.bucket` \u00b7 `pair_candidate.tribunal_verdict_id` \u00b7 `pair_candidate.router_receipt_id`\n- **DDEED class impact**: every deed references the source pair_candidate.id \u00b7 deeds are downstream of pairs \u00b7 pairs are upstream of deeds\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle \u2192 L3 NAS (raw pair) \u2192 L4 Hedera HCS (pair_id + bucket transitions) \u2192 L5 ENS (per-agent rollup)\n- **5 Proofs touched**: ORIGIN (the router receipt) \u00b7 PROCESS (the bucket lifecycle) \u00b7 QUALITY (the Tribunal verdict) \u00b7 TRUST (the deed lineage)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `pair_candidate.id` \u00b7 `pair_candidate.bucket` \u00b7 `pair_candidate.tribunal_verdict_id` \u00b7 `pair_candidate.router_receipt_id`\n- **DDEED class impact**: every deed references the source pair_candidate.id \u00b7 deeds are downstream of pairs \u00b7 pairs are upstream of deeds\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle \u2192 L3 NAS (raw pair) \u2192 L4 Hedera HCS (pair_id + bucket transitions) \u2192 L5 ENS (per-agent rollup)\n- **5 Proofs touched**: ORIGIN (the router receipt) \u00b7 PROCESS (the bucket lifecycle) \u00b7 QUALITY (the Tribunal verdict) \u00b7 TRUST (the deed lineage)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "A Pair Candidate is the canonical unit of work in DefendableOS. It binds an input (the prompt/context the agent received) with an output (the agent's response) plus all the metadata captured by DefendableRouter at the moment of the call. Pair Candidates flow through 6 mutually-exclusive buckets that represent their lifecycle state. The bucket IS the state \u00b7 there is no separate state machine.",
+  "defendableos_notes": "- The 6-bucket model is constitutional \u00b7 not configurable \u00b7 adding a 7th bucket requires a doctrine PR\n- The bucket IS the state \u00b7 the file system IS the source of truth \u00b7 this is intentional \u00b7 it makes auditing trivial (`ls` is the verifier)\n- A pair NEVER skips a bucket \u00b7 transitions are always to an adjacent bucket per the playbook \u00b7 no \"manual promotions to honey\" \u00b7 no exceptions\n- Pair Candidates are the atomic unit of every DefendableOS receipt \u00b7 receipts are pair-derived \u00b7 deeds are receipt-derived \u00b7 everything starts here\n\n\ud83d\udc1d *Six buckets. One unit. The folder is t",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1",
+    "canon": "defendapedia.eth/repair_terms/pair-candidate",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Router capture receipt (proves the pair came from the wire, not synthesized)",
+    "Agent ENS identity (proves the originating agent)",
+    "Timestamp (proves temporal ordering)",
+    "Tribunal verdict (proves the bucket assignment is justified)",
+    "Bucket-change audit trail (proves the lifecycle is traceable)"
+  ],
+  "example": "> **Capture**: 2026-05-24T06:12:08Z \u00b7 books-bot.acmecorp.defendable.eth \u00b7 model gpt-4o-2024-08-06 \u00b7 1,142 tokens in \u00b7 318 tokens out \u00b7 router latency 3ms\n>\n> **Pair created**: `pair-20260524T061208Z-7e2a`\n>\n> **Initial bucket**: `pending/` (awaiting overnight Tribunal grading)\n>\n> **Tribunal verdict 06:14**: JELLY \u00b7 composite 0.760 \u00b7 AgentHash READ \u00b7 failure_mode REASONING_GAP \u00b7 evidence_strength 0.68 \u00b7 judge_drift 0.08\n>\n> **Bucket transition**: `pending/` \u2192 `jelly/` at 06:14:32Z \u00b7 transition receipt `bt-20260524T061432Z-rt9`\n>\n> **SwarmFixer run 07:12**: refinery produces 5-task RJ Record \u00b7 Repair Lift +0.15 \u00b7 validator confidence 0.78\n>\n> **Bucket transition**: `jelly/` \u2192 `jelly-repaired/` at 07:18:00Z \u00b7 transition receipt `bt-20260524T071800Z-q3k`\n>\n> **Deed minted 07:22**: `DDEED-DOV-REPAIR-ACMECORP-BOOKS-000142-v1`\n>\n> **Final state**: archived in `jelly-repaired/` \u00b7 referenced by deed \u00b7 resolvable on ENS",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `orphan_pair` | Pair Candidate present without a router_receipt_id | PROPOLIS \u00b7 auto-quarantine |\n| `unbacked_bucket_transition` | Bucket changed without an associated decision receipt | PROPOLIS \u00b7 governance violation |\n| `stuck_pending` | Pair in `pending/` > 24h with no refinery attempt | JELLY \u00b7 operator escalation |\n| `manual_promotion` | Pair manually moved to higher bucket without Tribunal pass | PROPOLIS \u00b7 governance violation |\n| `missing_ens` | Pair has no agent_ens \u00b7 downstream deed can't anchor | JELLY \u00b7 re-route to ENS-fix queue |\n| `evidence_strength_zero` | Pair has zero evidence strength \u00b7 refinery cannot work on it | JELLY \u00b7 re-route to evidence-gathering |",
+  "hashes": {
+    "json_sha256": "sha256:5bec1d4b5960371bb72cba2b14f6bc45538bd4d304b334affe8975d734708038",
+    "markdown_sha256": "sha256:cff4db9169167f58923c79b834da436919ddd5e9516d85418152b51d61ce0f73"
+  },
+  "jr_broker_use": "The Jr Hack reads the bucket flow every morning. The bucket counts ARE the dashboard \u00b7 pending/honey/jelly/jelly-repaired/propolis-failures/quarantined. A pair that's been in `pending/` for > 24h is a stuck pair \u00b7 escalate. A spike in `quarantined/` is a model regression signal \u00b7 escalate. The Jr Hack doesn't re-classify pairs on their own \u00b7 they route per the Tribunal verdict + playbook.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/pair-candidate/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.510219+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.510219+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "swarmfixer",
+    "swarmjelly",
+    "defendablejelly",
+    "repair-lift",
+    "defendablerouter",
+    "diagnose-task"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 bucket flow IS the work product\n- **repair_lift**: INDIRECT \u00b7 pairs in jelly/ are the lift's denominator\n- **validator_confidence**: HIGH \u00b7 bucket discipline IS the validator's primary trust signal\n- **risk_temperature**: DIRECT \u00b7 quarantined/propolis spike = high risk\n- **probability_of_close**: HIGH \u00b7 customer dashboards show bucket-flow ratios \u00b7 ratios drive renewal\n- **evidence_strength**: SELF \u00b7 the pair carries its own evidence strength score\n- **cost_to_mint**: NEUTRAL \u00b7 cost is per-deed, not per-pair",
+  "slug": "pair-candidate",
+  "sr_broker_use": "The Sr Hack monitors bucket-flow ratios. A healthy week shows ~70-85% Honey \u00b7 10-20% Jelly \u00b7 5-10% Jelly-Repaired \u00b7 < 5% Propolis \u00b7 < 1% Quarantined. Drift from these ratios is the first sign of a system change \u00b7 customer's agent regression \u00b7 model provider change \u00b7 prompt drift \u00b7 or refinery degradation. The Sr Hack triages the cause before the daily flow stabilizes against the new baseline.",
+  "status": "active",
+  "street_definition": "\"What's in the pipeline?\" That's the Sr Hack at standup. **Pair Candidate** is the unit that flows through DefendableOS \u00b7 the (input, output) pair captured by DefendableRouter \u00b7 graded by the Tribunal \u00b7 routed through the buckets \u00b7 refined by SwarmFixer \u00b7 deeded by the minter. One unit. One lifecycle. Six possible buckets.",
+  "term": "Pair Candidate",
+  "tribunal_use": "- **Rule layer**: Every Pair Candidate MUST have a router_receipt_id \u00b7 no orphan pairs \u00b7 the receipt anchors the pair to a real-world capture\n- **Rule layer**: Bucket transitions MUST be logged \u00b7 any pair changing bucket without an associated decision receipt is rejected and re-quarantined\n- **Judge layer**: Tribunal grades the pair to produce a verdict \u00b7 the verdict drives the initial bucket assignment\n- **Classification impact**: The bucket field IS the Tribunal's externally visible decision \u00b7 downstream systems read the bucket, not the verdict directly",
+  "version": "v1"
+}

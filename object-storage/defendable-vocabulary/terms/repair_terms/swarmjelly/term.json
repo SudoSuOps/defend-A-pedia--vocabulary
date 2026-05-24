@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"swarmjelly.model_tag\": {\"type\": \"string\", \"current\": \"swarmjelly-4b:v1.2\"},\n  \"swarmjelly.parameter_count\": {\"type\": \"integer\", \"const\": 4000000000},\n  \"swarmjelly.endpoint\": {\"type\": \"string\", \"default\": \"whale:11434\"},\n  \"swarmjelly.temperature_locked\": {\"type\": \"float\", \"const\": 0.05},\n  \"swarmjelly.training_corpus_size\": {\"type\": \"integer\", \"const\": 125000},\n  \"swarmjelly.taxonomy_axes\": {\"type\": \"array\", \"const\": [\"7_failure_modes\",\"5_rj_tasks\"]},\n  \"swarmjelly.per_mode_cap\": {\"type\": \"float\", \"const\": 0.25},\n  \"swarmjelly.license\": {\"type\": \"string\", \"const\": \"MIT-with-receipt-clause\"},\n  \"swarmjelly.weights_open\": {\"type\": \"boolean\", \"const\": true}\n}\n```\n\nSchema files: `docs/schemas/model_registry.schema.json` \u00b7 `docs/schemas/repair_run.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "SwarmJelly is the specialist AI we built to repair other AI. It's 4 billion parameters \u00b7 about 1/100th the size of the big commercial models \u00b7 but it's trained on 125,000 specific examples of what goes wrong with AI agents and how to fix them. You don't have to use it \u00b7 the weights are open \u00b7 you can host it yourself on a HoneyBox. We just ask that the receipts keep flowing through the network so the defense gets stronger for everyone.",
+  "cre_operator_meaning": "In CRE every shop has a **specialist appraiser** for the asset class. The industrial broker doesn't call the residential appraiser. The cold-storage broker doesn't call the multifamily comp guy. You call the specialist \u00b7 because the specialist has seen the comp set \u00b7 knows the failure modes \u00b7 knows what the building should pencil at. SwarmJelly is the specialist appraiser for **failed agent outputs**. It's seen 125,000 of them in training. It knows the failure shape on sight.",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-SWARMJELLY-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `model_tag` \u00b7 `parameter_count` \u00b7 `temperature` \u00b7 `endpoint` \u00b7 `weights_checksum`\n- **DDEED class impact**: every DDEED-DOV-REPAIR cites the SwarmJelly tag in the Proof of Origin\n- **Books and records layer**: L1 PostgreSQL (model registry) \u00b7 L4 Hedera HCS (weights checksum anchor) \u00b7 L5 ENS (`swarmjelly-4b.models.defendable.eth`)\n- **5 Proofs touched**: ORIGIN (which model produced the output) \u00b7 QUALITY (the 7-day lift distribution backing the verdict) \u00b7 TRUST (the open-weights checksum verifiable by anyone)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `model_tag` \u00b7 `parameter_count` \u00b7 `temperature` \u00b7 `endpoint` \u00b7 `weights_checksum`\n- **DDEED class impact**: every DDEED-DOV-REPAIR cites the SwarmJelly tag in the Proof of Origin\n- **Books and records layer**: L1 PostgreSQL (model registry) \u00b7 L4 Hedera HCS (weights checksum anchor) \u00b7 L5 ENS (`swarmjelly-4b.models.defendable.eth`)\n- **5 Proofs touched**: ORIGIN (which model produced the output) \u00b7 QUALITY (the 7-day lift distribution backing the verdict) \u00b7 TRUST (the open-weights checksum verifiable by anyone)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "SwarmJelly is a 4B-parameter language model fine-tuned in-house on a 125,000-pair corpus organized as a **7-failure-mode \u00d7 5-RJ-task taxonomy** with a 25% per-mode distribution cap. It ships as `swarmjelly-4b:v1.2` (current production tag) and runs at `whale:11434`. It is the model that backs SwarmFixer \u00b7 every refinery 5-task output is a SwarmJelly inference call at TEMP=0.05. The model is open-weights \u00b7 MIT-with-receipt-clause license \u00b7 operators can self-host on a HoneyBox.",
+  "defendableos_notes": "- SwarmJelly is the FIRST DefendableOS model with the receipt-clause license \u00b7 the model itself is anchored\n- The 7-mode \u00d7 5-task taxonomy was the breakthrough \u00b7 prior in-house refiners didn't constrain the corpus shape \u00b7 they overfit to whatever dominated\n- The 25% cap is non-negotiable \u00b7 v1.0 of this experiment overfit to HALLUCINATION (43% of corpus) \u00b7 the cap kills that failure mode\n- The TEMP 0.05 discovery is what made the model production-grade \u00b7 at 0.7 it was useless (0.7% Honey) \u00b7 at 0.05 it ships\n\n\ud83d\udc1d *The specialist appraiser of failed agent outputs. Open weights. Receipted. The Hive verifies before i",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-SWARMJELLY-v1",
+    "canon": "defendapedia.eth/repair_terms/swarmjelly",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Model tag in every refinery receipt",
+    "Parameter count attestation (matches advertised 4B)",
+    "Training corpus manifest (125K \u00b7 7-mode \u00d7 5-task \u00b7 25% cap)",
+    "Weights checksum (open-weights \u00b7 publicly downloadable)",
+    "License attestation (MIT-with-receipt-clause)",
+    "Endpoint health log (latency p50/p95/p99)"
+  ],
+  "example": "> **Cook**: SwarmJelly-4B v1.2 cooked on the 125,000-pair corpus over 14 days on 4x RTX 6000 Blackwell at the operator-owned DC.\n>\n> **Corpus shape**: 7 failure modes \u00d7 5 RJ tasks = 35 cells \u00b7 each cell ~3,500 pairs \u00b7 no cell exceeded 4,500 pairs (25% cap held)\n>\n> **Production deployment**: `whale:11434` \u00b7 model tag `swarmjelly-4b:v1.2` \u00b7 TEMP locked at 0.05 in runtime config\n>\n> **Production rate (90-day window)**: 93.9% Honey rate \u00b7 3% Propolis rate \u00b7 mean Repair Lift +0.18 \u00b7 p10 +0.07 \u00b7 p90 +0.31\n>\n> **Version history**: v1.0 (60.2% Honey \u00b7 deprecated) \u00b7 v1.1 (87% Honey \u00b7 deprecated after v1.2 canary lift) \u00b7 v1.2 (current)\n>\n> **Receipt anchor**: weights checksum `sha256:8c4e...d3a1` anchored on Hedera HCS topic 0.0.10291838 \u00b7 ENS pointer at `swarmjelly-4b.models.defendable.eth`",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `model_tag_drift` | Receipt cites a SwarmJelly tag not on the approved list | PROPOLIS \u00b7 reject receipt |\n| `corpus_imbalance` | Training corpus exceeds the 25% per-mode cap | JELLY \u00b7 model quarantine |\n| `endpoint_unreachable` | `whale:11434` doesn't respond \u00b7 refinery halts | n/a \u00b7 operational alert |\n| `weights_mismatch` | Deployed weights don't match the public release hash | PROPOLIS \u00b7 security incident |\n| `silent_temp_override` | Inference runs at TEMP \u2260 0.05 without explicit doctrine waiver | PROPOLIS |\n| `version_regression` | New version ships with worse aggregate lift than prior | n/a \u00b7 auto-rollback |",
+  "hashes": {
+    "json_sha256": "sha256:b1ed4ffba600021e9448d209170fed53c37f5a036d0b71e087d36bfdd745e674",
+    "markdown_sha256": "sha256:4541ea7c720d589c91960d15d0cad63fed201f503bb01ce6c132947b5cf55c72"
+  },
+  "jr_broker_use": "Don't call SwarmJelly directly. Call it through SwarmFixer. The fixer enforces the 5-task contract, the TEMP setting, the taxonomy tagging, and the validator chain. A direct SwarmJelly call bypasses all of that and the receipt won't anchor. If you have a one-off research need, use the `whale:11434/api/generate` endpoint with TEMP=0.05 and document it as research-only \u00b7 not production \u00b7 no deed.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/swarmjelly/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.519008+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.519008+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "swarmfixer",
+    "defendablejelly",
+    "pair-candidate",
+    "temp-five-cent-rule",
+    "diagnose-task",
+    "repair-lift"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 SwarmJelly IS the repair engine \u00b7 its quality caps the whole refinery\n- **repair_lift**: DIRECT \u00b7 the lift distribution is the model's report card\n- **validator_confidence**: MEDIUM \u00b7 validators trust SwarmJelly proportional to its 7-day lift distribution\n- **risk_temperature**: MEDIUM \u00b7 model regression is a real risk \u00b7 canary discipline mitigates\n- **probability_of_close**: MEDIUM \u00b7 customers don't buy the model \u00b7 they buy the refinery output\n- **evidence_strength**: NEUTRAL \u00b7 model doesn't fabricate evidence at TEMP=0.05\n- **cost_to_mint**: LOW \u00b7 4B model \u00b7 runs on commodity GPUs \u00b7 ~$0.05 per inference",
+  "slug": "swarmjelly",
+  "sr_broker_use": "The Sr Hack monitors SwarmJelly health weekly \u00b7 reads the inference-throughput chart \u00b7 watches for latency drift \u00b7 catches model regressions before they ship a bad refinery run. The Sr Hack also signs off on every model version bump (v1.2 \u2192 v1.3) \u00b7 the upgrade requires a 24-hour canary cook against the 7-mode test suite \u00b7 the canary must show \u2265 the prior version's lift distribution before the production tag flips.",
+  "status": "active",
+  "street_definition": "\"The Jelly model.\" That's what the Hacks call it at standup. **SwarmJelly** is the in-house cooked 4-billion-parameter model that powers SwarmFixer. It's not the offense brain \u00b7 it's not the customer's agent \u00b7 it's the **defense model** that knows how to repair other models' work. Trained in-house. Open weights. Deployed at `whale:11434`. TEMP locked at 0.05.",
+  "term": "SwarmJelly",
+  "tribunal_use": "- **Rule layer**: All SwarmFixer outputs MUST be generated by a SwarmJelly version on the approved-tag list (C02 model-config compliance)\n- **Rule layer**: Inferences not at TEMP=0.05 are rejected at receipt anchoring (C02)\n- **Judge layer**: The Tribunal doesn't grade SwarmJelly directly \u00b7 it grades the REPAIR task output \u00b7 SwarmJelly's quality is measured by aggregate Repair Lift over a 7-day window\n- **Classification impact**: a SwarmJelly version flagged with > 20% PROPOLIS rate over 7 days gets rolled back to the prior tag \u00b7 auto-rollback",
+  "version": "v1"
+}

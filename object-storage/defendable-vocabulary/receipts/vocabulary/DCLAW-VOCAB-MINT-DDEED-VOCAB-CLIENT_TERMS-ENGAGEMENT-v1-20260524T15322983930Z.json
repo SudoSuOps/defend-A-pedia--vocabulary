@@ -1,0 +1,33 @@
+{
+  "category": "client_terms",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1",
+    "canon": "defendapedia.eth/client_terms/engagement",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:1d176a06eb6f26a843041a6e05637c74e1c85748f13a9f69d6d0dd5c005f4f10",
+    "markdown_sha256": "sha256:b3c7d41bff2cec52bee4271597adcf6d26e0b9698df1516e5d4406c2943b4020"
+  },
+  "minted_at": "2026-05-24T15:32:29.839302+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/engagement/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.839167+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.839167+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1-20260524T15322983930Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "engagement",
+  "term": "Engagement"
+}

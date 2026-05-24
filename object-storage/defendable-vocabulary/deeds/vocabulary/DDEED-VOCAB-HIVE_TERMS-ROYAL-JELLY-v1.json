@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.502855+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/royal-jelly",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/royal-jelly/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1-20260524T15332150284Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:08f182aef69ce3e1ccd4a96ab0187cd1f589d82b489faf92ad476e9085671652",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "royal-jelly",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"Royal Jelly\" is our apex grade \u00b7 the output we will issue as a full Defendable Deed \u00b7 cell-level anchored on the Hedera public ledger \u00b7 ENS-resolvable forever. When a piece of AI work product grades Royal Jelly \u00b7 you can take that output to your CFO \u00b7 your auditor \u00b7 your regulator \u00b7 and the proof of how it was produced will hold up. It scored above 0.85 on a two-judge Tribunal \u00b7 cleared all seven critical validator checks \u00b7 and was published with a complete chain of evidence. Royal Jelly is what we sell. Everything else is feed for the system.",
+      "cre_operator": "In CRE, Royal Jelly maps to Class A \u00b7 institutional \u00b7 the listing the brokerage celebrates in the year-end recap. Single-tenant net lease \u00b7 investment-grade credit (BBB+ or better) \u00b7 15-year remaining term \u00b7 2% annual bumps \u00b7 trophy submarket \u00b7 top-1% rent comp \u00b7 the asset that institutional money fights over. A 5-cap-able piece. The kind of listing a sr broker takes a 4% commission on without flinching because the buyer pool is deep enough to close at ask.\n\nRoyal Jelly in DefendableOS carries the same gravity. It is not just \"good output.\" It is verified, receipted, anchored, defendable AI work product \u00b7 the kind a customer would put in their compliance report \u00b7 the kind a regulator would accept \u00b7 the kind a sr broker would defend in a deposition.",
+      "defendableos": "Royal Jelly is the apex Tribunal tier \u00b7 `tribunal_label = ROYAL_JELLY` \u00b7 JellyScore \u2265 0.85 (in the production 4-tier model) or \u2265 95 (in the original 5-tier Genesis model \u00b7 which slots Royal Jelly above the \"Honey 85-94\" tier and reserves the apex name for the 95+ \"Genesis\" band).\n\nIn the production pipeline \u00b7 Royal Jelly is the ONLY tier eligible for:\n\n- full DDEED issuance (cell-level Hedera HCS PoSg certificate \u00b7 per-pair anchor)\n- inclusion in the writer-training corpus (the next Gemma / Atlas / SwarmCurator cohort trains ONLY on Royal Jelly)\n- citation as a flagship in the Morning Brief and Closing Statement\n- ENS resolution under `{deed-id}.{org}.defendable.eth`",
+      "street": "\"That one's Royal Jelly.\" A sr broker says it about a finished engagement that needs zero rework \u00b7 the LOI ties out to the OM \u00b7 the OM ties out to the rent roll \u00b7 the rent roll ties out to the tax bill \u00b7 the buyer pool is institutional and the cap rate held through closing. In the Hive \u00b7 Royal Jelly is the same kind of asset \u00b7 the AI output that survived the full 6-role Tribunal \u00b7 cleared every critical validator check \u00b7 scored \u2265 0.85 on the JellyScore \u00b7 and is ready to ship as a Defendable Deed.\n\nIt is not the average pair. It is the top 35-55% of production volume in a well-running cook. Apex grade. Deed-ready. The kind of output you would sign your name to. The kind the writer fleet trains on for the NEXT generation."
+    },
+    "related_terms": [
+      "honey",
+      "jelly",
+      "propolis",
+      "genesis",
+      "hive",
+      "tribunal",
+      "validator-chain"
+    ],
+    "slug": "royal-jelly",
+    "term": "Royal Jelly"
+  },
+  "supersedes": null,
+  "term": "Royal Jelly",
+  "updated_at": "2026-05-24T15:33:21.754485+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

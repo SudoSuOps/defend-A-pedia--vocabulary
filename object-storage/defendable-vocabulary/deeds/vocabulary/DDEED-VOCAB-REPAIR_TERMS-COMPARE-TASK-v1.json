@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1",
+  "category": "repair_terms",
+  "created_at": "2026-05-24T15:33:21.504959+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/repair_terms/compare-task",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/repair_terms/compare-task/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1-20260524T15332150495Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:1a75bbfbc5475c9a00960d2f48970d575b4cbf7f2bac57ccd70756be3c71fa39",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "compare-task",
+  "street_source_ens": null,
+  "subject": {
+    "category": "repair_terms",
+    "definitions": {
+      "client": "The Compare Task is the proof line on your invoice. We don't just say \"we fixed it.\" We ship a ranked comparison \u00b7 the original agent's output \u00b7 the repair we shipped \u00b7 two alternative repairs we considered \u00b7 all four scored on the same four dimensions. You can read the matrix, you can verify the ranking, you can re-derive the score yourself. That's why the receipts are anchored on a public chain \u00b7 not because we're trying to be cute, but because audit is the asset.",
+      "cre_operator": "In CRE the Compare Task is the **appraisal report**. The asset was worth $X before the rehab. After the rehab, it's worth $Y. The appraiser doesn't take your word for it \u00b7 they pull the comp set, they walk the building, they cross-reference recent sales, they score the asset on 4-5 dimensions (income \u00b7 expenses \u00b7 NOI \u00b7 cap rate \u00b7 physical condition), and they sign the report. The appraisal is what the lender funds against, what the buyer wires against, what the IRS audits against. Compare is the appraisal of the agent economy.",
+      "defendableos": "The Compare Task is the fifth of the 5 Royal Jelly tasks SwarmFixer emits. It generates a ranked comparison of multiple candidate outputs (typically the original failed output, the repaired output, and 1-2 alternative repair candidates) scored on 4 dimensions: **correctness \u00b7 completeness \u00b7 format_compliance \u00b7 reasoning_depth**. The compare IS the deterministic evidence behind the Repair Lift number. Without compare, the lift is a model opinion \u00b7 with compare, the lift is a defensible measurement.",
+      "street": "\"Did the fix actually move the number?\" That's the question that decides the bucket. **Compare Task** is RJ task #5 \u00b7 the ranked outputs scored on 4 dimensions. It's the appraisal \u00b7 the before-and-after comp \u00b7 the proof that the rehab actually lifted the cap rate. The compare IS the receipt for the lift."
+    },
+    "related_terms": [
+      "diagnose-task",
+      "repair-task",
+      "prevent-task",
+      "detect-task",
+      "repair-lift",
+      "swarmfixer"
+    ],
+    "slug": "compare-task",
+    "term": "Compare Task"
+  },
+  "supersedes": null,
+  "term": "Compare Task",
+  "updated_at": "2026-05-24T15:33:21.755670+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

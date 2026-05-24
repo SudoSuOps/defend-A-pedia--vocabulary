@@ -1,0 +1,33 @@
+{
+  "category": "cre_terms",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-BOOKS-AND-RECORDS-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-BOOKS-AND-RECORDS-v1",
+    "canon": "defendapedia.eth/cre_terms/books-and-records",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:7f39a64737484f17834b9339667f6c546516a34881251dbaccc8882aad322788",
+    "markdown_sha256": "sha256:57f548fe4af0260e08a8d464b25ac4df39c4ab7523aa22e383c22a028ecf3a74"
+  },
+  "minted_at": "2026-05-24T15:33:21.467899+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/cre_terms/books-and-records/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.467724+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.467724+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-BOOKS-AND-RECORDS-v1-20260524T15332146789Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "books-and-records",
+  "term": "Books and Records"
+}

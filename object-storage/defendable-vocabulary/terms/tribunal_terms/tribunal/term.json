@@ -1,0 +1,82 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"tribunal.run_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"^TRIB-[0-9]{8}T[0-9]{6}Z-[a-f0-9]{4}$\"\n  },\n  \"tribunal.pair_id\": { \"type\": \"string\" },\n  \"tribunal.tier\": {\n    \"type\": \"enum\",\n    \"values\": [\"ROYAL_JELLY\", \"HONEY\", \"JELLY\", \"PROPOLIS\", \"GENESIS\"]\n  },\n  \"tribunal.score_final\": { \"type\": \"float\", \"range\": [0.0, 1.0] },\n  \"tribunal.score_scale_a\": { \"type\": \"float\" },\n  \"tribunal.score_scale_b\": { \"type\": \"float\" },\n  \"tribunal.drift\": { \"type\": \"float\" },\n  \"tribunal.critic_invoked\": { \"type\": \"boolean\" },\n  \"tribunal.katniss_invoked\": { \"type\": \"boolean\" },\n  \"tribunal.penalized_scoring_applied\": { \"type\": \"boolean\" },\n  \"tribunal.record_hash\": { \"type\": \"string\", \"pattern\": \"^sha256:[a-f0-9]{64}$\" }\n}\n```\n\nSchema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/tribunal_transitions.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "tribunal_terms",
+  "client_explanation": "\"The Tribunal\" is our adjudication system \u00b7 the 6-role pipeline that grades every AI output we ship to you. It runs two judges (a fast pass and a deep pass) against every pair \u00b7 checks if they agree within a tight drift threshold \u00b7 calls in a Critic when they don't \u00b7 and escalates to a final arbiter (Katniss) when adversarial behavior is detected. The Tribunal produces a verdict (Royal Jelly \u00b7 Honey \u00b7 Jelly \u00b7 Propolis) \u00b7 a record hash \u00b7 and a full audit trail. You see the verdict on every deed. You can verify the record hash on the public ledger.",
+  "cre_operator_meaning": "In CRE \u00b7 the Tribunal maps to the multi-role underwriting chain \u00b7 the inspector who walks the building \u00b7 the appraiser who values it \u00b7 the title underwriter who insures the chain of ownership \u00b7 the closing agent who reconciles the documents \u00b7 the lender's reviewer who confirms the credit. No single role decides the deed \u00b7 the chain decides. Same here. The Tribunal is the chain that produces a defendable verdict.",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `tribunal.run_id` \u00b7 `tribunal.tier` \u00b7 `tribunal.score_final` \u00b7 `tribunal.record_hash`\n- **DDEED class impact**: NO DDEED is issued without a Tribunal verdict \u00b7 the verdict is the gate\n- **Books and records layer**: ALL 5 \u00b7 the Tribunal verdict spans the full finality stack\n- **5 Proofs touched**: ALL 5 \u00b7 the Tribunal IS the producer of QUALITY \u00b7 contributes to PROCESS \u00b7 informs ECONOMICS \u00b7 validates ORIGIN \u00b7 feeds TRUST",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `tribunal.run_id` \u00b7 `tribunal.tier` \u00b7 `tribunal.score_final` \u00b7 `tribunal.record_hash`\n- **DDEED class impact**: NO DDEED is issued without a Tribunal verdict \u00b7 the verdict is the gate\n- **Books and records layer**: ALL 5 \u00b7 the Tribunal verdict spans the full finality stack\n- **5 Proofs touched**: ALL 5 \u00b7 the Tribunal IS the producer of QUALITY \u00b7 contributes to PROCESS \u00b7 informs ECONOMICS \u00b7 validates ORIGIN \u00b7 feeds TRUST",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Tribunal is the adjudication subsystem of the Hive \u00b7 composed of 6 named roles:\n\n1. **Scout** \u00b7 fetches the pair \u00b7 normalizes to PairCandidate format\n2. **Router** \u00b7 decides the lane (short / long / seal)\n3. **Filter** \u00b7 runs the 12-check validator chain (the rule layer)\n4. **Repair** \u00b7 invokes SwarmFixer when the pair lands Jelly\n5. **Critic** \u00b7 reconciles when drift between Scale A and Scale B exceeds 0.15\n6. **Katniss** \u00b7 adversarial best-of-3 final arbiter\n\nProduction config (locked 2026-05-24):\n- Scale A judge: `gemma3:12b` on swarmrails GPU 1 (RTX PRO 4500 32GB Blackwell sm_120)\n- Scale B judge: `qwen2.5:32b` on swarmrails GPU 0 (RTX PRO 6000 96GB Blackwell sm_120)\n- Throughput target: 777 pairs/hr\n- Protocol: rule_then_judge \u00b7 2 judges required \u00b7 drift \u2264 0.15 \u00b7 penalized scoring enabled\n\nSee [`docs/doctrine/08_tribunal_doctrine.md`](../../doctrine/08_tribunal_doctrine.md) for the full spec.",
+  "defendableos_notes": "- The Tribunal is the brand's quality discipline made structural \u00b7 not vibes-checked\n- The 6-role architecture is doctrine \u00b7 do not add roles \u00b7 do not collapse roles\n- The 2-pass requirement is non-negotiable \u00b7 no single-judge verdicts ship\n- Katniss as the adversarial backstop is the architecture's IMMUNE SYSTEM \u00b7 it gets invoked rarely but it protects against the long tail\n- The Tribunal verdict record IS the audit trail \u00b7 anyone with the record_hash can replay the chain\n\n\ud83d\udc1d *Two judges. One drift threshold. A Critic when they disagree. Katniss when the deal smells. The Tribunal is the chain \u00b7 the chain is the trust \u00b7 the trust is t",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1",
+    "canon": "defendapedia.eth/tribunal_terms/tribunal",
+    "street_source": null
+  },
+  "evidence_required": [
+    "A populated TribunalRecord JSON (per `tribunal_verdict.schema.json`)",
+    "Scale A score + reason",
+    "Scale B score + reason",
+    "Drift value",
+    "Validator chain results (C01-C12)",
+    "Critic reasoning if drift > 0.15",
+    "Katniss best-of-3 results if adversarial-flagged",
+    "Penalized-scoring application log if triggered",
+    "SHA-256 record_hash of canonical JSON",
+    "Ts timestamp"
+  ],
+  "example": "> **Engagement**: STNL acquisition opinion \u00b7 industrial cold storage \u00b7 Atlanta MSA.\n>\n> **PairCandidate**: SwarmCRE-9B-produced 4-page broker opinion.\n>\n> **Tribunal run**: TRIB-20260524T141022Z-7c4a\n> - Scout \u00b7 fetched \u00b7 normalized\n> - Router \u00b7 long lane (high-stakes engagement)\n> - Filter \u00b7 all 12 checks PASS\n> - Scale A (gemma3:12b GPU 1) \u00b7 score 0.89 \u00b7 reason \"comps anchored \u00b7 credit walk EDGAR-sourced\"\n> - Scale B (qwen2.5:32b GPU 0) \u00b7 score 0.91 \u00b7 reason \"depth high \u00b7 all 5 trajectory keywords \u00b7 numerics tie\"\n> - Drift 0.02 \u00b7 no Critic invoked\n> - JellyScore 0.90 \u00b7 tier ROYAL_JELLY\n> - record_hash sha256:7c4a...\n>\n> **Outcome**: Deed DDEED-DOV-CRE-LINEAGE-ATL-000042-v1 issued \u00b7 published \u00b7 ENS-resolved \u00b7 Hedera-anchored.",
+  "failure_modes_raw": "| Mode | Description | Resolution |\n|---|---|---|\n| **tribunal_single_judge_verdict** | A verdict issued with only one judge score | Rejected at C04 \u00b7 verdict held \u00b7 rig health audited \u00b7 re-run |\n| **tribunal_drift_unflagged** | Drift > 0.15 but Critic was not invoked | Integrity event \u00b7 sr broker reviews the pair \u00b7 Critic invoked retroactively \u00b7 verdict re-issued if changed |\n| **tribunal_katniss_skipped** | Adversarial flag raised but Katniss not invoked | Critical integrity event \u00b7 verdict held \u00b7 Katniss invoked retroactively \u00b7 publication delayed |\n| **tribunal_throughput_collapse** | Pairs-per-hour drops below 50% of 777 target for > 2h | Degraded-mode flag \u00b7 customers notified \u00b7 root cause investigation |\n| **tribunal_penalty_skipped** | Auto-judge score < 0.75 with critical-issue but penalty not applied | Integrity event \u00b7 verdict re-evaluated under rule layer only |",
+  "hashes": {
+    "json_sha256": "sha256:b0246a82e3deea9c9a609eaf117a7c20a0798944cf025d94036c031c55e21638",
+    "markdown_sha256": "sha256:47cc3a429ad65bb387902f3acd9e026e0ebfbf73e103d7378df6d27c9d601f11"
+  },
+  "jr_broker_use": "The jr broker reads the Tribunal verdicts but does not adjudicate independently:\n\n1. Every PairCandidate you submit goes to the Tribunal \u00b7 the verdict comes back as `tribunal_verdict.tier` and `tribunal_verdict.score_final`\n2. Trust the verdict \u00b7 do NOT attempt to manually re-grade\n3. Watch the dashboard for stuck Tribunal runs (no verdict within 4h) \u00b7 escalate to sr broker\n4. When a Tribunal verdict is the basis for a customer-facing deed \u00b7 cite the run_id in the operator log\n5. Drift cases \u00b7 Critic invocations \u00b7 Katniss invocations \u00b7 all visible on the dashboard \u00b7 learn to read them but do not act on them without sr broker oversight\n\n**Rule of thumb**: the Tribunal adjudicates \u00b7 you observe \u00b7 the chain is the chain.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/tribunal_terms/tribunal/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.539281+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.539281+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "validator",
+    "validator-chain",
+    "judge",
+    "royal-jelly",
+    "honey",
+    "hive"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: PROCESS-LEVEL \u00b7 every assignment success depends on a Tribunal verdict\n- **repair_lift**: PROCESS-LEVEL \u00b7 the Tribunal re-grades repaired pairs and produces the lift measurement\n- **validator_confidence**: PROCESS-LEVEL \u00b7 the Tribunal's validator chain layer produces the confidence\n- **risk_temperature**: PROCESS-LEVEL \u00b7 adversarial Tribunal events feed the risk temperature gauge\n- **probability_of_close**: PROCESS-LEVEL \u00b7 the Tribunal's verdict on engagement deeds affects close prob\n- **evidence_strength**: PROCESS-LEVEL \u00b7 the Tribunal scores evidence as part of its rubric\n- **cost_to_mint**: DIRECT \u00b7 Tribunal compute (judges \u00b7 Critic \u00b7 Katniss \u00b7 validator chain) is a line item in cost-to-mint",
+  "slug": "tribunal",
+  "sr_broker_use": "The sr broker operates the Tribunal:\n\n- Daily Morning Brief includes the Tribunal volume \u00b7 tier distribution \u00b7 drift rate \u00b7 Critic invocation rate \u00b7 Katniss invocation rate \u00b7 all Tribunal health metrics\n- Override queue review at 06:30 \u00b7 approve \u00b7 escalate \u00b7 or PASS on advisory-fail cases\n- Manual Critic / Katniss invocations when judgment requires \u00b7 operator discretion within doctrine\n- Spot-audit Royal Jelly verdicts daily \u00b7 20 random pairs end-to-end\n- Apply the PASS doctrine ruthlessly \u00b7 the Tribunal protects the books \u00b7 the sr broker protects the Tribunal\n\nSee [`docs/playbooks/tribunal_review_playbook.md`](../../playbooks/tribunal_review_playbook.md) for the full daily workflow.",
+  "status": "active",
+  "street_definition": "\"What did the Tribunal return?\" The Tribunal is the adjudication engine of the Hive \u00b7 the 6-role pipeline that decides whether an AI output is Royal Jelly \u00b7 Honey \u00b7 Jelly \u00b7 or Propolis. It is NOT one model. It is NOT a \"judge prompt.\" It is a structural pipeline \u00b7 rule-then-judge \u00b7 2-pass with a 0.15 drift threshold \u00b7 with a Critic when the judges disagree and Katniss when the case turns adversarial. The Tribunal runs 24/7 at 777 pairs/hr on the swarmrails primary rig with whale and zima-edge holding backup roles.\n\nIn CRE language \u00b7 the Tribunal is the underwriting committee \u00b7 the title insurance underwriter \u00b7 the appraisal review \u00b7 the final sign-off before the deed transfers. Multiple eyes \u00b7 structured discipline \u00b7 documented dissents \u00b7 the chain that protects the asset.",
+  "term": "Tribunal",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # the Tribunal itself does not get a tier \u00b7 it ASSIGNS tiers\n  rule_layer_checks:\n    - tribunal.run_id MUST be populated for every verdict\n    - tribunal.score_scale_a AND tribunal.score_scale_b MUST both be present (no single-judge verdicts)\n    - tribunal.drift MUST be computed and logged\n    - tribunal.record_hash MUST be computed before verdict is finalized\n  judge_layer_prompt_hint: \"this term IS the adjudication system \u00b7 the judges run INSIDE the Tribunal\"\n  can_be_critical_failure: false   # Tribunal-level failures cascade to Hive-level alerts\n```",
+  "version": "v1"
+}

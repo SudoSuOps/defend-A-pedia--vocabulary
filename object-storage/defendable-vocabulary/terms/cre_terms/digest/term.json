@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"engagement.digest_v1\": {\n    \"type\": \"jsonb\",\n    \"schema\": \"docs/schemas/digest.schema.json\",\n    \"required_fields\": [\n      \"engagement_id\",\n      \"meeting_id_or_decision_id\",\n      \"principal_summary\",\n      \"color_summary_score\",\n      \"open_questions[]\",\n      \"ask\",\n      \"offer_scenarios[]\",\n      \"walk_away_threshold\",\n      \"evidence_receipts[]\"\n    ]\n  },\n  \"engagement.digest_delivered_at\": {\n    \"type\": \"timestamp\",\n    \"scoring_hook\": \"preparation_lead_time_hours\"\n  },\n  \"engagement.digest_reader_id\": {\n    \"type\": \"uuid\",\n    \"description\": \"Sr broker or decision-maker who consumed the digest\"\n  },\n  \"engagement.digest_read_at\": {\n    \"type\": \"timestamp\"\n  }\n}\n```\n\nSchema files: `docs/schemas/digest.schema.json` \u00b7 `docs/schemas/engagement.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "cre_terms",
+  "client_explanation": "The digest is the pre-meeting brief our team prepares before any conversation with you that requires a decision. It contains everything we know, everything we still need to verify, the specific question we're trying to answer with you, and our recommended path forward. You may never see a digest directly \u00b7 they live on our side of the table \u00b7 but every Morning Brief, every Closing Statement, and every LOU clause we present to you started life in a digest. The discipline of preparing one is what makes our team show up to your meetings ready, not improvising.",
+  "cre_operator_meaning": "In CRE, the digest is the jr broker's gift to the sr broker. It's the pre-market flight sheet condensed for a single meeting \u00b7 the highlights \u00b7 the gotchas \u00b7 the asks \u00b7 the close opportunity. A digest contains:\n\n- Who the principal is (name, title, signing authority, prior relationships)\n- What they own (asset class, deal size range, recent activity)\n- What we know that they don't know we know (the color advantage)\n- What we don't know that we wish we did (the open questions)\n- What the meeting needs to accomplish (the specific ask \u00b7 book the appraisal \u00b7 win the listing \u00b7 close the LOU)\n- What we're ready to offer (the pricing scenarios, the term structures, the walk-away point)\n\nNo digest \u00b7 no sit. The sr broker walks in without one only when they have decades of relationship with the principal and don't need the brief. New relationships always get a digest.",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-DIGEST-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `digest_v1_hash`, `digest_delivered_at`, `digest_lead_time_hours`, `digest_evidence_receipt_refs[]`, `digest_walk_away_threshold_usd`\n- **DDEED class impact**: deeds for engagements with poor digest discipline carry a `preparation_quality_flag` that downgrades retention probability scoring\n- **Books and records layer**: L1_PG (digest stored hot) \u2192 L2_MERKLE (digest hash sealed in batch) \u2192 L3_NAS (canonical archive)\n- **5 Proofs touched**: PROCESS (the lineage of decision-making) \u00b7 QUALITY (evidence integrity) \u00b7 ECONOMICS (preparation cost vs re-trade savings)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `digest_v1_hash`, `digest_delivered_at`, `digest_lead_time_hours`, `digest_evidence_receipt_refs[]`, `digest_walk_away_threshold_usd`\n- **DDEED class impact**: deeds for engagements with poor digest discipline carry a `preparation_quality_flag` that downgrades retention probability scoring\n- **Books and records layer**: L1_PG (digest stored hot) \u2192 L2_MERKLE (digest hash sealed in batch) \u2192 L3_NAS (canonical archive)\n- **5 Proofs touched**: PROCESS (the lineage of decision-making) \u00b7 QUALITY (evidence integrity) \u00b7 ECONOMICS (preparation cost vs re-trade savings)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "In DefendableOS, the **digest** is a typed, validated, receipted artifact that an agent (human or AI) produces ahead of every meaningful workflow checkpoint. Every customer meeting gets a digest. Every Tribunal verdict review gets a digest. Every escalation gets a digest. Every renewal review gets a digest.\n\nThe digest is the agent's last-mile output before a human makes a decision. It compresses the underlying receipts, color files, validator results, and Tribunal verdicts into a one-page brief that the decision-maker can read in under five minutes and act on.",
+  "defendableos_notes": "- The digest is the canonical example of how vocabulary becomes infrastructure. Same word in CRE. Same artifact in DefendableOS. Same discipline.\n- Digest agents are a near-term productization target \u00b7 the SwarmCurator family is suited for digest generation, and the discipline is uniform enough to template.\n- Customers should never see the operator-facing digest \u00b7 they see the Morning Brief, which is the customer-facing analog (same source data, different audience, different language).\n- Bad digests are the leading indicator of bad sits. Bad sits are the leading indicator of bad LOUs. Bad LOUs are the leading indicator of bad retentions. Fix the digest discipline \u00b7 the rest compounds.\n\n\ud83d\udc1d *Digest before sit. Color before digest. Receipts befo",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-DIGEST-v1",
+    "canon": "defendapedia.eth/cre_terms/digest",
+    "street_source": null
+  },
+  "evidence_required": [
+    "\u2265 3 cited evidence receipts (each resolving to an L2-sealed Merkle batch)",
+    "`color_score` source weight average \u2265 0.85",
+    "`open_questions[]` populated \u00b7 empty array is a doctrine red flag (means the jr broker stopped looking)",
+    "Walk-away threshold explicitly named with dollar value or term-of-engagement equivalent",
+    "Pricing scenarios at least 3 (low / target / stretch)"
+  ],
+  "example": "> **Engagement**: STNL defense engagement \u00b7 cold-storage operator \u00b7 Atlanta MSA \u00b7 14-agent fleet \u00b7 sit booked for Thursday 10:00 ET.\n>\n> **Digest delivered**: Wednesday 09:00 ET (25 hours lead time)\n>\n> **Principal summary**: Janet K., CEO and 60% owner. Prior CRE relationship via founder's network (1031 exchange 2019). Signs personally on engagements under $250K/yr. Procurement involved above that.\n>\n> **Color summary score**: 0.88. 5 independent sources. EDGAR 10-K of parent (0.90). CompStak comp set on similar-size cold-storage portfolios (0.85). Vendor changelog for OpenAI Realtime API (the customer's primary inference layer \u00b7 two drift events in 60 days \u00b7 0.85). Mutual board member confirmation that Janet is fee-conscious but premium-quality-driven (0.90 human-verified). SwarmCurator corpus matched 8 prior engagements of similar shape (0.85).\n>\n> **Open questions**: (1) does Janet know about the OpenAI Realtime drift events \u00b7 or will we be surfacing? (2) is the medical-claims agent in scope for this engagement or a future phase? (3) is the existing audit vendor renewal in Q3 a tailwind or a procurement complication?\n>\n> **Ask**: book the appraisal \u00b7 60-min flight sheet review next week \u00b7 commit to a sample receipt against the cold-storage logistics agent.\n>\n> **Offer scenarios**: Low: $18K/mo \u00b7 5 agents \u00b7 advisory only. Target: $42K/mo \u00b7 12 agents \u00b7 full Tribunal + Morning Brief. Stretch: $89K/mo \u00b7 14 agents + medical-claims \u00b7 co-signed insurance carrier rider.\n>\n> **Walk-away threshold**: if Janet requests certification of the medical-claims agent without 60 days of clean Tribunal verdicts first \u00b7 PASS \u00b7 cite the doctrine \u00b7 offer the cold-storage scope only.\n>\n> **Outcome**: sr broker walked in prepped. Janet did know about the OpenAI drift. We surfaced the receipt-anchored alternative. Booked the appraisal for following Tuesday. Engagement closed at target tier 11 days later. DDEED-DOV-CRE-COLD-ATL-000088-v1.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **late_digest** | Delivered < 24h before meeting | JELLY |\n| **uncited_claims** | Claims without receipt links | JELLY |\n| **missing_walk_away** | No walk-away threshold named | JELLY (PROPOLIS if customer-facing) |\n| **stale_color_in_digest** | Color file > 14 days old, not refreshed | JELLY |\n| **fabricated_principal_intel** | Principal background asserted without source | PROPOLIS |\n| **wishful_pricing** | Pricing scenarios don't tie to actual color or comp set | JELLY |\n| **single_scenario_only** | Only one pricing scenario \u00b7 no negotiation room | JELLY |",
+  "hashes": {
+    "json_sha256": "sha256:40af765e58888d9511b92d65aae246871cf5a5e4d67dccfed30dcce0c1cb6cb9",
+    "markdown_sha256": "sha256:7190f3c6f67797905577d6610197ece1a2d755c1e94146834a1320ed0e871799"
+  },
+  "jr_broker_use": "You write the digest for every sit on your sr broker's calendar. The discipline is non-negotiable:\n\n- **24-hour rule.** Digest delivered to the sr broker 24 hours before the meeting. Not 23. Not the morning of. 24 hours so they can absorb, ask you questions, and prep their own framing.\n- **Use the template.** Digest template lives at `docs/examples/sample_digest.md` (SH2 ships). Same structure every time so the sr broker can find what they need at speed.\n- **Cite the receipts.** Every claim in the digest links to a receipt ID. The sr broker can drill into any line and see the evidence.\n- **Name the walk-away.** Every digest has an explicit walk-away threshold. If the meeting goes off the script in a way that crosses that threshold, the sr broker knows to PASS.\n- **Refresh stale digests.** If a sit gets rescheduled by more than 48 hours, the digest gets a refresh pass \u00b7 color may have moved, vendor changelogs may have dropped, the customer may have made an announcement.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/cre_terms/digest/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.471420+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.471420+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "color",
+    "om",
+    "loi",
+    "due-diligence",
+    "probability-of-close",
+    "books-and-records"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 digest quality is the strongest predictor of in-meeting close rate\n- **repair_lift**: HIGH \u00b7 digests that flag adversarial cases early prevent downstream PROPOLIS events\n- **validator_confidence**: HIGH \u00b7 digest-cited receipts feed directly into validator chain inputs\n- **risk_temperature**: INVERSE \u00b7 strong digests reduce engagement risk profile\n- **probability_of_close**: HIGH \u00b7 sits prepped with strong digests close at 1.5-2x the rate of unprepped sits\n- **evidence_strength**: DIRECT \u00b7 digest evidence count = engagement evidence count\n- **cost_to_mint**: LOW \u00b7 digest creation is cheap \u00b7 poor digests are expensive in re-trade cycles",
+  "slug": "digest",
+  "sr_broker_use": "You read the digest with three filters:\n\n- **Is the color enough?** If `color_summary_score < 0.70`, you send it back \u00b7 do not walk into the sit on weak color.\n- **Are the open questions material?** If the open questions include anything that would change the pricing scenarios, you delay the meeting \u00b7 prep first, sit second.\n- **Does the walk-away threshold match the relationship?** A first-meeting digest with no walk-away threshold is a doctrine violation \u00b7 every sit has one. If the jr broker missed it, you set it before you walk in.\n\nYou also audit digest discipline weekly. Digests that ship without receipt citations \u00b7 digests that arrive under 24 hours \u00b7 digests that lack walk-away thresholds \u00b7 these are jr broker remediation events.",
+  "status": "active",
+  "street_definition": "\"What's the digest say?\" \u2014 a sr broker asks before walking into a sit.\n\nA **digest** is the pre-meeting summary the agent prepared for the broker. One page. Color built. Pricing thought-out. Pain hypothesis named. The thing the sr broker reads in the seven minutes before they walk into the sit so they show up sharp \u00b7 not winging it.\n\nIn CRE, a digest is the difference between a sr broker who looks like they've done their homework and one who looks like they're improvising. In DefendableOS, a digest is the difference between a deed that ships clean and a deed that gets re-traded mid-engagement because the team didn't catch a known gap.",
+  "term": "Digest",
+  "tribunal_use": "The Tribunal grades digests as a first-class output type \u00b7 not just as input to a human decision.\n\n- **Rule layer**: digest with `color_summary_score < 0.70` \u2192 automatic JELLY classification regardless of judge\n- **Rule layer**: digest missing `walk_away_threshold` \u2192 critical_failure \u2192 JELLY at minimum, PROPOLIS if customer-facing\n- **Judge layer**: digest quality scored on completeness (1-5), accuracy of cited receipts (1-5), and decision-readiness (1-5) by Scale A + Scale B\n- **Classification impact**: digests can earn Royal Jelly when the cited evidence is unusually strong and the walk-away analysis is incisive \u00b7 these become training pairs for future digest agents\n\n```yaml\nclassification_impact: [HONEY, ROYAL_JELLY, JELLY, PROPOLIS]\ncan_be_critical_failure: true\nrule_layer_checks:\n  - color_summary_score >= 0.70\n  - walk_away_threshold present\n  - all citations resolve to valid receipt IDs\n  - delivered \u2265 24h before meeting\n```",
+  "version": "v1"
+}

@@ -1,0 +1,33 @@
+{
+  "category": "cre_terms",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-CAP-RATE-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-CAP-RATE-v1",
+    "canon": "defendapedia.eth/cre_terms/cap-rate",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:f6dc163ab92504acc2f18001b7476ae5e1952f7208f5deae5fc7862c753ff094",
+    "markdown_sha256": "sha256:80c687f3537e58e256de7bbfa8acdf05a725e52b321bcd255590f4b3a20ac463"
+  },
+  "minted_at": "2026-05-24T15:32:29.848865+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/cre_terms/cap-rate/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.848717+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.848717+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-CAP-RATE-v1-20260524T15322984886Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "cap-rate",
+  "term": "Cap Rate"
+}

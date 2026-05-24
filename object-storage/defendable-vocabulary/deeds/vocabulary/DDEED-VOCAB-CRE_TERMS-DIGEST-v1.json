@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-DIGEST-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.471561+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-DIGEST-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/digest",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/digest/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-DIGEST-v1-20260524T15332147155Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:085f1bcb5cd96b2113635e349bced743dd23c3e255f3de0bae0b5079745410d4",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "digest",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "The digest is the pre-meeting brief our team prepares before any conversation with you that requires a decision. It contains everything we know, everything we still need to verify, the specific question we're trying to answer with you, and our recommended path forward. You may never see a digest directly \u00b7 they live on our side of the table \u00b7 but every Morning Brief, every Closing Statement, and every LOU clause we present to you started life in a digest. The discipline of preparing one is what makes our team show up to your meetings ready, not improvising.",
+      "cre_operator": "In CRE, the digest is the jr broker's gift to the sr broker. It's the pre-market flight sheet condensed for a single meeting \u00b7 the highlights \u00b7 the gotchas \u00b7 the asks \u00b7 the close opportunity. A digest contains:\n\n- Who the principal is (name, title, signing authority, prior relationships)\n- What they own (asset class, deal size range, recent activity)\n- What we know that they don't know we know (the color advantage)\n- What we don't know that we wish we did (the open questions)\n- What the meeting needs to accomplish (the specific ask \u00b7 book the appraisal \u00b7 win the listing \u00b7 close the LOU)\n- What we're ready to offer (the pricing scenarios, the term structures, the walk-away point)\n\nNo digest \u00b7 no sit. The sr broker walks in without one only when they have decades of relationship with the principal and don't need the brief. New relationships always get a digest.",
+      "defendableos": "In DefendableOS, the **digest** is a typed, validated, receipted artifact that an agent (human or AI) produces ahead of every meaningful workflow checkpoint. Every customer meeting gets a digest. Every Tribunal verdict review gets a digest. Every escalation gets a digest. Every renewal review gets a digest.\n\nThe digest is the agent's last-mile output before a human makes a decision. It compresses the underlying receipts, color files, validator results, and Tribunal verdicts into a one-page brief that the decision-maker can read in under five minutes and act on.",
+      "street": "\"What's the digest say?\" \u2014 a sr broker asks before walking into a sit.\n\nA **digest** is the pre-meeting summary the agent prepared for the broker. One page. Color built. Pricing thought-out. Pain hypothesis named. The thing the sr broker reads in the seven minutes before they walk into the sit so they show up sharp \u00b7 not winging it.\n\nIn CRE, a digest is the difference between a sr broker who looks like they've done their homework and one who looks like they're improvising. In DefendableOS, a digest is the difference between a deed that ships clean and a deed that gets re-traded mid-engagement because the team didn't catch a known gap."
+    },
+    "related_terms": [
+      "color",
+      "om",
+      "loi",
+      "due-diligence",
+      "probability-of-close",
+      "books-and-records"
+    ],
+    "slug": "digest",
+    "term": "Digest"
+  },
+  "supersedes": null,
+  "term": "Digest",
+  "updated_at": "2026-05-24T15:33:21.741070+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

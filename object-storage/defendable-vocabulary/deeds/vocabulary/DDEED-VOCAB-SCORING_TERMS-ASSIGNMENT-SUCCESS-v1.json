@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1",
+  "category": "scoring_terms",
+  "created_at": "2026-05-24T15:33:21.520221+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/scoring_terms/assignment-success",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/scoring_terms/assignment-success/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1-20260524T15332152021Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:dc117352f69ed7468676139c4633eb982f11d2d09b5c05f4d7e23ba999aac3db",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "assignment-success",
+  "street_source_ens": null,
+  "subject": {
+    "category": "scoring_terms",
+    "definitions": {
+      "client": "Every assignment we run for you ends with a formal **Assignment Success** report. One of four outcomes:\n\n- **CLOSED \u00b7 HONEY** \u00b7 the asset performed \u00b7 success criteria met \u00b7 zero critical failures\n- **CLOSED \u00b7 CONDITIONED** \u00b7 we delivered with named caveats \u00b7 4 of 5 grades passing\n- **FAILED \u00b7 RECOVERABLE** \u00b7 the work is repair-candidate \u00b7 we can salvage it\n- **FAILED \u00b7 DARK** \u00b7 the engagement is paused \u00b7 we call you same-day \u00b7 recovery plan within 72 hours\n\nThe boolean is reported first \u00b7 plain English \u00b7 no hedge. The 5-grade breakdown explains why \u00b7 with weights \u00b7 with the composite math \u00b7 with variance vs every success criterion you contracted for.\n\nYou sign acknowledgment within 7 days of the walk. Both the closing statement deed AND your acknowledgment are filed for 7 years after the engagement ends.",
+      "cre_operator": "In CRE \u00b7 \"did it close\" is a binary. The HUD-1 prints either the trade closed or it didn't. The deed transferred or it didn't. The fee was earned or it wasn't.\n\nCRE brokers don't say \"we partially closed\" or \"we mostly closed.\" They say \"closed at $42M \u00b7 6.4 cap \u00b7 73 days on market \u00b7 fee booked.\" Or they say \"didn't close \u00b7 seller pulled to refi \u00b7 re-list Q3.\"\n\nWe mirror that exactly. The Defendable Closing Statement is the HUD-1 of an assignment. The boolean is the boolean. The variance vs contract is the variance vs contract. No spin.",
+      "defendableos": "**Assignment Success** in DefendableOS is the formal Tribunal-graded verdict reported at assignment close \u00b7 consisting of:\n\n1. **Boolean outcome** (one of 4 values \u00b7 enum)\n2. **Composite score** (float 0-1 \u00b7 weighted from 5 grades)\n3. **5-grade breakdown** (per the Assignment Success Doctrine \u00a7 5-grade-breakdown)\n\nReported in the Defendable Closing Statement deed (`DDEED-{org}-{vertical}-{customer}-CLOSE-{seq}-v1`). Walked with the principal personally. Acknowledged in writing. Filed for 7-year retention beyond LOU termination.\n\nThe boolean is determined by:\n- Composite \u2265 0.85 AND all 5 grades \u2265 0.70 AND zero critical Propolis \u2192 **CLOSED \u00b7 HONEY**\n- Composite \u2265 0.70 AND 4 of 5 grades passing \u2192 **CLOSED \u00b7 CONDITIONED**\n- Composite 0.50-0.69 \u2192 **FAILED \u00b7 RECOVERABLE**\n- Composite < 0.50 OR critical Propolis on critical path \u2192 **FAILED \u00b7 DARK**\n\nThe G3 (Safety) floor caps the boolean at FAILED if violated \u00b7 regardless of composite. Safety is the floor \u00b7 not a weighting.",
+      "street": "\"Did it close?\" \u2014 the founder asks the sr broker on Friday afternoon.\n\n**Assignment Success** is the post-close boolean + 5-grade breakdown that says whether a specific assignment delivered against its written success criteria. The boolean is what's reported to the principal. The 5-grade breakdown is what's filed in books-and-records.\n\nThe boolean is binary \u00b7 NOT a vibe. CLOSED \u00b7 HONEY or CONDITIONED or FAILED \u00b7 RECOVERABLE or FAILED \u00b7 DARK. Four outcomes. No soft language."
+    },
+    "related_terms": [
+      "assignment",
+      "closing-statement",
+      "probability-of-close",
+      "client-confidence",
+      "engagement",
+      "letter-of-understanding",
+      "pass-doctrine"
+    ],
+    "slug": "assignment-success",
+    "term": "Assignment Success"
+  },
+  "supersedes": null,
+  "term": "Assignment Success",
+  "updated_at": "2026-05-24T15:33:21.782572+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

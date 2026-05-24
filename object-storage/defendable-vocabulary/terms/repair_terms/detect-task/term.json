@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"detect.task_id\": {\"type\": \"string\", \"format\": \"rj-det-<run_id>\"},\n  \"detect.classifier_type\": {\"type\": \"enum\", \"values\": [\"DETERMINISTIC\", \"ML_LIGHTWEIGHT\", \"HYBRID\"]},\n  \"detect.classifier_definition\": {\"type\": \"string\"},\n  \"detect.input_signature\": {\n    \"type\": \"object\",\n    \"required\": [\"fields_required\"],\n    \"properties\": {\n      \"fields_required\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\n      \"fields_optional\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}\n    }\n  },\n  \"detect.output_class\": {\"type\": \"enum\", \"values\": [\"POSITIVE\", \"NEGATIVE\"]},\n  \"detect.evidence_chain\": {\n    \"type\": \"array\",\n    \"items\": {\n      \"type\": \"object\",\n      \"required\": [\"evidence_type\", \"evidence_value\"],\n      \"properties\": {\n        \"evidence_type\": {\"type\": \"string\"},\n        \"evidence_value\": {\"type\": \"string\"},\n        \"weight\": {\"type\": \"float\", \"range\": [0.0, 1.0]}\n      }\n    }\n  },\n  \"detect.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"detect.false_positive_rate_estimated\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"detect.runtime_budget_ms\": {\"type\": \"integer\", \"max\": 50}\n}\n```\n\nSchema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/detect_task.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "The Detect Task is the smoke alarm for your AI fleet. Once we identify a failure pattern, we ship you a lightweight classifier you can wire into your runtime \u00b7 it runs in under 50ms per check \u00b7 it doesn't slow your agent down \u00b7 and it surfaces the failure pattern the moment it appears in the wild. Plus the evidence behind every classification, so you can audit.",
+  "cre_operator_meaning": "In CRE the Detect Task is the **smoke alarm in every unit**. Each alarm is calibrated to a specific signal (smoke \u00b7 CO \u00b7 heat). Cheap to install \u00b7 loud when it fires \u00b7 zero false-positive tolerance. The alarm doesn't put out the fire \u00b7 it just calls it early. Detect doesn't fix the agent \u00b7 it just calls the failure early. The earlier you call it \u00b7 the smaller the loss.",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-DETECT-TASK-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `detect.classifier_definition` (hashed) \u00b7 `detect.input_signature` \u00b7 `detect.runtime_budget_ms` \u00b7 `detect.false_positive_rate_estimated`\n- **DDEED class impact**: detect classifiers accumulate into a per-customer detector registry \u00b7 referenced from DDEED-DOV-REPAIR\n- **Books and records layer**: L1 PostgreSQL (detector registry) \u2192 L4 Hedera HCS (classifier hash anchor)\n- **5 Proofs touched**: QUALITY (the selectivity test) \u00b7 PROCESS (lineage from source failure) \u00b7 TRUST (evidence chain on every classification)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `detect.classifier_definition` (hashed) \u00b7 `detect.input_signature` \u00b7 `detect.runtime_budget_ms` \u00b7 `detect.false_positive_rate_estimated`\n- **DDEED class impact**: detect classifiers accumulate into a per-customer detector registry \u00b7 referenced from DDEED-DOV-REPAIR\n- **Books and records layer**: L1 PostgreSQL (detector registry) \u2192 L4 Hedera HCS (classifier hash anchor)\n- **5 Proofs touched**: QUALITY (the selectivity test) \u00b7 PROCESS (lineage from source failure) \u00b7 TRUST (evidence chain on every classification)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Detect Task is the fourth of the 5 Royal Jelly tasks SwarmFixer emits. It produces a binary classifier (positive/negative) for the specific failure pattern identified in the Diagnose Task. It runs in two modes: in-line (live agent traffic) and offline (sweep historic logs). The classifier carries the evidence it used to make the call \u00b7 the operator can audit any classification by reading the evidence chain.",
+  "defendableos_notes": "- The Detect Task scales the Prevent Task to production \u00b7 prevent is the rule \u00b7 detect is the rule's eyes\n- 50ms budget is non-negotiable because the customer's hot path won't tolerate more \u00b7 DefendableOS is write-only on the hot path \u00b7 detect is the only piece that runs in-line for the customer \u00b7 it MUST be cheap\n- Detect + Prevent together = the customer's runtime guardrail set \u00b7 this is the layer that grows over time and becomes the customer's moat\n- Detectors are open-source under MIT-with-receipt-clause \u00b7 customers can self-host and modify \u00b7 we only ask the receipts keep flowing\n\n\ud83d\udc1d *The detect is the smoke alarm. Cheap. Fast. Auditable. Calls the failu",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-DETECT-TASK-v1",
+    "canon": "defendapedia.eth/repair_terms/detect-task",
+    "street_source": null
+  },
+  "evidence_required": [
+    "The Diagnose Task output (defines the failure pattern)",
+    "The classifier definition (deterministic code OR ML-model artifact reference)",
+    "The input signature (what fields the classifier needs)",
+    "The runtime budget benchmark (proven \u2264 50ms)",
+    "The selectivity test result (positive on source pair \u00b7 negative on Honey set)",
+    "The estimated false-positive rate with sample size"
+  ],
+  "example": "> **Diagnose**: REASONING_GAP \u00b7 READ bucket \u00b7 severity 3 (journal-entry DR/CR reversal)\n>\n> **Detect Task output**:\n> ```yaml\n> classifier_type: DETERMINISTIC\n> classifier_definition: |\n>   def classify(pair):\n>       if pair.task_type != \"journal_entry\": return (\"NEGATIVE\", [])\n>       if \"entity_direction_lookup\" in pair.tool_calls: return (\"NEGATIVE\", [...])\n>       if pair.vendor_id_present: return (\"POSITIVE\", [...])\n>       return (\"NEGATIVE\", [...])\n> input_signature:\n>   fields_required: [\"task_type\", \"tool_calls\", \"vendor_id_present\"]\n>   fields_optional: [\"amount\", \"direction_hint\"]\n> runtime_budget_ms: 4\n> false_positive_rate_estimated: 0.02\n> selectivity_test:\n>   source_pair_classification: POSITIVE\n>   honey_test_set_size: 200\n>   honey_test_false_positive_count: 3\n>   honey_test_false_positive_rate: 0.015\n> confidence: 0.91\n> ```",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `over_budget_runtime` | Classifier > 50ms per check \u00b7 unusable in hot path | JELLY \u00b7 re-route |\n| `opaque_classification` | No evidence_chain \u00b7 classifier emits verdict without justification | PROPOLIS \u00b7 schema violation |\n| `high_false_positive` | Estimated FP rate > 0.05 \u00b7 or production FP > 2\u00d7 estimate | JELLY \u00b7 re-tune |\n| `fails_self_test_positive` | Classifier returns NEGATIVE on its own source failure pair | PROPOLIS \u00b7 refinery failure |\n| `fails_honey_test_negative` | Classifier returns POSITIVE on > 10% of Honey test set | JELLY \u00b7 re-route |\n| `missing_input_signature` | Required fields not enumerated \u00b7 customer can't wire it in | JELLY \u00b7 schema gap |",
+  "hashes": {
+    "json_sha256": "sha256:1cb468027c95d24116f03ac479000e3b421e6ea785be39e607399c8d10b0666c",
+    "markdown_sha256": "sha256:26e8f0722e8dec340e07ff01dfd98f70d24bcc020a065d31a275891c3094622c"
+  },
+  "jr_broker_use": "The Jr Hack verifies the Detect Task's runtime budget \u00b7 MUST be \u2264 50ms per check \u00b7 because the customer wires this into their hot path. A 200ms classifier is useless \u00b7 the customer rips it out. The Jr Hack also verifies the estimated false-positive rate is bounded \u00b7 typically < 5% \u00b7 because a noisy detector erodes operator trust faster than a missed detection.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/detect-task/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.506918+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.506918+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "diagnose-task",
+    "repair-task",
+    "prevent-task",
+    "compare-task",
+    "swarmfixer",
+    "pair-candidate"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 the detector is what scales the prevent layer to production traffic\n- **repair_lift**: NEUTRAL \u00b7 detector doesn't change the source pair score\n- **validator_confidence**: MEDIUM \u00b7 validators run the selectivity tests\n- **risk_temperature**: INVERSE \u00b7 detector lowers ongoing customer risk \u00b7 false-positive detector raises operator trust risk\n- **probability_of_close**: MEDIUM \u00b7 detectors are part of the long-term retention story\n- **evidence_strength**: HIGH \u00b7 every classification carries its evidence chain\n- **cost_to_mint**: LOW \u00b7 detect is short-output and the runtime cost is the customer's, not ours",
+  "slug": "detect-task",
+  "sr_broker_use": "The Sr Hack monitors the production false-positive rate vs the estimated rate \u00b7 if production FP rate exceeds 2\u00d7 the estimate, the detector is over-eager and needs re-tuning. The Sr Hack also tracks the detector's true-positive lift in the customer's actual traffic \u00b7 a detector that fires 0 times in 30 days is either dead code or the prevent rule worked too well \u00b7 either way, it gets reviewed.",
+  "status": "active",
+  "street_definition": "\"Does this LOOK like the same failure?\" That's the question every operator asks when a flagged pair comes in. **Detect Task** is RJ task #4 \u00b7 the positive/negative classifier with evidence. Given a new input \u00b7 does it match THIS failure class \u00b7 yes or no \u00b7 with the evidence that proves the call.",
+  "term": "Detect Task",
+  "tribunal_use": "- **Rule layer**: Detect Task MUST have a runtime_budget_ms \u2264 50 \u00b7 MUST be one of the 3 classifier types \u00b7 MUST have an evidence_chain (no opaque classifications)\n- **Rule layer**: Estimated false_positive_rate MUST be \u2264 0.05 \u00b7 higher rates auto-reject\n- **Judge layer**: Tribunal evaluates the detector by running it against the original failed pair (must POSITIVE) AND a set of known-Honey pairs (should be NEGATIVE) \u00b7 selectivity score is a Tribunal axis\n- **Classification impact**: A detector with > 10% false-positive on the Honey test set blocks RJ promotion \u00b7 the whole record drops to JELLY",
+  "version": "v1"
+}

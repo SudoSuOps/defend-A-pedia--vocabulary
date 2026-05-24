@@ -1,0 +1,108 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-COMMUNICATOR-v1",
+  "category": "defendableos_terms",
+  "created_at": "2026-05-24T15:33:21.483982+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-COMMUNICATOR-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/defendableos_terms/communicator",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/defendableos_terms/communicator/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-COMMUNICATOR-v1-20260524T15332148397Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:b30f1b974b0e743b5fd1be8ee4ac762662e55968d15fb070067d34486b10f75e",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "communicator",
+  "street_source_ens": null,
+  "subject": {
+    "category": "defendableos_terms",
+    "definitions": {
+      "client": "When you call us \u00b7 the first thing on the line is the Communicator. It listens for what you ACTUALLY need \u00b7 not just what you said. Then we run the work. Then the Communicator writes back to you in your language \u00b7 with the receipts attached. You get a real answer in your voice \u00b7 with the math behind it. No technical mystery box. No \"the model decided.\" Real translation \u00b7 documented \u00b7 defendable.",
+      "cre_operator": "In CRE \u00b7 this is what a sr broker DOES on every call. A principal says \"yo we're bleeding on Q4 \u00b7 figure it out\" and the sr broker hears: *re-underwrite the asset \u00b7 check tenant credit drift \u00b7 flag any covenants triggered \u00b7 price the workout window \u00b7 come back with three lanes (refi / restructure / sale)*. The broker translates the principal's emotional/incomplete language into a structured workstream the team can execute.\n\nThen the broker takes the team's analysis (cap rates \u00b7 DSCR \u00b7 comp grid \u00b7 scenarios) and translates it back into a 90-second summary the principal can act on: *\"You got 73 days to refi the Sun Belt warehouse. Two willing lenders. Best execution at 6.4. Recommend the Bridgehouse term sheet. Authorize next move?\"*\n\nThe Communicator is that sr broker \u00b7 in code \u00b7 always on \u00b7 24/7 \u00b7 trained on the founder's actual book.",
+      "defendableos": "The **Communicator LLM** is the bidirectional translation model that sits at both ends of the assignment lifecycle:\n\n- **INTAKE**: human speech (messy \u00b7 emotional \u00b7 street-level \u00b7 incomplete) \u2192 structured directive (validator-ready JSON \u00b7 vocabulary-tagged \u00b7 risk-scored \u00b7 evidence-required-named)\n- **OUTPUT**: machine output (Tribunal verdict \u00b7 5-Proof receipt \u00b7 agent execution result) \u2192 human explanation (CRE-grade \u00b7 CFO-readable \u00b7 founder-voice preserved)\n\nBoth directions use the SAME defend-A-pedia vocabulary as the canonical reference. Both directions are receipted \u00b7 graded \u00b7 deeded. The Communicator is the FIRST model the customer talks to and the LAST model that talks back.",
+      "street": "The **Communicator** is the model that listens to a human \u00b7 figures out what they actually meant \u00b7 turns that into a structured directive an agent can execute against \u00b7 then takes the agent's output and translates it back into language the human can act on. It's the bridge. It's the bookend. It's the meaning-alignment layer.\n\nNOT a chatbot. A communication arbitrator."
+    },
+    "related_terms": [
+      "directive",
+      "intent",
+      "meaning-alignment",
+      "communication-arbitration",
+      "book-of-business",
+      "language-asset",
+      "vocabulary-deed",
+      "round-trip-verification",
+      "tribunal",
+      "pre-market-flight-sheet"
+    ],
+    "slug": "communicator",
+    "term": "Communicator"
+  },
+  "supersedes": null,
+  "term": "Communicator",
+  "updated_at": "2026-05-24T15:33:21.745310+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

@@ -1,0 +1,76 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"defendablejelly.product_id\": {\"type\": \"string\", \"const\": \"defendablejelly\"},\n  \"defendablejelly.internal_stack\": {\n    \"type\": \"object\",\n    \"fields\": {\n      \"refinery\": \"swarmfixer\",\n      \"model\": \"swarmjelly-4b:v1.2\",\n      \"deed_class\": \"DDEED-DOV-REPAIR\",\n      \"record_type\": \"royal_jelly_record\"\n    }\n  },\n  \"defendablejelly.tier\": {\"type\": \"enum\", \"values\": [\"SELF_SERVE\",\"MANAGED\",\"EMBEDDED\"]},\n  \"defendablejelly.sla_lift_target\": {\"type\": \"float\", \"min\": 0.10},\n  \"defendablejelly.fix_or_refund_eligible\": {\"type\": \"boolean\", \"default\": false},\n  \"defendablejelly.fix_or_refund_window_days\": {\"type\": \"integer\", \"default\": 90}\n}\n```\n\nSchema files: `docs/schemas/product_offering.schema.json` \u00b7 `docs/schemas/sla.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "DefendableJelly is the part of DefendableOS that fixes the AI you already have. You ship us the failed answers \u00b7 we ship back a Royal Jelly Record \u00b7 five outputs that diagnose \u00b7 repair \u00b7 prevent \u00b7 detect \u00b7 and prove the fix worked. If you're on the embedded tier and we don't move the number in 90 days, we refund. That's the deal. Most customers don't take the refund \u00b7 they re-up. But the option is what made the contract sign.",
+  "cre_operator_meaning": "In CRE the customer doesn't buy \"the leasing software\" or \"the property management system.\" The customer buys **the building**. The systems are how we run it \u00b7 the building is the asset. DefendableJelly is the asset name. It's what the CFO writes on the AP voucher. SwarmFixer is how the rehab crew talks about it \u00b7 SwarmJelly is the model that powers it \u00b7 DefendableJelly is what the contract says.",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-DEFENDABLEJELLY-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `customer_id` \u00b7 `tier` \u00b7 `weekly_lift_aggregate` \u00b7 `royal_jelly_record_ids` \u00b7 `sla_status`\n- **DDEED class impact**: parent class \u00b7 binds many DDEED-DOV-REPAIR children \u00b7 issued weekly as DDEED-DOV-DEFENDABLE-JELLY-WEEKLY-<customer>-<week>\n- **Books and records layer**: L1 PostgreSQL \u2192 L4 Hedera HCS \u2192 L5 ENS (customer-resolvable at `<customer>.customers.defendable.eth`)\n- **5 Proofs touched**: PROCESS (the week's refinery lineage) \u00b7 QUALITY (the aggregate lift) \u00b7 ECONOMICS (the invoice line) \u00b7 TRUST (customer-countersigned weekly receipt)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `customer_id` \u00b7 `tier` \u00b7 `weekly_lift_aggregate` \u00b7 `royal_jelly_record_ids` \u00b7 `sla_status`\n- **DDEED class impact**: parent class \u00b7 binds many DDEED-DOV-REPAIR children \u00b7 issued weekly as DDEED-DOV-DEFENDABLE-JELLY-WEEKLY-<customer>-<week>\n- **Books and records layer**: L1 PostgreSQL \u2192 L4 Hedera HCS \u2192 L5 ENS (customer-resolvable at `<customer>.customers.defendable.eth`)\n- **5 Proofs touched**: PROCESS (the week's refinery lineage) \u00b7 QUALITY (the aggregate lift) \u00b7 ECONOMICS (the invoice line) \u00b7 TRUST (customer-countersigned weekly receipt)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "DefendableJelly is the public-facing brand name for the entire repair layer of DefendableOS. It binds the SwarmFixer refinery + the SwarmJelly model + the Royal Jelly Record output + the DDEED-DOV-REPAIR deed lineage into one consumable product. The customer buys DefendableJelly \u00b7 the operator runs SwarmFixer \u00b7 the model is SwarmJelly \u00b7 the deed is DDEED-DOV-REPAIR. Three internal names \u00b7 one external name.",
+  "defendableos_notes": "- DefendableJelly is the FIRST DefendableOS product with a falsifiable, refundable SLA \u00b7 this is the moat\n- The 3-name discipline (DefendableJelly external \u00b7 SwarmFixer internal \u00b7 SwarmJelly model) keeps the brand surface clean and the engineering surface honest\n- DefendableJelly is sold to ownership \u00b7 not procurement \u00b7 not engineering \u00b7 the customer who signs is the CFO or the COO with PnL exposure on AI failures\n\n\ud83d\udc1d *The brand is the receipt. DefendableJelly \u00b7 refundable lift on the AI you alre",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-DEFENDABLEJELLY-v1",
+    "canon": "defendapedia.eth/repair_terms/defendablejelly",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Customer contract specifying tier (Self-serve / Managed / Embedded)",
+    "SLA lift target (typically \u2265 0.10 for Embedded \u00b7 advisory for Managed)",
+    "Weekly aggregate lift receipt",
+    "Underlying refinery run IDs and Royal Jelly Record IDs",
+    "For Embedded tier \u00b7 90-day Fix-or-Refund clock and current cumulative lift"
+  ],
+  "example": "> **Customer**: RegionalInsurer \u00b7 mid-market P&C carrier \u00b7 40-agent fleet in production\n>\n> **Contract**: Embedded tier \u00b7 $180K ARR \u00b7 90-day Fix-or-Refund \u00b7 lift target 0.15 on the claims-triage agent fleet\n>\n> **Product surface**: dashboard tile says \"DefendableJelly\" \u00b7 invoice line says \"DefendableJelly \u00b7 Embedded \u00b7 12 weeks\" \u00b7 weekly receipts say \"DefendableJelly Weekly Lift Receipt \u00b7 Week of 2026-05-17\"\n>\n> **Internal stack**: SwarmFixer refinery runs nightly \u00b7 SwarmJelly-4B v1.2 inference at whale:11434 \u00b7 47 Royal Jelly Records produced this week \u00b7 41 cleared validator \u00b7 6 routed to quarantine\n>\n> **Week-7 receipt**: aggregate lift = +0.21 (over target) \u00b7 customer countersigned \u00b7 refund clock disarmed for this period\n>\n> **Day-90 outcome**: cumulative lift 0.23 \u00b7 contract auto-renews at $240K ARR \u00b7 refund not invoked",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `brand_confusion` | Customer-facing surface mentions SwarmJelly or SwarmFixer instead of DefendableJelly | n/a \u00b7 brand violation |\n| `unbacked_claim` | Sales surface claims a lift number not backed by anchored receipts | PROPOLIS \u00b7 marketing claim audit |\n| `sla_miss_no_refund` | Embedded customer hits 90-day clock with miss \u00b7 refund not processed | PROPOLIS \u00b7 contract violation |\n| `tier_mismatch` | Customer billed at Embedded but only receiving Self-serve service level | JELLY \u00b7 operations escalation |\n| `weekly_receipt_skipped` | Aggregate weekly lift receipt not generated for an Embedded customer | JELLY \u00b7 auto-alert to operator |",
+  "hashes": {
+    "json_sha256": "sha256:b8185fc873ccd81e8027e94338e1476aaa978e05d111db4464eadd68cd44b054",
+    "markdown_sha256": "sha256:3b8457e8dc7c0b772f98af77ed6bf5026b011dc3ce679c42fdbb04b0aa35c7aa"
+  },
+  "jr_broker_use": "When you're on a discovery call \u00b7 use the word **DefendableJelly**. Never SwarmFixer (internal). Never SwarmJelly (internal). The customer doesn't need to know the refinery from the model from the deed class \u00b7 they need to know what they're buying. The dashboard tile, the invoice line, the case study, the press release \u00b7 all say DefendableJelly.\n\nWhen the customer asks \"how does it work?\" \u00b7 pivot to the 5-task output \u00b7 DIAGNOSE/REPAIR/PREVENT/DETECT/COMPARE. That's the customer-facing architecture. The internal stack is a footnote at the bottom of the appendix.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/defendablejelly/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.505913+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.505913+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "swarmfixer",
+    "swarmjelly",
+    "repair-lift",
+    "pair-candidate",
+    "defendableos"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 DefendableJelly is THE flagship paid product\n- **repair_lift**: DIRECT \u00b7 the brand IS the lift promise\n- **validator_confidence**: MEDIUM \u00b7 brand trust correlates with weekly receipt trend\n- **risk_temperature**: MEDIUM \u00b7 Fix-or-Refund exposure is real but bounded\n- **probability_of_close**: HIGH \u00b7 the Fix-or-Refund clause is the killer sales line\n- **evidence_strength**: HIGH \u00b7 every DefendableJelly invoice cites the underlying anchored receipts\n- **cost_to_mint**: MEDIUM \u00b7 cost is the refinery run + the deed mint + the weekly receipt overhead",
+  "slug": "defendablejelly",
+  "sr_broker_use": "The Sr Hack on a Tier-3 engagement co-owns the **DefendableJelly SLA receipt** \u00b7 the weekly attestation that the lift target is being hit. The Sr Hack signs the receipt \u00b7 the customer countersigns \u00b7 the receipt anchors. If the 90-day Fix-or-Refund clock is running and the receipt trend shows we're going to miss \u00b7 the Sr Hack triggers a refinery tuning cycle BEFORE the SLA window closes \u00b7 not after.",
+  "status": "active",
+  "street_definition": "\"DefendableJelly is what the customer gets.\" That's the founder line. **DefendableJelly** is the brand name on the customer's invoice \u00b7 the dashboard tile \u00b7 the LOU clause. Inside the building we call it SwarmFixer (the refinery) and SwarmJelly (the model). The customer sees DefendableJelly \u00b7 one name \u00b7 one product \u00b7 one trust surface.",
+  "term": "DefendableJelly",
+  "tribunal_use": "- **Rule layer**: All DefendableJelly product outputs MUST be Royal Jelly Records (5-task contract) \u00b7 MUST cite the SwarmJelly model tag \u00b7 MUST have a validator chain pass\n- **Judge layer**: Tribunal grades the underlying refinery output \u00b7 the DefendableJelly brand carries the verdict but does not change it\n- **Classification impact**: DefendableJelly tier-3 customers have a contractual right to weekly aggregate lift verdicts \u00b7 a JELLY or PROPOLIS aggregate triggers a refund-window review",
+  "version": "v1"
+}

@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"repair.task_id\": {\"type\": \"string\", \"format\": \"rj-rep-<run_id>\"},\n  \"repair.steps\": {\n    \"type\": \"array\",\n    \"items\": {\n      \"type\": \"object\",\n      \"required\": [\"step_number\", \"action\", \"rationale\"],\n      \"properties\": {\n        \"step_number\": {\"type\": \"integer\", \"min\": 1},\n        \"action\": {\"type\": \"string\"},\n        \"rationale\": {\"type\": \"string\"},\n        \"tool_call\": {\"type\": \"string\", \"nullable\": true}\n      }\n    },\n    \"minItems\": 1\n  },\n  \"repair.corrected_output\": {\"type\": \"string\"},\n  \"repair.input_evidence_cited\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\n  \"repair.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"repair.tribunal_rebench_run_id\": {\"type\": \"string\"}\n}\n```\n\nSchema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/repair_task.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "The Repair Task is the corrected answer. When your AI shipped the wrong journal entry \u00b7 the wrong claim summary \u00b7 the wrong contract clause \u00b7 we ship back the right one, plus the step-by-step that produced it. You can read the steps and patch your prompt. Or you can ship the corrected output to the downstream system. Either way \u00b7 you have the fix in hand.",
+  "cre_operator_meaning": "In CRE the Repair Task is the **GC's scope of work**. The inspector wrote the punch list. The GC writes the actual scope \u00b7 who does what \u00b7 in what order \u00b7 to what spec \u00b7 with what materials \u00b7 for how much. The scope is what gets bid. The scope is what gets built. The scope is what gets inspected at completion. No scope, no rehab.",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-REPAIR-TASK-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `repair.steps` (hashed) \u00b7 `repair.corrected_output` (hashed) \u00b7 `repair.tribunal_rebench_run_id` \u00b7 `repair.confidence`\n- **DDEED class impact**: repair is the BODY of DDEED-DOV-REPAIR \u00b7 the corrected output is what the deed attests to\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle (corrected output as leaf) \u2192 L4 Hedera HCS\n- **5 Proofs touched**: PROCESS (the step sequence) \u00b7 QUALITY (the re-bench verdict) \u00b7 ECONOMICS (token cost)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `repair.steps` (hashed) \u00b7 `repair.corrected_output` (hashed) \u00b7 `repair.tribunal_rebench_run_id` \u00b7 `repair.confidence`\n- **DDEED class impact**: repair is the BODY of DDEED-DOV-REPAIR \u00b7 the corrected output is what the deed attests to\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle (corrected output as leaf) \u2192 L4 Hedera HCS\n- **5 Proofs touched**: PROCESS (the step sequence) \u00b7 QUALITY (the re-bench verdict) \u00b7 ECONOMICS (token cost)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Repair Task is the second of the 5 Royal Jelly tasks SwarmFixer emits. It produces the step-by-step recovery procedure AND the corrected output. The procedure is a numbered sequence of operations the agent should have performed. The corrected output is the answer the agent should have produced. The Tribunal grades the corrected output as a fresh submission \u00b7 its composite score is the input to the Repair Lift calculation.",
+  "defendableos_notes": "- The Repair Task is what the customer ACTUALLY consumes \u00b7 they read the steps \u00b7 they patch their agent \u00b7 they ship the corrected output to downstream\n- The \"no fabricated sources\" rule is the bright line \u00b7 violations auto-quarantine \u00b7 because a refinery that hallucinates fixes is worse than no refinery\n- The corrected_output gets re-benched independently \u00b7 this is what makes the lift number defensible to an auditor\n\n\ud83d\udc1d *The repair is the GC's scope. Numbered steps. Cited evidence. Runnabl",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-REPAIR-TASK-v1",
+    "canon": "defendapedia.eth/repair_terms/repair-task",
+    "street_source": null
+  },
+  "evidence_required": [
+    "The original failed pair (input + agent output)",
+    "The Diagnose Task output (severity + failure mode)",
+    "The repair steps with rationale per step",
+    "The corrected output as runnable text/JSON/code",
+    "Citations to specific fields in the source pair (no fabricated sources)",
+    "The Tribunal re-bench verdict with run_id"
+  ],
+  "example": "> **Pair**: books-bot.acmecorp.defendable.eth \u00b7 journal entry with reversed DR/CR\n>\n> **Diagnose**: REASONING_GAP \u00b7 severity 3 \u00b7 AgentHash READ\n>\n> **Repair Task output**:\n> ```yaml\n> steps:\n>   - step_number: 1\n>     action: \"Call entity_direction_lookup(vendor_id) to confirm direction\"\n>     rationale: \"Misread root cause was not consulting the canonical direction source\"\n>     tool_call: \"entity_direction_lookup\"\n>   - step_number: 2\n>     action: \"If lookup returns 'OUTBOUND' \u00b7 set DR = COGS/Expense \u00b7 CR = AP/Cash\"\n>     rationale: \"Outbound invoice from vendor = expense recognition\"\n>     tool_call: null\n>   - step_number: 3\n>     action: \"Re-emit journal entry with corrected DR/CR direction\"\n>     rationale: \"Final output must match the inferred direction\"\n>     tool_call: null\n> corrected_output: |\n>   {\"journal_entry\": {\"dr\": {\"account\": \"COGS\", \"amount\": 12500}, \"cr\": {\"account\": \"Accounts Payable\", \"amount\": 12500}, \"memo\": \"Vendor invoice INV-2026-0142\"}}\n> input_evidence_cited:\n>   - \"input.invoice.direction = outbound\"\n>   - \"input.invoice.amount = 12500\"\n>   - \"input.invoice.vendor_id = V-8801\"\n> confidence: 0.92\n> tribunal_rebench_run_id: \"tribunal-rebench-20260524T073000Z-acme-books-001\"\n> ```\n>\n> **Tribunal re-bench**: composite 0.910 (was 0.760)\n>\n> **Repair Lift**: +0.150",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `fabricated_evidence` | Repair cites sources not in the source pair | PROPOLIS \u00b7 auto-quarantine |\n| `empty_steps` | Steps array is empty \u00b7 no procedure documented | PROPOLIS \u00b7 schema violation |\n| `corrected_output_unrunnable` | Corrected output is malformed \u00b7 won't parse or won't execute | JELLY \u00b7 re-route |\n| `no_rebench` | Tribunal re-bench skipped \u00b7 lift cannot be computed | PROPOLIS \u00b7 process violation |\n| `infra_assumption` | Steps assume infra the customer doesn't have | JELLY \u00b7 escalate to PREVENT/DETECT |\n| `lower_than_original` | Re-bench scores LOWER than original \u00b7 regression | PROPOLIS \u00b7 refinery failure |",
+  "hashes": {
+    "json_sha256": "sha256:df2cd3b0234d369b26c7b3cfa47a779ee22c00b824113e0d52c435b39cf3c3c4",
+    "markdown_sha256": "sha256:25018a2a325ebc300ed9cbbae6eddcd9bd0e658904ff28e9edb3b70333b84e60"
+  },
+  "jr_broker_use": "The Jr Hack verifies the Repair Task cites evidence from the source pair \u00b7 not fabricated sources. If the repair cites a \"vendor master record\" that wasn't in the input, that's a fabrication and the pair routes to `quarantined/`. The Jr Hack also verifies the corrected output runs through Tribunal re-bench before the lift is computed \u00b7 skipping the re-bench is a process violation.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/repair-task/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.516247+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.516247+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "diagnose-task",
+    "prevent-task",
+    "detect-task",
+    "compare-task",
+    "repair-lift",
+    "swarmfixer"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 the repair IS the assignment deliverable\n- **repair_lift**: DIRECT \u00b7 the corrected_output's re-bench score IS the lift input\n- **validator_confidence**: HIGH \u00b7 validators read the repair steps to verify reasoning\n- **risk_temperature**: INVERSE \u00b7 clean repair lowers risk \u00b7 sloppy repair raises it\n- **probability_of_close**: HIGH \u00b7 customers judge the product on the quality of the corrected output\n- **evidence_strength**: HIGH \u00b7 the repair must cite source evidence (no fabrication)\n- **cost_to_mint**: MEDIUM \u00b7 repair is the most-token-intensive of the 5 tasks (~3000-5000 tokens)",
+  "slug": "repair-task",
+  "sr_broker_use": "The Sr Hack reads the repair steps as if they were the playbook the customer's agent should adopt going forward. If the steps would require infrastructure the customer doesn't have (e.g., \"call the entity-direction lookup tool\" when the customer hasn't built that tool yet), the Sr Hack flags it for the PREVENT and DETECT tasks to compensate \u00b7 or escalates to the customer for an infra discussion.",
+  "status": "active",
+  "street_definition": "\"Show me the fix.\" That's the operator's second read after the diagnose. **Repair Task** is RJ task #2 \u00b7 the step-by-step recovery from the failed state to a Honey-grade answer. The diagnose says what's wrong \u00b7 the repair says how it gets done. Step-by-step. With the corrected output. With the rationale.",
+  "term": "Repair Task",
+  "tribunal_use": "- **Rule layer**: Repair Task MUST include at least 1 step \u00b7 MUST include a corrected_output \u00b7 MUST cite input evidence (no fabrication) (C04)\n- **Rule layer**: The corrected_output MUST be re-benched through Tribunal \u00b7 the rebench run_id MUST be populated\n- **Judge layer**: The Tribunal grades the corrected_output as a fresh agent submission \u00b7 uses the same 6-axis rubric as the original verdict\n- **Classification impact**: The repaired score IS the input to Repair Lift \u00b7 which gates the bucket transition",
+  "version": "v1"
+}

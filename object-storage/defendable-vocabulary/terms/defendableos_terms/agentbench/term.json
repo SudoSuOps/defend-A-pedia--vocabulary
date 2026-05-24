@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"agentbench.run_id\": {\"type\": \"string\", \"format\": \"ag-<utc-ts>-<short-hash>\"},\n  \"agentbench.agent_ens\": {\"type\": \"string\"},\n  \"agentbench.pack_name\": {\"type\": \"string\", \"default\": \"compute_inspector_v1\"},\n  \"agentbench.pack_version\": {\"type\": \"string\", \"default\": \"v1.0-alpha\"},\n  \"agentbench.task_count\": {\"type\": \"integer\", \"min\": 1},\n  \"agentbench.adversarial_case_count\": {\"type\": \"integer\", \"min\": 0},\n  \"agentbench.composite_score\": {\"type\": \"float\", \"range\": [0.0, 100.0]},\n  \"agentbench.axes_scores\": {\n    \"type\": \"object\",\n    \"required\": [\"capability\",\"truth\",\"safety\",\"numeric_structural\",\"efficiency\",\"reproducibility\"]\n  },\n  \"agentbench.tribunal_classification\": {\"type\": \"enum\", \"values\": [\"HONEY\",\"ROYAL_JELLY\",\"JELLY\",\"PROPOLIS\"]},\n  \"agentbench.deployment_tier\": {\"type\": \"enum\", \"values\": [\"OBSERVED\",\"SHADOWED\",\"SUPERVISED\",\"RUNTIME\",\"AUTONOMOUS\"]},\n  \"agentbench.deed_id\": {\"type\": \"string\", \"format\": \"DDEED-DOV-AGENT-<slug>-<seq>-v<n>\"}\n}\n```\n\nSchema files: `docs/schemas/agentbench_run.schema.json` \u00b7 `docs/schemas/agent_pack.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "defendableos_terms",
+  "client_explanation": "AgentBench is our formal benching service. Submit your agent \u00b7 we run it through our documented test pack \u00b7 grade it on 5 dimensions \u00b7 issue a publicly resolvable deed certifying the result. You can show the deed to your auditor, your insurance carrier, your board. It's a point-in-time attestation of agent quality \u00b7 re-bench periodically to maintain currency.",
+  "cre_operator_meaning": "In CRE this is the **third-party appraisal**. The owner wants to refinance. The lender requires a current MAI-grade appraisal. The owner hires the appraiser. The appraiser walks the building, pulls the comps, runs the income approach + the sales comparison + the cost approach, and signs a report. The report is the document the lender funds against. The appraisal isn't the owner's marketing \u00b7 it's a third-party attestation. AgentBench is the MAI appraisal for AI agents.",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `agentbench.run_id` \u00b7 `pack_name` \u00b7 `pack_version` \u00b7 `composite_score` \u00b7 `axes_scores` \u00b7 `classification` \u00b7 `deployment_tier`\n- **DDEED class impact**: produces `DDEED-DOV-AGENT-<agent-slug>-<seq>-v<n>` \u00b7 the agent's first deed is the chain's genesis \u00b7 subsequent deeds chain by `parent_deed_id`\n- **Books and records layer**: L1 PostgreSQL (bench run) \u2192 L2 Merkle (verdict tree) \u2192 L4 Hedera HCS (deed anchor) \u2192 L5 ENS (per-agent pointer at `<agent>.<operator>.defendable.eth`)\n- **5 Proofs touched**: ORIGIN (which agent, which pack version) \u00b7 QUALITY (the 5-axis scoring) \u00b7 PROCESS (the per-task verdict lineage) \u00b7 TRUST (Tribunal verdict + Hedera anchor + ENS pointer)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `agentbench.run_id` \u00b7 `pack_name` \u00b7 `pack_version` \u00b7 `composite_score` \u00b7 `axes_scores` \u00b7 `classification` \u00b7 `deployment_tier`\n- **DDEED class impact**: produces `DDEED-DOV-AGENT-<agent-slug>-<seq>-v<n>` \u00b7 the agent's first deed is the chain's genesis \u00b7 subsequent deeds chain by `parent_deed_id`\n- **Books and records layer**: L1 PostgreSQL (bench run) \u2192 L2 Merkle (verdict tree) \u2192 L4 Hedera HCS (deed anchor) \u2192 L5 ENS (per-agent pointer at `<agent>.<operator>.defendable.eth`)\n- **5 Proofs touched**: ORIGIN (which agent, which pack version) \u00b7 QUALITY (the 5-axis scoring) \u00b7 PROCESS (the per-task verdict lineage) \u00b7 TRUST (Tribunal verdict + Hedera anchor + ENS pointer)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "AgentBench is the bench rail of DefendableOS. It accepts an AI agent submission, runs it through a documented test pack (compute_inspector_pack_v1 \u00b7 v1.0-alpha or current), grades each task through Tribunal (rule layer + judge layer), computes a composite score across 5 axes (Capability 25% \u00b7 Truth 20% \u00b7 Safety 20% \u00b7 Numeric/Structural 15% \u00b7 Efficiency 10% \u00b7 Reproducibility 10%), and issues a DDEED-DOV-AGENT-<agent>-<seq>-v<n> on success. The deed is a public record of the agent's quality on the documented pack at a point in time.",
+  "defendableos_notes": "- AgentBench was the MVP that produced the first live agent deed `DDEED-DOV-AGENT-COMPUTE-INSPECTOR-000001-v1` on 2026-05-23\n- The pack-alpha tier cap is honest framing \u00b7 we don't let early-stage pack runs claim mature deployment tiers \u00b7 this is what auditors trust\n- The 5-axis scoring is constitutional \u00b7 changing the axes or weights requires a doctrine PR \u00b7 NOT a config flip\n- AgentBench feeds AdversarialPack candidates \u00b7 failures in benching become pack additions for future runs\n- Re-benching is encouraged \u00b7 the agent's quality drifts with model upgrades \u00b7 the deed lineage shows the trajectory\n\n\ud83d\udc1d *Submit your agent. The Tribunal grades. The deed attests. Auditor-ac",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1",
+    "canon": "defendapedia.eth/defendableos_terms/agentbench",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Agent endpoint URL + auth (scoped credentials)",
+    "Agent ENS identity",
+    "Pack name + version",
+    "Per-task verdict from Tribunal",
+    "Per-axis score with documented rubric",
+    "Composite score with weight breakdown",
+    "DDEED record with deed_id and receipt anchor"
+  ],
+  "example": "> **Customer**: ACMECorp \u00b7 books-bot agent\n>\n> **Workflow**:\n> 1. Submit endpoint `https://api.acmecorp.com/books-bot/v1` + scoped auth + scope declaration (read GL + write journal entries)\n> 2. Jr Hack confirms scope \u00b7 pack version `compute_inspector_v1:v1.0-alpha`\n> 3. AgentBench runs 6 tasks + 3 adversarial cases against endpoint\n> 4. Tribunal grades each: 4 HONEY \u00b7 4 ROYAL_JELLY \u00b7 1 JELLY \u00b7 0 PROPOLIS\n> 5. Composite computed: capability 22/25 \u00b7 truth 17/20 \u00b7 safety 19/20 \u00b7 numeric/structural 11/15 \u00b7 efficiency 7/10 \u00b7 reproducibility 9/10 = 85/100 \u00b7 classification ROYAL_JELLY\n> 6. Deployment tier: OBSERVED (pack alpha-status cap applied \u00b7 cannot claim higher)\n> 7. Deed minted: `DDEED-DOV-AGENT-ACMECORP-BOOKS-BOT-000001-v1` \u00b7 record_hash `sha256:8c4e...d3a1` \u00b7 anchored on Hedera HCS \u00b7 ENS at `books-bot.acmecorp.defendable.eth`",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `undocumented_pack` | Bench ran with an ad-hoc pack not in the registry | PROPOLIS \u00b7 governance violation |\n| `custom_axis_weights` | Composite computed with non-canonical weights | PROPOLIS \u00b7 governance violation |\n| `pack_status_cap_ignored` | Customer claims AUTONOMOUS tier on alpha-pack-graded agent | JELLY \u00b7 contract review |\n| `mock_agent_undisclosed` | Bench run against a mock agent without disclosure flag | PROPOLIS \u00b7 provenance violation |\n| `judge_layer_skipped` | Composite computed from rule layer only \u00b7 no judge inference | JELLY \u00b7 re-bench required |\n| `deed_minted_below_jelly` | Deed issued on a PROPOLIS-classified bench run | PROPOLIS \u00b7 governance violation |",
+  "hashes": {
+    "json_sha256": "sha256:543a64129b969a0ff2ef0da3539567d9aa9eb169420966fd2f520af6a81b7f69",
+    "markdown_sha256": "sha256:e8640b7bc261594aea55c4b2a3a1c6c217b09916e7e75764fccd9a94f320b77c"
+  },
+  "jr_broker_use": "When a customer asks \"how do I prove my agent works?\", route them to AgentBench. The 6-step workflow:\n\n1. Customer submits agent endpoint + auth credentials + scope declaration\n2. Jr Hack confirms scope and pack version\n3. AgentBench runs the pack against the agent endpoint\n4. Tribunal grades each task (rule layer + judge layer)\n5. Composite score + classification computed\n6. DDEED-DOV-AGENT minted on Tribunal verdict \u2265 JELLY \u00b7 published to ENS\n\nStop at step 1 if the agent has no DefendableRouter capture available \u00b7 the bench needs receipted traffic, not just one-shot endpoint hits.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/agentbench/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.481721+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.481721+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "defendableos",
+    "defendablerouter",
+    "clawcheck",
+    "defendablehack",
+    "pair-candidate"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 the bench IS the agent's report card\n- **repair_lift**: INDIRECT \u00b7 bench failures route to SwarmFixer for refinery\n- **validator_confidence**: HIGH \u00b7 deed-bearing agents carry validator-backed quality attestation\n- **risk_temperature**: INVERSE \u00b7 bench-attested agents lower customer's deployment risk\n- **probability_of_close**: HIGH \u00b7 auditor-acceptable attestation drives enterprise deals\n- **evidence_strength**: HIGH \u00b7 documented pack + Tribunal verdict = strongest evidence class\n- **cost_to_mint**: MEDIUM \u00b7 bench run cost + deed cost \u00b7 ~$5-50 per run depending on pack size",
+  "slug": "agentbench",
+  "sr_broker_use": "The Sr Hack reviews the deployment tier assignment. A customer with composite 78 (JELLY) asking for AUTONOMOUS tier gets a NO \u00b7 the tier is bounded by the bench grade. The Sr Hack also signs off on pack version bumps \u00b7 adopting a new pack version (v1.0-alpha \u2192 v1.0-beta) means existing deeds carry the OLD pack version permanently \u00b7 the deed is immutable \u00b7 subsequent deeds carry the new version.",
+  "status": "active",
+  "street_definition": "\"Bench it.\" That's how the Sr Hack tells a customer to submit their agent for a formal grade. **AgentBench** is the bench rail \u00b7 submit your agent \u00b7 Tribunal grades it on the documented pack \u00b7 we issue a DDEED-DOV-AGENT \u00b7 you have a defendable record of your agent's quality at a point in time. CRE-grade attestation for AI.",
+  "term": "AgentBench",
+  "tribunal_use": "- **Rule layer**: AgentBench runs MUST use a documented pack version \u00b7 ad-hoc test suites rejected\n- **Rule layer**: Composite score MUST be computed with the documented axis weights \u00b7 custom weights rejected\n- **Rule layer**: Pack alpha-status caps the deployment tier at OBSERVED (cannot claim higher until pack matures)\n- **Judge layer**: Tribunal grades each task in the pack \u00b7 the verdicts aggregate to the composite\n- **Classification impact**: Composite \u2265 95 \u2192 HONEY \u00b7 85-94 \u2192 ROYAL_JELLY \u00b7 70-84 \u2192 JELLY \u00b7 <70 \u2192 PROPOLIS \u00b7 maps to the locked 4-tier classification",
+  "version": "v1"
+}

@@ -1,0 +1,13 @@
+{
+  "archive_filename": "vocabulary-snapshot-daily-20260524T153511Z-v0.3.0-final.tar.gz",
+  "archive_sha256": "sha256:a1df6a33aeb2b6d8a55e9471e51ecf49ce4e7479d61e814e869d78b0b9ccc5de",
+  "archive_size_bytes": 542149,
+  "cadence": "daily",
+  "captured_at": "2026-05-24T15:35:11.308695+00:00",
+  "ens_books_record": "streetledger.eth/vocabulary/snapshots/daily/vocabulary-snapshot-daily-20260524T153511Z-v0.3.0-final",
+  "hedera_anchor_status": "PENDING \u00b7 single archive hash \u00b7 ready for next batch",
+  "snapshot_name": "vocabulary-snapshot-daily-20260524T153511Z-v0.3.0-final",
+  "snapshot_type": "DEFENDABLE_VOCABULARY_SNAPSHOT",
+  "source_root": "object-storage/defendable-vocabulary",
+  "tag": "v0.3.0-final"
+}

@@ -1,0 +1,82 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"tribunal_verdict.tier\": {\n    \"type\": \"enum\",\n    \"values\": [\"ROYAL_JELLY\", \"HONEY\", \"JELLY\", \"PROPOLIS\"],\n    \"scoring_hook\": \"tier_assignment\"\n  },\n  \"tribunal_verdict.jelly_score\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"scoring_hook\": \"jelly_score_v1\"\n  },\n  \"deed.eligible_for_ddeed\": {\n    \"type\": \"boolean\",\n    \"rule\": \"tier == ROYAL_JELLY\"\n  },\n  \"deed.eligible_for_writer_training\": {\n    \"type\": \"boolean\",\n    \"rule\": \"tier == ROYAL_JELLY AND consent_present\"\n  },\n  \"deed.cell_certificate_required\": {\n    \"type\": \"boolean\",\n    \"rule\": \"tier == ROYAL_JELLY\"\n  }\n}\n```\n\nSchema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/deed_receipt.schema.json` \u00b7 `docs/schemas/cell_certificate.schema.json`\n\nScoring hooks: `jelly_score_v1` (5-component weighted formula \u00b7 see virgin-jelly upstream) \u00b7 `tier_assignment` (the 4/5/3-tier collapse engine) \u00b7 `writer_training_eligibility`.",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "hive_terms",
+  "client_explanation": "\"Royal Jelly\" is our apex grade \u00b7 the output we will issue as a full Defendable Deed \u00b7 cell-level anchored on the Hedera public ledger \u00b7 ENS-resolvable forever. When a piece of AI work product grades Royal Jelly \u00b7 you can take that output to your CFO \u00b7 your auditor \u00b7 your regulator \u00b7 and the proof of how it was produced will hold up. It scored above 0.85 on a two-judge Tribunal \u00b7 cleared all seven critical validator checks \u00b7 and was published with a complete chain of evidence. Royal Jelly is what we sell. Everything else is feed for the system.",
+  "cre_operator_meaning": "In CRE, Royal Jelly maps to Class A \u00b7 institutional \u00b7 the listing the brokerage celebrates in the year-end recap. Single-tenant net lease \u00b7 investment-grade credit (BBB+ or better) \u00b7 15-year remaining term \u00b7 2% annual bumps \u00b7 trophy submarket \u00b7 top-1% rent comp \u00b7 the asset that institutional money fights over. A 5-cap-able piece. The kind of listing a sr broker takes a 4% commission on without flinching because the buyer pool is deep enough to close at ask.\n\nRoyal Jelly in DefendableOS carries the same gravity. It is not just \"good output.\" It is verified, receipted, anchored, defendable AI work product \u00b7 the kind a customer would put in their compliance report \u00b7 the kind a regulator would accept \u00b7 the kind a sr broker would defend in a deposition.",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `tier=ROYAL_JELLY` \u00b7 `jelly_score` \u00b7 `cell_certificate_id` \u00b7 `hedera_tx_id` \u00b7 `ens_reservation` \u00b7 `writer_training_eligible=true`\n- **DDEED class impact**: ONLY tier eligible for full DDEED issuance with cell-level Hedera anchor\n- **Books and records layer**: ALL 5 (L1 PG \u00b7 L2 Merkle \u00b7 L3 NAS \u00b7 L4 Hedera HCS \u00b7 L5 ENS) \u00b7 Royal Jelly is the only tier that touches L5 ENS by default\n- **5 Proofs touched**: ALL 5 \u00b7 ORIGIN (which model / node) \u00b7 QUALITY (the 0.85+ score) \u00b7 PROCESS (the full 6-role lineage) \u00b7 ECONOMICS (cost-to-mint logged) \u00b7 TRUST (Hedera anchor + ENS resolution)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `tier=ROYAL_JELLY` \u00b7 `jelly_score` \u00b7 `cell_certificate_id` \u00b7 `hedera_tx_id` \u00b7 `ens_reservation` \u00b7 `writer_training_eligible=true`\n- **DDEED class impact**: ONLY tier eligible for full DDEED issuance with cell-level Hedera anchor\n- **Books and records layer**: ALL 5 (L1 PG \u00b7 L2 Merkle \u00b7 L3 NAS \u00b7 L4 Hedera HCS \u00b7 L5 ENS) \u00b7 Royal Jelly is the only tier that touches L5 ENS by default\n- **5 Proofs touched**: ALL 5 \u00b7 ORIGIN (which model / node) \u00b7 QUALITY (the 0.85+ score) \u00b7 PROCESS (the full 6-role lineage) \u00b7 ECONOMICS (cost-to-mint logged) \u00b7 TRUST (Hedera anchor + ENS resolution)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Royal Jelly is the apex Tribunal tier \u00b7 `tribunal_label = ROYAL_JELLY` \u00b7 JellyScore \u2265 0.85 (in the production 4-tier model) or \u2265 95 (in the original 5-tier Genesis model \u00b7 which slots Royal Jelly above the \"Honey 85-94\" tier and reserves the apex name for the 95+ \"Genesis\" band).\n\nIn the production pipeline \u00b7 Royal Jelly is the ONLY tier eligible for:\n\n- full DDEED issuance (cell-level Hedera HCS PoSg certificate \u00b7 per-pair anchor)\n- inclusion in the writer-training corpus (the next Gemma / Atlas / SwarmCurator cohort trains ONLY on Royal Jelly)\n- citation as a flagship in the Morning Brief and Closing Statement\n- ENS resolution under `{deed-id}.{org}.defendable.eth`",
+  "defendableos_notes": "- Royal Jelly is the most valuable cohort the Hive produces \u00b7 contamination here compounds forward into every future model \u00b7 protect it ruthlessly\n- The 0.85 threshold is more inclusive than the original virgin-jelly 0.95 \u00b7 we adopted 0.85 because production proved 55% of medical and 55% of CRE pairs survived at that floor \u00b7 this is the operator-tuned middle\n- Public surfaces (the chain glass wall \u00b7 the customer brief) sometimes use the 5-tier vocabulary \u00b7 where \"Genesis\" (95+) is the sub-band within Royal Jelly that we reserve for DOI-stamped canonical artifacts\n- The cell-level Hedera PoSg certificate is what makes Royal Jelly defendable in a courtroom \u00b7 the certificate carries cell_id + jelly_score + fingerprint + batch_root + proof_index \u00b7 all in < 1024 bytes\n- Customers do not see the score \u00b7 they see the deed \u00b7 the deed cites the tier \u00b7 the tier is the language they speak\n\n\ud83d\udc1d *Royal Jelly is the apex. The deed-ready. The writer-training corpus. Protect it ruthlessly \u00b7 contamination here compounds",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1",
+    "canon": "defendapedia.eth/hive_terms/royal-jelly",
+    "street_source": null
+  },
+  "evidence_required": [
+    "\u2265 3 independent source citations (per C02 + EntityScorer weights \u00b7 sources must weight to mean \u2265 0.75)",
+    "Full validator chain results (C01-C12 \u00b7 with annotations on any advisory fails)",
+    "Both judge reasons (Scale A `gemma3:12b` AND Scale B `qwen2.5:32b`) with raw scores",
+    "Drift value (`|A - B|`) \u00b7 must be \u2264 0.15",
+    "If Critic invoked \u00b7 the Critic reasoning + reconciled verdict",
+    "If Katniss invoked \u00b7 all 3 Katniss runs + unanimity confirmation",
+    "SHA-256 record_hash of canonical JSON",
+    "Hedera HCS transaction ID (anchor confirmation)",
+    "ENS reservation confirmation"
+  ],
+  "example": "> **Engagement**: STNL acquisition opinion \u00b7 cold storage facility \u00b7 Atlanta MSA \u00b7 investment-grade tenant (Lineage Logistics \u00b7 A-).\n>\n> **AI work product**: SwarmCRE-9B produced a 4-page broker opinion including cap-rate analysis \u00b7 tenant credit walk \u00b7 comp set \u00b7 re-trade recommendation.\n>\n> **Tribunal run**: TRIB-20260524T141022Z-7c4a\n> - Validator chain \u00b7 all 7 critical PASS \u00b7 C08 advisory PASS \u00b7 others PASS\n> - Scale A (gemma3:12b) \u00b7 score 0.89 \u00b7 reason \"comp set well-anchored \u00b7 tenant credit cited from EDGAR \u00b7 re-trade math arithmetic-clean\"\n> - Scale B (qwen2.5:32b) \u00b7 score 0.91 \u00b7 reason \"reasoning depth high \u00b7 all 5 trajectory keywords present \u00b7 numeric verification ties out\"\n> - Drift 0.02 \u00b7 no Critic invoked\n> - JellyScore 0.90 \u00b7 tier ROYAL_JELLY\n>\n> **Deed**: DDEED-DOV-CRE-LINEAGE-ATL-000042-v1 \u00b7 cell certificate posted to Hedera topic 0.0.10291838 \u00b7 ENS reservation `ddeed-dov-cre-lineage-atl-000042-v1.swarmcre.defendable.eth`\n>\n> **Outcome**: Deed shipped to the customer in their Closing Statement \u00b7 cited in their compliance file \u00b7 referenced by their lender's underwriter without challenge. Pair added to the SwarmCRE-9B v2 training set for the next cook.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **fabricated_apex** | Score \u2265 0.85 but C02 sources are fabricated (judge fell for surface form) | PROPOLIS \u00b7 contamination guard |\n| **single_source_apex** | RJ score but only 1 source cited \u00b7 sr broker missed it | JELLY (forced downgrade \u00b7 re-route to source-build) |\n| **inflated_apex** | RJ cohort > 60% of volume \u00b7 suggests judge temp drift | Whole cohort held \u00b7 cook batch audited |\n| **holdout_apex** | RJ pair found to be from a holdout set (C07 fires post-issue) | PROPOLIS \u00b7 deed REVOKED \u00b7 publicly amended \u00b7 Hedera retraction issued |\n| **consent_missing_apex** | RJ pair lacks operator consent flag \u00b7 C08 advisory firing | Held \u00b7 operator backfills consent \u00b7 re-issued |",
+  "hashes": {
+    "json_sha256": "sha256:2d45285832c0ffb55a1c0652d49fd2699b76f48e988bdf07c23419b7d7b002a6",
+    "markdown_sha256": "sha256:2616f0196a6e31410b838793d108fe38c1c796241c007929917aae5f2602f651"
+  },
+  "jr_broker_use": "When you see a pair come back from the Tribunal tagged `ROYAL_JELLY`:\n\n1. Verify the verdict record loaded properly into the dashboard (check the `record_hash` is non-null)\n2. Confirm the deed-writer queue picked it up within 5 minutes\n3. Check that the ENS reservation completed (`{deed-id}.{org}.defendable.eth` resolves)\n4. If anything looks off \u00b7 escalate to sr broker BEFORE notifying the customer\n5. If everything looks good \u00b7 the Morning Brief will surface it the next day \u00b7 do NOT email the customer directly about a Royal Jelly until the deed is fully anchored on Hedera (usually < 15 min after issue)\n\n**Rule of thumb**: a Royal Jelly verdict is not a Royal Jelly DEED until the Hedera anchor confirms. Verbal commitments wait for the anchor.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/royal-jelly/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.502711+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.502711+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "honey",
+    "jelly",
+    "propolis",
+    "genesis",
+    "hive",
+    "tribunal",
+    "validator-chain"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 Royal Jelly IS the success state \u00b7 the assignment closed\n- **repair_lift**: N/A \u00b7 Royal Jelly is already apex \u00b7 no repair candidate\n- **validator_confidence**: HIGHEST \u00b7 validator confidence \u2265 0.85 is the entry criterion\n- **risk_temperature**: LOWEST \u00b7 RJ is the cool-floor of the heat map\n- **probability_of_close**: HIGHEST \u00b7 RJ-tagged engagements close at ~3x the rate of Honey-tagged\n- **evidence_strength**: HIGHEST \u00b7 the source weights mean \u2265 0.75 is the floor\n- **cost_to_mint**: ELEVATED \u00b7 RJ deeds carry the cell-level Hedera certificate cost (~$0.0008/cert) \u00b7 still well under the $0.0052/deed baseline",
+  "slug": "royal-jelly",
+  "sr_broker_use": "The sr broker spot-audits Royal Jelly cohorts daily:\n\n- Pull 20 random Royal Jelly verdicts from the prior 24h \u00b7 walk each one end-to-end (PairCandidate \u2192 validator chain results \u2192 judge reasons \u2192 final tier \u2192 deed record_hash \u2192 Hedera anchor)\n- Spot for the \"right answer for the wrong reason\" pattern \u00b7 the auto-judges sometimes give a high score for surface form even when the reasoning is shallow \u00b7 Critic should have caught it \u00b7 if it didn't \u00b7 flag and document\n- Watch for tier-inflation drift \u00b7 if Royal Jelly cohort exceeds 60% of total volume \u00b7 investigate the judge temperature config (should be locked at 0.05 \u00b7 see the SwarmJelly temp doctrine)\n- Apply the PASS doctrine \u00b7 if a Royal Jelly verdict looks good but the underlying engagement was one we should have passed on \u00b7 seal it as Propolis with `operator_pass_doctrine` annotation\n- Never promote a Honey verdict to Royal Jelly without a fresh Tribunal pass \u00b7 the chain is the chain",
+  "status": "active",
+  "street_definition": "\"That one's Royal Jelly.\" A sr broker says it about a finished engagement that needs zero rework \u00b7 the LOI ties out to the OM \u00b7 the OM ties out to the rent roll \u00b7 the rent roll ties out to the tax bill \u00b7 the buyer pool is institutional and the cap rate held through closing. In the Hive \u00b7 Royal Jelly is the same kind of asset \u00b7 the AI output that survived the full 6-role Tribunal \u00b7 cleared every critical validator check \u00b7 scored \u2265 0.85 on the JellyScore \u00b7 and is ready to ship as a Defendable Deed.\n\nIt is not the average pair. It is the top 35-55% of production volume in a well-running cook. Apex grade. Deed-ready. The kind of output you would sign your name to. The kind the writer fleet trains on for the NEXT generation.",
+  "term": "Royal Jelly",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - ROYAL_JELLY      # this term IS the apex tier\n  rule_layer_checks:\n    - C01: pair record present (MUST PASS)\n    - C02: source artifact referenced (MUST PASS)\n    - C03: source retrievable (MUST PASS \u00b7 no cache fallback at RJ tier)\n    - C04: tribunal label assigned (MUST be ROYAL_JELLY)\n    - C05: no hard-fail flagged (MUST PASS \u00b7 zero hallucination \u00b7 zero schema-break)\n    - C06: PROPOLIS not promoted (trivially clears)\n    - C07: holdout contamination guard (MUST PASS \u00b7 zero tolerance)\n  judge_layer_prompt_hint: \"score this pair on the 5-component JellyScore \u00b7 this is candidate for the writer-training corpus \u00b7 be conservative \u00b7 contamination compounds\"\n  can_be_critical_failure: false   # RJ IS the success state \u00b7 contrast Propolis\n```\n\nA pair reaches Royal Jelly only by clearing ALL 7 critical checks AND scoring \u2265 0.85 from both Scale A and Scale B judges (drift \u2264 0.15) AND optionally surviving a manual Katniss-confirm if the operator invoked one. The rule layer cannot promote \u00b7 the judge layer cannot promote past what the rule layer allows \u00b7 this is structural.",
+  "version": "v1"
+}

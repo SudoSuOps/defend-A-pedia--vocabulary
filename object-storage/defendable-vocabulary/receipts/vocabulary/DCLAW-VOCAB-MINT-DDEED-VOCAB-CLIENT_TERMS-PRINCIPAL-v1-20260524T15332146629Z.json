@@ -1,0 +1,33 @@
+{
+  "category": "client_terms",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1",
+    "canon": "defendapedia.eth/client_terms/principal",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:2bbd9d7bd9fc4906a277341fa7b99e9f3ee5b7fcdb97005a5ec53bf9cabbbcc4",
+    "markdown_sha256": "sha256:72ab0c86b3e5051dcef85af45c7e5a45c2b6923e233e62cd08b466711c9842ed"
+  },
+  "minted_at": "2026-05-24T15:33:21.466297+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/principal/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.466110+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.466110+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1-20260524T15332146629Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "principal",
+  "term": "Principal"
+}

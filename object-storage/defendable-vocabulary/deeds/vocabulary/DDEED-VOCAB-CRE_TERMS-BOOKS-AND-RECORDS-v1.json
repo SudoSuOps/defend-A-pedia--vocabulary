@@ -1,0 +1,107 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-BOOKS-AND-RECORDS-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.467907+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-BOOKS-AND-RECORDS-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/books-and-records",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/books-and-records/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-BOOKS-AND-RECORDS-v1-20260524T15332146789Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:c0280107c36da7959c853701b925e0517191b6749f86901f22203ffd4cc684fe",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "books-and-records",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "Books and Records is the term we use for the complete audit trail of every defensive action our team takes on your behalf \u00b7 receipted, anchored to the public Hedera ledger, and permanently resolvable through ENS. This trail lives across five layers \u00b7 from our working ledger in PostgreSQL through Merkle integrity checks to our operator-owned permanent archive to Hedera anchors and ENS resolution.\n\nIn commercial real estate, the books-and-records are the asset \u00b7 the building is just the collateral. In DefendableOS, the books-and-records are the product. When you sign a Letter of Understanding, you are not buying software \u00b7 you are buying a 5-layer audit trail you can hand to your auditor, your regulator, or your insurance carrier with full confidence that every line item is independently verifiable.\n\nThe 5-layer stack is what makes our PASS doctrine credible, our title-insurance commitment real, and our 30-year-horizon engagement promise structurally sound. Books-and-records is not the back office. It is the product.",
+      "cre_operator": "A CRE building's books-and-records include:\n\n- **Financial books** \u00b7 T-12 income statements \u00b7 monthly rent rolls \u00b7 CAM (common area maintenance) reconciliations \u00b7 capex history \u00b7 tax bills \u00b7 insurance premiums\n- **Tenant books** \u00b7 executed leases \u00b7 lease abstracts \u00b7 estoppel certificates \u00b7 tenant correspondence \u00b7 lease amendment history\n- **Title records** \u00b7 title commitment \u00b7 title policy \u00b7 recorded easements \u00b7 deed history \u00b7 liens (current and historical) \u00b7 ALTA survey\n- **Physical records** \u00b7 construction drawings \u00b7 CO (certificate of occupancy) \u00b7 permits (open and closed) \u00b7 environmental reports \u00b7 roof / HVAC / parking lot age and condition records\n- **Transaction records** \u00b7 prior closing statements \u00b7 prior PSAs \u00b7 prior LOIs \u00b7 prior broker engagement letters\n- **Regulatory records** \u00b7 zoning compliance letters \u00b7 code violation history \u00b7 ADA compliance \u00b7 fire-life-safety inspections\n\nThe quality of the books-and-records determines the quality of the deal. Clean books = institutional-grade asset = tight cap rate = premium pricing. Dirty books = retail-grade asset = wide cap rate = discount pricing. A sr broker reads books-and-records the way a doctor reads bloodwork \u00b7 the diagnosis is in the data.\n\nBooks-and-records also outlast ownership. Same building changes hands every 5-10 years on average \u00b7 the books-and-records persist \u00b7 the new owner inherits the file \u00b7 the file IS the asset.",
+      "defendableos": "In DefendableOS, **books-and-records** is the 5-layer finality stack that holds every receipt, every deed, every Tribunal verdict, every validator chain run, every operator action. See [`../doctrine/04_books_and_records_doctrine.md`](../../doctrine/04_books_and_records_doctrine.md) for the full layer-by-layer specification. Summary:\n\n```\nL1  PostgreSQL \u00b7 hot mutable queries \u00b7 the working ledger\nL2  Merkle trees \u00b7 SHA-256 \u00b7 batches of 50 \u00b7 the integrity check\nL3  NAS archive \u00b7 /mnt/swarm/swarmdeed-finality/ \u00b7 operator-owned permanent record\nL4  Hedera HCS mainnet \u00b7 topic 0.0.10291838 \u00b7 the public anchor\nL5  ENS namespace \u00b7 14 registered domains \u00b7 the permanent resolution layer\n```\n\nBooks-and-records in DefendableOS includes:\n\n- **Engagement records** \u00b7 LOU \u00b7 PSA \u00b7 diligence outputs \u00b7 closing statements \u00b7 renewals\n- **Operating records** \u00b7 per-engagement defensive actions \u00b7 Tribunal verdicts \u00b7 validator chain runs \u00b7 workout plans \u00b7 disposition events\n- **Financial records** \u00b7 per-engagement fees \u00b7 title-insurance commitments and payouts \u00b7 cost-to-mint per receipt \u00b7 cumulative engagement economics\n- **Audit records** \u00b7 validator overrides (with reasoning) \u00b7 sr broker adjudications \u00b7 vocabulary contributions \u00b7 doctrine revisions\n- **Compliance records** \u00b7 regulatory regime mappings \u00b7 third-party audit findings \u00b7 insurance carrier documentation \u00b7 regulator inquiries and responses\n\nBooks-and-records is not a back-office function. It IS the product. The customer is not buying defense software \u00b7 they are buying a 5-layer audit trail of every defensive action the Swarm takes on their behalf, anchored to a public ledger, defensible by anyone with a deed ID.",
+      "street": "\"Pull the books on this one.\" \u2014 sr broker, opening a diligence cycle.\n\nThe **books-and-records** are the asset. In CRE, the building is just the collateral \u00b7 the books-and-records are what get priced. T-12s. Rent rolls. CAM reconciliations. Estoppels. Title work. Closing statements. Tax records. Insurance claims history. Every dollar of valuation traces back to a piece of paper that ties out.\n\nIn DefendableOS, the books-and-records are the moat. The receipts. The deeds. The Tribunal verdicts. The validator chain runs. The Hedera anchors. The ENS resolutions. The 5-layer finality stack that gives every defensive action a permanent, verifiable, audit-grade record. The product is the books \u00b7 not the software."
+    },
+    "related_terms": [
+      "color",
+      "digest",
+      "om",
+      "loi",
+      "psa",
+      "due-diligence",
+      "underwriting",
+      "probability-of-close",
+      "cap-rate"
+    ],
+    "slug": "books-and-records",
+    "term": "Books and Records"
+  },
+  "supersedes": null,
+  "term": "Books and Records",
+  "updated_at": "2026-05-24T15:33:21.739884+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

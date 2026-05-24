@@ -1,0 +1,76 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"evidence_strength.value\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"evidence_strength.formula_inputs\": {\n    \"type\": \"object\",\n    \"required\": [\"evidence_count\", \"mean_source_weight\", \"oldest_source_days_old\"],\n    \"properties\": {\n      \"evidence_count\": {\"type\": \"integer\", \"min\": 0},\n      \"mean_source_weight\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n      \"oldest_source_days_old\": {\"type\": \"integer\", \"min\": 0}\n    }\n  },\n  \"evidence_strength.normalization_baseline\": {\"type\": \"integer\", \"const\": 5},\n  \"evidence_strength.staleness_penalty_max\": {\"type\": \"float\", \"const\": 0.4},\n  \"evidence_strength.refinery_eligibility_threshold\": {\"type\": \"float\", \"const\": 0.4},\n  \"evidence_strength.source_weights_reference\": {\"type\": \"string\", \"const\": \"EntityScorer table\"}\n}\n```\n\nSchema files: `docs/schemas/evidence_record.schema.json` \u00b7 `docs/schemas/ui_dial.schema.json` \u00b7 `docs/schemas/entity_scorer.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "scoring_terms",
+  "client_explanation": "Evidence Strength is how strong the evidence is behind every verdict. We count the citations \u00b7 weight them by source quality (EDGAR > Wikipedia > Reddit) \u00b7 and apply a freshness penalty (stale evidence loses weight). The dial shows you whether your verdict is backed by gold-standard receipts or by thin air. Anything below 0.4 doesn't even qualify for our refinery \u00b7 we'd be building on sand.",
+  "cre_operator_meaning": "In CRE this is the **comp set quality**. A deal pencils on the strength of its comp set \u00b7 5 same-submarket recent sales is strong \u00b7 1 stale out-of-state comp is thin \u00b7 the broker who pencils against thin comps eats the failed listing. Evidence Strength is the comp-set quality score for the agent economy. Strong evidence backs the verdict the way 5 fresh comps back a cap rate.",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `evidence_strength.value` \u00b7 formula inputs \u00b7 source weights table reference\n- **DDEED class impact**: deeds embed evidence strength \u00b7 auditors can re-derive\n- **Books and records layer**: L1 PostgreSQL (per-pair evidence record) \u2192 L2 Merkle (source citations as leaves) \u2192 L4 Hedera HCS (anchored)\n- **5 Proofs touched**: QUALITY (source weights ARE quality) \u00b7 PROCESS (evidence-gathering lineage) \u00b7 TRUST (re-derivable formula)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `evidence_strength.value` \u00b7 formula inputs \u00b7 source weights table reference\n- **DDEED class impact**: deeds embed evidence strength \u00b7 auditors can re-derive\n- **Books and records layer**: L1 PostgreSQL (per-pair evidence record) \u2192 L2 Merkle (source citations as leaves) \u2192 L4 Hedera HCS (anchored)\n- **5 Proofs touched**: QUALITY (source weights ARE quality) \u00b7 PROCESS (evidence-gathering lineage) \u00b7 TRUST (re-derivable formula)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Evidence Strength is a 0-1 dial computed from three multiplicative factors:\n\n```\nevidence_strength = color_evidence_count_normalized \u00d7 mean_source_weight \u00d7 (1 - staleness_penalty)\n```\n\nWhere:\n- `color_evidence_count_normalized` = min(evidence_count / 5, 1.0) (5 is the canonical baseline)\n- `mean_source_weight` = the average of source weights (EDGAR 0.90 \u00b7 OpenAlex 0.85 \u00b7 CRE News 0.65 \u00b7 Reddit 0.50 \u00b7 etc.)\n- `staleness_penalty` = (days_since_oldest_source / 30) * 0.4 capped at 0.4\n\nThe threshold for refinery eligibility is `evidence_strength \u2265 0.4` (below 0.4, SwarmFixer cannot run on the pair).",
+  "defendableos_notes": "- Evidence Strength is what separates the refinery from a guessing engine \u00b7 without strong evidence, the diagnose and repair are speculation\n- The EntityScorer source weights table is the canonical reference \u00b7 it lives at `docs/schemas/entity_scorer.schema.json` \u00b7 changes require a doctrine PR\n- The 0.4 threshold is the floor for refinery eligibility \u00b7 the 5-evidence baseline is the normalization point \u00b7 both are constitutional\n- Evidence Strength \u00d7 Validator Confidence \u00d7 Repair Lift = the trinity of dials that gate every Royal Jelly promotion \u00b7 all three must clear\n\n\ud83d\udc1d *Five comps backed by EDGAR vs one stale Reddit thread. The dial tells you which deal",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1",
+    "canon": "defendapedia.eth/scoring_terms/evidence-strength",
+    "street_source": null
+  },
+  "evidence_required": [
+    "The count of distinct citations",
+    "The list of sources with EntityScorer weights",
+    "The date of the oldest source (drives staleness)",
+    "The formula application showing the three factors and the product",
+    "The threshold check (\u2265 0.4 for refinery eligibility)"
+  ],
+  "example": "> **Pair with strong evidence (`pair-20260524T061208Z-7e2a`)**:\n> - evidence_count: 5\n> - sources: EDGAR 10-K (0.90) \u00b7 CompStak (0.85) \u00b7 ATTOM (0.85) \u00b7 broker phone log (0.90) \u00b7 SwarmCurator CRE corpus (0.85)\n> - mean_source_weight: 0.870\n> - oldest_source_days_old: 14\n> - staleness_penalty: (14/30) \u00d7 0.4 = 0.187\n> - Formula: min(5/5, 1.0) \u00d7 0.870 \u00d7 (1 - 0.187) = 1.0 \u00d7 0.870 \u00d7 0.813 = **0.707**\n> - Refinery eligible: YES (0.707 \u2265 0.4)\n>\n> **Pair with weak evidence (`pair-20260524T071800Z-x9k1`)**:\n> - evidence_count: 2 (both Reddit threads)\n> - mean_source_weight: 0.50 (Reddit cap)\n> - oldest_source_days_old: 45\n> - staleness_penalty: capped at 0.4\n> - Formula: min(2/5, 1.0) \u00d7 0.50 \u00d7 (1 - 0.4) = 0.4 \u00d7 0.50 \u00d7 0.6 = **0.120**\n> - Refinery eligible: NO (0.120 < 0.4)\n> - Routes to evidence-gathering queue instead",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `single_source_padding` | Pair cites 5 quotes from one source counted as 5 evidence | JELLY \u00b7 de-dup required |\n| `wrong_source_weights` | Formula applied with weights not from EntityScorer | PROPOLIS \u00b7 governance violation |\n| `staleness_not_applied` | Old sources used at full weight without penalty | JELLY \u00b7 re-compute |\n| `fabricated_source` | Source cited doesn't exist \u00b7 count inflated | PROPOLIS \u00b7 auto-quarantine |\n| `below_threshold_refinery_run` | SwarmFixer ran on pair with evidence_strength < 0.4 | PROPOLIS \u00b7 refinery governance |\n| `evidence_count_only` | Dial computed as count only \u00b7 ignoring source weights and staleness | PROPOLIS \u00b7 governance violation |",
+  "hashes": {
+    "json_sha256": "sha256:ba7fa013bb8dbd3d50471d30c867a5129f78ac56298a5eb6f968cf642c2b7d9f",
+    "markdown_sha256": "sha256:11c5991b0566656c722d5daf279ce617d1d16591edbfbf40fec4121e55ad6219"
+  },
+  "jr_broker_use": "The Jr Hack pre-screens every incoming pair on Evidence Strength BEFORE routing to SwarmFixer. Below 0.4 = route to evidence-gathering \u00b7 not to refinery. The Jr Hack also documents the source citations explicitly \u00b7 \"EDGAR 10-K filing for entity X dated 2026-04-15\" not \"Wikipedia entry for X\" \u00b7 the EntityScorer table caps Wikipedia at 0.65 while EDGAR sits at 0.90.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/evidence-strength/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.522354+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.522354+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "repair-lift",
+    "validator-confidence",
+    "risk-temperature",
+    "pair-candidate",
+    "swarmfixer"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 evidence strength is the precondition for refinery work\n- **repair_lift**: GATING \u00b7 below 0.4, no refinery, no lift\n- **validator_confidence**: INPUT \u00b7 evidence strength feeds the validator confidence formula\n- **risk_temperature**: INVERSE \u00b7 strong evidence = low risk\n- **probability_of_close**: HIGH \u00b7 customers trust verdicts backed by strong evidence\n- **evidence_strength**: SELF\n- **cost_to_mint**: NEUTRAL \u00b7 evidence computation is part of standard pipeline",
+  "slug": "evidence-strength",
+  "sr_broker_use": "The Sr Hack monitors the distribution of Evidence Strength across incoming pairs \u00b7 a drift down (mean falling from 0.7 to 0.55 over 4 weeks) signals an upstream change \u00b7 customer's agent dropped a high-weight source \u00b7 or model provider stopped including citations \u00b7 or the routing changed. The Sr Hack escalates upstream before the refinery throughput collapses.",
+  "status": "active",
+  "street_definition": "\"How strong is the evidence?\" That's the discriminator question on every Tribunal verdict review. **Evidence Strength** is the 0-1 dial that measures how well-supported a pair candidate's evidence base is \u00b7 count of independent citations \u00d7 mean source quality \u00d7 freshness. Thin evidence cap-rates the verdict. Strong evidence unlocks promotion.",
+  "term": "Evidence Strength",
+  "tribunal_use": "- **Rule layer**: Evidence Strength MUST be computed from the documented formula with the documented EntityScorer weights\n- **Rule layer**: Below 0.4, the pair cannot enter SwarmFixer \u00b7 it routes to evidence-gathering instead\n- **Rule layer**: A pair claiming 5 sources but all single-source-class (e.g., 5 Reddit) gets capped at the source-class weight (0.50) not boosted by count\n- **Judge layer**: Tribunal doesn't grade Evidence Strength directly \u00b7 it consumes the dial value \u00b7 low evidence strength caps the verdict tier\n- **Classification impact**: Evidence Strength < 0.4 caps the verdict at JELLY \u00b7 cannot reach ROYAL JELLY no matter the lift",
+  "version": "v1"
+}

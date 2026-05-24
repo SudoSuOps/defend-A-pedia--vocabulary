@@ -1,0 +1,33 @@
+{
+  "category": "repair_terms",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-REPAIR-LIFT-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-REPAIR-LIFT-v1",
+    "canon": "defendapedia.eth/repair_terms/repair-lift",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:82085564db3d5c3e0205f7d36f1adfe995265f02de81c8ac18a2b4a94bb8a968",
+    "markdown_sha256": "sha256:a90d6df0128fc0d0707ee216b0580f276bd1e6ee7db129899b5abd3e37c184f0"
+  },
+  "minted_at": "2026-05-24T15:33:21.514375+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/repair-lift/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.514201+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.514201+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-REPAIR-LIFT-v1-20260524T15332151437Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "repair-lift",
+  "term": "Repair Lift"
+}

@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-PSA-PURCHASE-AND-SALE-AGREEMENT-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.479617+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-PSA-PURCHASE-AND-SALE-AGREEMENT-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/psa-purchase-and-sale-agreement",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/psa-purchase-and-sale-agreement/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-PSA-PURCHASE-AND-SALE-AGREEMENT-v1-20260524T15332147960Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:b9fad49a3aee5618cb939d2505fd714ffe8babbd3e19b7422bf96be52cab7439",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "psa-purchase-and-sale-agreement",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "The Purchase and Sale Agreement is the binding contract that follows your Letter of Understanding and our completion of diligence. The LOU was our handshake; the PSA is the contract. It is reviewed by external counsel on both sides \u00b7 we recommend you have your own counsel review before signing \u00b7 and it commits both parties for the full engagement term with explicit terms covering price, scope, service-level commitments, our title-insurance guarantee, our PASS authority and the credit-back mechanics if we exercise it, your audit access rights, data residency, and what happens at the end of the engagement.\n\nThe PSA is structured to be readable by you, your CFO, your general counsel, your insurance carrier, and your regulator \u00b7 simultaneously. We use CRE-grade language, not vendor-license boilerplate. If anything in the PSA is unclear to your team, we want to address it before signature \u00b7 not after.",
+      "cre_operator": "A PSA in CRE is typically 40-120 pages, depending on asset complexity. It is the document the closing attorney runs \u00b7 not the broker. The broker negotiates the business terms; the attorney drafts the language.\n\nPSA sections that always appear:\n\n- **Recitals** (the parties, the asset, the prior negotiations including the LOI)\n- **Purchase price and earnest money** (down to the dollar, with all adjustments named)\n- **Closing conditions** (what must be true at closing or the deal voids)\n- **Representations and warranties** (each party's binding statements about the asset \u00b7 what's true \u00b7 what's not)\n- **Covenants** (what each party commits to do between PSA sign and closing)\n- **Indemnification** (who covers what if a rep or warranty turns out false)\n- **Risk of loss** (what happens if the asset is damaged before closing)\n- **Closing mechanics** (escrow agent, closing date, document delivery schedule)\n- **Survival clauses** (which reps and warranties live beyond closing \u00b7 which die at closing)\n- **Default and remedies** (what each side gets if the other breaches)\n- **Assignment rights** (can the contract be transferred)\n- **Confidentiality** (what stays under NDA)\n- **Disputes and governing law** (which jurisdiction, which forum, which dispute mechanism)\n\nThe PSA is the document that gets filed if litigation happens. Every word matters. The sr broker's involvement is to ensure the business terms in the PSA match the LOI exactly \u00b7 the attorney's involvement is to ensure the language is enforceable.",
+      "defendableos": "In DefendableOS, the **PSA** is the binding service agreement that follows the LOU and the diligence period. It is the document that legally commits both parties for the engagement term \u00b7 typically 12, 24, or 36 months \u00b7 with renewal mechanics and disposition mechanics named in advance.\n\nThe PSA in DefendableOS includes all the standard CRE clauses adapted to a defense-service context, plus:\n\n- **Receipt SLA** with named consequences for missed SLAs (typically pro-rated fee credit)\n- **Title insurance commitment** (Tribunal verdict \u00b10.15 guarantee, ramp schedule, payout mechanics)\n- **PASS doctrine clause** (extended from LOU \u00b7 now binding \u00b7 including the credit-back mechanics if we PASS mid-engagement)\n- **Audit access clause** (customer's auditors and regulators get same-day deed access \u00b7 named contact \u00b7 response SLA)\n- **Data residency clause** (customer data stays on operator-owned NAS \u00b7 cloud-mirror requires explicit customer authorization \u00b7 5-layer finality stack named explicitly)\n- **Vendor change clause** (what happens if the customer changes AI vendors mid-engagement \u00b7 re-pricing trigger, re-inspection trigger)\n- **Renewal mechanics** (auto-renew vs opt-in, notice periods, price-change windows)\n- **Disposition mechanics** (orderly wind-down language, deed-archive transfer to customer custody, post-engagement support tier)",
+      "street": "\"Did we get the PSA executed?\" \u2014 sr broker, asking the closing officer, every Friday afternoon of a closing week.\n\nThe **Purchase and Sale Agreement** (PSA) is the binding contract. The LOI / LOU was the soft commitment that triggered diligence. The PSA is the hard contract that emerges from diligence \u00b7 price locked, terms locked, contingencies named, walk-away conditions tightened, signatures binding both parties to the transaction.\n\nIn CRE, the PSA is where the deal becomes legally enforceable. In DefendableOS, the PSA is where the defense engagement becomes contractually committed for the full term \u00b7 pricing, scope, SLAs, recourse, and PASS authority all written into binding language that survives leadership changes on either side."
+    },
+    "related_terms": [
+      "loi",
+      "om",
+      "digest",
+      "due-diligence",
+      "books-and-records",
+      "underwriting"
+    ],
+    "slug": "psa-purchase-and-sale-agreement",
+    "term": "PSA \u00b7 Purchase and Sale Agreement"
+  },
+  "supersedes": null,
+  "term": "PSA \u00b7 Purchase and Sale Agreement",
+  "updated_at": "2026-05-24T15:33:21.743731+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

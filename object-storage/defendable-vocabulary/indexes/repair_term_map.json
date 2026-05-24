@@ -1,0 +1,246 @@
+{
+  "index_type": "REPAIR_TERM_MAP",
+  "term_count": 48,
+  "terms": [
+    {
+      "category": "defendableos_terms",
+      "slug": "agentbench",
+      "term": "AgentBench"
+    },
+    {
+      "category": "client_terms",
+      "slug": "assignment",
+      "term": "Assignment"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "assignment-failure",
+      "term": "Assignment Failure"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "assignment-success",
+      "term": "Assignment Success"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "bee",
+      "term": "Bee"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "books-and-records",
+      "term": "Books and Records"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "cap-rate",
+      "term": "Cap Rate"
+    },
+    {
+      "category": "client_terms",
+      "slug": "closing-statement-defendable-closing-statement",
+      "term": "Closing Statement (Defendable Closing Statement)"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "communicator",
+      "term": "Communicator"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "compare-task",
+      "term": "Compare Task"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "cost-to-mint",
+      "term": "Cost to Mint"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "deal-flow",
+      "term": "Deal Flow"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "defendablecloud-com",
+      "term": "DefendableCloud.com"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "defendablejelly",
+      "term": "DefendableJelly"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "defendableos",
+      "term": "DefendableOS"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "detect-task",
+      "term": "Detect Task"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "diagnose-task",
+      "term": "Diagnose Task"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "digest",
+      "term": "Digest"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "due-diligence-dd",
+      "term": "Due Diligence (DD)"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "energy",
+      "term": "Energy"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "evidence-strength",
+      "term": "Evidence Strength"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "genesis",
+      "term": "Genesis"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "hallucination-event",
+      "term": "Hallucination Event"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "hive",
+      "term": "Hive"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "honey",
+      "term": "Honey"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "honeybox",
+      "term": "HoneyBox"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "jelly",
+      "term": "Jelly"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "judge",
+      "term": "Judge"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "om-offering-memorandum",
+      "term": "OM \u00b7 Offering Memorandum"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "pair-candidate",
+      "term": "Pair Candidate"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "prevent-task",
+      "term": "Prevent Task"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "probability-of-close",
+      "term": "Probability of Close"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "propolis",
+      "term": "Propolis"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "psa-purchase-and-sale-agreement",
+      "term": "PSA \u00b7 Purchase and Sale Agreement"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "repair-lift",
+      "term": "Repair Lift"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "repair-lift-ui-dial",
+      "term": "Repair Lift (UI Dial)"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "repair-task",
+      "term": "Repair Task"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "risk-temperature",
+      "term": "Risk Temperature"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "royal-jelly",
+      "term": "Royal Jelly"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "swarm",
+      "term": "Swarm"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "swarmfixer",
+      "term": "SwarmFixer"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "swarmjelly",
+      "term": "SwarmJelly"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "temp-0-05-rule-the-temp-five-cent-rule",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "tribunal",
+      "term": "Tribunal"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "underwriting",
+      "term": "Underwriting"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "validator",
+      "term": "Validator"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "validator-confidence",
+      "term": "Validator Confidence"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"judge.judge_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"^BEE-AUDITOR-JUDGE-(A|B)-[a-z0-9]+$\"\n  },\n  \"judge.scale\": {\n    \"type\": \"enum\",\n    \"values\": [\"A\", \"B\"]\n  },\n  \"judge.model\": { \"type\": \"string\" },\n  \"judge.rig\": { \"type\": \"string\" },\n  \"judge.jelly_score\": { \"type\": \"float\", \"range\": [0.0, 1.0] },\n  \"judge.reason\": { \"type\": \"string\" },\n  \"judge.failure_mode\": {\n    \"type\": \"enum\",\n    \"nullable\": true,\n    \"values\": [\"missing_step\", \"false_assumption\", \"hallucination\", \"overgeneralization\", \"drift\", \"schema_break\", \"tool_misuse\"]\n  },\n  \"judge.hallucination_event\": { \"type\": \"boolean\" },\n  \"judge.adversarial_source_flag\": { \"type\": \"boolean\" },\n  \"judge.critical_issue_flag\": { \"type\": \"boolean\" },\n  \"judge.latency_ms\": { \"type\": \"integer\" }\n}\n```\n\nSchema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/judge_invocation.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "tribunal_terms",
+  "client_explanation": "\"The judges\" are the AI models inside our Tribunal that produce a numeric score (JellyScore 0-1) and a reasoning narrative on every AI output we ship. Two judges run on every pair \u00b7 Scale A is our fast pass \u00b7 Scale B is our deep pass. If they agree within a tight threshold (0.15 score units) the verdict stands. If they disagree, we invoke a Critic to reconcile. If the case looks adversarial, we invoke Katniss for a best-of-three. Every deed you receive carries both judge scores and both judge reasons in its record.",
+  "cre_operator_meaning": "In CRE \u00b7 the judge maps to the licensed appraiser \u00b7 the role that produces the appraisal opinion \u00b7 the cap rate \u00b7 the value range \u00b7 with the reasoning narrative attached. A high-stakes deal gets two appraisers (one selected by buyer \u00b7 one by lender) \u00b7 their values are reconciled within a tolerance \u00b7 disagreements outside tolerance trigger a third appraisal. Same exact pattern. Two judges \u00b7 drift threshold (0.15 score units) \u00b7 Critic for reconciliation \u00b7 Katniss for adversarial.",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-JUDGE-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `judge.scale_a.score` \u00b7 `judge.scale_a.reason` \u00b7 `judge.scale_b.score` \u00b7 `judge.scale_b.reason` \u00b7 `judge.drift` \u00b7 `judge.penalized_scoring_applied`\n- **DDEED class impact**: NO DDEED issues without TWO judge verdicts (Scale A + Scale B)\n- **Books and records layer**: L1 PG (judge results hot) \u00b7 L2 Merkle (judge results in batch root) \u00b7 L3 NAS (judge invocation log archived)\n- **5 Proofs touched**: QUALITY (judges PRODUCE the quality score) \u00b7 PROCESS (judge invocation lineage IS process) \u00b7 ORIGIN (judge model + rig is part of origin)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `judge.scale_a.score` \u00b7 `judge.scale_a.reason` \u00b7 `judge.scale_b.score` \u00b7 `judge.scale_b.reason` \u00b7 `judge.drift` \u00b7 `judge.penalized_scoring_applied`\n- **DDEED class impact**: NO DDEED issues without TWO judge verdicts (Scale A + Scale B)\n- **Books and records layer**: L1 PG (judge results hot) \u00b7 L2 Merkle (judge results in batch root) \u00b7 L3 NAS (judge invocation log archived)\n- **5 Proofs touched**: QUALITY (judges PRODUCE the quality score) \u00b7 PROCESS (judge invocation lineage IS process) \u00b7 ORIGIN (judge model + rig is part of origin)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "A judge is an LLM agent invoked by the Tribunal Filter (after the validator chain clears critical) to produce a JellyScore on a PairCandidate. Two judges run per pair:\n\n### Scale A judge\n- Model: `gemma3:12b`\n- Rig: swarmrails GPU 1 (RTX PRO 4500 32GB Blackwell sm_120)\n- Runtime: vLLM 0.17.0 with `--enforce-eager`\n- Temperature: 0.05 (per the temp-doctrine \u00b7 NEVER 0.7)\n- Role: fast pass \u00b7 routing classification \u00b7 light Auditor lanes\n- Throughput contribution: ~165 tok/s concurrent\n\n### Scale B judge\n- Model: `qwen2.5:32b`\n- Rig: swarmrails GPU 0 (RTX PRO 6000 96GB Blackwell sm_120)\n- Runtime: vLLM 0.17.0 with `--enforce-eager`\n- Temperature: 0.05\n- Role: deep pass \u00b7 Critic invocations \u00b7 Katniss invocations\n- Throughput contribution: ~88 tok/s concurrent\n\nBoth judges output through the typed `record_tribunal_verdict` tool contract:\n\n```json\n{\n  \"tool\": \"record_tribunal_verdict\",\n  \"args\": {\n    \"pair_id\": \"string\",\n    \"jelly_score\": \"float 0.0-1.0\",\n    \"reason\": \"string (1-2 sentences \u00b7 operator-readable)\",\n    \"failure_mode\": \"enum or null (one of 7 SwarmJelly classes if failure detected)\",\n    \"hallucination_event\": \"boolean\",\n    \"adversarial_source_flag\": \"boolean\",\n    \"critical_issue_flag\": \"boolean (triggers penalized scoring)\"\n  }\n}\n```\n\nFree-text outputs are rejected at parse time \u00b7 180s timeout per judge invocation \u00b7 `tool_choice=auto` is respected (Kimi quirk: temperature must be exactly 1 for some Kimi variants but our gemma + qwen production models use 0.05).",
+  "defendableos_notes": "- The two-judge requirement is doctrine \u00b7 one judge is opinion \u00b7 two judges with a drift threshold is adjudication\n- Scale A is gemma3:12b \u00b7 Scale B is qwen2.5:32b \u00b7 these are the production-locked models \u00b7 model swaps require Tribunal-config version bump and sr broker sign-off\n- The typed tool contract is non-negotiable \u00b7 free-text judges are rejected \u00b7 this is the structural-discipline that makes verdicts parseable and verifiable\n- Temperature 0.05 is the production setting \u00b7 0.7 is the cook-degradation killer \u00b7 documented in the SwarmJelly temp doctrine \u00b7 violation produces Pollen-heavy corpora\n- The judges run INSIDE the Tribunal \u00b7 the Tribunal owns the verdict \u00b7 individual judge scores are visible but the verdict is the Tribunal's product\n\n\ud83d\udc1d *Two judges. Typed tool contract. Temperature 0.05. Drift threshold 0.15. The judges score \u00b7 the Tribunal adjudicates \u00b7 the chain prote",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-JUDGE-v1",
+    "canon": "defendapedia.eth/tribunal_terms/judge",
+    "street_source": null
+  },
+  "evidence_required": [
+    "A judge_id (links to auditor-bee lineage)",
+    "A scale (A or B)",
+    "A model identifier (one of the approved fleet \u00b7 `gemma3:12b` or `qwen2.5:32b` in production)",
+    "A jelly_score in [0.0, 1.0]",
+    "A reason string (1-2 sentences \u00b7 operator-readable \u00b7 MANDATORY)",
+    "The four flag booleans (failure_mode \u00b7 hallucination_event \u00b7 adversarial_source_flag \u00b7 critical_issue_flag)",
+    "A latency_ms reading",
+    "Output via the typed `record_tribunal_verdict` tool contract (NOT free-text)"
+  ],
+  "example": "> **Engagement**: STNL opinion \u00b7 cold storage \u00b7 Atlanta MSA.\n>\n> **Judge invocations**:\n>\n> **Scale A** \u00b7 BEE-AUDITOR-JUDGE-A-4f02 \u00b7 gemma3:12b on swarmrails GPU 1 \u00b7 temp 0.05 \u00b7 latency 1,847ms\n> - record_tribunal_verdict tool call returned:\n>   - jelly_score: 0.89\n>   - reason: \"comp set well-anchored from EDGAR-cited tenant credit walk \u00b7 all 3 industrial comps within 25 bps of submarket median \u00b7 re-trade math arithmetically clean\"\n>   - failure_mode: null\n>   - hallucination_event: false\n>   - adversarial_source_flag: false\n>   - critical_issue_flag: false\n>\n> **Scale B** \u00b7 BEE-AUDITOR-JUDGE-B-9c11 \u00b7 qwen2.5:32b on swarmrails GPU 0 \u00b7 temp 0.05 \u00b7 latency 4,221ms\n> - record_tribunal_verdict tool call returned:\n>   - jelly_score: 0.91\n>   - reason: \"depth high \u00b7 5 trajectory keywords present at appropriate nest levels \u00b7 numeric verification ties at 4 decimal places \u00b7 would prefer one additional source on the tenant credit notes but not blocking\"\n>   - failure_mode: null\n>   - hallucination_event: false\n>   - adversarial_source_flag: false\n>   - critical_issue_flag: false\n>\n> **Drift**: 0.02 (within 0.15 threshold) \u00b7 no Critic invoked \u00b7 JellyScore averaged to 0.90 \u00b7 tier ROYAL_JELLY.",
+  "failure_modes_raw": "| Mode | Description | Resolution |\n|---|---|---|\n| **judge_freetext_output** | Judge returned free-text instead of structured tool call | Rejected at parse \u00b7 pair re-routed to judge \u00b7 if recurring \u00b7 judge prompt audited |\n| **judge_timeout** | Judge did not respond within 180s | Pair re-routed to alternate rig \u00b7 if both judges timeout \u00b7 pair held \u00b7 escalate |\n| **judge_temp_drift** | Judge producing degraded outputs \u00b7 suspect temperature config slipped above 0.05 | Restart vLLM with correct temp \u00b7 audit recent verdicts |\n| **judge_silent_pass** | Judge returned high score but reason is generic / does not justify the score | Operator spot-audit catches it \u00b7 pair re-routed for re-judge \u00b7 if recurring \u00b7 judge model audited |\n| **judge_unanimous_pass_adversarial** | Both judges scored adversarial pair as HONEY \u00b7 the chain missed the adversarial-source flag | Critical integrity event \u00b7 update adversarial-source watchlist \u00b7 re-train judge prompts |",
+  "hashes": {
+    "json_sha256": "sha256:f5cac623e1388a63aaba05bfc0e34559a639e766a35b7474ecfd44d926714893",
+    "markdown_sha256": "sha256:f6d085f0e0515bbbb72901e5d7b4ff8f21f73df6efd426933a70e0ab9a77984b"
+  },
+  "jr_broker_use": "The jr broker reads judge output but does not adjudicate independently:\n\n1. Every pair gets two judge passes within ~5 seconds \u00b7 both scores visible in dashboard\n2. If Scale A and Scale B agree within 0.15 \u00b7 the verdict stands \u00b7 proceed\n3. If they disagree by > 0.15 \u00b7 the Critic auto-invokes \u00b7 wait for the Critic verdict\n4. If `critical_issue_flag` is true on either judge \u00b7 the penalized scoring formula applies \u00b7 the pair drops to rule-layer-only score (often Jelly or Propolis)\n5. NEVER manually edit a judge score \u00b7 NEVER paraphrase a judge reason \u00b7 they are structural \u00b7 their record_hash is verifiable\n\n**Rule of thumb**: the judges produce structured output \u00b7 the structure is the discipline \u00b7 respect the chain.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/tribunal_terms/judge/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.537588+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.537588+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "tribunal",
+    "validator",
+    "validator-chain",
+    "hallucination-event",
+    "assignment-success",
+    "confidence-weight"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: PRIMARY DRIVER \u00b7 the judge score IS the assignment success metric (once chain has cleared)\n- **repair_lift**: MEASUREMENT \u00b7 the lift is computed by comparing the judge score before and after repair\n- **validator_confidence**: PARTIAL \u00b7 validator confidence aggregates chain + judge confidence\n- **risk_temperature**: PER-PAIR \u00b7 judge-flagged adversarial pairs spike risk\n- **probability_of_close**: HEAVY \u00b7 judge scores predict customer-acceptable close rates\n- **evidence_strength**: WEIGHTED \u00b7 judges weight evidence per the 5-component JellyScore formula\n- **cost_to_mint**: DIRECT \u00b7 judge GPU compute is a major line item in cost-to-mint (~$0.002-0.005 per pair)",
+  "slug": "judge",
+  "sr_broker_use": "The sr broker watches judge behavior as a SYSTEM-CALIBRATION GAUGE:\n\n- Judge score distribution per cook \u00b7 Scale A and Scale B should look similar in shape \u00b7 divergence in distributions = calibration drift \u00b7 investigate\n- Judge reason quality \u00b7 spot-audit 10 random Honey verdicts \u00b7 the reasons should cite specific aspects of the pair \u00b7 generic reasons (\"looks good\" \u00b7 \"scores well\") indicate the judge is degraded\n- Judge temperature drift is the #1 cook-degradation cause \u00b7 production temp is 0.05 \u00b7 if a cook's outputs become bimodal (high RJ + high Propolis \u00b7 little Honey) suspect temp drift FIRST\n- Critic invocation rate \u00b7 healthy is ~3% \u00b7 sustained above 8% means the two judges are systematically disagreeing \u00b7 investigate which is drifting\n- Katniss invocation rate \u00b7 healthy is sub-1% \u00b7 sustained above 3% = either an attack campaign or a fundamental cook problem \u00b7 escalate",
+  "status": "active",
+  "street_definition": "\"What did the judges return?\" The judge is the LLM layer inside the Tribunal \u00b7 the part that produces a JellyScore (0-1) and a reason string on each PairCandidate. Two judges run on every pair \u00b7 Scale A (`gemma3:12b` on swarmrails GPU 1) and Scale B (`qwen2.5:32b` on swarmrails GPU 0). The judges produce STRUCTURED OUTPUT through a typed `record_tribunal_verdict` tool contract \u00b7 NOT free-text. Free-text judge outputs are rejected at parse time \u00b7 the discipline is structural.\n\nIn CRE language \u00b7 the judge is the appraiser \u00b7 the role that produces a numeric valuation with a reasoning narrative. Two appraisers on the same deal is the discipline that protects against single-appraiser bias. Same here \u00b7 two judges with a drift threshold protect against single-model bias.",
+  "term": "Judge",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # the judges don't get a tier \u00b7 they ASSIGN tiers\n  rule_layer_checks:\n    - Both Scale A AND Scale B judges MUST produce a structured verdict (C04)\n    - Either judge raising hallucination_event triggers C05 critical fail\n    - Either judge raising adversarial_source_flag triggers Katniss invocation\n    - Either judge with critical_issue_flag AND score < 0.75 triggers penalized scoring\n  judge_layer_prompt_hint: \"you are one of two judges \u00b7 be conservative on apex tier \u00b7 use the typed tool contract \u00b7 do not free-text\"\n  can_be_critical_failure: false   # judges don't fail \u00b7 they DETECT failures \u00b7 validator chain detects judge-pipeline failures\n```",
+  "version": "v1"
+}

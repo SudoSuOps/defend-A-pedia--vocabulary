@@ -1,0 +1,33 @@
+{
+  "category": "scoring_terms",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-RISK-TEMPERATURE-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-RISK-TEMPERATURE-v1",
+    "canon": "defendapedia.eth/scoring_terms/risk-temperature",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:de6cb52b1405917b2952eac955b2514c3e7b9cbbf4afb12eba364bda5685bef8",
+    "markdown_sha256": "sha256:02cacf808d8fa22786acdf7ca05f68b1c5d8a2ad073229fcc86a41135eb2f40b"
+  },
+  "minted_at": "2026-05-24T15:32:29.897246+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/risk-temperature/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.897126+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.897126+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-RISK-TEMPERATURE-v1-20260524T15322989724Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "risk-temperature",
+  "term": "Risk Temperature"
+}

@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-PREVENT-TASK-v1",
+  "category": "repair_terms",
+  "created_at": "2026-05-24T15:33:21.511676+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-PREVENT-TASK-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/repair_terms/prevent-task",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/repair_terms/prevent-task/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-PREVENT-TASK-v1-20260524T15332151166Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:1e92f8bbdec02e813e8c2f628b0a6e9ee07fbf30bcd2255598a8614c975720de",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "prevent-task",
+  "street_source_ens": null,
+  "subject": {
+    "category": "repair_terms",
+    "definitions": {
+      "client": "The Prevent Task is the insurance policy on the fix. We tell you what to watch for, how to check it deterministically, and what your agent should do when the check fires. You wire the rule into your runtime guardrails. The same failure stops shipping. The rule also feeds our AdversarialPack so EVERY customer benefits from your one bad day.",
+      "cre_operator": "In CRE the Prevent Task is the **title insurance policy**. The original closing had a defect \u00b7 easement claim \u00b7 undisclosed lien \u00b7 permit irregularity. You cured it for this transaction. The title policy is what protects the NEXT owner from the same defect re-appearing at the next closing. The policy doesn't fix what's already broken \u00b7 it prevents the recurrence. That's the prevent layer.",
+      "defendableos": "The Prevent Task is the third of the 5 Royal Jelly tasks SwarmFixer emits. It generates a deterministic rule that, if it had existed before today's failure, would have prevented it. The rule has three parts: the trigger condition (pattern to watch for), the check logic (deterministic evaluation), and the remediation (what the agent should do when the trigger fires). Prevent rules feed both the customer's runtime guardrails AND the AdversarialPack v.next as positive defense cases.",
+      "street": "\"How do we keep this from happening again?\" That's the customer's first question after the dust settles. **Prevent Task** is RJ task #3 \u00b7 the trigger condition + the check logic + the remediation. It's not the fix \u00b7 it's the policy that stops the same failure shape from shipping a second time."
+    },
+    "related_terms": [
+      "diagnose-task",
+      "repair-task",
+      "detect-task",
+      "compare-task",
+      "swarmfixer",
+      "pair-candidate"
+    ],
+    "slug": "prevent-task",
+    "term": "Prevent Task"
+  },
+  "supersedes": null,
+  "term": "Prevent Task",
+  "updated_at": "2026-05-24T15:33:21.757497+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

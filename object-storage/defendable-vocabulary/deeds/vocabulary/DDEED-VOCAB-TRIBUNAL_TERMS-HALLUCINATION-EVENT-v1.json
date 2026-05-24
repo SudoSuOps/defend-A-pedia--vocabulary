@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-HALLUCINATION-EVENT-v1",
+  "category": "tribunal_terms",
+  "created_at": "2026-05-24T15:33:21.536200+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-HALLUCINATION-EVENT-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/tribunal_terms/hallucination-event",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/tribunal_terms/hallucination-event/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-TRIBUNAL_TERMS-HALLUCINATION-EVENT-v1-20260524T15332153618Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:8dd58aaf261116de374bd9b2a5cca8da1436f8e469a9a2bc69b1e35c2cc87216",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "hallucination-event",
+  "street_source_ens": null,
+  "subject": {
+    "category": "tribunal_terms",
+    "definitions": {
+      "client": "\"Hallucination event\" is our structured flag for when an AI output contains a factual claim that cannot be sourced or is contradicted by its cited source. We treat this as the most serious failure class. Catastrophic hallucinations (central claims fabricated) force the verdict to Propolis \u00b7 the output is sealed \u00b7 never shipped. Recoverable hallucinations (peripheral claims) route to repair \u00b7 the fabricated content is replaced with sourced content \u00b7 the repaired output is re-graded and shipped if it clears. We publish the hallucination-event rate weekly \u00b7 this is the brand's anti-fantasy discipline.",
+      "cre_operator": "In CRE \u00b7 the hallucination event is the fabricated comp \u00b7 the invented number \u00b7 the source citation that does not actually contain what the cite claims. A 30-year broker treats this as the WORST sin in the profession \u00b7 because fabricated numbers contaminate every downstream comp set \u00b7 every future deal that references the fake number is corrupted forward. The discipline is structural \u00b7 cite sources \u00b7 check sources \u00b7 refuse to use comps without retrievable verification.\n\nInside DefendableOS \u00b7 the hallucination event is identically treated. The judge that detects it flags it. The validator chain (C03 source retrievable \u00b7 C05 no hard-fail) confirms it. The Tribunal forces the tier to Propolis (catastrophic) or routes to Jelly for repair (recoverable). The deed records the event \u00b7 the customer is never shipped fabricated output \u00b7 the contamination is contained.",
+      "defendableos": "A hallucination event is a structured flag raised on a Tribunal verdict when:\n\n- a factual claim in the output cites a source that DOES NOT contain the claim (the cite is technically valid but the content does not support it \u00b7 the most insidious kind)\n- a factual claim in the output cites a source that does not exist (the cite itself is fabricated \u00b7 the easier kind to detect via C03)\n- a factual claim contradicts the source it cites (the model paraphrased the source incorrectly \u00b7 drift-with-cite)\n- a numeric value in the output cannot be derived from any cited source AND is presented as authoritative (the most common kind in CRE outputs \u00b7 invented cap rates \u00b7 invented NOI)\n\nHallucination events come in two severity classes:\n\n### Catastrophic hallucination\n- The fabricated claim is CENTRAL to the output's value (the cap rate \u00b7 the tenant credit \u00b7 the deal recommendation)\n- The fabrication would have material consequence if shipped (regulatory \u00b7 financial \u00b7 legal)\n- Forces tier = PROPOLIS regardless of judge score\n- Sealed in propolis vault with HIGH detect-corpus weight\n\n### Recoverable hallucination\n- The fabricated claim is PERIPHERAL (a supporting comp \u00b7 a context note \u00b7 a stat that could be replaced with a real one)\n- The repair can substitute the fabricated content with sourced content\n- Routes to Jelly tier \u00b7 SwarmFixer repair pipeline\n- Repaired pair re-Scouts back to the Tribunal \u00b7 most lift to Honey on second pass",
+      "street": "\"That's a hallucination event.\" A hallucination event is the named Tribunal flag raised when a judge OR a validator detects that the AI output contains a factual claim that CANNOT be sourced \u00b7 is fabricated \u00b7 or is contradicted by the source it cites. Hallucination is NOT just \"the AI made something up in a fluffy way\" \u00b7 it is a structurally-detectable event with a defined log entry \u00b7 a flag on the verdict record \u00b7 and a tier-impact rule (catastrophic hallucination forces Propolis \u00b7 recoverable hallucination routes to Jelly for SwarmFixer repair).\n\nIn CRE language \u00b7 the hallucination event maps to the FABRICATED COMP \u00b7 the appraiser who cited a sale that did not happen \u00b7 the broker who invented a tenant rent that isn't on the rent roll. CRE has decades of discipline around this \u00b7 invented numbers are CAREER-ENDING \u00b7 the same discipline applies to AI \u00b7 invented facts are DEED-DENYING."
+    },
+    "related_terms": [
+      "tribunal",
+      "judge",
+      "validator",
+      "validator-chain",
+      "propolis",
+      "jelly"
+    ],
+    "slug": "hallucination-event",
+    "term": "Hallucination Event"
+  },
+  "supersedes": null,
+  "term": "Hallucination Event",
+  "updated_at": "2026-05-24T15:33:21.792021+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

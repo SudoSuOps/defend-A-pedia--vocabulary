@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1",
+  "category": "tribunal_terms",
+  "created_at": "2026-05-24T15:33:21.532952+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/tribunal_terms/confidence-weight",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/tribunal_terms/confidence-weight/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1-20260524T15332153293Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:ea5c0e98462d92d1eab0437608b6e7bc938f712fb197e7ceeb602d9d3b61413f",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "confidence-weight",
+  "street_source_ens": null,
+  "subject": {
+    "category": "tribunal_terms",
+    "definitions": {
+      "client": "\"Confidence weight\" is our 0-to-1 dial that tells you how SURE we are about the verdict on every output we ship. The verdict is one thing \u00b7 the confidence is another. A Royal Jelly verdict with HIGH confidence means strong agreement across our chain \u00b7 deep evidence \u00b7 clean reproducibility. The SAME verdict with LOW confidence means we cleared the bar but barely \u00b7 use the output with appropriate weighting. We publish the confidence on every deed so you know how much weight to put on each output in your downstream decisions.",
+      "cre_operator": "In CRE \u00b7 the confidence weight is the operator-discipline dial \u00b7 the broker who knows their numbers AND knows how solid their numbers are. A 6.0% cap rate quote backed by 12 comps in the submarket within 30 days is high-confidence. The SAME 6.0% cap rate backed by 2 comps from 18 months ago in adjacent submarkets is low-confidence. Both quotes are 6.0% caps \u00b7 the confidence is what tells the buyer how much weight to put on each.\n\nDefendableOS inherits the discipline directly. Confidence weight is published on every verdict \u00b7 low-confidence Royal Jelly is still Royal Jelly \u00b7 but the customer sees the certainty alongside the verdict and makes the appropriately-weighted use of the output.",
+      "defendableos": "Confidence weight is a per-pair float (0.0-1.0) computed by aggregating:\n\n1. **Validator chain confidence** \u00b7 the mean of per-check confidence_weights from the 12 validators (deterministic checks contribute 1.0 \u00b7 model-backed checks contribute the model's reported confidence)\n2. **Judge drift confidence** \u00b7 `1 - (drift / 0.15)` \u00b7 clean-agreement judges produce 1.0 \u00b7 drift at threshold produces 0.0 \u00b7 drift beyond threshold (Critic-reconciled) produces a reduced confidence\n3. **Evidence source confidence** \u00b7 the mean of source-weight values across cited sources (per the EntityScorer 0.30-0.90 weight ladder)\n4. **Reproducibility confidence** \u00b7 the rerun-consistency value from the Reproducibility rubric grade\n\nThe composite formula:\n\n```python\nconfidence_weight = (\n    validator_chain_confidence  * 0.30\n  + judge_drift_confidence      * 0.25\n  + evidence_source_confidence  * 0.25\n  + reproducibility_confidence  * 0.20\n)\n```\n\nOutput is clamped to [0.0, 1.0].",
+      "street": "\"What's the confidence weight?\" Confidence weight is the validator-and-Tribunal-produced 0-to-1 dial that says HOW SURE we are that the verdict on a pair is correct. It is distinct from the JellyScore (which is the verdict itself) \u00b7 the confidence weight measures the certainty of the verdict. A pair can be Royal Jelly with low confidence weight (the chain cleared but barely \u00b7 the judges agreed but at the threshold) \u00b7 or Honey with high confidence weight (the chain cleared cleanly \u00b7 the judges agreed strongly \u00b7 the evidence was deep).\n\nIn CRE language \u00b7 confidence weight maps to the appraiser's reconciliation comment \u00b7 the underwriter's confidence-in-the-deal \u00b7 the closing agent's degree-of-comfort with the chain. An appraiser can produce a high value with low confidence (extrapolated comps \u00b7 thin data) or a moderate value with high confidence (rich comp set \u00b7 sourced cleanly \u00b7 no triangulation gaps). Same here. The score is the answer \u00b7 the confidence weight is the certainty of the answer."
+    },
+    "related_terms": [
+      "validator",
+      "validator-chain",
+      "judge",
+      "tribunal",
+      "royal-jelly",
+      "honey"
+    ],
+    "slug": "confidence-weight",
+    "term": "Confidence Weight"
+  },
+  "supersedes": null,
+  "term": "Confidence Weight",
+  "updated_at": "2026-05-24T15:33:21.790894+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

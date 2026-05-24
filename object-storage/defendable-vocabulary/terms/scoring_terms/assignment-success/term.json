@@ -1,0 +1,80 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"scoring.assignment_success_boolean\": {\n    \"type\": \"enum\",\n    \"values\": [\"CLOSED_HONEY\", \"CLOSED_CONDITIONED\", \"FAILED_RECOVERABLE\", \"FAILED_DARK\"]\n  },\n  \"scoring.assignment_success_composite\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"precision\": 3\n  },\n  \"scoring.assignment_success_g1_outcome\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"weight\": 0.30,\n    \"measures\": \"numeric variance vs success criteria\"\n  },\n  \"scoring.assignment_success_g2_truth\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"weight\": 0.25,\n    \"measures\": \"Tribunal Truth-class verdicts on sampled cohort\"\n  },\n  \"scoring.assignment_success_g3_safety\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"weight\": 0.20,\n    \"measures\": \"Propolis events \u00b7 adversarial pack pass rate\",\n    \"floor_rule\": \"G3 < 0.70 caps boolean at FAILED regardless of composite\"\n  },\n  \"scoring.assignment_success_g4_economics\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"weight\": 0.15,\n    \"measures\": \"cost-to-mint vs ceiling\"\n  },\n  \"scoring.assignment_success_g5_defensibility\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"weight\": 0.10,\n    \"measures\": \"receipt completeness \u00b7 deed anchoring \u00b7 audit chain integrity\"\n  },\n  \"scoring.assignment_success_critical_propolis_flag\": {\n    \"type\": \"boolean\",\n    \"rule\": \"true if any Propolis event on critical-path during the assignment \u00b7 overrides boolean to FAILED\"\n  },\n  \"scoring.assignment_success_principal_acknowledged_at\": {\n    \"type\": \"timestamp\",\n    \"nullable\": true\n  }\n}\n```\n\nSchema files: `docs/schemas/assignment_success.schema.json` \u00b7 `docs/schemas/closing_statement.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "scoring_terms",
+  "client_explanation": "Every assignment we run for you ends with a formal **Assignment Success** report. One of four outcomes:\n\n- **CLOSED \u00b7 HONEY** \u00b7 the asset performed \u00b7 success criteria met \u00b7 zero critical failures\n- **CLOSED \u00b7 CONDITIONED** \u00b7 we delivered with named caveats \u00b7 4 of 5 grades passing\n- **FAILED \u00b7 RECOVERABLE** \u00b7 the work is repair-candidate \u00b7 we can salvage it\n- **FAILED \u00b7 DARK** \u00b7 the engagement is paused \u00b7 we call you same-day \u00b7 recovery plan within 72 hours\n\nThe boolean is reported first \u00b7 plain English \u00b7 no hedge. The 5-grade breakdown explains why \u00b7 with weights \u00b7 with the composite math \u00b7 with variance vs every success criterion you contracted for.\n\nYou sign acknowledgment within 7 days of the walk. Both the closing statement deed AND your acknowledgment are filed for 7 years after the engagement ends.",
+  "cre_operator_meaning": "In CRE \u00b7 \"did it close\" is a binary. The HUD-1 prints either the trade closed or it didn't. The deed transferred or it didn't. The fee was earned or it wasn't.\n\nCRE brokers don't say \"we partially closed\" or \"we mostly closed.\" They say \"closed at $42M \u00b7 6.4 cap \u00b7 73 days on market \u00b7 fee booked.\" Or they say \"didn't close \u00b7 seller pulled to refi \u00b7 re-list Q3.\"\n\nWe mirror that exactly. The Defendable Closing Statement is the HUD-1 of an assignment. The boolean is the boolean. The variance vs contract is the variance vs contract. No spin.",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- The closing statement IS a DDEED with all 5 Proofs\n- Books-and-records: all 5 layers \u00b7 7-year retention beyond LOU termination\n- Critical-Propolis-capped boolean prevents the statement from publishing as HONEY \u00b7 forces FAILED with documented rationale\n- Per-grade verdicts feed the engagement-level calibration report (annual)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- The closing statement IS a DDEED with all 5 Proofs\n- Books-and-records: all 5 layers \u00b7 7-year retention beyond LOU termination\n- Critical-Propolis-capped boolean prevents the statement from publishing as HONEY \u00b7 forces FAILED with documented rationale\n- Per-grade verdicts feed the engagement-level calibration report (annual)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "**Assignment Success** in DefendableOS is the formal Tribunal-graded verdict reported at assignment close \u00b7 consisting of:\n\n1. **Boolean outcome** (one of 4 values \u00b7 enum)\n2. **Composite score** (float 0-1 \u00b7 weighted from 5 grades)\n3. **5-grade breakdown** (per the Assignment Success Doctrine \u00a7 5-grade-breakdown)\n\nReported in the Defendable Closing Statement deed (`DDEED-{org}-{vertical}-{customer}-CLOSE-{seq}-v1`). Walked with the principal personally. Acknowledged in writing. Filed for 7-year retention beyond LOU termination.\n\nThe boolean is determined by:\n- Composite \u2265 0.85 AND all 5 grades \u2265 0.70 AND zero critical Propolis \u2192 **CLOSED \u00b7 HONEY**\n- Composite \u2265 0.70 AND 4 of 5 grades passing \u2192 **CLOSED \u00b7 CONDITIONED**\n- Composite 0.50-0.69 \u2192 **FAILED \u00b7 RECOVERABLE**\n- Composite < 0.50 OR critical Propolis on critical path \u2192 **FAILED \u00b7 DARK**\n\nThe G3 (Safety) floor caps the boolean at FAILED if violated \u00b7 regardless of composite. Safety is the floor \u00b7 not a weighting.",
+  "defendableos_notes": "- The boolean is the truth \u00b7 the breakdown is the why \u00b7 the composite is the shorthand \u00b7 NEVER publish composite without all 5 grades visible\n- G3 (Safety) floor is non-negotiable \u00b7 it's what makes the model defendable in regulated industries\n- Pattern analysis across assignment-success records is the second-strongest training corpus we have (after Jelly repair pairs)\n- The boolean is what the principal repeats to their board. Make it tight. Make it true. Make it survivable.\n\n\ud83d\udc1d *Did it close \u00b7 how close \u00b7 how clean \u00b7 how defendable \u00b7 those are the four questions every closing",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1",
+    "canon": "defendapedia.eth/scoring_terms/assignment-success",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Closing statement deed issued with all 5 Proofs",
+    "Every cited under-assignment deed resolves on Hedera",
+    "Cost-to-mint actual matches the rolling 30-day dashboard average",
+    "Principal walk scheduled (meeting confirmation captured)",
+    "All 5 grades computed with weights and composite math shown",
+    "Failure deeds (if any) linked with root-cause analysis attached",
+    "Principal acknowledgment captured within 14 days of walk"
+  ],
+  "example": "> Assignment: ASN-0001 (refund-decision agent \u00b7 6-month assignment)\n>\n> Boolean: **CLOSED \u00b7 HONEY**\n>\n> 5-Grade Breakdown:\n> - G1 Outcome 0.93 (Honey rate 94.1% vs target 92%)\n> - G2 Truth 0.91 (sampled Truth-class pass 91.4%)\n> - G3 Safety 1.00 (zero Propolis \u00b7 17/17 adversarial pass)\n> - G4 Economics 0.88 (cost-to-mint $0.0051 vs target $0.011)\n> - G5 Defensibility 0.95 (97/102 audit-spot-check passes)\n>\n> Composite: 0.925\n>\n> Closing statement: DDEED-DOV-LOGISTICS-ACME-CLOSE-0001-v1 \u00b7 principal walked 2026-09-20 \u00b7 acknowledged 2026-09-22",
+  "failure_modes_raw": "| Mode | Tribunal class |\n|---|---|\n| `boolean_padding` (HONEY at composite 0.71) | PROPOLIS \u00b7 trust breach \u00b7 founder review |\n| `silent_close` (no scheduled walk) | PROPOLIS \u00b7 re-walk required |\n| `stale_dashboard` (numbers don't match) | JELLY \u00b7 re-derive \u00b7 re-issue |\n| `failure_minimization` (Propolis under-named) | PROPOLIS \u00b7 re-issue with honest framing |\n| `missing_acknowledgment` (ack not chased) | JELLY \u00b7 escalation if > 14 days |\n| `deed_inventory_mismatch` (count doesn't match books) | PROPOLIS \u00b7 audit failure |\n| `g3_violation_ignored` (boolean shows CLOSED despite G3 < 0.70) | PROPOLIS \u00b7 audit failure \u00b7 QA validator review |",
+  "hashes": {
+    "json_sha256": "sha256:6e768c7cd6576f960bc989b50c7f2041172f7ac53fd468eaa91d39b771e503cd",
+    "markdown_sha256": "sha256:6d9ef5a3a43b96addd291fb2ffa07585cb1abf57bbafe49189cb55268c4f77d6"
+  },
+  "jr_broker_use": "- Pre-flight every assignment close 14 days before expected close date\n- Pull the 5-grade inputs from the dashboard \u00b7 don't hand-compute\n- Verify Hedera anchors on all referenced deeds before the statement publishes\n- Coordinate the principal-walk meeting \u00b7 NEVER let a statement ship without a scheduled walk\n- File the principal ack within 7 days of walk \u00b7 escalate to sr broker if no ack by day 14\n- Never \u00b7 ever \u00b7 pad the boolean \u00b7 the QA validator catches it AND the relationship breaks",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/assignment-success/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.520075+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.520075+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "assignment",
+    "closing-statement",
+    "probability-of-close",
+    "client-confidence",
+    "engagement",
+    "letter-of-understanding",
+    "pass-doctrine"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: SELF\n- **repair_lift**: HIGH (FAILED \u00b7 RECOVERABLE outcomes become SwarmFixer training pairs)\n- **validator_confidence**: HIGH (clean closing statements stack engagement-level confidence)\n- **risk_temperature**: DIRECT (FAILED \u00b7 DARK = high temp \u00b7 CLOSED \u00b7 HONEY = low temp)\n- **probability_of_close**: INDIRECT (closing pattern seeds opening dial for next assignment)\n- **evidence_strength**: HIGH (closing statement is engagement-level evidence of highest grade)\n- **cost_to_mint**: NEUTRAL (statement drafting is operator margin)",
+  "slug": "assignment-success",
+  "sr_broker_use": "- Drafts the statement personally on T2/T3/T4 (QA reviews \u00b7 sr broker drafts)\n- Walks the statement personally with the principal on T2/T3/T4\n- Owns the boolean decision \u00b7 subject to QA validator audit (validator can flag \u00b7 cannot override)\n- Authors the next-step recommendation\n- Files the principal ack \u00b7 triggers cadence shift (assignment archives \u00b7 next-assignment opens or renewal countdown begins)\n- Owns the post-close 30-day relationship pulse \u00b7 regardless of outcome",
+  "status": "active",
+  "street_definition": "\"Did it close?\" \u2014 the founder asks the sr broker on Friday afternoon.\n\n**Assignment Success** is the post-close boolean + 5-grade breakdown that says whether a specific assignment delivered against its written success criteria. The boolean is what's reported to the principal. The 5-grade breakdown is what's filed in books-and-records.\n\nThe boolean is binary \u00b7 NOT a vibe. CLOSED \u00b7 HONEY or CONDITIONED or FAILED \u00b7 RECOVERABLE or FAILED \u00b7 DARK. Four outcomes. No soft language.",
+  "term": "Assignment Success",
+  "tribunal_use": "The Tribunal feeds every grade:\n- G1 from numeric variance computation against success criteria\n- G2 from Truth-class verdicts on sampled cohort (\u2265 30 randomly-sampled under-assignment deeds)\n- G3 from Propolis counter + adversarial pack pass rate\n- G4 from cost-to-mint accumulator vs ceiling\n- G5 from receipt completeness audit (random spot-check of 5% of under-assignment deeds for full 5-Proof presence)\n\nRule layer applies the G3 floor and the critical-Propolis cap before publishing the boolean.\n\nThe QA validator (SH6) is the final audit before publication \u00b7 can flag (not override) any mismatch.",
+  "version": "v1"
+}

@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-LOI-LETTER-OF-INTENT-A-K-A-LOU-LETTER-OF-UNDERSTANDING-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.473630+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-LOI-LETTER-OF-INTENT-A-K-A-LOU-LETTER-OF-UNDERSTANDING-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/loi-letter-of-intent-a-k-a-lou-letter-of-understanding/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-LOI-LETTER-OF-INTENT-A-K-A-LOU-LETTER-OF-UNDERSTANDING-v1-20260524T15332147362Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:ecef4912f97c1f3f2ec48df39313b7688538c9017ec6b21f378c0a3eed249bdd",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "The Letter of Understanding is the document that formalizes our agreement to engage. It is not the final binding contract (that comes after the diligence period, in the Purchase and Sale Agreement). The LOU captures the proposed scope, the proposed fee, the timeline, and our mutual commitments during the diligence window: we agree to perform a full inspection of your agent fleet at no charge; you agree to give us the access and information we need to do that inspection thoroughly; we both agree not to engage other parties during the diligence window so we can both focus.\n\nThe LOU is signed by you as the principal and by your named sr broker as DefendableOS's representative. Both signatures carry personal accountability \u00b7 this is not a software signup. It is a CRE-grade engagement document, structured to make both sides' commitments legible to your auditor, your board, and your insurance carrier.",
+      "cre_operator": "The LOI is a 1-3 page document that captures:\n\n- The asset (or in defense-engagement context, the agent fleet scope)\n- The proposed price (or fee structure)\n- The proposed timeline (engagement term, key dates, milestones)\n- The proposed structure (exclusive vs co-broker, recourse vs non-recourse, etc.)\n- The diligence period (typically 30-60 days for CRE, 14-30 days for defense engagements)\n- The walk-aways (what voids the LOI \u00b7 failed inspection, financing falling through, regulatory event)\n- The earnest money or deposit (skin in the game, refundable conditions named)\n- The exclusivity period (during diligence, both sides agree not to shop)\n- The signatures of both parties\n\nIn CRE, the LOI is typically non-binding on price (subject to diligence) but binding on process (exclusivity, deposit, timeline). The PSA is the binding contract on price and terms \u00b7 the LOI is the binding contract on the right to do diligence.\n\nIn DefendableOS, we use LOU (Letter of Understanding) when \"intent\" feels too cold for the relationship-driven motion. Same document, slightly warmer name. Some sr brokers use LOI for procurement-led customers and LOU for principal-led customers \u00b7 either works.",
+      "defendableos": "In DefendableOS, the **LOI / LOU** is the document that transitions an engagement from `PROSPECT` to `ACTIVE_PRE_DILIGENCE` status. It is the first receipted commitment from the customer \u00b7 and the first receipted commitment FROM us as well.\n\nThe LOU contains the same canonical clauses as a CRE LOI plus DefendableOS-specific clauses:\n\n- Engagement term and pricing\n- Defense scope (agents covered, verticals covered, regulatory regimes covered)\n- Receipt SLA (every defensive action receipted within 15 min \u00b7 anchored to Hedera within 30 min)\n- Title insurance ramp (Tribunal verdicts ship with \u00b10.15 score guarantee starting day 60)\n- The PASS clause (DefendableOS reserves the right to recommend non-action and credit the prepaid fee if structure changes such that defense becomes infeasible)\n- The audit clause (customer's auditors and regulators get same-day deed access on request)\n- The white-glove discipline clause (named sr broker \u00b7 response SLA \u00b7 escalation path)",
+      "street": "\"Did they sign the LOI yet?\" \u2014 sr broker, every Monday morning, on the pipeline call.\n\nThe **LOI** (Letter of Intent \u00b7 sometimes called the **LOU**, Letter of Understanding, in defense-engagement context) is the soft commitment that moves a customer from \"interested\" to \"engaged.\" It's the first ink. Not the binding contract (that's the PSA), but the documented agreement on terms-in-principle that triggers diligence, color refresh, and the real underwriting work.\n\nIn CRE, \"got the LOI\" is the moment the deal becomes real. The sr broker celebrates here only in private \u00b7 the celebration goes public at the deed. But the LOI is the inflection point \u00b7 pre-LOI you're selling, post-LOI you're underwriting."
+    },
+    "related_terms": [
+      "om",
+      "psa",
+      "due-diligence",
+      "digest",
+      "underwriting",
+      "books-and-records"
+    ],
+    "slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+    "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)"
+  },
+  "supersedes": null,
+  "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)",
+  "updated_at": "2026-05-24T15:33:21.742122+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

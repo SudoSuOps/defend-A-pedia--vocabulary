@@ -1,0 +1,33 @@
+{
+  "category": "tribunal_terms",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1",
+    "canon": "defendapedia.eth/tribunal_terms/tribunal",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:b8d22b99afb38afed745e6fa11dbd47304121783e99a00afc1358b6443785892",
+    "markdown_sha256": "sha256:47cc3a429ad65bb387902f3acd9e026e0ebfbf73e103d7378df6d27c9d601f11"
+  },
+  "minted_at": "2026-05-24T15:32:29.905782+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/tribunal_terms/tribunal/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.905678+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.905678+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1-20260524T15322990578Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "tribunal",
+  "term": "Tribunal"
+}

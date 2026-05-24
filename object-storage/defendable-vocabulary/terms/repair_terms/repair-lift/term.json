@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"repair_lift.value\": {\"type\": \"float\", \"range\": [-1.0, 1.0]},\n  \"repair_lift.original_score\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"repair_lift.repaired_score\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"repair_lift.threshold_for_promotion\": {\"type\": \"float\", \"const\": 0.10},\n  \"repair_lift.validator_confidence_required\": {\"type\": \"float\", \"const\": 0.6},\n  \"repair_lift.axes_breakdown\": {\n    \"type\": \"object\",\n    \"fields\": [\"correctness\",\"completeness\",\"format_compliance\",\"reasoning_depth\"]\n  },\n  \"repair_lift.tribunal_run_id_original\": {\"type\": \"string\"},\n  \"repair_lift.tribunal_run_id_repaired\": {\"type\": \"string\"}\n}\n```\n\nSchema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/repair_run.schema.json` \u00b7 `docs/schemas/ui_dial.schema.json`\n\nScoring hooks: `bucket_transition_decision` \u00b7 `customer_weekly_sla_aggregate` \u00b7 `dashboard_repair_lift_dial`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "Repair Lift is the number on your invoice that proves we earned it. Your AI agent shipped an answer scoring 76 \u00b7 we refined it to 91 \u00b7 the lift is +0.15 \u00b7 the threshold for production promotion is +0.10 \u00b7 we cleared it. On your Embedded tier, the weekly aggregate lift number is what backs your renewal \u00b7 it's what we'd refund against if we missed.",
+  "cre_operator_meaning": "In CRE Repair Lift is the **NOI lift on a value-add deal**. You buy the building at a 6-cap. You do the rehab. You re-lease at higher rents. The NOI goes from $1.2M to $1.6M. That's a $400K NOI lift \u00b7 at a 5-cap exit, that's $8M of additional asset value. The rehab IS the deal. No NOI lift, you overpaid on a Class B that thinks it's a Class A. **Repair Lift is NOI for agents.**",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-REPAIR-LIFT-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `repair_lift.value` \u00b7 `original_score` \u00b7 `repaired_score` \u00b7 `axes_breakdown` \u00b7 `tribunal_run_id_original` \u00b7 `tribunal_run_id_repaired`\n- **DDEED class impact**: lift value embedded in every DDEED-DOV-REPAIR \u00b7 used as the primary numeric attestation\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle (lift as Merkle leaf) \u2192 L4 Hedera HCS (anchored) \u2192 L5 ENS (resolvable per deed)\n- **5 Proofs touched**: QUALITY (the lift IS the quality measurement) \u00b7 PROCESS (the two-verdict lineage that produced it) \u00b7 ECONOMICS (cost-per-lift is the unit economics)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `repair_lift.value` \u00b7 `original_score` \u00b7 `repaired_score` \u00b7 `axes_breakdown` \u00b7 `tribunal_run_id_original` \u00b7 `tribunal_run_id_repaired`\n- **DDEED class impact**: lift value embedded in every DDEED-DOV-REPAIR \u00b7 used as the primary numeric attestation\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle (lift as Merkle leaf) \u2192 L4 Hedera HCS (anchored) \u2192 L5 ENS (resolvable per deed)\n- **5 Proofs touched**: QUALITY (the lift IS the quality measurement) \u00b7 PROCESS (the two-verdict lineage that produced it) \u00b7 ECONOMICS (cost-per-lift is the unit economics)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Repair Lift is the numeric delta between a pair candidate's original Tribunal composite score and the same pair's score AFTER SwarmFixer refinery. The formula is locked:\n\n```\nrepair_lift = repaired_composite_score - original_composite_score\n```\n\nRange: [-1.0, +1.0] (in practice typically -0.20 to +0.40). The threshold for `jelly-repaired/` bucket transition is **\u2265 0.10 AND validator_confidence \u2265 0.6**. Below 0.10, the pair re-routes to `pending/` for up to 2 retries. Negative lift routes to `propolis-failures/` and feeds the AdversarialPack.",
+  "defendableos_notes": "- Repair Lift is the unit economics of the refinery \u00b7 cost-per-lift = (refinery inference cost + deed mint cost) / mean lift over period\n- A refinery that ships at +0.15 mean lift at $0.055/run is a unit-economic winner \u00b7 the customer pays for the lift \u00b7 we pay for the inference\n- The CRE analogy holds end-to-end \u00b7 lift IS NOI for agents \u00b7 the comp set is the customer's prior week \u00b7 the asset value is the deed lineage\n- See also the SCORING DIAL version of this term at [`../scoring_terms/repair-lift.md`](../scoring_terms/repair-lift.md) \u00b7 same number \u00b7 different UI surface\n\n\ud83d\udc1d *No lift, no deed. The lift is the",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-REPAIR-LIFT-v1",
+    "canon": "defendapedia.eth/repair_terms/repair-lift",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Original pair Tribunal verdict (with run_id)",
+    "Repaired pair Tribunal verdict (with run_id)",
+    "Validator chain pass (\u2265 0.6 confidence)",
+    "Axes breakdown (correctness \u00b7 completeness \u00b7 format_compliance \u00b7 reasoning_depth)",
+    "Timestamp of refinery run between the two verdicts",
+    "SwarmJelly model tag used for the refinery (proves TEMP=0.05 path)"
+  ],
+  "example": "> **Original pair**: books-bot.acmecorp.defendable.eth \u00b7 journal entry error \u00b7 Tribunal verdict JELLY \u00b7 composite 0.760 \u00b7 axes: correctness 0.70 \u00b7 completeness 0.85 \u00b7 format 0.80 \u00b7 reasoning 0.65\n>\n> **Refinery run**: `ag-fix-20260524T071200Z-9a3c` \u00b7 SwarmJelly-4B v1.2 \u00b7 TEMP=0.05\n>\n> **Repaired pair**: re-bench Tribunal verdict ROYAL_JELLY \u00b7 composite 0.910 \u00b7 axes: correctness 0.95 \u00b7 completeness 0.92 \u00b7 format 0.95 \u00b7 reasoning 0.85\n>\n> **Repair Lift**: 0.910 - 0.760 = **+0.150** (clears 0.10 threshold)\n>\n> **Validator confidence**: 0.78 (clears 0.6 threshold)\n>\n> **Bucket transition**: `jelly/` \u2192 `jelly-repaired/`\n>\n> **Deed**: `DDEED-DOV-REPAIR-ACMECORP-BOOKS-000142-v1` \u00b7 repair_lift field embedded \u00b7 resolvable on ENS",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `synthesized_lift` | Lift number cited without two anchored Tribunal verdicts | PROPOLIS \u00b7 evidence violation |\n| `rounded_lift` | Lift rounded or bucketed before logging | JELLY \u00b7 data integrity |\n| `axes_missing` | Lift reported without the 4-axis breakdown | JELLY \u00b7 validator re-run |\n| `judge_drift_high` | Repaired verdict has judge_drift_AB > 0.15 \u00b7 lift is contested | JELLY \u00b7 escalate to validator |\n| `negative_lift_unlogged` | Negative lift not routed to propolis-failures | PROPOLIS \u00b7 refinery governance |\n| `weekly_aggregate_drift` | Weekly mean lift drifts down 2 weeks in row without tuning trigger | JELLY \u00b7 operator-discipline failure |",
+  "hashes": {
+    "json_sha256": "sha256:82085564db3d5c3e0205f7d36f1adfe995265f02de81c8ac18a2b4a94bb8a968",
+    "markdown_sha256": "sha256:a90d6df0128fc0d0707ee216b0580f276bd1e6ee7db129899b5abd3e37c184f0"
+  },
+  "jr_broker_use": "The Jr Hack on classifier duty calculates Repair Lift on every refinery run \u00b7 NOT optional \u00b7 NOT estimated. The two Tribunal verdicts (original + repaired) both anchor to receipts before the lift number is computed. The lift gets logged with both verdict run_ids so the customer or auditor can re-derive it independently.\n\nDon't round the lift. Don't bucket it into \"good\" / \"bad\" categories. The number is the number. Three decimal places. Logged as-is.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/repair-lift/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.514201+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.514201+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "swarmfixer",
+    "swarmjelly",
+    "pair-candidate",
+    "compare-task",
+    "validator-confidence",
+    "evidence-strength"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: DIRECT \u00b7 lift IS the assignment success metric for the refinery\n- **repair_lift**: SELF \u00b7 this term defines the dial\n- **validator_confidence**: GATED \u00b7 promotion requires both lift \u2265 0.10 AND confidence \u2265 0.6\n- **risk_temperature**: INVERSE \u00b7 positive lift trend lowers risk \u00b7 negative lift trend raises it\n- **probability_of_close**: HIGH \u00b7 customer-facing weekly aggregate is a renewal predictor\n- **evidence_strength**: HIGH \u00b7 lift is the strongest evidence of refinery value\n- **cost_to_mint**: NEUTRAL \u00b7 the deed cost is the same regardless of lift size",
+  "slug": "repair-lift",
+  "sr_broker_use": "The Sr Hack reads the lift distribution weekly \u00b7 not just the mean. A mean lift of +0.18 with p10 of -0.05 is a different reality than a mean of +0.18 with p10 of +0.04. The first has tail risk \u00b7 the second is a refinery that's behaving. Sr Hacks set distribution-shape alerts \u00b7 not just mean alerts.\n\nWhen the lift drifts down 2 weeks in a row \u00b7 the Sr Hack triggers a refinery tuning review BEFORE the customer dashboard reflects it. The customer's KPI is downstream of the lift \u00b7 the Sr Hack manages upstream.",
+  "status": "active",
+  "street_definition": "\"What's the lift?\" That's the only question the operator cares about after a refinery run. **Repair Lift** is the measured delta \u00b7 the before-score vs the after-score \u00b7 the number that proves the fix worked. No lift, no deed. Negative lift, you blew it. \u2265 0.10 lift, you get the bucket transition.",
+  "term": "Repair Lift",
+  "tribunal_use": "- **Rule layer**: Repair Lift MUST be computed from two anchored Tribunal verdicts \u00b7 synthesized lift numbers are rejected (C04 evidence binding)\n- **Rule layer**: `validator_confidence < 0.6` blocks promotion even if lift \u2265 0.10\n- **Judge layer**: Tribunal grades the repaired output as a fresh submission \u00b7 doesn't carry forward the original score \u00b7 the lift is purely the math of two independent verdicts\n- **Classification impact**: lift \u2265 0.10 \u2192 ROYAL JELLY promotion \u00b7 0 \u2264 lift < 0.10 \u2192 JELLY hold \u00b7 lift < 0 \u2192 PROPOLIS regression",
+  "version": "v1"
+}

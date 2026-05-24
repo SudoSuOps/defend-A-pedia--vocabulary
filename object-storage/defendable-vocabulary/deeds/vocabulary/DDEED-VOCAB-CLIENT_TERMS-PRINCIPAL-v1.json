@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1",
+  "category": "client_terms",
+  "created_at": "2026-05-24T15:33:21.466312+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/client_terms/principal",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/client_terms/principal/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1-20260524T15332146629Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:5d3e19ca8e0605956caf2e6e458e603c775023d16566e5c881eef96ee1ec9c63",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "principal",
+  "street_source_ens": null,
+  "subject": {
+    "category": "client_terms",
+    "definitions": {
+      "client": "The **principal** is YOU \u00b7 if you're the decision-maker on your side \u00b7 the person who signs \u00b7 funds \u00b7 and stakes their name on the engagement.\n\nWe work with principals directly. Not procurement. Not your IT team (though we coordinate with them). Not a designated middle-manager (though we'll loop them in for operational details). We need to talk to the person who can say yes \u00b7 live with the outcome \u00b7 and call us when something doesn't pencil.\n\nIf you're NOT the principal \u00b7 we'll ask warmly to be introduced. We don't grandstand \u00b7 we don't pressure \u00b7 we just don't pretend a non-principal conversation is the same as a principal conversation. Both sides waste less time when we're honest about that up front.",
+      "cre_operator": "In CRE \u00b7 the principal is the building owner \u00b7 the LP-stake holder \u00b7 the family-office director \u00b7 the credit-tenant CFO \u00b7 whoever can say yes and have the yes stick. The broker spends years building access to principals \u00b7 because principals are who write the checks that close trades.\n\nThe number-one CRE rule: **never spend more than 20 minutes with a non-principal \u00b7 unless it's a path to the principal.** Procurement gates \u00b7 IT diligence \u00b7 legal review \u00b7 all of those are necessary stops on the road \u00b7 but the road ends at the principal. If the principal isn't reachable \u00b7 the road doesn't end at a close.\n\nA sr broker can tell within 2 conversations whether they're talking to the principal or to a deflector. The signals: budget authority \u00b7 operational pain ownership \u00b7 willingness to engage on tradeoffs without checking back \u00b7 ability to schedule the next meeting on the spot.",
+      "defendableos": "The **Principal** in DefendableOS is the named decision-authority contact on the customer side \u00b7 documented in the Letter of Understanding \u00a711 \u00b7 and required to sign every assignment brief under the engagement.\n\nA principal carries:\n- `role` (CEO \u00b7 COO \u00b7 Founder \u00b7 MD \u00b7 Owner \u00b7 etc \u00b7 NOT \"IT Director\" \u00b7 NOT \"Procurement Lead\")\n- `decision_authority_scope` (engagement-level \u00b7 assignment-level \u00b7 escalation-level)\n- `escalation_tier` (which escalation events trigger which contact path)\n- `morning_brief_recipient` (does the principal receive the daily 06:00 brief)\n- `founder_text_authorized` (T3 / T4 tiers only \u00b7 principal has founder's text)\n\nEvery engagement must have ONE primary principal. Multi-principal engagements (e.g., COO + CFO co-decision) are documented as such \u00b7 with explicit decision-allocation rules in the LOU.",
+      "street": "\"Who's the principal?\" \u2014 the founder asks before agreeing to any sit.\n\nThe **Principal** is the actual decision-maker on the customer side. The person whose name is on the door \u00b7 whose ass is on the line \u00b7 who has the authority to sign \u00b7 the budget to fund \u00b7 and the operational stake to live with the outcome.\n\nNOT IT. NOT procurement. NOT a finance manager. NOT \"let me check with my team.\" The principal is the principal. If we don't have access to the principal \u00b7 we don't have a deal \u00b7 we have a forwarding chain \u00b7 and forwarding chains don't close engagements at broker-grade."
+    },
+    "related_terms": [
+      "engagement",
+      "assignment",
+      "letter-of-understanding",
+      "closing-statement",
+      "morning-brief",
+      "pass-doctrine"
+    ],
+    "slug": "principal",
+    "term": "Principal"
+  },
+  "supersedes": null,
+  "term": "Principal",
+  "updated_at": "2026-05-24T15:33:21.739532+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

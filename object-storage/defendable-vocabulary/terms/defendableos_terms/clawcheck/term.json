@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"clawcheck.intake_id\": {\"type\": \"string\", \"format\": \"CC-<utc-ts>-<short-hash>\"},\n  \"clawcheck.dimensions\": {\n    \"type\": \"object\",\n    \"required\": [\"worker_class\", \"deployment_topology\", \"access_scope\", \"model_in_use\", \"memory_architecture\"],\n    \"properties\": {\n      \"worker_class\": {\"type\": \"enum\", \"values\": [\"BOOKKEEPING\", \"TRIAGE\", \"DISCOVERY\", \"CUSTOMER_FACING\", \"INTERNAL_OPS\", \"CODE_GENERATION\", \"OTHER\"]},\n      \"deployment_topology\": {\"type\": \"enum\", \"values\": [\"LOCAL\", \"CUSTOMER_VPC\", \"HYPERSCALER\", \"SAAS\"]},\n      \"access_scope\": {\"type\": \"enum\", \"values\": [\"READ_ONLY\", \"WRITE_BOUNDED\", \"WRITE_UNBOUNDED\", \"EXEC_BOUNDED\", \"EXEC_UNBOUNDED\"]},\n      \"model_in_use\": {\"type\": \"string\"},\n      \"memory_architecture\": {\"type\": \"enum\", \"values\": [\"STATELESS\", \"SHORT_TERM\", \"LONG_TERM_VECTOR\", \"PERSISTENT_DB\"]}\n    }\n  },\n  \"clawcheck.risk_tier\": {\"type\": \"enum\", \"values\": [\"LOW\", \"MEDIUM\", \"HIGH\", \"CRITICAL\"]},\n  \"clawcheck.risk_drivers\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\n  \"clawcheck.recommended_next_step\": {\"type\": \"string\"},\n  \"clawcheck.no_llm_used\": {\"type\": \"boolean\", \"const\": true},\n  \"clawcheck.processing_time_ms\": {\"type\": \"integer\", \"max\": 200}\n}\n```\n\nSchema files: `docs/schemas/clawcheck_intake.schema.json` \u00b7 `docs/schemas/risk_tier.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "defendableos_terms",
+  "client_explanation": "ClawCheck is a free 5-minute intake. You answer 5 questions about your AI agent \u00b7 what kind of work it does, where it runs, what it can do, what model powers it, and how it remembers. We run a deterministic rule check (no AI calls \u00b7 no waiting) and give you a risk tier. If you're LOW, you probably don't need us. If you're HIGH or CRITICAL, here's the next step. No login. No card. No commitment.",
+  "cre_operator_meaning": "In CRE this is the **broker's free pre-listing inspection**. The owner calls the broker \u00b7 says \"I might sell, what do you think?\" \u00b7 the broker pulls the rent roll, walks the building, checks the comps, sends back a one-page write-up with the cap rate range and the deal-shape opinion. Free. No engagement letter signed. Just the broker's trained read. The free read is the lead. The lead becomes the listing. The listing becomes the deal.",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `clawcheck.intake_id` \u00b7 `risk_tier` \u00b7 `risk_drivers` \u00b7 `recommended_next_step`\n- **DDEED class impact**: ClawCheck submissions don't directly mint deeds \u00b7 they CAN seed a DDEED-DOV-INTAKE if the customer requests a notarized intake record\n- **Books and records layer**: L1 PostgreSQL (intake registry) \u00b7 L4 Hedera HCS (optional notarized record)\n- **5 Proofs touched**: PROCESS (the 5-dimension capture lineage) \u00b7 TRUST (deterministic classification)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `clawcheck.intake_id` \u00b7 `risk_tier` \u00b7 `risk_drivers` \u00b7 `recommended_next_step`\n- **DDEED class impact**: ClawCheck submissions don't directly mint deeds \u00b7 they CAN seed a DDEED-DOV-INTAKE if the customer requests a notarized intake record\n- **Books and records layer**: L1 PostgreSQL (intake registry) \u00b7 L4 Hedera HCS (optional notarized record)\n- **5 Proofs touched**: PROCESS (the 5-dimension capture lineage) \u00b7 TRUST (deterministic classification)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "ClawCheck is the free intake surface of DefendableOS. It captures 5 dimensions of an AI agent (worker class \u00b7 deployment topology \u00b7 access scope \u00b7 model in use \u00b7 memory architecture), runs a deterministic rule-based risk tier classification (no LLM calls), and ships a risk tier (LOW \u00b7 MEDIUM \u00b7 HIGH \u00b7 CRITICAL) plus a recommended next step. Lives at `defendableos.com/defend-the-claw`. Free. No login. Map 1:1 to the OpenClaw UX vocabulary the founder community recognizes.",
+  "defendableos_notes": "- ClawCheck is the front door of DefendableOS \u00b7 most customers will meet us here first\n- The \"no LLM in classification\" rule is non-negotiable \u00b7 the value prop is the determinism \u00b7 violating it kills the brand\n- The risk tier is the lead-quality signal \u00b7 LOW = newsletter \u00b7 MEDIUM = nurture \u00b7 HIGH = call this week \u00b7 CRITICAL = call today\n- ClawCheck integrates with Defend The Claw\u2122 campaign \u00b7 \"Your AI assistant has hands now \u00b7 Inspect it before you trust it\"\n\n\ud83d\udc1d *Free inspection. Five questions. Deterministic. The lead becomes the",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1",
+    "canon": "defendapedia.eth/defendableos_terms/clawcheck",
+    "street_source": null
+  },
+  "evidence_required": [
+    "5 dimensions filled (incomplete submissions get the prompt to complete)",
+    "Risk tier with explicit rule citations (which rule fired)",
+    "Processing time logged (deterministic check should be < 200ms)",
+    "No-LLM attestation (boolean, must be true)",
+    "Submitter contact info (email or Discord handle) for follow-up"
+  ],
+  "example": "> **Submission CC-20260520T091500Z-x4f2**: ACMECorp \u00b7 books-bot agent\n>\n> **Dimensions**:\n> - worker_class: BOOKKEEPING\n> - deployment_topology: HYPERSCALER (AWS)\n> - access_scope: WRITE_BOUNDED (general-ledger write)\n> - model_in_use: gpt-4o-2024-08-06\n> - memory_architecture: LONG_TERM_VECTOR\n>\n> **Rules fired**:\n> - R-004: BOOKKEEPING + WRITE_BOUNDED \u2192 MEDIUM (financial mutation requires audit)\n> - R-009: HYPERSCALER + LONG_TERM_VECTOR \u2192 upgrade to HIGH (data residency exposure on persistent context)\n> - R-013: No DefendableRouter detected \u2192 upgrade to HIGH (no capture rail)\n>\n> **Final tier**: HIGH\n>\n> **Risk drivers**: financial_mutation_without_audit, residency_exposure_on_persistent_context, missing_capture_rail\n>\n> **Recommended next step**: install DefendableRouter (5-min \u00b7 CLOUD mode) to capture and grade \u00b7 then evaluate DefendableJelly Tier-2 Managed\n>\n> **Processing time**: 47ms\n>\n> **Follow-up**: Jr Hack DM within 6 hours \u00b7 meeting booked for next day \u00b7 LOU drafted Day-3 \u00b7 contract signed Week-2",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `llm_used_in_classification` | A SwarmJelly or other model call was made during the intake | PROPOLIS \u00b7 brand violation |\n| `opaque_tier_assignment` | Risk tier assigned without citing the rule that fired | JELLY \u00b7 governance |\n| `dimension_missing` | One of the 5 dimensions wasn't captured | JELLY \u00b7 re-prompt user |\n| `slow_processing` | > 200ms \u00b7 suggests non-deterministic path | JELLY \u00b7 health check |\n| `no_followup_within_24h` | Operator didn't reach out within 24h on HIGH/CRITICAL | JELLY \u00b7 sales-ops escalation |",
+  "hashes": {
+    "json_sha256": "sha256:2309b5c7718454d4d47b5dbfbfc8be40f8fd331fc03ad620a86eb6f9490e38d9",
+    "markdown_sha256": "sha256:8e701fd576a0dfae6fa1da2c0161083ea2e9676dc0487f379c261543ddd31690"
+  },
+  "jr_broker_use": "When you see a ClawCheck submission come in, the Jr Hack reaches out within 24 hours \u00b7 NOT to sell, to FOLLOW UP. The intake is the lead. The first call is \"we saw your ClawCheck came back HIGH on access_scope and CRITICAL on memory_architecture \u00b7 here's what that means and here's what we'd do about it.\" That's the lead-to-conversation conversion \u00b7 it's MAGIC funnel \u00b7 Meeting \u2192 Appraisal \u2192 Ink \u2192 Close starts here.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/clawcheck/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.482693+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.482693+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "defendableos",
+    "defendablerouter",
+    "defendablejelly",
+    "agentbench",
+    "defendablehack",
+    "pair-candidate"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 ClawCheck is the top of the sales funnel \u00b7 conversion is the assignment\n- **repair_lift**: NEUTRAL \u00b7 ClawCheck is pre-customer \u00b7 no refinery yet\n- **validator_confidence**: MEDIUM \u00b7 deterministic classification IS the trust signal\n- **risk_temperature**: DIRECT \u00b7 ClawCheck OUTPUT is a risk tier\n- **probability_of_close**: HIGH \u00b7 HIGH/CRITICAL ClawChecks convert at much higher rates\n- **evidence_strength**: HIGH \u00b7 rule citations make the tier defensible\n- **cost_to_mint**: LOW \u00b7 free service \u00b7 cost is operator follow-up time",
+  "slug": "clawcheck",
+  "sr_broker_use": "The Sr Hack reviews the ClawCheck-to-LOU conversion ratio weekly \u00b7 if conversion drifts below 8%, the rule-tier classifier is either too lax (everyone's LOW, no urgency) or too aggressive (everyone's CRITICAL, no credibility). The Sr Hack also reviews the qualitative drivers \u00b7 which dimension triggers the most HIGH/CRITICAL tiers \u00b7 this is product feedback for where the customer pain actually is.",
+  "status": "active",
+  "street_definition": "\"Run it through ClawCheck.\" That's the founder's line when an inbound prospect drops an AI agent into the conversation. **ClawCheck** is the free intake at `/defend-the-claw` \u00b7 the 5-dimension agent capture form \u00b7 the deterministic risk tier output. No login. No credit card. No model calls. 5 minutes, you get a risk tier, you know whether to be worried.",
+  "term": "ClawCheck",
+  "tribunal_use": "- **Rule layer**: ClawCheck MUST be deterministic \u00b7 zero LLM calls \u00b7 violating this is a brand violation (the value prop is \"deterministic risk\")\n- **Rule layer**: Risk tier MUST map to a documented driver from the 5 dimensions \u00b7 no opaque tier assignments\n- **Judge layer**: Tribunal doesn't grade ClawCheck per-intake \u00b7 it grades the aggregate \u00b7 weekly conversion ratio + driver distribution\n- **Classification impact**: ClawCheck is upstream of Tribunal \u00b7 the intake doesn't carry a Tribunal verdict \u00b7 it produces a risk tier that informs the sales conversation",
+  "version": "v1"
+}

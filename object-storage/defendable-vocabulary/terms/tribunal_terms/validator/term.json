@@ -1,0 +1,76 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"validator.validator_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"^BEE-AUDITOR-VAL-[a-z0-9]+$\"\n  },\n  \"validator.check_id\": {\n    \"type\": \"enum\",\n    \"values\": [\"C01\", \"C02\", \"C03\", \"C04\", \"C05\", \"C06\", \"C07\", \"C08\", \"C09\", \"C10\", \"C11\", \"C12\"]\n  },\n  \"validator.is_critical\": { \"type\": \"boolean\" },\n  \"validator.result\": {\n    \"type\": \"enum\",\n    \"values\": [\"PASS\", \"FAIL\", \"ADVISORY_FAIL\", \"ERROR\"]\n  },\n  \"validator.reason\": { \"type\": \"string\" },\n  \"validator.confidence_weight\": { \"type\": \"float\", \"range\": [0.0, 1.0] },\n  \"validator.run_at\": { \"type\": \"timestamp\" }\n}\n```\n\nSchema files: `docs/schemas/validator_chain.schema.json` \u00b7 `docs/schemas/validator_result.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "tribunal_terms",
+  "client_explanation": "A \"validator\" is one of our auditor agents \u00b7 its only job is to run twelve structural checks on every AI output before the judges weigh in. Validators don't produce output \u00b7 they protect the output. Twelve checks \u00b7 seven critical (any fail stops the deed) \u00b7 five advisory (annotates but doesn't block). The validator's results are part of the verdict record you receive with every deed.",
+  "cre_operator_meaning": "In CRE \u00b7 the validator is the auditor inside the brokerage \u00b7 the role that checks the appraiser's math \u00b7 the title chain \u00b7 the survey \u00b7 the lender's instructions \u00b7 the closing-statement reconciliation. The validator does not sell \u00b7 does not list \u00b7 does not negotiate \u00b7 the validator audits. A brokerage without a strong validator function is a brokerage that produces deals it can't defend at audit.\n\nInside DefendableOS \u00b7 the validator carries that exact discipline. A validator never produces customer-facing output \u00b7 the validator's only output is the verdict-record annotation that gets attached to the worker's output. The validator is the structural integrity layer of the chain.",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `validator_chain_results` (array of 12 check outcomes) \u00b7 `validator_advisory_annotations` (list of advisory annotations) \u00b7 `validator_lineage` (which validator-bees ran)\n- **DDEED class impact**: NO DDEED issues without a clean validator chain (all 7 critical PASS \u00b7 advisory annotated but not blocking)\n- **Books and records layer**: L1 PG (validator results stored hot) \u00b7 L2 Merkle (validator results hashed into batch root) \u00b7 L3 NAS (validator transition log archived)\n- **5 Proofs touched**: QUALITY (validators ARE the quality rule layer) \u00b7 PROCESS (validator chain IS the process)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `validator_chain_results` (array of 12 check outcomes) \u00b7 `validator_advisory_annotations` (list of advisory annotations) \u00b7 `validator_lineage` (which validator-bees ran)\n- **DDEED class impact**: NO DDEED issues without a clean validator chain (all 7 critical PASS \u00b7 advisory annotated but not blocking)\n- **Books and records layer**: L1 PG (validator results stored hot) \u00b7 L2 Merkle (validator results hashed into batch root) \u00b7 L3 NAS (validator transition log archived)\n- **5 Proofs touched**: QUALITY (validators ARE the quality rule layer) \u00b7 PROCESS (validator chain IS the process)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "A validator is an Auditor-class Bee instance that executes the 12-check validator chain (C01-C12 \u00b7 see [`13_validator_chain_doctrine.md`](../../doctrine/13_validator_chain_doctrine.md)) on a PairCandidate before the judge layer runs. Validators come in two operational modes:\n\n### Critical-check validator (C01-C07)\n- Runs the 7 critical checks \u00b7 ANY fail short-circuits the pair to Propolis (or Jelly in the C03 cached-source case)\n- Typical model: deterministic Python validators (no LLM required for most) \u00b7 with optional model-backed checks for content-sensitive verifications\n\n### Advisory-check validator (C08-C12)\n- Runs the 5 advisory checks \u00b7 annotates the pair with confidence penalties but does not block\n- Typical model: SwarmJudge-9B-CRE for advisory content-validity checks \u00b7 deterministic Python for hash / log / secret-scan checks\n\nValidators report their results to the Tribunal Filter role. Filter aggregates \u00b7 enforces priorities (critical before advisory) \u00b7 and emits the rule-layer-result block of the verdict record.",
+  "defendableos_notes": "- Validators are deterministic-first \u00b7 model-backed only when the check is content-sensitive \u00b7 this keeps the chain fast and auditable\n- Validators are auditor-class Bees \u00b7 same lifecycle (FETCH-COOK-GATE-SCORE-STAMP-ANCHOR-EMIT) as Workers\n- The validator's confidence_weight is a dial that can be tuned per-check based on production performance \u00b7 but the binary PASS/FAIL decision is doctrine\n- Operator override of validator critical-fail is structurally rejected \u00b7 this is the founder-locked discipline\n- The validator chain is what makes the Tribunal more than vibes \u00b7 without the validator layer the judges would be unconstrained\n\n\ud83d\udc1d *Validator is the auditor bee. Twelve checks. Seven critical. Five advisory. The chain is the chain. The judge cannot promote",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-v1",
+    "canon": "defendapedia.eth/tribunal_terms/validator",
+    "street_source": null
+  },
+  "evidence_required": [
+    "A run_at timestamp",
+    "A result enum value",
+    "A reason string (mandatory on FAIL and ADVISORY_FAIL \u00b7 optional on PASS but recommended)",
+    "A confidence_weight (0.0-1.0 \u00b7 typically 1.0 for deterministic validators \u00b7 variable for model-backed)",
+    "The validator_id (links back to the auditor-bee lineage)"
+  ],
+  "example": "> **Engagement**: STNL opinion \u00b7 industrial cold storage.\n>\n> **PairCandidate**: SwarmCRE-9B-produced opinion \u00b7 waiting for Tribunal.\n>\n> **Validator passes (all 12 checks \u00b7 logged in order)**:\n> - C01 pair record present \u00b7 validator BEE-AUDITOR-VAL-7a01 \u00b7 PASS (43ms \u00b7 confidence 1.0)\n> - C02 source artifact referenced \u00b7 BEE-AUDITOR-VAL-7a02 \u00b7 PASS (61ms \u00b7 5 sources cited \u00b7 confidence 1.0)\n> - C03 source retrievable \u00b7 BEE-AUDITOR-VAL-7a03 \u00b7 PASS (310ms \u00b7 5/5 sources retrieved \u00b7 confidence 1.0)\n> - C04 tribunal label assigned \u00b7 BEE-AUDITOR-VAL-7a04 \u00b7 PASS (5ms \u00b7 pre-judge null is acceptable \u00b7 confidence 1.0)\n> - C05 no hard-fail flagged \u00b7 BEE-AUDITOR-VAL-7a05 \u00b7 PASS (28ms \u00b7 no hallucination \u00b7 no schema break \u00b7 no tool misuse \u00b7 confidence 1.0)\n> - C06 PROPOLIS not promoted \u00b7 BEE-AUDITOR-VAL-7a06 \u00b7 PASS (trivially clears \u00b7 confidence 1.0)\n> - C07 holdout contamination guard \u00b7 BEE-AUDITOR-VAL-7a07 \u00b7 PASS (88ms \u00b7 cross-referenced against 5-holdout manifest \u00b7 confidence 1.0)\n> - C08 operator consent \u00b7 BEE-AUDITOR-VAL-7a08 \u00b7 PASS (12ms \u00b7 consent flag captured at engagement open \u00b7 confidence 1.0)\n> - C09 redaction status \u00b7 BEE-AUDITOR-VAL-7a09 \u00b7 PASS (147ms \u00b7 PII scan clean \u00b7 confidence 0.95)\n> - C10 transition audit log \u00b7 BEE-AUDITOR-VAL-7a10 \u00b7 PASS (8ms \u00b7 all transitions logged \u00b7 confidence 1.0)\n> - C11 SHA-256 recorded \u00b7 BEE-AUDITOR-VAL-7a11 \u00b7 PASS (3ms \u00b7 hash computed \u00b7 confidence 1.0)\n> - C12 no secrets in pair \u00b7 BEE-AUDITOR-VAL-7a12 \u00b7 PASS (52ms \u00b7 no AWS keys \u00b7 no API tokens \u00b7 no PANs \u00b7 confidence 1.0)\n>\n> **Outcome**: Validator chain clean \u00b7 pair proceeds to judges \u00b7 validator total latency 766ms \u00b7 within budget \u00b7 annotations attached to verdict record.",
+  "failure_modes_raw": "| Mode | Description | Resolution |\n|---|---|---|\n| **validator_silent_pass** | Validator returned PASS but the underlying check did not actually run | Validator service integrity event \u00b7 service restarted \u00b7 all recent passes audited |\n| **validator_timeout** | Validator did not respond within latency budget \u00b7 pair stuck | Validator service health audited \u00b7 pair re-routed \u00b7 if recurring \u00b7 rig audited |\n| **validator_disagreement** | Two parallel validator instances on the same check return different results (PASS vs FAIL) | Service determinism failure \u00b7 escalate \u00b7 the FAIL is treated as authoritative \u00b7 investigate the PASS source |\n| **validator_advisory_creep** | Advisory checks start failing at increasing rates without root-cause | Sr broker investigates upstream data quality \u00b7 curator settings \u00b7 operator-onboarding discipline |\n| **validator_bypass_attempt** | Operator attempts to manually override a critical-fail validator result | Operator-discipline event \u00b7 attempt is structurally rejected \u00b7 logged \u00b7 escalated |",
+  "hashes": {
+    "json_sha256": "sha256:71fb7a3a5a71cec1c44edef4141523300c48ac67ebe21f3de31e4d532966165f",
+    "markdown_sha256": "sha256:d508f5a98b98adcd5c4e6ef5e97ca46bb3fade369bfa94026f68fe40e6a0e364"
+  },
+  "jr_broker_use": "The jr broker treats validator output as the GO / NO-GO SIGNAL:\n\n1. Every PairCandidate gets a validator pass before the judges \u00b7 the validator chain results are visible in the dashboard before the verdict\n2. If you see C01-C07 critical-fail \u00b7 the pair is going Propolis \u00b7 do NOT attempt to push it through\n3. If you see C08-C12 advisory-fail \u00b7 the pair MAY still ship \u00b7 annotate the operator log with why \u00b7 escalate to sr broker if uncertain\n4. Validator output is FAST (sub-100ms per check on most) \u00b7 if you see a validator taking > 5 sec \u00b7 the validator service is degraded \u00b7 escalate\n5. Never bypass a validator check \u00b7 the chain is the chain \u00b7 operator override of critical-fail is structurally rejected\n\n**Rule of thumb**: the validator catches the structural problems the judge would miss \u00b7 trust the chain \u00b7 the chain is doctrine.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/tribunal_terms/validator/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.541817+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.541817+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "validator-chain",
+    "tribunal",
+    "judge",
+    "bee",
+    "confidence-weight"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: GATE \u00b7 validators are the structural gate the assignment must clear\n- **repair_lift**: GATE \u00b7 repaired pairs go through the validator chain again \u00b7 the lift is measured post-validator-clearance\n- **validator_confidence**: SELF \u00b7 the validator's confidence_weight aggregates into the overall validator_confidence dial\n- **risk_temperature**: INVERSE \u00b7 clean validator runs lower risk \u00b7 critical-fail validators spike risk\n- **probability_of_close**: GATE \u00b7 close prob assumes the validator chain will clear \u00b7 validator history is a predictor\n- **evidence_strength**: VALIDATOR-PRODUCED \u00b7 evidence strength is partially validated by the validator chain (C02 source-referenced \u00b7 C03 source-retrievable)\n- **cost_to_mint**: INCLUDED \u00b7 validator compute is a line item in cost-to-mint",
+  "slug": "validator",
+  "sr_broker_use": "The sr broker watches validator output as the EARLIEST-WARNING signal:\n\n- Validator critical-fail rates are the upstream-broken signal \u00b7 any single critical check failing > 2% of volume for 24h = degraded mode \u00b7 investigate cook OR data source\n- Validator advisory-fail patterns reveal operator discipline \u00b7 sustained C08 (consent missing) > 5% means the engagement-onboarding process is leaking consent capture\n- Validator latency is the rig-health signal \u00b7 slow validators mean a busy rig OR a starving network \u00b7 investigate\n- C07 (holdout contamination) validator firing is the HIGHEST severity event in the Tribunal \u00b7 page immediately \u00b7 do not wait for the next Morning Brief",
+  "status": "active",
+  "street_definition": "\"Validator's looking at it.\" The validator is the Auditor-class Bee whose lane is the 12-check validator chain \u00b7 the rule-layer that runs on every pair BEFORE the LLM judges weigh in. A validator does not produce output \u00b7 it cross-checks the output produced by Worker Bees. It runs C01-C12 \u00b7 annotates the pair with critical and advisory results \u00b7 and emits the verdict-record skeleton the judges populate.\n\nIn CRE language \u00b7 the validator maps to the title-insurance underwriter and the closing-agent reviewer \u00b7 the role whose only job is to confirm the chain is clean before the deed transfers. The validator does not produce the deed \u00b7 the validator protects the deed \u00b7 the validator's signature is what makes the closing defendable.",
+  "term": "Validator",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # validators don't get tiers \u00b7 their checks DETERMINE tiers\n  rule_layer_checks:\n    - validator.validator_id MUST be populated\n    - validator.result MUST be one of [PASS, FAIL, ADVISORY_FAIL, ERROR]\n    - if validator.is_critical AND result != PASS \u00b7 pair goes to PROPOLIS (or JELLY in C03 cache case)\n    - if validator.result == ERROR \u00b7 pair is held \u00b7 validator service health audited \u00b7 re-run\n  judge_layer_prompt_hint: \"validators run BEFORE you \u00b7 respect their critical-fail decisions \u00b7 you cannot promote past them\"\n  can_be_critical_failure: false   # validators don't fail \u00b7 they DETECT failures\n```",
+  "version": "v1"
+}

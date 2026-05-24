@@ -1,0 +1,103 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-JELLY-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.500399+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-JELLY-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/jelly",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/jelly/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-JELLY-v1-20260524T15332150038Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:37ad4400335c25115397e2f485ed6a533bf81affabe6ff870ba55f606a8e692a",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "jelly",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"Jelly\" is our recoverable-failure tier \u00b7 the AI work product that did not clear our production-safe threshold but showed a named failure mode that our SwarmFixer pipeline can repair. We do not ship Jelly to you. We route it to repair \u00b7 re-grade the repaired output \u00b7 and ship the result (usually as Honey \u00b7 sometimes as Royal Jelly) along with the lift report showing the repair worked. The lift report is your audit trail that says \"we caught the problem \u00b7 we fixed it \u00b7 here's the before-and-after.\" Most AI vendors throw away their failures. We make a flywheel out of them.",
+      "cre_operator": "In CRE \u00b7 Jelly is the value-add play \u00b7 the Class C-with-an-angle \u00b7 the building with deferred maintenance that a sponsor can take down at a 7-cap \u00b7 pump $4M into the roof and the HVAC \u00b7 re-tenant at market \u00b7 and exit at a 6-cap on the trended NOI. The deal doesn't pencil on day one \u00b7 it pencils on the workout. The buyer pool is different (value-add funds \u00b7 not core institutional) but the buyer pool exists \u00b7 and the cap rate spread between Class C entry and Class B exit is the broker's value-add.\n\nInside DefendableOS \u00b7 Jelly is identically structured. The AI work product didn't clear the Honey threshold \u00b7 but the failure mode is named \u00b7 the failure is recoverable \u00b7 SwarmFixer (the 5-task RJ pipeline \u00b7 DIAGNOSE / REPAIR / PREVENT / DETECT / COMPARE) takes the pair \u00b7 produces a repair \u00b7 the repaired pair re-enters the Tribunal \u00b7 and the lift gets MEASURED.\n\nThe repair lift is the dial. The dial is the asset. Jelly is what makes the dial move.",
+      "defendableos": "Jelly is the third Tribunal tier \u00b7 `tribunal_label = JELLY` \u00b7 typically JellyScore 0.50-0.69 with a NAMED recoverable failure mode. The pair did not clear Honey but did not trip a critical-fail that would force it to Propolis. The failure mode falls into one of the 7 SwarmJelly failure-class buckets:\n\n- missing_step (reasoning)\n- false_assumption (reasoning)\n- hallucination (knowledge \u00b7 NOT the catastrophic kind \u00b7 the recoverable kind where the fact CAN be sourced)\n- overgeneralization (knowledge)\n- drift (instruction-following)\n- schema_break (instruction-following \u00b7 NOT the catastrophic C12 secret-leak kind \u00b7 the recoverable JSON-format kind)\n- tool_misuse (agent)\n\nJelly is the EXPLICIT repair lane. It is what feeds SwarmFixer. It is what produces the BEFORE / AFTER training pairs that train the NEXT SwarmFixer cohort. Jelly is the flywheel.",
+      "street": "\"That one came back Jelly \u00b7 route it.\" Jelly is the recoverable-failure tier. The pair scored too low to ship \u00b7 failed a fixable check \u00b7 or showed a workout angle the auto-judges flagged \u00b7 and now it sits in `pair-candidates/jelly-repaired/` waiting for SwarmFixer to take a swing. After repair \u00b7 the pair gets re-Scouted into the Tribunal as a fresh PairCandidate (with a `repair_lineage` pointer back to the original) \u00b7 re-graded \u00b7 and most of the time it lands Honey on the second pass.\n\nIn CRE language \u00b7 Jelly is the Class C asset with a workout angle. Deferred maintenance. Below-market rents. Tenant vacancy. Whatever the problem is \u00b7 the problem is FIXABLE \u00b7 and the lift from the fix is what the value-add buyer pool pays for. Same here. Jelly is the workout pile. The most valuable training data the Hive produces \u00b7 because the BEFORE / AFTER pair is the gold for the next SwarmFixer cohort."
+    },
+    "related_terms": [
+      "honey",
+      "royal-jelly",
+      "propolis",
+      "hive",
+      "tribunal"
+    ],
+    "slug": "jelly",
+    "term": "Jelly"
+  },
+  "supersedes": null,
+  "term": "Jelly",
+  "updated_at": "2026-05-24T15:33:21.753605+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

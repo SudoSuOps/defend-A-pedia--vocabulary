@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-DUE-DILIGENCE-DD-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.472579+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-DUE-DILIGENCE-DD-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/due-diligence-dd",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/due-diligence-dd/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-DUE-DILIGENCE-DD-v1-20260524T15332147257Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:f51bdd11af4372938a2cc2cbe643a8a864cc7cf6c48a5b3632d7573f824182fb",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "due-diligence-dd",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "Due diligence is the structured inspection of your agent fleet that we conduct between signing the Letter of Understanding and signing the binding Purchase and Sale Agreement. This is where we verify, hands-on, that the engagement we proposed in the LOU is the engagement we can actually deliver \u00b7 and where you verify that the team and the receipts framework you saw in our pitch are real and ready to operate on your fleet.\n\nDiligence typically runs 14-30 days. Our team will need access to your agents, your vendor relationships, your audit history, and your data residency setup. We will issue an inspection receipt at the end of diligence. If we surface anything material that wasn't visible at LOU stage, we will either re-paper the LOU on revised terms or, in rare cases, recommend a PASS and refund any prepaid amount. This is the doctrine in action \u00b7 we never want to sign a binding contract on a fleet we haven't fully inspected.",
+      "cre_operator": "Diligence is the structured verification campaign that runs between LOI and PSA. Standard CRE diligence covers:\n\n- **Physical inspection.** Walk the building. Measure clear-heights. Count trailer doors. Inspect roofs. Check HVAC age. Verify what's claimed against what exists.\n- **Financial diligence.** T-12 financials reviewed line by line. Rent roll cross-checked against bank deposits. CAM reconciliations verified. Property tax records pulled. Insurance claims history.\n- **Tenant diligence.** Estoppel certificates from every tenant. Lease abstracts confirmed. Tenant credit refreshed. Operating history pulled.\n- **Title diligence.** Title commitment ordered. Schedule B exceptions reviewed. Survey ordered or updated. Easement and encumbrance review.\n- **Environmental diligence.** Phase 1 environmental report. Phase 2 if Phase 1 flagged. Asbestos / lead / radon as applicable.\n- **Regulatory diligence.** Zoning compliance verified. CO (certificate of occupancy) checked. Permits in good standing. Open violations searched.\n- **Market diligence.** Cap rate trends in submarket re-verified. Comp set re-pulled. Supply pipeline re-checked. Employment / demographic drivers re-confirmed.\n\nAt the end of diligence, the buyer either: (1) closes on agreed terms, (2) re-trades on terms (price reduction, scope change, contingency added), or (3) walks. The discipline that wins is knowing when to walk \u00b7 the PASS doctrine starts at diligence, not just at LOU.",
+      "defendableos": "In DefendableOS, **due diligence** is the structured verification campaign that runs between LOU and PSA. It is the firm's inspection of the customer's agent fleet, vendor stack, regulatory exposure, color refresh, and adversarial probe results. Diligence outputs are what the sr broker reads before signing the PSA.\n\nDefendableOS diligence covers:\n\n- **Fleet inspection.** Every agent in the LOU's defense scope gets walked \u00b7 agent owner identified \u00b7 model/version pulled \u00b7 prompt template pulled \u00b7 tool calls catalogued \u00b7 I/O patterns sampled.\n- **Vendor diligence.** Every AI vendor in the stack reviewed. Changelogs pulled for the last 90 days. Recent drift events surfaced. SLA history checked. Pricing trajectory verified.\n- **Color refresh.** The color file from pre-LOU gets refreshed. Stale data flagged. Newly available data integrated. Color score re-computed.\n- **Validator chain first pass.** Full 12-check chain run against the fleet. 7 critical checks must clear. 5 advisory checks reviewed. Any failures get a workout plan.\n- **Adversarial probe.** Hostile re-prompts run against representative fleet outputs. 7th-gate stress tests applied. Probe results documented.\n- **Regulatory diligence.** Customer's regulatory exposure mapped. Recent enforcement actions in their vertical reviewed. Upcoming compliance deadlines surfaced.\n- **Audit chain inspection.** Customer's existing audit-vendor relationships reviewed. Insurance carrier requirements verified. Board reporting cadence understood.\n- **Data residency verification.** Where does customer data live? What can move to NAS? What must stay on-premise? Data residency clause of PSA depends on this.\n\nAt the end of diligence, the sr broker either: (1) signs the PSA on agreed terms, (2) re-papers the LOU with revised terms (re-priced engagement, narrowed scope, extended title-insurance ramp), or (3) PASS-walks. Same discipline as CRE \u00b7 different artifacts.",
+      "street": "\"We're in diligence.\" \u2014 sr broker, on the pipeline call, status of an active LOU.\n\n**Due diligence** is the verification phase. Between LOI and PSA. The buyer (or, in DefendableOS, the defense provider) has agreed to engage; the seller (the customer) has agreed to be engaged; now both sides verify that what was pitched matches what's real. Color gets refreshed. Inspection gets walked. Numbers get tied out. Adversarial probes get run. If diligence surfaces a material misalignment between pitch and reality, the LOI gets re-papered or walked.\n\nIn CRE, diligence runs 30-60 days. In DefendableOS, diligence runs 14-30 days. The principle is the same: don't trust \u00b7 verify \u00b7 receipt every verification \u00b7 walk if the math no longer pencils."
+    },
+    "related_terms": [
+      "loi",
+      "psa",
+      "color",
+      "digest",
+      "underwriting",
+      "books-and-records"
+    ],
+    "slug": "due-diligence-dd",
+    "term": "Due Diligence (DD)"
+  },
+  "supersedes": null,
+  "term": "Due Diligence (DD)",
+  "updated_at": "2026-05-24T15:33:21.741574+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

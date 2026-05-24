@@ -1,0 +1,79 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"cost_to_mint.usd\": { \"type\": \"float\" },\n  \"cost_to_mint.baseline_honey_usd\": { \"type\": \"float\", \"default\": 0.0052 },\n  \"cost_to_mint.fee_tier\": {\n    \"type\": \"enum\",\n    \"values\": [\"FLOOR\", \"STANDARD\", \"FULL\", \"ENTERPRISE\"]\n  },\n  \"cost_to_mint.fee_charged_usd\": { \"type\": \"float\" },\n  \"cost_to_mint.margin_usd\": { \"type\": \"float\" },\n  \"cost_to_mint.breakdown\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"electrical_usd\": { \"type\": \"float\" },\n      \"gpu_usd\": { \"type\": \"float\" },\n      \"operator_usd\": { \"type\": \"float\" },\n      \"anchor_usd\": { \"type\": \"float\" },\n      \"storage_usd\": { \"type\": \"float\" },\n      \"chain_overhead_usd\": { \"type\": \"float\" }\n    }\n  }\n}\n```\n\nSchema files: `docs/schemas/cost_to_mint.schema.json` \u00b7 `docs/schemas/fee_tier.schema.json` \u00b7 `docs/schemas/energy_ledger.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "hive_terms",
+  "client_explanation": "\"Cost to mint\" is the per-deed dollar cost of producing your deed \u00b7 we publish it on every Closing Statement so you can see the math. The baseline is $0.0052 per Honey deed at our current rig efficiency \u00b7 Royal Jelly deeds run about 30-50% higher because they include a per-cell Hedera anchor. We bill against one of four fee tiers \u00b7 Floor ($0.008) \u00b7 Standard ($0.02) \u00b7 Full ($0.05) \u00b7 Enterprise ($0.10) \u00b7 depending on the engagement type. The difference between cost and fee is our margin \u00b7 which funds the rigs \u00b7 the doctrine \u00b7 the brand \u00b7 the warranty \u00b7 the people. We publish all of it because the math is the trust \u00b7 and the trust is the brand.",
+  "cre_operator_meaning": "In CRE \u00b7 cost-to-mint maps to the per-unit operating cost \u00b7 disclosed in the OM \u00b7 reconciled at year-end in the CAM. A sr broker quoting a 6-cap on a cold-storage facility includes the OpEx per cubic foot \u00b7 the energy cost (cold storage is energy-heavy \u00b7 OpEx ratio runs 35-45% of revenue) \u00b7 the labor cost \u00b7 the maintenance reserve. The buyer's underwriter takes the disclosed cost-to-mint \u00b7 stress-tests it against comps \u00b7 and either confirms the NOI or re-trades the price.\n\nSame here. Cost-to-mint is what makes the customer's underwriter able to model the engagement. Without it \u00b7 the deed has no economic anchor.",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `cost_to_mint.usd` \u00b7 `cost_to_mint.breakdown.*` \u00b7 `cost_to_mint.fee_tier` \u00b7 `cost_to_mint.fee_charged_usd` \u00b7 `cost_to_mint.margin_usd`\n- **DDEED class impact**: Every DDEED carries the full cost-to-mint line \u00b7 for customer transparency \u00b7 for operator accountability\n- **Books and records layer**: ALL 5 (L1 hot \u00b7 L2 hashed \u00b7 L3 archived \u00b7 L4 anchored \u00b7 L5 ENS for Royal Jelly)\n- **5 Proofs touched**: ECONOMICS (cost-to-mint IS the economics proof) \u00b7 TRUST (publishing the math IS the trust signal)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `cost_to_mint.usd` \u00b7 `cost_to_mint.breakdown.*` \u00b7 `cost_to_mint.fee_tier` \u00b7 `cost_to_mint.fee_charged_usd` \u00b7 `cost_to_mint.margin_usd`\n- **DDEED class impact**: Every DDEED carries the full cost-to-mint line \u00b7 for customer transparency \u00b7 for operator accountability\n- **Books and records layer**: ALL 5 (L1 hot \u00b7 L2 hashed \u00b7 L3 archived \u00b7 L4 anchored \u00b7 L5 ENS for Royal Jelly)\n- **5 Proofs touched**: ECONOMICS (cost-to-mint IS the economics proof) \u00b7 TRUST (publishing the math IS the trust signal)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Cost-to-mint is the per-deed all-in dollar cost \u00b7 computed as:\n\n```\ncost_to_mint_usd =\n    electrical_energy_kwh * grid_price_per_kwh\n  + gpu_seconds * gpu_amortized_dollar_per_second\n  + operator_minutes * operator_dollar_per_minute\n  + anchor_cost_usd            # Hedera HCS per-cell for RJ \u00b7 per-batch for others\n  + storage_carry_usd          # amortized Tigris + NAS + PostgreSQL + ENS\n  + chain_overhead_usd         # Merkle assembly \u00b7 validator chain compute \u00b7 audit logging\n```\n\nThe Honey-baseline `$0.0052/deed` is the operator-tested production number on the swarmrails primary rig with:\n\n- grid price $0.085/kWh (Florida commercial rate \u00b7 2026)\n- GPU amortized $0.0011/sec (RTX PRO 6000 96GB \u00b7 3-year amortization at 75% duty cycle)\n- operator labor $1.20/min (sr broker rate amortized across review queue)\n- Hedera HCS batch share $0.0000016/pair (50-pair batch \u00b7 ~$0.0001 batch root)\n- Tigris + NAS + PG amortized $0.0008/deed-year\n- chain overhead $0.0011/deed (Merkle + validator chain compute)\n\nRoyal Jelly deeds add ~$0.0008 per-cell Hedera certificate \u00b7 so RJ runs ~1.3-1.5x Honey baseline (~$0.007-0.008).",
+  "defendableos_notes": "- The $0.0052/deed baseline is the production-tested number \u00b7 it is publicly cited in our pricing page \u00b7 it is the brand's anti-fantasy mechanism\n- The 4 fee tiers (Floor \u00b7 Standard \u00b7 Full \u00b7 Enterprise) are the published price list \u00b7 we do not negotiate off-tier without founder approval\n- Customers who want fixed monthly subscriptions are offered a tier-based per-deed model first \u00b7 subscription is available but framed as a convenience \u00b7 the unit economics remain visible underneath\n- The margin in the Standard and Full tiers is what funds the Hive's R&D \u00b7 the doctrine \u00b7 the brand \u00b7 the warranty \u00b7 the people\n- Publishing cost-to-mint is the brand's defensive moat against \"AI is too expensive\" narrative \u00b7 our economics are auditable \u00b7 most vendors' are not\n\n\ud83d\udc1d *Cost-to-mint is the all-in dollar number per deed. Publish it. Price against it. The math is the trust. The trust is the brand. The brand is the asset on t",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1",
+    "canon": "defendapedia.eth/hive_terms/cost-to-mint",
+    "street_source": null
+  },
+  "evidence_required": [
+    "An energy ledger entry covering all 6 line items (electrical \u00b7 GPU \u00b7 operator \u00b7 anchor \u00b7 storage \u00b7 chain overhead)",
+    "A per-rig PDU reading for the cook period",
+    "A per-Bee GPU-second log",
+    "An operator-activity log for review minutes",
+    "A Hedera HCS transaction reference for anchor cost",
+    "A reconciled total that matches the published cost-to-mint value",
+    "The fee tier billed (with engagement-type justification)"
+  ],
+  "example": "> **Engagement**: Industrial cold-storage AVO \u00b7 STNL acquisition opinion \u00b7 Full-tier customer \u00b7 Royal Jelly target.\n>\n> **Cost-to-mint breakdown for the deed**:\n>\n> - Electrical: 0.0091 kWh \u00d7 $0.085/kWh = $0.00077\n> - GPU compute: 18.4 GPU-sec \u00d7 $0.0011/sec = $0.00202\n> - Operator review: 4 min \u00d7 $1.20/min = $0.00800 (sr broker validated the apex)\n> - Hedera per-cell certificate: $0.00080\n> - Storage carry (amortized): $0.00080\n> - Chain overhead: $0.00110\n> - **Total cost-to-mint: $0.01349** (~2.6x Honey baseline \u00b7 within Royal Jelly + Full-tier white-glove tolerance)\n>\n> **Fee charged**: $0.05 (Full tier)\n> **Margin**: $0.03651 (~270% over cost)\n>\n> **Closing Statement disclosure**:\n> \"Deed DDEED-DOV-CRE-LINEAGE-ATL-000042-v1 \u00b7 cost-to-mint $0.01349 \u00b7 fee tier FULL \u00b7 invoiced $0.05 \u00b7 margin $0.03651. Cost breakdown \u00b7 electrical $0.00077 \u00b7 GPU $0.00202 \u00b7 operator $0.00800 \u00b7 anchor $0.00080 \u00b7 storage $0.00080 \u00b7 chain overhead $0.00110.\"\n>\n> **Outcome**: Customer's underwriter confirms the engagement-tier pricing is consistent with disclosed cost-to-mint \u00b7 the deed is added to the customer's compliance file with the full economic line \u00b7 the customer's annual operating budget accurately models DefendableOS as a $XXX-per-month line item rather than a fog-priced SaaS subscription.",
+  "failure_modes_raw": "| Mode | Description | Resolution |\n|---|---|---|\n| **cost_unreconciled** | Cost-to-mint reported but breakdown does not sum to total | Deed held \u00b7 accounting integrity event \u00b7 investigate before publishing |\n| **fee_off_tier** | A custom fee charged outside the 4 published tiers | Operator-discipline event \u00b7 the fee is revised to the nearest published tier \u00b7 the operator is coached |\n| **negative_margin_standard** | A STANDARD-tier deed produced a negative margin (cook cost > fee) | Engineering audit \u00b7 either re-tier the customer or fix the cook efficiency |\n| **cost_inflation_unmonitored** | Cost-to-mint trending up > 20% over 30 days with no operator review | Sr broker investigates \u00b7 most common causes are temp drift \u00b7 network fee shifts \u00b7 rig amortization adjustments |\n| **shadow_cost** | Compute consumed without contributing to a tracked cost-to-mint | Operator-discipline event \u00b7 the rig is locked \u00b7 all unattributed deeds are held |",
+  "hashes": {
+    "json_sha256": "sha256:f10107089269ee30774536fa8cbc277da647b49dc6d009ff6fb75df479dc5edb",
+    "markdown_sha256": "sha256:0828c7d7a8b5a872321b44c52099d7b9130bf9282965a635e6b524854f345ad0"
+  },
+  "jr_broker_use": "The jr broker uses cost-to-mint as the ECONOMICS DIAL on every engagement:\n\n1. When you open an engagement \u00b7 the fee tier is set by the engagement type (use the routing matrix in the playbook \u00b7 don't guess)\n2. Watch the live cost-to-mint dial during the cook \u00b7 if it crosses 2x baseline without producing Royal Jelly \u00b7 flag it\n3. The cost-to-mint goes on the Closing Statement \u00b7 do NOT redact it \u00b7 transparency is the brand\n4. If a customer asks \"is this expensive\" \u00b7 pull the comp \u00b7 we publish our baseline \u00b7 we compare against subscription vendors \u00b7 we are typically 5-20x cheaper PER UNIT OF DEFENDABLE OUTPUT than $20/user/mo SaaS doing the same work\n5. Never quote the FEE as if it were the COST \u00b7 those are two different numbers \u00b7 the customer is sophisticated \u00b7 respect their underwriter\n\n**Rule of thumb**: cost-to-mint is the OpEx \u00b7 the fee is the rent \u00b7 the margin is the cap rate \u00b7 know all three.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/cost-to-mint/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.492589+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.492589+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "energy",
+    "royal-jelly",
+    "honey",
+    "propolis",
+    "hive",
+    "bee"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: ENABLER \u00b7 cost-to-mint must be within margin tolerance for the engagement to be commercially viable\n- **repair_lift**: TRADE-OFF \u00b7 repair adds energy \u2192 adds cost \u00b7 the lift must justify the additional cost \u00b7 SwarmFixer is measured on energy-per-lift-point\n- **validator_confidence**: NEUTRAL \u00b7 we do not increase or decrease confidence based on cost\n- **risk_temperature**: NEUTRAL at the pair level \u00b7 ELEVATED at the system level when sustained cost spikes occur\n- **probability_of_close**: ENABLER \u00b7 per-deed margin enables the engagement model\n- **evidence_strength**: NEUTRAL \u00b7 evidence weight is independent of cost\n- **cost_to_mint**: SELF \u00b7 this term IS the cost-to-mint dial",
+  "slug": "cost-to-mint",
+  "sr_broker_use": "The sr broker watches cost-to-mint as the OPERATING-MARGIN AUDIT:\n\n- The weekly check includes a cost-to-mint efficiency review \u00b7 per-rig \u00b7 per-cook \u00b7 per-engagement tier\n- If a customer is consistently producing engagements that cost > 1.3x baseline \u00b7 either the engagement type is wrong (should be a higher tier) OR the cook is mismatched to the customer's domain \u00b7 adjust\n- If the Royal Jelly cost ratio drifts above 1.6x Honey \u00b7 investigate the Hedera anchor cost \u00b7 sometimes network conditions push per-cell certificates up \u00b7 re-quote enterprise customers\n- The Floor tier is the LOSS-LEADER tier \u00b7 margin is ~$0.003 \u00b7 we run it for high-volume internal cooks AND for known-strategic customers \u00b7 the founder approves Floor pricing personally\n- Enterprise tier is where the white-glove margin lives \u00b7 ensure the white-glove discipline matches the price \u00b7 dedicated sr broker \u00b7 custom anchors \u00b7 SLAs honored",
+  "status": "active",
+  "street_definition": "\"What's the cost to mint?\" The cost-to-mint is the all-in per-deed dollar number \u00b7 the unit economic that converts a Hive deed into a defendable line item on the books. It rolls up electricity + GPU-seconds + operator minutes + Hedera anchor fees + storage carry \u00b7 per deed \u00b7 published in the Closing Statement \u00b7 auditable against the energy ledger.\n\nThe baseline is $0.0052/deed for a standard Honey deed. The four-tier fee schedule (Floor $0.008 \u00b7 Standard $0.02 \u00b7 Full $0.05 \u00b7 Enterprise $0.10) is what we CHARGE customers \u00b7 the difference between charge and cost is the margin \u00b7 which is what makes the Hive a sustainable business \u00b7 not a venture-funded loss leader.\n\nIn CRE language \u00b7 cost-to-mint is the operating-cost-per-unit \u00b7 the per-SF OpEx on an industrial facility \u00b7 the per-key cost on a hospitality asset \u00b7 the number that pencils whether the building cash-flows after debt service. Without it \u00b7 the cap rate is theater.",
+  "term": "Cost to Mint",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # cost-to-mint is not a tier \u00b7 it is the economic dial\n  rule_layer_checks:\n    - cost_to_mint.usd MUST be populated for every issued deed (no untracked economics)\n    - cost_to_mint.breakdown MUST sum to cost_to_mint.usd (accounting integrity)\n    - cost_to_mint.fee_charged_usd MUST be one of the 4 published tiers (no off-tier billing)\n    - cost_to_mint.margin_usd MUST be non-negative for STANDARD/FULL/ENTERPRISE (Floor tier may be operator-discretion negative for strategic customers)\n  judge_layer_prompt_hint: \"cost-to-mint is not a judgment input \u00b7 the judge does not score on cost\"\n  can_be_critical_failure: false   # economic metric \u00b7 not a quality verdict\n```\n\nThe Tribunal does not grade cost-to-mint \u00b7 but the validator chain (C11 SHA-256 + audit hooks) ensures the cost-to-mint is logged and reconciled for every deed. Unreconciled economics = unverifiable deed.",
+  "version": "v1"
+}

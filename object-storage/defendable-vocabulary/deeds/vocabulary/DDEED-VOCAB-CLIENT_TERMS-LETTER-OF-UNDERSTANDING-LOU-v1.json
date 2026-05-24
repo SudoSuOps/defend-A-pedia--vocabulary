@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1",
+  "category": "client_terms",
+  "created_at": "2026-05-24T15:33:21.460081+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/client_terms/letter-of-understanding-lou",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/client_terms/letter-of-understanding-lou/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1-20260524T15332146007Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:aa3bdce5264575718678f5f08431b7d8d4a6f341730fd2c40e6c59b6edba029f",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "letter-of-understanding-lou",
+  "street_source_ens": null,
+  "subject": {
+    "category": "client_terms",
+    "definitions": {
+      "client": "The **Letter of Understanding** is our engagement contract. It's the document we sign together that opens the formal relationship. It names what we do \u00b7 what you pay \u00b7 how we report \u00b7 what triggers escalation \u00b7 how termination works \u00b7 what happens to your records after.\n\nWe walk you through every section before signing. We don't email a PDF and ask for a signature \u00b7 we book a 60-minute working session to walk the document \u00b7 answer questions \u00b7 and capture any tailoring you need. The walk is part of the discipline \u00b7 not a courtesy.\n\nThe LOU is itself filed as a Defendable Deed \u00b7 anchored on Hedera mainnet \u00b7 independently verifiable. The contract that governs the relationship lives on the same trust layer as the work we do under it. That's intentional.",
+      "cre_operator": "A sr broker in CRE knows the LOU does five things at once:\n\n1. **Names the parties** \u00b7 principal \u00b7 broker \u00b7 authorized signatories\n2. **Defines scope** \u00b7 what's covered \u00b7 what's not \u00b7 what triggers an amendment\n3. **Names the economics** \u00b7 the fee \u00b7 the structure \u00b7 the floor \u00b7 the ceiling \u00b7 the variance buffer\n4. **Defines the operating cadence** \u00b7 how often we report \u00b7 who calls whom \u00b7 what the escalation pyramid looks like\n5. **Names the exits** \u00b7 termination for cause \u00b7 termination for convenience \u00b7 what happens to the books after\n\nThe LOU is the prenuptial agreement of a CRE relationship. The principal who refuses to sign a clear LOU is signaling something \u00b7 usually that they want optionality at the broker's expense \u00b7 usually a relationship best PASSED on.",
+      "defendableos": "A **Letter of Understanding** in DefendableOS is the engagement-opening contract \u00b7 drafted on the canonical template (`docs/examples/sample_letter_of_understanding.md`) \u00b7 signed by both Defender (founder + sr broker) and Principal (decision-authority + financial-authority).\n\nThe LOU is filed as deed `DDEED-{org}-{vertical}-{customer}-LOU-v1` immediately upon execution \u00b7 anchored on Hedera HCS topic 0.0.10291838 \u00b7 resolvable at `ddeed-{org}-{vertical}-{customer}-lou-v1.{customer}.defendable.eth`. Amendments increment the version (`-v2`, `-v3`).\n\nThe LOU includes 13 mandatory sections (per the template):\n- \u00a71 Purpose \u00b7 \u00a72 Scope \u00b7 \u00a73 Success Criteria Framework \u00b7 \u00a74 Economics \u00b7 \u00a75 Operating Cadence \u00b7 \u00a76 Receipts/Deeds/Books \u00b7 \u00a77 Failure Handling \u00b7 \u00a78 PASS Doctrine \u00b7 \u00a79 Term and Termination \u00b7 \u00a710 Confidentiality \u00b7 \u00a711 Designated Recipients \u00b7 \u00a712 Acknowledgment \u00b7 \u00a713 Signatures\n\nEvery LOU must reference the canonical doctrine docs (\u00a712 acknowledgment is mandatory). Principals sign acknowledging they've been walked through the operating model \u00b7 NOT just sold a service.",
+      "street": "\"Did the LOU get signed?\" \u2014 the founder asks at the Friday huddle before opening any new engagement file.\n\nA **Letter of Understanding** (LOU) is the signed engagement contract between Defender and Principal. It's the document that converts a discovery conversation into a formal relationship. Closes the M (Meetings) stage of MAGIC \u00b7 opens the in-flight phase.\n\nIn CRE terms \u00b7 the LOU is the listing agreement \u00b7 the exclusive-rep agreement \u00b7 the engagement letter. Every senior broker who has ever closed a deal at scale lives by the same rule: **if it's not on paper \u00b7 it didn't happen.** The LOU is the paper.\n\nIf a customer wants us to do the work without signing the LOU \u00b7 they don't want a defender \u00b7 they want a vendor \u00b7 and we don't sell that."
+    },
+    "related_terms": [
+      "engagement",
+      "principal",
+      "assignment",
+      "closing-statement",
+      "morning-brief",
+      "pass-doctrine"
+    ],
+    "slug": "letter-of-understanding-lou",
+    "term": "Letter of Understanding (LOU)"
+  },
+  "supersedes": null,
+  "term": "Letter of Understanding (LOU)",
+  "updated_at": "2026-05-24T15:33:21.737457+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

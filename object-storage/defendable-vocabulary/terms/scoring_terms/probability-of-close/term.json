@@ -1,0 +1,79 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"scoring.probability_of_close\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"precision\": 2,\n    \"scoring_hook\": \"primary_dial\",\n    \"refresh_cadence\": \"nightly_2am_cron_plus_on_demand\"\n  },\n  \"scoring.probability_of_close_band\": {\n    \"type\": \"enum\",\n    \"values\": [\n      \"GREEN_LOCKED\",      \n      \"AMBER_TRACKING\",   \n      \"YELLOW_WATCHLIST\", \n      \"ORANGE_ESCALATION\",\n      \"RED_DARK\"          \n    ],\n    \"derivation_rule\": {\n      \"GREEN_LOCKED\":      \"0.85 <= value <= 1.00\",\n      \"AMBER_TRACKING\":    \"0.65 <= value <  0.85\",\n      \"YELLOW_WATCHLIST\":  \"0.45 <= value <  0.65\",\n      \"ORANGE_ESCALATION\": \"0.25 <= value <  0.45\",\n      \"RED_DARK\":          \"0.00 <= value <  0.25\"\n    }\n  },\n  \"scoring.probability_of_close_drivers\": {\n    \"type\": \"jsonb\",\n    \"shape\": \"{driver_name: {value: float 0-1, weight: float, last_updated: timestamp, evidence_count: int}}\"\n  },\n  \"scoring.probability_of_close_escalation_status\": {\n    \"type\": \"enum\",\n    \"values\": [\"NONE\", \"SR_BROKER_NOTIFIED\", \"FOUNDER_NOTIFIED\", \"FOUNDER_ENGAGED\"],\n    \"auto_set_by_rule_layer\": true\n  }\n}\n```\n\nSchema files: `docs/schemas/dial.schema.json` \u00b7 `docs/schemas/engagement.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "scoring_terms",
+  "client_explanation": "Your engagement carries a daily **Probability of Close** dial. It's a number between 0 and 1 \u00b7 refreshed every night \u00b7 surfaced in your 06:00 Morning Brief.\n\n- 0.85+ means we're locked in\n- 0.65-0.84 means we're tracking but watching specific drivers\n- 0.45-0.64 means we're on the watchlist\n- 0.25-0.44 means we escalate to founder\n- Below 0.25 means we go dark and tell you same-day\n\nThe dial isn't a vibe \u00b7 it's 6 weighted drivers \u00b7 audit-trail behind each one. You see the dial \u00b7 you see the band \u00b7 you see the trajectory \u00b7 you see what moved it \u00b7 you see what we're doing about it. No spin.",
+  "cre_operator_meaning": "Every CRE shop runs a dial on every listing. Top brokers can call the dial within 10 minutes of touring a building. The discipline is the regular refresh \u00b7 the cadence \u00b7 the willingness to revise downward when the evidence demands it.\n\nThe dial drives the calendar. Green-band deals get weekly cadence. Amber-band deals get bi-weekly. Yellow-band deals get daily. Orange-band deals get founder-level attention. Red-band deals are workouts \u00b7 open-line \u00b7 same-day decisions.\n\nIn CRE the dial is the broker's accountability metric. We mirror that exactly \u00b7 the dial is what the sr broker brings to the Friday brief.",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-PROBABILITY-OF-CLOSE-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- Every Tribunal verdict feeds `asset_condition` driver \u2192 indirectly touches every receipt\n- Dial < 0.25 (RED) caps deed issuance at JELLY\n- Annual calibration deed `DDEED-{org}-CALIB-{year}-v1` carries dial vs outcome variance\n- Books-and-records: L1 + L3 daily snapshots \u00b7 L4 Hedera only on calibration deed (not daily snapshots \u00b7 cost-prohibitive)\n- 5 Proofs touched: ECONOMICS \u00b7 PROCESS \u00b7 TRUST",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- Every Tribunal verdict feeds `asset_condition` driver \u2192 indirectly touches every receipt\n- Dial < 0.25 (RED) caps deed issuance at JELLY\n- Annual calibration deed `DDEED-{org}-CALIB-{year}-v1` carries dial vs outcome variance\n- Books-and-records: L1 + L3 daily snapshots \u00b7 L4 Hedera only on calibration deed (not daily snapshots \u00b7 cost-prohibitive)\n- 5 Proofs touched: ECONOMICS \u00b7 PROCESS \u00b7 TRUST",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "**Probability of Close** in DefendableOS is the modeled likelihood (float 0-1 \u00b7 bucketed into 5 bands) that an active assignment lands in `CLOSED_HONEY` or `CLOSED_CONDITIONED` per the Assignment Success Doctrine. Updated nightly via the 2am Tribunal reconciliation cron \u00b7 refreshed on-demand on material driver moves \u00b7 surfaced in the Morning Brief and the dashboard.\n\nComputed as a 6-driver weighted composite:\n- `color_strength` \u00b7 25%\n- `principal_motivation` \u00b7 20%\n- `asset_condition` \u00b7 20%\n- `buyer_pool_fit` \u00b7 15%\n- `comp_quality` \u00b7 10%\n- `operator_hygiene` \u00b7 10%",
+  "defendableos_notes": "- The dial is the engagement's pulse. Healthy engagements breathe (within-band movement); the cross-band move is the signal.\n- The dial maps directly to \"make the dial \u00b7 build the math \u00b7 eat the fees.\" It's the chant made operational.\n- Never publish dials externally. Operator + principal information only.\n- The annual calibration is what makes the dial credible \u00b7 without it the dial is theater.\n\n\ud83d\udc1d *The dial is the pulse \u00b7 the pulse is",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-PROBABILITY-OF-CLOSE-v1",
+    "canon": "defendapedia.eth/scoring_terms/probability-of-close",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Color file with \u2265 5 independent sources per the color doctrine",
+    "\u2265 14 days of cost-to-mint history",
+    "Assignment brief with numeric \u00b7 time-bound criteria",
+    "Principal engagement log (every touch \u00b7 date \u00b7 channel \u00b7 outcome)",
+    "\u2265 3 daily snapshots before the dial is considered stabilized (newer = `provisional`)",
+    "Validator chain pass results from the last 7 days"
+  ],
+  "example": "> Engagement: ENG-DOV-LOGISTICS-ACME-0001\n>\n> Dial trajectory last 14 days: 0.81 \u2192 0.79 \u2192 0.79 \u2192 0.78 \u2192 0.78 \u2192 0.77 \u2192 0.78\n>\n> Band: AMBER \u00b7 TRACKING\n>\n> Drivers:\n> - color_strength 0.88 (UP) \u00b7 principal_motivation 0.85 \u00b7 asset_condition 0.79 (DOWN) \u00b7 buyer_pool_fit 0.86 \u00b7 comp_quality 0.72 \u00b7 operator_hygiene 0.62 (DOWN)\n>\n> Composite: 0.78\n>\n> See [`sample_term_probability_of_close.md`](../../examples/sample_term_probability_of_close.md) for the full worked example.",
+  "failure_modes_raw": "| Mode | Tribunal class |\n|---|---|\n| `inflated_dial` (boosted without evidence) | PROPOLIS |\n| `stale_dial` (> 72 hours since refresh) | JELLY |\n| `silent_drop` (moved > 0.10 without explanation captured) | JELLY |\n| `principal_blindside` (moved 2+ bands without principal notification per escalation pyramid) | PROPOLIS |\n| `spin_dial` (briefed with language inconsistent with band) | PROPOLIS |\n| `comp_starved_dial` (GREEN band shown with comp_quality < 0.30) | JELLY |",
+  "hashes": {
+    "json_sha256": "sha256:81f927fa5770971716fffb88993e7f7db4e0f5747ddcc0d38165591c3c2b42e9",
+    "markdown_sha256": "sha256:202cb029d3c76c8d07c79084574c8d1681499bb2cb47bc3869eed6ec597a6323"
+  },
+  "jr_broker_use": "- Check the dial every morning before reading the Morning Brief \u00b7 know the number by 07:00\n- Log every driver change \u00b7 the dial is only as good as the inputs\n- Watch for 5-point movements \u00b7 any change > 0.05 in 24 hours triggers same-day sr broker review\n- Don't try to \"save\" the dial by withholding bad inputs \u00b7 honest down-movements keep the calibration honest\n- If the dial drops two bands \u00b7 escalate within 4 hours \u00b7 don't wait",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/probability-of-close/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.523480+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.523480+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "assignment-success",
+    "client-confidence",
+    "color",
+    "morning-brief",
+    "pre-market-flight-sheet",
+    "pass-doctrine",
+    "closing-statement"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH (leading indicator of the boolean)\n- **repair_lift**: LOW (dial is a measurement \u00b7 not a thing to be repaired)\n- **validator_confidence**: HIGH (provisional dials flagged in dashboard)\n- **risk_temperature**: INVERSE (low dial = high risk \u00b7 feeds escalation pyramid)\n- **probability_of_close**: SELF\n- **evidence_strength**: HIGH (dial cannot pencil without strong evidence stacks)\n- **cost_to_mint**: MEDIUM (running the apparatus costs energy \u00b7 but missing dial costs more)",
+  "slug": "probability-of-close",
+  "sr_broker_use": "- Friday weekly dial review across the entire book\n- Cross-engagement comp analysis when patterns emerge\n- Annual calibration discipline (annual `DDEED-{org}-CALIB-{year}-v1` issued)\n- Principal-call discretion (when to escalate from email to voice \u00b7 when to involve founder \u00b7 when to call a PASS-pivot)\n- Override authority with logged justification (rare \u00b7 always documented)",
+  "status": "active",
+  "street_definition": "\"What's the dial say?\" \u2014 the sr broker asks at the Monday huddle.\n\n**Probability of Close** is the operating dial \u00b7 the broker's gut-plus-math number that says how likely the assignment is to land successfully. Number between 0 and 1. Updated nightly. Visible to the principal in the daily Morning Brief.\n\nThe dial is the engagement's pulse. A flat dial for too long is suspicious. A dial that moves but stays within the band is healthy breathing. A dial that crosses bands is a signal.",
+  "term": "Probability of Close",
+  "tribunal_use": "The Tribunal grades the inputs \u00b7 the dial composes them. Rule-layer flags:\n- Single-day drop > 0.20 \u2192 `dial_anomaly_flag` for QA validator\n- Dial below 0.50 for > 7 consecutive days \u2192 automatic `engagement_health_check` deed\n- Drift > 0.15 between Scale A and Scale B judges on `asset_condition` inputs \u2192 manual review\n- Dial < 0.25 caps any new deed at JELLY tier (cannot issue HONEY \u00b7 cannot issue Royal Jelly while RED)",
+  "version": "v1"
+}

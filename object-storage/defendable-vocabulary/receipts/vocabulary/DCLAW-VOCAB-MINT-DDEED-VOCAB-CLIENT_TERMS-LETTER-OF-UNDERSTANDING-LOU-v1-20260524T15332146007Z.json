@@ -1,0 +1,33 @@
+{
+  "category": "client_terms",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1",
+    "canon": "defendapedia.eth/client_terms/letter-of-understanding-lou",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:950d07a09318c4ef91e5c4d25dacb21c4bfe3e17594df4723ffc3702311212fc",
+    "markdown_sha256": "sha256:19b237754e55b82f94fa572267e8a6b8d2129d2a2e6ed33a3b901d35beae23b4"
+  },
+  "minted_at": "2026-05-24T15:33:21.460071+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/letter-of-understanding-lou/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.459927+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.459927+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1-20260524T15332146007Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "letter-of-understanding-lou",
+  "term": "Letter of Understanding (LOU)"
+}

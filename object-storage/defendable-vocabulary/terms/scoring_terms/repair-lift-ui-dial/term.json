@@ -1,0 +1,76 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"repair_lift_dial.source_field\": {\"type\": \"string\", \"const\": \"repair_lift.value\"},\n  \"repair_lift_dial.thresholds\": {\n    \"type\": \"object\",\n    \"const\": {\n      \"green_min\": 0.10,\n      \"yellow_min\": 0.00,\n      \"red_max\": 0.00\n    }\n  },\n  \"repair_lift_dial.display_modes\": {\n    \"type\": \"array\",\n    \"const\": [\"per_pair\", \"daily_aggregate\", \"weekly_aggregate\", \"trailing_30d_aggregate\"]\n  },\n  \"repair_lift_dial.color_state\": {\n    \"type\": \"enum\",\n    \"values\": [\"GREEN\", \"YELLOW\", \"RED\"]\n  },\n  \"repair_lift_dial.tooltip_evidence_link\": {\"type\": \"string\", \"description\": \"URL to underlying Repair Lift receipt\"},\n  \"repair_lift_dial.refresh_interval_seconds\": {\"type\": \"integer\", \"default\": 300}\n}\n```\n\nSchema files: `docs/schemas/ui_dial.schema.json` \u00b7 `docs/schemas/repair_lift_dial.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "scoring_terms",
+  "client_explanation": "The Repair Lift dial on your dashboard shows whether our refinery is moving the number on your AI fleet. Green means we hit the promotion threshold (\u2265 0.10 lift). Yellow means we're positive but below threshold \u00b7 we're working on it. Red means a regression \u00b7 the operator gets paged when red shows up. Click the dial \u00b7 you see the underlying receipt with both Tribunal verdicts \u00b7 the math is transparent.",
+  "cre_operator_meaning": "In CRE this is the **NOI lift graph** on the asset's monthly statement. The graph shows trailing-12-month NOI \u00b7 the rehab investment \u00b7 the post-rehab NOI \u00b7 the lift in basis-points. The CFO reads it \u00b7 the lender reviews it \u00b7 the equity partners stay informed. Nobody re-derives the number from the rent roll \u00b7 they trust the graph because the graph is downstream of a closing statement they signed. The Repair Lift dial is the NOI lift graph for the agent economy.",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: dial reads `repair_lift.value` and renders \u00b7 doesn't write\n- **DDEED class impact**: dial doesn't issue deeds \u00b7 it surfaces them\n- **Books and records layer**: dial reads L1 PostgreSQL \u00b7 references L4 Hedera HCS via tooltip link\n- **5 Proofs touched**: QUALITY (the lift IS the quality measurement being surfaced) \u00b7 TRUST (drill-in to anchored receipt)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: dial reads `repair_lift.value` and renders \u00b7 doesn't write\n- **DDEED class impact**: dial doesn't issue deeds \u00b7 it surfaces them\n- **Books and records layer**: dial reads L1 PostgreSQL \u00b7 references L4 Hedera HCS via tooltip link\n- **5 Proofs touched**: QUALITY (the lift IS the quality measurement being surfaced) \u00b7 TRUST (drill-in to anchored receipt)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Repair Lift dial is the UI surface representation of the Repair Lift score. It renders the lift number with three visual states: GREEN (\u2265 0.10 \u00b7 cleared promotion threshold), YELLOW (0.0-0.10 \u00b7 positive but below threshold), RED (< 0.0 \u00b7 regression). It appears on the customer-facing dashboard (per-week aggregate), the operator's Morning Reconciliation Brief (per-day aggregate), and the per-pair detail view (single-pair lift). The dial is rendered from the canonical `repair_lift.value` field \u00b7 no UI-side computation.",
+  "defendableos_notes": "- The dial is a DERIVED surface \u00b7 the source of truth is the receipt \u00b7 the dial just renders\n- \"No UI-side smoothing\" is non-negotiable \u00b7 customer trust requires the dial color matches the receipt classification\n- The dial is the FIRST thing customers see when they open the dashboard \u00b7 it's the load-bearing UI element\n- See also the CONCEPT term at [`../repair_terms/repair-lift.md`](../repair_terms/repair-lift.md) \u00b7 same number \u00b7 different surface\n\n\ud83d\udc1d *Green is the lift. Yellow is the work. Red is the page. The dial is the closing statemen",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1",
+    "canon": "defendapedia.eth/scoring_terms/repair-lift-ui-dial",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Underlying `repair_lift.value` from anchored receipt",
+    "Threshold definitions matching the locked doctrine (0.10 / 0.00)",
+    "Tooltip URL resolving to receipt detail",
+    "Refresh timestamp (proves the dial is current)",
+    "Aggregation window declaration (per-pair / daily / weekly / 30d)"
+  ],
+  "example": "> **Customer dashboard \u00b7 week of 2026-05-17 to 2026-05-23**:\n> - Repair Lift dial: GREEN \u00b7 weekly aggregate +0.18\n> - Tooltip: \"47 Royal Jelly Records this week \u00b7 mean lift +0.18 \u00b7 median +0.16 \u00b7 p10 +0.04 \u00b7 p90 +0.31\"\n> - Drill-in link \u2192 `dashboard.acmecorp.defendable.eth/lift/2026-W21`\n> - Refresh: 6 minutes ago\n>\n> **Operator Morning Brief 2026-05-24 06:00**:\n> - Yesterday's daily aggregate: GREEN \u00b7 +0.21 (above 7-day mean of +0.18)\n> - 4 pairs lift > 0.30 \u00b7 1 pair lift < 0.05 (re-routed to pending for retry)\n> - 0 regressions\n>\n> **Per-pair detail (pair-20260524T061208Z-7e2a)**:\n> - Repair Lift dial: GREEN \u00b7 spot value +0.15\n> - Tooltip evidence link \u2192 anchored receipt with both Tribunal verdicts\n> - Color state: GREEN (0.15 \u2265 0.10 threshold)",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `ui_side_smoothing` | Dial color rendered from a smoothed/rolling average that masks regressions | JELLY \u00b7 UI bug |\n| `broken_evidence_link` | Tooltip link broken \u00b7 customer can't drill in | JELLY \u00b7 UI quality |\n| `threshold_drift` | UI uses different thresholds than the doctrine (e.g., 0.05 instead of 0.10) | PROPOLIS \u00b7 governance violation |\n| `stale_dial` | Refresh interval breached \u00b7 dial showing yesterday's data | JELLY \u00b7 operational alert |\n| `color_mismatch` | Dial GREEN but pair classified JELLY \u00b7 UI not in sync | PROPOLIS \u00b7 UI bug \u00b7 auto-rollback |",
+  "hashes": {
+    "json_sha256": "sha256:67ff019a5c76a953dd117214c8274d842f20aea7fcb1d4cedc930c861e22d6d6",
+    "markdown_sha256": "sha256:79a3cecc1286e925a2eadfcef5cfefd44a2bd70597a7d0a5cb5898b2afc09513"
+  },
+  "jr_broker_use": "The Jr Hack reads the dial in the Morning Brief \u00b7 the dial color is the morning's first decision tree. Green dial = continue normal cycle. Yellow dial = check whether refinery had off-batch \u00b7 investigate. Red dial = page the Sr Hack \u00b7 do not proceed with day-routine until the regression is triaged.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/repair-lift-ui-dial/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.524601+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.524601+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "repair-lift-concept",
+    "validator-confidence",
+    "evidence-strength",
+    "risk-temperature",
+    "defendablejelly"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 dial color is the customer's primary visual cue\n- **repair_lift**: SELF \u00b7 the dial IS the rendering of repair lift\n- **validator_confidence**: HIGH \u00b7 dial transparency (drill-in to receipt) IS a trust signal\n- **risk_temperature**: DIRECT \u00b7 red dial = high risk \u00b7 green dial = low risk\n- **probability_of_close**: HIGH \u00b7 customers re-up against the dial trend\n- **evidence_strength**: HIGH \u00b7 the dial's drill-in IS the evidence\n- **cost_to_mint**: NEUTRAL \u00b7 dial is UI render \u00b7 no per-render mint cost",
+  "slug": "repair-lift-ui-dial",
+  "sr_broker_use": "The Sr Hack watches the dial trend \u00b7 not the spot value. A spot green can hide a 4-week trend toward yellow. The Sr Hack sets dashboard alerts on TREND drift (delta of weekly aggregate vs prior 4-week mean > 0.05) \u00b7 NOT just on absolute thresholds. A trending dial is information \u00b7 a static-color dial is noise.",
+  "status": "active",
+  "street_definition": "\"What did the lift dial show this week?\" That's how the customer reads their Monday dashboard. **Repair Lift dial** is the UI surface for the Repair Lift number \u00b7 the gauge that shows the customer the before/after delta on their refinery work. Green when \u2265 0.10 \u00b7 yellow 0.0-0.10 \u00b7 red below 0.0. Glance-readable. Boardroom-ready.",
+  "term": "Repair Lift (UI Dial)",
+  "tribunal_use": "- **Rule layer**: Dial color MUST be derived from `repair_lift.value` \u00b7 no UI-side rounding, capping, or \"smoothing\"\n- **Rule layer**: Tooltip evidence link MUST resolve to the underlying anchored receipt \u00b7 broken links = dial UI is misleading\n- **Judge layer**: Tribunal doesn't grade the dial \u00b7 it grades the underlying score \u00b7 the dial is a pure rendering\n- **Classification impact**: A dial showing GREEN backed by a JELLY-classified pair is a UI bug \u00b7 the dial MUST agree with the underlying classification",
+  "version": "v1"
+}

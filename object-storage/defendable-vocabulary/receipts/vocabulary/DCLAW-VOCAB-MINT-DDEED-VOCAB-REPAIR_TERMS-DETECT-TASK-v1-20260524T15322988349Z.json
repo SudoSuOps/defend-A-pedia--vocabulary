@@ -1,0 +1,33 @@
+{
+  "category": "repair_terms",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-DETECT-TASK-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-DETECT-TASK-v1",
+    "canon": "defendapedia.eth/repair_terms/detect-task",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:0d3672045633ea003f9bc2b2c33031081c526b175e79c5f6feca89210748e20a",
+    "markdown_sha256": "sha256:26e8f0722e8dec340e07ff01dfd98f70d24bcc020a065d31a275891c3094622c"
+  },
+  "minted_at": "2026-05-24T15:32:29.883497+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/detect-task/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.883381+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.883381+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-DETECT-TASK-v1-20260524T15322988349Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "detect-task",
+  "term": "Detect Task"
+}

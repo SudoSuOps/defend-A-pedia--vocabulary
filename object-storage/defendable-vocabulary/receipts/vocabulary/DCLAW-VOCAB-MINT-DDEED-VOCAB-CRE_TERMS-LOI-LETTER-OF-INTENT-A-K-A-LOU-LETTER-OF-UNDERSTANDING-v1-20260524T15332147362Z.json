@@ -1,0 +1,33 @@
+{
+  "category": "cre_terms",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-LOI-LETTER-OF-INTENT-A-K-A-LOU-LETTER-OF-UNDERSTANDING-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-LOI-LETTER-OF-INTENT-A-K-A-LOU-LETTER-OF-UNDERSTANDING-v1",
+    "canon": "defendapedia.eth/cre_terms/loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:3450d75ef94677cac33b979c7205d44feab4bd0c51a1229387172584ea2044a0",
+    "markdown_sha256": "sha256:781665f12a3610d3f216a79b32dce0be338a9a2e9c216b96c141384140471423"
+  },
+  "minted_at": "2026-05-24T15:33:21.473622+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/cre_terms/loi-letter-of-intent-a-k-a-lou-letter-of-understanding/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.473475+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.473475+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-LOI-LETTER-OF-INTENT-A-K-A-LOU-LETTER-OF-UNDERSTANDING-v1-20260524T15332147362Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+  "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)"
+}

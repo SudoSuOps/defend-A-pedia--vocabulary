@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-REPAIR-TASK-v1",
+  "category": "repair_terms",
+  "created_at": "2026-05-24T15:33:21.516421+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-REPAIR-TASK-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/repair_terms/repair-task",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/repair_terms/repair-task/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-REPAIR-TASK-v1-20260524T15332151641Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:ce5a9bad5a6e656b1ff023a6c0ba34be3565d562653b35455d4d28aaf22ce5d6",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "repair-task",
+  "street_source_ens": null,
+  "subject": {
+    "category": "repair_terms",
+    "definitions": {
+      "client": "The Repair Task is the corrected answer. When your AI shipped the wrong journal entry \u00b7 the wrong claim summary \u00b7 the wrong contract clause \u00b7 we ship back the right one, plus the step-by-step that produced it. You can read the steps and patch your prompt. Or you can ship the corrected output to the downstream system. Either way \u00b7 you have the fix in hand.",
+      "cre_operator": "In CRE the Repair Task is the **GC's scope of work**. The inspector wrote the punch list. The GC writes the actual scope \u00b7 who does what \u00b7 in what order \u00b7 to what spec \u00b7 with what materials \u00b7 for how much. The scope is what gets bid. The scope is what gets built. The scope is what gets inspected at completion. No scope, no rehab.",
+      "defendableos": "The Repair Task is the second of the 5 Royal Jelly tasks SwarmFixer emits. It produces the step-by-step recovery procedure AND the corrected output. The procedure is a numbered sequence of operations the agent should have performed. The corrected output is the answer the agent should have produced. The Tribunal grades the corrected output as a fresh submission \u00b7 its composite score is the input to the Repair Lift calculation.",
+      "street": "\"Show me the fix.\" That's the operator's second read after the diagnose. **Repair Task** is RJ task #2 \u00b7 the step-by-step recovery from the failed state to a Honey-grade answer. The diagnose says what's wrong \u00b7 the repair says how it gets done. Step-by-step. With the corrected output. With the rationale."
+    },
+    "related_terms": [
+      "diagnose-task",
+      "prevent-task",
+      "detect-task",
+      "compare-task",
+      "repair-lift",
+      "swarmfixer"
+    ],
+    "slug": "repair-task",
+    "term": "Repair Task"
+  },
+  "supersedes": null,
+  "term": "Repair Task",
+  "updated_at": "2026-05-24T15:33:21.758325+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

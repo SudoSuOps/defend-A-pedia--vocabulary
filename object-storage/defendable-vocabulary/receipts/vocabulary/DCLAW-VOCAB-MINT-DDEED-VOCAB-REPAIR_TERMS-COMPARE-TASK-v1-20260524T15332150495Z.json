@@ -1,0 +1,33 @@
+{
+  "category": "repair_terms",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1",
+    "canon": "defendapedia.eth/repair_terms/compare-task",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:c8448a80d805583cb3a35fbe42cbcca58fec7fae0e5f4f06bf92963c3e05b111",
+    "markdown_sha256": "sha256:f424b1867ce6c2cd87682d4e01d9d1d0d0ffd671a941ec163f907f980022852a"
+  },
+  "minted_at": "2026-05-24T15:33:21.504950+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/compare-task/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.504822+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.504822+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1-20260524T15332150495Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "compare-task",
+  "term": "Compare Task"
+}

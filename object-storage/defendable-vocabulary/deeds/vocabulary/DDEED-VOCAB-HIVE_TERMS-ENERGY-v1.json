@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-ENERGY-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.495294+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-ENERGY-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/energy",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/energy/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-ENERGY-v1-20260524T15332149528Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:b2b0f5e2d659b63bd0356fa49e08fec6877fbc15e0fbe5b9384f43f9e395972e",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "energy",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"Energy\" is the math layer \u00b7 the actual operating cost of every deed and every pair we produce. We measure it \u00b7 we publish it \u00b7 we price against it. Every deed in your Closing Statement includes the energy line \u00b7 how much electricity \u00b7 how much GPU time \u00b7 how much operator time went into producing it. That's not industry standard \u00b7 most AI vendors hide their unit economics behind \"monthly subscription\" pricing. We show the math because the math is the proof we can sustain the service \u00b7 the proof your deed is real inventory \u00b7 the proof we are a defendable economic entity \u00b7 not a venture-funded loss-leader.",
+      "cre_operator": "In CRE \u00b7 energy is the building's actual operating cost \u00b7 expressed per square foot \u00b7 benchmarked against comps \u00b7 disclosed in the OM \u00b7 reconciled at year-end in the CAM. A broker quotes a 6-cap on a $50M industrial facility and the buyer asks \"what's the OpEx\" because the OpEx is what proves the NOI is real. If OpEx ratio is double the market \u00b7 the building has a real problem and the cap rate is wrong. Same way in the Hive \u00b7 if the cost-to-mint is double the benchmark \u00b7 the cook has a real problem and the deed price is wrong.\n\nThe CRE-trained founder treats energy as the FIRST honesty test. Show me the OpEx. Show me the energy. Show me the math. Then we'll talk about the cap rate.",
+      "defendableos": "Energy is the metabolic cost of producing intelligence inside the Hive \u00b7 the aggregate of:\n\n- **Electrical energy** \u00b7 the watts the rigs draw (swarmrails ~1000W peak \u00b7 whale ~400W peak \u00b7 zima-edge ~15W \u00b7 signal-edge ~10W) measured at the wall via per-rig PDUs and rolled up to per-cook \u00b7 per-pair \u00b7 per-deed costs\n- **Compute energy** \u00b7 the GPU-seconds spent per pair (9B Worker Bees ~3-5 GPU-sec \u00b7 27B Worker Bees ~10-15 GPU-sec \u00b7 Auditor Bees ~1-2 GPU-sec \u00b7 Katniss invocations ~5 GPU-sec each)\n- **Human energy** \u00b7 the operator-minutes spent on override review \u00b7 adversarial-event escalation \u00b7 weekly check sessions \u00b7 pattern audit \u00b7 doctrine maintenance\n- **Anchor energy** \u00b7 the Hedera HCS posting cost (~$0.0008 per cell certificate \u00b7 ~$0.0001 per batch Merkle root) \u00b7 the ENS reservation cost (one-time per deed)\n- **Storage energy** \u00b7 the cumulative cost of holding receipts on Tigris \u00b7 NAS \u00b7 PostgreSQL \u00b7 ENS over the deed's lifetime\n\nEnergy aggregates into the **cost-to-mint** dial (the per-deed dollar cost) and the **margin** dial (the per-deed economic surplus over cost). Both are surfaced to customers in the Morning Brief and the Closing Statement.",
+      "street": "\"What's the energy on that cook?\" Energy is the real-world operational cost of producing AI intelligence \u00b7 the electricity the rigs metabolize \u00b7 the GPU-hours the cooks burn \u00b7 the human-review time the sr brokers spend \u00b7 the back-office cost of running the books-and-records. It is the math layer that turns AI from a vibes-economy into an actual unit economic with a cost \u00b7 a margin \u00b7 a return. Without an energy line item \u00b7 you can't write an OM \u00b7 can't price the deed \u00b7 can't prove the Hive pencils.\n\nIn CRE language \u00b7 energy is the operating expense column on the rent roll \u00b7 the property tax \u00b7 the insurance \u00b7 the management fee \u00b7 the CAM reconciliation \u00b7 the things that pencil the NOI. A broker who doesn't know the OpEx doesn't know the deal. A Hive that doesn't measure its energy doesn't know its books."
+    },
+    "related_terms": [
+      "cost-to-mint",
+      "hive",
+      "swarm",
+      "bee",
+      "honey",
+      "royal-jelly"
+    ],
+    "slug": "energy",
+    "term": "Energy"
+  },
+  "supersedes": null,
+  "term": "Energy",
+  "updated_at": "2026-05-24T15:33:21.751763+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

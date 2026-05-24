@@ -1,0 +1,336 @@
+{
+  "index_type": "TRIBUNAL_TERM_MAP",
+  "term_count": 55,
+  "terms": [
+    {
+      "category": "defendableos_terms",
+      "slug": "agentbench",
+      "term": "AgentBench",
+      "tribunal_use": "- **Rule layer**: AgentBench runs MUST use a documented pack version \u00b7 ad-hoc test suites rejected\n- **Rule layer**: Composite score MUST be computed with the documented axis weights \u00b7 custom weights rejected\n- **Rule layer**: Pack alpha-status caps the deployment tier at OBSERVED (cannot claim higher until pack matures)\n- **Judge layer**: Tribunal grades each task in the pack \u00b7 the verdicts aggre"
+    },
+    {
+      "category": "client_terms",
+      "slug": "assignment",
+      "term": "Assignment",
+      "tribunal_use": "The Tribunal grades every receipt under the assignment \u00b7 which rolls up to the assignment's composite score:\n\n- `assignment.composite_score` = weighted average of all under-assignment deed scores\n- `assignment.tribunal_honey_count` \u00b7 `_jelly_count` \u00b7 `_propolis_count` are direct counters\n- Any critical Propolis on a critical-path receipt under the assignment caps the assignment at FAILED regardles"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "assignment-failure",
+      "term": "Assignment Failure",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - JELLY      # most failures land Jelly first \u00b7 route to repair\n    - PROPOLIS   # critical failures or twice-failed repairs land Propolis\n  rule_layer_checks:\n    - assignment.failure_reason MUST be populated when assignment.outcome == FAILURE\n    - assignment.failure_mode MUST be populated when assignment.failure_reason == tribunal_jelly_repair_"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "assignment-success",
+      "term": "Assignment Success",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - ROYAL_JELLY    # SUCCESS-with-apex-tier feeds RJ\n    - HONEY          # SUCCESS-with-Honey-tier feeds Honey\n  rule_layer_checks:\n    - assignment.tribunal_tier_at_close MUST be HONEY or above for SUCCESS = TRUE\n    - assignment.deliverable_fulfilled MUST be true for SUCCESS = TRUE\n    - assignment.receipt_issued MUST be true for SUCCESS = TRUE\n "
+    },
+    {
+      "category": "hive_terms",
+      "slug": "bee",
+      "term": "Bee",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # Bees don't get tier verdicts \u00b7 their outputs do\n  rule_layer_checks:\n    - bee.lifecycle_stage MUST progress in order (no skipping)\n    - bee.pair_id_produced MUST be non-null at EMIT (else Bee failed)\n    - bee.model MUST be on the approved-model list (no shadow models)\n    - bee.rig MUST be in the approved-rig fleet (no rogue rigs)\n  judge_la"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "books-and-records",
+      "term": "Books and Records",
+      "tribunal_use": "Books-and-records integrity is itself Tribunal-graded \u00b7 as a firm-wide metric and as per-engagement metric.\n\n- **Rule layer**: any receipt that fails the layer-cascade verification \u2192 critical_failure \u2192 P1 incident \u00b7 all hands until resolved\n- **Rule layer**: any L4 anchor lag > 15 minutes \u2192 critical_failure \u2192 operator notification\n- **Rule layer**: any L5 ENS resolution failure \u2192 critical_failure "
+    },
+    {
+      "category": "cre_terms",
+      "slug": "cap-rate",
+      "term": "Cap Rate",
+      "tribunal_use": "Cap rate is Tribunal-checked as part of underwriting \u00b7 the calculation must be defensible.\n\n- **Rule layer**: cap rate value outside [0.01, 0.50] bound \u2192 critical_failure \u2192 math anomaly\n- **Rule layer**: cap rate calculated without comp set comparison \u2192 critical_failure \u2192 return for comp comparison\n- **Rule layer**: variance from comp median > 150bps without named explanation \u2192 critical_failure \u2192 "
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "clawcheck",
+      "term": "ClawCheck",
+      "tribunal_use": "- **Rule layer**: ClawCheck MUST be deterministic \u00b7 zero LLM calls \u00b7 violating this is a brand violation (the value prop is \"deterministic risk\")\n- **Rule layer**: Risk tier MUST map to a documented driver from the 5 dimensions \u00b7 no opaque tier assignments\n- **Judge layer**: Tribunal doesn't grade ClawCheck per-intake \u00b7 it grades the aggregate \u00b7 weekly conversion ratio + driver distribution\n- **Cl"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "client-confidence",
+      "term": "Client Confidence",
+      "tribunal_use": "The Tribunal doesn't grade client-confidence directly \u00b7 but supports it:\n- Aggregated CC pattern analysis becomes calibration corpus for future intake screening (which signals predict high/low CC engagements)\n- CC drops trigger Tribunal rule-layer to flag related deed-quality for QA validator review (sometimes CC drops because the work is actually slipping \u00b7 sometimes because the relationship is i"
+    },
+    {
+      "category": "client_terms",
+      "slug": "closing-statement-defendable-closing-statement",
+      "term": "Closing Statement (Defendable Closing Statement)",
+      "tribunal_use": "The Tribunal feeds the closing statement directly:\n\n- `composite_score` is the rollup of all under-assignment Tribunal verdicts\n- `g1` through `g5` are computed from the assignment's Tribunal verdict distribution\n- `deed_count_honey/jelly/propolis` are direct Tribunal-classification counts\n- The boolean outcome is RULE-LAYER applied (G3 < 0.70 OR critical Propolis \u2192 FAILED regardless of composite)"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "communicator",
+      "term": "Communicator",
+      "tribunal_use": "The Tribunal grades the Communicator at BOTH ends:\n\n| Stage | Tribunal check | Class on fail |\n|---|---|---|\n| INTAKE \u00b7 intent extraction | Does the structured directive match what the human actually said + meant? | JELLY (recoverable \u00b7 re-prompt human) or PROPOLIS (intent fabricated) |\n| INTAKE \u00b7 vocabulary mapping | Did the Communicator use canonical defend-A-pedia terms? Did it flag new ones? |"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "compare-task",
+      "term": "Compare Task",
+      "tribunal_use": "- **Rule layer**: Compare Task MUST have \u2265 2 candidates \u00b7 MUST score all 4 dimensions for every candidate \u00b7 MUST produce a ranking (C05 format compliance)\n- **Rule layer**: The 4 dimensions are fixed: correctness \u00b7 completeness \u00b7 format_compliance \u00b7 reasoning_depth \u00b7 no substitutes accepted\n- **Judge layer**: Tribunal re-runs the comparison at TEMP=0.05 \u00b7 rank drift > 1 position between runs flags"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "confidence-weight",
+      "term": "Confidence Weight",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # confidence is not a tier \u00b7 it modulates the verdict\n  rule_layer_checks:\n    - confidence_weight.composite MUST be computed for every verdict\n    - confidence_weight.band MUST be one of the 4 enum values\n    - confidence_weight INSUFFICIENT MUST hold the verdict pending sr broker review\n  judge_layer_prompt_hint: \"your reasoning depth and sourc"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "cost-to-mint",
+      "term": "Cost to Mint",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # cost-to-mint is not a tier \u00b7 it is the economic dial\n  rule_layer_checks:\n    - cost_to_mint.usd MUST be populated for every issued deed (no untracked economics)\n    - cost_to_mint.breakdown MUST sum to cost_to_mint.usd (accounting integrity)\n    - cost_to_mint.fee_charged_usd MUST be one of the 4 published tiers (no off-tier billing)\n    - cos"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "deal-flow",
+      "term": "Deal Flow",
+      "tribunal_use": "The pipeline view itself is a Tribunal-scored artifact \u00b7 it's not just a CRM dashboard, it's an underwriting input for the firm's own forward-looking commitments.\n\n- **Rule layer**: any stage with a single-prospect concentration >40% of pipeline value \u2192 critical_failure \u2192 escalate (single-deal risk too high)\n- **Rule layer**: source attribution missing on any active engagement \u2192 critical_failure \u2192"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "defendablecloud-com",
+      "term": "DefendableCloud.com",
+      "tribunal_use": "- **Rule layer**: All Tribunal grading runs that use DefendableCloud MUST cite the model tag and the GPU pool ID \u00b7 `model_provider: defendablecloud` is the discriminator\n- **Rule layer**: No-logging clause violation (raw payload found in storage) = PROPOLIS \u00b7 platform-level governance failure\n- **Judge layer**: Tribunal verdicts on DefendableCloud-graded pairs are first-class \u00b7 same status as cust"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "defendablehack",
+      "term": "DefendableHack",
+      "tribunal_use": "- **Rule layer**: Every DefendableHack submission MUST be reproducible from the provided trigger input \u00b7 non-reproducible = rejection (not a Tribunal verdict, an intake gate)\n- **Rule layer**: Bounty payout MUST follow a validated Tribunal verdict \u00b7 no payouts on unvalidated submissions\n- **Judge layer**: Tribunal grades the submitted pair as a fresh failure case \u00b7 severity drives the bounty tier\n"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "defendablejelly",
+      "term": "DefendableJelly",
+      "tribunal_use": "- **Rule layer**: All DefendableJelly product outputs MUST be Royal Jelly Records (5-task contract) \u00b7 MUST cite the SwarmJelly model tag \u00b7 MUST have a validator chain pass\n- **Judge layer**: Tribunal grades the underlying refinery output \u00b7 the DefendableJelly brand carries the verdict but does not change it\n- **Classification impact**: DefendableJelly tier-3 customers have a contractual right to w"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "defendableos",
+      "term": "DefendableOS",
+      "tribunal_use": "- **Rule layer**: Customer-facing deliverables MUST cite \"DefendableOS\" not \"Swarm & Bee\" (brand compliance check)\n- **Rule layer**: Component product names (DefendableRouter \u00b7 DefendableJelly \u00b7 etc.) MUST match the canonical list \u00b7 no aliases in customer surfaces\n- **Judge layer**: Tribunal doesn't grade brand directly \u00b7 it grades the deliverable's overall coherence \u00b7 brand confusion is a coheren"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "defendablerouter",
+      "term": "DefendableRouter",
+      "tribunal_use": "- **Rule layer**: Every Tribunal-graded pair MUST come from a Router receipt \u00b7 synthesized pairs are rejected\n- **Rule layer**: Router receipts MUST be < 5ms p99 latency \u00b7 receipts from over-budget Routers are flagged\n- **Rule layer**: Router MUST be in write-only mode \u00b7 any synchronous-gating behavior is a governance violation\n- **Judge layer**: Tribunal doesn't grade the Router \u00b7 it grades the p"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "detect-task",
+      "term": "Detect Task",
+      "tribunal_use": "- **Rule layer**: Detect Task MUST have a runtime_budget_ms \u2264 50 \u00b7 MUST be one of the 3 classifier types \u00b7 MUST have an evidence_chain (no opaque classifications)\n- **Rule layer**: Estimated false_positive_rate MUST be \u2264 0.05 \u00b7 higher rates auto-reject\n- **Judge layer**: Tribunal evaluates the detector by running it against the original failed pair (must POSITIVE) AND a set of known-Honey pairs (s"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "diagnose-task",
+      "term": "Diagnose Task",
+      "tribunal_use": "- **Rule layer**: Diagnose Task MUST tag both the 7-mode taxonomy AND the AgentHash bucket (C03)\n- **Rule layer**: Severity MUST be \u2208 {1,2,3,4,5} \u00b7 floats or strings rejected\n- **Rule layer**: Recommended action MUST be one of the 5 enum values \u00b7 free-text rejected\n- **Judge layer**: Tribunal scores the diagnose accuracy by re-running it through a second SwarmJelly inference at TEMP=0.05 \u00b7 drift >"
+    },
+    {
+      "category": "cre_terms",
+      "slug": "digest",
+      "term": "Digest",
+      "tribunal_use": "The Tribunal grades digests as a first-class output type \u00b7 not just as input to a human decision.\n\n- **Rule layer**: digest with `color_summary_score < 0.70` \u2192 automatic JELLY classification regardless of judge\n- **Rule layer**: digest missing `walk_away_threshold` \u2192 critical_failure \u2192 JELLY at minimum, PROPOLIS if customer-facing\n- **Judge layer**: digest quality scored on completeness (1-5), acc"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "energy",
+      "term": "Energy",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # energy is not a tier \u00b7 it is the cost of producing the tiers\n  rule_layer_checks:\n    - energy.total_cost_usd MUST be logged for every pair (no untracked compute)\n    - energy.per_rig_breakdown MUST sum to total (accounting integrity)\n    - energy.anchor_cost_usd MUST be logged when tier == ROYAL_JELLY (the cell certificate carries its own cost"
+    },
+    {
+      "category": "client_terms",
+      "slug": "engagement",
+      "term": "Engagement",
+      "tribunal_use": "The Tribunal doesn't grade engagements directly \u00b7 it grades the receipts and deeds under each assignment. But the Tribunal feeds the engagement-level rollups:\n\n- `engagement.dial_current` is derived from across all in-flight assignments\n- `engagement.health_score` is computed nightly from the 7-day rollup of all under-engagement deeds\n- Critical Propolis on ANY assignment under an engagement trigg"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "evidence-strength",
+      "term": "Evidence Strength",
+      "tribunal_use": "- **Rule layer**: Evidence Strength MUST be computed from the documented formula with the documented EntityScorer weights\n- **Rule layer**: Below 0.4, the pair cannot enter SwarmFixer \u00b7 it routes to evidence-gathering instead\n- **Rule layer**: A pair claiming 5 sources but all single-source-class (e.g., 5 Reddit) gets capped at the source-class weight (0.50) not boosted by count\n- **Judge layer**:"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "genesis",
+      "term": "Genesis",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - ROYAL_JELLY    # Genesis IS a sub-band within Royal Jelly in the 4-tier collapse\n  rule_layer_checks:\n    - ALL 12 validator chain checks (C01-C12) MUST PASS \u00b7 zero advisory annotations\n    - Both judges MUST score \u2265 0.95 (not just one)\n    - Drift MUST be \u2264 0.05 (tighter than Royal Jelly's 0.15)\n    - Sr broker attestation MUST be present in th"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "hallucination-event",
+      "term": "Hallucination Event",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - PROPOLIS    # catastrophic hallucinations\n    - JELLY       # recoverable hallucinations\n  rule_layer_checks:\n    - C03 source retrievable detects source_fabricated events (source does not resolve)\n    - C05 no hard-fail flagged is the gate that REQUIRES hallucination_event.flagged = false for non-Propolis tier\n    - judge layer may raise halluc"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "hive",
+      "term": "Hive",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - ROYAL_JELLY    # Hive-level deeds (e.g., flagship cohort releases) typically Royal Jelly\n    - HONEY          # routine Hive operating reports (e.g., Morning Brief) typically Honey\n  rule_layer_checks:\n    - hive.heartbeat_status MUST be GREEN or DEGRADED to issue any new verdict\n    - hive.throughput_pairs_per_hour MUST be within 30% of target "
+    },
+    {
+      "category": "hive_terms",
+      "slug": "honey",
+      "term": "Honey",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - HONEY      # this term IS the Honey tier\n  rule_layer_checks:\n    - C01: pair record present (MUST PASS)\n    - C02: source artifact referenced (MUST PASS)\n    - C03: source retrievable (MUST PASS \u00b7 cache fallback ALLOWED at Honey tier within 30-day window)\n    - C04: tribunal label assigned (MUST be HONEY)\n    - C05: no hard-fail flagged (MUST P"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "honeybox",
+      "term": "HoneyBox",
+      "tribunal_use": "- **Rule layer**: HoneyBox MUST have raw_data_egress_disabled=true \u00b7 any flag flip is a governance violation\n- **Rule layer**: Signed metadata pings MUST be hash-only \u00b7 embedding raw payload in the ping is a privacy breach\n- **Rule layer**: Firmware MUST be on the approved version list\n- **Judge layer**: Tribunal doesn't grade HoneyBox per-device \u00b7 it grades the metadata pings the box emits\n- **Cl"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "jelly",
+      "term": "Jelly",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - JELLY      # this term IS the Jelly tier\n  rule_layer_checks:\n    - C01: pair record present (MUST PASS \u00b7 else PROPOLIS)\n    - C02: source artifact referenced (MUST PASS \u00b7 else PROPOLIS)\n    - C03: source retrievable (MAY FAIL \u00b7 routes to source-refresh repair within Jelly \u00b7 does NOT force Propolis)\n    - C04: tribunal label assigned (MUST be JE"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "judge",
+      "term": "Judge",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # the judges don't get a tier \u00b7 they ASSIGN tiers\n  rule_layer_checks:\n    - Both Scale A AND Scale B judges MUST produce a structured verdict (C04)\n    - Either judge raising hallucination_event triggers C05 critical fail\n    - Either judge raising adversarial_source_flag triggers Katniss invocation\n    - Either judge with critical_issue_flag AN"
+    },
+    {
+      "category": "client_terms",
+      "slug": "letter-of-understanding-lou",
+      "term": "Letter of Understanding (LOU)",
+      "tribunal_use": "The Tribunal doesn't adjudicate the LOU itself (it's a contract artifact \u00b7 not an output) \u00b7 but:\n\n- LOU-referenced success criteria become Tribunal inputs (they shape what HONEY \u00b7 CONDITIONED \u00b7 FAILED means for this engagement)\n- LOU-defined cost-to-mint ceiling becomes a Tribunal rule-layer gate (any deed over ceiling triggers an operator_hygiene flag)\n- LOU-defined escalation triggers become Tri"
+    },
+    {
+      "category": "client_terms",
+      "slug": "morning-brief",
+      "term": "Morning Brief",
+      "tribunal_use": "The Tribunal feeds the brief but doesn't approve it:\n\n- The dial value \u00b7 band \u00b7 drivers come from the 2am Tribunal cron\n- The deed counts come from the Tribunal verdict log\n- The cost numbers come from the cost-to-mint accumulator\n- The anomalies come from the Tribunal's rule-layer flags from the overnight grading\n\nA brief that ships with stale data (older than 12 hours) triggers an operator_hygie"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "pair-candidate",
+      "term": "Pair Candidate",
+      "tribunal_use": "- **Rule layer**: Every Pair Candidate MUST have a router_receipt_id \u00b7 no orphan pairs \u00b7 the receipt anchors the pair to a real-world capture\n- **Rule layer**: Bucket transitions MUST be logged \u00b7 any pair changing bucket without an associated decision receipt is rejected and re-quarantined\n- **Judge layer**: Tribunal grades the pair to produce a verdict \u00b7 the verdict drives the initial bucket assi"
+    },
+    {
+      "category": "client_terms",
+      "slug": "pass-doctrine",
+      "term": "PASS Doctrine",
+      "tribunal_use": "The Tribunal doesn't make PASS verdicts (that's a human-broker call) \u00b7 but the Tribunal supports them:\n\n- The Tribunal's color grading on the engagement's evidence backstops the PASS rationale\n- The Tribunal's competitor-landscape data feeds the PASS-vs-PIVOT calculus\n- The Tribunal flags engagements during in-flight if they drift toward structural infeasibility (early warning for sr broker PASS-p"
+    },
+    {
+      "category": "client_terms",
+      "slug": "pre-market-flight-sheet",
+      "term": "Pre-Market Flight Sheet",
+      "tribunal_use": "The Tribunal doesn't grade flight sheets directly \u00b7 but:\n\n- The flight sheet's `color_summary` field is sourced from Tribunal-graded color evidence\n- The flight sheet's `pass_verdict` becomes an intake gate \u00b7 negative PASS verdicts prevent engagement creation\n- The flight sheet's `recommended_tier` feeds the engagement-tier-fit scoring\n- Aggregated flight-sheet data (over time) becomes calibration"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "prevent-task",
+      "term": "Prevent Task",
+      "tribunal_use": "- **Rule layer**: Prevent Task MUST be deterministic \u00b7 MUST have all 3 parts (trigger \u00b7 check \u00b7 remediation) \u00b7 LLM-only checks rejected\n- **Rule layer**: The check logic MUST be testable \u00b7 the rule must be runnable against the source pair AND produce a positive trigger\n- **Judge layer**: Tribunal evaluates whether the prevent rule would have stopped the original failure \u00b7 this is a deterministic r"
+    },
+    {
+      "category": "client_terms",
+      "slug": "principal",
+      "term": "Principal",
+      "tribunal_use": "The Tribunal doesn't grade principals (they're not adjudicated) \u00b7 but it tracks:\n\n- `principal.responsiveness_score` feeds the `principal_motivation` driver of the Probability of Close dial (20% weight)\n- `principal.last_touch_at` feeds engagement-health flags (no-touch > 14 days triggers sr broker outreach)\n- Principal-acknowledgment of closing statements is a required gate before issuing the clo"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "probability-of-close",
+      "term": "Probability of Close",
+      "tribunal_use": "The Tribunal grades the inputs \u00b7 the dial composes them. Rule-layer flags:\n- Single-day drop > 0.20 \u2192 `dial_anomaly_flag` for QA validator\n- Dial below 0.50 for > 7 consecutive days \u2192 automatic `engagement_health_check` deed\n- Drift > 0.15 between Scale A and Scale B judges on `asset_condition` inputs \u2192 manual review\n- Dial < 0.25 caps any new deed at JELLY tier (cannot issue HONEY \u00b7 cannot issue "
+    },
+    {
+      "category": "hive_terms",
+      "slug": "propolis",
+      "term": "Propolis",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - PROPOLIS      # this term IS the Propolis tier\n  rule_layer_checks:\n    - C01: pair record present (fail \u2192 PROPOLIS)\n    - C02: source artifact referenced (fail \u2192 PROPOLIS)\n    - C03: source retrievable (fail with no cache \u2192 PROPOLIS)\n    - C05: no hard-fail flagged (fail \u2192 PROPOLIS)\n    - C06: PROPOLIS not promoted (this is the gate that PREVEN"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "repair-lift",
+      "term": "Repair Lift",
+      "tribunal_use": "- **Rule layer**: Repair Lift MUST be computed from two anchored Tribunal verdicts \u00b7 synthesized lift numbers are rejected (C04 evidence binding)\n- **Rule layer**: `validator_confidence < 0.6` blocks promotion even if lift \u2265 0.10\n- **Judge layer**: Tribunal grades the repaired output as a fresh submission \u00b7 doesn't carry forward the original score \u00b7 the lift is purely the math of two independent v"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "repair-lift-ui-dial",
+      "term": "Repair Lift (UI Dial)",
+      "tribunal_use": "- **Rule layer**: Dial color MUST be derived from `repair_lift.value` \u00b7 no UI-side rounding, capping, or \"smoothing\"\n- **Rule layer**: Tooltip evidence link MUST resolve to the underlying anchored receipt \u00b7 broken links = dial UI is misleading\n- **Judge layer**: Tribunal doesn't grade the dial \u00b7 it grades the underlying score \u00b7 the dial is a pure rendering\n- **Classification impact**: A dial showi"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "repair-task",
+      "term": "Repair Task",
+      "tribunal_use": "- **Rule layer**: Repair Task MUST include at least 1 step \u00b7 MUST include a corrected_output \u00b7 MUST cite input evidence (no fabrication) (C04)\n- **Rule layer**: The corrected_output MUST be re-benched through Tribunal \u00b7 the rebench run_id MUST be populated\n- **Judge layer**: The Tribunal grades the corrected_output as a fresh agent submission \u00b7 uses the same 6-axis rubric as the original verdict\n-"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "risk-temperature",
+      "term": "Risk Temperature",
+      "tribunal_use": "- **Rule layer**: Risk Temperature MUST be computed from the documented factor list \u00b7 ad-hoc bumps are governance violations\n- **Rule layer**: HIGH temperature at scope=CUSTOMER_FLEET MUST trigger PAGE_OPERATOR within the configured window\n- **Rule layer**: SAFETY_VIOLATION flag at pair-level forces HIGH temperature regardless of other factors\n- **Judge layer**: Tribunal doesn't grade Risk Tempera"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "royal-jelly",
+      "term": "Royal Jelly",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - ROYAL_JELLY      # this term IS the apex tier\n  rule_layer_checks:\n    - C01: pair record present (MUST PASS)\n    - C02: source artifact referenced (MUST PASS)\n    - C03: source retrievable (MUST PASS \u00b7 no cache fallback at RJ tier)\n    - C04: tribunal label assigned (MUST be ROYAL_JELLY)\n    - C05: no hard-fail flagged (MUST PASS \u00b7 zero halluci"
+    },
+    {
+      "category": "hive_terms",
+      "slug": "swarm",
+      "term": "Swarm",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # the Swarm itself does not get a tier \u00b7 it IS the verdict-producing layer\n  rule_layer_checks:\n    - swarm.tribunal_queue_depth MUST be within operational bounds (< 5000) for normal-mode verdicts\n    - swarm.bakery_write_queue_depth MUST be < 1000 for any verdict to be considered finalized\n    - swarm.hedera_anchor_queue_depth MUST be < 200 for "
+    },
+    {
+      "category": "repair_terms",
+      "slug": "swarmfixer",
+      "term": "SwarmFixer",
+      "tribunal_use": "- **Rule layer**: SwarmFixer outputs MUST contain all 5 tasks (C01) \u00b7 MUST be generated at TEMP=0.05 (C02) \u00b7 MUST tag the 7-mode taxonomy + AgentHash bucket (C03)\n- **Critical failure**: missing task, wrong TEMP, or untagged taxonomy = PROPOLIS verdict on the refinery run \u00b7 the repair doesn't count\n- **Judge layer**: Tribunal grades the REPAIR task output as if it were a fresh agent submission \u00b7 t"
+    },
+    {
+      "category": "repair_terms",
+      "slug": "swarmjelly",
+      "term": "SwarmJelly",
+      "tribunal_use": "- **Rule layer**: All SwarmFixer outputs MUST be generated by a SwarmJelly version on the approved-tag list (C02 model-config compliance)\n- **Rule layer**: Inferences not at TEMP=0.05 are rejected at receipt anchoring (C02)\n- **Judge layer**: The Tribunal doesn't grade SwarmJelly directly \u00b7 it grades the REPAIR task output \u00b7 SwarmJelly's quality is measured by aggregate Repair Lift over a 7-day wi"
+    },
+    {
+      "category": "defendableos_terms",
+      "slug": "temp-0-05-rule-the-temp-five-cent-rule",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)",
+      "tribunal_use": "- **Rule layer C02**: Inference receipts MUST cite TEMP=0.05 \u00b7 any other value triggers automatic verdict downgrade to PROPOLIS for the refinery output\n- **Rule layer**: TEMP override at runtime without explicit doctrine waiver = governance violation \u00b7 the operator who flipped the flag gets escalated\n- **Judge layer**: Tribunal doesn't grade the TEMP itself \u00b7 it relies on the rule layer to enforce"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "tribunal",
+      "term": "Tribunal",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # the Tribunal itself does not get a tier \u00b7 it ASSIGNS tiers\n  rule_layer_checks:\n    - tribunal.run_id MUST be populated for every verdict\n    - tribunal.score_scale_a AND tribunal.score_scale_b MUST both be present (no single-judge verdicts)\n    - tribunal.drift MUST be computed and logged\n    - tribunal.record_hash MUST be computed before verd"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "validator",
+      "term": "Validator",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # validators don't get tiers \u00b7 their checks DETERMINE tiers\n  rule_layer_checks:\n    - validator.validator_id MUST be populated\n    - validator.result MUST be one of [PASS, FAIL, ADVISORY_FAIL, ERROR]\n    - if validator.is_critical AND result != PASS \u00b7 pair goes to PROPOLIS (or JELLY in C03 cache case)\n    - if validator.result == ERROR \u00b7 pair is"
+    },
+    {
+      "category": "tribunal_terms",
+      "slug": "validator-chain",
+      "term": "Validator Chain",
+      "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # the chain itself does not have a tier \u00b7 it DETERMINES tiers\n  rule_layer_checks:\n    - validator_chain.results MUST contain all 12 check outcomes\n    - validator_chain.all_critical_pass MUST be true for any tier above Propolis\n    - validator_chain.advisory_count_failed feeds the confidence_weight adjustment\n  judge_layer_prompt_hint: \"the chai"
+    },
+    {
+      "category": "scoring_terms",
+      "slug": "validator-confidence",
+      "term": "Validator Confidence",
+      "tribunal_use": "- **Rule layer**: Validator Confidence MUST be computed from anchored validator chain run \u00b7 not synthesized\n- **Rule layer**: Promotion to `jelly-repaired/` requires confidence \u2265 0.6 AND lift \u2265 0.10 \u00b7 both gates\n- **Rule layer**: Weights MUST match the locked formula (0.7 / 0.2 / 0.1) \u00b7 custom weights rejected\n- **Judge layer**: Tribunal doesn't grade Validator Confidence \u00b7 the validator chain pro"
+    }
+  ]
+}

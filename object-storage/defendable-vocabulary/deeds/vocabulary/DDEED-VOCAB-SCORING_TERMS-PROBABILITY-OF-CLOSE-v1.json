@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-PROBABILITY-OF-CLOSE-v1",
+  "category": "scoring_terms",
+  "created_at": "2026-05-24T15:33:21.523611+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-PROBABILITY-OF-CLOSE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/scoring_terms/probability-of-close",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/scoring_terms/probability-of-close/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-PROBABILITY-OF-CLOSE-v1-20260524T15332152360Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:49051afac51380ba93f604b230d46e797f2ce348600e97c5df40a4e4cc164a34",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "probability-of-close",
+  "street_source_ens": null,
+  "subject": {
+    "category": "scoring_terms",
+    "definitions": {
+      "client": "Your engagement carries a daily **Probability of Close** dial. It's a number between 0 and 1 \u00b7 refreshed every night \u00b7 surfaced in your 06:00 Morning Brief.\n\n- 0.85+ means we're locked in\n- 0.65-0.84 means we're tracking but watching specific drivers\n- 0.45-0.64 means we're on the watchlist\n- 0.25-0.44 means we escalate to founder\n- Below 0.25 means we go dark and tell you same-day\n\nThe dial isn't a vibe \u00b7 it's 6 weighted drivers \u00b7 audit-trail behind each one. You see the dial \u00b7 you see the band \u00b7 you see the trajectory \u00b7 you see what moved it \u00b7 you see what we're doing about it. No spin.",
+      "cre_operator": "Every CRE shop runs a dial on every listing. Top brokers can call the dial within 10 minutes of touring a building. The discipline is the regular refresh \u00b7 the cadence \u00b7 the willingness to revise downward when the evidence demands it.\n\nThe dial drives the calendar. Green-band deals get weekly cadence. Amber-band deals get bi-weekly. Yellow-band deals get daily. Orange-band deals get founder-level attention. Red-band deals are workouts \u00b7 open-line \u00b7 same-day decisions.\n\nIn CRE the dial is the broker's accountability metric. We mirror that exactly \u00b7 the dial is what the sr broker brings to the Friday brief.",
+      "defendableos": "**Probability of Close** in DefendableOS is the modeled likelihood (float 0-1 \u00b7 bucketed into 5 bands) that an active assignment lands in `CLOSED_HONEY` or `CLOSED_CONDITIONED` per the Assignment Success Doctrine. Updated nightly via the 2am Tribunal reconciliation cron \u00b7 refreshed on-demand on material driver moves \u00b7 surfaced in the Morning Brief and the dashboard.\n\nComputed as a 6-driver weighted composite:\n- `color_strength` \u00b7 25%\n- `principal_motivation` \u00b7 20%\n- `asset_condition` \u00b7 20%\n- `buyer_pool_fit` \u00b7 15%\n- `comp_quality` \u00b7 10%\n- `operator_hygiene` \u00b7 10%",
+      "street": "\"What's the dial say?\" \u2014 the sr broker asks at the Monday huddle.\n\n**Probability of Close** is the operating dial \u00b7 the broker's gut-plus-math number that says how likely the assignment is to land successfully. Number between 0 and 1. Updated nightly. Visible to the principal in the daily Morning Brief.\n\nThe dial is the engagement's pulse. A flat dial for too long is suspicious. A dial that moves but stays within the band is healthy breathing. A dial that crosses bands is a signal."
+    },
+    "related_terms": [
+      "assignment-success",
+      "client-confidence",
+      "color",
+      "morning-brief",
+      "pre-market-flight-sheet",
+      "pass-doctrine",
+      "closing-statement"
+    ],
+    "slug": "probability-of-close",
+    "term": "Probability of Close"
+  },
+  "supersedes": null,
+  "term": "Probability of Close",
+  "updated_at": "2026-05-24T15:33:21.783824+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

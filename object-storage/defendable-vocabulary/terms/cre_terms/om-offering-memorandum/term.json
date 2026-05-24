@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"engagement.om_v1\": {\n    \"type\": \"document_reference\",\n    \"schema\": \"docs/schemas/offering_memorandum.schema.json\",\n    \"storage\": \"object_storage://defendable-public/om/{engagement_id}/v1.pdf\",\n    \"watermarked\": true,\n    \"watermark_field\": \"watermark.recipient_email\"\n  },\n  \"engagement.om_delivered_at\": {\n    \"type\": \"timestamp\"\n  },\n  \"engagement.om_recipient_id\": {\n    \"type\": \"uuid\"\n  },\n  \"engagement.om_view_count\": {\n    \"type\": \"integer\",\n    \"scoring_hook\": \"interest_signal_strength\"\n  },\n  \"engagement.flight_sheet_v1\": {\n    \"type\": \"document_reference\",\n    \"private\": true,\n    \"comment\": \"INTERNAL \u00b7 never sent to customer \u00b7 the math the OM hides\"\n  }\n}\n```\n\nSchema files: `docs/schemas/offering_memorandum.schema.json` \u00b7 `docs/schemas/engagement.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "cre_terms",
+  "client_explanation": "The Offering Memorandum is the document we share with you to introduce DefendableOS and the engagement we're proposing. It contains the headline service description, the pricing tiers, the typical customer profile, and the receipts framework that backs every claim. It is intentionally short and intentionally legible \u00b7 designed for a 15-minute read before our first conversation.\n\nBehind the OM, our team is building the deeper underwriting artifact \u00b7 the pre-market flight sheet \u00b7 which we'll walk you through after we've signed a Letter of Understanding to begin the formal engagement. The OM tells you what we do. The flight sheet shows you exactly what we'd do for your specific fleet.",
+  "cre_operator_meaning": "The OM is the public-facing offering document for an asset on market. It is designed to attract a buyer pool \u00b7 stratify the buyer pool \u00b7 qualify the buyer pool \u00b7 and elevate the perceived value of the asset enough to drive a competitive bidding environment.\n\nSections in a real CRE OM:\n- Executive summary (the one-page hook)\n- Property overview (location, size, asset class, photos)\n- Tenant overview (rent roll, lease expirations, tenant credit)\n- Financial summary (T-12 NOI, pro forma NOI, stabilization assumptions)\n- Market overview (cap rate trends, supply pipeline, demographic drivers)\n- Investment highlights (the bullet points the listing broker wants you to walk away with)\n- CapEx schedule (what needs to be spent and when)\n- Comparable sales (the comps the broker wants to anchor against)\n- Disclaimer (the legal language at the back)\n\nThe sr broker reads the OM for what's NOT there. The pre-market flight sheet is for what IS there \u00b7 and what the seller knows but didn't put in the book.",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `om_version_hash`, `om_delivered_at`, `om_recipient_id`, `om_view_signals`\n- **DDEED class impact**: deeds whose origination engagement carried an OM that later failed Tribunal review get a `provenance_quality_flag` \u00b7 the customer is notified and the engagement audit is updated\n- **Books and records layer**: L1_PG (distribution log) \u00b7 L2_MERKLE (canonical version hash) \u00b7 L3_NAS (PDF archive)\n- **5 Proofs touched**: PROCESS (the marketing-to-engagement funnel discipline) \u00b7 QUALITY (the brand voice integrity)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `om_version_hash`, `om_delivered_at`, `om_recipient_id`, `om_view_signals`\n- **DDEED class impact**: deeds whose origination engagement carried an OM that later failed Tribunal review get a `provenance_quality_flag` \u00b7 the customer is notified and the engagement audit is updated\n- **Books and records layer**: L1_PG (distribution log) \u00b7 L2_MERKLE (canonical version hash) \u00b7 L3_NAS (PDF archive)\n- **5 Proofs touched**: PROCESS (the marketing-to-engagement funnel discipline) \u00b7 QUALITY (the brand voice integrity)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "In DefendableOS, the **OM** is the public-facing engagement-tier document. It is the pretty book the customer sees. It is NOT the internal pre-market flight sheet \u00b7 which is the operator-internal doc that contains the math, the color, and the disclosure schedule.\n\nThe OM wins the meeting (gets the customer to schedule a sit). The flight sheet (delivered after LOU draft) wins the deal (gets the customer to sign).\n\nThe OM in DefendableOS is what gets attached to a contact-form response. It is what gets shared in a sample-pack download. It is what the customer's procurement team requests by name. It is marketing collateral \u00b7 receipted, but marketing collateral \u00b7 and it must NEVER be confused with the underwriting artifacts.",
+  "defendableos_notes": "- The OM is the most-leaked DefendableOS artifact. Watermark discipline catches the leak. We never sue \u00b7 we surface the leak to the customer who leaked it \u00b7 and they almost always close on principle.\n- The OM is the canonical example of \"what wins the meeting \u00b7 not the deal.\" Every jr broker who tries to make the OM do too much weakens both the OM and the flight sheet.\n- Customers occasionally ask \"can we see your underwriting model?\" before LOU. The doctrine answer: the underwriting model lives in the flight sheet, which we share after LOU. The OM contains the framework \u00b7 the flight sheet contains the math \u00b7 and we keep that separation because mixing them collapses the funnel.\n- Quarterly OM refresh discipline is what keeps the brand voice locked. Without it, drift creeps in via well-meaning jr broker edits.\n\n\ud83d\udc1d *The OM wins the meeting. The flight sheet wins",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1",
+    "canon": "defendapedia.eth/cre_terms/om-offering-memorandum",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Watermark metadata embedded and recipient-bound",
+    "Every numeric claim traceable to a public receipt or doctrine doc",
+    "Brand voice attestation by SH5 (Client Language Specialist)",
+    "Sr broker signoff on version",
+    "Distribution log (every send receipted, every recipient logged)"
+  ],
+  "example": "> **Engagement**: prospect inbound from `defendableos.com` contact form. Medical-billing AI defense engagement target. Mid-market hospital network in the Midwest. CFO submitted the form herself \u00b7 not procurement.\n>\n> **OM delivered**: same day, watermarked to the CFO's email, version `OM-v3.2-2026-Q2`. Distribution receipt: `OM-DELIV-2026-05-24-9b3c`.\n>\n> **OM contents**: 12 pages. Section 1: what defense means and what it doesn't. Section 2: the 5-Proof framework. Section 3: the three engagement tiers and pricing ranges. Section 4: typical customer profile (mid-market, regulated, audit-needy). Section 5: the receipts framework with link to Hedera topic for live verification. Section 6: founder bio. Section 7: how to schedule a sit.\n>\n> **View signals**: opened within 90 minutes. Pages 1-7 read fully. Page 8 (the founder bio) opened twice. Page 11 (the sit-scheduling page) opened, scrolled, but no booking made within first 48 hours.\n>\n> **Follow-up trigger**: jr broker dialed at hour 50 referencing the founder-bio interest. Booked the sit on the call. Sit delivered the appraisal on flight sheet `FS-2026-Q2-0044`. LOU signed 14 days post-OM.\n>\n> **Deed lineage**: the OM is cited in the engagement origination record \u00b7 `DDEED-DOV-MED-MID-000017-v1` notes `origination_artifact_id = OM-DELIV-2026-05-24-9b3c`. Five-year audit trail intact.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **flight_sheet_leak** | OM contains flight-sheet-level detail \u00b7 undermines the funnel | JELLY |\n| **claim_without_receipt** | Numeric claim with no receipt anchor | PROPOLIS |\n| **mba_jargon** | \"Transformational,\" \"best-in-class,\" \"synergies,\" etc. | JELLY |\n| **unwatermarked** | OM PDF shipped without recipient watermark | JELLY |\n| **stale_version** | OM more than 90 days old in active distribution | JELLY |\n| **unauthorized_edit** | Jr broker rewrote canonical body language | JELLY (PROPOLIS on repeat) |\n| **misaligned_pricing** | Pricing tiers in OM don't match current engagement pricing | PROPOLIS |",
+  "hashes": {
+    "json_sha256": "sha256:8d8f46ab1a0cfbf4d2d380483589898d3cca58353c3176467705d8d31671beee",
+    "markdown_sha256": "sha256:d2549250dba40f1bd8b1b12dfb86f80234add5e664f2825e806b6e81c702f091"
+  },
+  "jr_broker_use": "You manage the OM distribution. The OM is templated \u00b7 you customize light layers (recipient name, suspected vertical fit, prior interaction context) but you do NOT rewrite the body. The body is canonical \u00b7 same words to every customer in a tier \u00b7 same receipts framework.\n\nDistribution discipline:\n\n- **Watermark every send.** The OM PDF carries a recipient-specific watermark embedded in metadata. If it leaks, we know who leaked it.\n- **Receipt every send.** `om_delivered_at`, `om_recipient_id` populated in real time. This is the leading indicator of pipeline health.\n- **Track view signals.** The OM is served from instrumented storage \u00b7 we see opens, page-depth, dwell time. View signals feed `interest_signal_strength` which informs follow-up timing.\n- **Don't substitute for the flight sheet.** If a prospect asks for \"more detail than the OM has\" \u00b7 that's the signal to schedule the appraisal sit, not to send the flight sheet ahead of time. The flight sheet is for engaged customers, not browsers.\n- **Refresh quarterly.** OM versioned every quarter at minimum \u00b7 receipts framework, customer roster, and pricing tiers reviewed by SH5.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/cre_terms/om-offering-memorandum/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.476826+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.476826+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "digest",
+    "loi",
+    "due-diligence",
+    "deal-flow",
+    "probability-of-close",
+    "books-and-records"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: MEDIUM \u00b7 OM quality affects the M (Meetings) of MAGIC \u00b7 not directly the I (Ink)\n- **repair_lift**: LOW \u00b7 OMs that fail get withdrawn \u00b7 not repaired\n- **validator_confidence**: MEDIUM \u00b7 poor OMs degrade brand trust which compounds across all engagements\n- **risk_temperature**: MEDIUM \u00b7 over-claimed OMs create regulatory exposure\n- **probability_of_close**: MEDIUM \u00b7 OM gets the meeting \u00b7 the flight sheet wins the deal\n- **evidence_strength**: LOW \u00b7 OM is marketing \u00b7 not evidence\n- **cost_to_mint**: LOW \u00b7 OM production is templated, low marginal cost",
+  "slug": "om-offering-memorandum",
+  "sr_broker_use": "You sign off on OM versions. Every new OM revision goes through sr broker review \u00b7 because every word in the OM is a claim the firm will defend on a deed five years from now.\n\nYou also audit OM-to-flight-sheet handoffs. The failure mode is jr brokers leaking flight-sheet content into OM responses \u00b7 either because the customer pressed for detail or because the jr broker confused the two artifacts. This degrades both: the OM becomes too dense to land, and the flight sheet loses its value as an LOU trigger.\n\nWhen customers complain that \"your OM doesn't give us enough detail\" \u00b7 that's the correct outcome. The OM is designed to make them want a meeting \u00b7 not to substitute for one.",
+  "status": "active",
+  "street_definition": "\"Did you read the OM yet?\" \u2014 buyer-side broker, dialing in on a new listing.\n\nThe **Offering Memorandum** (OM) is the marketing book the listing broker puts together to sell a property. Pretty renders. Stabilized financials. Tenant rent roll. Market overview. Comps. CapEx forecast. The pretty book that lands in every potential buyer's inbox the week the property goes to market.\n\nIn CRE, the OM is necessary \u00b7 but not sufficient. The OM wins the meeting \u00b7 the pre-market flight sheet wins the deal. Every sr broker knows this. Every jr broker eventually learns it the hard way.",
+  "term": "OM \u00b7 Offering Memorandum",
+  "tribunal_use": "The OM is graded as a customer-facing artifact \u00b7 separately from the flight sheet.\n\n- **Rule layer**: any claim in the OM that doesn't tie to a receipt anchor or a public-domain doctrine document \u2192 critical_failure \u2192 PROPOLIS\n- **Rule layer**: any marketing claim that conflicts with the Client Language Doctrine (MBA jargon \u00b7 \"AI-native\" \u00b7 \"transformational\" \u00b7 \"10x\") \u2192 JELLY\n- **Judge layer**: OM quality scored on customer-readability (1-5), claim-to-receipt traceability (1-5), brand voice alignment (1-5)\n- **Classification impact**: OMs that ship without ANY watermark \u00b7 ANY receipt \u00b7 ANY brand voice anchor \u2192 automatic PROPOLIS, withdrawn from distribution immediately\n\n```yaml\nclassification_impact: [HONEY, ROYAL_JELLY, JELLY, PROPOLIS]\ncan_be_critical_failure: true\nrule_layer_checks:\n  - all numeric claims trace to receipt anchors\n  - no MBA jargon (banned-words list enforced)\n  - watermark present and recipient-bound\n  - version stamped and date stamped\n```",
+  "version": "v1"
+}

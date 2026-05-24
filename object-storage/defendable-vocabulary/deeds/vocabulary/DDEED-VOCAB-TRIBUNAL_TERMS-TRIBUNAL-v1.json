@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1",
+  "category": "tribunal_terms",
+  "created_at": "2026-05-24T15:33:21.539465+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/tribunal_terms/tribunal",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/tribunal_terms/tribunal/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1-20260524T15332153945Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:f255ce1a90ebf1f22c9e02e37d6f5242090fbfee2c60882b3d919b6d96c72fe8",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "tribunal",
+  "street_source_ens": null,
+  "subject": {
+    "category": "tribunal_terms",
+    "definitions": {
+      "client": "\"The Tribunal\" is our adjudication system \u00b7 the 6-role pipeline that grades every AI output we ship to you. It runs two judges (a fast pass and a deep pass) against every pair \u00b7 checks if they agree within a tight drift threshold \u00b7 calls in a Critic when they don't \u00b7 and escalates to a final arbiter (Katniss) when adversarial behavior is detected. The Tribunal produces a verdict (Royal Jelly \u00b7 Honey \u00b7 Jelly \u00b7 Propolis) \u00b7 a record hash \u00b7 and a full audit trail. You see the verdict on every deed. You can verify the record hash on the public ledger.",
+      "cre_operator": "In CRE \u00b7 the Tribunal maps to the multi-role underwriting chain \u00b7 the inspector who walks the building \u00b7 the appraiser who values it \u00b7 the title underwriter who insures the chain of ownership \u00b7 the closing agent who reconciles the documents \u00b7 the lender's reviewer who confirms the credit. No single role decides the deed \u00b7 the chain decides. Same here. The Tribunal is the chain that produces a defendable verdict.",
+      "defendableos": "The Tribunal is the adjudication subsystem of the Hive \u00b7 composed of 6 named roles:\n\n1. **Scout** \u00b7 fetches the pair \u00b7 normalizes to PairCandidate format\n2. **Router** \u00b7 decides the lane (short / long / seal)\n3. **Filter** \u00b7 runs the 12-check validator chain (the rule layer)\n4. **Repair** \u00b7 invokes SwarmFixer when the pair lands Jelly\n5. **Critic** \u00b7 reconciles when drift between Scale A and Scale B exceeds 0.15\n6. **Katniss** \u00b7 adversarial best-of-3 final arbiter\n\nProduction config (locked 2026-05-24):\n- Scale A judge: `gemma3:12b` on swarmrails GPU 1 (RTX PRO 4500 32GB Blackwell sm_120)\n- Scale B judge: `qwen2.5:32b` on swarmrails GPU 0 (RTX PRO 6000 96GB Blackwell sm_120)\n- Throughput target: 777 pairs/hr\n- Protocol: rule_then_judge \u00b7 2 judges required \u00b7 drift \u2264 0.15 \u00b7 penalized scoring enabled\n\nSee [`docs/doctrine/08_tribunal_doctrine.md`](../../doctrine/08_tribunal_doctrine.md) for the full spec.",
+      "street": "\"What did the Tribunal return?\" The Tribunal is the adjudication engine of the Hive \u00b7 the 6-role pipeline that decides whether an AI output is Royal Jelly \u00b7 Honey \u00b7 Jelly \u00b7 or Propolis. It is NOT one model. It is NOT a \"judge prompt.\" It is a structural pipeline \u00b7 rule-then-judge \u00b7 2-pass with a 0.15 drift threshold \u00b7 with a Critic when the judges disagree and Katniss when the case turns adversarial. The Tribunal runs 24/7 at 777 pairs/hr on the swarmrails primary rig with whale and zima-edge holding backup roles.\n\nIn CRE language \u00b7 the Tribunal is the underwriting committee \u00b7 the title insurance underwriter \u00b7 the appraisal review \u00b7 the final sign-off before the deed transfers. Multiple eyes \u00b7 structured discipline \u00b7 documented dissents \u00b7 the chain that protects the asset."
+    },
+    "related_terms": [
+      "validator",
+      "validator-chain",
+      "judge",
+      "royal-jelly",
+      "honey",
+      "hive"
+    ],
+    "slug": "tribunal",
+    "term": "Tribunal"
+  },
+  "supersedes": null,
+  "term": "Tribunal",
+  "updated_at": "2026-05-24T15:33:21.794119+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

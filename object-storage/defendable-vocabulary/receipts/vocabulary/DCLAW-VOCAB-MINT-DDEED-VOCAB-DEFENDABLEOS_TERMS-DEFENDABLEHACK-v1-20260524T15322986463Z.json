@@ -1,0 +1,33 @@
+{
+  "category": "defendableos_terms",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEHACK-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEHACK-v1",
+    "canon": "defendapedia.eth/defendableos_terms/defendablehack",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:d65d9386674c604b3c2a91643ce6701ad74eb40ea9efb109746dac963a5276a5",
+    "markdown_sha256": "sha256:a891bd750a1548297c0ef6cea17d8de9fbc572429383cad9c3b770c36798439a"
+  },
+  "minted_at": "2026-05-24T15:32:29.864636+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/defendablehack/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.864529+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.864529+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEHACK-v1-20260524T15322986463Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "defendablehack",
+  "term": "DefendableHack"
+}

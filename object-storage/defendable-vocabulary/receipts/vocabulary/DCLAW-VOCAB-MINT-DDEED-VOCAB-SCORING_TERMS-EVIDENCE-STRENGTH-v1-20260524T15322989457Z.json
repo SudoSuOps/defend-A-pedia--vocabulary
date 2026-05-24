@@ -1,0 +1,33 @@
+{
+  "category": "scoring_terms",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1",
+    "canon": "defendapedia.eth/scoring_terms/evidence-strength",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:ebe13d2cb2ec2c5313709a488b0ab5d521a0b66111a996216d3df8a71ede9fdf",
+    "markdown_sha256": "sha256:11c5991b0566656c722d5daf279ce617d1d16591edbfbf40fec4121e55ad6219"
+  },
+  "minted_at": "2026-05-24T15:32:29.894570+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/evidence-strength/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.894466+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.894466+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1-20260524T15322989457Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "evidence-strength",
+  "term": "Evidence Strength"
+}

@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-FAILURE-v1",
+  "category": "tribunal_terms",
+  "created_at": "2026-05-24T15:33:21.528937+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-FAILURE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/tribunal_terms/assignment-failure",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/tribunal_terms/assignment-failure/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-FAILURE-v1-20260524T15332152892Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:392b2279eb354fad5e877aee3e8ee49a27606cf1c6c97dd26ea436be38410cb9",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "assignment-failure",
+  "street_source_ens": null,
+  "subject": {
+    "category": "tribunal_terms",
+    "definitions": {
+      "client": "\"Assignment failure\" is when the AI work we did for you did not clear our production-safe threshold \u00b7 we do NOT ship failure to you \u00b7 we route it to repair \u00b7 re-grade the repaired output \u00b7 and ship the result (or, for unrecoverable failures, we acknowledge the failure transparently in the Morning Brief). Every failure has a named failure mode (1 of 7 classes) \u00b7 the failure mode feeds our SwarmFixer training so the NEXT version of the model catches that failure earlier. Most AI vendors hide their failure rates. We publish ours \u00b7 because that is the trust signal.",
+      "cre_operator": "In CRE \u00b7 assignment failure is the deal-died event \u00b7 documented \u00b7 post-mortemed \u00b7 added to the brokerage's pattern library. A broker who never has a failure is a broker who only takes layups (or who is lying about their pipeline). The discipline is in WHY did it fail \u00b7 WAS the failure preventable \u00b7 WHAT do we change going forward. The CRE practice that survives a 30-year career is the one that codifies failure into the next cohort's training.\n\nInside DefendableOS \u00b7 assignment failure is identically structured. The failure mode is NAMED (one of 7 SwarmJelly classes when recoverable) \u00b7 the failure is ROUTED (to repair or seal) \u00b7 the failure is MEASURED (repair lift if applicable) \u00b7 the failure is OPERATIONALIZED (feeds the next SwarmFixer cohort training).",
+      "defendableos": "Assignment failure is `assignment.outcome = FAILURE` when ANY of:\n\n- the Tribunal verdict landed Propolis at close\n- one or more of the 6 rubric grades fell below threshold\n- the deliverable_fulfilled flag is false\n- the receipt_issued flag is false (after a timely retry attempt)\n- the operator-applied PASS doctrine sealed the engagement\n\nAssignment failure is the explicit entry point to:\n\n1. **SwarmFixer repair pipeline** \u00b7 for Jelly-tier failures with named failure modes (the 5-task RJ output \u00b7 DIAGNOSE / REPAIR / PREVENT / DETECT / COMPARE)\n2. **Propolis vault** \u00b7 for Propolis-tier failures \u00b7 sealed with full lineage \u00b7 feeds DETECT-task training for next SwarmFixer cohort\n3. **Operator-discipline review** \u00b7 for failures caused by upstream operator mistakes (engagement-scope drift \u00b7 onboarding leak)\n4. **Cook-audit cycle** \u00b7 for failures suggesting upstream cook quality problems (judge temp drift \u00b7 curator setting issues \u00b7 prompt-domain degradation)",
+      "street": "\"That assignment failed \u00b7 route it.\" Assignment failure is the inverse of assignment success \u00b7 the boolean is FALSE \u00b7 one or more of the 6 rubric grades fell below threshold \u00b7 the deliverable did not fulfill OR the receipt did not issue OR the Tribunal verdict landed Jelly or Propolis. Failure is NOT the end of the engagement \u00b7 failure is the entry point to the SwarmFixer repair pipeline \u00b7 failure is the inventory the next-gen training cohort runs on.\n\nIn CRE language \u00b7 assignment failure is the deal that did not close \u00b7 the LOI that did not convert to PSA \u00b7 the engagement that died at the diligence stage. A 30-year broker has more failures than successes \u00b7 the discipline is what you LEARN from each failure \u00b7 which broker takes the call back \u00b7 which customer earns a re-engagement \u00b7 which seller is on the never-call list. Same here. AI failure is data \u00b7 IF you operationalize it."
+    },
+    "related_terms": [
+      "assignment-success",
+      "jelly",
+      "propolis",
+      "hallucination-event",
+      "tribunal",
+      "validator-chain"
+    ],
+    "slug": "assignment-failure",
+    "term": "Assignment Failure"
+  },
+  "supersedes": null,
+  "term": "Assignment Failure",
+  "updated_at": "2026-05-24T15:33:21.788526+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

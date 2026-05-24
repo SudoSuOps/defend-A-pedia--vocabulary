@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.476980+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/om-offering-memorandum",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/om-offering-memorandum/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1-20260524T15332147697Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:5e7e2d9342bf3f1f688da563f4d017d43fac1afd590608b7a6f8f1913dbc6f5c",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "om-offering-memorandum",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "The Offering Memorandum is the document we share with you to introduce DefendableOS and the engagement we're proposing. It contains the headline service description, the pricing tiers, the typical customer profile, and the receipts framework that backs every claim. It is intentionally short and intentionally legible \u00b7 designed for a 15-minute read before our first conversation.\n\nBehind the OM, our team is building the deeper underwriting artifact \u00b7 the pre-market flight sheet \u00b7 which we'll walk you through after we've signed a Letter of Understanding to begin the formal engagement. The OM tells you what we do. The flight sheet shows you exactly what we'd do for your specific fleet.",
+      "cre_operator": "The OM is the public-facing offering document for an asset on market. It is designed to attract a buyer pool \u00b7 stratify the buyer pool \u00b7 qualify the buyer pool \u00b7 and elevate the perceived value of the asset enough to drive a competitive bidding environment.\n\nSections in a real CRE OM:\n- Executive summary (the one-page hook)\n- Property overview (location, size, asset class, photos)\n- Tenant overview (rent roll, lease expirations, tenant credit)\n- Financial summary (T-12 NOI, pro forma NOI, stabilization assumptions)\n- Market overview (cap rate trends, supply pipeline, demographic drivers)\n- Investment highlights (the bullet points the listing broker wants you to walk away with)\n- CapEx schedule (what needs to be spent and when)\n- Comparable sales (the comps the broker wants to anchor against)\n- Disclaimer (the legal language at the back)\n\nThe sr broker reads the OM for what's NOT there. The pre-market flight sheet is for what IS there \u00b7 and what the seller knows but didn't put in the book.",
+      "defendableos": "In DefendableOS, the **OM** is the public-facing engagement-tier document. It is the pretty book the customer sees. It is NOT the internal pre-market flight sheet \u00b7 which is the operator-internal doc that contains the math, the color, and the disclosure schedule.\n\nThe OM wins the meeting (gets the customer to schedule a sit). The flight sheet (delivered after LOU draft) wins the deal (gets the customer to sign).\n\nThe OM in DefendableOS is what gets attached to a contact-form response. It is what gets shared in a sample-pack download. It is what the customer's procurement team requests by name. It is marketing collateral \u00b7 receipted, but marketing collateral \u00b7 and it must NEVER be confused with the underwriting artifacts.",
+      "street": "\"Did you read the OM yet?\" \u2014 buyer-side broker, dialing in on a new listing.\n\nThe **Offering Memorandum** (OM) is the marketing book the listing broker puts together to sell a property. Pretty renders. Stabilized financials. Tenant rent roll. Market overview. Comps. CapEx forecast. The pretty book that lands in every potential buyer's inbox the week the property goes to market.\n\nIn CRE, the OM is necessary \u00b7 but not sufficient. The OM wins the meeting \u00b7 the pre-market flight sheet wins the deal. Every sr broker knows this. Every jr broker eventually learns it the hard way."
+    },
+    "related_terms": [
+      "digest",
+      "loi",
+      "due-diligence",
+      "deal-flow",
+      "probability-of-close",
+      "books-and-records"
+    ],
+    "slug": "om-offering-memorandum",
+    "term": "OM \u00b7 Offering Memorandum"
+  },
+  "supersedes": null,
+  "term": "OM \u00b7 Offering Memorandum",
+  "updated_at": "2026-05-24T15:33:21.742747+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

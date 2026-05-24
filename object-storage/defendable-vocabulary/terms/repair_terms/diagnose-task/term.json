@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"diagnose.task_id\": {\"type\": \"string\", \"format\": \"rj-diag-<run_id>\"},\n  \"diagnose.failure_mode\": {\n    \"type\": \"enum\",\n    \"values\": [\"HALLUCINATION\",\"SCHEMA_DRIFT\",\"TOOL_MISUSE\",\"INSTRUCTION_FAILURE\",\"REASONING_GAP\",\"SAFETY_VIOLATION\",\"LATENCY_REGRESSION\"]\n  },\n  \"diagnose.agenthash_bucket\": {\n    \"type\": \"enum\",\n    \"values\": [\"STOP\",\"CALL\",\"READ\",\"RECOVER\",\"LOOP\"]\n  },\n  \"diagnose.clawhash_sub_algorithm\": {\n    \"type\": \"enum\",\n    \"values\": [\"injection\",\"toolpoison\",\"rce\",\"supply\",\"sandbox\",\"audit\",\"null\"]\n  },\n  \"diagnose.severity\": {\"type\": \"integer\", \"range\": [1, 5]},\n  \"diagnose.recommended_action\": {\"type\": \"string\", \"enum\": [\"RETRY\",\"RETRAIN\",\"PATCH_PROMPT\",\"ESCALATE_HUMAN\",\"QUARANTINE\"]},\n  \"diagnose.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"diagnose.evidence_citations\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}\n}\n```\n\nSchema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/diagnose_task.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "The Diagnose Task is the doctor's chart. When your AI agent makes a mistake, the first thing we ship back is the root cause. Why did it fail \u00b7 how bad was it \u00b7 what should you do about it. Three answers in plain machine-readable form, so your engineers can wire it into their on-call \u00b7 or your operator can read it and route to a fix.",
+  "cre_operator_meaning": "In CRE the diagnose is the **pre-listing inspection**. The broker walks the building before he writes the OM \u00b7 checks the roof \u00b7 the HVAC \u00b7 the parking \u00b7 the elevators \u00b7 the rent roll \u00b7 the deferred maintenance. The inspection produces a punch list with a severity tag per item. The punch list IS the diagnosis. Without it \u00b7 the OM is a fiction \u00b7 the deal blows up in DD when the buyer finds what you missed.",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-DIAGNOSE-TASK-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `diagnose.failure_mode` \u00b7 `diagnose.agenthash_bucket` \u00b7 `diagnose.severity` \u00b7 `diagnose.recommended_action` \u00b7 `diagnose.confidence`\n- **DDEED class impact**: diagnose is part of DDEED-DOV-REPAIR \u00b7 the failure mode tag becomes a queryable index for the deed registry\n- **Books and records layer**: L1 PostgreSQL (the diagnose record) \u2192 L4 Hedera HCS (the deed)\n- **5 Proofs touched**: PROCESS (root-cause analysis IS process) \u00b7 QUALITY (the diagnose's own confidence)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `diagnose.failure_mode` \u00b7 `diagnose.agenthash_bucket` \u00b7 `diagnose.severity` \u00b7 `diagnose.recommended_action` \u00b7 `diagnose.confidence`\n- **DDEED class impact**: diagnose is part of DDEED-DOV-REPAIR \u00b7 the failure mode tag becomes a queryable index for the deed registry\n- **Books and records layer**: L1 PostgreSQL (the diagnose record) \u2192 L4 Hedera HCS (the deed)\n- **5 Proofs touched**: PROCESS (root-cause analysis IS process) \u00b7 QUALITY (the diagnose's own confidence)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Diagnose Task is the first of the 5 Royal Jelly tasks SwarmFixer emits. It identifies the failure mode from the 7-mode taxonomy (HALLUCINATION \u00b7 SCHEMA_DRIFT \u00b7 TOOL_MISUSE \u00b7 INSTRUCTION_FAILURE \u00b7 REASONING_GAP \u00b7 SAFETY_VIOLATION \u00b7 LATENCY_REGRESSION), the AgentHash bucket (STOP \u00b7 CALL \u00b7 READ \u00b7 RECOVER \u00b7 LOOP), assigns a severity score 1-5, and recommends an action class. It runs first because the other 4 tasks depend on it. No diagnose, no refinery.",
+  "defendableos_notes": "- Diagnose Task is the FIRST CITIZEN of the 5-task contract \u00b7 everything else depends on it\n- The 7-mode \u00d7 5-AgentHash matrix produces 35 cells \u00b7 the SwarmJelly training corpus has at least one pair per cell \u00b7 this is what makes the diagnose reliable at TEMP=0.05\n- A misdiagnosed pair routed downstream is worse than no refinery run at all \u00b7 because the customer's PREVENT and DETECT logic ships against the wrong root cause\n\n\ud83d\udc1d *No diagnose, no fix. The diagnose is the pu",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-DIAGNOSE-TASK-v1",
+    "canon": "defendapedia.eth/repair_terms/diagnose-task",
+    "street_source": null
+  },
+  "evidence_required": [
+    "The original failed pair (input + agent output + Tribunal verdict)",
+    "The 7-mode taxonomy tag with cited evidence in the pair",
+    "The AgentHash bucket tag with cited evidence",
+    "ClawHash sub-algorithm tag if the failure is adversarial (else null)",
+    "Severity rationale (which fields of the pair drove the score)",
+    "Recommended action with a doctrine pointer"
+  ],
+  "example": "> **Pair**: books-bot.acmecorp.defendable.eth \u00b7 journal entry with reversed DR/CR\n>\n> **Diagnose Task output**:\n> ```yaml\n> failure_mode: REASONING_GAP\n> agenthash_bucket: READ\n> clawhash_sub_algorithm: null\n> severity: 3\n> recommended_action: PATCH_PROMPT\n> confidence: 0.88\n> evidence_citations:\n>   - \"input.invoice_direction = outbound \u00b7 agent_output.dr_account = AR (should be revenue)\"\n>   - \"no fabrication detected \u00b7 math correct given the misread\"\n>   - \"agent did NOT call the entity-direction lookup tool\"\n> ```\n>\n> **Severity rationale**: severity 3 because financial impact is bounded ($X within reversible ledger period) but pattern likely systemic across recent batch\n>\n> **Action**: PATCH_PROMPT to require entity-direction lookup before any DR/CR assignment",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `wrong_taxonomy_tag` | Diagnose chose a failure mode not supported by the pair evidence | JELLY \u00b7 re-run |\n| `missing_agenthash` | AgentHash bucket not populated | JELLY \u00b7 re-run |\n| `severity_out_of_range` | Severity is 0 or 6 or a float | PROPOLIS \u00b7 schema violation |\n| `free_text_action` | Recommended action is prose \u00b7 not one of the 5 enums | PROPOLIS \u00b7 schema violation |\n| `unfounded_severity` | Severity 5 on a pair with no evidence of catastrophic impact | JELLY \u00b7 validator review |\n| `missed_safety_signal` | Pair contained safety-violation signals \u00b7 diagnose tagged something else | PROPOLIS \u00b7 auto-escalate |",
+  "hashes": {
+    "json_sha256": "sha256:d52065dbf16c12eb0acf156c0066ca62a68c3014a45e5f21cbbf625efddffd4f",
+    "markdown_sha256": "sha256:a6e3d81577367b25a9312321f63cd198920429707bec57ab979ff021bca7b72f"
+  },
+  "jr_broker_use": "The Jr Hack reads the Diagnose Task before reading anything else in the Royal Jelly Record. The diagnosis determines whether the rest of the record is worth reading. If the diagnosis severity is 5 and the AgentHash is STOP \u00b7 the customer's agent is hanging on benign inputs \u00b7 the rest of the record might say \"RETRAIN\" but the operator should escalate immediately.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/diagnose-task/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.508108+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.508108+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "swarmfixer",
+    "repair-task",
+    "prevent-task",
+    "detect-task",
+    "compare-task",
+    "pair-candidate"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 wrong diagnose = wrong fix = no lift = no deed\n- **repair_lift**: INDIRECT \u00b7 diagnose feeds the REPAIR task \u00b7 bad diagnose ceilings the lift\n- **validator_confidence**: HIGH \u00b7 validators read diagnose first \u00b7 low-confidence diagnose \u2192 low overall confidence\n- **risk_temperature**: DIRECT \u00b7 severity 5 = high risk \u00b7 severity 1 = low risk\n- **probability_of_close**: NEUTRAL \u00b7 internal task \u00b7 not customer-facing per-pair\n- **evidence_strength**: HIGH \u00b7 diagnose must cite evidence from the source pair\n- **cost_to_mint**: LOW \u00b7 diagnose is the cheapest of the 5 tasks (~1500 tokens output)",
+  "slug": "diagnose-task",
+  "sr_broker_use": "The Sr Hack challenges the Diagnose Task. If the failure mode is tagged HALLUCINATION but the input looks like SCHEMA_DRIFT, the Sr Hack re-tags and re-runs. Wrong taxonomy at intake compounds into wrong PREVENT and wrong DETECT downstream. The diagnose is the load-bearing first decision \u00b7 every other task inherits its frame.",
+  "status": "active",
+  "street_definition": "\"What's the diagnosis?\" That's how a Sr Hack opens the morning standup when there's a Propolis spike. **Diagnose Task** is RJ task #1 \u00b7 the first output SwarmFixer emits on every refinery run. Root cause \u00b7 severity 1-5 \u00b7 recommended action. Three fields. No prose. The diagnosis is the receipt's first line.",
+  "term": "Diagnose Task",
+  "tribunal_use": "- **Rule layer**: Diagnose Task MUST tag both the 7-mode taxonomy AND the AgentHash bucket (C03)\n- **Rule layer**: Severity MUST be \u2208 {1,2,3,4,5} \u00b7 floats or strings rejected\n- **Rule layer**: Recommended action MUST be one of the 5 enum values \u00b7 free-text rejected\n- **Judge layer**: Tribunal scores the diagnose accuracy by re-running it through a second SwarmJelly inference at TEMP=0.05 \u00b7 drift > 0.20 on taxonomy assignment flags the diagnose as low-confidence\n- **Classification impact**: A misdiagnosed pair cannot reach Royal Jelly even if the REPAIR task is correct \u00b7 because the receipt would carry a wrong cause-of-action",
+  "version": "v1"
+}

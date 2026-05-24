@@ -1,0 +1,33 @@
+{
+  "category": "hive_terms",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1",
+    "canon": "defendapedia.eth/hive_terms/royal-jelly",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:28dda07e3da0cb5ab84495a960f74b29c7a9ebf016bc44a04c2d813afba7e7e8",
+    "markdown_sha256": "sha256:2616f0196a6e31410b838793d108fe38c1c796241c007929917aae5f2602f651"
+  },
+  "minted_at": "2026-05-24T15:32:29.878414+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/royal-jelly/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.878261+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.878261+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1-20260524T15322987841Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "royal-jelly",
+  "term": "Royal Jelly"
+}

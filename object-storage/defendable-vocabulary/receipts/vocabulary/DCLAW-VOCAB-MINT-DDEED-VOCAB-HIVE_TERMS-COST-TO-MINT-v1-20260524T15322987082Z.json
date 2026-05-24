@@ -1,0 +1,33 @@
+{
+  "category": "hive_terms",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1",
+    "canon": "defendapedia.eth/hive_terms/cost-to-mint",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:cb5b87663890c63e553fb80bd15d21ae98615674038649cc3bd06a64b8580fe5",
+    "markdown_sha256": "sha256:0828c7d7a8b5a872321b44c52099d7b9130bf9282965a635e6b524854f345ad0"
+  },
+  "minted_at": "2026-05-24T15:32:29.870824+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/cost-to-mint/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.870710+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.870710+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1-20260524T15322987082Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "cost-to-mint",
+  "term": "Cost to Mint"
+}

@@ -1,0 +1,33 @@
+{
+  "category": "cre_terms",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1",
+    "canon": "defendapedia.eth/cre_terms/om-offering-memorandum",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:8d8f46ab1a0cfbf4d2d380483589898d3cca58353c3176467705d8d31671beee",
+    "markdown_sha256": "sha256:d2549250dba40f1bd8b1b12dfb86f80234add5e664f2825e806b6e81c702f091"
+  },
+  "minted_at": "2026-05-24T15:33:21.476970+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/cre_terms/om-offering-memorandum/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.476826+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.476826+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1-20260524T15332147697Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "om-offering-memorandum",
+  "term": "OM \u00b7 Offering Memorandum"
+}

@@ -1,0 +1,33 @@
+{
+  "category": "repair_terms",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1",
+    "canon": "defendapedia.eth/repair_terms/pair-candidate",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:07ed2b62a7fa201dcd418a57ff52b95e3e0c7a9c05e0aed48741e317b002a687",
+    "markdown_sha256": "sha256:cff4db9169167f58923c79b834da436919ddd5e9516d85418152b51d61ce0f73"
+  },
+  "minted_at": "2026-05-24T15:32:29.886569+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/pair-candidate/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.886445+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.886445+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1-20260524T15322988656Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "pair-candidate",
+  "term": "Pair Candidate"
+}

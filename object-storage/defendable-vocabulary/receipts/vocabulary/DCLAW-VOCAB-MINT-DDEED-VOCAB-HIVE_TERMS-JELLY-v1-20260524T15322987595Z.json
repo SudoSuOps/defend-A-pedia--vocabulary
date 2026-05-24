@@ -1,0 +1,33 @@
+{
+  "category": "hive_terms",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-JELLY-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-JELLY-v1",
+    "canon": "defendapedia.eth/hive_terms/jelly",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:3983d4260e27ec6486804e29df3bfed8e4ff4485e60e9c8609408eeb18d9c740",
+    "markdown_sha256": "sha256:eb9cb304c9513e34a085713136d7542c645e6194e6323906d64e02163f194a13"
+  },
+  "minted_at": "2026-05-24T15:32:29.875956+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/jelly/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.875811+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.875811+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-JELLY-v1-20260524T15322987595Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "jelly",
+  "term": "Jelly"
+}

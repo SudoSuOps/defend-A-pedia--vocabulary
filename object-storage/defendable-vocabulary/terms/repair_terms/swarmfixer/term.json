@@ -1,0 +1,83 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"swarmfixer.run_id\": {\"type\": \"string\", \"format\": \"ag-fix-<utc-ts>-<short-hash>\"},\n  \"swarmfixer.model_id\": {\"type\": \"string\", \"enum\": [\"swarmjelly-4b:v1.2\"]},\n  \"swarmfixer.endpoint\": {\"type\": \"string\", \"default\": \"whale:11434\"},\n  \"swarmfixer.temperature\": {\"type\": \"float\", \"const\": 0.05},\n  \"swarmfixer.tier\": {\"type\": \"enum\", \"values\": [\"SELF_SERVE\", \"MANAGED\", \"EMBEDDED\"]},\n  \"swarmfixer.task_outputs\": {\"type\": \"object\", \"required\": [\"diagnose\",\"repair\",\"prevent\",\"detect\",\"compare\"]},\n  \"swarmfixer.repair_lift\": {\"type\": \"float\", \"range\": [-1.0, 1.0]},\n  \"swarmfixer.validator_confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"swarmfixer.bucket_destination\": {\"type\": \"enum\", \"values\": [\"jelly-repaired\",\"pending\",\"quarantined\",\"propolis-failures\"]}\n}\n```\n\nSchema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/repair_run.schema.json`\n\nScoring hooks: `repair_lift` \u00b7 `jelly_score` \u00b7 `royal_jelly_promotion`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "SwarmFixer is the part of DefendableOS that fixes the agents you're already running. When your AI agent ships a low-quality answer \u00b7 or a borderline one \u00b7 we don't throw it away and we don't ship it. We refine it. Five outputs come back: what went wrong \u00b7 how to fix it \u00b7 how to prevent the next one \u00b7 how to detect it next time \u00b7 and how the fix compares to the original. You pay for the lift \u00b7 not the diagnosis. If we don't move the number \u00b7 the embedded tier refunds.",
+  "cre_operator_meaning": "In CRE you have the **listing broker** and you have the **rehab crew**. The listing broker brings the deal in. The rehab crew makes the asset rentable. SwarmFixer is the rehab crew of the agent economy. Tenant moved out \u00b7 roof leaking \u00b7 rent roll thin \u00b7 the building doesn't pencil. The rehab crew comes in \u00b7 scopes the work \u00b7 executes the repair \u00b7 the building re-leases at a higher cap-rate-compressed comp. The lift is what makes the deal. **Repair Lift is NOI for agents.**",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-SWARMFIXER-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `swarmfixer.run_id` \u00b7 `repair_lift` \u00b7 `validator_confidence` \u00b7 `bucket_destination` \u00b7 `5_task_hash`\n- **DDEED class impact**: produces `DDEED-DOV-REPAIR-<agent>-<seq>-v<n>` on every `jelly-repaired/` transition\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle \u2192 L3 NAS \u2192 L4 Hedera HCS \u2192 L5 ENS (full 5-layer)\n- **5 Proofs touched**: PROCESS (the refinery lineage) \u00b7 QUALITY (the 5-task validator pass) \u00b7 ECONOMICS (the inference + deed cost) \u00b7 TRUST (the Hedera + ENS anchor)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `swarmfixer.run_id` \u00b7 `repair_lift` \u00b7 `validator_confidence` \u00b7 `bucket_destination` \u00b7 `5_task_hash`\n- **DDEED class impact**: produces `DDEED-DOV-REPAIR-<agent>-<seq>-v<n>` on every `jelly-repaired/` transition\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle \u2192 L3 NAS \u2192 L4 Hedera HCS \u2192 L5 ENS (full 5-layer)\n- **5 Proofs touched**: PROCESS (the refinery lineage) \u00b7 QUALITY (the 5-task validator pass) \u00b7 ECONOMICS (the inference + deed cost) \u00b7 TRUST (the Hedera + ENS anchor)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "SwarmFixer is the in-house repair service that consumes Jelly-tier pair candidates and produces Royal Jelly Records via a strict 5-task output: DIAGNOSE \u00b7 REPAIR \u00b7 PREVENT \u00b7 DETECT \u00b7 COMPARE. It runs on **SwarmJelly-4B** at `whale:11434` with TEMP locked at 0.05. It ships in three commercial tiers \u00b7 Self-serve ($99-$499/mo) \u00b7 Managed ($2K-$10K/mo) \u00b7 Embedded ($50K-$250K ARR with 90-day Fix-or-Refund). Every successful refinery run produces a DDEED-DOV-REPAIR anchored on Hedera HCS.",
+  "defendableos_notes": "- SwarmFixer NEVER sits in the customer's real-time call path \u00b7 always overnight/shadow-mode\n- The refinery is the moat \u00b7 the lift is the receipt \u00b7 the deed is the customer asset\n- Tier-3 Fix-or-Refund is the killer clause that gets brokerage-class deals signed\n- The refinery's training set is 125K pairs \u00b7 7-mode \u00d7 5-RJ-task taxonomy \u00b7 25% distribution cap enforced\n\n\ud83d\udc1d *The refinery is the moat. Push it to t",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-SWARMFIXER-v1",
+    "canon": "defendapedia.eth/repair_terms/swarmfixer",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Original failed pair (input + agent output + Tribunal verdict)",
+    "AgentHash bucket tag (one of STOP/CALL/READ/RECOVER/LOOP)",
+    "ENS identity of the originating agent",
+    "Evidence strength \u2265 0.4 on the source pair",
+    "Model config snapshot proving TEMP=0.05",
+    "Validator chain result (12 checks \u00b7 7 critical + 5 advisory)",
+    "Re-bench Tribunal verdict on the repaired output"
+  ],
+  "example": "> **Customer**: ACMECorp \u00b7 Tier-3 embedded \u00b7 books-bot.acmecorp.defendable.eth\n>\n> **Failure**: agent generated journal entry with debit/credit reversed \u00b7 Tribunal verdict JELLY \u00b7 composite 76 \u00b7 taxonomy = REASONING_GAP \u00b7 AgentHash = READ (misread the invoice direction)\n>\n> **SwarmFixer run**: `ag-fix-20260524T071200Z-9a3c` \u00b7 SwarmJelly-4B v1.2 \u00b7 TEMP=0.05\n>\n> **5-task output**:\n> - DIAGNOSE \u00b7 root cause = misclassified invoice as inbound when it was outbound \u00b7 severity 3 \u00b7 action = retrain on direction-tagged corpus\n> - REPAIR \u00b7 corrected journal entry \u00b7 DR Accounts Receivable $X \u00b7 CR Revenue $X\n> - PREVENT \u00b7 check that vendor/customer ID matches the expected direction before posting\n> - DETECT \u00b7 flag any journal entry where DR/CR sign matches the OPPOSITE of the entity-direction lookup\n> - COMPARE \u00b7 repaired output 91/100 vs original 76/100 \u00b7 all 4 dims improved\n>\n> **Repair Lift**: 91 - 76 = **+0.15** (\u2265 0.10 threshold)\n>\n> **Validator chain**: 7/7 critical pass \u00b7 4/5 advisory pass\n>\n> **Transition**: `jelly/` \u2192 `jelly-repaired/`\n>\n> **Deed minted**: `DDEED-DOV-REPAIR-ACMECORP-BOOKS-000142-v1` \u00b7 anchored on Hedera HCS topic 0.0.10291838 \u00b7 ENS at `ddeed-dov-repair-acmecorp-books-000142-v1.swarmbee.defendable.eth`",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `temp_drift` | SwarmFixer called at TEMP \u2260 0.05 (default 0.7 catastrophic: 0.7% Honey rate) | PROPOLIS |\n| `partial_task_output` | Fewer than 5 tasks returned \u00b7 the contract is broken | PROPOLIS |\n| `untagged_taxonomy` | DIAGNOSE didn't tag the 7-mode failure or the AgentHash bucket | JELLY |\n| `negative_lift` | Repaired output scored LOWER than original \u00b7 regression | PROPOLIS (refinery failure) |\n| `fabricated_evidence` | REPAIR task cites sources that don't exist in the input | PROPOLIS \u00b7 auto-quarantine |\n| `judge_drift_high` | Scale-A and Scale-B judges disagree > 0.15 on the repair | JELLY \u00b7 contested \u00b7 escalate |\n| `low_confidence_task` | Any of the 5 tasks returns confidence < 0.50 | JELLY \u00b7 re-route to pending |",
+  "hashes": {
+    "json_sha256": "sha256:900b80c529f296b611551b5f0e645f93d9323dae89d44ed06818a5417cedaf8d",
+    "markdown_sha256": "sha256:40396c7dc977a2618b31b4c5b14005c1471ed0642ceca720ff047fe30f263a89"
+  },
+  "jr_broker_use": "Don't run SwarmFixer on Honey-tier pairs (waste of compute). Don't run it on Propolis pairs directly (they need the AdversarialPack pipeline first). Do run it on Jelly-tier pairs once they're tagged with an AgentHash bucket and have evidence strength \u2265 0.4. Always verify TEMP=0.05 before triggering \u00b7 read the env, read the config, read the request payload. If any of the three reads \u2260 0.05, ABORT.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/swarmfixer/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.517499+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.517499+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "swarmjelly",
+    "defendablejelly",
+    "repair-lift",
+    "pair-candidate",
+    "diagnose-task",
+    "repair-task",
+    "prevent-task",
+    "detect-task",
+    "compare-task",
+    "temp-five-cent-rule"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 the refinery IS the assignment for any Tier-2/Tier-3 customer\n- **repair_lift**: DIRECT \u00b7 SwarmFixer is the engine that produces the lift\n- **validator_confidence**: HIGH \u00b7 validator chain runs on every refinery output \u00b7 low pass rate = low confidence in the refinery itself\n- **risk_temperature**: INVERSE \u00b7 more refinery throughput = lower production risk\n- **probability_of_close**: HIGH on Tier-3 \u00b7 the Fix-or-Refund clause is what gets the contract signed\n- **evidence_strength**: NEUTRAL \u00b7 refinery doesn't manufacture evidence \u00b7 it works with what's there\n- **cost_to_mint**: MEDIUM \u00b7 ~$0.05 per refinery run (SwarmJelly-4B inference cost) + $0.0052 deed mint",
+  "slug": "swarmfixer",
+  "sr_broker_use": "The Sr Hack reads the 5-task output as a unit \u00b7 not piece by piece. The DIAGNOSE without the COMPARE is half a story. The REPAIR without the PREVENT is a one-time fix. The DETECT without the AgentHash tag is a smoke alarm with no zone map. Sr Hacks adjudicate on the COMPLETENESS of the 5-task record \u00b7 then on the Repair Lift \u00b7 then on the validator chain pass rate. Three reads. One verdict.",
+  "status": "active",
+  "street_definition": "\"Push it to the fixer.\" That's the line a Sr Hack uses when a Tribunal verdict comes back JELLY and the pair needs work. SwarmFixer is the **agent refinery** \u00b7 the production layer that takes a low-grade agent output and turns it into a defendable Royal Jelly Record. Not a chatbot. Not a model wrapper. A refinery.",
+  "term": "SwarmFixer",
+  "tribunal_use": "- **Rule layer**: SwarmFixer outputs MUST contain all 5 tasks (C01) \u00b7 MUST be generated at TEMP=0.05 (C02) \u00b7 MUST tag the 7-mode taxonomy + AgentHash bucket (C03)\n- **Critical failure**: missing task, wrong TEMP, or untagged taxonomy = PROPOLIS verdict on the refinery run \u00b7 the repair doesn't count\n- **Judge layer**: Tribunal grades the REPAIR task output as if it were a fresh agent submission \u00b7 the lift is the delta between original and repaired composite score\n- **Classification impact**: A successful refinery run can promote a JELLY pair to ROYAL JELLY \u00b7 but the original failure is never erased \u00b7 the lineage is preserved on the deed",
+  "version": "v1"
+}

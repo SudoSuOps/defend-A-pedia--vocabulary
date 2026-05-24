@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.492763+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/cost-to-mint",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/cost-to-mint/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1-20260524T15332149275Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:cd5730d3190eadf430223a64168c68b41b0243756167e22e5a6f38244d3703e1",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "cost-to-mint",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"Cost to mint\" is the per-deed dollar cost of producing your deed \u00b7 we publish it on every Closing Statement so you can see the math. The baseline is $0.0052 per Honey deed at our current rig efficiency \u00b7 Royal Jelly deeds run about 30-50% higher because they include a per-cell Hedera anchor. We bill against one of four fee tiers \u00b7 Floor ($0.008) \u00b7 Standard ($0.02) \u00b7 Full ($0.05) \u00b7 Enterprise ($0.10) \u00b7 depending on the engagement type. The difference between cost and fee is our margin \u00b7 which funds the rigs \u00b7 the doctrine \u00b7 the brand \u00b7 the warranty \u00b7 the people. We publish all of it because the math is the trust \u00b7 and the trust is the brand.",
+      "cre_operator": "In CRE \u00b7 cost-to-mint maps to the per-unit operating cost \u00b7 disclosed in the OM \u00b7 reconciled at year-end in the CAM. A sr broker quoting a 6-cap on a cold-storage facility includes the OpEx per cubic foot \u00b7 the energy cost (cold storage is energy-heavy \u00b7 OpEx ratio runs 35-45% of revenue) \u00b7 the labor cost \u00b7 the maintenance reserve. The buyer's underwriter takes the disclosed cost-to-mint \u00b7 stress-tests it against comps \u00b7 and either confirms the NOI or re-trades the price.\n\nSame here. Cost-to-mint is what makes the customer's underwriter able to model the engagement. Without it \u00b7 the deed has no economic anchor.",
+      "defendableos": "Cost-to-mint is the per-deed all-in dollar cost \u00b7 computed as:\n\n```\ncost_to_mint_usd =\n    electrical_energy_kwh * grid_price_per_kwh\n  + gpu_seconds * gpu_amortized_dollar_per_second\n  + operator_minutes * operator_dollar_per_minute\n  + anchor_cost_usd            # Hedera HCS per-cell for RJ \u00b7 per-batch for others\n  + storage_carry_usd          # amortized Tigris + NAS + PostgreSQL + ENS\n  + chain_overhead_usd         # Merkle assembly \u00b7 validator chain compute \u00b7 audit logging\n```\n\nThe Honey-baseline `$0.0052/deed` is the operator-tested production number on the swarmrails primary rig with:\n\n- grid price $0.085/kWh (Florida commercial rate \u00b7 2026)\n- GPU amortized $0.0011/sec (RTX PRO 6000 96GB \u00b7 3-year amortization at 75% duty cycle)\n- operator labor $1.20/min (sr broker rate amortized across review queue)\n- Hedera HCS batch share $0.0000016/pair (50-pair batch \u00b7 ~$0.0001 batch root)\n- Tigris + NAS + PG amortized $0.0008/deed-year\n- chain overhead $0.0011/deed (Merkle + validator chain compute)\n\nRoyal Jelly deeds add ~$0.0008 per-cell Hedera certificate \u00b7 so RJ runs ~1.3-1.5x Honey baseline (~$0.007-0.008).",
+      "street": "\"What's the cost to mint?\" The cost-to-mint is the all-in per-deed dollar number \u00b7 the unit economic that converts a Hive deed into a defendable line item on the books. It rolls up electricity + GPU-seconds + operator minutes + Hedera anchor fees + storage carry \u00b7 per deed \u00b7 published in the Closing Statement \u00b7 auditable against the energy ledger.\n\nThe baseline is $0.0052/deed for a standard Honey deed. The four-tier fee schedule (Floor $0.008 \u00b7 Standard $0.02 \u00b7 Full $0.05 \u00b7 Enterprise $0.10) is what we CHARGE customers \u00b7 the difference between charge and cost is the margin \u00b7 which is what makes the Hive a sustainable business \u00b7 not a venture-funded loss leader.\n\nIn CRE language \u00b7 cost-to-mint is the operating-cost-per-unit \u00b7 the per-SF OpEx on an industrial facility \u00b7 the per-key cost on a hospitality asset \u00b7 the number that pencils whether the building cash-flows after debt service. Without it \u00b7 the cap rate is theater."
+    },
+    "related_terms": [
+      "energy",
+      "royal-jelly",
+      "honey",
+      "propolis",
+      "hive",
+      "bee"
+    ],
+    "slug": "cost-to-mint",
+    "term": "Cost to Mint"
+  },
+  "supersedes": null,
+  "term": "Cost to Mint",
+  "updated_at": "2026-05-24T15:33:21.751418+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

@@ -1,0 +1,33 @@
+{
+  "category": "repair_terms",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-SWARMJELLY-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-SWARMJELLY-v1",
+    "canon": "defendapedia.eth/repair_terms/swarmjelly",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:b0ecb8c80e9700215c2bdecdac6a3500d6bbcb3f9d4ab43d398e04dee8158cf3",
+    "markdown_sha256": "sha256:4541ea7c720d589c91960d15d0cad63fed201f503bb01ce6c132947b5cf55c72"
+  },
+  "minted_at": "2026-05-24T15:32:29.891238+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/swarmjelly/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.891133+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.891133+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-SWARMJELLY-v1-20260524T15322989123Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "swarmjelly",
+  "term": "SwarmJelly"
+}

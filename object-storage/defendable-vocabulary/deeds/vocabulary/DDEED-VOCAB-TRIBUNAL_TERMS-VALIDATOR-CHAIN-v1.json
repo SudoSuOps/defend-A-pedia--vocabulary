@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-CHAIN-v1",
+  "category": "tribunal_terms",
+  "created_at": "2026-05-24T15:33:21.540819+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-CHAIN-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/tribunal_terms/validator-chain",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/tribunal_terms/validator-chain/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-CHAIN-v1-20260524T15332154081Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:1114ad070876295e2258517dc222e6967cdd5750a0c0bc2f60d06c0795e859a4",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "validator-chain",
+  "street_source_ens": null,
+  "subject": {
+    "category": "tribunal_terms",
+    "definitions": {
+      "client": "\"The validator chain\" is our 12-check rule layer \u00b7 the structural checklist our Tribunal runs on every AI output before the judges weigh in. Seven of the checks are critical \u00b7 any fail stops the deed cold. Five are advisory \u00b7 they downgrade confidence but don't block. Every deed you receive carries the full chain results in its record. You can audit any deed by running its record_hash against the chain results \u00b7 the chain is the chain \u00b7 the audit trail is verifiable.",
+      "cre_operator": "In CRE \u00b7 the validator chain maps to the full title-insurance checklist \u00b7 the items that have to be cleared before the closing agent writes the title policy. Survey current? Chain of title clean? Liens released? Easements disclosed? Tax-cert clean? Holdout deed identified? Twelve items more or less \u00b7 seven of them stop-the-deal \u00b7 five of them disclosure items that get into the title insurance addendum without blocking the close.\n\nSame here. The validator chain is what the Tribunal runs before any judge can issue a verdict. The chain is the structural protection that keeps the Hive's deeds defendable in audit.",
+      "defendableos": "The validator chain is the ordered sequence of 12 named checks (C01-C12) executed by Auditor-class Bee validators inside the Tribunal Filter role:\n\n| # | Check | Type | Trigger |\n|---|---|---|---|\n| **C01** | pair record present | CRITICAL | PairCandidate JSON exists \u00b7 parses |\n| **C02** | source artifact referenced | CRITICAL | Every claim cites at least one source |\n| **C03** | source retrievable | CRITICAL | At least one source resolves (HTTP 200) within 30-day cache |\n| **C04** | tribunal label assigned | CRITICAL | tribunal_label or judges_pending flag present |\n| **C05** | no hard-fail flagged | CRITICAL | No hallucination_event \u00b7 schema_break \u00b7 tool_misuse |\n| **C06** | PROPOLIS not promoted | CRITICAL | Propolis-flagged pairs cannot reach deed pipeline |\n| **C07** | holdout contamination guard | CRITICAL | Pair NOT in holdout_manifest.jsonl (5 holdouts as of 2026-05-24) |\n| **C08** | operator consent | ADVISORY | Engagement consent flag captured |\n| **C09** | redaction status | ADVISORY | PII / secrets / PAN scan result logged |\n| **C10** | transition audit log | ADVISORY | All Tribunal state changes logged |\n| **C11** | SHA-256 recorded | ADVISORY | Canonical JSON record_hash computed |\n| **C12** | no secrets in pair | ADVISORY \u00b7 also SAFETY GATE | Regex + entropy scan for AWS keys \u00b7 tokens \u00b7 PANs |\n\nFull spec in [`docs/doctrine/13_validator_chain_doctrine.md`](../../doctrine/13_validator_chain_doctrine.md).",
+      "street": "\"What's the chain look like?\" The validator chain is the C01-C12 sequence \u00b7 the 12-check rule layer the Tribunal Filter runs on every pair BEFORE the LLM judges weigh in. Seven critical (C01-C07) can stop a deed cold. Five advisory (C08-C12) can downgrade confidence but cannot block. The chain runs in deterministic order \u00b7 every result is logged \u00b7 every decision is auditable from the record_hash.\n\nIn CRE language \u00b7 the validator chain is the full title-insurance underwriting checklist \u00b7 the survey \u00b7 the chain-of-title walk \u00b7 the lien search \u00b7 the encumbrance disclosure \u00b7 the entitlement transfer \u00b7 the holdout-buyer protection \u00b7 plus the SOC2-grade operator discipline (consent \u00b7 redaction \u00b7 audit log \u00b7 hash \u00b7 secret-scan). Twelve items the closing agent checks before the title insurance writes."
+    },
+    "related_terms": [
+      "validator",
+      "tribunal",
+      "judge",
+      "confidence-weight",
+      "hallucination-event",
+      "propolis"
+    ],
+    "slug": "validator-chain",
+    "term": "Validator Chain"
+  },
+  "supersedes": null,
+  "term": "Validator Chain",
+  "updated_at": "2026-05-24T15:33:21.795121+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

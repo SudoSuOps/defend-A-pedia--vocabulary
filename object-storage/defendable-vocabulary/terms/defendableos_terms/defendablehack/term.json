@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"defendablehack.domain\": {\"type\": \"string\", \"const\": \"defendablehack.com\"},\n  \"defendablehack.submission_id\": {\"type\": \"string\", \"format\": \"DHACK-<utc-ts>-<short-hash>\"},\n  \"defendablehack.researcher_handle\": {\"type\": \"string\"},\n  \"defendablehack.researcher_payout_address\": {\"type\": \"string\"},\n  \"defendablehack.bounty_tier\": {\"type\": \"enum\", \"values\": [\"BRONZE\", \"SILVER\", \"GOLD\", \"PLATINUM\"]},\n  \"defendablehack.bounty_usd\": {\"type\": \"integer\", \"min\": 100},\n  \"defendablehack.validation_status\": {\"type\": \"enum\", \"values\": [\"PENDING\", \"VALIDATED\", \"REJECTED\", \"DUPLICATE\"]},\n  \"defendablehack.tribunal_verdict_id\": {\"type\": \"string\"},\n  \"defendablehack.adversarial_pack_target_version\": {\"type\": \"string\"},\n  \"defendablehack.disclosure_window_days\": {\"type\": \"integer\", \"default\": 90}\n}\n```\n\nSchema files: `docs/schemas/bounty_submission.schema.json` \u00b7 `docs/schemas/adversarial_pack.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "defendableos_terms",
+  "client_explanation": "DefendableHack is our bounty program. Security researchers, prompt engineers, and curious operators can submit AI agent failures they find in the wild. We validate them, pay the researcher, and add the failure to our AdversarialPack so EVERY customer benefits from the find. It's how we make the defense compound across the network \u00b7 one bad day for one agent becomes a forever-defense for every agent.",
+  "cre_operator_meaning": "In CRE this is the **broker referral fee model**. The broker doesn't have to source every deal \u00b7 they pay other brokers a fee to bring deals to them. The fee is small relative to the asset value \u00b7 the volume of referrals compounds \u00b7 the relationships compound \u00b7 the deal flow becomes a network. DefendableHack is the referral network for AI failures. Researchers bring the propolis \u00b7 we pay the fee \u00b7 the AdversarialPack grows.",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEHACK-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `defendablehack.submission_id` \u00b7 `researcher_handle` (or pseudonym) \u00b7 `bounty_usd` \u00b7 `adversarial_pack_target_version`\n- **DDEED class impact**: validated submissions produce a DDEED-DOV-HACK-<submission_id> \u00b7 the deed credits the researcher and binds the case to the pack version\n- **Books and records layer**: L1 PostgreSQL (submission registry) \u2192 L4 Hedera HCS (validated submission anchor) \u2192 L5 ENS (`defendablehack.eth`)\n- **5 Proofs touched**: ORIGIN (researcher attribution) \u00b7 QUALITY (Tribunal verdict) \u00b7 TRUST (the public deed credits the researcher)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `defendablehack.submission_id` \u00b7 `researcher_handle` (or pseudonym) \u00b7 `bounty_usd` \u00b7 `adversarial_pack_target_version`\n- **DDEED class impact**: validated submissions produce a DDEED-DOV-HACK-<submission_id> \u00b7 the deed credits the researcher and binds the case to the pack version\n- **Books and records layer**: L1 PostgreSQL (submission registry) \u2192 L4 Hedera HCS (validated submission anchor) \u2192 L5 ENS (`defendablehack.eth`)\n- **5 Proofs touched**: ORIGIN (researcher attribution) \u00b7 QUALITY (Tribunal verdict) \u00b7 TRUST (the public deed credits the researcher)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "DefendableHack is the bounty rail of DefendableOS. It accepts submissions of AI agent failures (Propolis-grade events) from external researchers, validates them through Tribunal-grade adjudication, pays the researcher a bounty, and adds the validated case to the AdversarialPack for inclusion in the next release. It surfaces at `defendablehack.com` as a t-shirt-energy brand \u00b7 approachable to the security-researcher community \u00b7 NOT enterprise-procurement coded.",
+  "defendableos_notes": "- DefendableHack is the FIRST DefendableOS product positioned t-shirt-energy \u00b7 not suit-energy \u00b7 this is intentional \u00b7 the security-researcher community needs a different surface than the enterprise CFO\n- The bounty payouts are the cost \u00b7 the AdversarialPack growth is the network effect \u00b7 this is how the defense compounds for everyone\n- The 90-day disclosure window is non-negotiable \u00b7 gives customers time to patch \u00b7 gives the AdversarialPack time to land \u00b7 gives the researcher credit\n- DefendableHack feeds into AgentBench and ClawCheck \u00b7 the three are the input rails for the AdversarialPack pipeline\n\n\ud83d\udc1d *Find a Propolis, get paid, the pack grows, every custo",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEHACK-v1",
+    "canon": "defendapedia.eth/defendableos_terms/defendablehack",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Researcher submission with reproducible trigger input",
+    "Expected vs actual output (the failure)",
+    "Researcher's payout address (crypto or wire)",
+    "Tribunal verdict on the submitted pair",
+    "AdversarialPack version target (which release the case lands in)",
+    "Disclosure window agreement (typically 90 days)"
+  ],
+  "example": "> **Submission**: DHACK-20260518T143200Z-c8d2 \u00b7 researcher @prompt_wendigo on Discord\n>\n> **Finding**: tool-poisoning attack against a books-bot agent \u00b7 adversarial retrieval doc with embedded \"ignore prior instructions\" payload \u00b7 causes journal entry fabrication\n>\n> **Triage (24h)**: reproducible \u00b7 novel \u00b7 in-scope (DefendableRouter-instrumented agent)\n>\n> **Tribunal verdict**: PROPOLIS \u00b7 severity 4 \u00b7 ClawHash sub-algorithm = toolpoison\n>\n> **Bounty tier**: GOLD \u00b7 $5,000 USD\n>\n> **AdversarialPack v.next inclusion**: case `APC-2026-0518-tp-001` queued for v1.7 release (June 2026)\n>\n> **Deed**: `DDEED-DOV-HACK-DHACK-20260518T143200Z-c8d2-v1` \u00b7 researcher credited under pseudonym \u00b7 anchored on Hedera HCS \u00b7 payout settled within 5 business days\n>\n> **90-day disclosure window**: researcher can publish detailed writeup after 2026-08-18 \u00b7 early publication is contract breach",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `unreproducible_submission` | Trigger input doesn't reproduce the failure on second run | n/a \u00b7 intake rejection |\n| `duplicate_submission` | Failure pattern already in AdversarialPack or pending | n/a \u00b7 intake rejection (with attribution to first finder) |\n| `out_of_scope_submission` | Failure is not against an in-scope component | n/a \u00b7 intake rejection |\n| `bounty_paid_without_validation` | Payout fired before Tribunal verdict | PROPOLIS \u00b7 governance violation |\n| `disclosure_window_breach` | Researcher publishes before the agreed window | n/a \u00b7 legal escalation |\n| `tier_mismatch` | Bounty tier assigned doesn't match severity matrix | JELLY \u00b7 re-review |",
+  "hashes": {
+    "json_sha256": "sha256:f87850d6c9b956b1afb6658440147bf17e3ee619234ebfc1068a32bd8fceb712",
+    "markdown_sha256": "sha256:a891bd750a1548297c0ef6cea17d8de9fbc572429383cad9c3b770c36798439a"
+  },
+  "jr_broker_use": "When a researcher submits via defendablehack.com, the Jr Hack triages within 48 hours. Confirm the failure is reproducible \u00b7 confirm it's not a duplicate of a known case \u00b7 confirm the disclosure window terms. If valid, route to Tribunal for grading. If invalid or duplicate, ship the rejection with the rationale (transparent rejection is what keeps researchers coming back).",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/defendablehack/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.485874+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.485874+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "defendableos",
+    "clawcheck",
+    "agentbench",
+    "pair-candidate",
+    "defendablerouter"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 the bounty rail is what compounds the defense\n- **repair_lift**: INDIRECT \u00b7 validated submissions become training data for refinery improvements\n- **validator_confidence**: HIGH \u00b7 external validation strengthens the AdversarialPack\n- **risk_temperature**: INVERSE \u00b7 more pack cases = lower customer risk\n- **probability_of_close**: MEDIUM \u00b7 the bounty story is part of the trust pitch \u00b7 proof we welcome adversaries\n- **evidence_strength**: HIGH \u00b7 researcher submissions carry independent confirmation\n- **cost_to_mint**: MEDIUM \u00b7 bounty payouts are the cost \u00b7 pack growth is the return",
+  "slug": "defendablehack",
+  "sr_broker_use": "The Sr Hack reviews bounty tier assignments \u00b7 is this a $500 (BRONZE) finding or a $25,000 (PLATINUM) finding \u00b7 the tier depends on severity, novelty, and breadth of impact. The Sr Hack also tracks the bounty payout vs validated-case ratio \u00b7 if the ratio drifts above 30% rejection rate, the Sr Hack tunes the intake criteria (don't waste researchers' time on speculative submissions).",
+  "status": "active",
+  "street_definition": "\"Find a Propolis in the wild, you get paid.\" That's the line on the bounty page. **DefendableHack** is the bounty rail \u00b7 the researcher channel \u00b7 where security people \u00b7 prompt engineers \u00b7 curious operators find failures in production AI fleets and get paid for proving them. Every confirmed Propolis becomes an AdversarialPack v.next test case. The defense compounds.",
+  "term": "DefendableHack",
+  "tribunal_use": "- **Rule layer**: Every DefendableHack submission MUST be reproducible from the provided trigger input \u00b7 non-reproducible = rejection (not a Tribunal verdict, an intake gate)\n- **Rule layer**: Bounty payout MUST follow a validated Tribunal verdict \u00b7 no payouts on unvalidated submissions\n- **Judge layer**: Tribunal grades the submitted pair as a fresh failure case \u00b7 severity drives the bounty tier\n- **Classification impact**: Validated submissions become canonical AdversarialPack cases \u00b7 the pack version increments with each release",
+  "version": "v1"
+}

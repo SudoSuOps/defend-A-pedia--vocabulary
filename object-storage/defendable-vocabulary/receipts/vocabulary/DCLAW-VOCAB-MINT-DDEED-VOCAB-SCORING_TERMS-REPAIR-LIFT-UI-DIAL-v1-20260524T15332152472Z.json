@@ -1,0 +1,33 @@
+{
+  "category": "scoring_terms",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1",
+    "canon": "defendapedia.eth/scoring_terms/repair-lift-ui-dial",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:67ff019a5c76a953dd117214c8274d842f20aea7fcb1d4cedc930c861e22d6d6",
+    "markdown_sha256": "sha256:79a3cecc1286e925a2eadfcef5cfefd44a2bd70597a7d0a5cb5898b2afc09513"
+  },
+  "minted_at": "2026-05-24T15:33:21.524724+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/repair-lift-ui-dial/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.524601+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.524601+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1-20260524T15332152472Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "repair-lift-ui-dial",
+  "term": "Repair Lift (UI Dial)"
+}

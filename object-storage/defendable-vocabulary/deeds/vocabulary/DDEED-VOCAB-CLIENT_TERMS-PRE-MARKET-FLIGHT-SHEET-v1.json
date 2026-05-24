@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-PRE-MARKET-FLIGHT-SHEET-v1",
+  "category": "client_terms",
+  "created_at": "2026-05-24T15:33:21.464554+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-PRE-MARKET-FLIGHT-SHEET-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/client_terms/pre-market-flight-sheet",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/client_terms/pre-market-flight-sheet/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-PRE-MARKET-FLIGHT-SHEET-v1-20260524T15332146454Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:38fbe160efd1659bef7eb85812f31c97c26fcdcac66cfacc43bfdda5664013fd",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "pre-market-flight-sheet",
+  "street_source_ens": null,
+  "subject": {
+    "category": "client_terms",
+    "definitions": {
+      "client": "The principal never sees the flight sheet directly. The flight sheet is an internal artifact \u00b7 the same way a CRE brokerage doesn't share their internal pre-listing pricing analysis with the seller (they share the listing recommendation \u00b7 which derives from the analysis).\n\nWhat the principal SEES:\n- The result of the flight sheet (the LOU we recommend \u00b7 the tier \u00b7 the success criteria \u00b7 the pricing)\n- The summarized intelligence (the pain diagnosis \u00b7 the area-of-specialization fit \u00b7 the recommended path)\n- The PASS decision (if we walk \u00b7 we tell the principal honestly \u00b7 including which competitor we'd refer them to if our tier doesn't fit)\n\nWhat the principal DOESN'T see:\n- The walk-away floor (that's negotiation strategy)\n- The full competitor landscape analysis (we don't broadcast who else we know is in the conversation)\n- The internal scoring on principal motivation (could damage the relationship if surfaced raw)\n\nThe principal earns trust by experiencing the OUTPUT of the flight sheet \u00b7 not by reading it raw. The discipline behind the recommendation is the trust signal.",
+      "cre_operator": "In CRE \u00b7 the OM (Offering Memorandum) is the public-facing marketing document for a listing. It has renders \u00b7 highlights \u00b7 stats \u00b7 cap-rate math \u00b7 executive summary \u00b7 property photos. It's polished for the broker's brand and for capturing buyer interest. Every shop ships one. They mostly look alike.\n\nThe pre-market flight sheet is what lives behind the OM. It's the document that has:\n\n- The real comps (not the seller's pitched comps \u00b7 the actual closed sales we verified)\n- The real buyer pool (specific firms \u00b7 specific allocations \u00b7 specific recent activity)\n- The deal physics (what the deal pencils at for a realistic buyer \u00b7 NOT what it lists at)\n- The seller's actual motivation (1031 clock \u00b7 refi expiring \u00b7 partnership dispute)\n- The walk-away number (the price below which we PASS rather than re-trade)\n- The area-of-specialization intel (the broker's edge \u00b7 the things no other broker on the deal knows)\n\nThe flight sheet is INTERNAL. It never leaves the brokerage. It's the document that wins the deal because the broker can quote it from memory in any conversation.",
+      "defendableos": "The **Pre-Market Flight Sheet** in DefendableOS is the broker-grade internal operating doc for a prospective engagement \u00b7 prepared during the Appraisals stage of MAGIC \u00b7 referenced through engagement open \u00b7 and archived as part of the engagement folder. It mirrors the CRE flight sheet shape \u00b7 adapted to AI defense:\n\n- The principal's actual pain (not the pitch \u00b7 the diagnosed reality)\n- The agent fleet's actual condition (not vendor's claimed metrics \u00b7 our color-built observations)\n- The competitor landscape (who else is talking to this principal \u00b7 what they're pitching \u00b7 how we differentiate)\n- The deal physics (what the engagement pencils at on T1 / T2 / T3 / T4 \u00b7 which tier is right)\n- The walk-away number (the floor below which we PASS \u00b7 documented in writing)\n- The area-of-specialization intel (which of our vertical playbooks applies \u00b7 why we have an edge here)\n\nThe flight sheet is INTERNAL \u00b7 NEVER shared with the principal. The principal sees the LOU (which is the OM-equivalent \u00b7 the document we sign together). The flight sheet is what makes the LOU defendable from our side.",
+      "street": "\"What's the flight sheet say?\" \u2014 the sr broker asks before the first sit-down with a prospect.\n\nThe **Pre-Market Flight Sheet** is the broker-grade internal operating doc that supersedes the pretty marketing OM. It captures the real numbers \u00b7 the actual comps \u00b7 the buyer pool \u00b7 the deal physics \u00b7 the area-of-specialization intel. It's the document the sr broker uses to actually win the deal \u00b7 NOT the document the marketing team uses to get attention.\n\nFounder's locked phrase: *\"It's not the best OM \u00b7 pretty booklet that wins the listing \u00b7 it's the pre-market flight sheet \u00b7 know your area of specialization \u00b7 and dominate it.\"*\n\nIf the team only has the OM and not the flight sheet \u00b7 they're a marketing team \u00b7 not a brokerage. The flight sheet is what separates the two."
+    },
+    "related_terms": [
+      "engagement",
+      "letter-of-understanding",
+      "principal",
+      "pass-doctrine",
+      "closing-statement",
+      "color"
+    ],
+    "slug": "pre-market-flight-sheet",
+    "term": "Pre-Market Flight Sheet"
+  },
+  "supersedes": null,
+  "term": "Pre-Market Flight Sheet",
+  "updated_at": "2026-05-24T15:33:21.739124+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

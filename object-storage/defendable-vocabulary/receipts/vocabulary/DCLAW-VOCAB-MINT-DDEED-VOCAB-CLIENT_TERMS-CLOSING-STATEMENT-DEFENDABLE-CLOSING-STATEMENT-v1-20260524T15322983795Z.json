@@ -1,0 +1,33 @@
+{
+  "category": "client_terms",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-CLOSING-STATEMENT-DEFENDABLE-CLOSING-STATEMENT-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-CLOSING-STATEMENT-DEFENDABLE-CLOSING-STATEMENT-v1",
+    "canon": "defendapedia.eth/client_terms/closing-statement-defendable-closing-statement",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:e184ebe0805ab71f5b66e99fe8aed1446aa2b24c3b9f1e4cfa9033ad32666c9d",
+    "markdown_sha256": "sha256:ed50101174641d67593d24bb34614135424a459605e01e8f4921631ec5654cb6"
+  },
+  "minted_at": "2026-05-24T15:32:29.837956+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/closing-statement-defendable-closing-statement/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.837791+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.837791+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-CLOSING-STATEMENT-DEFENDABLE-CLOSING-STATEMENT-v1-20260524T15322983795Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "closing-statement-defendable-closing-statement",
+  "term": "Closing Statement (Defendable Closing Statement)"
+}

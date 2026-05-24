@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-HIVE-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.497908+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-HIVE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/hive",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/hive/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-HIVE-v1-20260524T15332149790Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:d941d941211b7addeb2aaf169b24100b73dcd6cd50b0c151fbbeb918cac0b664",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "hive",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"The Hive\" is the name for our whole operating system \u00b7 the models \u00b7 the rigs \u00b7 the storage \u00b7 the doctrine \u00b7 the validator chain \u00b7 the Tribunal \u00b7 the receipts \u00b7 the deeds \u00b7 the customer-facing dashboards \u00b7 all of it as one coordinated thing. When you sign an engagement with us \u00b7 you're signing with the Hive \u00b7 not with a single model or a single rig. The Hive is what guarantees that your deed is anchored \u00b7 your verdicts are defended \u00b7 your books-and-records reconcile. The Hive runs 24/7 \u00b7 the heartbeat is in your Morning Brief.",
+      "cre_operator": "In CRE \u00b7 the Hive maps to the brokerage itself \u00b7 the named LLC \u00b7 the office space \u00b7 the deal pipeline \u00b7 the broker license \u00b7 the back-office accounting \u00b7 the comp library \u00b7 the client roster \u00b7 the relationships that compound over decades. A 30-year broker's Hive is what makes the 30-year broker \u00b7 not any single deal. The deals are the Swarm. The 30 years of relationships \u00b7 comps \u00b7 records \u00b7 referrals \u00b7 habits \u00b7 standards \u00b7 vocabulary \u00b7 that's the Hive.\n\nInside DefendableOS \u00b7 the Hive is identically structured. It is:\n\n- the models (the SwarmCurator family \u00b7 SwarmJelly \u00b7 SwarmJudge \u00b7 SwarmAtlas \u00b7 the 13+ custom trained models)\n- the rigs (swarmrails \u00b7 whale \u00b7 zima-edge-1 \u00b7 signal-edge-01 \u00b7 160GB VRAM \u00b7 342GB system RAM \u00b7 56C/100T)\n- the storage (1.3M deeded pairs \u00b7 Tigris manifests \u00b7 NAS finality layer \u00b7 PostgreSQL hot tier \u00b7 Hedera anchor layer \u00b7 ENS resolution layer)\n- the doctrine (this repo \u00b7 the 16 doctrine docs \u00b7 the 13-section term shape \u00b7 the 12-check validator chain \u00b7 the 6-role Tribunal \u00b7 the 5 Proofs \u00b7 the 4-tier classification \u00b7 the 5 Swarm Laws)\n- the operators (jr broker \u00b7 sr broker \u00b7 sr hack \u00b7 founder \u00b7 validators \u00b7 curators)\n- the customers (the engagement roster \u00b7 the LOUs \u00b7 the Morning Brief recipients \u00b7 the Closing Statement signatories)\n- the receipts (every receipt issued \u00b7 every deed anchored \u00b7 every record_hash \u00b7 every Hedera transaction \u00b7 every ENS reservation)",
+      "defendableos": "The Hive is the canonical name for the DefendableOS operating system as a single entity. When we say \"the Hive issued a deed\" we mean the entire stack participated \u00b7 the cook produced the pair \u00b7 the Tribunal adjudicated \u00b7 the Bakery hashed \u00b7 Hedera anchored \u00b7 ENS reserved \u00b7 the customer received. No single component owns the issuance \u00b7 the Hive does.\n\nThe Hive has a clock (the heartbeat \u00b7 5-min fleet check) \u00b7 a pulse (the 777 pairs/hr throughput) \u00b7 a memory (the books-and-records 5-layer stack) \u00b7 a voice (the vocabulary \u00b7 this repo) \u00b7 a discipline (the doctrine) \u00b7 and a verdict mechanism (the Tribunal). Every term in this dictionary is a CELL of the Hive. The Hive is the sum.",
+      "street": "\"That sits in the Hive.\" The Hive is the organized OS \u00b7 the standing infrastructure \u00b7 the place the agents \u00b7 validators \u00b7 datasets \u00b7 receipts \u00b7 clients \u00b7 and compute all live. It is not the activity (that's the Swarm). It is not a single agent (that's a Bee). It is the constitutional structure that holds the brand \u00b7 the books \u00b7 the schemas \u00b7 the deeds \u00b7 the corpora \u00b7 the models \u00b7 and the rigs together. CRE analog \u00b7 the Hive is the brick-and-mortar footprint of the brokerage \u00b7 the desk you walk back to between dials \u00b7 the office that opens at 06:00 whether you do or not."
+    },
+    "related_terms": [
+      "swarm",
+      "bee",
+      "royal-jelly",
+      "honey",
+      "propolis",
+      "energy",
+      "tribunal"
+    ],
+    "slug": "hive",
+    "term": "Hive"
+  },
+  "supersedes": null,
+  "term": "Hive",
+  "updated_at": "2026-05-24T15:33:21.752719+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

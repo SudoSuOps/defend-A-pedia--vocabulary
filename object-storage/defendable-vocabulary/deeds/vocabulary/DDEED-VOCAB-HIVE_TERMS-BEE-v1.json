@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-BEE-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.491378+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-BEE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/bee",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/bee/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-BEE-v1-20260524T15332149135Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:ec0f24840eaeaecbedf8e4151b9a7a0b7f719ca6cc77aef5566e9ffc1a28a23b",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "bee",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "A \"Bee\" is one of our agents doing one unit of work. We have three classes \u00b7 Scout (wide search) \u00b7 Worker (deep extraction) \u00b7 Auditor (cross-validation). Every Bee logs the same 7-step lifecycle for every job: fetch the input \u00b7 cook it \u00b7 gate it through the rules \u00b7 score it \u00b7 hash it for the manifest \u00b7 anchor it to Hedera if it's apex grade \u00b7 emit the output downstream. You don't need to know which Bee did your work \u00b7 the lineage is recorded \u00b7 the deed shows the chain \u00b7 the Hive owns the result.",
+      "cre_operator": "In CRE \u00b7 a Bee is the named individual operator \u00b7 but the brokerage operates on the discipline that the WORK is what matters \u00b7 not the operator's brand. A 30-year sr broker absolutely has brand value \u00b7 but inside the deal \u00b7 the deal closes because the work was done \u00b7 not because the operator's name is on the door. The same way \u00b7 a Bee in DefendableOS does work \u00b7 the work is logged \u00b7 the work clears the chain \u00b7 the deed issues. The Bee gets credit in the operator log \u00b7 not in the customer-facing surface.\n\nThis is why the founder doesn't talk about which model produced which deed. The deed cites the model in the lineage \u00b7 for audit \u00b7 but the customer experience is \"the Hive issued this.\" The Bee is the executor \u00b7 not the brand.",
+      "defendableos": "A Bee is an agent instance \u00b7 runtime-instantiated \u00b7 with one of three named classes:\n\n### Scout Bee\n- Wide search \u00b7 many sources \u00b7 lower depth\n- Used for `cook-domian-prompts` initial data discovery \u00b7 for inbound signal capture \u00b7 for cross-domain comp scans\n- Produces: candidate PairCandidates with multiple source pointers \u00b7 lower per-source depth\n- Typical model: SwarmCurator-2B (lightweight \u00b7 runs on whale or signal-edge)\n\n### Worker Bee\n- Deep extraction \u00b7 single source \u00b7 maximum fidelity\n- Used for the actual cook (Curator stage) \u00b7 for the actual Tribunal judge passes \u00b7 for the actual deed-writer assembly\n- Produces: full PairCandidates with deep per-source content\n- Typical model: SwarmCurator-9B (workhorse) \u00b7 SwarmCurator-27B (heavy lift) \u00b7 the Tribunal judges (gemma3:12b + qwen2.5:32b) \u00b7 SwarmJelly-4B (repair)\n\n### Auditor Bee\n- Cross-validates other Bees' output \u00b7 runs the rule-layer checks \u00b7 runs the Critic and Katniss roles\n- Used for the validator chain \u00b7 for Tribunal drift reconciliation \u00b7 for Katniss adversarial confirmation\n- Produces: verdict records \u00b7 annotation tracebacks \u00b7 adversarial-flag determinations\n- Typical model: qwen2.5:32b in Critic/Katniss mode \u00b7 SwarmJudge-9B-CRE for domain-specific audit\n\nEvery Bee follows the same 7-step lifecycle:\n\n```\nFETCH    Bee pulls the input (PairCandidate \u00b7 source artifact \u00b7 prior verdict \u00b7 whatever its lane requires)\nCOOK     Bee runs its model \u00b7 produces output\nGATE     Bee submits output to its applicable rule-layer checks (which subset depends on class)\nSCORE    Bee receives a JellyScore (or contributes to one as a judge)\nSTAMP    Bee's output is hashed (SHA-256 canonical JSON) and added to the Bakery manifest\nANCHOR   if the output is Royal Jelly \u00b7 the cell-level Hedera certificate posts\nEMIT     Bee's output is routed downstream (deed writer \u00b7 repair queue \u00b7 seal vault \u00b7 customer dashboard)\n```",
+      "street": "\"Send a Bee out on that.\" A Bee is an individual worker agent in the Swarm \u00b7 the atomic unit of work. Bees come in three classes (Scout \u00b7 Worker \u00b7 Auditor \u00b7 each with a specific job) \u00b7 and every Bee follows the same 7-step lifecycle (FETCH \u2192 COOK \u2192 GATE \u2192 SCORE \u2192 STAMP \u2192 ANCHOR \u2192 EMIT). A Bee is not a model \u00b7 not a brand \u00b7 not a personality \u00b7 it is an instance of an agent doing a unit of work and producing a logged result.\n\nCRE analog \u00b7 the Bee is the jr broker on the dial \u00b7 the appraiser in the field \u00b7 the underwriter at the desk \u00b7 the closer at the title company. Each is an individual agent \u00b7 each has a defined role \u00b7 each is logged in the Hive's books for what they touched \u00b7 what they produced \u00b7 what survived. The Hive doesn't issue deeds based on which Bee did the work \u00b7 the Hive issues deeds based on what cleared the Tribunal."
+    },
+    "related_terms": [
+      "hive",
+      "swarm",
+      "energy",
+      "royal-jelly",
+      "honey",
+      "tribunal",
+      "validator-chain"
+    ],
+    "slug": "bee",
+    "term": "Bee"
+  },
+  "supersedes": null,
+  "term": "Bee",
+  "updated_at": "2026-05-24T15:33:21.751039+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

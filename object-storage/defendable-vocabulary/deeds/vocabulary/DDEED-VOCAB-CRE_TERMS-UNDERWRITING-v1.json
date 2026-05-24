@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-UNDERWRITING-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.480800+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-UNDERWRITING-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/underwriting",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/underwriting/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-UNDERWRITING-v1-20260524T15332148079Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:3024978f5adeeb30bb9ee44aab521e59ed5ae7312948f41615215f7224d85d05",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "underwriting",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "Underwriting is the structured financial analysis we apply to every engagement before we propose terms. It is how we determine that the defense engagement is priced fairly for the value it delivers and structured sustainably for the term. Our underwriting includes your annual revenue at risk, the implied cap rate of the engagement, our title-insurance commitment cost, sensitivity tables for changes in fleet composition or regulatory regime, and stress tests for adversarial probe survival, vendor changelog frequency, and your regulatory exposure timeline.\n\nOur underwriting model is shaped by the founder's 30 years of CRE underwriting \u00b7 we apply the same financial discipline to defense engagements that we would to industrial NNN portfolios. You will see the underwriting summary on your engagement's flight sheet \u00b7 we don't hide the math behind the price.",
+      "cre_operator": "Underwriting is the structured financial analysis applied to a deal to determine whether it should be executed. Standard CRE underwriting includes:\n\n- **Stabilized NOI calculation** \u00b7 base rent \u00b7 plus reimbursements \u00b7 less vacancy allowance \u00b7 less operating expenses \u00b7 less capex reserve = NOI\n- **Cap rate selection** \u00b7 what rate does the market support for this asset class, location, tenant quality, lease term remaining\n- **Asset valuation** \u00b7 NOI \u00f7 cap rate = value\n- **Debt sizing** \u00b7 how much debt does the asset support at current rates, with DSCR target met\n- **Equity return modeling** \u00b7 IRR, equity multiple, cash-on-cash yield \u00b7 sensitivity to exit cap, hold period, rent growth, refi assumptions\n- **Stress testing** \u00b7 what happens if anchor tenant goes dark \u00b7 what happens if cap rates blow out 100bps \u00b7 what happens if vacancy doubles\n- **Comp set construction** \u00b7 3+ comparable transactions \u00b7 adjusted for differences \u00b7 weighted by recency\n- **Sensitivity tables** \u00b7 NOI varies \u00b7 cap rate varies \u00b7 the matrix tells you the range of outcomes\n- **Walk-away pricing** \u00b7 the price below which the deal stops penciling\n\nThe sr broker's underwriting model is their personal IP. Decades of refinement. Industry-specific. Tenant-credit-aware. Market-cycle-tuned. It is what they bring to every deal that an LLM cannot.",
+      "defendableos": "In DefendableOS, **underwriting** is the structured analysis applied to a defense engagement to determine its viability, pricing, scope, and walk-away terms. Same discipline as CRE \u00b7 adapted to defense-engagement context. Standard DefendableOS underwriting includes:\n\n- **Annual Revenue at Risk (ARR)** \u00b7 the customer's annual revenue dependent on the agent fleet within engagement scope \u00b7 this is the \"NOI\" equivalent\n- **Engagement cap rate** \u00b7 annual defense fee \u00f7 ARR = implied cap rate (lower = more expensive but more protected \u00b7 inverted from CRE convention because we charge a premium for premium protection)\n- **DSCR equivalent** \u00b7 annual customer payment capacity \u00f7 annual defense fee \u00b7 should be >>1.0 to avoid customer financial fragility\n- **Debt yield equivalent** \u00b7 annual defense fee per defended agent \u00b7 the per-asset normalization\n- **LTV equivalent** \u00b7 defense spend annualized / customer's enterprise valuation \u00b7 the board-friendly ratio\n- **Title insurance ramp valuation** \u00b7 \u00b10.15 score guarantee priced into the fee \u00b7 what's the expected payout obligation given fleet maturity\n- **Sensitivity tables** \u00b7 what happens if Tribunal verdict drift exceeds 0.15 chronic \u00b7 what happens if vendor changelog spikes \u00b7 what happens if customer scales fleet 3x\n- **Comp set construction** \u00b7 prior engagements in similar verticals \u00b7 similar fleet sizes \u00b7 similar regulatory regimes\n- **Stress testing** \u00b7 adversarial-probe survival rate over engagement term \u00b7 vendor-changelog frequency \u00b7 customer regulatory exposure timeline\n- **Walk-away pricing** \u00b7 the fee below which the engagement doesn't pencil for the firm \u00b7 documented at LOU draft \u00b7 enforced at PSA sign",
+      "street": "\"Did underwriting pencil?\" \u2014 buyer principal, asking before authorizing the LOI ask.\n\n**Underwriting** is the math layer. The structured analysis that says yes or no, at what price, on what terms. Cap rate. NOI. DSCR. Debt yield. LTV. Stress tests. The numbers that determine whether the deal pencils \u00b7 whether the asset earns the price \u00b7 whether the engagement earns the fee.\n\nIn CRE, underwriting is what separates a real broker from a forwarder. Anyone can pull comps; only an underwriter can tell you whether the comps make the deal real. In DefendableOS, underwriting is what separates a deed-issuing defense provider from an opinion-issuing AI vendor. The math has to pencil \u00b7 receipted \u00b7 auditable \u00b7 defensible \u00b7 or we don't ship."
+    },
+    "related_terms": [
+      "cap-rate",
+      "loi",
+      "psa",
+      "due-diligence",
+      "probability-of-close",
+      "digest",
+      "books-and-records"
+    ],
+    "slug": "underwriting",
+    "term": "Underwriting"
+  },
+  "supersedes": null,
+  "term": "Underwriting",
+  "updated_at": "2026-05-24T15:33:21.744197+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

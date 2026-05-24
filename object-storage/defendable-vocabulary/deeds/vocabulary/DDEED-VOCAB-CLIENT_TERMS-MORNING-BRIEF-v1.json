@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-MORNING-BRIEF-v1",
+  "category": "client_terms",
+  "created_at": "2026-05-24T15:33:21.461407+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-MORNING-BRIEF-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/client_terms/morning-brief",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/client_terms/morning-brief/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-MORNING-BRIEF-v1-20260524T15332146139Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:82db7eea07c34494e82635e8923c592fc6d328e6e364ce3c57eda3c037e356b8",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "morning-brief",
+  "street_source_ens": null,
+  "subject": {
+    "category": "client_terms",
+    "definitions": {
+      "client": "The **Morning Brief** is your daily reconciliation email \u00b7 in your inbox at 06:00. Every day. Including weekends. Including holidays.\n\nIt's one page. Six slots: the dial \u00b7 the overnight volume \u00b7 the cost \u00b7 today's action \u00b7 any anomalies \u00b7 sample deed IDs you can verify on Hedera.\n\nThe brief is how you stay informed without having to ask. You should never have to wonder \"where are we?\" \u2014 the answer is in your inbox \u00b7 30 seconds of reading.\n\nIf we miss a Morning Brief \u00b7 that's an operational failure on our side \u00b7 and we'll tell you why in the next-day's brief. Constancy is the discipline.\n\nYou can pause the Morning Brief temporarily (vacation \u00b7 acquisition window \u00b7 etc) by writing to your sr broker. We default to ON \u00b7 pausing is opt-out.",
+      "cre_operator": "A sr broker in CRE runs a Friday pipeline brief and a Monday huddle for the team \u00b7 plus a per-client weekly call cadence. The discipline is constancy. You don't skip the Friday brief because nothing happened \u00b7 you write \"no material moves this week \u00b7 holding the line\" and you send it. The principal is reassured by the cadence \u00b7 not by the content fluctuation.\n\nThe same discipline applies to a 24/7 defense engagement \u00b7 but the cadence is daily \u00b7 not weekly \u00b7 because the apparatus runs daily. The Morning Brief is the operator's daily proof-of-life. It says \"we're here \u00b7 we ran last night \u00b7 here's what we saw \u00b7 here's what we're doing today.\" No principal is left to wonder.",
+      "defendableos": "The **Morning Brief** in DefendableOS is the daily principal-facing email \u00b7 sent automatically at **06:00 ET** (or principal's preferred timezone) to all designated recipients per LOU \u00a711. It is composed by the Defense Ops desk \u00b7 reviewed by the sr broker on T3/T4 tiers \u00b7 and delivered via the engagement's confirmed channel.\n\nThe Morning Brief has a fixed 6-slot format:\n\n1. **Dial slot** \u00b7 current Probability of Close \u00b7 band \u00b7 7-day trajectory\n2. **Volume slot** \u00b7 24-hour deed count \u00b7 Honey rate \u00b7 Propolis count \u00b7 variance to 30-day baseline\n3. **Cost slot** \u00b7 rolling 7-day cost-to-mint actual \u00b7 vs ceiling\n4. **Action slot** \u00b7 today's named action \u00b7 with owner and ETA\n5. **Anomaly slot** \u00b7 any unusual events from the overnight Tribunal cron\n6. **Receipt slot** \u00b7 1-3 sample deed IDs \u00b7 with Hedera anchor links for principal verification\n\nConstancy is sacred. The brief lands every day \u00b7 including weekends \u00b7 with the format intact. \"Nothing material\" is a valid action slot \u00b7 saying so is part of the discipline.",
+      "street": "\"Did the Morning Brief land?\" \u2014 the sr broker asks at the 07:00 standup.\n\nThe **Morning Brief** is the daily 06:00 client-facing reconciliation email. One page. Three numbers. Today's dial \u00b7 today's actions \u00b7 today's anomalies. Lands in the principal's inbox before the coffee. Lands every day \u00b7 including weekends and holidays unless explicitly paused.\n\nIf the Morning Brief doesn't land \u00b7 the engagement is not running. The cadence is the discipline. The discipline is the trust."
+    },
+    "related_terms": [
+      "engagement",
+      "assignment",
+      "closing-statement",
+      "principal",
+      "probability-of-close",
+      "pre-market-flight-sheet",
+      "letter-of-understanding"
+    ],
+    "slug": "morning-brief",
+    "term": "Morning Brief"
+  },
+  "supersedes": null,
+  "term": "Morning Brief",
+  "updated_at": "2026-05-24T15:33:21.738164+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

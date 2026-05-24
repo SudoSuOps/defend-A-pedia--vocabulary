@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"honeybox.device_id\": {\"type\": \"string\", \"format\": \"HB-<utc-date>-<serial>\"},\n  \"honeybox.hardware_class\": {\"type\": \"string\", \"const\": \"NVIDIA_JETSON_ORIN_NANO_8GB\"},\n  \"honeybox.compute_tops\": {\"type\": \"integer\", \"const\": 40},\n  \"honeybox.firmware_version\": {\"type\": \"string\", \"pattern\": \"^v[0-9]+\\\\.[0-9]+\\\\.[0-9]+$\"},\n  \"honeybox.deployment_address\": {\"type\": \"string\", \"description\": \"physical site address\"},\n  \"honeybox.customer_id\": {\"type\": \"string\"},\n  \"honeybox.acquisition_price_usd\": {\"type\": \"integer\", \"enum\": [249, 399, 499]},\n  \"honeybox.subscription_usd_mo\": {\"type\": \"integer\", \"default\": 99},\n  \"honeybox.raw_data_egress_disabled\": {\"type\": \"boolean\", \"const\": true},\n  \"honeybox.signed_metadata_egress_enabled\": {\"type\": \"boolean\", \"const\": true},\n  \"honeybox.ens_compliance_inbox\": {\"type\": \"string\", \"format\": \"compliance.<customer>.defendable.eth\"}\n}\n```\n\nSchema files: `docs/schemas/honeybox_device.schema.json` \u00b7 `docs/schemas/edge_deployment.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "defendableos_terms",
+  "client_explanation": "HoneyBox is a small physical appliance \u00b7 about the size of a paperback book \u00b7 that sits on your premises. It runs DefendableOS locally. Your AI agents' raw data NEVER leaves your building \u00b7 we only send signed metadata pings (a \"you got mail\" notification with the hash \u00b7 not the content). $249-499 to buy \u00b7 $99/month to keep current. Compliance teams in healthcare \u00b7 finance \u00b7 law \u00b7 gov can sign off in days instead of months because the data residency story is bulletproof.",
+  "cre_operator_meaning": "In CRE this is the **on-site property manager's office**. Class A asset can't run on remote management alone \u00b7 the tenants need a physical desk, a physical face, a physical phone number. The office costs money but the office is what makes the building rentable to anchor tenants who require on-prem ops. HoneyBox is the on-site office for the AI defense layer. $249 of hardware is the price of admission to regulated industries that won't touch cloud-only competitors.",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-HONEYBOX-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `honeybox.device_id` \u00b7 `firmware_version` \u00b7 `customer_id` \u00b7 `raw_data_egress_disabled`\n- **DDEED class impact**: HoneyBox-graded pairs cite the device_id in the Proof of Origin \u00b7 deeds resolvable per device\n- **Books and records layer**: L1 PostgreSQL (device registry) \u2192 L3 NAS (local per-agent ledger ON DEVICE \u00b7 not in cloud) \u2192 L4 Hedera HCS (metadata anchor) \u2192 L5 ENS (per-device pointer at `<device>.devices.defendable.eth`)\n- **5 Proofs touched**: ORIGIN (device serial + firmware) \u00b7 PROCESS (on-prem capture lineage) \u00b7 TRUST (raw-data-egress-disabled attestation)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `honeybox.device_id` \u00b7 `firmware_version` \u00b7 `customer_id` \u00b7 `raw_data_egress_disabled`\n- **DDEED class impact**: HoneyBox-graded pairs cite the device_id in the Proof of Origin \u00b7 deeds resolvable per device\n- **Books and records layer**: L1 PostgreSQL (device registry) \u2192 L3 NAS (local per-agent ledger ON DEVICE \u00b7 not in cloud) \u2192 L4 Hedera HCS (metadata anchor) \u2192 L5 ENS (per-device pointer at `<device>.devices.defendable.eth`)\n- **5 Proofs touched**: ORIGIN (device serial + firmware) \u00b7 PROCESS (on-prem capture lineage) \u00b7 TRUST (raw-data-egress-disabled attestation)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "HoneyBox is the edge-deployment appliance of DefendableOS. It's a productized Jetson Orin Nano (8GB \u00b7 40 TOPS) preloaded with DefendableRouter firmware, SwarmJelly-4B inference (quantized for the device), the local per-agent ledger storage, and the signed-metadata-only egress channel. It enables EDGE-mode DefendableRouter deployment for customers with data-residency constraints. Raw payloads stay local \u00b7 only signed metadata pings leave the building. Acquisition price $249-499 \u00b7 subscription $99/mo \u00b7 5-min credit-card swipe vs 9-month enterprise procurement cycle.",
+  "defendableos_notes": "- HoneyBox is the WEDGE BUYER unlock \u00b7 regulated industries that are categorically closed to cloud-only competitors (healthcare \u00b7 finance \u00b7 gov \u00b7 defense \u00b7 legal)\n- The hardware is acquisition channel \u00b7 not profit \u00b7 $249-499 covers the cost \u00b7 the $99/mo subscription is the recurring economics\n- 5-min credit-card swipe is the KILLER MOVE \u00b7 it's tax-deductible \u00b7 off-balance-sheet \u00b7 founder-credit-card friendly \u00b7 zero procurement overhead\n- HoneyBox + DefendableRouter = Defendable Edge Stack \u00b7 the on-prem twin of the cloud rail\n- 5-year LTV per HoneyBox is $9K (SMB) to $62K (MRI center) \u00b7 86% gross margin\n\n\ud83d\udc1d *On-prem defense. $249 of hardware. The wedge for regulated in",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-HONEYBOX-v1",
+    "canon": "defendapedia.eth/defendableos_terms/honeybox",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Device serial + hardware class attestation",
+    "Firmware version on the approved list",
+    "Customer site address (for the on-prem ledger location)",
+    "Compliance inbox ENS registration",
+    "Raw-data-egress-disabled attestation (technical + contractual)",
+    "Subscription billing record"
+  ],
+  "example": "> **Customer**: MRI imaging center \u00b7 12-radiologist practice \u00b7 HIPAA-regulated \u00b7 4 AI agents (intake triage, report-draft, billing-code, follow-up)\n>\n> **Hardware shipped**: HoneyBox HB-20260520-7e3a \u00b7 NVIDIA Jetson Orin Nano 8GB \u00b7 40 TOPS\n>\n> **Acquisition**: $399 (mid-tier \u00b7 with extended warranty) \u00b7 5-min credit-card swipe by the practice manager \u00b7 arrives 3-day FedEx\n>\n> **Setup**: practice plugs in \u00b7 DefendableRouter firmware auto-configures \u00b7 4 agent ENS identities registered (`triage.mri-center-jupiter.defendable.eth` \u00b7 etc.) \u00b7 compliance inbox at `compliance.mri-center-jupiter.defendable.eth`\n>\n> **Subscription**: $99/mo \u00b7 auto-renews \u00b7 includes AdversarialPack updates \u00b7 firmware updates \u00b7 ENS hosting\n>\n> **Data flow**: agents call OpenAI \u00b7 Router captures locally \u00b7 Tribunal grading runs on the box at night \u00b7 Morning Reconciliation Brief auto-emails to compliance inbox at 6am \u00b7 raw PHI NEVER leaves the practice\n>\n> **HIPAA posture**: the box is a BAA-eligible asset \u00b7 zero raw PHI in any cloud \u00b7 compliance officer signed in 4 days \u00b7 would have been 9 months for cloud-only solution",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `raw_data_egress_enabled` | Flag flipped \u00b7 raw payloads leaving the box | PROPOLIS \u00b7 governance breach |\n| `ping_contains_payload` | \"You got mail\" ping carries raw content instead of hash | PROPOLIS \u00b7 privacy violation |\n| `firmware_drift` | Box running unapproved firmware | JELLY \u00b7 upgrade required |\n| `device_offline` | Box unreachable > 1h \u00b7 customer defense layer down | JELLY \u00b7 operational alert |\n| `ens_compliance_inbox_missing` | Customer doesn't have `compliance.<customer>.defendable.eth` registered | JELLY \u00b7 provisioning gap |\n| `subscription_lapsed` | Subscription expired \u00b7 device falls behind on firmware/AdversarialPack | JELLY \u00b7 billing escalation |",
+  "hashes": {
+    "json_sha256": "sha256:43b6796373e74504006091d5c9ace16475b07d40686c1b34f2c2fdabb39c8b80",
+    "markdown_sha256": "sha256:180e716b81fd11ef6acc5d7680d6c03cd1e5bccb681170e444dd3e630115ed87"
+  },
+  "jr_broker_use": "HoneyBox is the wedge product for regulated industries. When the customer's first question is \"where does our data go\", the answer is \"nowhere \u00b7 it stays on the HoneyBox on your desk.\" That answer closes the call. Jr Hack ships the device, sets up the ENS compliance inbox (`compliance.<customer>.defendable.eth`), and walks the customer through the 5-minute setup on a screen-share. Don't over-engineer the install \u00b7 the box is designed to be plug-and-play.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/honeybox/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.488986+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.488986+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "defendableos",
+    "defendablerouter",
+    "defendablecloud-com",
+    "clawcheck",
+    "swarmjelly"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 HoneyBox IS the wedge for regulated industries\n- **repair_lift**: INDIRECT \u00b7 HoneyBox enables the refinery in EDGE mode\n- **validator_confidence**: HIGH \u00b7 on-prem topology IS a trust signal for regulated buyers\n- **risk_temperature**: INVERSE \u00b7 HoneyBox dramatically lowers data-residency risk\n- **probability_of_close**: HIGH for regulated industries \u00b7 MEDIUM for SaaS-native\n- **evidence_strength**: HIGH \u00b7 physical device with serial + ENS = strong evidence\n- **cost_to_mint**: LOW \u00b7 hardware is acquisition \u00b7 ongoing cost is subscription",
+  "slug": "honeybox",
+  "sr_broker_use": "The Sr Hack monitors the per-device fleet health \u00b7 firmware version drift \u00b7 subscription renewal rate \u00b7 device-down events. A HoneyBox that goes offline is a customer's defense layer down \u00b7 escalate within 1 hour. The Sr Hack also coordinates the per-customer ENS rollout \u00b7 `<agent>.<operator>.defendable.eth` for each agent on the box \u00b7 compliance inbox always at `compliance.<customer>.defendable.eth`.",
+  "status": "active",
+  "street_definition": "\"Ship them a HoneyBox.\" That's the Sr Hack at standup when a regulated-industry customer signs. **HoneyBox** is the $249 Jetson Orin Nano edge appliance \u00b7 8GB RAM \u00b7 40 TOPS \u00b7 physical hardware that sits on the customer's premises and holds the per-agent ledger locally. Raw data NEVER leaves the building. Compliance officer sleeps. Auditor verifies. The defense lives on-prem.",
+  "term": "HoneyBox",
+  "tribunal_use": "- **Rule layer**: HoneyBox MUST have raw_data_egress_disabled=true \u00b7 any flag flip is a governance violation\n- **Rule layer**: Signed metadata pings MUST be hash-only \u00b7 embedding raw payload in the ping is a privacy breach\n- **Rule layer**: Firmware MUST be on the approved version list\n- **Judge layer**: Tribunal doesn't grade HoneyBox per-device \u00b7 it grades the metadata pings the box emits\n- **Classification impact**: HoneyBox-graded pairs carry the same classification as cloud-graded pairs \u00b7 the topology doesn't affect the verdict",
+  "version": "v1"
+}

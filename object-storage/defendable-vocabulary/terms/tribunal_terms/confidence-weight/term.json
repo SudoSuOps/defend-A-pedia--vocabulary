@@ -1,0 +1,76 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"confidence_weight.composite\": { \"type\": \"float\", \"range\": [0.0, 1.0] },\n  \"confidence_weight.components\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"validator_chain_confidence\": { \"type\": \"float\" },\n      \"judge_drift_confidence\": { \"type\": \"float\" },\n      \"evidence_source_confidence\": { \"type\": \"float\" },\n      \"reproducibility_confidence\": { \"type\": \"float\" }\n    }\n  },\n  \"confidence_weight.band\": {\n    \"type\": \"enum\",\n    \"values\": [\"HIGH\", \"MEDIUM\", \"LOW\", \"INSUFFICIENT\"]\n  }\n}\n```\n\nBands:\n- HIGH: \u2265 0.85\n- MEDIUM: 0.65-0.84\n- LOW: 0.45-0.64\n- INSUFFICIENT: < 0.45 (verdict is held pending review \u00b7 sr broker decision required)\n\nSchema files: `docs/schemas/confidence_weight.schema.json` \u00b7 `docs/schemas/tribunal_verdict.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "tribunal_terms",
+  "client_explanation": "\"Confidence weight\" is our 0-to-1 dial that tells you how SURE we are about the verdict on every output we ship. The verdict is one thing \u00b7 the confidence is another. A Royal Jelly verdict with HIGH confidence means strong agreement across our chain \u00b7 deep evidence \u00b7 clean reproducibility. The SAME verdict with LOW confidence means we cleared the bar but barely \u00b7 use the output with appropriate weighting. We publish the confidence on every deed so you know how much weight to put on each output in your downstream decisions.",
+  "cre_operator_meaning": "In CRE \u00b7 the confidence weight is the operator-discipline dial \u00b7 the broker who knows their numbers AND knows how solid their numbers are. A 6.0% cap rate quote backed by 12 comps in the submarket within 30 days is high-confidence. The SAME 6.0% cap rate backed by 2 comps from 18 months ago in adjacent submarkets is low-confidence. Both quotes are 6.0% caps \u00b7 the confidence is what tells the buyer how much weight to put on each.\n\nDefendableOS inherits the discipline directly. Confidence weight is published on every verdict \u00b7 low-confidence Royal Jelly is still Royal Jelly \u00b7 but the customer sees the certainty alongside the verdict and makes the appropriately-weighted use of the output.",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `confidence_weight.composite` \u00b7 `confidence_weight.components.*` \u00b7 `confidence_weight.band`\n- **DDEED class impact**: All DDEEDs carry the confidence weight as a published dial \u00b7 LOW or INSUFFICIENT confidence DDEEDs receive a customer-facing advisory annotation\n- **Books and records layer**: L1 PG (hot) \u00b7 L2 Merkle (confidence in batch root)\n- **5 Proofs touched**: QUALITY (confidence IS a quality refinement) \u00b7 TRUST (publishing confidence IS the trust signal)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `confidence_weight.composite` \u00b7 `confidence_weight.components.*` \u00b7 `confidence_weight.band`\n- **DDEED class impact**: All DDEEDs carry the confidence weight as a published dial \u00b7 LOW or INSUFFICIENT confidence DDEEDs receive a customer-facing advisory annotation\n- **Books and records layer**: L1 PG (hot) \u00b7 L2 Merkle (confidence in batch root)\n- **5 Proofs touched**: QUALITY (confidence IS a quality refinement) \u00b7 TRUST (publishing confidence IS the trust signal)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Confidence weight is a per-pair float (0.0-1.0) computed by aggregating:\n\n1. **Validator chain confidence** \u00b7 the mean of per-check confidence_weights from the 12 validators (deterministic checks contribute 1.0 \u00b7 model-backed checks contribute the model's reported confidence)\n2. **Judge drift confidence** \u00b7 `1 - (drift / 0.15)` \u00b7 clean-agreement judges produce 1.0 \u00b7 drift at threshold produces 0.0 \u00b7 drift beyond threshold (Critic-reconciled) produces a reduced confidence\n3. **Evidence source confidence** \u00b7 the mean of source-weight values across cited sources (per the EntityScorer 0.30-0.90 weight ladder)\n4. **Reproducibility confidence** \u00b7 the rerun-consistency value from the Reproducibility rubric grade\n\nThe composite formula:\n\n```python\nconfidence_weight = (\n    validator_chain_confidence  * 0.30\n  + judge_drift_confidence      * 0.25\n  + evidence_source_confidence  * 0.25\n  + reproducibility_confidence  * 0.20\n)\n```\n\nOutput is clamped to [0.0, 1.0].",
+  "defendableos_notes": "- Confidence weight is published on every deed \u00b7 we do not show only the score \u00b7 this is the calibration discipline\n- The 4-component formula is doctrine \u00b7 do not collapse to a single number for the customer \u00b7 show all 4 on detailed deed views\n- INSUFFICIENT band is the structural floor \u00b7 these verdicts hold pending sr broker review \u00b7 this is the founder-locked discipline\n- The confidence weight is what distinguishes Defendable verdicts from leaderboard-style AI scores \u00b7 we measure HOW SURE not just WHAT SCORE\n- A high-score / low-confidence pattern is a known cook degradation signal \u00b7 sr broker watches for it weekly\n\n\ud83d\udc1d *Confidence weight is the dial \u00b7 0 to 1 \u00b7 how sure we are. Score is the verdict \u00b7 confidence is the certainty of the verdict. Both go on the deed. Both go in t",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1",
+    "canon": "defendapedia.eth/tribunal_terms/confidence-weight",
+    "street_source": null
+  },
+  "evidence_required": [
+    "A computed composite value",
+    "A populated components breakdown (all 4 sub-scores)",
+    "An assigned band (one of 4 enum values)",
+    "A reasoning log if the confidence was overridden by sr broker (rare)"
+  ],
+  "example": "> **Engagement**: STNL opinion \u00b7 cold storage \u00b7 Atlanta MSA.\n>\n> **Confidence weight breakdown for the deed**:\n> - validator_chain_confidence: 0.99 (all 12 checks PASS \u00b7 11 deterministic at 1.0 \u00b7 1 model-backed at 0.95)\n> - judge_drift_confidence: 0.87 (drift 0.02 \u00b7 well below threshold \u00b7 `1 - (0.02/0.15) = 0.867`)\n> - evidence_source_confidence: 0.91 (5 sources cited \u00b7 weights mean 0.91 \u00b7 EDGAR + CompStak + ATTOM + Local-Verified + SwarmCurator-CRE)\n> - reproducibility_confidence: 0.85 (re-run produced composite within 0.03 \u00b7 acceptable)\n> - composite: `0.99*0.30 + 0.87*0.25 + 0.91*0.25 + 0.85*0.20 = 0.917`\n> - band: HIGH\n>\n> **Customer-facing line on the deed**: \"Confidence weight: HIGH (0.92). Components \u00b7 validator chain 0.99 \u00b7 judge drift 0.87 \u00b7 evidence source 0.91 \u00b7 reproducibility 0.85.\"\n>\n> **Outcome**: Customer reads both the JellyScore (0.90 Royal Jelly verdict) AND the confidence (0.92 HIGH) \u00b7 knows the apex verdict is backed by strong certainty across all 4 dimensions \u00b7 uses the deed in their compliance file with full assertive language.",
+  "failure_modes_raw": "| Mode | Description | Resolution |\n|---|---|---|\n| **confidence_inflation** | Composite confidence trending higher than peers in same engagement class | Audit the components \u00b7 usually evidence_source_confidence is mis-weighted (source weight ladder is inflated) |\n| **confidence_collapse** | Sudden drop in aggregate confidence weight \u00b7 suggests upstream validator or judge degradation | Investigate \u00b7 most common cause is judge temperature drift OR validator service degradation |\n| **confidence_insufficient_unprocessed** | INSUFFICIENT-band verdict held for > 4h without sr broker review | Sr broker queue management failure \u00b7 escalate \u00b7 resolve same day |\n| **confidence_overridden_silently** | Sr broker overrode INSUFFICIENT to approve without logged reason | Operator-discipline event \u00b7 override is rolled back \u00b7 operator coached |\n| **confidence_decoupled_from_score** | High score (Royal Jelly) with persistently LOW confidence pattern | Cook is over-fitting to weak evidence \u00b7 re-evaluate the curator settings \u00b7 widen the source set |",
+  "hashes": {
+    "json_sha256": "sha256:d34c82b682ed585a8628b7d07992e6b207fc60574de8055c0c161ee4d4eebca7",
+    "markdown_sha256": "sha256:84e2b2ed7041743d106d1d17c86ad648120f6227b5c2bf8cd11fd1ae59e67e31"
+  },
+  "jr_broker_use": "The jr broker reads confidence weight as the SECOND DIMENSION of every verdict:\n\n1. Every Tribunal verdict has both a JellyScore AND a confidence_weight \u00b7 know both before reporting to the customer\n2. HIGH confidence (\u2265 0.85) is the typical green-light state \u00b7 customer-facing language can be assertive\n3. MEDIUM confidence (0.65-0.84) is the typical state for routine production \u00b7 customer-facing language should be appropriately calibrated\n4. LOW confidence (0.45-0.64) means escalate to sr broker \u00b7 the verdict cleared but the certainty is thin \u00b7 the customer may want a re-run or additional sourcing\n5. INSUFFICIENT confidence (< 0.45) is held automatically \u00b7 do NOT manually push through \u00b7 sr broker review required\n\n**Rule of thumb**: score answers \"is it good\" \u00b7 confidence answers \"how sure are we\" \u00b7 both go on the deed.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/tribunal_terms/confidence-weight/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.532764+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.532764+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "validator",
+    "validator-chain",
+    "judge",
+    "tribunal",
+    "royal-jelly",
+    "honey"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: MODULATES \u00b7 low confidence may downgrade SUCCESS to PARTIAL pending review\n- **repair_lift**: USED \u00b7 repair lift = post-repair confidence - pre-repair confidence (in addition to score delta)\n- **validator_confidence**: SELF \u00b7 this term IS one of the components\n- **risk_temperature**: INVERSE \u00b7 higher confidence = lower risk\n- **probability_of_close**: WEIGHTED \u00b7 close prob is multiplied by confidence weight\n- **evidence_strength**: COMPONENT \u00b7 evidence_source_confidence is one of the 4 sub-scores\n- **cost_to_mint**: NEUTRAL \u00b7 we don't price differently by confidence \u00b7 we publish the confidence",
+  "slug": "confidence-weight",
+  "sr_broker_use": "The sr broker watches confidence weight as the QUALITY-OF-CERTAINTY signal:\n\n- Aggregate confidence weight per cook is a meta-quality dial \u00b7 cooks producing high-score but low-confidence verdicts are over-fitting to a narrow source set \u00b7 audit\n- Confidence weight per engagement type reveals which engagement classes have natural certainty limits \u00b7 medical regulatory engagements run higher confidence than speculative-comp engagements\n- INSUFFICIENT confidence holds are the sr broker's queue \u00b7 review with priority \u00b7 either approve with sign-off (logged reason) OR re-run the engagement with stronger sourcing\n- Component breakdowns reveal which dimension is weak \u00b7 low validator_chain_confidence means a chain-validator is degraded \u00b7 low judge_drift_confidence means the two judges are systematically diverging \u00b7 low evidence_source_confidence means the source set is thin \u00b7 low reproducibility_confidence means the cook is non-deterministic\n- Confidence weight is what we publish to customers to demonstrate calibration discipline \u00b7 most vendors only publish the score (and often inflated)",
+  "status": "active",
+  "street_definition": "\"What's the confidence weight?\" Confidence weight is the validator-and-Tribunal-produced 0-to-1 dial that says HOW SURE we are that the verdict on a pair is correct. It is distinct from the JellyScore (which is the verdict itself) \u00b7 the confidence weight measures the certainty of the verdict. A pair can be Royal Jelly with low confidence weight (the chain cleared but barely \u00b7 the judges agreed but at the threshold) \u00b7 or Honey with high confidence weight (the chain cleared cleanly \u00b7 the judges agreed strongly \u00b7 the evidence was deep).\n\nIn CRE language \u00b7 confidence weight maps to the appraiser's reconciliation comment \u00b7 the underwriter's confidence-in-the-deal \u00b7 the closing agent's degree-of-comfort with the chain. An appraiser can produce a high value with low confidence (extrapolated comps \u00b7 thin data) or a moderate value with high confidence (rich comp set \u00b7 sourced cleanly \u00b7 no triangulation gaps). Same here. The score is the answer \u00b7 the confidence weight is the certainty of the answer.",
+  "term": "Confidence Weight",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # confidence is not a tier \u00b7 it modulates the verdict\n  rule_layer_checks:\n    - confidence_weight.composite MUST be computed for every verdict\n    - confidence_weight.band MUST be one of the 4 enum values\n    - confidence_weight INSUFFICIENT MUST hold the verdict pending sr broker review\n  judge_layer_prompt_hint: \"your reasoning depth and source citation feed the confidence weight \u00b7 be explicit about uncertainty\"\n  can_be_critical_failure: false   # confidence is a dial \u00b7 not a critical-fail state\n```",
+  "version": "v1"
+}

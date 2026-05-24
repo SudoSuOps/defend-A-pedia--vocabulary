@@ -1,0 +1,33 @@
+{
+  "category": "repair_terms",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-DIAGNOSE-TASK-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-DIAGNOSE-TASK-v1",
+    "canon": "defendapedia.eth/repair_terms/diagnose-task",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:d52065dbf16c12eb0acf156c0066ca62a68c3014a45e5f21cbbf625efddffd4f",
+    "markdown_sha256": "sha256:a6e3d81577367b25a9312321f63cd198920429707bec57ab979ff021bca7b72f"
+  },
+  "minted_at": "2026-05-24T15:33:21.508259+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/diagnose-task/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.508108+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.508108+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-DIAGNOSE-TASK-v1-20260524T15332150825Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "diagnose-task",
+  "term": "Diagnose Task"
+}

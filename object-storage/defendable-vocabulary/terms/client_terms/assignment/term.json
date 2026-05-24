@@ -1,0 +1,79 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"assignment.assignment_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"ASN-[0-9]{4}\",\n    \"scoped_to\": \"engagement_id\"\n  },\n  \"assignment.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},\n  \"assignment.brief_deed_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"DDEED-.+-ASN-[0-9]{4}-BRIEF-v[0-9]+\"\n  },\n  \"assignment.start_date\": {\"type\": \"date\"},\n  \"assignment.expected_close_date\": {\"type\": \"date\"},\n  \"assignment.actual_close_date\": {\"type\": \"date\", \"nullable\": true},\n  \"assignment.covered_agents\": {\"type\": \"string_array\"},\n  \"assignment.success_criteria\": {\n    \"type\": \"jsonb_array\",\n    \"shape\": \"[{criterion, target_value, measurement, deadline}]\"\n  },\n  \"assignment.dial_current\": {\"type\": \"float\", \"range\": [0,1]},\n  \"assignment.status\": {\n    \"type\": \"enum\",\n    \"values\": [\"DRAFT_BRIEF\", \"BRIEF_SIGNED\", \"IN_FLIGHT\", \"AT_RISK\", \"DARK\", \"CLOSING\", \"CLOSED_HONEY\", \"CLOSED_CONDITIONED\", \"FAILED_RECOVERABLE\", \"FAILED_DARK\"]\n  },\n  \"assignment.tribunal_honey_count\": {\"type\": \"integer\"},\n  \"assignment.tribunal_jelly_count\": {\"type\": \"integer\"},\n  \"assignment.tribunal_propolis_count\": {\"type\": \"integer\"},\n  \"assignment.composite_score\": {\"type\": \"float\", \"range\": [0,1]},\n  \"assignment.boolean_outcome\": {\n    \"type\": \"enum\",\n    \"values\": [\"CLOSED_HONEY\", \"CLOSED_CONDITIONED\", \"FAILED_RECOVERABLE\", \"FAILED_DARK\"]\n  },\n  \"assignment.closing_statement_deed_id\": {\"type\": \"string\", \"nullable\": true}\n}\n```\n\nSchema files: `docs/schemas/assignment.schema.json` \u00b7 `docs/schemas/assignment_brief.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "client_terms",
+  "client_explanation": "An **assignment** is a specific project within our engagement. The engagement is the relationship \u00b7 the assignment is the work order.\n\nEvery assignment we run has a written brief with numeric success criteria \u00b7 a deadline \u00b7 and a defined deliverable. We sign it \u00b7 you sign it \u00b7 we file it in your engagement folder as a permanent record. When the assignment closes \u00b7 you get a Defendable Closing Statement that reports the boolean outcome (CLOSED \u00b7 HONEY / CONDITIONED / FAILED \u00b7 RECOVERABLE / FAILED \u00b7 DARK) and the 5-grade breakdown that explains why.\n\nYou can have many assignments running in parallel under one engagement \u00b7 each with its own dial \u00b7 its own deadline \u00b7 its own closing. We treat each one with broker-grade discipline \u00b7 individual attention \u00b7 individual reporting.",
+  "cre_operator_meaning": "A sr broker in CRE thinks in assignments because that's how the pipeline pencils. The sr broker carries 8-15 active assignments at any time \u00b7 each one with its own dial \u00b7 its own deadline \u00b7 its own buyer pool \u00b7 its own deal physics. The broker's discipline is keeping each one moving forward \u00b7 re-checking the dial weekly \u00b7 escalating the ones that drift.\n\nThe assignment IS the unit the broker books fees against. The engagement is the relationship \u00b7 but the engagement doesn't book revenue \u00b7 the assignments do. Every CRE shop runs a per-broker assignment report every Friday morning: in-flight count \u00b7 weighted dial total \u00b7 expected close month \u00b7 expected fee total \u00b7 variance to plan.\n\nWe mirror that exactly. The Defender's defense-ops desk runs the same Friday Brief \u00b7 across the assignment book.",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-ASSIGNMENT-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: every receipt under the assignment carries `assignment_id` and `engagement_id` for rollup\n- **DDEED class impact**: assignment-level artifacts (brief \u00b7 closing statement \u00b7 amendments) are themselves DDEEDs\n- **Books and records layer**: all 5 layers \u00b7 assignment_id is a primary join key for any assignment-level query or audit\n- **5 Proofs touched**: ALL FIVE (every assignment-level deed must carry all 5 Proofs \u00b7 per the deed doctrine)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: every receipt under the assignment carries `assignment_id` and `engagement_id` for rollup\n- **DDEED class impact**: assignment-level artifacts (brief \u00b7 closing statement \u00b7 amendments) are themselves DDEEDs\n- **Books and records layer**: all 5 layers \u00b7 assignment_id is a primary join key for any assignment-level query or audit\n- **5 Proofs touched**: ALL FIVE (every assignment-level deed must carry all 5 Proofs \u00b7 per the deed doctrine)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "An **Assignment** in DefendableOS is the specific work order within an engagement \u00b7 uniquely identified by `assignment_id` of shape `ASN-{seq}` (scoped to its parent engagement). Every assignment has:\n\n- A signed **assignment brief** with numeric \u00b7 time-bound \u00b7 auditable success criteria\n- A defined start date \u00b7 expected close date\n- A specific agent or agent-fleet it covers\n- Its own Probability of Close sub-dial (rolled up into engagement-level dial)\n- Its own Tribunal verdict stream feeding the assignment success score\n- Its own closing statement at completion (deed `DDEED-{org}-{vertical}-{customer}-CLOSE-{seq}-v1`)\n\nThe assignment is the unit of accountability. The sr broker is named on every assignment. The QA validator (SH6) checks every closing statement.",
+  "defendableos_notes": "- An assignment is the broker's accountability unit. The sr broker books their book in assignments \u00b7 not engagements. The Friday brief is per-assignment.\n- Multi-assignment engagements compound trust. Closing one assignment HONEY earns the next assignment. Closing one DARK loses three.\n- The brief is the contract. The brief is what gets walked. The brief is what gets defended in any subsequent dispute. Brief-discipline is non-negotiable.\n- An assignment that can't be brief-defined isn't ready to open. PASS until it can be.\n\n\ud83d\udc1d *The brief is the contract \u00b7 the in-flight is the work \u00b7 the closing is t",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-ASSIGNMENT-v1",
+    "canon": "defendapedia.eth/client_terms/assignment",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Signed brief on file \u00b7 referenced by `brief_deed_id`",
+    "Success criteria explicit \u00b7 numeric \u00b7 time-bound \u00b7 auditable",
+    "Initial Tribunal-grading cohort sampled (first 30 deeds \u00b7 sanity-check)",
+    "Cost-to-mint baseline established (first 14 days)",
+    "First Morning Brief includes the assignment in the dial breakdown",
+    "Closing statement template prepared (the brief defines what the closing statement must report)"
+  ],
+  "example": "> **Assignment**: `ASN-0001` under engagement `ENG-DOV-LOGISTICS-ACME-0001`\n>\n> **Brief deed**: `DDEED-DOV-LOGISTICS-ACME-ASN-0001-BRIEF-v1` \u00b7 signed 2026-03-15\n>\n> **Covered agents**: `refund-decision.acme.defendable.eth` (v2.1.0)\n>\n> **Success criteria**:\n> 1. By 2026-09-15 \u00b7 Honey rate \u2265 92% on \u2265 1,200 refund decisions per month\n> 2. Zero Propolis events on the 17-item adversarial pack\n> 3. Cost-to-mint \u2264 $0.011/decision (well under the $0.0416 T3 ceiling)\n> 4. Validator chain pass rate \u2265 95% on the 7 critical checks\n>\n> **In-flight metrics (as of 2026-06-15)**:\n> - Dial: 0.78 (AMBER \u00b7 TRACKING)\n> - Honey count: 368 \u00b7 Jelly count: 44 \u00b7 Propolis count: 0 (412 total \u00b7 89.3% honey rate \u00b7 UNDER target)\n> - Adversarial pass rate: 17/17 = 100% (PASSING)\n> - Cost-to-mint actual: $0.0049/decision (well under target)\n> - Validator chain critical pass rate: 12/12 = 100% (PASSING)\n>\n> **Concern**: Honey rate at 89.3% vs target 92%. Routing inefficiency identified \u00b7 fix deploying 2026-06-22. Expected to lift Honey rate to ~93% within 7 days post-deploy.\n>\n> **Expected close**: 2026-09-15 with CLOSED \u00b7 HONEY boolean if Honey rate recovers to \u2265 92% by end of August.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **vague_criteria** | Brief signed with non-numeric or non-time-bound criteria | JELLY \u00b7 brief re-draft \u00b7 re-sign required |\n| **orphan_assignment** | Assignment in flight but no rollup to engagement dial | PROPOLIS \u00b7 dashboard integrity failure \u00b7 QA review |\n| **missed_close_window** | Expected close date passed without closing statement \u00b7 status not updated | JELLY \u00b7 auto-flagged \u00b7 sr broker review |\n| **silent_extension** | Assignment runs past expected close without amendment or extension brief | JELLY \u00b7 operator hygiene \u00b7 re-paper |\n| **closed_without_walk** | Closing statement emailed to principal without the sr-broker walk | JELLY \u00b7 trust risk \u00b7 re-walk required |\n| **boolean_padding** | Closing statement boolean misrepresents the composite (e.g., CLOSED \u00b7 HONEY at composite 0.71) | PROPOLIS \u00b7 trust breach \u00b7 founder review |",
+  "hashes": {
+    "json_sha256": "sha256:2f33084654aecc362ca90c624e340fb9e0d1dbb08b4046f4ec4bb1f2e8a53e2e",
+    "markdown_sha256": "sha256:20533722b70d3103559e7add8a9649020df9f2f191c4ce55a70922612051ff3c"
+  },
+  "jr_broker_use": "When you're spinning up a new assignment:\n\n- The brief comes FIRST. No work without a signed brief.\n- Success criteria must be SPECIFIC \u00b7 MEASURABLE \u00b7 TIME-BOUND \u00b7 AUDITABLE. \"Improve the agent\" is NOT a criterion. \"Honey rate \u2265 92% on 1,200+ refund decisions by 2026-09-15 \u00b7 cost-to-mint \u2264 $0.011/decision\" IS a criterion.\n- Cross-reference the brief to the LOU. If the brief implies scope beyond the LOU \u00b7 escalate to sr broker for amendment BEFORE signing.\n- Set up the assignment dashboard before kicking off in-flight ops. The dial should be live \u00b7 the Morning Brief should include the assignment \u00b7 the Tribunal should be configured.\n- Watch for early signals. The first 14 days of an assignment are highly predictive. If the dial isn't stabilizing by day 21 \u00b7 escalate.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/assignment/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.456243+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.456243+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "engagement",
+    "letter-of-understanding",
+    "closing-statement",
+    "morning-brief",
+    "assignment-success",
+    "probability-of-close",
+    "principal"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: SELF (the assignment IS the unit of success measurement)\n- **repair_lift**: HIGH (per-assignment repair improvements directly close failed assignments)\n- **validator_confidence**: HIGH (assignment-level evidence stacks feed every under-assignment receipt's validator confidence)\n- **risk_temperature**: DIRECT (a high-risk assignment elevates the engagement risk temp)\n- **probability_of_close**: SELF (the dial IS per-assignment \u00b7 rolled up to engagement)\n- **evidence_strength**: HIGH (assignment-level evidence directly feeds closing statement defensibility)\n- **cost_to_mint**: DIRECT (assignment-level cost-to-mint tracked separately \u00b7 billed separately)",
+  "slug": "assignment",
+  "sr_broker_use": "The sr broker owns assignment-level discipline:\n\n- Reviews every brief before it goes to the principal for signature\n- Owns the assignment-level escalation pyramid (anything past dial drift > 0.10 in 24 hours \u00b7 sr broker on the desk)\n- Authorizes any criteria modifications mid-flight (rare \u00b7 always documented \u00b7 always re-signed)\n- Runs the close walk personally on T3 / T4 tier assignments\n- Signs every closing statement before it goes to the principal\n\nThe sr broker also feeds the engagement-level learnings back: if one assignment's failure mode could repeat on another assignment under the same engagement (or under a different engagement) \u00b7 the sr broker flags it for the QA validator to add to the watchlist.",
+  "status": "active",
+  "street_definition": "\"What's the assignment?\" \u2014 the jr broker asks before they walk into the first sit.\n\nAn **Assignment** is a specific job within an engagement. It's the work order. The thing with a defined success criterion \u00b7 a defined deadline \u00b7 a defined deliverable. One engagement holds many assignments over its life \u00b7 just as one CRE listing relationship holds many trades over the years.\n\nIf an engagement is the listing agreement \u00b7 an assignment is the individual trade we're working on this quarter. Signed brief. Numeric criteria. Date on the deadline. Owner on the desk. That's an assignment.\n\nIf someone can't tell you exactly what they're trying to close \u00b7 when \u00b7 and how we'll know we closed it \u00b7 they don't have an assignment. They have a wish.",
+  "term": "Assignment",
+  "tribunal_use": "The Tribunal grades every receipt under the assignment \u00b7 which rolls up to the assignment's composite score:\n\n- `assignment.composite_score` = weighted average of all under-assignment deed scores\n- `assignment.tribunal_honey_count` \u00b7 `_jelly_count` \u00b7 `_propolis_count` are direct counters\n- Any critical Propolis on a critical-path receipt under the assignment caps the assignment at FAILED regardless of composite\n- The Tribunal feeds the closing statement directly \u00b7 the closing statement is the formal Tribunal rollup of the assignment\n\nThe Tribunal does NOT directly grade the assignment brief itself (the brief is a contract artifact \u00b7 graded by the QA validator's brief-quality rubric instead).",
+  "version": "v1"
+}

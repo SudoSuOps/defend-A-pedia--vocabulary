@@ -1,0 +1,103 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-HONEYBOX-v1",
+  "category": "defendableos_terms",
+  "created_at": "2026-05-24T15:33:21.489204+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-HONEYBOX-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/defendableos_terms/honeybox",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/defendableos_terms/honeybox/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-HONEYBOX-v1-20260524T15332148919Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:82bf03ac4b27357fb20e464a163e7cce49cfa6863d1806f47debfab72c076a48",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "honeybox",
+  "street_source_ens": null,
+  "subject": {
+    "category": "defendableos_terms",
+    "definitions": {
+      "client": "HoneyBox is a small physical appliance \u00b7 about the size of a paperback book \u00b7 that sits on your premises. It runs DefendableOS locally. Your AI agents' raw data NEVER leaves your building \u00b7 we only send signed metadata pings (a \"you got mail\" notification with the hash \u00b7 not the content). $249-499 to buy \u00b7 $99/month to keep current. Compliance teams in healthcare \u00b7 finance \u00b7 law \u00b7 gov can sign off in days instead of months because the data residency story is bulletproof.",
+      "cre_operator": "In CRE this is the **on-site property manager's office**. Class A asset can't run on remote management alone \u00b7 the tenants need a physical desk, a physical face, a physical phone number. The office costs money but the office is what makes the building rentable to anchor tenants who require on-prem ops. HoneyBox is the on-site office for the AI defense layer. $249 of hardware is the price of admission to regulated industries that won't touch cloud-only competitors.",
+      "defendableos": "HoneyBox is the edge-deployment appliance of DefendableOS. It's a productized Jetson Orin Nano (8GB \u00b7 40 TOPS) preloaded with DefendableRouter firmware, SwarmJelly-4B inference (quantized for the device), the local per-agent ledger storage, and the signed-metadata-only egress channel. It enables EDGE-mode DefendableRouter deployment for customers with data-residency constraints. Raw payloads stay local \u00b7 only signed metadata pings leave the building. Acquisition price $249-499 \u00b7 subscription $99/mo \u00b7 5-min credit-card swipe vs 9-month enterprise procurement cycle.",
+      "street": "\"Ship them a HoneyBox.\" That's the Sr Hack at standup when a regulated-industry customer signs. **HoneyBox** is the $249 Jetson Orin Nano edge appliance \u00b7 8GB RAM \u00b7 40 TOPS \u00b7 physical hardware that sits on the customer's premises and holds the per-agent ledger locally. Raw data NEVER leaves the building. Compliance officer sleeps. Auditor verifies. The defense lives on-prem."
+    },
+    "related_terms": [
+      "defendableos",
+      "defendablerouter",
+      "defendablecloud-com",
+      "clawcheck",
+      "swarmjelly"
+    ],
+    "slug": "honeybox",
+    "term": "HoneyBox"
+  },
+  "supersedes": null,
+  "term": "HoneyBox",
+  "updated_at": "2026-05-24T15:33:21.750328+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

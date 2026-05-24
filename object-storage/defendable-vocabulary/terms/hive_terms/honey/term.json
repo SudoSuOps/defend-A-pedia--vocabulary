@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"tribunal_verdict.tier\": {\n    \"type\": \"enum\",\n    \"values\": [\"ROYAL_JELLY\", \"HONEY\", \"JELLY\", \"PROPOLIS\"],\n    \"scoring_hook\": \"tier_assignment\"\n  },\n  \"tribunal_verdict.jelly_score\": {\n    \"type\": \"float\",\n    \"range\": [0.70, 0.84],\n    \"scoring_hook\": \"jelly_score_v1\"\n  },\n  \"deed.eligible_for_receipt\": {\n    \"type\": \"boolean\",\n    \"rule\": \"tier IN (ROYAL_JELLY, HONEY)\"\n  },\n  \"deed.eligible_for_writer_training\": {\n    \"type\": \"boolean\",\n    \"rule\": \"tier == ROYAL_JELLY\"\n  },\n  \"deed.merkle_batch_anchor_only\": {\n    \"type\": \"boolean\",\n    \"rule\": \"tier == HONEY\"\n  }\n}\n```\n\nSchema files: `docs/schemas/tribunal_verdict.schema.json` \u00b7 `docs/schemas/deed_receipt.schema.json`\n\nScoring hooks: `jelly_score_v1` \u00b7 `tier_assignment` \u00b7 `merkle_batch_anchor`.",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "hive_terms",
+  "client_explanation": "\"Honey\" is our production grade \u00b7 the AI work product that has cleared the full Tribunal review and is safe to ship to you with a receipt and a record-hash you can audit. Honey-grade output backs the day-to-day operating reports you receive from us \u00b7 the Morning Briefs \u00b7 the routine analyses \u00b7 the volume work that keeps your operations running. It is anchored at the batch level to the Hedera public ledger so the lineage is verifiable. When you want the apex grade for a regulatory filing or a flagship customer deliverable, we issue Royal Jelly. For everything else, Honey is the working standard.",
+  "cre_operator_meaning": "In CRE \u00b7 Honey is the Class B asset \u00b7 decent location \u00b7 adequate cap rate \u00b7 replaceable but not commodity \u00b7 the listing a brokerage runs all year long because it pays the bills. The investment-grade tenant might be one notch shy of full institutional (BBB versus BBB+) \u00b7 the comp set is solid but not trophy \u00b7 the buyer pool is core-plus rather than core \u00b7 and the deal pencils for everyone involved. You don't celebrate Honey deals at the year-end recap \u00b7 you celebrate the YEAR of Honey deals that built the book.\n\nInside DefendableOS \u00b7 Honey carries that same operating role. It is the volume tier. It is what keeps the Hive paying for itself. It is the mass of production that the customer-facing operations depend on day-to-day. Royal Jelly is the moat \u00b7 Honey is the cash flow.",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-HONEY-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `tier=HONEY` \u00b7 `jelly_score` \u00b7 `batch_merkle_root` \u00b7 `receipt_id` \u00b7 `writer_training_eligible=false`\n- **DDEED class impact**: Eligible for receipt + batch Merkle anchor \u00b7 NOT eligible for cell-level Hedera PoSg certificate\n- **Books and records layer**: L1 PG \u00b7 L2 Merkle \u00b7 L3 NAS \u00b7 L4 Hedera HCS (batch root only) \u00b7 NOT L5 ENS by default\n- **5 Proofs touched**: 4 of 5 \u00b7 ORIGIN \u00b7 QUALITY \u00b7 PROCESS \u00b7 ECONOMICS \u00b7 (TRUST is batch-level not per-pair)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `tier=HONEY` \u00b7 `jelly_score` \u00b7 `batch_merkle_root` \u00b7 `receipt_id` \u00b7 `writer_training_eligible=false`\n- **DDEED class impact**: Eligible for receipt + batch Merkle anchor \u00b7 NOT eligible for cell-level Hedera PoSg certificate\n- **Books and records layer**: L1 PG \u00b7 L2 Merkle \u00b7 L3 NAS \u00b7 L4 Hedera HCS (batch root only) \u00b7 NOT L5 ENS by default\n- **5 Proofs touched**: 4 of 5 \u00b7 ORIGIN \u00b7 QUALITY \u00b7 PROCESS \u00b7 ECONOMICS \u00b7 (TRUST is batch-level not per-pair)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Honey is the second-from-top Tribunal tier \u00b7 `tribunal_label = HONEY` \u00b7 JellyScore 0.70-0.84 (in the production 4-tier model) or 85-94 (in the 5-tier Genesis model \u00b7 where \"Honey\" is the same name applied to the band one step below Genesis).\n\nIn the production pipeline \u00b7 Honey is eligible for:\n\n- receipt issuance (per `deed_receipt.schema.json`) and publication to books-and-records\n- inclusion in the Morning Reconciliation Brief as part of the daily volume\n- batch-level Merkle root anchoring to Hedera HCS (NOT per-cell \u00b7 that is reserved for Royal Jelly)\n- citation in the Closing Statement when the engagement scope calls for production output\n\nHoney does NOT enter the writer-training corpus and does NOT receive a cell-level Hedera PoSg certificate. Those privileges are reserved for Royal Jelly \u00b7 contamination protection.",
+  "defendableos_notes": "- Honey is honest production \u00b7 don't dress it up \u00b7 don't apologize for it \u00b7 most of the work is Honey and that is correct\n- The cache fallback on C03 is the operating-mercy that distinguishes Honey from Royal Jelly \u00b7 production work often legitimately depends on cached sources where Royal Jelly demands a live fetch\n- Customers who try to negotiate \"everything Royal Jelly\" should be educated \u00b7 the cost to mint Royal Jelly on every output would burn the energy budget \u00b7 Honey is what makes the unit economics work\n- Honey contamination is a real risk in the inverse direction \u00b7 if Honey starts getting promoted as Royal Jelly by operator pressure \u00b7 the writer-training corpus contaminates \u00b7 the next model degrades \u00b7 we hold this line ruthlessly\n\n\ud83d\udc1d *Honey ships. Most of the work is Honey. The cash flow runs on it. Don't apologize for it \u00b7 earn it \u00b7 publish it \u00b7 receipt it \u00b7 anchor the batch \u00b7",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-HONEY-v1",
+    "canon": "defendapedia.eth/hive_terms/honey",
+    "street_source": null
+  },
+  "evidence_required": [
+    "\u2265 2 independent source citations (per C02 \u00b7 1 fewer than Royal Jelly)",
+    "Full validator chain results (C01-C12)",
+    "Both judge reasons (Scale A AND Scale B) with raw scores in the 0.70-0.84 band",
+    "Drift value \u2264 0.15 \u00b7 OR Critic-reconciled verdict if drift was > 0.15",
+    "SHA-256 record_hash of canonical JSON",
+    "Batch Merkle root reference (Honey anchors at batch level \u00b7 not per-pair)"
+  ],
+  "example": "> **Engagement**: Daily CRE deal-flow digest \u00b7 industrial submarket scan \u00b7 14 listings reviewed.\n>\n> **AI work product**: SwarmCurator-9B produced a 2-page deal-flow digest summarizing the 14 listings with cap-rate ranges \u00b7 tenant credit notes \u00b7 re-trade flags on 3.\n>\n> **Tribunal run**: TRIB-20260524T091533Z-2f81\n> - Validator chain \u00b7 all 7 critical PASS \u00b7 C09 advisory raised \"PII scan partial \u00b7 no PII present\" (operator backfilled)\n> - Scale A (gemma3:12b) \u00b7 score 0.78 \u00b7 reason \"comp ranges sourced \u00b7 3 re-trade flags well-supported \u00b7 reasoning depth moderate\"\n> - Scale B (qwen2.5:32b) \u00b7 score 0.81 \u00b7 reason \"structure clean \u00b7 numeric verification ties \u00b7 would prefer 1 more source on the tenant credit notes\"\n> - Drift 0.03 \u00b7 no Critic invoked\n> - JellyScore 0.795 \u00b7 tier HONEY\n>\n> **Receipt**: DCLAW-20260524T091533Z-2f81 \u00b7 batch Merkle root anchored on Hedera within the hour\n>\n> **Outcome**: Digest shipped to the customer's morning deal-flow inbox \u00b7 used to triage the 14 listings into a 3-listing call list \u00b7 no further action required. Volume Honey \u00b7 honest production \u00b7 paid for itself.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **honey_misrepresented_as_apex** | Operator labels Honey as Royal Jelly in customer-facing material | Operator-discipline event \u00b7 pair stays Honey but the misrep is logged \u00b7 escalated |\n| **stale_source_honey** | C03 source-retrievable used the cached fallback but cache is > 30 days old | JELLY \u00b7 routed to source-refresh repair |\n| **single_source_honey** | Only 1 source cited where 2+ required at Honey tier | JELLY (forced downgrade) |\n| **honey_inflation** | Honey % > 50% of volume \u00b7 judges running hot \u00b7 false positives leaking up | Whole cohort flagged \u00b7 judge temp config audited (should be 0.05) |\n| **honey_starvation** | Honey % < 15% of volume \u00b7 cook is bimodal \u00b7 likely a corpus diversity issue upstream | Cook batch reviewed by sr broker \u00b7 curator settings audited |",
+  "hashes": {
+    "json_sha256": "sha256:2b1cca3b1f0ded5553de59a56eb6107c1aeea30148649d229e17b0766e942ce5",
+    "markdown_sha256": "sha256:0063b302c48fb05ad63716b42e23c6924fd7855f4cf8f35c938a4d3db7434d15"
+  },
+  "jr_broker_use": "When a pair comes back tagged HONEY:\n\n1. Confirm the receipt was issued (`receipt_id` populated \u00b7 `record_hash` non-null)\n2. Confirm the batch this pair belongs to is queued for the next Merkle anchor (typically anchored in 50-pair batches \u00b7 should land within an hour)\n3. Surface the pair in the customer's daily volume report (do NOT flag it as a flagship \u00b7 that is Royal Jelly only)\n4. If a customer asks \"is this Royal Jelly?\" the answer is HONEST \u00b7 \"no \u00b7 it is Honey \u00b7 production-grade \u00b7 receipted \u00b7 audit-ready \u00b7 the Royal Jelly tier is reserved for [reason]\"\n5. NEVER \u00b7 ever \u00b7 misrepresent Honey as Royal Jelly \u00b7 the chain catches it \u00b7 the customer catches it \u00b7 the founder catches it \u00b7 the brand catches it\n\n**Rule of thumb**: Honey is honest production. Don't dress it up. Don't apologize for it. It is what most of the work is.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/honey/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.498862+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.498862+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "royal-jelly",
+    "jelly",
+    "propolis",
+    "hive",
+    "tribunal",
+    "validator-chain"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 Honey is a closed assignment \u00b7 the deal pencils\n- **repair_lift**: LOW \u00b7 Honey already cleared \u00b7 repair lift applies upstream from Jelly\n- **validator_confidence**: HIGH \u00b7 0.70-0.84 is the production-safe band\n- **risk_temperature**: LOW-MEDIUM \u00b7 safer than Jelly \u00b7 slightly higher than Royal Jelly because no cell-level anchor\n- **probability_of_close**: HIGH \u00b7 Honey-tagged engagements close at ~1.5x the rate of Jelly-tagged\n- **evidence_strength**: HIGH \u00b7 2+ source citations mandatory \u00b7 weights mean \u2265 0.65\n- **cost_to_mint**: BASELINE \u00b7 ~$0.0052/deed at batch-anchor level \u00b7 cheaper than Royal Jelly per-pair",
+  "slug": "honey",
+  "sr_broker_use": "The sr broker watches the Honey distribution for upstream signal:\n\n- Healthy Honey % is 25-40% of total volume in a well-running cook \u00b7 if Honey is over 50% \u00b7 the cook is producing inconsistent reasoning depth \u00b7 investigate\n- If Honey is under 20% \u00b7 the cook is bimodal (lots of Royal Jelly + lots of Jelly \u00b7 few middles) \u00b7 this can be healthy in a high-discipline domain \u00b7 or a sign of judge calibration drift in a noisier domain\n- Spot-audit Honey pairs that came WITHIN 0.02 of the Royal Jelly threshold \u00b7 these are the candidates a sloppy operator might try to promote \u00b7 the chain prevents it but you want to see WHY they fell short \u00b7 usually a single advisory check fired (C08 consent missing \u00b7 C09 redaction questionable) and the operator can sometimes legitimately backfill\n- Honey deeds that get cited by the customer in their own compliance file should be flagged for sr broker review \u00b7 we want to know what production work the customer is leaning on so we can prioritize the right uplifts",
+  "status": "active",
+  "street_definition": "\"That batch came back Honey \u00b7 ship it.\" Honey is production-grade AI work product. The 4-tier middle band. JellyScore 0.70 to 0.84 (or 85-94 in the original 5-tier \u00b7 \"Honey\" is the constitutional name for the production-safe band in both views). Honey clears the validator chain \u00b7 clears two judges \u00b7 ships to the customer \u00b7 gets receipted \u00b7 lands in books-and-records. It does NOT enter the writer-training corpus \u00b7 that is reserved for Royal Jelly \u00b7 but it absolutely earns its keep. Most of the volume the customer sees is Honey \u00b7 and that is fine.\n\nIf Royal Jelly is the Class A trophy listing \u00b7 Honey is the Class B with stable tenant and a clean rent roll \u00b7 the listing that pencils for core-plus money \u00b7 the listing that closes consistently without drama.",
+  "term": "Honey",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - HONEY      # this term IS the Honey tier\n  rule_layer_checks:\n    - C01: pair record present (MUST PASS)\n    - C02: source artifact referenced (MUST PASS)\n    - C03: source retrievable (MUST PASS \u00b7 cache fallback ALLOWED at Honey tier within 30-day window)\n    - C04: tribunal label assigned (MUST be HONEY)\n    - C05: no hard-fail flagged (MUST PASS)\n    - C06: PROPOLIS not promoted (trivially clears)\n    - C07: holdout contamination guard (MUST PASS \u00b7 zero tolerance same as Royal Jelly)\n  judge_layer_prompt_hint: \"score this pair on the 5-component JellyScore \u00b7 this is production-safe candidate \u00b7 grade honestly \u00b7 do not inflate to apex\"\n  can_be_critical_failure: false   # Honey IS a success state \u00b7 contrast Propolis\n```\n\nHoney is the most common success outcome in production. It clears the same critical checks as Royal Jelly \u00b7 with two operational differences \u00b7 C03 allows a cached-source fallback (Royal Jelly does not) and the writer-training pipeline rejects Honey (the writer trains only on Royal Jelly).",
+  "version": "v1"
+}

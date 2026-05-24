@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEROUTER-v1",
+  "category": "defendableos_terms",
+  "created_at": "2026-05-24T15:33:21.488014+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEROUTER-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/defendableos_terms/defendablerouter",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/defendableos_terms/defendablerouter/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEROUTER-v1-20260524T15332148800Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:74df18123dfecc10513007d7ff00e6415f14a68398e052dacd13c1b80c39317c",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "defendablerouter",
+  "street_source_ens": null,
+  "subject": {
+    "category": "defendableos_terms",
+    "definitions": {
+      "client": "DefendableRouter is the cracked router for your AI fleet. It sits in front of your agents \u00b7 captures every call \u00b7 hashes the receipts \u00b7 runs in under 5 milliseconds \u00b7 doesn't slow you down \u00b7 doesn't gate anything. We don't sit in your call path. You can self-host the source if you want. You can flash it onto a HoneyBox on your premises if your data can't leave. You can run it in our cloud if it can. Three modes. One firmware. Same defense.",
+      "cre_operator": "In CRE the Router is the **electronic security system** in a Class A building. Cameras at every door. Badge readers logging every swing. Alarm armed 24/7. But the tenants don't see any of it \u00b7 they walk in and out at full speed \u00b7 the security is invisible to them and obvious to the insurance carrier. That's DefendableRouter. The customer's agents run free. The receipts pile up. The defense lives in the shadows.",
+      "defendableos": "DefendableRouter is the thin write-only middleware that sits between an AI agent and its model/tool endpoints. Every request and every response is captured, SHA-256 hashed, queued for overnight Tribunal grading, and forwarded with sub-5ms p99 added latency. The Router NEVER sits in the customer's call path \u00b7 NEVER gates \u00b7 NEVER scores in real-time. It ships in 3 deployment modes (EDGE \u00b7 CLOUD \u00b7 HYBRID), binds every agent to an ENS identity (`<agent>.<operator>.defendable.eth`), and emits 5-Proof receipts that anchor to Hedera HCS. License: MIT-with-receipt-clause.",
+      "street": "\"Flash the cracked router on the box.\" That's how a Sr Hack rolls out DefendableRouter to a new customer. **DefendableRouter** is the cracked-router middleware that captures every agent call \u00b7 hashes it \u00b7 receipts it \u00b7 forwards it \u00b7 all in under 5 milliseconds. Write-only. OpenWrt-energy. You own it \u00b7 you flash it \u00b7 the receipts anchor on a chain you can verify."
+    },
+    "related_terms": [
+      "defendableos",
+      "defendablecloud-com",
+      "honeybox",
+      "clawcheck",
+      "pair-candidate",
+      "swarmfixer"
+    ],
+    "slug": "defendablerouter",
+    "term": "DefendableRouter"
+  },
+  "supersedes": null,
+  "term": "DefendableRouter",
+  "updated_at": "2026-05-24T15:33:21.749978+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

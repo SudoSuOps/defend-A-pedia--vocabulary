@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"compare.task_id\": {\"type\": \"string\", \"format\": \"rj-comp-<run_id>\"},\n  \"compare.candidates\": {\n    \"type\": \"array\",\n    \"minItems\": 2,\n    \"items\": {\n      \"type\": \"object\",\n      \"required\": [\"candidate_id\", \"source\", \"output\"],\n      \"properties\": {\n        \"candidate_id\": {\"type\": \"string\"},\n        \"source\": {\"type\": \"enum\", \"values\": [\"ORIGINAL_AGENT\", \"SWARMFIXER_REPAIR\", \"ALTERNATIVE_REPAIR_A\", \"ALTERNATIVE_REPAIR_B\"]},\n        \"output\": {\"type\": \"string\"}\n      }\n    }\n  },\n  \"compare.scoring_matrix\": {\n    \"type\": \"object\",\n    \"required\": [\"correctness\", \"completeness\", \"format_compliance\", \"reasoning_depth\"],\n    \"patternProperties\": {\n      \"^(correctness|completeness|format_compliance|reasoning_depth)$\": {\n        \"type\": \"object\",\n        \"additionalProperties\": {\"type\": \"number\", \"minimum\": 0.0, \"maximum\": 1.0}\n      }\n    }\n  },\n  \"compare.ranking\": {\n    \"type\": \"array\",\n    \"items\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"rank\": {\"type\": \"integer\", \"min\": 1},\n        \"candidate_id\": {\"type\": \"string\"},\n        \"composite_score\": {\"type\": \"number\"}\n      }\n    }\n  },\n  \"compare.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"compare.tiebreaker_rationale\": {\"type\": \"string\", \"nullable\": true}\n}\n```\n\nSchema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/compare_task.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "The Compare Task is the proof line on your invoice. We don't just say \"we fixed it.\" We ship a ranked comparison \u00b7 the original agent's output \u00b7 the repair we shipped \u00b7 two alternative repairs we considered \u00b7 all four scored on the same four dimensions. You can read the matrix, you can verify the ranking, you can re-derive the score yourself. That's why the receipts are anchored on a public chain \u00b7 not because we're trying to be cute, but because audit is the asset.",
+  "cre_operator_meaning": "In CRE the Compare Task is the **appraisal report**. The asset was worth $X before the rehab. After the rehab, it's worth $Y. The appraiser doesn't take your word for it \u00b7 they pull the comp set, they walk the building, they cross-reference recent sales, they score the asset on 4-5 dimensions (income \u00b7 expenses \u00b7 NOI \u00b7 cap rate \u00b7 physical condition), and they sign the report. The appraisal is what the lender funds against, what the buyer wires against, what the IRS audits against. Compare is the appraisal of the agent economy.",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `compare.scoring_matrix` \u00b7 `compare.ranking` \u00b7 `compare.confidence` \u00b7 `compare.tiebreaker_rationale`\n- **DDEED class impact**: compare matrix is embedded in DDEED-DOV-REPAIR \u00b7 queryable by dimension (e.g., \"show all deeds where reasoning_depth lift > 0.2\")\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle (scoring matrix as Merkle leaf) \u2192 L4 Hedera HCS\n- **5 Proofs touched**: QUALITY (the dimensional scoring) \u00b7 PROCESS (the multi-candidate evaluation) \u00b7 TRUST (re-derivable from anchored matrix)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `compare.scoring_matrix` \u00b7 `compare.ranking` \u00b7 `compare.confidence` \u00b7 `compare.tiebreaker_rationale`\n- **DDEED class impact**: compare matrix is embedded in DDEED-DOV-REPAIR \u00b7 queryable by dimension (e.g., \"show all deeds where reasoning_depth lift > 0.2\")\n- **Books and records layer**: L1 PostgreSQL \u2192 L2 Merkle (scoring matrix as Merkle leaf) \u2192 L4 Hedera HCS\n- **5 Proofs touched**: QUALITY (the dimensional scoring) \u00b7 PROCESS (the multi-candidate evaluation) \u00b7 TRUST (re-derivable from anchored matrix)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Compare Task is the fifth of the 5 Royal Jelly tasks SwarmFixer emits. It generates a ranked comparison of multiple candidate outputs (typically the original failed output, the repaired output, and 1-2 alternative repair candidates) scored on 4 dimensions: **correctness \u00b7 completeness \u00b7 format_compliance \u00b7 reasoning_depth**. The compare IS the deterministic evidence behind the Repair Lift number. Without compare, the lift is a model opinion \u00b7 with compare, the lift is a defensible measurement.",
+  "defendableos_notes": "- The 4 dimensions are constitutional \u00b7 changing them changes every downstream lift calculation \u00b7 changes require a doctrine PR \u00b7 NOT a config flip\n- Compare is what makes the Repair Lift number defensible to a third-party auditor \u00b7 the auditor can re-run the comparison at TEMP=0.05 and re-derive the lift\n- A \"repaired_loses\" outcome is one of the few PROPOLIS routes that auto-triggers a refinery diagnostic \u00b7 because a refinery that ships regressions is broken\n\n\ud83d\udc1d *The compare is the appraisal. Four dimensions. Ranked candidates. Defensi",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1",
+    "canon": "defendapedia.eth/repair_terms/compare-task",
+    "street_source": null
+  },
+  "evidence_required": [
+    "All candidate outputs (original + repaired + any alternatives)",
+    "The 4-dimension scoring matrix \u00b7 one row per candidate",
+    "The composite scores per candidate (typically equal-weighted average)",
+    "The final ranking with rank stability check",
+    "A tiebreaker rationale if any candidates tie on composite"
+  ],
+  "example": "> **Compare Task output**:\n> ```yaml\n> candidates:\n>   - candidate_id: cand-001\n>     source: ORIGINAL_AGENT\n>     output: '{\"dr\": \"Accounts Receivable\", \"cr\": \"Revenue\", \"amount\": 12500}'\n>   - candidate_id: cand-002\n>     source: SWARMFIXER_REPAIR\n>     output: '{\"dr\": \"COGS\", \"cr\": \"Accounts Payable\", \"amount\": 12500, \"memo\": \"Vendor invoice INV-2026-0142\"}'\n>   - candidate_id: cand-003\n>     source: ALTERNATIVE_REPAIR_A\n>     output: '{\"dr\": \"COGS\", \"cr\": \"Accounts Payable\", \"amount\": 12500}'\n> scoring_matrix:\n>   correctness:    {cand-001: 0.30, cand-002: 0.98, cand-003: 0.95}\n>   completeness:   {cand-001: 0.85, cand-002: 0.95, cand-003: 0.80}\n>   format_compliance: {cand-001: 0.95, cand-002: 0.95, cand-003: 0.90}\n>   reasoning_depth: {cand-001: 0.40, cand-002: 0.88, cand-003: 0.75}\n> ranking:\n>   - {rank: 1, candidate_id: cand-002, composite_score: 0.940}\n>   - {rank: 2, candidate_id: cand-003, composite_score: 0.850}\n>   - {rank: 3, candidate_id: cand-001, composite_score: 0.625}\n> confidence: 0.93\n> tiebreaker_rationale: null\n> ```",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `single_candidate` | Only 1 candidate \u00b7 nothing to compare | PROPOLIS \u00b7 schema violation |\n| `partial_matrix` | One or more candidates missing scores on \u2265 1 dimension | PROPOLIS \u00b7 schema violation |\n| `non_4_dimensions` | Scoring uses a different dimension set | JELLY \u00b7 re-route |\n| `rank_instability` | Two runs produce different rankings \u00b7 TEMP not locked | JELLY \u00b7 health check |\n| `tied_no_rationale` | Two candidates tie on composite \u00b7 no tiebreaker explanation | JELLY \u00b7 re-route |\n| `repaired_loses` | Repaired output ranks BELOW original | PROPOLIS \u00b7 refinery failure |",
+  "hashes": {
+    "json_sha256": "sha256:c8448a80d805583cb3a35fbe42cbcca58fec7fae0e5f4f06bf92963c3e05b111",
+    "markdown_sha256": "sha256:f424b1867ce6c2cd87682d4e01d9d1d0d0ffd671a941ec163f907f980022852a"
+  },
+  "jr_broker_use": "The Jr Hack verifies the Compare Task includes at least 2 candidates \u00b7 MINIMUM the original agent output and the repaired output. If only one candidate is present, there's nothing to compare \u00b7 the lift is undefined. Re-route. Also verify all 4 dimensions are scored for every candidate \u00b7 partial matrices are schema violations.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/compare-task/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.504822+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.504822+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "diagnose-task",
+    "repair-task",
+    "prevent-task",
+    "detect-task",
+    "repair-lift",
+    "swarmfixer"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 compare IS the defensible evidence for the lift\n- **repair_lift**: DIRECT \u00b7 the compare scoring is the source-of-truth for the Repair Lift dial\n- **validator_confidence**: HIGH \u00b7 validators read compare to verify the lift number\n- **risk_temperature**: NEUTRAL\n- **probability_of_close**: HIGH \u00b7 the compare matrix is what skeptical customers ask for in proof-of-value calls\n- **evidence_strength**: HIGH \u00b7 the matrix IS the evidence\n- **cost_to_mint**: MEDIUM \u00b7 compare is moderate tokens (~2000-3500) because it must score multiple candidates",
+  "slug": "compare-task",
+  "sr_broker_use": "The Sr Hack reads the Compare Task for **rank stability**. If the same comparison run twice produces different rankings, the underlying scoring is non-deterministic \u00b7 TEMP isn't locked or the prompt has variance. The Sr Hack triggers a refinery health check \u00b7 because rank-instability poisons the Repair Lift number downstream.",
+  "status": "active",
+  "street_definition": "\"Did the fix actually move the number?\" That's the question that decides the bucket. **Compare Task** is RJ task #5 \u00b7 the ranked outputs scored on 4 dimensions. It's the appraisal \u00b7 the before-and-after comp \u00b7 the proof that the rehab actually lifted the cap rate. The compare IS the receipt for the lift.",
+  "term": "Compare Task",
+  "tribunal_use": "- **Rule layer**: Compare Task MUST have \u2265 2 candidates \u00b7 MUST score all 4 dimensions for every candidate \u00b7 MUST produce a ranking (C05 format compliance)\n- **Rule layer**: The 4 dimensions are fixed: correctness \u00b7 completeness \u00b7 format_compliance \u00b7 reasoning_depth \u00b7 no substitutes accepted\n- **Judge layer**: Tribunal re-runs the comparison at TEMP=0.05 \u00b7 rank drift > 1 position between runs flags low-confidence\n- **Classification impact**: Compare Task with rank instability blocks Royal Jelly promotion \u00b7 the record drops to JELLY for re-run",
+  "version": "v1"
+}

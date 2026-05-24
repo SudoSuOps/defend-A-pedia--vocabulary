@@ -1,0 +1,33 @@
+{
+  "category": "hive_terms",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-PROPOLIS-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-PROPOLIS-v1",
+    "canon": "defendapedia.eth/hive_terms/propolis",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:d6ede73b3a88f5c26890005c3f068c35ff10eb668828d97d65fe020f85f42d7a",
+    "markdown_sha256": "sha256:dcfe28a844e6a1b238e411ec5e79bc32bd8665588cf8dfd0d4a42706924e436c"
+  },
+  "minted_at": "2026-05-24T15:32:29.877227+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/propolis/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.877092+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.877092+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-PROPOLIS-v1-20260524T15322987722Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "propolis",
+  "term": "Propolis"
+}

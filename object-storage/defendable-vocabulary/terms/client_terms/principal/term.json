@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"principal.principal_id\": {\"type\": \"string\", \"primary_key\": true},\n  \"principal.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},\n  \"principal.name\": {\"type\": \"string\"},\n  \"principal.role\": {\"type\": \"string\"},\n  \"principal.role_is_decision_authority\": {\n    \"type\": \"boolean\",\n    \"validation_rule\": \"must be true \u00b7 enforced at engagement creation\"\n  },\n  \"principal.email\": {\"type\": \"string\", \"format\": \"email\"},\n  \"principal.phone\": {\"type\": \"string\", \"nullable\": true},\n  \"principal.escalation_tier\": {\n    \"type\": \"enum\",\n    \"values\": [\"DAILY_BRIEF_ONLY\", \"WEEKLY_SR_BROKER\", \"FOUNDER_ON_TEXT\", \"FOUNDER_ON_TEXT_24X7\"]\n  },\n  \"principal.is_primary_decision_authority\": {\"type\": \"boolean\"},\n  \"principal.co_decision_with\": {\"type\": \"string_array\", \"nullable\": true},\n  \"principal.last_touch_at\": {\"type\": \"timestamp\"},\n  \"principal.responsiveness_score\": {\n    \"type\": \"float\",\n    \"range\": [0,1],\n    \"derived_from\": \"avg response time to sr broker outreach last 30 days\"\n  }\n}\n```\n\nSchema files: `docs/schemas/principal.schema.json` \u00b7 `docs/schemas/engagement.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "client_terms",
+  "client_explanation": "The **principal** is YOU \u00b7 if you're the decision-maker on your side \u00b7 the person who signs \u00b7 funds \u00b7 and stakes their name on the engagement.\n\nWe work with principals directly. Not procurement. Not your IT team (though we coordinate with them). Not a designated middle-manager (though we'll loop them in for operational details). We need to talk to the person who can say yes \u00b7 live with the outcome \u00b7 and call us when something doesn't pencil.\n\nIf you're NOT the principal \u00b7 we'll ask warmly to be introduced. We don't grandstand \u00b7 we don't pressure \u00b7 we just don't pretend a non-principal conversation is the same as a principal conversation. Both sides waste less time when we're honest about that up front.",
+  "cre_operator_meaning": "In CRE \u00b7 the principal is the building owner \u00b7 the LP-stake holder \u00b7 the family-office director \u00b7 the credit-tenant CFO \u00b7 whoever can say yes and have the yes stick. The broker spends years building access to principals \u00b7 because principals are who write the checks that close trades.\n\nThe number-one CRE rule: **never spend more than 20 minutes with a non-principal \u00b7 unless it's a path to the principal.** Procurement gates \u00b7 IT diligence \u00b7 legal review \u00b7 all of those are necessary stops on the road \u00b7 but the road ends at the principal. If the principal isn't reachable \u00b7 the road doesn't end at a close.\n\nA sr broker can tell within 2 conversations whether they're talking to the principal or to a deflector. The signals: budget authority \u00b7 operational pain ownership \u00b7 willingness to engage on tradeoffs without checking back \u00b7 ability to schedule the next meeting on the spot.",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: every assignment-level deed (brief \u00b7 closing \u00b7 amendment) requires principal signature \u00b7 captured in deed metadata\n- **DDEED class impact**: deeds requiring principal signature cannot issue without `principal_signature_confirmed: true`\n- **Books and records layer**: principal contact info preserved across all 5 layers \u00b7 with explicit \"this principal held this role at this time\" historical record (org changes don't rewrite history)\n- **5 Proofs touched**: PROCESS (principal involvement is part of the deed lineage) \u00b7 TRUST (principal-acknowledged deeds carry higher trust weight)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: every assignment-level deed (brief \u00b7 closing \u00b7 amendment) requires principal signature \u00b7 captured in deed metadata\n- **DDEED class impact**: deeds requiring principal signature cannot issue without `principal_signature_confirmed: true`\n- **Books and records layer**: principal contact info preserved across all 5 layers \u00b7 with explicit \"this principal held this role at this time\" historical record (org changes don't rewrite history)\n- **5 Proofs touched**: PROCESS (principal involvement is part of the deed lineage) \u00b7 TRUST (principal-acknowledged deeds carry higher trust weight)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The **Principal** in DefendableOS is the named decision-authority contact on the customer side \u00b7 documented in the Letter of Understanding \u00a711 \u00b7 and required to sign every assignment brief under the engagement.\n\nA principal carries:\n- `role` (CEO \u00b7 COO \u00b7 Founder \u00b7 MD \u00b7 Owner \u00b7 etc \u00b7 NOT \"IT Director\" \u00b7 NOT \"Procurement Lead\")\n- `decision_authority_scope` (engagement-level \u00b7 assignment-level \u00b7 escalation-level)\n- `escalation_tier` (which escalation events trigger which contact path)\n- `morning_brief_recipient` (does the principal receive the daily 06:00 brief)\n- `founder_text_authorized` (T3 / T4 tiers only \u00b7 principal has founder's text)\n\nEvery engagement must have ONE primary principal. Multi-principal engagements (e.g., COO + CFO co-decision) are documented as such \u00b7 with explicit decision-allocation rules in the LOU.",
+  "defendableos_notes": "- The principal is the relationship \u00b7 NOT the user. We optimize the principal relationship \u00b7 not user-count metrics. A high-engagement single-principal account is more valuable than a 50-user low-engagement one.\n- Principal-acknowledged deeds are the strongest deeds in the books-and-records. We track principal-ack rates as an engagement-health KPI.\n- We don't sell to procurement. Procurement is a process gate \u00b7 not a buyer. Treating procurement as the buyer is how engagements turn into commodity SaaS subscriptions \u00b7 and we don't run those.\n- The founder is the principal on Swarm & Bee's side \u00b7 the same way the customer principal is on theirs. Both sides have a person whose name is on the door. That's how the relationship balances.\n\n\ud83d\udc1d *The principal is the relationship. The relationship is the deal. The deal is the",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1",
+    "canon": "defendapedia.eth/client_terms/principal",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Confirmed decision-authority role (documented in LOU \u00a711 \u00b7 principal acknowledges in writing)",
+    "At least one direct touch documented (not via intermediary)",
+    "Contact methods confirmed (email \u00b7 phone if T3/T4)",
+    "Escalation tier explicitly chosen",
+    "Annual re-confirmation that the principal still holds the role (org changes happen \u00b7 we re-verify yearly)"
+  ],
+  "example": "> **Principal**: Jane Smith \u00b7 COO \u00b7 Acme Logistics Inc.\n>\n> **Authority scope**: Engagement-level + assignment-level signature \u00b7 escalation tier `FOUNDER_ON_TEXT` (T3 White-Glove inclusion)\n>\n> **Role validation**: confirmed at LOU signing 2026-03-12 \u00b7 LinkedIn cross-verified \u00b7 Acme corporate website cross-verified \u00b7 annual re-confirmation scheduled 2027-03-12.\n>\n> **Co-decision**: CFO Mike Chen has financial-authority co-sign on items > $20K/month variance (LOU \u00a711.1)\n>\n> **Responsiveness score**: 0.91 (avg response time to sr broker outreach: 4.3 hours \u00b7 last 30 days)\n>\n> **Last touch**: 2026-06-12 (Q3 QBR scheduling email \u00b7 responded same-day)\n>\n> **Morning brief recipient**: yes (06:00 ET daily)\n>\n> **Founder text**: yes (used twice in the engagement to date \u00b7 both times appropriately \u00b7 founder kept it brief and professional)",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **mislabeled_principal** | Person tagged as principal \u00b7 turns out to be a stakeholder \u00b7 LOU signature was non-binding | PROPOLIS \u00b7 LOU re-paper required \u00b7 sr broker review |\n| **proxy_signing** | LOU signed by someone other than the named principal \u00b7 forwarded \u00b7 no direct acknowledgment | PROPOLIS \u00b7 LOU re-paper \u00b7 trust breach |\n| **principal_silence** | Principal goes 30+ days without acknowledging any Morning Brief | JELLY \u00b7 pulse-check required \u00b7 sr broker call |\n| **role_change_undetected** | Principal leaves the org \u00b7 we don't catch it for 60+ days \u00b7 engagement runs on phantom authority | PROPOLIS \u00b7 founder-led re-engagement |\n| **escalation_skip** | Material event happened \u00b7 principal not notified per LOU escalation pyramid | PROPOLIS \u00b7 trust breach \u00b7 founder review |",
+  "hashes": {
+    "json_sha256": "sha256:2bbd9d7bd9fc4906a277341fa7b99e9f3ee5b7fcdb97005a5ec53bf9cabbbcc4",
+    "markdown_sha256": "sha256:72ab0c86b3e5051dcef85af45c7e5a45c2b6923e233e62cd08b466711c9842ed"
+  },
+  "jr_broker_use": "When you make first contact:\n\n- **Confirm principal status within the first 2 conversations**. If you're not talking to the principal \u00b7 politely ask who is \u00b7 and request the warm intro. Most professional principals respect this directness.\n- **Don't pitch hard to non-principals**. Use the conversation to gather color \u00b7 build credibility \u00b7 earn the intro. Pitching at non-principals burns the warm-handoff opportunity.\n- **Log principal role explicitly** in the lead folder. \"Director of Operations\" is not \"COO.\" The difference matters at LOU stage.\n- **Track responsiveness**. If a self-identified principal takes 14+ days to respond to a discovery question \u00b7 they may not actually be the decision-authority \u00b7 re-assess.\n\nThe PASS doctrine has a principal-specific corollary: if we can't get principal access in 60 days after first contact \u00b7 we PASS \u00b7 graceful exit \u00b7 re-queue in 6 months. We don't run engagements through deflection chains.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/principal/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.466110+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.466110+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "engagement",
+    "assignment",
+    "letter-of-understanding",
+    "closing-statement",
+    "morning-brief",
+    "pass-doctrine"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH (principal engagement correlates strongly with assignment success rates)\n- **repair_lift**: MEDIUM (principals who acknowledge failure deeds quickly enable faster repair)\n- **validator_confidence**: HIGH (principal acknowledgment of closing statements is a required gate)\n- **risk_temperature**: INVERSE (engaged principal = lower risk \u00b7 disengaged principal = elevated risk)\n- **probability_of_close**: HIGH (principal_motivation is 20% of the dial)\n- **evidence_strength**: HIGH (principal-signed artifacts are the strongest evidence class)\n- **cost_to_mint**: NEUTRAL (principal doesn't directly affect cost \u00b7 but disengagement raises rework costs)",
+  "slug": "principal",
+  "sr_broker_use": "The sr broker:\n\n- **Validates principal authority** at the Appraisals stage (BEFORE drafting an LOU)\n- **Negotiates the LOU directly with the principal** \u00b7 never through intermediaries on material terms\n- **Maintains principal relationship continuity** \u00b7 across multiple sr-broker handoffs (the relationship survives the broker rotation)\n- **Calls the principal directly** on any escalation trigger (per the escalation pyramid in the LOU)\n- **Walks the closing statement personally** with the principal on T2 / T3 / T4 tiers\n\nThe sr broker is also responsible for the **principal-handoff doc** when sr broker reassignments happen. The new sr broker must be introduced to the principal in writing \u00b7 with a 30-min hand-off call scheduled \u00b7 BEFORE the previous sr broker disengages.",
+  "status": "active",
+  "street_definition": "\"Who's the principal?\" \u2014 the founder asks before agreeing to any sit.\n\nThe **Principal** is the actual decision-maker on the customer side. The person whose name is on the door \u00b7 whose ass is on the line \u00b7 who has the authority to sign \u00b7 the budget to fund \u00b7 and the operational stake to live with the outcome.\n\nNOT IT. NOT procurement. NOT a finance manager. NOT \"let me check with my team.\" The principal is the principal. If we don't have access to the principal \u00b7 we don't have a deal \u00b7 we have a forwarding chain \u00b7 and forwarding chains don't close engagements at broker-grade.",
+  "term": "Principal",
+  "tribunal_use": "The Tribunal doesn't grade principals (they're not adjudicated) \u00b7 but it tracks:\n\n- `principal.responsiveness_score` feeds the `principal_motivation` driver of the Probability of Close dial (20% weight)\n- `principal.last_touch_at` feeds engagement-health flags (no-touch > 14 days triggers sr broker outreach)\n- Principal-acknowledgment of closing statements is a required gate before issuing the closing-deed\n- Multi-principal disagreement (e.g., COO and CFO send conflicting signals) flags the engagement for sr-broker reconciliation",
+  "version": "v1"
+}

@@ -1,0 +1,76 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"validator_confidence.value\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"validator_confidence.formula_components\": {\n    \"type\": \"object\",\n    \"required\": [\"critical_pass_rate\", \"advisory_pass_rate\", \"mean_source_weight\"],\n    \"properties\": {\n      \"critical_pass_rate\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n      \"advisory_pass_rate\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n      \"mean_source_weight\": {\"type\": \"float\", \"range\": [0.0, 1.0]}\n    }\n  },\n  \"validator_confidence.weights\": {\n    \"type\": \"object\",\n    \"const\": {\n      \"critical\": 0.7,\n      \"advisory\": 0.2,\n      \"source_weight\": 0.1\n    }\n  },\n  \"validator_confidence.promotion_threshold\": {\"type\": \"float\", \"const\": 0.6},\n  \"validator_confidence.validator_chain_run_id\": {\"type\": \"string\"}\n}\n```\n\nSchema files: `docs/schemas/validator_chain.schema.json` \u00b7 `docs/schemas/ui_dial.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "scoring_terms",
+  "client_explanation": "Validator Confidence is the trust score on a verdict. We don't just take the model's word \u00b7 we run a 12-check chain on every verdict (7 must-pass \u00b7 5 advisory) and we weight the evidence quality. The dial shows you whether we're confident in the call. Below 0.6 \u00b7 we don't promote \u00b7 even if the lift number looks great. The dial protects you from over-confident wrong answers.",
+  "cre_operator_meaning": "In CRE this is the **lender's confidence score** on a deal package. The numbers might pencil \u00b7 the comps might support \u00b7 but if the lender's underwriter has questions about the rent roll, the tenant credit, the title report, the appraisal date \u00b7 the confidence score drops \u00b7 the LTV gets capped \u00b7 the rate goes up. The number alone isn't enough \u00b7 the EVIDENCE behind the number matters. Validator Confidence is the lender's read on whether the receipts support the verdict.",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `validator_confidence.value` \u00b7 `validator_chain_run_id` \u00b7 formula components\n- **DDEED class impact**: every DDEED-DOV-REPAIR embeds the validator confidence value \u00b7 auditors can verify the chain\n- **Books and records layer**: L1 PostgreSQL (validator chain runs) \u2192 L2 Merkle (check results) \u2192 L4 Hedera HCS (anchored per receipt)\n- **5 Proofs touched**: QUALITY (the chain pass rate IS quality) \u00b7 PROCESS (the 12-check lineage) \u00b7 TRUST (chain-backed numeric attestation)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `validator_confidence.value` \u00b7 `validator_chain_run_id` \u00b7 formula components\n- **DDEED class impact**: every DDEED-DOV-REPAIR embeds the validator confidence value \u00b7 auditors can verify the chain\n- **Books and records layer**: L1 PostgreSQL (validator chain runs) \u2192 L2 Merkle (check results) \u2192 L4 Hedera HCS (anchored per receipt)\n- **5 Proofs touched**: QUALITY (the chain pass rate IS quality) \u00b7 PROCESS (the 12-check lineage) \u00b7 TRUST (chain-backed numeric attestation)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Validator Confidence is a 0-1 dial computed from two inputs: the 12-check validator chain pass rate (7 critical + 5 advisory) and the mean source weight of the evidence backing the verdict. The formula is:\n\n```\nvalidator_confidence = (critical_pass_rate \u00d7 0.7) + (advisory_pass_rate \u00d7 0.2) + (mean_source_weight \u00d7 0.1)\n```\n\nThe threshold for `jelly-repaired/` promotion is `validator_confidence \u2265 0.6` (paired with `repair_lift \u2265 0.10`). Both must clear \u00b7 neither is sufficient alone.",
+  "defendableos_notes": "- Validator Confidence is the SECOND gate alongside Repair Lift \u00b7 together they're the promotion test\n- The weights are locked \u00b7 0.7/0.2/0.1 is constitutional \u00b7 waivers require a doctrine PR\n- A critical-check FAIL is an absolute gate regardless of numerical confidence \u00b7 the rule layer cannot be overridden by the formula\n- Validator Confidence appears on the dashboard alongside Repair Lift \u00b7 both dials together tell the complete story\n- The 12-check chain doctrine lives at `docs/doctrine/13_validator_chain_doctrine.md` \u00b7 this dial is the chain's numeric surface\n\n\ud83d\udc1d *The chain's belief in the verdict. Two gates \u00b7 one promotion. Numbers backed by",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1",
+    "canon": "defendapedia.eth/scoring_terms/validator-confidence",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Validator chain run with 12-check results (7 critical + 5 advisory)",
+    "Per-check pass/fail with rationale",
+    "Source weight table for evidence cited in the pair",
+    "Formula application showing the three components and the final dot product",
+    "Threshold comparison (\u2265 0.6 for promotion)"
+  ],
+  "example": "> **Pair `pair-20260524T061208Z-7e2a`**:\n> - Validator chain run: `vc-20260524T071730Z-bb3e`\n> - Critical checks (7): 7/7 pass \u00b7 critical_pass_rate = 1.00\n> - Advisory checks (5): 4/5 pass \u00b7 advisory_pass_rate = 0.80\n> - Evidence sources cited: 5 sources \u00b7 mean_source_weight = 0.83\n> - Formula: (1.00 \u00d7 0.7) + (0.80 \u00d7 0.2) + (0.83 \u00d7 0.1) = 0.700 + 0.160 + 0.083 = **0.943**\n> - Threshold check: 0.943 \u2265 0.6 \u00b7 GATE CLEARED\n> - Paired with repair_lift = +0.15 \u00b7 BOTH gates clear \u00b7 promotion to `jelly-repaired/` proceeds\n>\n> **Pair `pair-20260524T061745Z-8f3c` (failed gate)**:\n> - Critical checks: 6/7 pass (C04 evidence binding failed)\n> - Confidence formula: (0.857 \u00d7 0.7) + (0.80 \u00d7 0.2) + (0.61 \u00d7 0.1) = 0.600 + 0.160 + 0.061 = **0.821**\n> - Even though confidence \u2265 0.6 numerically, the C04 critical FAIL is an absolute gate \u00b7 pair routes to `quarantined/` for evidence-fabrication review",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `synthesized_confidence` | Confidence value cited without an anchored validator chain run | PROPOLIS \u00b7 evidence violation |\n| `custom_weights` | Formula applied with weights other than (0.7, 0.2, 0.1) | PROPOLIS \u00b7 governance violation |\n| `partial_chain_run` | Validator chain didn't complete all 12 checks | JELLY \u00b7 re-run required |\n| `source_weight_missing` | Evidence cited without source weight assignment | JELLY \u00b7 re-route |\n| `confidence_promotion_below_threshold` | Pair promoted with confidence < 0.6 | PROPOLIS \u00b7 governance violation |\n| `chain_drift` | Validator chain ran a different check set than the 12-check spec | PROPOLIS \u00b7 governance violation |",
+  "hashes": {
+    "json_sha256": "sha256:71bc8fd51d63e30012163f1145299cb2fbe1b236fbfa29572322d730176b1c3d",
+    "markdown_sha256": "sha256:b5d621cec0acf8ffac04703b2bda8842c3a93c5cb3d9165aa5fe72d23380e2e5"
+  },
+  "jr_broker_use": "The Jr Hack reads Validator Confidence alongside Repair Lift \u00b7 NEVER alone. A pair with lift +0.20 but confidence 0.45 does NOT promote \u00b7 the chain is signaling something's off with the evidence. The Jr Hack investigates \u00b7 usually it's a stale source (color > 30 days) or a single-source citation that should have been triangulated.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/validator-confidence/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.527260+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.527260+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "repair-lift",
+    "evidence-strength",
+    "risk-temperature",
+    "pair-candidate",
+    "swarmfixer"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 confidence is one of the two promotion gates\n- **repair_lift**: PARTNER \u00b7 together with lift gates the bucket transition\n- **validator_confidence**: SELF \u00b7 this term defines the dial\n- **risk_temperature**: INVERSE \u00b7 high confidence lowers risk \u00b7 low confidence raises it\n- **probability_of_close**: HIGH \u00b7 confidence trend correlates with renewal probability\n- **evidence_strength**: HIGH \u00b7 confidence IS partly a function of evidence strength\n- **cost_to_mint**: NEUTRAL \u00b7 validator chain runs are part of the standard mint cost",
+  "slug": "validator-confidence",
+  "sr_broker_use": "The Sr Hack monitors the distribution of validator confidence across the daily batch \u00b7 a healthy day shows mean confidence ~0.75-0.85 with tails distributed normally. A bimodal distribution (cluster at 0.4 + cluster at 0.85) indicates two different qualities of evidence flowing in \u00b7 the Sr Hack tracks which agent ENS or which model provider is sourcing the low-confidence cluster and triages upstream.",
+  "status": "active",
+  "street_definition": "\"What's the validator confidence?\" That's the second question after the lift. **Validator Confidence** is the 0-1 dial showing how much trust the validator chain places in a given verdict. Computed from the 12-check pass rate weighted by the source quality. A pair with a great lift but low validator confidence doesn't promote \u00b7 the chain doesn't believe in the math.",
+  "term": "Validator Confidence",
+  "tribunal_use": "- **Rule layer**: Validator Confidence MUST be computed from anchored validator chain run \u00b7 not synthesized\n- **Rule layer**: Promotion to `jelly-repaired/` requires confidence \u2265 0.6 AND lift \u2265 0.10 \u00b7 both gates\n- **Rule layer**: Weights MUST match the locked formula (0.7 / 0.2 / 0.1) \u00b7 custom weights rejected\n- **Judge layer**: Tribunal doesn't grade Validator Confidence \u00b7 the validator chain produces it \u00b7 Tribunal consumes it\n- **Classification impact**: Low confidence (< 0.6) blocks Royal Jelly promotion \u00b7 pair holds in JELLY or routes to quarantine",
+  "version": "v1"
+}

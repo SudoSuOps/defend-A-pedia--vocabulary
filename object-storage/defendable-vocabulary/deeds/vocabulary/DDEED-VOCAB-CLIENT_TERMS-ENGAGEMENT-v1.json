@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1",
+  "category": "client_terms",
+  "created_at": "2026-05-24T15:33:21.458950+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/client_terms/engagement",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/client_terms/engagement/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1-20260524T15332145894Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:47f8e9f94a221591aac6d788620ef68f539120b5e8d444eaa9ab7736b5f12051",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "engagement",
+  "street_source_ens": null,
+  "subject": {
+    "category": "client_terms",
+    "definitions": {
+      "client": "An **engagement** is our formal relationship with you \u00b7 the contract envelope. It starts the day you sign the Letter of Understanding. It covers your service tier \u00b7 your fee structure \u00b7 your escalation pyramid \u00b7 your books-and-records retention \u00b7 everything that governs how we work together.\n\nInside an engagement we run one-or-many **assignments** \u00b7 which are the specific projects with specific success criteria. Think of the engagement as your listing agreement \u00b7 and the assignments as the individual trades we execute under it.\n\nThe engagement persists for as long as the LOU is in force (typically 12 months \u00b7 auto-renewing). You can pause it \u00b7 terminate it for cause \u00b7 or terminate it for convenience on 60 days notice. We treat the engagement as the relationship \u00b7 which means it survives any single assignment closing successfully or unsuccessfully.",
+      "cre_operator": "A sr broker in CRE knows the difference between a relationship and a transaction. A transaction closes once and the parties walk. A relationship produces 10 transactions over 5 years \u00b7 plus 4 referrals \u00b7 plus 1 keynote \u00b7 plus the call you get when their partner's brother needs a 1031.\n\nAn engagement is the relationship in writing. The LOU formalizes the scope \u00b7 the term \u00b7 the economics \u00b7 the SLAs \u00b7 the escalation pyramid \u00b7 the conflict-of-interest stipulations. Everything material is named. Nothing material is implicit.\n\nThe discipline: every engagement has a named principal \u00b7 a named broker \u00b7 a defined economics structure \u00b7 a defined term \u00b7 and an exit ramp. If any of those five are missing \u00b7 you have a vendor pitch \u00b7 not an engagement.",
+      "defendableos": "An **Engagement** in DefendableOS is the LOU-bound relationship between Defender and Principal \u00b7 uniquely identified by `engagement_id` of shape `ENG-{org}-{vertical}-{customer}-{seq}`. Every engagement is itself a deed at issuance (`DDEED-{org}-LOU-{slug}-v1`) \u00b7 anchored on Hedera HCS \u00b7 resolvable via ENS.\n\nAn engagement contains:\n- Exactly one signed LOU (with versioning if amended)\n- One-or-many Assignments (each with its own brief)\n- A continuous dial of Probability of Close (rolled up across active assignments)\n- A continuous Morning Brief cadence (06:00 daily)\n- A continuous books-and-records contribution stream (every deed under any assignment under the engagement)\n- A defined service tier (T1 / T2 / T3 / T4)\n- A defined principal contact list\n\nClosure of all assignments does NOT close the engagement. The engagement persists until the LOU is formally terminated per \u00a79 of the LOU template.",
+      "street": "\"Who's the engagement with?\" \u2014 the founder asks before reviewing any new file.\n\nAn **Engagement** is the formal relationship between DefendableOS (acting as Defender) and a customer (acting as Principal). It's the umbrella \u00b7 the contract envelope \u00b7 the named relationship. Underneath the engagement live one-or-many Assignments \u00b7 which are the specific work orders.\n\nIn CRE terms: an engagement is the listing-broker agreement (sometimes the exclusive-rep agreement) \u00b7 the contract that names the broker as the principal's representative for a defined scope \u00b7 period \u00b7 and economics. Assignments under an engagement are the individual trades \u00b7 listings \u00b7 or transactions executed during that period. The engagement is the canopy \u00b7 the assignments are the leaves.\n\nIf a customer hasn't signed a Letter of Understanding \u00b7 we don't have an engagement. We have a conversation. That's a meaningful distinction."
+    },
+    "related_terms": [
+      "assignment",
+      "letter-of-understanding",
+      "principal",
+      "closing-statement",
+      "morning-brief",
+      "probability-of-close",
+      "pass-doctrine"
+    ],
+    "slug": "engagement",
+    "term": "Engagement"
+  },
+  "supersedes": null,
+  "term": "Engagement",
+  "updated_at": "2026-05-24T15:33:21.737040+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

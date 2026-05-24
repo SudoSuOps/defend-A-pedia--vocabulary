@@ -1,0 +1,33 @@
+{
+  "category": "defendableos_terms",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1",
+    "canon": "defendapedia.eth/defendableos_terms/agentbench",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:543a64129b969a0ff2ef0da3539567d9aa9eb169420966fd2f520af6a81b7f69",
+    "markdown_sha256": "sha256:e8640b7bc261594aea55c4b2a3a1c6c217b09916e7e75764fccd9a94f320b77c"
+  },
+  "minted_at": "2026-05-24T15:33:21.481843+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/agentbench/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.481721+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.481721+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1-20260524T15332148184Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "agentbench",
+  "term": "AgentBench"
+}

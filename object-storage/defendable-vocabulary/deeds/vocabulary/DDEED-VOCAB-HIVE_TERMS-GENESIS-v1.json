@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-GENESIS-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.496739+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-GENESIS-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/genesis",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/genesis/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-GENESIS-v1-20260524T15332149673Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:a31160f6a542679bcb44d992bae5f6033f9757131ba868549fcc5b662d77adae",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "genesis",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"Genesis\" is the canonical sub-tier of our apex grade \u00b7 the deeds we treat as the one-comp-in-the-market reference \u00b7 DOI-stamped \u00b7 on-chain \u00b7 cited in our comp library \u00b7 used as ground-truth for future cooks. Genesis deeds are rare by design (~5-10% of even our apex output) because canonical references are rare by nature. When a deed you receive is tagged Genesis \u00b7 you have the irrefutable record on that question \u00b7 the one your auditor \u00b7 your regulator \u00b7 or your CFO can cite as the authoritative answer for years to come.",
+      "cre_operator": "In CRE \u00b7 Genesis maps to the trophy listing \u00b7 the single-comp asset \u00b7 the irreplaceable position. A Class A++ industrial portfolio in a tier-1 submarket with a 25-year credit-tenant lease with built-in 2.5% bumps \u00b7 sold once a decade \u00b7 institutional bid \u00b7 cap rate that compresses the whole submarket comp set. A 30-year broker has 3-5 of these in their career. The brokerage's year-end recap leads with them. The deal closes and you fly the flag.\n\nInside DefendableOS \u00b7 Genesis carries the same gravity. It is the deed that gets cited as canonical \u00b7 the record that becomes the comp for an entire domain \u00b7 the artifact that lives forever in the customer's compliance file and the public ledger.",
+      "defendableos": "Genesis is the apex sub-band of the 5-tier classification \u00b7 JellyScore \u2265 95 in the original Swarm-Hive vocabulary. In the 4-tier production default \u00b7 Genesis pairs fall inside Royal Jelly (\u2265 0.85) but are distinguished by:\n\n- JellyScore \u2265 0.95\n- ALL 12 validator chain checks PASS (no advisory annotations)\n- BOTH judge scores \u2265 0.95 with drift \u2264 0.05 (tighter than the Royal Jelly drift floor of 0.15)\n- Operator-attested as canonical for the domain (sr broker sign-off \u00b7 founder review on critical-domain Genesis)\n- DOI-stamped (assigned a digital-object-identifier for academic / regulatory cross-reference)\n- Cell-level Hedera HCS PoSg certificate AND batch-level Merkle anchor\n- ENS resolution under both `{deed-id}.{org}.defendable.eth` AND a domain-canonical alias (e.g., `cre-stnl-comp-2026-q2.defendable.eth`)\n- Eligible for inclusion in the canonical comp library that downstream cooks reference as ground-truth\n\nGenesis deeds are rare by design \u00b7 ~5-10% of Royal Jelly volume \u00b7 ~2-5% of total volume. Their scarcity is structural \u00b7 the canonical comp library is small because canonical comps are few.",
+      "street": "\"That one's Genesis.\" Genesis is the top of the 5-tier classification ladder \u00b7 the 95+ JellyScore tier \u00b7 the canonical artifact \u00b7 DOI-stamped \u00b7 on-chain \u00b7 the irrefutable record. In the 4-tier production-default vocabulary it sits inside the Royal Jelly band \u00b7 but Genesis is the sub-band reserved for the deeds we'd cite in a courtroom \u00b7 publish in a peer-reviewed journal \u00b7 or pass to a regulator as the canonical record on the question.\n\nIn CRE language \u00b7 Genesis is the trophy asset \u00b7 the one-of-one \u00b7 the building that has no real comp because it has been the comp for the submarket for 20 years. The kind of listing that defines the broker's career. The kind a brokerage names a conference room after a decade later."
+    },
+    "related_terms": [
+      "royal-jelly",
+      "honey",
+      "hive",
+      "propolis",
+      "tribunal",
+      "validator-chain"
+    ],
+    "slug": "genesis",
+    "term": "Genesis"
+  },
+  "supersedes": null,
+  "term": "Genesis",
+  "updated_at": "2026-05-24T15:33:21.752253+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

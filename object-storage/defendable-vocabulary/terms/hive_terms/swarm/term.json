@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"swarm.live_agents_count\": { \"type\": \"integer\" },\n  \"swarm.active_cooks\": {\n    \"type\": \"array\",\n    \"items\": { \"type\": \"string\" }\n  },\n  \"swarm.tribunal_queue_depth\": { \"type\": \"integer\" },\n  \"swarm.bakery_write_queue_depth\": { \"type\": \"integer\" },\n  \"swarm.hedera_anchor_queue_depth\": { \"type\": \"integer\" },\n  \"swarm.energy_draw_watts\": { \"type\": \"float\" },\n  \"swarm.pairs_in_flight\": { \"type\": \"integer\" },\n  \"swarm.last_pair_completed_at\": { \"type\": \"timestamp\" }\n}\n```\n\nSchema files: `docs/schemas/swarm_status.schema.json` \u00b7 `docs/schemas/swarm_queue.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "hive_terms",
+  "client_explanation": "\"The Swarm\" is what you see running on our live status page \u00b7 the work happening right now \u00b7 the agents working \u00b7 the validators checking \u00b7 the deeds being issued \u00b7 the throughput in pairs-per-hour. The Swarm is the live counterpart to the Hive \u00b7 the Hive is the stable infrastructure \u00b7 the Swarm is what is operating inside it. When you receive a Morning Brief, the Swarm produced it. When you receive a Closing Statement, the Swarm assembled it. When a deed lands on the public ledger with your record_hash, the Swarm was the verb that put it there.",
+  "cre_operator_meaning": "In CRE \u00b7 the Swarm is what fills the pipeline. The 14 listings being scanned this morning. The 3 LOIs being negotiated this afternoon. The 1 deal closing today. The 2 sponsors on the phone this hour. The 6 jr brokers on the dials. The sr broker reading inbound digests. The validator running comps. The back-office reconciling commissions. All of it \u00b7 all happening at once \u00b7 all coordinated by the Hive's standards \u00b7 all logged in the Hive's books. THAT is the Swarm.\n\nA healthy Swarm is the proof the Hive is alive. A quiet Swarm is the warning the Hive is starving. A chaotic Swarm is the warning the Hive's discipline is slipping. The sr broker reads the Swarm's tempo every hour.",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-SWARM-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `swarm.throughput_at_issue` \u00b7 `swarm.queue_depths_at_issue` \u00b7 `swarm.energy_draw_at_issue` \u00b7 `swarm.rig_contribution_map`\n- **DDEED class impact**: Every DDEED carries Swarm-level telemetry from the moment of issue\n- **Books and records layer**: L1 PG (the Swarm's queue depth metrics are stored hot) \u00b7 L3 NAS (the Swarm's per-rig contribution maps are archived)\n- **5 Proofs touched**: PROCESS (the Swarm is the process) \u00b7 ECONOMICS (the Swarm's energy draw is the cost)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `swarm.throughput_at_issue` \u00b7 `swarm.queue_depths_at_issue` \u00b7 `swarm.energy_draw_at_issue` \u00b7 `swarm.rig_contribution_map`\n- **DDEED class impact**: Every DDEED carries Swarm-level telemetry from the moment of issue\n- **Books and records layer**: L1 PG (the Swarm's queue depth metrics are stored hot) \u00b7 L3 NAS (the Swarm's per-rig contribution maps are archived)\n- **5 Proofs touched**: PROCESS (the Swarm is the process) \u00b7 ECONOMICS (the Swarm's energy draw is the cost)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Swarm is the runtime layer of the Hive \u00b7 the live active network of:\n\n- agents (the SwarmCurator cooks running \u00b7 the SwarmJudge passes \u00b7 the SwarmJelly repairs \u00b7 the SwarmRouter routing)\n- validators (the 12-check chain running on every pair in flight)\n- compute (the 4 rigs metabolizing energy \u00b7 swarmrails 165 tok/s 9B concurrent + 88 tok/s 27B concurrent \u00b7 whale's RTX 3090 running SwarmJelly inference \u00b7 zima-edge holding the signal heartbeat \u00b7 signal-edge holding the inference edge case)\n- inflight verdicts (the Tribunal queue \u00b7 the Bakery write queue \u00b7 the Hedera anchor queue \u00b7 the ENS reservation queue)\n- live customer engagements (the LOUs in flight \u00b7 the Morning Briefs being generated \u00b7 the Closing Statements being assembled)\n\nThe Swarm is what produces the 777 pairs/hr throughput. The Swarm is what makes Royal Jelly. The Swarm is what makes Honey. The Swarm is what flags Jelly. The Swarm is what seals Propolis. The Swarm IS the work. The Hive is the structure that holds it.",
+  "defendableos_notes": "- The Swarm is the verb \u00b7 the Hive is the noun \u00b7 keep this distinction tight in customer-facing copy\n- The Swarm's throughput is the most user-visible health metric \u00b7 customers track it \u00b7 we publish it \u00b7 we do not hide degradations\n- The Swarm-LEVEL adversarial flag rate is the security weather report \u00b7 we publish it weekly \u00b7 transparency about attacks is part of the brand discipline\n- A quiet Swarm is a problem \u00b7 a hot Swarm is a feature \u00b7 a chaotic Swarm is a discipline failure \u00b7 operators learn to read the difference within their first 30 days\n- The Swarm is not \"the team\" \u00b7 it is the active runtime \u00b7 the team operates the Swarm \u00b7 the team is part of the Hive\n\n\ud83d\udc1d *The Swarm is what the Hive looks like when it's working. The phones ringing. The dials in flight. The Tribunal grading. The deeds anchoring. Watch the Swarm to know if the Hive",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-SWARM-v1",
+    "canon": "defendapedia.eth/hive_terms/swarm",
+    "street_source": null
+  },
+  "evidence_required": [
+    "A live throughput reading (pairs/hr) within 30% of the 777 target",
+    "A current per-rig contribution map (which rig is doing what \u00b7 in what proportion)",
+    "Queue depth readings across Tribunal \u00b7 Bakery \u00b7 Hedera \u00b7 ENS layers",
+    "An energy draw reading (watts) consistent with the active cook profile",
+    "A `last_pair_completed_at` within 5 minutes",
+    "Zero stuck verdicts (verdicts older than 4 hours without resolution)"
+  ],
+  "example": "> **Customer dashboard view at 14:00 local**:\n>\n> - Swarm throughput: 783 pairs/hr (target 777) \u00b7 GREEN\n> - Active cooks: SwarmCurator-9B (CRE batch) \u00b7 SwarmCurator-27B (medical batch) \u00b7 SwarmJelly repairs queue\n> - Tribunal queue depth: 142 pairs (healthy)\n> - Bakery write queue depth: 27 pairs (healthy)\n> - Hedera anchor queue depth: 8 Royal Jelly cells (healthy)\n> - Energy draw: 1,247 W (within profile)\n> - Per-rig contribution: swarmrails GPU 1 (Scale A judging) 38% \u00b7 swarmrails GPU 0 (Scale B judging + 27B cook) 47% \u00b7 whale (SwarmJelly repair + 2B curator) 12% \u00b7 zima-edge (heartbeat + signal) 3%\n> - Last pair completed at: 13:59:58\n> - Status: GREEN \u00b7 Hive heartbeat consistent \u00b7 no adversarial spike\n>\n> **Customer takeaway**: the Swarm is working \u00b7 my engagements are being processed within service-level expectations \u00b7 the deeds I'm expecting later today will land on time. The transparency of the dashboard is itself the trust dial.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **swarm_stall** | Throughput drops to zero for > 5 min \u00b7 queue keeps growing | Hive heartbeat goes AMBER \u00b7 sr broker pages rig owner |\n| **swarm_runaway** | Energy draw spikes above safe limits \u00b7 cooks running hot without lift | Throttle the upstream cook rate \u00b7 investigate \u00b7 usually a misconfigured temp |\n| **swarm_imbalance** | One rig at 100% \u00b7 others idle \u00b7 scheduler stuck | Restart the router proxy \u00b7 re-balance \u00b7 log the event |\n| **swarm_queue_overflow** | Tribunal queue > 5000 \u00b7 Bakery > 1000 \u00b7 system back-pressure failing | Halt new engagements \u00b7 drain the queues \u00b7 escalate to founder if not resolved in 30 min |\n| **swarm_adversarial_spike** | Propolis-rate-per-hour exceeds threshold \u00b7 security event | Page sr broker AND founder \u00b7 investigate likely attack campaign |",
+  "hashes": {
+    "json_sha256": "sha256:9dd4da01dd003e3ee2e0c8e7c59ae307933a8a16ac7e5d754bc70415fee7020f",
+    "markdown_sha256": "sha256:7642a9c0d781fefe60e2a809ce0ee0733e635bf58bbe8eed7afc6164029b41b4"
+  },
+  "jr_broker_use": "The jr broker treats the Swarm as the LIVE FLOOR they operate on:\n\n1. The Swarm's tempo (live pair throughput) is the heartbeat you watch \u00b7 when it stalls \u00b7 investigate\n2. Your own engagements ADD to the Swarm \u00b7 log them within 5 minutes of opening \u00b7 the Swarm depth is a real-time number\n3. When the Swarm's queue depth balloons (Tribunal queue > 1000 \u00b7 Bakery queue > 500) \u00b7 stop opening new engagements \u00b7 close out what's in flight \u00b7 let the Swarm catch up\n4. When the Swarm is HOT (throughput > target) \u00b7 don't slow it \u00b7 ride it \u00b7 the cook is performing\n5. When the Swarm is QUIET (throughput < 50% target for > 1h) \u00b7 check the Hive's heartbeat \u00b7 usually an upstream component went amber\n\n**Rule of thumb**: the Swarm is the live workflow \u00b7 the Hive is the stable wall \u00b7 operate AT the Swarm's pace WITHIN the Hive's bounds.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/swarm/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.503802+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.503802+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "hive",
+    "bee",
+    "energy",
+    "royal-jelly",
+    "honey",
+    "tribunal"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: PROCESS-LEVEL \u00b7 the Swarm's health is the necessary condition for any assignment to close\n- **repair_lift**: PROCESS-LEVEL \u00b7 SwarmFixer runs INSIDE the Swarm \u00b7 the Swarm's health gates repair throughput\n- **validator_confidence**: PROCESS-LEVEL \u00b7 the validator chain runs INSIDE the Swarm \u00b7 queue back-pressure can defer validator confidence reporting\n- **risk_temperature**: SYSTEM-LEVEL \u00b7 the Swarm's adversarial-flag rate IS the risk-temperature gauge\n- **probability_of_close**: PROCESS-LEVEL \u00b7 close probability is calculated within engagements running inside the Swarm\n- **evidence_strength**: PROCESS-LEVEL \u00b7 the evidence vault writes happen inside the Swarm\n- **cost_to_mint**: DIRECT \u00b7 the Swarm's energy draw IS the cost-to-mint numerator \u00b7 throughput IS the denominator",
+  "slug": "swarm",
+  "sr_broker_use": "The sr broker watches the Swarm as the OPERATING-PRESSURE GAUGE:\n\n- The Swarm's queue depths are the first early-warning signal for upstream breakage \u00b7 faster than the heartbeat (heartbeat lags by 5 min \u00b7 queue depth changes second-by-second)\n- The Swarm's energy draw tells you what your cost-to-mint is in real time \u00b7 spikes mean a heavy cook is in flight \u00b7 sustained high draw without throughput gain means an inefficiency \u00b7 investigate\n- The Swarm's per-rig contribution should be balanced according to its allocated role \u00b7 if swarmrails GPU 1 is at 100% for hours while GPU 0 is idle \u00b7 the scheduler is broken\n- The Swarm's adversarial-source flag rate (Propolis verdicts per hour) is the SECURITY heat map \u00b7 spikes mean a campaign is incoming\n- The sr broker can throttle the Swarm (slow inbound cook rate \u00b7 drain the queue) but cannot speed it (the throughput ceiling is the rigs' compute \u00b7 don't push past it \u00b7 burnt cooks corrupt the corpus)",
+  "status": "active",
+  "street_definition": "\"The Swarm is hot today.\" The Swarm is the active network \u00b7 the live agents \u00b7 the compute that's metabolizing energy and producing pairs RIGHT NOW. If the Hive is the brick-and-mortar footprint \u00b7 the Swarm is the activity inside it \u00b7 the phones ringing \u00b7 the dials in flight \u00b7 the cooks running \u00b7 the Tribunal grading \u00b7 the deeds being issued \u00b7 the customers being briefed. The Swarm is what makes the Hive's heartbeat readable.\n\nIn CRE language \u00b7 the Swarm is the deal flow \u00b7 the pipeline \u00b7 the live floor \u00b7 the brokers on the dials \u00b7 the appraisers in the field \u00b7 the underwriters in the back \u00b7 the closers at the title company \u00b7 the relationships in motion. A brokerage's Hive doesn't change much week-to-week \u00b7 its Swarm changes by the hour. The Swarm is the verb. The Hive is the noun.",
+  "term": "Swarm",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # the Swarm itself does not get a tier \u00b7 it IS the verdict-producing layer\n  rule_layer_checks:\n    - swarm.tribunal_queue_depth MUST be within operational bounds (< 5000) for normal-mode verdicts\n    - swarm.bakery_write_queue_depth MUST be < 1000 for any verdict to be considered finalized\n    - swarm.hedera_anchor_queue_depth MUST be < 200 for any Royal Jelly verdict to be considered anchored\n  judge_layer_prompt_hint: \"the Swarm is the verdict producer \u00b7 the judge does not grade the Swarm \u00b7 the judge runs INSIDE the Swarm\"\n  can_be_critical_failure: false   # Swarm-level failures cascade to Hive-level alerts \u00b7 not single-pair Propolis events\n```\n\nThe Swarm is the runtime container of the Tribunal \u00b7 not a thing the Tribunal grades. But Swarm-level metrics (queue depths \u00b7 throughput \u00b7 energy draw) are inputs to the rule layer's degraded-mode decisions.",
+  "version": "v1"
+}

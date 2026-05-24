@@ -1,0 +1,103 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1",
+  "category": "defendableos_terms",
+  "created_at": "2026-05-24T15:33:21.481851+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/defendableos_terms/agentbench",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/defendableos_terms/agentbench/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1-20260524T15332148184Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:f9792d28716b5d51529538c38b17a96a654088d3979a8b86ebc35e000f298e59",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "agentbench",
+  "street_source_ens": null,
+  "subject": {
+    "category": "defendableos_terms",
+    "definitions": {
+      "client": "AgentBench is our formal benching service. Submit your agent \u00b7 we run it through our documented test pack \u00b7 grade it on 5 dimensions \u00b7 issue a publicly resolvable deed certifying the result. You can show the deed to your auditor, your insurance carrier, your board. It's a point-in-time attestation of agent quality \u00b7 re-bench periodically to maintain currency.",
+      "cre_operator": "In CRE this is the **third-party appraisal**. The owner wants to refinance. The lender requires a current MAI-grade appraisal. The owner hires the appraiser. The appraiser walks the building, pulls the comps, runs the income approach + the sales comparison + the cost approach, and signs a report. The report is the document the lender funds against. The appraisal isn't the owner's marketing \u00b7 it's a third-party attestation. AgentBench is the MAI appraisal for AI agents.",
+      "defendableos": "AgentBench is the bench rail of DefendableOS. It accepts an AI agent submission, runs it through a documented test pack (compute_inspector_pack_v1 \u00b7 v1.0-alpha or current), grades each task through Tribunal (rule layer + judge layer), computes a composite score across 5 axes (Capability 25% \u00b7 Truth 20% \u00b7 Safety 20% \u00b7 Numeric/Structural 15% \u00b7 Efficiency 10% \u00b7 Reproducibility 10%), and issues a DDEED-DOV-AGENT-<agent>-<seq>-v<n> on success. The deed is a public record of the agent's quality on the documented pack at a point in time.",
+      "street": "\"Bench it.\" That's how the Sr Hack tells a customer to submit their agent for a formal grade. **AgentBench** is the bench rail \u00b7 submit your agent \u00b7 Tribunal grades it on the documented pack \u00b7 we issue a DDEED-DOV-AGENT \u00b7 you have a defendable record of your agent's quality at a point in time. CRE-grade attestation for AI."
+    },
+    "related_terms": [
+      "defendableos",
+      "defendablerouter",
+      "clawcheck",
+      "defendablehack",
+      "pair-candidate"
+    ],
+    "slug": "agentbench",
+    "term": "AgentBench"
+  },
+  "supersedes": null,
+  "term": "AgentBench",
+  "updated_at": "2026-05-24T15:33:21.744612+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

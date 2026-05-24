@@ -1,0 +1,517 @@
+{
+  "categories": {
+    "client_terms": [
+      {
+        "deed_id": "DDEED-VOCAB-CLIENT_TERMS-ASSIGNMENT-v1",
+        "ens_anchor": "defendapedia.eth/client_terms/assignment",
+        "record_hash": "sha256:9e1e7aaa0ee74e6bc4c4e878032301a85f67d5b70ece559b46ddaf8ecec43d23",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "assignment",
+        "term": "Assignment"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CLIENT_TERMS-CLOSING-STATEMENT-DEFENDABLE-CLOSING-STATEMENT-v1",
+        "ens_anchor": "defendapedia.eth/client_terms/closing-statement-defendable-closing-statement",
+        "record_hash": "sha256:1f6a3be9ee202ad341857eeee15659ebfa319116f3515d2905e512d43869144a",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "closing-statement-defendable-closing-statement",
+        "term": "Closing Statement (Defendable Closing Statement)"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1",
+        "ens_anchor": "defendapedia.eth/client_terms/engagement",
+        "record_hash": "sha256:47f8e9f94a221591aac6d788620ef68f539120b5e8d444eaa9ab7736b5f12051",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "engagement",
+        "term": "Engagement"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1",
+        "ens_anchor": "defendapedia.eth/client_terms/letter-of-understanding-lou",
+        "record_hash": "sha256:aa3bdce5264575718678f5f08431b7d8d4a6f341730fd2c40e6c59b6edba029f",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "letter-of-understanding-lou",
+        "term": "Letter of Understanding (LOU)"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CLIENT_TERMS-MORNING-BRIEF-v1",
+        "ens_anchor": "defendapedia.eth/client_terms/morning-brief",
+        "record_hash": "sha256:82db7eea07c34494e82635e8923c592fc6d328e6e364ce3c57eda3c037e356b8",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "morning-brief",
+        "term": "Morning Brief"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CLIENT_TERMS-PASS-DOCTRINE-v1",
+        "ens_anchor": "defendapedia.eth/client_terms/pass-doctrine",
+        "record_hash": "sha256:b6b89ca352985863acc0a0967a251bfaa3b38e233d3dde63b618a63717dbd703",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "pass-doctrine",
+        "term": "PASS Doctrine"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CLIENT_TERMS-PRE-MARKET-FLIGHT-SHEET-v1",
+        "ens_anchor": "defendapedia.eth/client_terms/pre-market-flight-sheet",
+        "record_hash": "sha256:38fbe160efd1659bef7eb85812f31c97c26fcdcac66cfacc43bfdda5664013fd",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "pre-market-flight-sheet",
+        "term": "Pre-Market Flight Sheet"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CLIENT_TERMS-PRINCIPAL-v1",
+        "ens_anchor": "defendapedia.eth/client_terms/principal",
+        "record_hash": "sha256:5d3e19ca8e0605956caf2e6e458e603c775023d16566e5c881eef96ee1ec9c63",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "principal",
+        "term": "Principal"
+      }
+    ],
+    "cre_terms": [
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-BOOKS-AND-RECORDS-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/books-and-records",
+        "record_hash": "sha256:c0280107c36da7959c853701b925e0517191b6749f86901f22203ffd4cc684fe",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "books-and-records",
+        "term": "Books and Records"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-CAP-RATE-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/cap-rate",
+        "record_hash": "sha256:bf2ffb7f449f3cbf8b0ab36258c8601659e8dcdc5279530a4c35764ecb0513ef",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "cap-rate",
+        "term": "Cap Rate"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-DEAL-FLOW-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/deal-flow",
+        "record_hash": "sha256:c9e193396e16efdc34b300a526398f519c2c406ddac117917983bd39b06554f6",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "deal-flow",
+        "term": "Deal Flow"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-DIGEST-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/digest",
+        "record_hash": "sha256:085f1bcb5cd96b2113635e349bced743dd23c3e255f3de0bae0b5079745410d4",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "digest",
+        "term": "Digest"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-DUE-DILIGENCE-DD-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/due-diligence-dd",
+        "record_hash": "sha256:f51bdd11af4372938a2cc2cbe643a8a864cc7cf6c48a5b3632d7573f824182fb",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "due-diligence-dd",
+        "term": "Due Diligence (DD)"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-LOI-LETTER-OF-INTENT-A-K-A-LOU-LETTER-OF-UNDERSTANDING-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+        "record_hash": "sha256:ecef4912f97c1f3f2ec48df39313b7688538c9017ec6b21f378c0a3eed249bdd",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+        "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-OM-OFFERING-MEMORANDUM-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/om-offering-memorandum",
+        "record_hash": "sha256:5e7e2d9342bf3f1f688da563f4d017d43fac1afd590608b7a6f8f1913dbc6f5c",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "om-offering-memorandum",
+        "term": "OM \u00b7 Offering Memorandum"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-PROBABILITY-OF-CLOSE-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/probability-of-close",
+        "record_hash": "sha256:62e12908c604d56eb7e4b8e18fe50522d3a753e7a64d7a32e882be0544f72ed6",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "probability-of-close",
+        "term": "Probability of Close"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-PSA-PURCHASE-AND-SALE-AGREEMENT-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/psa-purchase-and-sale-agreement",
+        "record_hash": "sha256:b9fad49a3aee5618cb939d2505fd714ffe8babbd3e19b7422bf96be52cab7439",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "psa-purchase-and-sale-agreement",
+        "term": "PSA \u00b7 Purchase and Sale Agreement"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-CRE_TERMS-UNDERWRITING-v1",
+        "ens_anchor": "defendapedia.eth/cre_terms/underwriting",
+        "record_hash": "sha256:3024978f5adeeb30bb9ee44aab521e59ed5ae7312948f41615215f7224d85d05",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "underwriting",
+        "term": "Underwriting"
+      }
+    ],
+    "defendableos_terms": [
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-AGENTBENCH-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/agentbench",
+        "record_hash": "sha256:f9792d28716b5d51529538c38b17a96a654088d3979a8b86ebc35e000f298e59",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "agentbench",
+        "term": "AgentBench"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/clawcheck",
+        "record_hash": "sha256:898ef51de0fdd2edc2f3584e452824c7dae70a5e91539c74159eca19c2319058",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "clawcheck",
+        "term": "ClawCheck"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-COMMUNICATOR-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/communicator",
+        "record_hash": "sha256:b30f1b974b0e743b5fd1be8ee4ac762662e55968d15fb070067d34486b10f75e",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "communicator",
+        "term": "Communicator"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLECLOUD-COM-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/defendablecloud-com",
+        "record_hash": "sha256:5e0bb41eb0d0ac824e2f95f6c3df8f47264282ff6eee317beb3c70e52c3edc6b",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "defendablecloud-com",
+        "term": "DefendableCloud.com"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEHACK-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/defendablehack",
+        "record_hash": "sha256:419ea2611b3d21330a19aaf16f210b180adff25e4c7abff2036e6305a469ca75",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "defendablehack",
+        "term": "DefendableHack"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEOS-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/defendableos",
+        "record_hash": "sha256:6913b665ac0822132d4d0d040a2c084b3667529400094e65a51da864a4d32197",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "defendableos",
+        "term": "DefendableOS"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-DEFENDABLEROUTER-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/defendablerouter",
+        "record_hash": "sha256:74df18123dfecc10513007d7ff00e6415f14a68398e052dacd13c1b80c39317c",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "defendablerouter",
+        "term": "DefendableRouter"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-HONEYBOX-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/honeybox",
+        "record_hash": "sha256:82bf03ac4b27357fb20e464a163e7cce49cfa6863d1806f47debfab72c076a48",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "honeybox",
+        "term": "HoneyBox"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-TEMP-0-05-RULE-THE-TEMP-FIVE-CENT-RULE-v1",
+        "ens_anchor": "defendapedia.eth/defendableos_terms/temp-0-05-rule-the-temp-five-cent-rule",
+        "record_hash": "sha256:d758939ebaf6fd37482a79c7c76d3f81a6fd91779b7f8e424193dae4dc140ead",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "temp-0-05-rule-the-temp-five-cent-rule",
+        "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)"
+      }
+    ],
+    "hive_terms": [
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-BEE-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/bee",
+        "record_hash": "sha256:ec0f24840eaeaecbedf8e4151b9a7a0b7f719ca6cc77aef5566e9ffc1a28a23b",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "bee",
+        "term": "Bee"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-COST-TO-MINT-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/cost-to-mint",
+        "record_hash": "sha256:cd5730d3190eadf430223a64168c68b41b0243756167e22e5a6f38244d3703e1",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "cost-to-mint",
+        "term": "Cost to Mint"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-ENERGY-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/energy",
+        "record_hash": "sha256:b2b0f5e2d659b63bd0356fa49e08fec6877fbc15e0fbe5b9384f43f9e395972e",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "energy",
+        "term": "Energy"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-GENESIS-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/genesis",
+        "record_hash": "sha256:a31160f6a542679bcb44d992bae5f6033f9757131ba868549fcc5b662d77adae",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "genesis",
+        "term": "Genesis"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-HIVE-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/hive",
+        "record_hash": "sha256:d941d941211b7addeb2aaf169b24100b73dcd6cd50b0c151fbbeb918cac0b664",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "hive",
+        "term": "Hive"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-HONEY-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/honey",
+        "record_hash": "sha256:fa09880249e0bc4686a99ba06ca4e9e67a6756b371803bdd842050e1c3047851",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "honey",
+        "term": "Honey"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-JELLY-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/jelly",
+        "record_hash": "sha256:37ad4400335c25115397e2f485ed6a533bf81affabe6ff870ba55f606a8e692a",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "jelly",
+        "term": "Jelly"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-PROPOLIS-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/propolis",
+        "record_hash": "sha256:14e92fb1fb94fd4de52e4520b5f33417f493be9bee1089f17a5cf332a9a5cb32",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "propolis",
+        "term": "Propolis"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-ROYAL-JELLY-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/royal-jelly",
+        "record_hash": "sha256:08f182aef69ce3e1ccd4a96ab0187cd1f589d82b489faf92ad476e9085671652",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "royal-jelly",
+        "term": "Royal Jelly"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-HIVE_TERMS-SWARM-v1",
+        "ens_anchor": "defendapedia.eth/hive_terms/swarm",
+        "record_hash": "sha256:be5c9d5e043a41ed768b3f963ec8c88d16e70091c480708cac31ce519a6459bf",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "swarm",
+        "term": "Swarm"
+      }
+    ],
+    "repair_terms": [
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-COMPARE-TASK-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/compare-task",
+        "record_hash": "sha256:1a75bbfbc5475c9a00960d2f48970d575b4cbf7f2bac57ccd70756be3c71fa39",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "compare-task",
+        "term": "Compare Task"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-DEFENDABLEJELLY-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/defendablejelly",
+        "record_hash": "sha256:8fe39e1677ef23829cad89bef33b935bbe53e0d5a76e0387e7036ee3879cffda",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "defendablejelly",
+        "term": "DefendableJelly"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-DETECT-TASK-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/detect-task",
+        "record_hash": "sha256:29ba90b4b4070c756006d4101c4e2bbf967307addbe7bd7a96872300d84bb8d4",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "detect-task",
+        "term": "Detect Task"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-DIAGNOSE-TASK-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/diagnose-task",
+        "record_hash": "sha256:331d9097eb89411faaf203a11a3b83461584cd40b8cb6f1b736f9b3edefcf389",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "diagnose-task",
+        "term": "Diagnose Task"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/pair-candidate",
+        "record_hash": "sha256:8001462dad1aa3085defadac01ea65eeb87e0280b7c908bb6599ac7af22ecf00",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "pair-candidate",
+        "term": "Pair Candidate"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-PREVENT-TASK-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/prevent-task",
+        "record_hash": "sha256:1e92f8bbdec02e813e8c2f628b0a6e9ee07fbf30bcd2255598a8614c975720de",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "prevent-task",
+        "term": "Prevent Task"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-REPAIR-LIFT-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/repair-lift",
+        "record_hash": "sha256:71b52d5b5a6dbd5517500d5006997312b0ecc1ab363cb876f4dc0ef2229e4509",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "repair-lift",
+        "term": "Repair Lift"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-REPAIR-TASK-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/repair-task",
+        "record_hash": "sha256:ce5a9bad5a6e656b1ff023a6c0ba34be3565d562653b35455d4d28aaf22ce5d6",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "repair-task",
+        "term": "Repair Task"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-SWARMFIXER-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/swarmfixer",
+        "record_hash": "sha256:5a7289722dbdcae376cda87a7ed5847587ebaed22c0155a4a07060e66ff190d4",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "swarmfixer",
+        "term": "SwarmFixer"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-REPAIR_TERMS-SWARMJELLY-v1",
+        "ens_anchor": "defendapedia.eth/repair_terms/swarmjelly",
+        "record_hash": "sha256:e2a5f6062a2b2e11b068bb11e8add9e602fcf0f4aa5cf20c064ad24bdc482e51",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "swarmjelly",
+        "term": "SwarmJelly"
+      }
+    ],
+    "scoring_terms": [
+      {
+        "deed_id": "DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1",
+        "ens_anchor": "defendapedia.eth/scoring_terms/assignment-success",
+        "record_hash": "sha256:dc117352f69ed7468676139c4633eb982f11d2d09b5c05f4d7e23ba999aac3db",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "assignment-success",
+        "term": "Assignment Success"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-SCORING_TERMS-CLIENT-CONFIDENCE-v1",
+        "ens_anchor": "defendapedia.eth/scoring_terms/client-confidence",
+        "record_hash": "sha256:1882fdff1ae5ec0d4d8d3638fd75d579fbe2644abfd2fbcd74fb2e2601873fec",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "client-confidence",
+        "term": "Client Confidence"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-SCORING_TERMS-EVIDENCE-STRENGTH-v1",
+        "ens_anchor": "defendapedia.eth/scoring_terms/evidence-strength",
+        "record_hash": "sha256:32abbe62694a858f6ef8f69305e9018db60230f3367685912e25c52281cf6c9e",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "evidence-strength",
+        "term": "Evidence Strength"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-SCORING_TERMS-PROBABILITY-OF-CLOSE-v1",
+        "ens_anchor": "defendapedia.eth/scoring_terms/probability-of-close",
+        "record_hash": "sha256:49051afac51380ba93f604b230d46e797f2ce348600e97c5df40a4e4cc164a34",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "probability-of-close",
+        "term": "Probability of Close"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1",
+        "ens_anchor": "defendapedia.eth/scoring_terms/repair-lift-ui-dial",
+        "record_hash": "sha256:b78568b07dca338c8e7fbc1613e9f8a8258abdcfaf68ec53cad2870fc6cd658a",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "repair-lift-ui-dial",
+        "term": "Repair Lift (UI Dial)"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-SCORING_TERMS-RISK-TEMPERATURE-v1",
+        "ens_anchor": "defendapedia.eth/scoring_terms/risk-temperature",
+        "record_hash": "sha256:c141eef83162090cd019a0239cfb81ae23e6ebb933252c4ba609821e1994e18e",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "risk-temperature",
+        "term": "Risk Temperature"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1",
+        "ens_anchor": "defendapedia.eth/scoring_terms/validator-confidence",
+        "record_hash": "sha256:d0a4f5bde5e98373fb445c500f9fcf8a422042815cccee581f048bec4b3864d1",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "validator-confidence",
+        "term": "Validator Confidence"
+      }
+    ],
+    "tribunal_terms": [
+      {
+        "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-FAILURE-v1",
+        "ens_anchor": "defendapedia.eth/tribunal_terms/assignment-failure",
+        "record_hash": "sha256:392b2279eb354fad5e877aee3e8ee49a27606cf1c6c97dd26ea436be38410cb9",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "assignment-failure",
+        "term": "Assignment Failure"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-SUCCESS-v1",
+        "ens_anchor": "defendapedia.eth/tribunal_terms/assignment-success",
+        "record_hash": "sha256:5fed7d7c6b5f716a0f8639259ceb7fcf3564a450f6ad894213b250f1693d6fff",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "assignment-success",
+        "term": "Assignment Success"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1",
+        "ens_anchor": "defendapedia.eth/tribunal_terms/confidence-weight",
+        "record_hash": "sha256:ea5c0e98462d92d1eab0437608b6e7bc938f712fb197e7ceeb602d9d3b61413f",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "confidence-weight",
+        "term": "Confidence Weight"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-HALLUCINATION-EVENT-v1",
+        "ens_anchor": "defendapedia.eth/tribunal_terms/hallucination-event",
+        "record_hash": "sha256:8dd58aaf261116de374bd9b2a5cca8da1436f8e469a9a2bc69b1e35c2cc87216",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "hallucination-event",
+        "term": "Hallucination Event"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-JUDGE-v1",
+        "ens_anchor": "defendapedia.eth/tribunal_terms/judge",
+        "record_hash": "sha256:1f57790e05cbb73c5f84cbbeeb2489f782c29db2b902a01c31acc971ab2efcd6",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "judge",
+        "term": "Judge"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-TRIBUNAL-v1",
+        "ens_anchor": "defendapedia.eth/tribunal_terms/tribunal",
+        "record_hash": "sha256:f255ce1a90ebf1f22c9e02e37d6f5242090fbfee2c60882b3d919b6d96c72fe8",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "tribunal",
+        "term": "Tribunal"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-v1",
+        "ens_anchor": "defendapedia.eth/tribunal_terms/validator",
+        "record_hash": "sha256:800af36a09c1e91583743c7efc5c377f5444269666e36a722d89a636682e8284",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "validator",
+        "term": "Validator"
+      },
+      {
+        "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-CHAIN-v1",
+        "ens_anchor": "defendapedia.eth/tribunal_terms/validator-chain",
+        "record_hash": "sha256:1114ad070876295e2258517dc222e6967cdd5750a0c0bc2f60d06c0795e859a4",
+        "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+        "slug": "validator-chain",
+        "term": "Validator Chain"
+      }
+    ]
+  },
+  "category_count": 7,
+  "index_type": "DEFENDABLE_VOCABULARY_INDEX",
+  "term_count": 62
+}

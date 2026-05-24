@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-ASSIGNMENT-v1",
+  "category": "client_terms",
+  "created_at": "2026-05-24T15:33:21.456430+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-ASSIGNMENT-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/client_terms/assignment",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/client_terms/assignment/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-ASSIGNMENT-v1-20260524T15332145642Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:9e1e7aaa0ee74e6bc4c4e878032301a85f67d5b70ece559b46ddaf8ecec43d23",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "assignment",
+  "street_source_ens": null,
+  "subject": {
+    "category": "client_terms",
+    "definitions": {
+      "client": "An **assignment** is a specific project within our engagement. The engagement is the relationship \u00b7 the assignment is the work order.\n\nEvery assignment we run has a written brief with numeric success criteria \u00b7 a deadline \u00b7 and a defined deliverable. We sign it \u00b7 you sign it \u00b7 we file it in your engagement folder as a permanent record. When the assignment closes \u00b7 you get a Defendable Closing Statement that reports the boolean outcome (CLOSED \u00b7 HONEY / CONDITIONED / FAILED \u00b7 RECOVERABLE / FAILED \u00b7 DARK) and the 5-grade breakdown that explains why.\n\nYou can have many assignments running in parallel under one engagement \u00b7 each with its own dial \u00b7 its own deadline \u00b7 its own closing. We treat each one with broker-grade discipline \u00b7 individual attention \u00b7 individual reporting.",
+      "cre_operator": "A sr broker in CRE thinks in assignments because that's how the pipeline pencils. The sr broker carries 8-15 active assignments at any time \u00b7 each one with its own dial \u00b7 its own deadline \u00b7 its own buyer pool \u00b7 its own deal physics. The broker's discipline is keeping each one moving forward \u00b7 re-checking the dial weekly \u00b7 escalating the ones that drift.\n\nThe assignment IS the unit the broker books fees against. The engagement is the relationship \u00b7 but the engagement doesn't book revenue \u00b7 the assignments do. Every CRE shop runs a per-broker assignment report every Friday morning: in-flight count \u00b7 weighted dial total \u00b7 expected close month \u00b7 expected fee total \u00b7 variance to plan.\n\nWe mirror that exactly. The Defender's defense-ops desk runs the same Friday Brief \u00b7 across the assignment book.",
+      "defendableos": "An **Assignment** in DefendableOS is the specific work order within an engagement \u00b7 uniquely identified by `assignment_id` of shape `ASN-{seq}` (scoped to its parent engagement). Every assignment has:\n\n- A signed **assignment brief** with numeric \u00b7 time-bound \u00b7 auditable success criteria\n- A defined start date \u00b7 expected close date\n- A specific agent or agent-fleet it covers\n- Its own Probability of Close sub-dial (rolled up into engagement-level dial)\n- Its own Tribunal verdict stream feeding the assignment success score\n- Its own closing statement at completion (deed `DDEED-{org}-{vertical}-{customer}-CLOSE-{seq}-v1`)\n\nThe assignment is the unit of accountability. The sr broker is named on every assignment. The QA validator (SH6) checks every closing statement.",
+      "street": "\"What's the assignment?\" \u2014 the jr broker asks before they walk into the first sit.\n\nAn **Assignment** is a specific job within an engagement. It's the work order. The thing with a defined success criterion \u00b7 a defined deadline \u00b7 a defined deliverable. One engagement holds many assignments over its life \u00b7 just as one CRE listing relationship holds many trades over the years.\n\nIf an engagement is the listing agreement \u00b7 an assignment is the individual trade we're working on this quarter. Signed brief. Numeric criteria. Date on the deadline. Owner on the desk. That's an assignment.\n\nIf someone can't tell you exactly what they're trying to close \u00b7 when \u00b7 and how we'll know we closed it \u00b7 they don't have an assignment. They have a wish."
+    },
+    "related_terms": [
+      "engagement",
+      "letter-of-understanding",
+      "closing-statement",
+      "morning-brief",
+      "assignment-success",
+      "probability-of-close",
+      "principal"
+    ],
+    "slug": "assignment",
+    "term": "Assignment"
+  },
+  "supersedes": null,
+  "term": "Assignment",
+  "updated_at": "2026-05-24T15:33:21.735968+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

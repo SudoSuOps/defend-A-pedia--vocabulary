@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"prevent.task_id\": {\"type\": \"string\", \"format\": \"rj-prev-<run_id>\"},\n  \"prevent.trigger_condition\": {\n    \"type\": \"object\",\n    \"required\": [\"pattern_type\", \"pattern_definition\"],\n    \"properties\": {\n      \"pattern_type\": {\"type\": \"enum\", \"values\": [\"INPUT_SHAPE\", \"TOOL_OUTPUT_SHAPE\", \"REASONING_TRACE\", \"OUTPUT_FORMAT\"]},\n      \"pattern_definition\": {\"type\": \"string\"}\n    }\n  },\n  \"prevent.check_logic\": {\n    \"type\": \"object\",\n    \"required\": [\"check_type\", \"check_definition\"],\n    \"properties\": {\n      \"check_type\": {\"type\": \"enum\", \"values\": [\"REGEX\", \"JSONPATH\", \"TOOL_CALL_GUARD\", \"INVARIANT_ASSERTION\"]},\n      \"check_definition\": {\"type\": \"string\"}\n    }\n  },\n  \"prevent.remediation\": {\n    \"type\": \"object\",\n    \"required\": [\"action_class\", \"action_detail\"],\n    \"properties\": {\n      \"action_class\": {\"type\": \"enum\", \"values\": [\"BLOCK_AND_REPROMPT\", \"FALLBACK_PATH\", \"ESCALATE_HUMAN\", \"AUGMENT_CONTEXT\", \"ABORT_SAFE\"]},\n      \"action_detail\": {\"type\": \"string\"}\n    }\n  },\n  \"prevent.confidence\": {\"type\": \"float\", \"range\": [0.0, 1.0]},\n  \"prevent.proposed_pack_version\": {\"type\": \"string\", \"default\": \"v.next\"}\n}\n```\n\nSchema files: `docs/schemas/royal_jelly_record.schema.json` \u00b7 `docs/schemas/prevent_task.schema.json` \u00b7 `docs/schemas/adversarial_pack.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "repair_terms",
+  "client_explanation": "The Prevent Task is the insurance policy on the fix. We tell you what to watch for, how to check it deterministically, and what your agent should do when the check fires. You wire the rule into your runtime guardrails. The same failure stops shipping. The rule also feeds our AdversarialPack so EVERY customer benefits from your one bad day.",
+  "cre_operator_meaning": "In CRE the Prevent Task is the **title insurance policy**. The original closing had a defect \u00b7 easement claim \u00b7 undisclosed lien \u00b7 permit irregularity. You cured it for this transaction. The title policy is what protects the NEXT owner from the same defect re-appearing at the next closing. The policy doesn't fix what's already broken \u00b7 it prevents the recurrence. That's the prevent layer.",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-PREVENT-TASK-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `prevent.trigger_condition` \u00b7 `prevent.check_logic` \u00b7 `prevent.remediation` \u00b7 `prevent.self_test_pass`\n- **DDEED class impact**: prevent rules accumulate into a per-customer guardrail registry \u00b7 referenced from DDEED-DOV-REPAIR\n- **Books and records layer**: L1 PostgreSQL (rule registry) \u2192 L4 Hedera HCS (rule hash anchor)\n- **5 Proofs touched**: PROCESS (the rule's lineage from a real failure) \u00b7 QUALITY (the self-test verdict) \u00b7 TRUST (deterministic and verifiable)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `prevent.trigger_condition` \u00b7 `prevent.check_logic` \u00b7 `prevent.remediation` \u00b7 `prevent.self_test_pass`\n- **DDEED class impact**: prevent rules accumulate into a per-customer guardrail registry \u00b7 referenced from DDEED-DOV-REPAIR\n- **Books and records layer**: L1 PostgreSQL (rule registry) \u2192 L4 Hedera HCS (rule hash anchor)\n- **5 Proofs touched**: PROCESS (the rule's lineage from a real failure) \u00b7 QUALITY (the self-test verdict) \u00b7 TRUST (deterministic and verifiable)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Prevent Task is the third of the 5 Royal Jelly tasks SwarmFixer emits. It generates a deterministic rule that, if it had existed before today's failure, would have prevented it. The rule has three parts: the trigger condition (pattern to watch for), the check logic (deterministic evaluation), and the remediation (what the agent should do when the trigger fires). Prevent rules feed both the customer's runtime guardrails AND the AdversarialPack v.next as positive defense cases.",
+  "defendableos_notes": "- The Prevent Task is what compounds across customers \u00b7 one customer's bad day becomes every customer's defense\n- Deterministic-only is non-negotiable \u00b7 LLM-checks-on-LLM-outputs is a regression to opinion \u00b7 the whole point of the rule layer is to escape opinion\n- Prevent rules with self_test_pass = true and customer-adoption = true become CANONICAL guardrails published in the next AdversarialPack release\n\n\ud83d\udc1d *The prevent is the title insurance. Deterministic. Testable. C",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-PREVENT-TASK-v1",
+    "canon": "defendapedia.eth/repair_terms/prevent-task",
+    "street_source": null
+  },
+  "evidence_required": [
+    "The Diagnose Task output (failure mode + AgentHash bucket)",
+    "The Repair Task output (corrected behavior)",
+    "The trigger condition with concrete pattern definition",
+    "The check logic (runnable code or expression)",
+    "The remediation action with detail",
+    "A self-test proving the rule catches the source failure"
+  ],
+  "example": "> **Diagnose**: REASONING_GAP \u00b7 READ bucket \u00b7 severity 3 (journal-entry DR/CR reversal)\n>\n> **Repair**: corrected output + entity_direction_lookup tool call\n>\n> **Prevent Task output**:\n> ```yaml\n> trigger_condition:\n>   pattern_type: INPUT_SHAPE\n>   pattern_definition: \"Any journal-entry input where vendor_id is present AND entity_direction_lookup was NOT called\"\n> check_logic:\n>   check_type: TOOL_CALL_GUARD\n>   check_definition: \"if input.vendor_id and 'entity_direction_lookup' not in tool_calls: BLOCK\"\n> remediation:\n>   action_class: BLOCK_AND_REPROMPT\n>   action_detail: \"Refuse the journal entry \u00b7 re-prompt the agent to call entity_direction_lookup(vendor_id) first \u00b7 then resume\"\n> confidence: 0.94\n> proposed_pack_version: v.next\n> self_test:\n>   ran_against: \"<source_pair_id>\"\n>   triggered: true\n>   would_have_blocked: true\n> ```",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `non_deterministic_check` | Check logic requires LLM inference \u00b7 not a rule | JELLY \u00b7 re-route |\n| `over_narrow_rule` | Rule only catches exact-match pairs \u00b7 no breadth | JELLY \u00b7 Sr review |\n| `over_broad_rule` | Rule catches many false positives in the test corpus | JELLY \u00b7 Sr review |\n| `missing_remediation` | Trigger + check defined but no remediation action | PROPOLIS \u00b7 schema violation |\n| `self_test_fail` | Rule doesn't trigger on its own source pair | PROPOLIS \u00b7 refinery failure |\n| `infra_dependency_unmet` | Remediation requires infra the customer doesn't have | JELLY \u00b7 escalate |",
+  "hashes": {
+    "json_sha256": "sha256:c9587b1d2009196dd003dc238f73294fe711269d3ddd402cf934143ac7ce1352",
+    "markdown_sha256": "sha256:8274a97407d3baa570e517c3ecd1446d96f1043b43ad2ffe35f00a8c20529ee4"
+  },
+  "jr_broker_use": "The Jr Hack verifies the Prevent Task is DETERMINISTIC \u00b7 not \"ask the LLM if this looks bad.\" Deterministic means regex \u00b7 JSONPath \u00b7 tool-call assertions \u00b7 invariant checks. If the check logic requires another LLM call, it's not a prevent rule \u00b7 it's another agent, and that doesn't compound the same way. Re-route for re-generation with a deterministic check.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/repair_terms/prevent-task/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.511541+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.511541+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "diagnose-task",
+    "repair-task",
+    "detect-task",
+    "compare-task",
+    "swarmfixer",
+    "pair-candidate"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: MEDIUM \u00b7 prevention is long-term value \u00b7 doesn't move today's lift\n- **repair_lift**: NEUTRAL \u00b7 prevent doesn't change the source pair's score\n- **validator_confidence**: MEDIUM \u00b7 validators verify the self-test\n- **risk_temperature**: INVERSE \u00b7 good prevent rule lowers customer's ongoing risk\n- **probability_of_close**: HIGH \u00b7 the prevent layer is the long-term retention story\n- **evidence_strength**: HIGH \u00b7 the rule is deterministic and re-testable\n- **cost_to_mint**: LOW \u00b7 prevent is short-output (~1000-2000 tokens)",
+  "slug": "prevent-task",
+  "sr_broker_use": "The Sr Hack reviews the Prevent Task for **breadth vs depth tradeoff**. A rule that's too narrow only catches the exact pair that failed today. A rule that's too broad catches false positives and degrades the customer's agent throughput. The sweet spot is the rule that catches the failure SHAPE \u00b7 the 5-10 next pairs that will look similar but not identical. The Sr Hack signs off on the breadth.",
+  "status": "active",
+  "street_definition": "\"How do we keep this from happening again?\" That's the customer's first question after the dust settles. **Prevent Task** is RJ task #3 \u00b7 the trigger condition + the check logic + the remediation. It's not the fix \u00b7 it's the policy that stops the same failure shape from shipping a second time.",
+  "term": "Prevent Task",
+  "tribunal_use": "- **Rule layer**: Prevent Task MUST be deterministic \u00b7 MUST have all 3 parts (trigger \u00b7 check \u00b7 remediation) \u00b7 LLM-only checks rejected\n- **Rule layer**: The check logic MUST be testable \u00b7 the rule must be runnable against the source pair AND produce a positive trigger\n- **Judge layer**: Tribunal evaluates whether the prevent rule would have stopped the original failure \u00b7 this is a deterministic re-run \u00b7 binary pass/fail\n- **Classification impact**: Prevent Task that fails the self-test (would NOT have caught its own source failure) drops the whole RJ record to JELLY",
+  "version": "v1"
+}

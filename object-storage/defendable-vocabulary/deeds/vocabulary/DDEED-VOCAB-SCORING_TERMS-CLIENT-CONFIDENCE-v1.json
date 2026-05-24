@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-CLIENT-CONFIDENCE-v1",
+  "category": "scoring_terms",
+  "created_at": "2026-05-24T15:33:21.521385+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-CLIENT-CONFIDENCE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/scoring_terms/client-confidence",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/scoring_terms/client-confidence/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-CLIENT-CONFIDENCE-v1-20260524T15332152137Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:1882fdff1ae5ec0d4d8d3638fd75d579fbe2644abfd2fbcd74fb2e2601873fec",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "client-confidence",
+  "street_source_ens": null,
+  "subject": {
+    "category": "scoring_terms",
+    "definitions": {
+      "client": "We don't surface the **Client Confidence** dial to you directly \u00b7 it's an internal operator metric \u00b7 the way a CRE broker tracks \"is the seller still happy\" separately from \"does the deal still pencil.\" Surfacing it raw would be like a CRE broker telling the seller \"I'm scoring your engagement-mood at 0.62 this week\" \u2014 useful internally \u00b7 weird externally.\n\nWhat you DO see is the OUTPUT of the client-confidence tracking:\n\n- Your sr broker calls more often when client confidence drifts (it's a relationship signal \u00b7 so the response is a relationship action)\n- Your Morning Brief evolves to address concerns we sense before you raise them\n- Founder gets cc'd on more events when the dial dips\n- We proactively re-walk LOU sections or doctrine pieces if we sense gaps in alignment\n\nThe dial drives our cadence and our care. It doesn't drive a dashboard you watch. You watch your Probability of Close (the deal-math dial). We watch your Client Confidence (the relationship-pulse dial). Together they keep both sides of the engagement healthy.",
+      "cre_operator": "A sr broker in CRE knows the deal can pencil mathematically AND still die from low client confidence. The seller can be right \u00b7 the comps can support \u00b7 the buyer pool can be deep \u00b7 and the seller can still pull the listing because they lost confidence in the broker.\n\nThe healthy CRE broker tracks both metrics implicitly: the deal-math (is this trade close-able) AND the client-pulse (does the principal still believe in me \u00b7 in my team \u00b7 in my recommendation). When the client-pulse dies \u00b7 the deal-math doesn't matter. The relationship is the moat.\n\nWe mirror this exactly. Client Confidence is the relationship-pulse dial \u00b7 tracked separately from Probability of Close (which is the deal-math dial).",
+      "defendableos": "**Client Confidence** in DefendableOS is the modeled relationship-pulse number (float 0-1) for a given engagement \u00b7 measuring the principal's confidence in the Defender as a counterparty. Computed weekly \u00b7 refreshed on-demand on material relationship events \u00b7 surfaced privately to the sr broker (NOT to the principal \u00b7 principal pulse is operator information).\n\nComputed as a 5-driver weighted composite:\n- `responsiveness` \u00b7 25% (avg response time to sr broker outreach \u00b7 last 30 days)\n- `morning_brief_engagement` \u00b7 20% (open rate \u00b7 reply rate \u00b7 acknowledgment rate)\n- `walk_attendance` \u00b7 20% (showed for scheduled walks \u00b7 scheduled walks promptly \u00b7 principal-acknowledgments captured within SLA)\n- `escalation_tone` \u00b7 15% (qualitative \u00b7 sr broker scores after each escalation \u00b7 \"principal trusted our framing\" / \"principal pushed back hard\" / \"principal seemed skeptical\")\n- `referral_signal` \u00b7 10% (did the principal refer anyone to us \u00b7 did they mention us positively in industry contexts)\n- `expansion_signal` \u00b7 10% (did the principal upgrade tier \u00b7 expand fleet coverage \u00b7 add assignments)\n\nBucketed into 5 bands using the same thresholds as Probability of Close (GREEN_LOCKED \u00b7 AMBER_TRACKING \u00b7 YELLOW_WATCHLIST \u00b7 ORANGE_ESCALATION \u00b7 RED_DARK). The bands are operator-internal \u00b7 NEVER surfaced to the principal directly.",
+      "street": "\"How confident is the principal?\" \u2014 the founder asks the sr broker before scheduling any QBR.\n\n**Client Confidence** is the symmetric dial \u00b7 measuring how confident the PRINCIPAL is in OUR engagement \u00b7 separate from how confident WE are in the validator chain. The validator-confidence dial measures the apparatus. The client-confidence dial measures the relationship.\n\nBoth dials matter. A high validator-confidence + low client-confidence engagement is a relationship at risk \u00b7 regardless of how well the work is grading. A healthy engagement carries both dials above 0.70."
+    },
+    "related_terms": [
+      "probability-of-close",
+      "assignment-success",
+      "engagement",
+      "principal",
+      "morning-brief",
+      "closing-statement",
+      "pass-doctrine"
+    ],
+    "slug": "client-confidence",
+    "term": "Client Confidence"
+  },
+  "supersedes": null,
+  "term": "Client Confidence",
+  "updated_at": "2026-05-24T15:33:21.782961+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

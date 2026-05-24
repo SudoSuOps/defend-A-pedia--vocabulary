@@ -1,0 +1,79 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"assignment.outcome\": {\n    \"type\": \"enum\",\n    \"values\": [\"SUCCESS\", \"FAILURE\", \"PENDING\", \"PARTIAL\"]\n  },\n  \"assignment.composite_score\": { \"type\": \"float\", \"range\": [0.0, 1.0] },\n  \"assignment.grades\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"capability\": { \"type\": \"float\" },\n      \"truth\": { \"type\": \"float\" },\n      \"safety\": { \"type\": \"float\" },\n      \"numeric_structural\": { \"type\": \"float\" },\n      \"efficiency\": { \"type\": \"float\" },\n      \"reproducibility\": { \"type\": \"float\" }\n    }\n  },\n  \"assignment.tribunal_tier_at_close\": {\n    \"type\": \"enum\",\n    \"values\": [\"ROYAL_JELLY\", \"HONEY\", \"JELLY\", \"PROPOLIS\", \"GENESIS\"]\n  },\n  \"assignment.deliverable_fulfilled\": { \"type\": \"boolean\" },\n  \"assignment.receipt_issued\": { \"type\": \"boolean\" }\n}\n```\n\nSchema files: `docs/schemas/assignment_outcome.schema.json` \u00b7 `docs/schemas/grade_rubric.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "tribunal_terms",
+  "client_explanation": "\"Assignment success\" is whether the AI work we did for you actually completed the job \u00b7 TRUE or FALSE \u00b7 with a 5-grade rubric underneath that tells you HOW we got to the answer. Capability (did it produce the right shape of output) \u00b7 Truth (are the facts sourceable) \u00b7 Safety (did it avoid harm) \u00b7 Numeric/Structural (do the numbers and JSON tie) \u00b7 Efficiency (was the energy spend proportional) \u00b7 Reproducibility (can the run repeat). All 6 grades must clear their thresholds for the boolean to be TRUE. You see all 6 grades on every Closing Statement.",
+  "cre_operator_meaning": "In CRE \u00b7 assignment success is the closing event \u00b7 the wire hits \u00b7 the deed records \u00b7 the LOU obligations are met \u00b7 the commission earns. A broker's career is the sum of assignment successes \u00b7 not the sum of engagements opened. A 30-year broker who closes 1 in 4 engagements has a stronger book than a broker who opens 4x as many but closes 1 in 12. Same here. AI engagement open is cheap \u00b7 assignment success is the asset.\n\nThe 5-grade rubric inside is the rigor that distinguishes a closing-grade work product from a presentation-grade one. Capability (can the model do the task) \u00b7 Truth (is the output factually correct) \u00b7 Safety (does the output avoid harm) \u00b7 Numeric/Structural (do the numbers and structures tie) \u00b7 Efficiency (was the energy spend proportional to the result) \u00b7 Reproducibility (can the run be repeated and yield consistent results). All five must clear for the boolean to be TRUE.",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-SUCCESS-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `assignment.outcome` \u00b7 `assignment.composite_score` \u00b7 `assignment.grades.*` \u00b7 `assignment.tribunal_tier_at_close` \u00b7 `assignment.receipt_issued`\n- **DDEED class impact**: A SUCCESS = TRUE engagement at Royal Jelly tier produces a full DDEED \u00b7 Honey tier produces a receipt \u00b7 Jelly tier produces a repair-lineage record \u00b7 Propolis tier produces a sealed propolis vault entry\n- **Books and records layer**: ALL 5 layers depending on tier\n- **5 Proofs touched**: QUALITY (the rubric IS the quality breakdown) \u00b7 PROCESS (the engagement lineage IS process) \u00b7 ECONOMICS (the Efficiency grade IS economics) \u00b7 TRUST (receipt issuance IS trust)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `assignment.outcome` \u00b7 `assignment.composite_score` \u00b7 `assignment.grades.*` \u00b7 `assignment.tribunal_tier_at_close` \u00b7 `assignment.receipt_issued`\n- **DDEED class impact**: A SUCCESS = TRUE engagement at Royal Jelly tier produces a full DDEED \u00b7 Honey tier produces a receipt \u00b7 Jelly tier produces a repair-lineage record \u00b7 Propolis tier produces a sealed propolis vault entry\n- **Books and records layer**: ALL 5 layers depending on tier\n- **5 Proofs touched**: QUALITY (the rubric IS the quality breakdown) \u00b7 PROCESS (the engagement lineage IS process) \u00b7 ECONOMICS (the Efficiency grade IS economics) \u00b7 TRUST (receipt issuance IS trust)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Assignment success is the structural success state of an AI engagement \u00b7 `assignment.outcome = SUCCESS` (boolean true) when the work product clears the Tribunal at Honey tier or above AND the engagement's named deliverable was fulfilled AND the customer-facing receipt was issued.\n\nThe 5-grade rubric (per the AgentGrade-style spec inherited from the SwarmRails Compute Inspector pack):\n\n| Grade | Weight | What it measures | Pass threshold |\n|---|---|---|---|\n| **Capability** | 25% | Did the model produce the right SHAPE of output for the task | \u2265 0.70 |\n| **Truth** | 20% | Are the factual claims sourceable and accurate | \u2265 0.75 |\n| **Safety** | 20% | Did the output avoid harm \u00b7 respect consent \u00b7 avoid disallowed content | \u2265 0.85 (highest threshold \u00b7 structural floor) |\n| **Numeric/Structural** | 15% | Do the numbers tie \u00b7 do the JSON shapes parse \u00b7 do the schemas match | \u2265 0.80 |\n| **Efficiency** | 10% | Was the energy spend proportional to the result | \u2265 0.60 |\n| **Reproducibility** | 10% | Can the run be repeated with consistent outcomes | \u2265 0.70 |\n\nComposite = weighted sum. Composite \u2265 0.75 with ALL 6 grades above their pass thresholds = SUCCESS.",
+  "defendableos_notes": "- The 6-grade rubric is doctrine \u00b7 do not collapse to a single composite for customer presentation \u00b7 all 6 grades go on the Closing Statement\n- The Safety threshold (0.85) is the highest of all 6 because safety failures compound \u00b7 this is structural\n- PARTIAL is a distinct outcome from FAILURE \u00b7 a PARTIAL assignment can be re-attempted via SwarmFixer repair \u00b7 a FAILURE typically cannot\n- Operator-level assignment-success rates are the operator-discipline feedback loop \u00b7 they get reviewed in the weekly check\n- A high engagement-open count without a high SUCCESS rate is a brand-risk pattern \u00b7 the PASS doctrine is the corrective\n\n\ud83d\udc1d *Assignment success is the boolean. The 5-grade rubric is how you earn it. All 6 grades clear \u00b7 the boolean is TRUE \u00b7 the deed issues \u00b7 the receipt ships \u00b7 the books r",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-SUCCESS-v1",
+    "canon": "defendapedia.eth/tribunal_terms/assignment-success",
+    "street_source": null
+  },
+  "evidence_required": [
+    "A Tribunal verdict at Honey tier or above",
+    "A non-null deliverable_fulfilled flag (true)",
+    "A non-null receipt_issued flag (true \u00b7 with receipt_id)",
+    "All 6 grades populated and above threshold",
+    "A composite score \u2265 0.75",
+    "An operator-attestation log entry (sr broker or jr broker who closed the engagement)",
+    "A close-timestamp"
+  ],
+  "example": "> **Engagement**: STNL acquisition opinion \u00b7 cold storage \u00b7 Atlanta MSA \u00b7 Full tier.\n>\n> **Closing assessment**:\n> - Tribunal tier at close: ROYAL_JELLY\n> - Deliverable fulfilled: true (4-page broker opinion produced \u00b7 matches LOU scope)\n> - Receipt issued: true (DDEED-DOV-CRE-LINEAGE-ATL-000042-v1)\n> - Grades:\n>   - Capability 0.92 (PASS \u00b7 threshold 0.70)\n>   - Truth 0.94 (PASS \u00b7 threshold 0.75 \u00b7 5 sources cited \u00b7 all retrievable \u00b7 all weighted \u2265 0.85)\n>   - Safety 0.96 (PASS \u00b7 threshold 0.85 \u00b7 consent captured \u00b7 PII scan clean \u00b7 no disallowed content)\n>   - Numeric/Structural 0.89 (PASS \u00b7 threshold 0.80 \u00b7 all numerics tie \u00b7 JSON parses \u00b7 schemas match)\n>   - Efficiency 0.78 (PASS \u00b7 threshold 0.60 \u00b7 cost-to-mint $0.0135 within Full-tier RJ tolerance)\n>   - Reproducibility 0.85 (PASS \u00b7 threshold 0.70 \u00b7 re-run produces composite within 0.03)\n> - Composite: 0.91\n> - assignment.outcome = SUCCESS\n>\n> **Outcome**: Assignment closed \u00b7 customer notified via Closing Statement \u00b7 6-grade rubric included \u00b7 engagement added to the customer's annual success rate aggregate \u00b7 operator log marked SUCCESS = TRUE.",
+  "failure_modes_raw": "| Mode | Description | Resolution |\n|---|---|---|\n| **false_success_claim** | Operator marked SUCCESS = TRUE but one of the 3 conditions failed | Operator-discipline event \u00b7 success rate metric corrected \u00b7 operator coached |\n| **single_grade_drop** | 5 of 6 grades pass thresholds \u00b7 1 fails \u00b7 composite still \u2265 0.75 | Marked PARTIAL \u00b7 not SUCCESS \u00b7 operator may attempt repair \u00b7 re-grade |\n| **success_with_no_receipt** | All grades pass \u00b7 Tribunal verdict Honey \u00b7 but no receipt was issued (Bakery queue stuck) | Held PENDING \u00b7 receipt issuance investigated \u00b7 success cannot be claimed until receipt issues |\n| **success_inflation_per_operator** | An operator's success rate is statistically above peers in the same engagement segment | Sr broker audit \u00b7 either the operator has strong selection (PASS doctrine well-applied) OR is mislabeling outcomes |\n| **success_without_deliverable** | All grades pass \u00b7 receipt issued \u00b7 but the customer's stated deliverable was not actually fulfilled | Engagement-scope mismatch \u00b7 customer notified \u00b7 engagement re-scoped or refunded \u00b7 success metric corrected |",
+  "hashes": {
+    "json_sha256": "sha256:802293ef8a94d9b4fe59e23194d1c8ec4c2ea00a3fd769cc0cbcd77758bef710",
+    "markdown_sha256": "sha256:e27762c46e346b951aaf149254ac654512ecc7a31ab853ae8d2ff518a43d6da8"
+  },
+  "jr_broker_use": "The jr broker reads assignment success as the ENGAGEMENT-CLOSE INDICATOR:\n\n1. Every engagement has an assignment-success boolean computed at close \u00b7 visible in the dashboard\n2. The 5-grade breakdown is in the operator log \u00b7 learn to read the failing grade when SUCCESS = FALSE\n3. The most common single-grade failures are Truth (source unreachable) and Safety (consent missing) \u00b7 escalate appropriately\n4. SUCCESS = TRUE requires the Tribunal verdict be Honey or above AND deliverable_fulfilled AND receipt_issued \u00b7 all three are non-negotiable\n5. NEVER mark an engagement SUCCESS = TRUE in the operator log when one of the three conditions is missing \u00b7 this corrupts the assignment-success rate metric\n\n**Rule of thumb**: the boolean tells the customer \u00b7 the rubric tells the operator \u00b7 both matter.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/tribunal_terms/assignment-success/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.530248+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.530248+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "assignment-failure",
+    "tribunal",
+    "validator-chain",
+    "confidence-weight",
+    "royal-jelly",
+    "honey"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: SELF \u00b7 this term IS the dial\n- **repair_lift**: PARENT \u00b7 repair lift increases the probability of assignment success\n- **validator_confidence**: ENABLER \u00b7 validator confidence is a precondition for the SUCCESS boolean\n- **risk_temperature**: INVERSE \u00b7 sustained high SUCCESS lowers risk \u00b7 sustained low SUCCESS spikes risk\n- **probability_of_close**: TRAILING \u00b7 close prob predicts SUCCESS \u00b7 SUCCESS history calibrates close prob\n- **evidence_strength**: GATE \u00b7 Truth grade requires evidence strength\n- **cost_to_mint**: GATE \u00b7 Efficiency grade requires proportional cost-to-mint",
+  "slug": "assignment-success",
+  "sr_broker_use": "The sr broker watches assignment-success as the FRANCHISE HEALTH METRIC:\n\n- Weekly assignment-success rate is the brokerage's analog to closing rate \u00b7 target 80-90% for standard engagements \u00b7 enterprise should run 90%+\n- Per-grade failure pattern reveals where the cook is weakest \u00b7 Truth-rate failures = source-vault or curator issues \u00b7 Safety-rate failures = consent / redaction / content-policy issues \u00b7 Efficiency failures = cost-to-mint inflation\n- Engagement-type segmentation \u00b7 simple-extract engagements should run 95%+ success \u00b7 complex-reasoning engagements may run 70-80% \u00b7 enterprise white-glove should run 90%+\n- Operator-level rollups reveal who is opening engagements that don't close \u00b7 this is the operator-discipline feedback loop \u00b7 coach jr brokers based on their assignment-success rate at engagement open\n- PASS doctrine reduces engagement count but raises assignment-success rate \u00b7 this is the right tradeoff",
+  "status": "active",
+  "street_definition": "\"Did the assignment close?\" Assignment success is the boolean answer \u00b7 TRUE if the AI work product fulfilled the engagement scope to production-safe standard \u00b7 FALSE if it did not. Underneath the boolean sits the 5-grade rubric (Capability \u00b7 Truth \u00b7 Safety \u00b7 Numeric/Structural \u00b7 Efficiency \u00b7 with Reproducibility as a separate hygiene gate) \u00b7 each scored independently \u00b7 with a composite that determines whether the boolean is earned.\n\nIn CRE language \u00b7 assignment success is \"did the deal close\" \u00b7 the binary that gates commission \u00b7 gates the next referral \u00b7 gates the broker's reputation. Underneath the close-binary sits the diligence rubric \u00b7 did the comps tie \u00b7 did the title clear \u00b7 did the financing fund \u00b7 did the LOI hold to PSA. Same exact pattern. The binary at the top \u00b7 the rubric underneath \u00b7 earn the boolean by clearing the rubric.",
+  "term": "Assignment Success",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - ROYAL_JELLY    # SUCCESS-with-apex-tier feeds RJ\n    - HONEY          # SUCCESS-with-Honey-tier feeds Honey\n  rule_layer_checks:\n    - assignment.tribunal_tier_at_close MUST be HONEY or above for SUCCESS = TRUE\n    - assignment.deliverable_fulfilled MUST be true for SUCCESS = TRUE\n    - assignment.receipt_issued MUST be true for SUCCESS = TRUE\n    - all 6 grades MUST be above their respective thresholds for SUCCESS = TRUE\n  judge_layer_prompt_hint: \"you are scoring against the 5-grade rubric \u00b7 grade each independently \u00b7 do not blend\"\n  can_be_critical_failure: false   # success is the positive state \u00b7 failure is contrast\n```",
+  "version": "v1"
+}

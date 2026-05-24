@@ -1,0 +1,82 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"communicator.intake_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"DCOM-INTAKE-{cell_hash}-{utc}\"\n  },\n  \"communicator.output_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"DCOM-OUTPUT-{cell_hash}-{utc}\"\n  },\n  \"directive.json\": {\n    \"type\": \"jsonb\",\n    \"schema_file\": \"docs/schemas/engagement.schema.json\"\n  },\n  \"directive.intent_class\": {\n    \"type\": \"enum\",\n    \"values\": [\"INVESTIGATE\", \"EXECUTE\", \"VALIDATE\", \"REPORT\", \"ESCALATE\", \"PAUSE\"]\n  },\n  \"directive.evidence_required\": {\n    \"type\": \"array\",\n    \"items\": \"string\"\n  },\n  \"round_trip_match_score\": {\n    \"type\": \"float\",\n    \"range\": [0.0, 1.0],\n    \"scoring_hook\": \"communicator_alignment_score\"\n  },\n  \"vocabulary_candidates_emitted\": {\n    \"type\": \"array\",\n    \"description\": \"New terms heard from client \u00b7 ready for validator promotion\"\n  }\n}\n```\n\nSchema files: `docs/schemas/engagement.schema.json` \u00b7 `docs/schemas/assignment_success.schema.json` \u00b7 new schema pending: `communicator_directive.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "defendableos_terms",
+  "client_explanation": "When you call us \u00b7 the first thing on the line is the Communicator. It listens for what you ACTUALLY need \u00b7 not just what you said. Then we run the work. Then the Communicator writes back to you in your language \u00b7 with the receipts attached. You get a real answer in your voice \u00b7 with the math behind it. No technical mystery box. No \"the model decided.\" Real translation \u00b7 documented \u00b7 defendable.",
+  "cre_operator_meaning": "In CRE \u00b7 this is what a sr broker DOES on every call. A principal says \"yo we're bleeding on Q4 \u00b7 figure it out\" and the sr broker hears: *re-underwrite the asset \u00b7 check tenant credit drift \u00b7 flag any covenants triggered \u00b7 price the workout window \u00b7 come back with three lanes (refi / restructure / sale)*. The broker translates the principal's emotional/incomplete language into a structured workstream the team can execute.\n\nThen the broker takes the team's analysis (cap rates \u00b7 DSCR \u00b7 comp grid \u00b7 scenarios) and translates it back into a 90-second summary the principal can act on: *\"You got 73 days to refi the Sun Belt warehouse. Two willing lenders. Best execution at 6.4. Recommend the Bridgehouse term sheet. Authorize next move?\"*\n\nThe Communicator is that sr broker \u00b7 in code \u00b7 always on \u00b7 24/7 \u00b7 trained on the founder's actual book.",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-COMMUNICATOR-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `intake_id` \u00b7 `output_id` \u00b7 `directive_json_hash` \u00b7 `round_trip_match_score` \u00b7 `vocabulary_candidates_emitted`\n- **DDEED class impact**: TWO new deed classes\n  - `DDEED-DOV-COMMUNICATOR` \u00b7 receipts the bidirectional translation event (intake + output bundled)\n  - `DDEED-DOV-VOCAB` \u00b7 receipts any vocabulary candidates promoted to canonical defend-A-pedia terms\n- **Books and records layer**: ALL 5 layers \u00b7 the Communicator events live alongside the deeds in PostgreSQL \u2192 Merkle \u2192 NAS \u2192 Hedera \u2192 ENS\n- **5 Proofs touched**: ALL FIVE\n  - ORIGIN (which Communicator version \u00b7 which model \u00b7 which prompt)\n  - QUALITY (round-trip match score \u00b7 client voice match)\n  - PROCESS (full intake \u2192 directive \u2192 execution \u2192 output \u2192 explanation trace)\n  - ECONOMICS (cost-to-translate \u00b7 extra model in the path)\n  - TRUST (Hedera anchor \u00b7 ENS-bound \u00b7 client can verify they were heard correctly)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `intake_id` \u00b7 `output_id` \u00b7 `directive_json_hash` \u00b7 `round_trip_match_score` \u00b7 `vocabulary_candidates_emitted`\n- **DDEED class impact**: TWO new deed classes\n  - `DDEED-DOV-COMMUNICATOR` \u00b7 receipts the bidirectional translation event (intake + output bundled)\n  - `DDEED-DOV-VOCAB` \u00b7 receipts any vocabulary candidates promoted to canonical defend-A-pedia terms\n- **Books and records layer**: ALL 5 layers \u00b7 the Communicator events live alongside the deeds in PostgreSQL \u2192 Merkle \u2192 NAS \u2192 Hedera \u2192 ENS\n- **5 Proofs touched**: ALL FIVE\n  - ORIGIN (which Communicator version \u00b7 which model \u00b7 which prompt)\n  - QUALITY (round-trip match score \u00b7 client voice match)\n  - PROCESS (full intake \u2192 directive \u2192 execution \u2192 output \u2192 explanation trace)\n  - ECONOMICS (cost-to-translate \u00b7 extra model in the path)\n  - TRUST (Hedera anchor \u00b7 ENS-bound \u00b7 client can verify they were heard correctly)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The **Communicator LLM** is the bidirectional translation model that sits at both ends of the assignment lifecycle:\n\n- **INTAKE**: human speech (messy \u00b7 emotional \u00b7 street-level \u00b7 incomplete) \u2192 structured directive (validator-ready JSON \u00b7 vocabulary-tagged \u00b7 risk-scored \u00b7 evidence-required-named)\n- **OUTPUT**: machine output (Tribunal verdict \u00b7 5-Proof receipt \u00b7 agent execution result) \u2192 human explanation (CRE-grade \u00b7 CFO-readable \u00b7 founder-voice preserved)\n\nBoth directions use the SAME defend-A-pedia vocabulary as the canonical reference. Both directions are receipted \u00b7 graded \u00b7 deeded. The Communicator is the FIRST model the customer talks to and the LAST model that talks back.",
+  "defendableos_notes": "- The Communicator is what makes DefendableOS feel like a HUMAN brokerage \u00b7 not a SaaS bot\n- Every Communicator interaction is BOTH service AND training data \u00b7 the dual-use is the moat\n- The vocabulary candidates emitted by Communicator become the proprietary corpus competitors can't replicate\n- Pairs with [[swarmjelly]] \u00b7 when Tribunal flags PROPOLIS due to round-trip mismatch \u00b7 SwarmFixer's REPAIR task fires on the Communicator (not the underlying agent)\n- The bidirectional model is ONE model \u00b7 trained both directions \u00b7 shares the same defend-A-pedia vocabulary base\n- Ship sequence: defend-A-pedia v0.2.x (this) \u2192 Tribunal v1.0 \u2192 Communicator v0.1 (depends on both)\n\n\ud83d\udc1d *We speak first \u00b7 then we have the receipts to back it up. That's the brokerage",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-COMMUNICATOR-v1",
+    "canon": "defendapedia.eth/defendableos_terms/communicator",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Audio or text capture of the original human input (raw)",
+    "Communicator-emitted structured directive (JSON)",
+    "Agent execution log (Tribunal-graded)",
+    "Communicator-emitted human-language output",
+    "Round-trip match score",
+    "Any vocabulary candidates emitted (with frequency \u00b7 context \u00b7 client_id)"
+  ],
+  "example": "> **Engagement**: Imaging center principal calls 16:42 on Tuesday. Says: *\"yo my MRI agent quoted three patients last week prices that came back wrong \u00b7 insurance freaked \u00b7 what the hell is going on get me answers by Thursday.\"*\n>\n> **Communicator INTAKE directive**:\n> ```json\n> {\n>   \"intake_id\": \"DCOM-INTAKE-A7F3-2026-05-24T20:42:18Z\",\n>   \"intent_class\": \"INVESTIGATE\",\n>   \"subject_agent\": \"mri-quote-bot-prod-002\",\n>   \"incident_window\": \"2026-05-19/2026-05-24\",\n>   \"incident_count\": 3,\n>   \"evidence_required\": [\n>     \"agent execution logs for the 3 quote events\",\n>     \"insurance pre-auth comparison\",\n>     \"agent prompt version diff (last 30d)\",\n>     \"training corpus check for billing-code drift\"\n>   ],\n>   \"risk_tags\": [\"financial\", \"compliance\", \"patient_facing\"],\n>   \"deadline_utc\": \"2026-05-29T17:00Z\",\n>   \"vocabulary_candidates\": [\"insurance freaked\"]\n> }\n> ```\n>\n> **Communicator OUTPUT explanation (Thursday morning brief)**:\n> ```\n> Boss \u00b7 here's the read.\n>\n> All 3 mis-quotes traced to a Stripe API change on May 18 that\n> shifted how the agent reads HSA-eligible vs HSA-ineligible\n> imaging codes. The agent kept quoting HSA prices on procedures\n> Stripe re-classified out of HSA eligibility on May 18.\n>\n> Patients \u00b7 insurance \u00b7 all three confirmed.\n> Fix \u00b7 prompt patch shipped Wednesday 14:00.\n> Re-bench \u00b7 6/6 quotes Honey since.\n> Liability \u00b7 we covered the 3 mis-quotes ($840 total) \u00b7\n> deed DDEED-DOV-FIXER-MRI-000007-v1 anchored.\n>\n> No more drift expected. Tribunal monitoring continuous.\n> Insurance comms \u00b7 I have a draft ready when you say go.\n>\n> Lift on this fix: avoided estimated $34K/quarter in similar\n> mis-quotes had drift continued.\n>\n> ROI on the day: 41x.\n> ```\n>\n> **Vocabulary deed**: `\"insurance freaked\"` candidate promoted via validator review to canonical term `insurance-escalation-event` \u00b7 added to defend-A-pedia \u00b7 client's exact wording preserved in the term's `Street Definition` section. The book of business just got 1 entry richer.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **fabricated_intent** | Communicator emitted a directive the human didn't actually authorize | PROPOLIS |\n| **lost_in_translation** | Output explanation contradicts the agent's actual result | PROPOLIS |\n| **lexicon_drift** | Communicator used generic terms instead of canonical defend-A-pedia vocab | JELLY |\n| **scope_creep_at_intake** | Directive contained tasks the human never asked for | JELLY |\n| **scope_loss_at_intake** | Directive missed tasks the human implied but didn't explicitly state | JELLY (sr broker catches via review) |\n| **client_voice_loss** | Output explanation reads SaaS-y \u00b7 not in client's own vocabulary | JELLY |\n| **missed_vocabulary_candidate** | Heard a new term from client \u00b7 didn't flag it for promotion | JELLY (advisory \u00b7 not a deed-blocker) |\n| **round_trip_mismatch** | Final output answered a different question than was asked | PROPOLIS |",
+  "hashes": {
+    "json_sha256": "sha256:aa304795dd118865b74821d1ec556a00ba5841238815833ddcddecc53575f380",
+    "markdown_sha256": "sha256:dda0e77035a6dc37258c49654f904ffb9dddb36df86ca82edaf03ede18af2d2a"
+  },
+  "jr_broker_use": "When you take a call:\n1. Open the Communicator intake (one button \u00b7 captures audio + your live notes)\n2. Let it draft the structured directive \u00b7 don't second-guess on the call \u00b7 let the model catch the intent\n3. After the call \u00b7 review the directive \u00b7 confirm the intent class (INVESTIGATE / EXECUTE / VALIDATE / etc.)\n4. Flag any terms you heard the client use that DON'T already exist in defend-A-pedia (those become Vocabulary Deed candidates)\n5. Hand off to the agent/team via the directive ID \u00b7 NOT via Slack paste\n\n**Discipline**: Do NOT ship work against the raw call audio. Work against the Communicator-emitted directive. The directive is what the Tribunal will grade you against.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/communicator/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.483816+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.483816+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "directive",
+    "intent",
+    "meaning-alignment",
+    "communication-arbitration",
+    "book-of-business",
+    "language-asset",
+    "vocabulary-deed",
+    "round-trip-verification",
+    "tribunal",
+    "pre-market-flight-sheet"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 if the directive is wrong \u00b7 the assignment can succeed against the wrong target and still count as a failure\n- **repair_lift**: HIGH at intake (better directives compound over time as Communicator learns) \u00b7 MEDIUM at output (cosmetic vs functional)\n- **validator_confidence**: HIGH \u00b7 the sr broker's override behavior is the strongest validator signal in the system\n- **risk_temperature**: INVERSE \u00b7 better Communicator = lower risk because misunderstanding is caught at entry\n- **probability_of_close**: HIGH \u00b7 meaningful translation IS the close\n- **evidence_strength**: INDIRECT \u00b7 Communicator names the evidence required \u00b7 so completeness is downstream-correlated\n- **cost_to_mint**: MEDIUM \u00b7 adds 1 model in the path \u00b7 but saves cost on every Tribunal re-grade due to scope errors",
+  "slug": "communicator",
+  "sr_broker_use": "The sr broker REVIEWS the Communicator's intake directive before it ships:\n- Does the intent class match what you'd diagnose hearing the call directly?\n- Are the evidence requirements complete \u00b7 or did the Communicator miss something the client implied?\n- Is there a risk tag the Communicator didn't catch (regulatory \u00b7 political \u00b7 financial)?\n- Are any new vocabulary candidates worth promoting to the dictionary?\n\nThe sr broker has OVERRIDE AUTHORITY on the directive. If you change it \u00b7 the change is itself receipted (transition_log) and becomes training signal for Communicator vNext. **Your override is the gold standard.**",
+  "status": "active",
+  "street_definition": "The **Communicator** is the model that listens to a human \u00b7 figures out what they actually meant \u00b7 turns that into a structured directive an agent can execute against \u00b7 then takes the agent's output and translates it back into language the human can act on. It's the bridge. It's the bookend. It's the meaning-alignment layer.\n\nNOT a chatbot. A communication arbitrator.",
+  "term": "Communicator",
+  "tribunal_use": "The Tribunal grades the Communicator at BOTH ends:\n\n| Stage | Tribunal check | Class on fail |\n|---|---|---|\n| INTAKE \u00b7 intent extraction | Does the structured directive match what the human actually said + meant? | JELLY (recoverable \u00b7 re-prompt human) or PROPOLIS (intent fabricated) |\n| INTAKE \u00b7 vocabulary mapping | Did the Communicator use canonical defend-A-pedia terms? Did it flag new ones? | JELLY (lexicon drift) or HONEY (clean) |\n| OUTPUT \u00b7 explanation accuracy | Does the human-language output accurately reflect the agent's actual result + the Tribunal verdict? | PROPOLIS (mistranslation = trust break) |\n| OUTPUT \u00b7 client voice match | Does it use the client's vocabulary \u00b7 not generic SaaS speak? | JELLY (sanitized \u00b7 re-translate) |\n| ROUND-TRIP | Did the final answer match the ORIGINAL intent? | The killer check \u00b7 PROPOLIS if the agent answered a different question than asked |\n\n`round_trip_match_score < 0.7` triggers the Communicator's own SwarmFixer-style repair loop (re-prompt human \u00b7 re-extract intent \u00b7 re-execute).",
+  "version": "v1"
+}

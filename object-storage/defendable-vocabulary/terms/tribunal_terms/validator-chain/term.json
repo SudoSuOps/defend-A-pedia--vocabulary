@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"validator_chain.results\": {\n    \"type\": \"array\",\n    \"items\": {\n      \"type\": \"object\",\n      \"required\": [\"check_id\", \"result\", \"reason\", \"is_critical\"],\n      \"properties\": {\n        \"check_id\": {\n          \"type\": \"string\",\n          \"enum\": [\"C01\", \"C02\", \"C03\", \"C04\", \"C05\", \"C06\", \"C07\", \"C08\", \"C09\", \"C10\", \"C11\", \"C12\"]\n        },\n        \"result\": {\n          \"type\": \"string\",\n          \"enum\": [\"PASS\", \"FAIL\", \"ADVISORY_FAIL\", \"ERROR\"]\n        },\n        \"is_critical\": { \"type\": \"boolean\" },\n        \"reason\": { \"type\": \"string\" },\n        \"confidence_weight\": { \"type\": \"float\" }\n      }\n    }\n  },\n  \"validator_chain.all_critical_pass\": { \"type\": \"boolean\" },\n  \"validator_chain.advisory_count_failed\": { \"type\": \"integer\" },\n  \"validator_chain.total_latency_ms\": { \"type\": \"integer\" }\n}\n```\n\nSchema files: `docs/schemas/validator_chain.schema.json` \u00b7 `docs/schemas/validator_result.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "tribunal_terms",
+  "client_explanation": "\"The validator chain\" is our 12-check rule layer \u00b7 the structural checklist our Tribunal runs on every AI output before the judges weigh in. Seven of the checks are critical \u00b7 any fail stops the deed cold. Five are advisory \u00b7 they downgrade confidence but don't block. Every deed you receive carries the full chain results in its record. You can audit any deed by running its record_hash against the chain results \u00b7 the chain is the chain \u00b7 the audit trail is verifiable.",
+  "cre_operator_meaning": "In CRE \u00b7 the validator chain maps to the full title-insurance checklist \u00b7 the items that have to be cleared before the closing agent writes the title policy. Survey current? Chain of title clean? Liens released? Easements disclosed? Tax-cert clean? Holdout deed identified? Twelve items more or less \u00b7 seven of them stop-the-deal \u00b7 five of them disclosure items that get into the title insurance addendum without blocking the close.\n\nSame here. The validator chain is what the Tribunal runs before any judge can issue a verdict. The chain is the structural protection that keeps the Hive's deeds defendable in audit.",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-CHAIN-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `validator_chain.results` (full 12-item array) \u00b7 `validator_chain.all_critical_pass` \u00b7 `validator_chain.advisory_count_failed` \u00b7 `validator_chain.total_latency_ms`\n- **DDEED class impact**: NO DDEED issues without a clean critical chain (all C01-C07 PASS)\n- **Books and records layer**: L1 PG (chain results stored hot) \u00b7 L2 Merkle (chain results hashed into batch root) \u00b7 L3 NAS (chain transition log archived) \u00b7 L4 Hedera HCS (chain hash included in batch root)\n- **5 Proofs touched**: QUALITY (chain IS the quality rule layer) \u00b7 PROCESS (chain IS the process) \u00b7 TRUST (chain results in the deed record are what's verifiable)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `validator_chain.results` (full 12-item array) \u00b7 `validator_chain.all_critical_pass` \u00b7 `validator_chain.advisory_count_failed` \u00b7 `validator_chain.total_latency_ms`\n- **DDEED class impact**: NO DDEED issues without a clean critical chain (all C01-C07 PASS)\n- **Books and records layer**: L1 PG (chain results stored hot) \u00b7 L2 Merkle (chain results hashed into batch root) \u00b7 L3 NAS (chain transition log archived) \u00b7 L4 Hedera HCS (chain hash included in batch root)\n- **5 Proofs touched**: QUALITY (chain IS the quality rule layer) \u00b7 PROCESS (chain IS the process) \u00b7 TRUST (chain results in the deed record are what's verifiable)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The validator chain is the ordered sequence of 12 named checks (C01-C12) executed by Auditor-class Bee validators inside the Tribunal Filter role:\n\n| # | Check | Type | Trigger |\n|---|---|---|---|\n| **C01** | pair record present | CRITICAL | PairCandidate JSON exists \u00b7 parses |\n| **C02** | source artifact referenced | CRITICAL | Every claim cites at least one source |\n| **C03** | source retrievable | CRITICAL | At least one source resolves (HTTP 200) within 30-day cache |\n| **C04** | tribunal label assigned | CRITICAL | tribunal_label or judges_pending flag present |\n| **C05** | no hard-fail flagged | CRITICAL | No hallucination_event \u00b7 schema_break \u00b7 tool_misuse |\n| **C06** | PROPOLIS not promoted | CRITICAL | Propolis-flagged pairs cannot reach deed pipeline |\n| **C07** | holdout contamination guard | CRITICAL | Pair NOT in holdout_manifest.jsonl (5 holdouts as of 2026-05-24) |\n| **C08** | operator consent | ADVISORY | Engagement consent flag captured |\n| **C09** | redaction status | ADVISORY | PII / secrets / PAN scan result logged |\n| **C10** | transition audit log | ADVISORY | All Tribunal state changes logged |\n| **C11** | SHA-256 recorded | ADVISORY | Canonical JSON record_hash computed |\n| **C12** | no secrets in pair | ADVISORY \u00b7 also SAFETY GATE | Regex + entropy scan for AWS keys \u00b7 tokens \u00b7 PANs |\n\nFull spec in [`docs/doctrine/13_validator_chain_doctrine.md`](../../doctrine/13_validator_chain_doctrine.md).",
+  "defendableos_notes": "- The 12 checks are doctrine \u00b7 do not add \u00b7 do not remove \u00b7 do not reorder\n- The critical/advisory split is doctrine \u00b7 C01-C07 critical \u00b7 C08-C12 advisory (with C12 special safety-gate status)\n- Operator override of critical checks is structurally rejected \u00b7 this is the founder-locked discipline\n- The chain budget is ~1000ms per pair \u00b7 sustained latency above 2000ms = degraded mode\n- The chain is what makes the Tribunal MORE than vibes \u00b7 removing the chain reduces the Tribunal to LLM opinion \u00b7 which is what we're replacing\n\n\ud83d\udc1d *Twelve checks. Seven critical. Five advisory. Run them in order. Log every result. The chain is the chain \u00b7 the chain is title insurance for A",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-VALIDATOR-CHAIN-v1",
+    "canon": "defendapedia.eth/tribunal_terms/validator-chain",
+    "street_source": null
+  },
+  "evidence_required": [
+    "All 12 check outcomes recorded",
+    "The is_critical flag correct for each check (C01-C07 critical \u00b7 C08-C12 advisory \u00b7 C12 special safety-gate status)",
+    "A reason string for any non-PASS result",
+    "A total_latency_ms reading",
+    "A canonical-JSON record_hash that includes the chain results"
+  ],
+  "example": "> **Engagement**: STNL opinion \u00b7 cold storage \u00b7 Atlanta MSA.\n>\n> **Validator chain results (in execution order)**:\n> - C01 PASS (43ms \u00b7 confidence 1.0)\n> - C02 PASS (61ms \u00b7 5 sources cited \u00b7 confidence 1.0)\n> - C03 PASS (310ms \u00b7 5/5 sources retrieved \u00b7 confidence 1.0)\n> - C04 PASS (5ms \u00b7 pre-judge null acceptable \u00b7 confidence 1.0)\n> - C05 PASS (28ms \u00b7 no hard-fail flags \u00b7 confidence 1.0)\n> - C06 PASS (2ms \u00b7 trivially clears for non-Propolis \u00b7 confidence 1.0)\n> - C07 PASS (88ms \u00b7 cross-checked against 5-holdout manifest \u00b7 confidence 1.0)\n> - C08 PASS (12ms \u00b7 consent flag captured \u00b7 confidence 1.0)\n> - C09 PASS (147ms \u00b7 PII scan clean \u00b7 confidence 0.95)\n> - C10 PASS (8ms \u00b7 all transitions logged \u00b7 confidence 1.0)\n> - C11 PASS (3ms \u00b7 hash computed sha256:... \u00b7 confidence 1.0)\n> - C12 PASS (52ms \u00b7 zero secret patterns matched \u00b7 confidence 1.0)\n> - Total latency 759ms\n> - all_critical_pass = true \u00b7 advisory_count_failed = 0\n>\n> **Outcome**: Chain clean \u00b7 pair proceeds to Scale A + Scale B judges \u00b7 verdict ROYAL_JELLY \u00b7 deed issued \u00b7 chain results included in DDEED record \u00b7 audit trail verifiable.",
+  "failure_modes_raw": "| Mode | Description | Resolution |\n|---|---|---|\n| **chain_short_run** | Chain results contain fewer than 12 entries (one or more checks did not execute) | Pair held \u00b7 chain re-run \u00b7 if recurring \u00b7 validator service audited |\n| **chain_out_of_order** | Checks executed in wrong order (e.g., C05 before C03) | Integrity event \u00b7 check the Tribunal Filter implementation \u00b7 re-run |\n| **chain_silent_skip** | Check returned PASS but did not actually execute the underlying logic | Validator service integrity failure \u00b7 all recent passes audited |\n| **chain_latency_explosion** | Total chain latency > 2000ms sustained | Validator service health audited \u00b7 likely a slow source-fetch or PII-scan dependency |\n| **chain_override_attempt** | Operator attempted to manually override a critical-fail | Structurally rejected at C06 \u00b7 operator coached \u00b7 attempt logged \u00b7 escalated |",
+  "hashes": {
+    "json_sha256": "sha256:617ba8e66ec1956f3e671e52095b2db070957571f48ad40bad05be6295abe297",
+    "markdown_sha256": "sha256:e603b4232128fce81cecc2965a68d01fb7c094c44f8a6e9b3fc96f5cda0a6c2b"
+  },
+  "jr_broker_use": "The jr broker reads the chain results but does not interpret independently:\n\n1. Every PairCandidate produces a validator chain result block \u00b7 visible in the dashboard within seconds of submission\n2. All 7 critical PASS \u2192 pair proceeds to judges (the normal path)\n3. ANY critical FAIL \u2192 pair short-circuits to Propolis or Jelly (depending on which check \u00b7 per the doctrine)\n4. Any advisory FAIL \u2192 annotated but pair proceeds \u00b7 escalate to sr broker for sign-off\n5. NEVER modify the chain \u00b7 NEVER skip a check \u00b7 NEVER attempt to override a critical-fail \u00b7 the chain is doctrine\n\n**Rule of thumb**: clean chain = green light \u00b7 any critical fail = stop \u00b7 advisory fails = ask the sr broker.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/tribunal_terms/validator-chain/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.540678+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.540678+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "validator",
+    "tribunal",
+    "judge",
+    "confidence-weight",
+    "hallucination-event",
+    "propolis"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: GATE \u00b7 success requires all 7 critical PASS\n- **repair_lift**: GATE \u00b7 repaired pairs go through the chain again \u00b7 the lift is measured post-chain\n- **validator_confidence**: PRIMARY DRIVER \u00b7 the confidence_weight aggregates from per-check confidences\n- **risk_temperature**: INVERSE \u00b7 clean chain lowers risk \u00b7 critical fails spike risk\n- **probability_of_close**: GATE \u00b7 close prob assumes chain clearance \u00b7 chain failure history predicts re-fail\n- **evidence_strength**: PARTIALLY GATED \u00b7 C02 + C03 directly validate evidence\n- **cost_to_mint**: INCLUDED \u00b7 chain compute is in chain_overhead line of cost-to-mint",
+  "slug": "validator-chain",
+  "sr_broker_use": "The sr broker monitors the chain as the SYSTEM HEALTH GAUGE:\n\n- Daily Morning Brief shows per-check fail rates \u00b7 any critical check > 2% fail rate triggers degraded mode\n- The C07 holdout-contamination check is the highest-severity event \u00b7 pages immediately \u00b7 holds the entire cook batch pending audit\n- Advisory check patterns reveal upstream discipline issues \u00b7 C08 (consent) creep means engagement-onboarding is leaking \u00b7 C09 (redaction) creep means PII-scan service is degraded \u00b7 C10 (audit log) creep means transition logging is dropping events\n- Manual override of advisory checks is permitted with logged reason \u00b7 manual override of critical checks is structurally rejected (the chain rejects the override at C06)\n- The 12-check budget per pair is ~80ms \u00b7 the full chain budget is ~1000ms \u00b7 sustained chain latency > 2000ms means a validator service is degraded",
+  "status": "active",
+  "street_definition": "\"What's the chain look like?\" The validator chain is the C01-C12 sequence \u00b7 the 12-check rule layer the Tribunal Filter runs on every pair BEFORE the LLM judges weigh in. Seven critical (C01-C07) can stop a deed cold. Five advisory (C08-C12) can downgrade confidence but cannot block. The chain runs in deterministic order \u00b7 every result is logged \u00b7 every decision is auditable from the record_hash.\n\nIn CRE language \u00b7 the validator chain is the full title-insurance underwriting checklist \u00b7 the survey \u00b7 the chain-of-title walk \u00b7 the lien search \u00b7 the encumbrance disclosure \u00b7 the entitlement transfer \u00b7 the holdout-buyer protection \u00b7 plus the SOC2-grade operator discipline (consent \u00b7 redaction \u00b7 audit log \u00b7 hash \u00b7 secret-scan). Twelve items the closing agent checks before the title insurance writes.",
+  "term": "Validator Chain",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # the chain itself does not have a tier \u00b7 it DETERMINES tiers\n  rule_layer_checks:\n    - validator_chain.results MUST contain all 12 check outcomes\n    - validator_chain.all_critical_pass MUST be true for any tier above Propolis\n    - validator_chain.advisory_count_failed feeds the confidence_weight adjustment\n  judge_layer_prompt_hint: \"the chain has run \u00b7 respect its decisions \u00b7 you cannot promote past a critical-fail\"\n  can_be_critical_failure: false   # the chain doesn't fail \u00b7 it DETECTS failures\n```",
+  "version": "v1"
+}

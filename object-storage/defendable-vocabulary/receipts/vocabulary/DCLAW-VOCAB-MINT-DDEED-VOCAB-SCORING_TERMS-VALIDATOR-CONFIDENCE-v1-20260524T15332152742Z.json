@@ -1,0 +1,33 @@
+{
+  "category": "scoring_terms",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1",
+    "canon": "defendapedia.eth/scoring_terms/validator-confidence",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:71bc8fd51d63e30012163f1145299cb2fbe1b236fbfa29572322d730176b1c3d",
+    "markdown_sha256": "sha256:b5d621cec0acf8ffac04703b2bda8842c3a93c5cb3d9165aa5fe72d23380e2e5"
+  },
+  "minted_at": "2026-05-24T15:33:21.527421+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/validator-confidence/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.527260+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.527260+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-VALIDATOR-CONFIDENCE-v1-20260524T15332152742Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "validator-confidence",
+  "term": "Validator Confidence"
+}

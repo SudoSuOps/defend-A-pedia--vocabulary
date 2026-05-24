@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"risk_temperature.value\": {\"type\": \"enum\", \"values\": [\"LOW\", \"MEDIUM\", \"HIGH\"]},\n  \"risk_temperature.scope\": {\"type\": \"enum\", \"values\": [\"PAIR\", \"AGENT\", \"CUSTOMER_FLEET\", \"PLATFORM\"]},\n  \"risk_temperature.driving_factors\": {\n    \"type\": \"array\",\n    \"items\": {\n      \"type\": \"object\",\n      \"required\": [\"factor_name\", \"factor_value\", \"factor_weight\"]\n    }\n  },\n  \"risk_temperature.thresholds\": {\n    \"type\": \"object\",\n    \"const\": {\n      \"low_max_score\": 0.30,\n      \"medium_max_score\": 0.70,\n      \"high_min_score\": 0.70\n    }\n  },\n  \"risk_temperature.escalation_action\": {\n    \"type\": \"enum\",\n    \"values\": [\"LOG_ONLY\", \"MORNING_BRIEF_SURFACE\", \"PAGE_OPERATOR\"]\n  },\n  \"risk_temperature.escalation_window_minutes\": {\"type\": \"integer\", \"description\": \"max minutes to act when HIGH\"}\n}\n```\n\nSchema files: `docs/schemas/risk_temperature.schema.json` \u00b7 `docs/schemas/escalation_rule.schema.json` \u00b7 `docs/schemas/ui_dial.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "scoring_terms",
+  "client_explanation": "Risk Temperature is the thermostat for your AI defense. Green/LOW means normal cycle \u00b7 no special attention. Yellow/MEDIUM means we're keeping an eye on it \u00b7 you'll see it in tomorrow's Morning Brief. Red/HIGH means we're paging our operator now \u00b7 before this becomes a story. You can configure your own response windows \u00b7 we surface, you decide whether to act.",
+  "cre_operator_meaning": "In CRE this is the **deal-heat thermometer**. Some deals are cool \u00b7 long fuse \u00b7 no rush \u00b7 low risk of falling out. Some are warm \u00b7 DD period \u00b7 standard caution. Some are hot \u00b7 last week of escrow \u00b7 seller has cold feet \u00b7 buyer's lender wobbling \u00b7 broker on the phone every 2 hours. The temperature drives the broker's attention allocation. Risk Temperature does the same for the operator on classification duty.",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-RISK-TEMPERATURE-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `risk_temperature.value` \u00b7 `scope` \u00b7 `driving_factors` \u00b7 `escalation_action_taken`\n- **DDEED class impact**: deeds carry the temperature at-issue \u00b7 auditors can trace what triggered escalations\n- **Books and records layer**: L1 PostgreSQL (temperature history) \u2192 L4 Hedera HCS (HIGH-event escalation log anchor)\n- **5 Proofs touched**: PROCESS (the factor lineage producing the temperature) \u00b7 TRUST (escalation receipts prove discipline)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `risk_temperature.value` \u00b7 `scope` \u00b7 `driving_factors` \u00b7 `escalation_action_taken`\n- **DDEED class impact**: deeds carry the temperature at-issue \u00b7 auditors can trace what triggered escalations\n- **Books and records layer**: L1 PostgreSQL (temperature history) \u2192 L4 Hedera HCS (HIGH-event escalation log anchor)\n- **5 Proofs touched**: PROCESS (the factor lineage producing the temperature) \u00b7 TRUST (escalation receipts prove discipline)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Risk Temperature is a categorical 3-level dial (LOW \u00b7 MEDIUM \u00b7 HIGH) computed from a combination of factors: pair-level (severity tag \u00b7 safety violation presence \u00b7 evidence strength) \u00b7 agent-level (recent Propolis rate \u00b7 validator confidence trend) \u00b7 customer-level (Tier \u00b7 SLA window status \u00b7 deed lineage). It drives auto-escalation: LOW = normal cycle \u00b7 MEDIUM = surface in Morning Brief \u00b7 HIGH = page operator within configured response window. The thresholds are codified, not subjective.",
+  "defendableos_notes": "- Risk Temperature is the OPERATOR'S COMPASS \u00b7 the single most-read dial at the start of every shift\n- The 3-level categorical (LOW/MEDIUM/HIGH) is intentional \u00b7 finer-grained dials produce decision fatigue \u00b7 3 levels keep the action obvious\n- The SAFETY_VIOLATION \u2192 HIGH rule is constitutional \u00b7 safety overrides every other factor\n- Customer-configurable response windows balance our discipline with their tolerance \u00b7 we surface, they decide\n- Risk Temperature ties closely to ClawCheck's risk tier output \u00b7 they use a similar scale but ClawCheck is pre-deployment intake while Risk Temperature is post-deployment operations\n\n\ud83d\udc1d *Green is the cycle. Yellow is the brief. Red is the page. The thermostat for the defen",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-RISK-TEMPERATURE-v1",
+    "canon": "defendapedia.eth/scoring_terms/risk-temperature",
+    "street_source": null
+  },
+  "evidence_required": [
+    "The factor list with values and weights",
+    "The aggregate score computation",
+    "The threshold comparison",
+    "The escalation action selection",
+    "The acknowledgment receipt if HIGH triggered a page"
+  ],
+  "example": "> **Pair-level (`pair-20260524T061208Z-7e2a`)**:\n> - Factors: severity 3 (medium weight) \u00b7 no safety violation \u00b7 evidence strength 0.71\n> - Aggregate score: 0.22\n> - Temperature: LOW\n> - Escalation: LOG_ONLY\n>\n> **Agent-level (`books-bot.acmecorp.defendable.eth` \u00b7 trailing 7d)**:\n> - Factors: Propolis rate 4.5% (target \u2264 5%) \u00b7 validator confidence trend stable \u00b7 0 safety violations\n> - Aggregate score: 0.18\n> - Temperature: LOW\n> - Escalation: LOG_ONLY\n>\n> **Customer-fleet level (RegionalInsurer \u00b7 trailing 7d)**:\n> - Factors: Tier-3 SLA \u00b7 12 weeks into 90-day Fix-or-Refund \u00b7 cumulative lift 0.08 (below target 0.15) \u00b7 1 safety violation in batch 3 days ago\n> - Aggregate score: 0.76\n> - Temperature: **HIGH**\n> - Escalation: PAGE_OPERATOR within 30 minutes \u00b7 Sr Hack acknowledged \u00b7 triage call scheduled \u00b7 audit log entry written\n>\n> **Platform-level (DefendableOS \u00b7 today)**:\n> - 3 customers moved from LOW \u2192 MEDIUM in trailing 5 days \u00b7 cross-customer model-provider commonality (all on gpt-4o-2024-08-06)\n> - Aggregate score: 0.51\n> - Temperature: MEDIUM\n> - Escalation: MORNING_BRIEF_SURFACE \u00b7 platform-trend section \u00b7 senior operator review",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| `manual_override_no_audit` | Operator manually downgraded HIGH to MEDIUM without audit log | PROPOLIS \u00b7 governance violation |\n| `escalation_window_missed` | HIGH temperature didn't trigger page within configured window | JELLY \u00b7 operational failure |\n| `safety_violation_not_high` | Pair with SAFETY_VIOLATION flag computed as anything other than HIGH | PROPOLIS \u00b7 rule violation |\n| `factor_list_drift` | Computation includes factors not on the documented list | PROPOLIS \u00b7 governance violation |\n| `threshold_drift` | UI uses different LOW/MEDIUM/HIGH thresholds than doctrine | PROPOLIS \u00b7 governance violation |\n| `trend_undetected` | Multi-customer trend toward HIGH not surfaced at platform level | JELLY \u00b7 operator escalation |",
+  "hashes": {
+    "json_sha256": "sha256:8b8952fc40a0ca4dc95df2a25af7950ef8a4ed64e99ee0f56e3e72c84f37876e",
+    "markdown_sha256": "sha256:02cacf808d8fa22786acdf7ca05f68b1c5d8a2ad073229fcc86a41135eb2f40b"
+  },
+  "jr_broker_use": "The Jr Hack reads Risk Temperature as the FIRST visual on the operator dashboard at the start of every shift. HIGH on the fleet-level dial = drop everything else and triage. MEDIUM = read the Morning Brief carefully. LOW = run the normal cycle. The Jr Hack does NOT override the temperature manually \u00b7 the dial is computed \u00b7 overrides require Sr Hack signoff and audit log.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/risk-temperature/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.525855+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.525855+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "repair-lift",
+    "validator-confidence",
+    "evidence-strength",
+    "pair-candidate",
+    "clawcheck",
+    "diagnose-task"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH \u00b7 the temperature gates the operator's attention\n- **repair_lift**: NEUTRAL \u00b7 temperature is observability \u00b7 not lift\n- **validator_confidence**: INVERSE \u00b7 high temperature on a verdict reduces confidence in auto-promotion\n- **risk_temperature**: SELF\n- **probability_of_close**: INVERSE for HIGH events \u00b7 customers respect operators who page early\n- **evidence_strength**: NEUTRAL\n- **cost_to_mint**: NEUTRAL",
+  "slug": "risk-temperature",
+  "sr_broker_use": "The Sr Hack monitors temperature TRENDS across the customer base \u00b7 a single HIGH on one customer is operational \u00b7 multiple customers going from LOW \u2192 MEDIUM in the same week is a systemic signal \u00b7 model provider change \u00b7 new attack pattern \u00b7 refinery drift. The Sr Hack triages cross-customer trends as platform-level events.",
+  "status": "active",
+  "street_definition": "\"What's the risk temp?\" That's the operator at end-of-day before deciding what gets routed overnight. **Risk Temperature** is the LOW \u00b7 MEDIUM \u00b7 HIGH categorical dial that summarizes the risk posture of a pair \u00b7 an agent \u00b7 a customer fleet \u00b7 or the whole DefendableOS deployment. Drives auto-escalation triggers. The thermostat for the defense layer.",
+  "term": "Risk Temperature",
+  "tribunal_use": "- **Rule layer**: Risk Temperature MUST be computed from the documented factor list \u00b7 ad-hoc bumps are governance violations\n- **Rule layer**: HIGH temperature at scope=CUSTOMER_FLEET MUST trigger PAGE_OPERATOR within the configured window\n- **Rule layer**: SAFETY_VIOLATION flag at pair-level forces HIGH temperature regardless of other factors\n- **Judge layer**: Tribunal doesn't grade Risk Temperature \u00b7 it consumes pair-level severity which feeds the dial\n- **Classification impact**: HIGH temperature on a pair caps the verdict at JELLY pending operator review \u00b7 cannot auto-promote",
+  "version": "v1"
+}

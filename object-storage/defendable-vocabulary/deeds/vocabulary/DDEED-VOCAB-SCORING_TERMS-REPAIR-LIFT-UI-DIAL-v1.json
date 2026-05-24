@@ -1,0 +1,103 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1",
+  "category": "scoring_terms",
+  "created_at": "2026-05-24T15:33:21.524733+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/scoring_terms/repair-lift-ui-dial",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/scoring_terms/repair-lift-ui-dial/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-REPAIR-LIFT-UI-DIAL-v1-20260524T15332152472Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:b78568b07dca338c8e7fbc1613e9f8a8258abdcfaf68ec53cad2870fc6cd658a",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "repair-lift-ui-dial",
+  "street_source_ens": null,
+  "subject": {
+    "category": "scoring_terms",
+    "definitions": {
+      "client": "The Repair Lift dial on your dashboard shows whether our refinery is moving the number on your AI fleet. Green means we hit the promotion threshold (\u2265 0.10 lift). Yellow means we're positive but below threshold \u00b7 we're working on it. Red means a regression \u00b7 the operator gets paged when red shows up. Click the dial \u00b7 you see the underlying receipt with both Tribunal verdicts \u00b7 the math is transparent.",
+      "cre_operator": "In CRE this is the **NOI lift graph** on the asset's monthly statement. The graph shows trailing-12-month NOI \u00b7 the rehab investment \u00b7 the post-rehab NOI \u00b7 the lift in basis-points. The CFO reads it \u00b7 the lender reviews it \u00b7 the equity partners stay informed. Nobody re-derives the number from the rent roll \u00b7 they trust the graph because the graph is downstream of a closing statement they signed. The Repair Lift dial is the NOI lift graph for the agent economy.",
+      "defendableos": "The Repair Lift dial is the UI surface representation of the Repair Lift score. It renders the lift number with three visual states: GREEN (\u2265 0.10 \u00b7 cleared promotion threshold), YELLOW (0.0-0.10 \u00b7 positive but below threshold), RED (< 0.0 \u00b7 regression). It appears on the customer-facing dashboard (per-week aggregate), the operator's Morning Reconciliation Brief (per-day aggregate), and the per-pair detail view (single-pair lift). The dial is rendered from the canonical `repair_lift.value` field \u00b7 no UI-side computation.",
+      "street": "\"What did the lift dial show this week?\" That's how the customer reads their Monday dashboard. **Repair Lift dial** is the UI surface for the Repair Lift number \u00b7 the gauge that shows the customer the before/after delta on their refinery work. Green when \u2265 0.10 \u00b7 yellow 0.0-0.10 \u00b7 red below 0.0. Glance-readable. Boardroom-ready."
+    },
+    "related_terms": [
+      "repair-lift-concept",
+      "validator-confidence",
+      "evidence-strength",
+      "risk-temperature",
+      "defendablejelly"
+    ],
+    "slug": "repair-lift-ui-dial",
+    "term": "Repair Lift (UI Dial)"
+  },
+  "supersedes": null,
+  "term": "Repair Lift (UI Dial)",
+  "updated_at": "2026-05-24T15:33:21.784965+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

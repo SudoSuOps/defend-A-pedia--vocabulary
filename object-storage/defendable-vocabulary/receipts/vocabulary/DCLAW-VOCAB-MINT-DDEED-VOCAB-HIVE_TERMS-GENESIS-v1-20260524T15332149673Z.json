@@ -1,0 +1,33 @@
+{
+  "category": "hive_terms",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-GENESIS-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-GENESIS-v1",
+    "canon": "defendapedia.eth/hive_terms/genesis",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:5cbc070047fff78a6af28008bd7a541ffb6a1f05143bca4669c341b354cde60f",
+    "markdown_sha256": "sha256:4f91443437ba4a5627ac902d0d076fa576411d1034ace8892e9dfe49637f573e"
+  },
+  "minted_at": "2026-05-24T15:33:21.496730+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/genesis/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.496579+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.496579+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-GENESIS-v1-20260524T15332149673Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "genesis",
+  "term": "Genesis"
+}

@@ -1,0 +1,33 @@
+{
+  "category": "defendableos_terms",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1",
+    "canon": "defendapedia.eth/defendableos_terms/clawcheck",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:a15924fa42ed8da4e0944634efdda39e0c00fa5f49f26e92c34b625d766675a6",
+    "markdown_sha256": "sha256:8e701fd576a0dfae6fa1da2c0161083ea2e9676dc0487f379c261543ddd31690"
+  },
+  "minted_at": "2026-05-24T15:32:29.861343+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/defendableos_terms/clawcheck/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.861224+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.861224+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1-20260524T15322986134Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "clawcheck",
+  "term": "ClawCheck"
+}

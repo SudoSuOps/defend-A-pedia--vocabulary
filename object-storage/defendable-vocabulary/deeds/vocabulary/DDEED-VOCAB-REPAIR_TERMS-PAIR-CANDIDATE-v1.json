@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1",
+  "category": "repair_terms",
+  "created_at": "2026-05-24T15:33:21.510427+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/repair_terms/pair-candidate",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/repair_terms/pair-candidate/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-REPAIR_TERMS-PAIR-CANDIDATE-v1-20260524T15332151041Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:8001462dad1aa3085defadac01ea65eeb87e0280b7c908bb6599ac7af22ecf00",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "pair-candidate",
+  "street_source_ens": null,
+  "subject": {
+    "category": "repair_terms",
+    "definitions": {
+      "client": "A Pair Candidate is one of your AI agent's calls \u00b7 with our metadata around it. We capture every call your agent makes (we don't slow it down \u00b7 sub-5ms \u00b7 invisible to the agent). Then overnight we grade it, route it to one of 6 buckets based on quality, and either ship a deed (Honey) \u00b7 refine it (Jelly) \u00b7 or flag it for the AdversarialPack (Propolis). Your morning brief shows the bucket flow from the prior 24 hours.",
+      "cre_operator": "In CRE the Pair Candidate is the **deal in the pipeline**. Some deals are still in discovery (pending) \u00b7 some are signed and producing (Honey) \u00b7 some are stuck in DD (Jelly) \u00b7 some need workout (jelly-repaired) \u00b7 some blew up (Propolis) \u00b7 some are quarantined for fraud review. The pipeline isn't a list \u00b7 it's a stack of folders \u00b7 each folder has a label \u00b7 the label IS the state. No separate state machine \u00b7 the folder is the truth.",
+      "defendableos": "A Pair Candidate is the canonical unit of work in DefendableOS. It binds an input (the prompt/context the agent received) with an output (the agent's response) plus all the metadata captured by DefendableRouter at the moment of the call. Pair Candidates flow through 6 mutually-exclusive buckets that represent their lifecycle state. The bucket IS the state \u00b7 there is no separate state machine.",
+      "street": "\"What's in the pipeline?\" That's the Sr Hack at standup. **Pair Candidate** is the unit that flows through DefendableOS \u00b7 the (input, output) pair captured by DefendableRouter \u00b7 graded by the Tribunal \u00b7 routed through the buckets \u00b7 refined by SwarmFixer \u00b7 deeded by the minter. One unit. One lifecycle. Six possible buckets."
+    },
+    "related_terms": [
+      "swarmfixer",
+      "swarmjelly",
+      "defendablejelly",
+      "repair-lift",
+      "defendablerouter",
+      "diagnose-task"
+    ],
+    "slug": "pair-candidate",
+    "term": "Pair Candidate"
+  },
+  "supersedes": null,
+  "term": "Pair Candidate",
+  "updated_at": "2026-05-24T15:33:21.757147+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

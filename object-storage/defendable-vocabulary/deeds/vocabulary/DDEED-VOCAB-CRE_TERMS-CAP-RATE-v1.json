@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-CAP-RATE-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.469239+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-CAP-RATE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/cap-rate",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/cap-rate/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-CAP-RATE-v1-20260524T15332146922Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:bf2ffb7f449f3cbf8b0ab36258c8601659e8dcdc5279530a4c35764ecb0513ef",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "cap-rate",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "Cap rate is a CRE term we use to communicate the economic shape of a defense engagement to your CFO and your board. The engagement cap rate is the annual defense fee divided by your annual revenue at risk through the agent fleet we're defending. A 5-cap engagement means our annual fee is 5% of the revenue we're protecting; a 7-cap engagement means our fee is 7% of revenue protected.\n\nWe use cap rate because your finance team already thinks in cap rate terms \u00b7 it lets your CFO understand DefendableOS pricing the same way they understand commercial real estate, infrastructure assets, or insurance products. The lower the cap rate, the lower-priced the defense relative to what it protects \u00b7 which typically means we're more confident in the fleet's grade or you have less revenue at risk. Higher cap rates reflect more complex fleets, larger exposure, or premium engagements with elevated title-insurance commitments.",
+      "cre_operator": "Cap rate is the most-used metric in CRE. Definition:\n\n```\nCap Rate = NOI / Asset Value\n```\n\nOr equivalently:\n\n```\nAsset Value = NOI / Cap Rate\n```\n\nA $1M NOI building at a 6-cap is worth $1M / 0.06 = $16.67M. At a 5-cap, the same NOI is worth $20M. At a 7-cap, the same NOI is worth $14.29M. Cap rate compression (lower cap rates) means asset values rise \u00b7 cap rate expansion means asset values fall \u00b7 holding NOI constant.\n\nCap rates encode multiple things in a single number:\n\n- **Asset class** \u00b7 industrial trades tighter than retail, retail tighter than office, etc.\n- **Location quality** \u00b7 Class A urban core trades 100-300bps tighter than Class B suburban\n- **Tenant credit** \u00b7 investment-grade tenant trades 50-150bps tighter than non-credit\n- **Lease term remaining** \u00b7 long WALT (weighted average lease term) trades tighter than short\n- **Building age and physical condition** \u00b7 trophy assets trade tighter than vintage\n- **Market state** \u00b7 cap rates compress in low-rate environments, expand in high-rate\n- **Capital availability** \u00b7 abundant debt compresses caps; tight debt expands\n\nSr brokers carry mental cap rate matrices \u00b7 they can quote a fair cap for any asset type in any market within 25bps without looking it up. That instinct is the personal IP.",
+      "defendableos": "In DefendableOS, **cap rate** is the engagement-level yield metric \u00b7 the structural way we communicate the economic shape of a defense engagement. Definition (inverted from CRE convention because we're pricing protection \u00b7 not asset):\n\n```\nEngagement Cap Rate = Annual Defense Fee / Annual Revenue at Risk (ARR)\n```\n\nA $500K annual defense fee on $10M of ARR is a 5-cap engagement (5%). A $500K fee on $7M of ARR is a 7.1-cap engagement. Lower engagement cap rates mean the defense is a smaller share of protected revenue (cheaper protection \u00b7 or smaller exposure). Higher cap rates mean defense is a larger share (more expensive protection \u00b7 or larger exposure relative to ability to pay).\n\nCap rate in DefendableOS encodes:\n\n- **Fleet class** \u00b7 Royal Jelly tier engagements trade tighter (lower cap) than Honey tier\n- **Vertical** \u00b7 medical and finance trade tighter than generic SMB defense\n- **Vendor concentration** \u00b7 single-vendor fleets trade tighter (less complexity) than multi-vendor\n- **Customer credit** \u00b7 investment-grade customers trade tighter than emerging-stage\n- **Regulatory exposure** \u00b7 regulated verticals trade tighter (defense is more valuable per dollar)\n- **Engagement term remaining** \u00b7 long-term engagements price tighter than short\n- **Market state** \u00b7 AI-incident-driven demand compresses caps \u00b7 low-demand periods expand them\n- **Title insurance ramp commitment** \u00b7 \u00b10.15 guarantee tightens cap (we're charging for the guarantee)\n\nA sr broker quotes engagement cap rates the way a CRE broker quotes asset cap rates \u00b7 same instinct, adapted vocabulary, same compounding personal IP.",
+      "street": "\"What's the cap on it?\" \u2014 buyer, in the first 30 seconds of any CRE conversation.\n\nThe **capitalization rate** \u00b7 cap rate \u00b7 is the yield metric that prices every CRE asset. Income produced \u00f7 asset price = cap rate. A 5-cap means the asset returns 5% of its price in annual income. Lower cap = more expensive asset. Higher cap = cheaper asset (or more risk). It is the single number that lets every broker, owner, and investor pencil a deal in seconds.\n\nIn CRE, cap rate is the language of asset pricing \u00b7 the way wines have vintages and stocks have P/E ratios. In DefendableOS, cap rate is the language of engagement pricing \u00b7 the way we communicate the economic structure of defense engagements to CFOs, boards, and auditors who already speak cap rate fluently."
+    },
+    "related_terms": [
+      "underwriting",
+      "loi",
+      "psa",
+      "digest",
+      "probability-of-close",
+      "due-diligence",
+      "books-and-records"
+    ],
+    "slug": "cap-rate",
+    "term": "Cap Rate"
+  },
+  "supersedes": null,
+  "term": "Cap Rate",
+  "updated_at": "2026-05-24T15:33:21.740247+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

@@ -1,0 +1,77 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"energy.electrical_watt_hours\": { \"type\": \"float\" },\n  \"energy.gpu_seconds\": { \"type\": \"float\" },\n  \"energy.operator_minutes\": { \"type\": \"float\" },\n  \"energy.anchor_cost_usd\": { \"type\": \"float\" },\n  \"energy.storage_cost_usd\": { \"type\": \"float\" },\n  \"energy.total_cost_usd\": {\n    \"type\": \"float\",\n    \"scoring_hook\": \"cost_to_mint_v1\"\n  },\n  \"energy.per_rig_breakdown\": {\n    \"type\": \"object\",\n    \"additionalProperties\": { \"type\": \"float\" }\n  }\n}\n```\n\nSchema files: `docs/schemas/cost_to_mint.schema.json` \u00b7 `docs/schemas/energy_ledger.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "hive_terms",
+  "client_explanation": "\"Energy\" is the math layer \u00b7 the actual operating cost of every deed and every pair we produce. We measure it \u00b7 we publish it \u00b7 we price against it. Every deed in your Closing Statement includes the energy line \u00b7 how much electricity \u00b7 how much GPU time \u00b7 how much operator time went into producing it. That's not industry standard \u00b7 most AI vendors hide their unit economics behind \"monthly subscription\" pricing. We show the math because the math is the proof we can sustain the service \u00b7 the proof your deed is real inventory \u00b7 the proof we are a defendable economic entity \u00b7 not a venture-funded loss-leader.",
+  "cre_operator_meaning": "In CRE \u00b7 energy is the building's actual operating cost \u00b7 expressed per square foot \u00b7 benchmarked against comps \u00b7 disclosed in the OM \u00b7 reconciled at year-end in the CAM. A broker quotes a 6-cap on a $50M industrial facility and the buyer asks \"what's the OpEx\" because the OpEx is what proves the NOI is real. If OpEx ratio is double the market \u00b7 the building has a real problem and the cap rate is wrong. Same way in the Hive \u00b7 if the cost-to-mint is double the benchmark \u00b7 the cook has a real problem and the deed price is wrong.\n\nThe CRE-trained founder treats energy as the FIRST honesty test. Show me the OpEx. Show me the energy. Show me the math. Then we'll talk about the cap rate.",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-ENERGY-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `energy.total_cost_usd` \u00b7 `energy.per_rig_breakdown` \u00b7 `energy.gpu_seconds` \u00b7 `energy.operator_minutes` \u00b7 `energy.anchor_cost_usd`\n- **DDEED class impact**: Every DDEED carries an energy line \u00b7 for customer transparency \u00b7 for operator accountability \u00b7 for sustainability claims\n- **Books and records layer**: ALL 5 (L1 PG hot \u00b7 L2 Merkle hashed \u00b7 L3 NAS archived \u00b7 L4 Hedera HCS receipted \u00b7 L5 ENS resolution paid)\n- **5 Proofs touched**: ECONOMICS (energy IS the economics proof) \u00b7 PROCESS (energy lineage IS the process \u00b7 what tried what failed what survived)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `energy.total_cost_usd` \u00b7 `energy.per_rig_breakdown` \u00b7 `energy.gpu_seconds` \u00b7 `energy.operator_minutes` \u00b7 `energy.anchor_cost_usd`\n- **DDEED class impact**: Every DDEED carries an energy line \u00b7 for customer transparency \u00b7 for operator accountability \u00b7 for sustainability claims\n- **Books and records layer**: ALL 5 (L1 PG hot \u00b7 L2 Merkle hashed \u00b7 L3 NAS archived \u00b7 L4 Hedera HCS receipted \u00b7 L5 ENS resolution paid)\n- **5 Proofs touched**: ECONOMICS (energy IS the economics proof) \u00b7 PROCESS (energy lineage IS the process \u00b7 what tried what failed what survived)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "Energy is the metabolic cost of producing intelligence inside the Hive \u00b7 the aggregate of:\n\n- **Electrical energy** \u00b7 the watts the rigs draw (swarmrails ~1000W peak \u00b7 whale ~400W peak \u00b7 zima-edge ~15W \u00b7 signal-edge ~10W) measured at the wall via per-rig PDUs and rolled up to per-cook \u00b7 per-pair \u00b7 per-deed costs\n- **Compute energy** \u00b7 the GPU-seconds spent per pair (9B Worker Bees ~3-5 GPU-sec \u00b7 27B Worker Bees ~10-15 GPU-sec \u00b7 Auditor Bees ~1-2 GPU-sec \u00b7 Katniss invocations ~5 GPU-sec each)\n- **Human energy** \u00b7 the operator-minutes spent on override review \u00b7 adversarial-event escalation \u00b7 weekly check sessions \u00b7 pattern audit \u00b7 doctrine maintenance\n- **Anchor energy** \u00b7 the Hedera HCS posting cost (~$0.0008 per cell certificate \u00b7 ~$0.0001 per batch Merkle root) \u00b7 the ENS reservation cost (one-time per deed)\n- **Storage energy** \u00b7 the cumulative cost of holding receipts on Tigris \u00b7 NAS \u00b7 PostgreSQL \u00b7 ENS over the deed's lifetime\n\nEnergy aggregates into the **cost-to-mint** dial (the per-deed dollar cost) and the **margin** dial (the per-deed economic surplus over cost). Both are surfaced to customers in the Morning Brief and the Closing Statement.",
+  "defendableos_notes": "- Energy is the brand's anti-fantasy mechanism \u00b7 we publish the cost \u00b7 we don't hide unit economics behind subscription fog\n- The $0.0052/deed Honey baseline is the operator-tested number from production \u00b7 variance up to 20% is healthy \u00b7 sustained variance above 30% is a cook problem\n- The energy ledger is what makes the Hive a defendable business \u00b7 not just a defendable technology \u00b7 the CFO can audit it \u00b7 the auditor can sign off \u00b7 the investor can model the unit economics\n- Sustainability claims are made FROM the energy ledger \u00b7 not adjacent to it \u00b7 we don't say \"green AI\" \u00b7 we say \"$0.0058 of electrical input produced this deed \u00b7 here's the kWh \u00b7 here's the rig\"\n- The math layer is what separates Defendable from every AI vendor selling intelligence at a loss to capture growth \u00b7 we don't run a loss-leader \u00b7 we run a defendable economic entity\n\n\ud83d\udc1d *Energy is the line item. Measure it. Publish it. Price against it. The math layer is what makes the Hive a defendable business \u00b7 not just a defendable te",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-ENERGY-v1",
+    "canon": "defendapedia.eth/hive_terms/energy",
+    "street_source": null
+  },
+  "evidence_required": [
+    "A per-rig PDU reading (watts at the wall) for every active cook period",
+    "A per-Bee GPU-second log (from the vLLM telemetry layer)",
+    "An operator-minute log (from the dashboard activity log)",
+    "Anchor and storage cost line items (from Hedera HCS and Tigris billing APIs)",
+    "A reconciled total (per-rig + Bee + operator + anchor + storage) for every deed"
+  ],
+  "example": "> **Engagement**: Daily CRE morning digest \u00b7 14 industrial listings \u00b7 standard scope.\n>\n> **Energy ledger for the engagement**:\n>\n> - Scout Bee \u00b7 whale \u00b7 SwarmCurator-2B \u00b7 14 source scans \u00b7 GPU-sec 4.2 \u00b7 electrical 0.0011 kWh\n> - Worker Bee \u00b7 swarmrails GPU 0 \u00b7 SwarmCurator-9B \u00b7 digest cook \u00b7 GPU-sec 11.8 \u00b7 electrical 0.0033 kWh\n> - Auditor Bee \u00b7 swarmrails GPU 1 \u00b7 gemma3:12b Scale A \u00b7 GPU-sec 2.1 \u00b7 electrical 0.0006 kWh\n> - Auditor Bee \u00b7 swarmrails GPU 0 \u00b7 qwen2.5:32b Scale B \u00b7 GPU-sec 4.6 \u00b7 electrical 0.0019 kWh\n> - Operator review \u00b7 3 minutes (override queue) \u00b7 ~0.05 operator-cost units\n> - Bakery hash + Tigris write \u00b7 0.001 USD\n> - Hedera batch anchor (shared across 50-pair batch) \u00b7 this pair's share 0.0000016 USD\n> - **Total cost-to-mint: 0.0058 USD** \u00b7 11% above the $0.0052 baseline \u00b7 within tolerance \u00b7 cook reported healthy\n>\n> **Customer disclosure (Closing Statement line)**: \"This Honey deed cost 0.0058 USD to produce. Lineage: 4 Bees \u00b7 22.7 GPU-seconds \u00b7 0.0069 kWh \u00b7 3 operator-minutes. Hedera batch anchor 0.0000016 USD.\"\n>\n> **Why the customer sees this**: because it's the math \u00b7 because the math is the trust \u00b7 because the trust is the brand.",
+  "failure_modes_raw": "| Mode | Description | Resolution |\n|---|---|---|\n| **untracked_compute** | A cook ran on a rig without logging GPU-seconds | The cook's deeds are held \u00b7 the rig is audited \u00b7 the missing logs are reconstructed from PDU readings if possible |\n| **energy_spike_no_lift** | Cook energy 3x benchmark with no Royal Jelly produced | The cook is throttled \u00b7 the config is audited \u00b7 the most common cause is temp drift |\n| **anchor_cost_drift** | Hedera per-cell cost climbs > 25% above benchmark | Investigate \u00b7 usually a Hedera-network fee shift \u00b7 update the per-deed pricing if sustained |\n| **operator_overcount** | Operator-review time logged that exceeds actual operator activity | Operator-discipline event \u00b7 the log is reconciled against dashboard activity \u00b7 gap investigated |\n| **shadow_cook** | Compute consumed without a corresponding cook record | Operator-discipline event \u00b7 the rig is locked \u00b7 all unattributed deeds are held |",
+  "hashes": {
+    "json_sha256": "sha256:eaad864eba4a5275cbebbb64e5169eacce3075b0cc3f98fbd560a4187abbfec9",
+    "markdown_sha256": "sha256:35b08ae7387385e100e3fdf9e81f2e2b57ed67104547b6ac36aa1a0d9cb6b178"
+  },
+  "jr_broker_use": "The jr broker treats energy as a TRANSPARENCY DIAL:\n\n1. Every engagement has a real-time cost-to-mint readout in the dashboard \u00b7 know what your engagement is costing while it's in flight\n2. If a cook crosses 2x the per-pair energy benchmark without producing Royal Jelly \u00b7 escalate \u00b7 the cook is wasting energy\n3. When a customer asks \"what does this cost you\" \u00b7 the answer is the energy ledger \u00b7 pull the numbers \u00b7 be transparent\n4. Don't promise energy-free repairs \u00b7 every Jelly-to-Honey repair has a SwarmFixer compute cost \u00b7 which is logged \u00b7 which is real\n5. Don't run shadow cooks \u00b7 personal experiments \u00b7 undocumented batches \u00b7 they consume Hive energy without producing Hive deeds \u00b7 they are wage theft against the books\n\n**Rule of thumb**: energy is on the books \u00b7 what you cook costs \u00b7 what costs is logged \u00b7 what is logged is accountable.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/energy/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.495122+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.495122+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "cost-to-mint",
+    "hive",
+    "swarm",
+    "bee",
+    "honey",
+    "royal-jelly"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: ENABLER \u00b7 energy affordability is a precondition for any assignment to be commercially viable\n- **repair_lift**: TRADE-OFF \u00b7 repair adds energy \u00b7 the lift must justify the additional cost \u00b7 SwarmFixer is measured on energy-per-lift-point\n- **validator_confidence**: NEUTRAL \u00b7 validator confidence is independent of energy cost (we don't grade cheaper outputs more leniently)\n- **risk_temperature**: NEUTRAL at the pair level \u00b7 ELEVATED at the system level (high-energy cook means high burn rate \u00b7 which is a business risk)\n- **probability_of_close**: ENABLER \u00b7 the per-deed margin must be positive for the engagement model to sustain\n- **evidence_strength**: NEUTRAL \u00b7 evidence weight is independent of how much energy produced the evidence\n- **cost_to_mint**: DIRECT \u00b7 energy IS the cost-to-mint numerator \u00b7 this is the primary dial",
+  "slug": "energy",
+  "sr_broker_use": "The sr broker watches energy as the OPERATING-MARGIN GAUGE:\n\n- The Hive's per-rig energy efficiency is a daily metric \u00b7 trending down means the cook discipline is slipping\n- The Royal Jelly cost-to-mint should hold steady around 1.3-1.5x the Honey cost-to-mint \u00b7 ratios outside that range mean the apex tier is either too cheap (corner-cutting) or too expensive (over-engineering)\n- The Propolis cost-to-mint is the COST OF QUALITY DISCIPLINE \u00b7 we publish it \u00b7 we own it \u00b7 it should be 5-15% of total cook energy\n- The human-review minutes per deed should trend DOWN over time \u00b7 this is the SwarmFixer flywheel paying off \u00b7 the next cohort catches earlier \u00b7 the operator spends less\n- When energy spikes without throughput gain \u00b7 the cook is misconfigured \u00b7 the most common cause is temp drift (must be 0.05 \u00b7 not 0.7)\n- The weekly check reviews per-rig energy efficiency and identifies underperforming nodes for re-tuning OR re-deployment",
+  "status": "active",
+  "street_definition": "\"What's the energy on that cook?\" Energy is the real-world operational cost of producing AI intelligence \u00b7 the electricity the rigs metabolize \u00b7 the GPU-hours the cooks burn \u00b7 the human-review time the sr brokers spend \u00b7 the back-office cost of running the books-and-records. It is the math layer that turns AI from a vibes-economy into an actual unit economic with a cost \u00b7 a margin \u00b7 a return. Without an energy line item \u00b7 you can't write an OM \u00b7 can't price the deed \u00b7 can't prove the Hive pencils.\n\nIn CRE language \u00b7 energy is the operating expense column on the rent roll \u00b7 the property tax \u00b7 the insurance \u00b7 the management fee \u00b7 the CAM reconciliation \u00b7 the things that pencil the NOI. A broker who doesn't know the OpEx doesn't know the deal. A Hive that doesn't measure its energy doesn't know its books.",
+  "term": "Energy",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact: []   # energy is not a tier \u00b7 it is the cost of producing the tiers\n  rule_layer_checks:\n    - energy.total_cost_usd MUST be logged for every pair (no untracked compute)\n    - energy.per_rig_breakdown MUST sum to total (accounting integrity)\n    - energy.anchor_cost_usd MUST be logged when tier == ROYAL_JELLY (the cell certificate carries its own cost)\n  judge_layer_prompt_hint: \"energy is not a judgment input \u00b7 the judge does not grade energy \u00b7 the auditor logs it\"\n  can_be_critical_failure: false   # energy is an economic metric \u00b7 not a quality verdict\n```\n\nEnergy is not adjudicated by the Tribunal \u00b7 but the Tribunal's verdict records carry the energy line \u00b7 because every defendable claim includes its cost.",
+  "version": "v1"
+}

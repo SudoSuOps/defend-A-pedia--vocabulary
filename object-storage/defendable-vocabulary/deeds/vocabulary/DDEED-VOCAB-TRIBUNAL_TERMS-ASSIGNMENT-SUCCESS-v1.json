@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-SUCCESS-v1",
+  "category": "tribunal_terms",
+  "created_at": "2026-05-24T15:33:21.530464+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-SUCCESS-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/tribunal_terms/assignment-success",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/tribunal_terms/assignment-success/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-TRIBUNAL_TERMS-ASSIGNMENT-SUCCESS-v1-20260524T15332153045Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:5fed7d7c6b5f716a0f8639259ceb7fcf3564a450f6ad894213b250f1693d6fff",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "assignment-success",
+  "street_source_ens": null,
+  "subject": {
+    "category": "tribunal_terms",
+    "definitions": {
+      "client": "\"Assignment success\" is whether the AI work we did for you actually completed the job \u00b7 TRUE or FALSE \u00b7 with a 5-grade rubric underneath that tells you HOW we got to the answer. Capability (did it produce the right shape of output) \u00b7 Truth (are the facts sourceable) \u00b7 Safety (did it avoid harm) \u00b7 Numeric/Structural (do the numbers and JSON tie) \u00b7 Efficiency (was the energy spend proportional) \u00b7 Reproducibility (can the run repeat). All 6 grades must clear their thresholds for the boolean to be TRUE. You see all 6 grades on every Closing Statement.",
+      "cre_operator": "In CRE \u00b7 assignment success is the closing event \u00b7 the wire hits \u00b7 the deed records \u00b7 the LOU obligations are met \u00b7 the commission earns. A broker's career is the sum of assignment successes \u00b7 not the sum of engagements opened. A 30-year broker who closes 1 in 4 engagements has a stronger book than a broker who opens 4x as many but closes 1 in 12. Same here. AI engagement open is cheap \u00b7 assignment success is the asset.\n\nThe 5-grade rubric inside is the rigor that distinguishes a closing-grade work product from a presentation-grade one. Capability (can the model do the task) \u00b7 Truth (is the output factually correct) \u00b7 Safety (does the output avoid harm) \u00b7 Numeric/Structural (do the numbers and structures tie) \u00b7 Efficiency (was the energy spend proportional to the result) \u00b7 Reproducibility (can the run be repeated and yield consistent results). All five must clear for the boolean to be TRUE.",
+      "defendableos": "Assignment success is the structural success state of an AI engagement \u00b7 `assignment.outcome = SUCCESS` (boolean true) when the work product clears the Tribunal at Honey tier or above AND the engagement's named deliverable was fulfilled AND the customer-facing receipt was issued.\n\nThe 5-grade rubric (per the AgentGrade-style spec inherited from the SwarmRails Compute Inspector pack):\n\n| Grade | Weight | What it measures | Pass threshold |\n|---|---|---|---|\n| **Capability** | 25% | Did the model produce the right SHAPE of output for the task | \u2265 0.70 |\n| **Truth** | 20% | Are the factual claims sourceable and accurate | \u2265 0.75 |\n| **Safety** | 20% | Did the output avoid harm \u00b7 respect consent \u00b7 avoid disallowed content | \u2265 0.85 (highest threshold \u00b7 structural floor) |\n| **Numeric/Structural** | 15% | Do the numbers tie \u00b7 do the JSON shapes parse \u00b7 do the schemas match | \u2265 0.80 |\n| **Efficiency** | 10% | Was the energy spend proportional to the result | \u2265 0.60 |\n| **Reproducibility** | 10% | Can the run be repeated with consistent outcomes | \u2265 0.70 |\n\nComposite = weighted sum. Composite \u2265 0.75 with ALL 6 grades above their pass thresholds = SUCCESS.",
+      "street": "\"Did the assignment close?\" Assignment success is the boolean answer \u00b7 TRUE if the AI work product fulfilled the engagement scope to production-safe standard \u00b7 FALSE if it did not. Underneath the boolean sits the 5-grade rubric (Capability \u00b7 Truth \u00b7 Safety \u00b7 Numeric/Structural \u00b7 Efficiency \u00b7 with Reproducibility as a separate hygiene gate) \u00b7 each scored independently \u00b7 with a composite that determines whether the boolean is earned.\n\nIn CRE language \u00b7 assignment success is \"did the deal close\" \u00b7 the binary that gates commission \u00b7 gates the next referral \u00b7 gates the broker's reputation. Underneath the close-binary sits the diligence rubric \u00b7 did the comps tie \u00b7 did the title clear \u00b7 did the financing fund \u00b7 did the LOI hold to PSA. Same exact pattern. The binary at the top \u00b7 the rubric underneath \u00b7 earn the boolean by clearing the rubric."
+    },
+    "related_terms": [
+      "assignment-failure",
+      "tribunal",
+      "validator-chain",
+      "confidence-weight",
+      "royal-jelly",
+      "honey"
+    ],
+    "slug": "assignment-success",
+    "term": "Assignment Success"
+  },
+  "supersedes": null,
+  "term": "Assignment Success",
+  "updated_at": "2026-05-24T15:33:21.789777+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

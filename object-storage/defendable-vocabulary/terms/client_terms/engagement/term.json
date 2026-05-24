@@ -1,0 +1,79 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"engagement.engagement_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"ENG-[A-Z]+-[A-Z]+-[A-Z]+-[0-9]{4}\",\n    \"primary_key\": true\n  },\n  \"engagement.lou_deed_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"DDEED-.+-LOU-v[0-9]+\",\n    \"required\": true\n  },\n  \"engagement.tier\": {\n    \"type\": \"enum\",\n    \"values\": [\"T1_PILOT\", \"T2_PRODUCTION\", \"T3_WHITE_GLOVE\", \"T4_EMBEDDED\"]\n  },\n  \"engagement.effective_date\": {\"type\": \"date\"},\n  \"engagement.term_months\": {\"type\": \"integer\", \"default\": 12},\n  \"engagement.auto_renew\": {\"type\": \"boolean\", \"default\": true},\n  \"engagement.status\": {\n    \"type\": \"enum\",\n    \"values\": [\"DISCOVERY\", \"APPRAISALS\", \"INK_PENDING\", \"ACTIVE\", \"PAUSED\", \"TERMINATING\", \"CLOSED\"]\n  },\n  \"engagement.principal_contacts\": {\n    \"type\": \"jsonb_array\",\n    \"shape\": \"[{role, name, email, escalation_tier}]\"\n  },\n  \"engagement.sr_broker_id\": {\"type\": \"string\"},\n  \"engagement.founder_engagement_required\": {\"type\": \"boolean\"},\n  \"engagement.assignment_ids\": {\"type\": \"string_array\"},\n  \"engagement.dial_current\": {\"type\": \"float\", \"range\": [0,1]},\n  \"engagement.cost_to_mint_ceiling_per_deed_usd\": {\"type\": \"float\"},\n  \"engagement.monthly_floor_usd\": {\"type\": \"float\"}\n}\n```\n\nSchema files: `docs/schemas/engagement.schema.json` \u00b7 `docs/schemas/lou.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "client_terms",
+  "client_explanation": "An **engagement** is our formal relationship with you \u00b7 the contract envelope. It starts the day you sign the Letter of Understanding. It covers your service tier \u00b7 your fee structure \u00b7 your escalation pyramid \u00b7 your books-and-records retention \u00b7 everything that governs how we work together.\n\nInside an engagement we run one-or-many **assignments** \u00b7 which are the specific projects with specific success criteria. Think of the engagement as your listing agreement \u00b7 and the assignments as the individual trades we execute under it.\n\nThe engagement persists for as long as the LOU is in force (typically 12 months \u00b7 auto-renewing). You can pause it \u00b7 terminate it for cause \u00b7 or terminate it for convenience on 60 days notice. We treat the engagement as the relationship \u00b7 which means it survives any single assignment closing successfully or unsuccessfully.",
+  "cre_operator_meaning": "A sr broker in CRE knows the difference between a relationship and a transaction. A transaction closes once and the parties walk. A relationship produces 10 transactions over 5 years \u00b7 plus 4 referrals \u00b7 plus 1 keynote \u00b7 plus the call you get when their partner's brother needs a 1031.\n\nAn engagement is the relationship in writing. The LOU formalizes the scope \u00b7 the term \u00b7 the economics \u00b7 the SLAs \u00b7 the escalation pyramid \u00b7 the conflict-of-interest stipulations. Everything material is named. Nothing material is implicit.\n\nThe discipline: every engagement has a named principal \u00b7 a named broker \u00b7 a defined economics structure \u00b7 a defined term \u00b7 and an exit ramp. If any of those five are missing \u00b7 you have a vendor pitch \u00b7 not an engagement.",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: every receipt under any assignment carries `engagement_id` for rollup\n- **DDEED class impact**: engagement-level deeds (LOU \u00b7 calibration \u00b7 termination) are themselves DDEEDs\n- **Books and records layer**: all 5 layers \u00b7 engagement_id is the primary join key for any cross-deed query\n- **5 Proofs touched**: ORIGIN (the engagement defines the routing universe) \u00b7 PROCESS (the LOU is part of the lineage) \u00b7 TRUST (the LOU deed is the trust anchor for the engagement)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: every receipt under any assignment carries `engagement_id` for rollup\n- **DDEED class impact**: engagement-level deeds (LOU \u00b7 calibration \u00b7 termination) are themselves DDEEDs\n- **Books and records layer**: all 5 layers \u00b7 engagement_id is the primary join key for any cross-deed query\n- **5 Proofs touched**: ORIGIN (the engagement defines the routing universe) \u00b7 PROCESS (the LOU is part of the lineage) \u00b7 TRUST (the LOU deed is the trust anchor for the engagement)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "An **Engagement** in DefendableOS is the LOU-bound relationship between Defender and Principal \u00b7 uniquely identified by `engagement_id` of shape `ENG-{org}-{vertical}-{customer}-{seq}`. Every engagement is itself a deed at issuance (`DDEED-{org}-LOU-{slug}-v1`) \u00b7 anchored on Hedera HCS \u00b7 resolvable via ENS.\n\nAn engagement contains:\n- Exactly one signed LOU (with versioning if amended)\n- One-or-many Assignments (each with its own brief)\n- A continuous dial of Probability of Close (rolled up across active assignments)\n- A continuous Morning Brief cadence (06:00 daily)\n- A continuous books-and-records contribution stream (every deed under any assignment under the engagement)\n- A defined service tier (T1 / T2 / T3 / T4)\n- A defined principal contact list\n\nClosure of all assignments does NOT close the engagement. The engagement persists until the LOU is formally terminated per \u00a79 of the LOU template.",
+  "defendableos_notes": "- An engagement is the unit of relationship \u00b7 NOT the unit of work. Assignments are the work. Receipts are the proof. Engagements are the canopy.\n- The engagement record persists across team rotations \u00b7 across model upgrades \u00b7 across customer org changes. It's designed to outlast every party that touched it.\n- The 7-year retention on books-and-records is engagement-level \u00b7 not assignment-level. The engagement folder is what survives the relationship.\n- An engagement is a Class A 5-cap asset on our side. The founder treats every engagement like a listed building. The discipline is the same.\n\n\ud83d\udc1d *The engagement is the canopy \u00b7 the assignments are the leaves \u00b7 the deeds are",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-ENGAGEMENT-v1",
+    "canon": "defendapedia.eth/client_terms/engagement",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Signed LOU on file \u00b7 referenced by `lou_deed_id`",
+    "Initial assignment brief signed (so the engagement has at least one work order)",
+    "Designated recipients confirmed in writing (per LOU \u00a711)",
+    "Service tier explicitly chosen and acknowledged",
+    "Cost-to-mint ceiling acknowledged in writing",
+    "First Morning Brief delivered (so the cadence is live)"
+  ],
+  "example": "> **Engagement**: `ENG-DOV-LOGISTICS-ACME-0001`\n>\n> **LOU**: `DDEED-DOV-LOGISTICS-ACME-LOU-v1` \u00b7 signed 2026-03-12 \u00b7 12-month initial term \u00b7 auto-renew enabled.\n>\n> **Tier**: T3 \u00b7 White-Glove \u00b7 effective rate $0.0416/deed \u00b7 monthly floor $8,500.\n>\n> **Assignments under this engagement**: ASN-0000 (pilot \u00b7 CLOSED \u00b7 HONEY) \u00b7 ASN-0001 (refund-decision \u00b7 in flight) \u00b7 ASN-0002 (invoice-reconciliation \u00b7 in flight).\n>\n> **Status**: ACTIVE \u00b7 Q3 QBR scheduled 2026-06-15.\n>\n> **Sr broker**: Jenny Reyes \u00b7 Founder cc on material events.\n>\n> **Year-1 trajectory**: started at dial 0.71 (first 30 days \u00b7 normal pilot ramp) \u00b7 climbed to 0.84 by month 4 \u00b7 drifted to 0.78 in month 6 (operator hygiene driver \u00b7 routing inefficiency \u00b7 fixed by 2026-06-22). Year-1 forecast: renewal probability 0.85 \u00b7 likely upgrade to T3+ with custom validator chain for Q4.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **ghost_engagement** | Engagement record exists but no signed LOU referenced | PROPOLIS \u00b7 audit failure \u00b7 sr broker review |\n| **scope_creep** | Assignments added outside LOU scope without amendment | JELLY \u00b7 engagement health flag \u00b7 re-paper |\n| **tier_mismatch** | Service delivered exceeds contracted tier (giving away the apparatus) | JELLY \u00b7 operator hygiene \u00b7 re-tier discussion |\n| **silent_renewal** | LOU auto-renewed without principal acknowledgment of any material change | PROPOLIS \u00b7 trust risk \u00b7 re-walk required |\n| **orphaned_engagement** | Sr broker left \u00b7 engagement not reassigned \u00b7 principal goes 30+ days without a named contact | PROPOLIS \u00b7 founder takes the lead |",
+  "hashes": {
+    "json_sha256": "sha256:7ab45755ade716a07b2e5da57a739f054b7a40565123d5002acf5fcc9dee9df5",
+    "markdown_sha256": "sha256:b3c7d41bff2cec52bee4271597adcf6d26e0b9698df1516e5d4406c2943b4020"
+  },
+  "jr_broker_use": "When you open a new file:\n\n- Confirm the engagement exists. If there's no signed LOU \u00b7 there's no engagement \u00b7 we have a discovery conversation \u00b7 NOT an engagement-level workflow.\n- Check the `engagement.status`. Most workflows ONLY apply to ACTIVE engagements. Don't run a Morning Brief generation against a DISCOVERY-stage record.\n- Reference the `engagement_id` in every artifact you produce. Color files \u00b7 digests \u00b7 pre-market flight sheets \u00b7 all of them carry the engagement_id in metadata.\n- Don't add an assignment to an engagement without sr broker sign-off. Assignment creep is how engagements lose their dial calibration.\n- If the principal asks for something that's outside the LOU scope \u00b7 escalate to sr broker. Don't promise scope expansion verbally.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/engagement/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.458792+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.458792+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "assignment",
+    "letter-of-understanding",
+    "principal",
+    "closing-statement",
+    "morning-brief",
+    "probability-of-close",
+    "pass-doctrine"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH (engagement health correlates strongly with assignment success rates)\n- **repair_lift**: MEDIUM (engagement-level fixes lift many assignments)\n- **validator_confidence**: HIGH (engagement-level audit-trail completeness feeds every assignment's validator confidence)\n- **risk_temperature**: INVERSE (healthy engagement = lower per-assignment risk)\n- **probability_of_close**: HIGH (the dial IS engagement-level)\n- **evidence_strength**: HIGH (engagement-level evidence stacks feed every under-engagement deed)\n- **cost_to_mint**: LOW (engagement-level costs are amortized \u00b7 the per-deed cost is what matters)",
+  "slug": "engagement",
+  "sr_broker_use": "The sr broker is the named engagement lead. The sr broker:\n\n- Drafts and walks the LOU at engagement open\n- Approves every new assignment brief under the engagement\n- Owns the weekly engagement review (Friday cadence \u00b7 across the full book of engagements)\n- Authorizes engagement-level escalations (founder cc decisions \u00b7 PASS-pivot conversations)\n- Signs every closing statement\n- Owns the relationship continuity \u00b7 across multiple assignments \u00b7 across multiple closings \u00b7 across renewal cycles\n\nA sr broker should be able to answer \u00b7 for any engagement they lead: current dial \u00b7 current tier \u00b7 current cost-to-mint trajectory \u00b7 open escalation status \u00b7 time-to-renewal. If they can't answer those 5 things in 30 seconds \u00b7 the engagement isn't being run well.",
+  "status": "active",
+  "street_definition": "\"Who's the engagement with?\" \u2014 the founder asks before reviewing any new file.\n\nAn **Engagement** is the formal relationship between DefendableOS (acting as Defender) and a customer (acting as Principal). It's the umbrella \u00b7 the contract envelope \u00b7 the named relationship. Underneath the engagement live one-or-many Assignments \u00b7 which are the specific work orders.\n\nIn CRE terms: an engagement is the listing-broker agreement (sometimes the exclusive-rep agreement) \u00b7 the contract that names the broker as the principal's representative for a defined scope \u00b7 period \u00b7 and economics. Assignments under an engagement are the individual trades \u00b7 listings \u00b7 or transactions executed during that period. The engagement is the canopy \u00b7 the assignments are the leaves.\n\nIf a customer hasn't signed a Letter of Understanding \u00b7 we don't have an engagement. We have a conversation. That's a meaningful distinction.",
+  "term": "Engagement",
+  "tribunal_use": "The Tribunal doesn't grade engagements directly \u00b7 it grades the receipts and deeds under each assignment. But the Tribunal feeds the engagement-level rollups:\n\n- `engagement.dial_current` is derived from across all in-flight assignments\n- `engagement.health_score` is computed nightly from the 7-day rollup of all under-engagement deeds\n- Critical Propolis on ANY assignment under an engagement triggers an engagement-level escalation (NOT just an assignment-level one)\n- `engagement.calibration_report` is the annual rollup (deed `DDEED-{org}-CALIB-{slug}-{year}-v1`)\n\nThe Tribunal also produces the data feeding the annual engagement-level renewal recommendation (continue \u00b7 upgrade-tier \u00b7 downgrade-tier \u00b7 graceful-exit).",
+  "version": "v1"
+}

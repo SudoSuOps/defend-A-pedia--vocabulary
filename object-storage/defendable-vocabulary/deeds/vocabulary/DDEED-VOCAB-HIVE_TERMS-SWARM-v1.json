@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-SWARM-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.503934+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-SWARM-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/swarm",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/swarm/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-SWARM-v1-20260524T15332150392Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:be5c9d5e043a41ed768b3f963ec8c88d16e70091c480708cac31ce519a6459bf",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "swarm",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"The Swarm\" is what you see running on our live status page \u00b7 the work happening right now \u00b7 the agents working \u00b7 the validators checking \u00b7 the deeds being issued \u00b7 the throughput in pairs-per-hour. The Swarm is the live counterpart to the Hive \u00b7 the Hive is the stable infrastructure \u00b7 the Swarm is what is operating inside it. When you receive a Morning Brief, the Swarm produced it. When you receive a Closing Statement, the Swarm assembled it. When a deed lands on the public ledger with your record_hash, the Swarm was the verb that put it there.",
+      "cre_operator": "In CRE \u00b7 the Swarm is what fills the pipeline. The 14 listings being scanned this morning. The 3 LOIs being negotiated this afternoon. The 1 deal closing today. The 2 sponsors on the phone this hour. The 6 jr brokers on the dials. The sr broker reading inbound digests. The validator running comps. The back-office reconciling commissions. All of it \u00b7 all happening at once \u00b7 all coordinated by the Hive's standards \u00b7 all logged in the Hive's books. THAT is the Swarm.\n\nA healthy Swarm is the proof the Hive is alive. A quiet Swarm is the warning the Hive is starving. A chaotic Swarm is the warning the Hive's discipline is slipping. The sr broker reads the Swarm's tempo every hour.",
+      "defendableos": "The Swarm is the runtime layer of the Hive \u00b7 the live active network of:\n\n- agents (the SwarmCurator cooks running \u00b7 the SwarmJudge passes \u00b7 the SwarmJelly repairs \u00b7 the SwarmRouter routing)\n- validators (the 12-check chain running on every pair in flight)\n- compute (the 4 rigs metabolizing energy \u00b7 swarmrails 165 tok/s 9B concurrent + 88 tok/s 27B concurrent \u00b7 whale's RTX 3090 running SwarmJelly inference \u00b7 zima-edge holding the signal heartbeat \u00b7 signal-edge holding the inference edge case)\n- inflight verdicts (the Tribunal queue \u00b7 the Bakery write queue \u00b7 the Hedera anchor queue \u00b7 the ENS reservation queue)\n- live customer engagements (the LOUs in flight \u00b7 the Morning Briefs being generated \u00b7 the Closing Statements being assembled)\n\nThe Swarm is what produces the 777 pairs/hr throughput. The Swarm is what makes Royal Jelly. The Swarm is what makes Honey. The Swarm is what flags Jelly. The Swarm is what seals Propolis. The Swarm IS the work. The Hive is the structure that holds it.",
+      "street": "\"The Swarm is hot today.\" The Swarm is the active network \u00b7 the live agents \u00b7 the compute that's metabolizing energy and producing pairs RIGHT NOW. If the Hive is the brick-and-mortar footprint \u00b7 the Swarm is the activity inside it \u00b7 the phones ringing \u00b7 the dials in flight \u00b7 the cooks running \u00b7 the Tribunal grading \u00b7 the deeds being issued \u00b7 the customers being briefed. The Swarm is what makes the Hive's heartbeat readable.\n\nIn CRE language \u00b7 the Swarm is the deal flow \u00b7 the pipeline \u00b7 the live floor \u00b7 the brokers on the dials \u00b7 the appraisers in the field \u00b7 the underwriters in the back \u00b7 the closers at the title company \u00b7 the relationships in motion. A brokerage's Hive doesn't change much week-to-week \u00b7 its Swarm changes by the hour. The Swarm is the verb. The Hive is the noun."
+    },
+    "related_terms": [
+      "hive",
+      "bee",
+      "energy",
+      "royal-jelly",
+      "honey",
+      "tribunal"
+    ],
+    "slug": "swarm",
+    "term": "Swarm"
+  },
+  "supersedes": null,
+  "term": "Swarm",
+  "updated_at": "2026-05-24T15:33:21.755207+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

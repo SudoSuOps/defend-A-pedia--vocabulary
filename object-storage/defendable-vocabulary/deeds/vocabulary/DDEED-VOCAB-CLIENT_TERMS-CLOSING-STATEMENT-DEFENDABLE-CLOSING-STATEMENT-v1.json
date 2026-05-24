@@ -1,0 +1,105 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-CLOSING-STATEMENT-DEFENDABLE-CLOSING-STATEMENT-v1",
+  "category": "client_terms",
+  "created_at": "2026-05-24T15:33:21.457718+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-CLOSING-STATEMENT-DEFENDABLE-CLOSING-STATEMENT-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/client_terms/closing-statement-defendable-closing-statement",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/client_terms/closing-statement-defendable-closing-statement/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-CLOSING-STATEMENT-DEFENDABLE-CLOSING-STATEMENT-v1-20260524T15332145770Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:1f6a3be9ee202ad341857eeee15659ebfa319116f3515d2905e512d43869144a",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "closing-statement-defendable-closing-statement",
+  "street_source_ens": null,
+  "subject": {
+    "category": "client_terms",
+    "definitions": {
+      "client": "The **Defendable Closing Statement** is your formal report at the end of every assignment. Think of it as the HUD-1 of AI defense work. One document. All the math.\n\nIt reports:\n\n- The boolean outcome (we either CLOSED \u00b7 HONEY \u00b7 CONDITIONED \u00b7 FAILED \u00b7 RECOVERABLE \u00b7 or FAILED \u00b7 DARK \u00b7 no soft language)\n- The 5-grade breakdown \u00b7 why we landed where we landed\n- Variance vs every success criterion you contracted for \u00b7 numeric \u00b7 per-criterion\n- The cost-to-mint actual vs the ceiling in your LOU\n- The deed inventory \u00b7 how many we issued \u00b7 at what tier \u00b7 with verifiable Hedera anchors\n- Any failures we recorded \u00b7 with root cause and remediation status\n- A recommendation for next steps (next assignment \u00b7 upgrade \u00b7 downgrade \u00b7 or graceful exit)\n\nThe sr broker walks you through it in person \u00b7 NEVER just emails the PDF. The walk is the close \u00b7 not a courtesy.\n\nYou acknowledge the closing statement in writing. The signed acknowledgment is the proof you saw what we said happened. Both stay in your engagement folder for 7 years after the LOU terminates.",
+      "cre_operator": "In CRE \u00b7 the HUD-1 (now the ALTA Settlement Statement) is the document that records every dollar that changed hands at the closing table. Buyer credits \u00b7 seller credits \u00b7 proration of taxes \u00b7 title insurance \u00b7 escrow \u00b7 transfer tax \u00b7 brokerage commission \u00b7 everything. It's signed by both sides. It's filed with the closing agent. It's archived for 7+ years.\n\nThe HUD-1 is the only artifact that survives the closing table. The closing agreement gets filed. The deed gets recorded. But the HUD-1 is the line-item truth \u00b7 the document a CFO can pull 5 years later when the auditor asks \"exactly how was this trade economically structured?\"\n\nWe mirror that exactly. The Defendable Closing Statement is the HUD-1 of an AI assignment. Same discipline. Same archival standard. Same survivability.",
+      "defendableos": "A **Defendable Closing Statement** in DefendableOS is the formal closing artifact issued at the conclusion of every assignment (regardless of outcome \u00b7 including FAILED \u00b7 DARK). It is:\n\n- A deed of its own (`DDEED-{org}-{vertical}-{customer}-CLOSE-{seq}-v1`)\n- Anchored on Hedera HCS \u00b7 ENS-resolvable\n- Signed by sr broker \u00b7 countersigned by founder on T3/T4 tiers\n- Walked with the principal in a scheduled 30-minute session (NEVER emailed-and-ghosted)\n- Permanently filed in books-and-records \u00b7 7-year retention beyond engagement termination\n\nThe closing statement has 8 mandatory sections:\n\n1. Boolean outcome (CLOSED \u00b7 HONEY / CONDITIONED / FAILED \u00b7 RECOVERABLE / FAILED \u00b7 DARK)\n2. 5-grade breakdown (G1-G5 with weights and composite)\n3. Variance vs success criteria (per criterion \u00b7 numeric)\n4. Cost-to-mint actual vs ceiling (per-deed average \u00b7 monthly total \u00b7 variance)\n5. Deed inventory (count by tier \u00b7 with sample Hedera anchors)\n6. Repair history (if any \u00b7 with repair-lift evidence)\n7. Failure deeds (if any \u00b7 with root-cause + remediation status)\n8. Next-step recommendation (next-assignment proposal OR graceful-exit doc)",
+      "street": "\"Did the closing statement land?\" \u2014 the founder asks the sr broker on the Friday after any assignment milestone.\n\nA **Defendable Closing Statement** is the formal post-assignment report \u00b7 the HUD-1 equivalent for an AI defense engagement. It states the boolean outcome \u00b7 the 5-grade breakdown \u00b7 the variance vs contract \u00b7 the cost-to-mint actual vs ceiling \u00b7 the deed list \u00b7 the Hedera proofs. One document. All the math. Walked with the principal in person.\n\nIf the principal didn't get a Defendable Closing Statement at the end of an assignment \u00b7 the assignment didn't close. The statement IS the close."
+    },
+    "related_terms": [
+      "assignment",
+      "engagement",
+      "letter-of-understanding",
+      "principal",
+      "morning-brief",
+      "assignment-success",
+      "pre-market-flight-sheet"
+    ],
+    "slug": "closing-statement-defendable-closing-statement",
+    "term": "Closing Statement (Defendable Closing Statement)"
+  },
+  "supersedes": null,
+  "term": "Closing Statement (Defendable Closing Statement)",
+  "updated_at": "2026-05-24T15:33:21.736602+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

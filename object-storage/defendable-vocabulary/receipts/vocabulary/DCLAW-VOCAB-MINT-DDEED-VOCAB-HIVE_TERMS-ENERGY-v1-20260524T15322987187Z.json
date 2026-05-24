@@ -1,0 +1,33 @@
+{
+  "category": "hive_terms",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-ENERGY-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-ENERGY-v1",
+    "canon": "defendapedia.eth/hive_terms/energy",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:189ab2a97d5da455cb9ab2a02ed277e37a91071cf552236af80960bfbb661349",
+    "markdown_sha256": "sha256:35b08ae7387385e100e3fdf9e81f2e2b57ed67104547b6ac36aa1a0d9cb6b178"
+  },
+  "minted_at": "2026-05-24T15:32:29.871879+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/energy/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:32:29.871778+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:32:29.871778+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-ENERGY-v1-20260524T15322987187Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "energy",
+  "term": "Energy"
+}

@@ -1,0 +1,78 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"lou.lou_id\": {\"type\": \"string\", \"primary_key\": true},\n  \"lou.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},\n  \"lou.version\": {\"type\": \"integer\"},\n  \"lou.deed_id\": {\n    \"type\": \"string\",\n    \"pattern\": \"DDEED-.+-LOU-v[0-9]+\"\n  },\n  \"lou.template_version\": {\"type\": \"string\", \"default\": \"v1.0\"},\n  \"lou.effective_date\": {\"type\": \"date\"},\n  \"lou.term_months\": {\"type\": \"integer\"},\n  \"lou.auto_renew\": {\"type\": \"boolean\"},\n  \"lou.tier\": {\n    \"type\": \"enum\",\n    \"values\": [\"T1_PILOT\", \"T2_PRODUCTION\", \"T3_WHITE_GLOVE\", \"T4_EMBEDDED\"]\n  },\n  \"lou.cost_to_mint_ceiling_per_deed_usd\": {\"type\": \"float\"},\n  \"lou.monthly_floor_usd\": {\"type\": \"float\"},\n  \"lou.formula_change_buffer_pct\": {\"type\": \"float\", \"default\": 10.0},\n  \"lou.fix_or_refund_window_days\": {\"type\": \"integer\", \"default\": 90},\n  \"lou.signature_defender_founder\": {\"type\": \"boolean\"},\n  \"lou.signature_defender_sr_broker\": {\"type\": \"boolean\"},\n  \"lou.signature_principal_decision\": {\"type\": \"boolean\"},\n  \"lou.signature_principal_financial\": {\"type\": \"boolean\"},\n  \"lou.acknowledgment_doctrine_docs_read\": {\"type\": \"boolean\"},\n  \"lou.acknowledgment_cost_walk_completed\": {\"type\": \"boolean\"},\n  \"lou.acknowledgment_hedera_verify_completed\": {\"type\": \"boolean\"},\n  \"lou.amendments\": {\"type\": \"string_array\", \"nullable\": true}\n}\n```\n\nSchema files: `docs/schemas/lou.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "client_terms",
+  "client_explanation": "The **Letter of Understanding** is our engagement contract. It's the document we sign together that opens the formal relationship. It names what we do \u00b7 what you pay \u00b7 how we report \u00b7 what triggers escalation \u00b7 how termination works \u00b7 what happens to your records after.\n\nWe walk you through every section before signing. We don't email a PDF and ask for a signature \u00b7 we book a 60-minute working session to walk the document \u00b7 answer questions \u00b7 and capture any tailoring you need. The walk is part of the discipline \u00b7 not a courtesy.\n\nThe LOU is itself filed as a Defendable Deed \u00b7 anchored on Hedera mainnet \u00b7 independently verifiable. The contract that governs the relationship lives on the same trust layer as the work we do under it. That's intentional.",
+  "cre_operator_meaning": "A sr broker in CRE knows the LOU does five things at once:\n\n1. **Names the parties** \u00b7 principal \u00b7 broker \u00b7 authorized signatories\n2. **Defines scope** \u00b7 what's covered \u00b7 what's not \u00b7 what triggers an amendment\n3. **Names the economics** \u00b7 the fee \u00b7 the structure \u00b7 the floor \u00b7 the ceiling \u00b7 the variance buffer\n4. **Defines the operating cadence** \u00b7 how often we report \u00b7 who calls whom \u00b7 what the escalation pyramid looks like\n5. **Names the exits** \u00b7 termination for cause \u00b7 termination for convenience \u00b7 what happens to the books after\n\nThe LOU is the prenuptial agreement of a CRE relationship. The principal who refuses to sign a clear LOU is signaling something \u00b7 usually that they want optionality at the broker's expense \u00b7 usually a relationship best PASSED on.",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: every receipt under any assignment under the engagement references the LOU deed_id for contract-trace\n- **DDEED class impact**: the LOU itself IS a DDEED (`DDEED-{org}-LOU-{slug}-v1`)\n- **Books and records layer**: all 5 layers \u00b7 LOU deed_id is a join key for any engagement-level audit query\n- **5 Proofs touched**: ALL FIVE (the LOU deed carries Origin \u00b7 Quality \u00b7 Process \u00b7 Economics \u00b7 Trust like any other DDEED)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: every receipt under any assignment under the engagement references the LOU deed_id for contract-trace\n- **DDEED class impact**: the LOU itself IS a DDEED (`DDEED-{org}-LOU-{slug}-v1`)\n- **Books and records layer**: all 5 layers \u00b7 LOU deed_id is a join key for any engagement-level audit query\n- **5 Proofs touched**: ALL FIVE (the LOU deed carries Origin \u00b7 Quality \u00b7 Process \u00b7 Economics \u00b7 Trust like any other DDEED)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "A **Letter of Understanding** in DefendableOS is the engagement-opening contract \u00b7 drafted on the canonical template (`docs/examples/sample_letter_of_understanding.md`) \u00b7 signed by both Defender (founder + sr broker) and Principal (decision-authority + financial-authority).\n\nThe LOU is filed as deed `DDEED-{org}-{vertical}-{customer}-LOU-v1` immediately upon execution \u00b7 anchored on Hedera HCS topic 0.0.10291838 \u00b7 resolvable at `ddeed-{org}-{vertical}-{customer}-lou-v1.{customer}.defendable.eth`. Amendments increment the version (`-v2`, `-v3`).\n\nThe LOU includes 13 mandatory sections (per the template):\n- \u00a71 Purpose \u00b7 \u00a72 Scope \u00b7 \u00a73 Success Criteria Framework \u00b7 \u00a74 Economics \u00b7 \u00a75 Operating Cadence \u00b7 \u00a76 Receipts/Deeds/Books \u00b7 \u00a77 Failure Handling \u00b7 \u00a78 PASS Doctrine \u00b7 \u00a79 Term and Termination \u00b7 \u00a710 Confidentiality \u00b7 \u00a711 Designated Recipients \u00b7 \u00a712 Acknowledgment \u00b7 \u00a713 Signatures\n\nEvery LOU must reference the canonical doctrine docs (\u00a712 acknowledgment is mandatory). Principals sign acknowledging they've been walked through the operating model \u00b7 NOT just sold a service.",
+  "defendableos_notes": "- The LOU is a Class A 5-cap asset. It's worth more than the fee revenue \u00b7 because it's the contract that survives team rotations \u00b7 regulatory inquiries \u00b7 and 10-year audits.\n- Re-walking the LOU at renewal is the discipline that prevents silent drift. We never silent-renew on T3 / T4 tiers.\n- The LOU template lives in this repo (`docs/examples/sample_letter_of_understanding.md`) on purpose \u00b7 the template IS doctrine \u00b7 changes to it require SH1 + SH5 + founder review.\n- Every LOU is also a marketing artifact (sanitized). Signed LOUs aggregated over time become a Class A 5-cap brand asset of their own \u00b7 \"8,400 deeds and 47 signed LOUs\" is more credibility than any landing page.\n\n\ud83d\udc1d *The LOU is the paper. The paper is the trust. The trust is the en",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-LETTER-OF-UNDERSTANDING-LOU-v1",
+    "canon": "defendapedia.eth/client_terms/letter-of-understanding-lou",
+    "street_source": null
+  },
+  "evidence_required": [
+    "All 4 signatures captured (Defender founder + sr broker \u00b7 Principal decision + financial)",
+    "\u00a712 acknowledgments confirmed in writing (3 acknowledgments \u00b7 doctrine read \u00b7 cost walked \u00b7 Hedera verified)",
+    "Deed issued and Hedera-anchored within 24 hours of last signature",
+    "ENS resolution path confirmed live",
+    "Engagement folder created with LOU referenced as primary contract artifact",
+    "First Morning Brief delivered within 7 days of effective date"
+  ],
+  "example": "> **LOU**: `DDEED-DOV-LOGISTICS-ACME-LOU-v1`\n>\n> **Engagement**: `ENG-DOV-LOGISTICS-ACME-0001`\n>\n> **Effective**: 2026-03-12 \u00b7 12-month initial term \u00b7 auto-renew enabled \u00b7 60-day notice required\n>\n> **Tier**: T3 \u00b7 White-Glove \u00b7 effective rate $0.0416/deed \u00b7 monthly floor $8,500 \u00b7 +10% formula buffer \u00b7 90-day Fix-or-Refund\n>\n> **Signatures captured 2026-03-12**:\n> - Donovan Mackey \u00b7 Founder \u00b7 Defender\n> - Jenny Reyes \u00b7 Sr Broker \u00b7 Defender\n> - Jane Smith \u00b7 COO \u00b7 Principal (decision authority)\n> - Mike Chen \u00b7 CFO \u00b7 Principal (financial authority)\n>\n> **Acknowledgments**:\n> - \u00a712 doctrine docs read (all 5 referenced): confirmed via separate signed acknowledgment 2026-03-10\n> - Cost-to-mint 7-component walk completed: 2026-03-11 (45-min Zoom with Mike + Jane + Jenny)\n> - Hedera verify completed: 2026-03-11 (sample deed verified live during the cost walk)\n>\n> **Hedera anchor**: topic 0.0.10291838 \u00b7 seq 8398122 \u00b7 consensus 2026-03-12T17:42:08.103291Z\n>\n> **ENS**: `ddeed-dov-logistics-acme-lou-v1.acme.defendable.eth` (resolvable since 2026-03-12T17:46:11Z)",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **unsigned_lou** | Engagement spun up to ACTIVE without all required signatures | PROPOLIS \u00b7 engagement reverted to INK_PENDING |\n| **template_drift** | LOU drafted without canonical template \u00b7 missing mandatory sections | PROPOLIS \u00b7 re-draft required |\n| **silent_amendment** | LOU modified mid-engagement without re-walk \u00b7 principal not re-acknowledged | PROPOLIS \u00b7 re-walk + re-sign |\n| **acknowledgment_skipped** | \u00a712 acknowledgments not confirmed before signature | JELLY \u00b7 acknowledgment captured retroactively \u00b7 flagged in books |\n| **deed_anchor_failed** | LOU signed but Hedera anchor failed \u00b7 not re-attempted within 24 hours | JELLY \u00b7 operator hygiene \u00b7 re-anchor required |\n| **principal_mismatch** | LOU signed by non-decision-authority \u00b7 later discovered | PROPOLIS \u00b7 LOU re-paper + re-sign with correct authority |",
+  "hashes": {
+    "json_sha256": "sha256:950d07a09318c4ef91e5c4d25dacb21c4bfe3e17594df4723ffc3702311212fc",
+    "markdown_sha256": "sha256:19b237754e55b82f94fa572267e8a6b8d2129d2a2e6ed33a3b901d35beae23b4"
+  },
+  "jr_broker_use": "You don't draft the LOU. The sr broker does. But you support:\n\n- **Capture the principal's intent** during the Appraisals stage so the sr broker has clean inputs\n- **Confirm the LOU acknowledgments** before the walk meeting (principal has the doctrine docs \u00b7 principal has read at least the summary)\n- **Coordinate the walk meeting** logistics (calendar invites \u00b7 screen-share setup \u00b7 scribe role)\n- **Verify the e-signature workflow** is working (don't surprise the principal with broken DocuSign during the close)\n- **File the signed LOU** in the engagement folder \u00b7 trigger the deed-issuance pipeline \u00b7 confirm the deed lands on Hedera within 24 hours\n\nDon't ever modify the LOU template without sr broker review. The template is a doctrine artifact \u00b7 NOT a freely-editable doc.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/letter-of-understanding-lou/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.459927+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.459927+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "engagement",
+    "principal",
+    "assignment",
+    "closing-statement",
+    "morning-brief",
+    "pass-doctrine"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH (LOU clarity directly affects assignment success rates)\n- **repair_lift**: MEDIUM (LOU amendments can repair scope drift mid-engagement)\n- **validator_confidence**: HIGH (LOU is the foundational evidence artifact for any engagement-level audit)\n- **risk_temperature**: INVERSE (clear LOU = low risk \u00b7 vague LOU = high risk)\n- **probability_of_close**: HIGH (well-walked LOU is a strong predictor of healthy engagement closes)\n- **evidence_strength**: HIGH (signed-and-anchored LOU is the strongest engagement-level evidence)\n- **cost_to_mint**: NEUTRAL (drafting the LOU is operator-margin time \u00b7 amortized across the engagement)",
+  "slug": "letter-of-understanding-lou",
+  "sr_broker_use": "The sr broker:\n\n- **Drafts the LOU from the canonical template** \u00b7 tailoring \u00a72 (scope) \u00b7 \u00a73 (success criteria framework) \u00b7 \u00a74 (economics) \u00b7 \u00a75 (cadence) \u00b7 \u00a711 (recipients) for the specific engagement\n- **Walks the LOU with the principal personally** \u00b7 60-90 minute session \u00b7 NEVER asynchronously\n- **Co-signs as Defender's sr broker** (the founder also signs)\n- **Authorizes amendments** as the engagement evolves \u00b7 with re-walk if material\n- **Owns the renewal conversation** 60+ days before auto-renewal \u00b7 re-walks the LOU at renewal \u00b7 captures changes in v2 / v3 amendments\n\nThe sr broker is also the **dispute-first-responder** if any LOU clause is interpreted differently between sides. The sr broker walks the math \u00b7 cites the section \u00b7 escalates to founder only if not resolvable at sr-broker level.",
+  "status": "active",
+  "street_definition": "\"Did the LOU get signed?\" \u2014 the founder asks at the Friday huddle before opening any new engagement file.\n\nA **Letter of Understanding** (LOU) is the signed engagement contract between Defender and Principal. It's the document that converts a discovery conversation into a formal relationship. Closes the M (Meetings) stage of MAGIC \u00b7 opens the in-flight phase.\n\nIn CRE terms \u00b7 the LOU is the listing agreement \u00b7 the exclusive-rep agreement \u00b7 the engagement letter. Every senior broker who has ever closed a deal at scale lives by the same rule: **if it's not on paper \u00b7 it didn't happen.** The LOU is the paper.\n\nIf a customer wants us to do the work without signing the LOU \u00b7 they don't want a defender \u00b7 they want a vendor \u00b7 and we don't sell that.",
+  "term": "Letter of Understanding (LOU)",
+  "tribunal_use": "The Tribunal doesn't adjudicate the LOU itself (it's a contract artifact \u00b7 not an output) \u00b7 but:\n\n- LOU-referenced success criteria become Tribunal inputs (they shape what HONEY \u00b7 CONDITIONED \u00b7 FAILED means for this engagement)\n- LOU-defined cost-to-mint ceiling becomes a Tribunal rule-layer gate (any deed over ceiling triggers an operator_hygiene flag)\n- LOU-defined escalation triggers become Tribunal escalation outputs (the Tribunal fires escalation events per the LOU pyramid)\n- LOU acknowledgment status feeds engagement_health checks (un-acknowledged amendments flag the engagement)",
+  "version": "v1"
+}

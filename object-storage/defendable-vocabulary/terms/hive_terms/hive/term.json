@@ -1,0 +1,81 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"hive.heartbeat_status\": {\n    \"type\": \"enum\",\n    \"values\": [\"GREEN\", \"DEGRADED\", \"AMBER\", \"RED\"],\n    \"scoring_hook\": \"fleet_health_5min\"\n  },\n  \"hive.throughput_pairs_per_hour\": {\n    \"type\": \"float\",\n    \"target\": 777\n  },\n  \"hive.rigs\": {\n    \"type\": \"array\",\n    \"items\": [\"swarmrails\", \"whale\", \"signal-edge-01\", \"zima-edge-1\"]\n  },\n  \"hive.deeds_issued_total\": { \"type\": \"integer\" },\n  \"hive.pairs_graded_total\": { \"type\": \"integer\" },\n  \"hive.uptime_seconds\": { \"type\": \"integer\" }\n}\n```\n\nSchema files: `docs/schemas/hive_status.schema.json` \u00b7 `docs/schemas/fleet_heartbeat.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "hive_terms",
+  "client_explanation": "\"The Hive\" is the name for our whole operating system \u00b7 the models \u00b7 the rigs \u00b7 the storage \u00b7 the doctrine \u00b7 the validator chain \u00b7 the Tribunal \u00b7 the receipts \u00b7 the deeds \u00b7 the customer-facing dashboards \u00b7 all of it as one coordinated thing. When you sign an engagement with us \u00b7 you're signing with the Hive \u00b7 not with a single model or a single rig. The Hive is what guarantees that your deed is anchored \u00b7 your verdicts are defended \u00b7 your books-and-records reconcile. The Hive runs 24/7 \u00b7 the heartbeat is in your Morning Brief.",
+  "cre_operator_meaning": "In CRE \u00b7 the Hive maps to the brokerage itself \u00b7 the named LLC \u00b7 the office space \u00b7 the deal pipeline \u00b7 the broker license \u00b7 the back-office accounting \u00b7 the comp library \u00b7 the client roster \u00b7 the relationships that compound over decades. A 30-year broker's Hive is what makes the 30-year broker \u00b7 not any single deal. The deals are the Swarm. The 30 years of relationships \u00b7 comps \u00b7 records \u00b7 referrals \u00b7 habits \u00b7 standards \u00b7 vocabulary \u00b7 that's the Hive.\n\nInside DefendableOS \u00b7 the Hive is identically structured. It is:\n\n- the models (the SwarmCurator family \u00b7 SwarmJelly \u00b7 SwarmJudge \u00b7 SwarmAtlas \u00b7 the 13+ custom trained models)\n- the rigs (swarmrails \u00b7 whale \u00b7 zima-edge-1 \u00b7 signal-edge-01 \u00b7 160GB VRAM \u00b7 342GB system RAM \u00b7 56C/100T)\n- the storage (1.3M deeded pairs \u00b7 Tigris manifests \u00b7 NAS finality layer \u00b7 PostgreSQL hot tier \u00b7 Hedera anchor layer \u00b7 ENS resolution layer)\n- the doctrine (this repo \u00b7 the 16 doctrine docs \u00b7 the 13-section term shape \u00b7 the 12-check validator chain \u00b7 the 6-role Tribunal \u00b7 the 5 Proofs \u00b7 the 4-tier classification \u00b7 the 5 Swarm Laws)\n- the operators (jr broker \u00b7 sr broker \u00b7 sr hack \u00b7 founder \u00b7 validators \u00b7 curators)\n- the customers (the engagement roster \u00b7 the LOUs \u00b7 the Morning Brief recipients \u00b7 the Closing Statement signatories)\n- the receipts (every receipt issued \u00b7 every deed anchored \u00b7 every record_hash \u00b7 every Hedera transaction \u00b7 every ENS reservation)",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-HIVE-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: `hive.heartbeat_at_issue` \u00b7 `hive.throughput_at_issue` \u00b7 `hive.deed_sequence_number` \u00b7 `hive.commit_sha_of_vocab`\n- **DDEED class impact**: Every DDEED carries a Hive-level header (the heartbeat at issue \u00b7 the rig that produced \u00b7 the vocab version)\n- **Books and records layer**: ALL 5 (L1 PG \u00b7 L2 Merkle \u00b7 L3 NAS \u00b7 L4 Hedera HCS \u00b7 L5 ENS) \u00b7 the Hive's records span the full stack\n- **5 Proofs touched**: ALL 5 \u00b7 the Hive is the entity whose existence provides ORIGIN \u00b7 whose discipline provides QUALITY \u00b7 whose pipeline provides PROCESS \u00b7 whose budget provides ECONOMICS \u00b7 whose anchor layer provides TRUST",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: `hive.heartbeat_at_issue` \u00b7 `hive.throughput_at_issue` \u00b7 `hive.deed_sequence_number` \u00b7 `hive.commit_sha_of_vocab`\n- **DDEED class impact**: Every DDEED carries a Hive-level header (the heartbeat at issue \u00b7 the rig that produced \u00b7 the vocab version)\n- **Books and records layer**: ALL 5 (L1 PG \u00b7 L2 Merkle \u00b7 L3 NAS \u00b7 L4 Hedera HCS \u00b7 L5 ENS) \u00b7 the Hive's records span the full stack\n- **5 Proofs touched**: ALL 5 \u00b7 the Hive is the entity whose existence provides ORIGIN \u00b7 whose discipline provides QUALITY \u00b7 whose pipeline provides PROCESS \u00b7 whose budget provides ECONOMICS \u00b7 whose anchor layer provides TRUST",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The Hive is the canonical name for the DefendableOS operating system as a single entity. When we say \"the Hive issued a deed\" we mean the entire stack participated \u00b7 the cook produced the pair \u00b7 the Tribunal adjudicated \u00b7 the Bakery hashed \u00b7 Hedera anchored \u00b7 ENS reserved \u00b7 the customer received. No single component owns the issuance \u00b7 the Hive does.\n\nThe Hive has a clock (the heartbeat \u00b7 5-min fleet check) \u00b7 a pulse (the 777 pairs/hr throughput) \u00b7 a memory (the books-and-records 5-layer stack) \u00b7 a voice (the vocabulary \u00b7 this repo) \u00b7 a discipline (the doctrine) \u00b7 and a verdict mechanism (the Tribunal). Every term in this dictionary is a CELL of the Hive. The Hive is the sum.",
+  "defendableos_notes": "- The Hive is the brand-as-entity \u00b7 everything else is a component\n- The Hive's commitment to its customers is bounded by its heartbeat \u00b7 when the heartbeat degrades \u00b7 customers are told \u00b7 transparency is the brand\n- The Hive's vocabulary (this repo) is the constitutional document \u00b7 changes to it are committed \u00b7 versioned \u00b7 referenced in every deed\n- The 5 Swarm Laws are the Hive's operating constitution \u00b7 the Genesis Law (\"what the Hive verifies becomes truth\") is the closing line\n- The Hive is the FIRST-PERSON of DefendableOS \u00b7 when we speak in the customer-facing dashboards we speak as the Hive \u00b7 not as Donovan \u00b7 not as a model \u00b7 not as a brand \u00b7 as the Hive\n\n\ud83d\udc1d *The Hive is the building. The Swarm is the work. The Bee is the worker. The Hive is what compounds \u00b7 the Hive is what is on the books \u00b7 the Hive is what the customer signs the",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-HIVE-v1",
+    "canon": "defendapedia.eth/hive_terms/hive",
+    "street_source": null
+  },
+  "evidence_required": [
+    "A current heartbeat reading (within 5 minutes)",
+    "A non-zero deeds-issued counter",
+    "A non-zero pairs-graded counter",
+    "At least one operational rig (typically swarmrails)",
+    "A working Tribunal (Scale A + Scale B both online OR explicit degraded-mode declaration)",
+    "A working Bakery (Tigris manifest writer reachable)",
+    "A working anchor layer (Hedera HCS reachable for Royal Jelly)",
+    "A current copy of this vocabulary repo (any commit is acceptable \u00b7 the vocab is versioned)"
+  ],
+  "example": "> **Customer query**: \"Who's responsible if your AI gets a deed wrong?\"\n>\n> **Hive answer**: \"The Hive is the responsible entity. The Hive is our operating system \u00b7 the models \u00b7 the rigs \u00b7 the storage \u00b7 the validator chain \u00b7 the Tribunal \u00b7 the Bakery \u00b7 the anchor layer \u00b7 the vocabulary \u00b7 all of it. Every deed carries a Hive-level header that says which rig issued \u00b7 which vocab version was in effect \u00b7 what the heartbeat was at issue \u00b7 what the throughput was. If a deed is wrong \u00b7 the Hive owns it \u00b7 the Hive amends it \u00b7 the Hive issues a retraction on the same Hedera topic \u00b7 the Hive notifies you on the next Morning Brief. The individual operator who clicked through is logged in the operator log \u00b7 the rig that produced is logged in the verdict record \u00b7 the model that generated is logged in the deed. But the Hive is the entity on the hook.\"\n>\n> **Outcome**: Customer signs the LOU with the Hive \u00b7 not with any individual operator. The contract is with the Hive. The Hive's heartbeat is in the LOU appendix. The Hive's vocab version is referenced. The Hive's address is the brick-and-mortar footprint of the brokerage.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **hive_silent_degradation** | Heartbeat is RED but the dashboard shows GREEN (the monitor itself failed) | Hive integrity event \u00b7 sr broker pages founder \u00b7 all in-flight verdicts held |\n| **hive_throughput_drift** | Sustained < 50% throughput for > 2h with no declared maintenance | Degraded-mode flag raised \u00b7 customers notified \u00b7 root cause investigated |\n| **hive_vocab_drift** | A schema or scoring change goes in without a vocab repo update | Engineering-discipline event \u00b7 the change is REVERTED \u00b7 the vocab gets updated first |\n| **hive_anchor_lag** | Hedera anchor queue > 30 min behind on Royal Jelly issuance | Page Hedera ops \u00b7 hold customer notifications until anchor catches up |\n| **hive_rig_loss** | A primary rig (swarmrails) goes offline | Fail-over to degraded Scale-B-only lane on whale \u00b7 Royal Jelly issuance paused |",
+  "hashes": {
+    "json_sha256": "sha256:5c7456d5dedd6885eb3af4b1348e5cb6ca403096a17b7d04d7a9f231470767ba",
+    "markdown_sha256": "sha256:3c8329a8d63f597036b6d68fe77a48af4516f64606103f376296f8ef993c7f88"
+  },
+  "jr_broker_use": "The jr broker treats the Hive as the parent context of every action:\n\n1. When you open an engagement \u00b7 you're opening it ON BEHALF OF the Hive \u00b7 not on your own behalf \u00b7 use the Hive's standards \u00b7 not your own intuition\n2. When you log a pair \u00b7 you're logging it TO the Hive's books \u00b7 which means the canonical vocabulary applies \u00b7 use the term file definitions exactly\n3. When the Hive's heartbeat goes AMBER \u00b7 stop opening new engagements \u00b7 close out what's in flight \u00b7 escalate to sr broker\n4. When the Hive's heartbeat goes RED \u00b7 you do not adjudicate \u00b7 you do not ship \u00b7 you wait for the founder's all-clear \u00b7 this is non-negotiable\n5. When a customer asks \"who's responsible\" the answer is \"the Hive\" \u00b7 not you personally \u00b7 and the Hive's receipt is the proof\n\n**Rule of thumb**: you are an operator of the Hive \u00b7 not the author of the output \u00b7 the Hive is the brand \u00b7 you are the steward.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/hive/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.497769+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.497769+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "swarm",
+    "bee",
+    "royal-jelly",
+    "honey",
+    "propolis",
+    "energy",
+    "tribunal"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: SYSTEM-LEVEL \u00b7 the Hive's heartbeat IS the precondition for any individual assignment success\n- **repair_lift**: N/A \u00b7 the Hive doesn't get repaired \u00b7 components do \u00b7 the Hive coordinates\n- **validator_confidence**: BASELINE \u00b7 validator confidence is a Hive-level dial \u00b7 the chain reads the Hive's heartbeat\n- **risk_temperature**: SYSTEM-LEVEL \u00b7 the Hive's overall risk-temperature dial is the customer-facing aggregate\n- **probability_of_close**: ENABLER \u00b7 close probability is calculated at engagement level but the Hive's health is the multiplier\n- **evidence_strength**: ENABLER \u00b7 the Hive provides the evidence-vault infrastructure that makes per-pair evidence strength meaningful\n- **cost_to_mint**: ENABLER \u00b7 the Hive's energy budget is what makes the $0.0052/deed baseline possible",
+  "slug": "hive",
+  "sr_broker_use": "The sr broker watches the Hive as a SYSTEM-LEVEL ASSET:\n\n- The Hive heartbeat is the first thing you check at 06:00 \u00b7 GREEN means open for business \u00b7 anything else is triage first\n- The Hive throughput dial (777 pairs/hr) is the canary for upstream health \u00b7 sustained shortfall means something is broken\n- The Hive deeds-issued counter is the customer-facing growth metric \u00b7 this is what the founder watches as the asset compounding\n- The Hive vocabulary (this repo) IS PART OF THE HIVE \u00b7 changes to it require sr-broker sign-off and a version bump \u00b7 vocabulary drift is brand drift\n- The Hive's relationship with the Swarm (the live activity) is parent-child \u00b7 when the Swarm is operating \u00b7 it operates within the Hive's bounds \u00b7 never outside",
+  "status": "active",
+  "street_definition": "\"That sits in the Hive.\" The Hive is the organized OS \u00b7 the standing infrastructure \u00b7 the place the agents \u00b7 validators \u00b7 datasets \u00b7 receipts \u00b7 clients \u00b7 and compute all live. It is not the activity (that's the Swarm). It is not a single agent (that's a Bee). It is the constitutional structure that holds the brand \u00b7 the books \u00b7 the schemas \u00b7 the deeds \u00b7 the corpora \u00b7 the models \u00b7 and the rigs together. CRE analog \u00b7 the Hive is the brick-and-mortar footprint of the brokerage \u00b7 the desk you walk back to between dials \u00b7 the office that opens at 06:00 whether you do or not.",
+  "term": "Hive",
+  "tribunal_use": "```yaml\ntribunal_use:\n  classification_impact:\n    - ROYAL_JELLY    # Hive-level deeds (e.g., flagship cohort releases) typically Royal Jelly\n    - HONEY          # routine Hive operating reports (e.g., Morning Brief) typically Honey\n  rule_layer_checks:\n    - hive.heartbeat_status MUST be GREEN or DEGRADED to issue any new verdict\n    - hive.throughput_pairs_per_hour MUST be within 30% of target (or degraded-mode flag raised)\n    - all 12 validator chain checks apply to the Hive's outputs (the Hive does not exempt itself)\n  judge_layer_prompt_hint: \"the Hive is the issuing entity \u00b7 verify the output cites the canonical vocabulary \u00b7 verify the lineage is complete\"\n  can_be_critical_failure: false   # the Hive itself is not a failure mode \u00b7 its outputs can be\n```\n\nThe Hive is not a thing the Tribunal grades \u00b7 the Hive is the thing the Tribunal LIVES INSIDE. But Hive-LEVEL outputs (the Morning Brief \u00b7 the weekly retrospective \u00b7 the operator status report) DO get adjudicated \u00b7 same rules \u00b7 same chain \u00b7 same tiers. The Hive does not exempt itself from its own discipline.",
+  "version": "v1"
+}

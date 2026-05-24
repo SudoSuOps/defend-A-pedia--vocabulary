@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-PROPOLIS-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.501651+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-PROPOLIS-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/propolis",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/propolis/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-PROPOLIS-v1-20260524T15332150164Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:14e92fb1fb94fd4de52e4520b5f33417f493be9bee1089f17a5cf332a9a5cb32",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "propolis",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"Propolis\" is our failure tier \u00b7 the AI work product that tripped one of our critical checks \u00b7 was flagged for adversarial content \u00b7 or produced output we cannot defend in a deed. We do not ship Propolis to you \u00b7 ever. We seal it \u00b7 log it \u00b7 and use it as training data so the next generation of our models learns to detect THIS kind of failure earlier. Most AI vendors hide their failures. We catalog ours \u00b7 publicly account for the rate \u00b7 and turn them into antibodies for the next cohort. The propolis rate is one of the dials in your Morning Brief.",
+      "cre_operator": "In CRE \u00b7 Propolis is the Class C-minus or below \u00b7 the asset with one or more deal-killers that no workout angle solves. The environmental phase-1 that needs a phase-2 and you already know what the phase-2 will say. The 30-year-old single-tenant with a tenant that just announced bankruptcy. The mixed-use with a co-tenancy clause that's about to trigger. The title chain with an open lien from 1987 that no one can locate the satisfaction for.\n\nThe right CRE move on Propolis is PASS. Don't open the engagement. Don't burn the dial. Don't ride the seller through a failed marketing campaign just to harvest the commission on the eventual fire-sale. The PASS doctrine exists because Propolis-grade deals corrupt the broker's reputation faster than they pay any commission. SAME IN DEFENDABLEOS. Propolis-grade output corrupts the books faster than any honey it could have produced.",
+      "defendableos": "Propolis is the failure Tribunal tier \u00b7 `tribunal_label = PROPOLIS`. It is assigned when:\n\n- ANY C01-C07 critical validator check fails (and the pair is not Jelly-rescuable \u00b7 e.g., C03 source-retrievable with no cache)\n- ANY hallucination_event is flagged (the catastrophic kind \u00b7 where the fact cannot be sourced)\n- ANY adversarial-source flag is raised (prompt injection \u00b7 jailbreak attempt \u00b7 fabricated comp)\n- The JellyScore lands below 0.70 with NO recoverable failure mode (i.e., the failure is structural \u00b7 not nameable in the 7-class SwarmJelly taxonomy)\n- The Katniss arbiter returns PROPOLIS-by-default after a non-unanimous best-of-3 (the adversarial backstop)\n- A previously-Jelly pair survives 2 failed SwarmFixer repair attempts\n\nA Propolis verdict is TERMINAL for that pair. It does NOT enter a repair queue. The original pair is sealed in the propolis vault with full lineage. The vault feeds the DETECT-task training corpus for the next SwarmFixer cohort (so the next-gen Fixer learns to detect THIS kind of failure earlier in the pipeline).",
+      "street": "\"That one came back Propolis \u00b7 seal it.\" Propolis is the critical-failure tier. The pair tripped a C01-C07 critical check OR scored below 0.70 with no recoverable failure mode OR carried a hallucination event OR was flagged as adversarial-source. The deed cannot issue. The receipt cannot ship. The pair gets sealed in the propolis vault \u00b7 logged with full lineage \u00b7 and routed into the DETECT-task training corpus for the next SwarmFixer cohort. Same way a hive packs its dead bees and contaminants into propolis resin and uses it as antibacterial sealant \u00b7 the Hive packs its trash into a corpus and uses it as antibody training.\n\nIn CRE language \u00b7 Propolis is the listing you walk away from. Environmental issues. Functional obsolescence. Title defect that won't clear. The deal you PASS on. The kind a sr broker tells the jr broker \"don't waste your dials on that one \u00b7 they're in a bad neighborhood.\" But you keep the file. Because the next time something that smells the same crosses your desk \u00b7 you have a comp for what bad looks like."
+    },
+    "related_terms": [
+      "royal-jelly",
+      "honey",
+      "jelly",
+      "hive",
+      "hallucination-event",
+      "tribunal"
+    ],
+    "slug": "propolis",
+    "term": "Propolis"
+  },
+  "supersedes": null,
+  "term": "Propolis",
+  "updated_at": "2026-05-24T15:33:21.754052+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

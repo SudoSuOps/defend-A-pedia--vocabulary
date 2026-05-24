@@ -1,0 +1,33 @@
+{
+  "category": "tribunal_terms",
+  "deed_id": "DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1",
+    "canon": "defendapedia.eth/tribunal_terms/confidence-weight",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:d34c82b682ed585a8628b7d07992e6b207fc60574de8055c0c161ee4d4eebca7",
+    "markdown_sha256": "sha256:84e2b2ed7041743d106d1d17c86ad648120f6227b5c2bf8cd11fd1ae59e67e31"
+  },
+  "minted_at": "2026-05-24T15:33:21.532939+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/tribunal_terms/confidence-weight/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.532764+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.532764+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-TRIBUNAL_TERMS-CONFIDENCE-WEIGHT-v1-20260524T15332153293Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "confidence-weight",
+  "term": "Confidence Weight"
+}

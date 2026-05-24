@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1",
+  "category": "defendableos_terms",
+  "created_at": "2026-05-24T15:33:21.482832+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/defendableos_terms/clawcheck",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/defendableos_terms/clawcheck/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-DEFENDABLEOS_TERMS-CLAWCHECK-v1-20260524T15332148282Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:898ef51de0fdd2edc2f3584e452824c7dae70a5e91539c74159eca19c2319058",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "clawcheck",
+  "street_source_ens": null,
+  "subject": {
+    "category": "defendableos_terms",
+    "definitions": {
+      "client": "ClawCheck is a free 5-minute intake. You answer 5 questions about your AI agent \u00b7 what kind of work it does, where it runs, what it can do, what model powers it, and how it remembers. We run a deterministic rule check (no AI calls \u00b7 no waiting) and give you a risk tier. If you're LOW, you probably don't need us. If you're HIGH or CRITICAL, here's the next step. No login. No card. No commitment.",
+      "cre_operator": "In CRE this is the **broker's free pre-listing inspection**. The owner calls the broker \u00b7 says \"I might sell, what do you think?\" \u00b7 the broker pulls the rent roll, walks the building, checks the comps, sends back a one-page write-up with the cap rate range and the deal-shape opinion. Free. No engagement letter signed. Just the broker's trained read. The free read is the lead. The lead becomes the listing. The listing becomes the deal.",
+      "defendableos": "ClawCheck is the free intake surface of DefendableOS. It captures 5 dimensions of an AI agent (worker class \u00b7 deployment topology \u00b7 access scope \u00b7 model in use \u00b7 memory architecture), runs a deterministic rule-based risk tier classification (no LLM calls), and ships a risk tier (LOW \u00b7 MEDIUM \u00b7 HIGH \u00b7 CRITICAL) plus a recommended next step. Lives at `defendableos.com/defend-the-claw`. Free. No login. Map 1:1 to the OpenClaw UX vocabulary the founder community recognizes.",
+      "street": "\"Run it through ClawCheck.\" That's the founder's line when an inbound prospect drops an AI agent into the conversation. **ClawCheck** is the free intake at `/defend-the-claw` \u00b7 the 5-dimension agent capture form \u00b7 the deterministic risk tier output. No login. No credit card. No model calls. 5 minutes, you get a risk tier, you know whether to be worried."
+    },
+    "related_terms": [
+      "defendableos",
+      "defendablerouter",
+      "defendablejelly",
+      "agentbench",
+      "defendablehack",
+      "pair-candidate"
+    ],
+    "slug": "clawcheck",
+    "term": "ClawCheck"
+  },
+  "supersedes": null,
+  "term": "ClawCheck",
+  "updated_at": "2026-05-24T15:33:21.744960+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-PASS-DOCTRINE-v1",
+  "category": "client_terms",
+  "created_at": "2026-05-24T15:33:21.463001+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-PASS-DOCTRINE-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/client_terms/pass-doctrine",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/client_terms/pass-doctrine/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CLIENT_TERMS-PASS-DOCTRINE-v1-20260524T15332146298Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:b6b89ca352985863acc0a0967a251bfaa3b38e233d3dde63b618a63717dbd703",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "pass-doctrine",
+  "street_source_ens": null,
+  "subject": {
+    "category": "client_terms",
+    "definitions": {
+      "client": "DefendableOS operates under a published **PASS Doctrine**. We refuse engagements we can't make defendable.\n\nThat means:\n\n- If you ask us to certify an agent that we can't actually grade \u00b7 we'll say so \u00b7 and walk.\n- If your success criteria require us to make claims we can't back with evidence \u00b7 we'll say so \u00b7 and walk.\n- If your economics don't support our apparatus cost \u00b7 we'll say so \u00b7 and walk.\n- If your timing requires us to skip the discipline that makes our work defendable \u00b7 we'll say so \u00b7 and walk.\n\nWe don't pretend. We don't over-promise. We don't sign LOUs we can't deliver against.\n\nThe PASS doctrine cuts both ways. You can PASS on us too \u00b7 for any reason \u00b7 at any time per the LOU termination clauses. The relationship is voluntary on both sides \u00b7 which is part of what makes it trustworthy.\n\nWhen we PASS \u00b7 we tell you honestly. If we know a provider who is a better fit \u00b7 we'll tell you that too. We'd rather lose this engagement and keep your respect than win this engagement and burn it.",
+      "cre_operator": "In CRE \u00b7 every broker faces fantasy mandates monthly. Sellers who want 100M for a 75M asset. Buyers who want 5cap on a 7cap deal. Sponsors who promise IRRs the asset class doesn't support. The bad brokers take all of those \u00b7 run them through the apparatus \u00b7 burn the seller's time and the buyer pool's patience \u00b7 and book maybe 1 in 10 at re-traded numbers far below the original ask.\n\nThe top 1% brokers PASS on those. They walk. They tell the seller the truth (the asset prices at 75M \u00b7 here's the comp set \u00b7 we'd be happy to list at 75M but not at 100M). Then they go work other listings. 90 days later \u00b7 the seller calls back \u00b7 having burned through two other brokers on the fantasy mandate \u00b7 ready to list at 75M with the broker who told them the truth on day one.\n\nThe patience IS the moat. The top brokers earn $20M/yr because they say no to $2M of fantasy fees per quarter.",
+      "defendableos": "The **PASS Doctrine** in DefendableOS is the formal intake-filter discipline \u00b7 documented at every stage of the MAGIC funnel \u00b7 enforced by sr brokers \u00b7 escalated to founder for any close calls.\n\nPASS comes in two flavors:\n\n1. **PASS_PIVOT** \u00b7 we walk this engagement \u00b7 we offer to revisit in 6-12 months \u00b7 we may refer to a different provider in the interim \u00b7 doors stay open\n2. **PASS_TERMINAL** \u00b7 we walk this engagement \u00b7 we don't intend to revisit \u00b7 the structural fit isn't there\n\nPASS is documented in writing every time it's invoked \u00b7 in the engagement's PASS verdict log. The rationale is captured. The founder is briefed on any PASS at the Appraisals stage or later (early-Meetings PASS doesn't require founder briefing \u00b7 just sr-broker discretion).\n\nPASS is the doctrine equivalent of the LOU's \u00a78 PASS Doctrine clause \u00b7 which gives Defender the contractual right to invoke PASS even mid-engagement if the structure drifts.",
+      "street": "\"We PASS.\" \u2014 the sr broker says \u00b7 cleanly \u00b7 without apology \u00b7 when a deal doesn't pencil.\n\nThe **PASS Doctrine** is the explicit stance that DefendableOS refuses fantasy mandates. We turn down engagements we can't make defendable \u00b7 even when the fee is real \u00b7 even when the principal is influential \u00b7 even when the prospect wants us specifically.\n\nFounder's locked phrase: *\"If seller wanted 100M strike price and the deal penciled at 75M \u00b7 I would PASS on the 2M fee and wait until the seller went through enough pain with the other broker that sold him on fantasy \u00b7 then they would call me \u00b7 want to list WITH ME on MY guidance.\"*\n\nPASS is the discipline that earns the next decade. Taking the wrong deal loses 3 future deals \u00b7 so the PASS calculus is always net-positive over the long run."
+    },
+    "related_terms": [
+      "engagement",
+      "letter-of-understanding",
+      "pre-market-flight-sheet",
+      "principal",
+      "closing-statement",
+      "morning-brief"
+    ],
+    "slug": "pass-doctrine",
+    "term": "PASS Doctrine"
+  },
+  "supersedes": null,
+  "term": "PASS Doctrine",
+  "updated_at": "2026-05-24T15:33:21.738629+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

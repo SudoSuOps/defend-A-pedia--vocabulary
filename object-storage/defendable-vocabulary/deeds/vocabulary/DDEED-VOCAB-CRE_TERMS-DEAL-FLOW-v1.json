@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CRE_TERMS-DEAL-FLOW-v1",
+  "category": "cre_terms",
+  "created_at": "2026-05-24T15:33:21.470559+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-CRE_TERMS-DEAL-FLOW-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/cre_terms/deal-flow",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/cre_terms/deal-flow/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-CRE_TERMS-DEAL-FLOW-v1-20260524T15332147055Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:c9e193396e16efdc34b300a526398f519c2c406ddac117917983bd39b06554f6",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "deal-flow",
+  "street_source_ens": null,
+  "subject": {
+    "category": "cre_terms",
+    "definitions": {
+      "client": "Deal flow is the term we use for the structured pipeline of potential engagements moving through our firm. You may hear it referenced in our Morning Briefs or annual reports as a measure of the firm's health \u00b7 strong deal flow means high-quality prospects moving through stages at predictable rates, which is the leading indicator of our ability to serve you well over multi-year relationships. We monitor deal flow with the same discipline a CFO monitors cash flow \u00b7 stage-by-stage, with conversion rates, dwell-time targets, and source attribution. It is one of the metrics that earned us KPMG-grade audit positioning and the basis of our retention math.",
+      "cre_operator": "A CRE broker's deal flow is a structured pipeline view across multiple stages. Standard CRE pipeline stages:\n\n- **Prospecting** \u00b7 names on a list \u00b7 being researched \u00b7 no contact yet\n- **Outreach** \u00b7 first contact made \u00b7 call placed \u00b7 email sent \u00b7 reply pending\n- **Engaged** \u00b7 two-way conversation established \u00b7 qualifying ongoing\n- **Pitch** \u00b7 the OM presented or the pitch deck delivered \u00b7 response pending\n- **LOI prep** \u00b7 prospect interested \u00b7 negotiating terms in principle\n- **LOI signed** \u00b7 soft commitment \u00b7 diligence triggered\n- **Diligence** \u00b7 active verification phase\n- **PSA prep** \u00b7 diligence concluded \u00b7 binding contract being papered\n- **Closing** \u00b7 documents in escrow \u00b7 funds in flight\n- **Closed / To the shed** \u00b7 deed recorded \u00b7 fee earned\n\nEach stage has a conversion rate to the next stage. Each stage has an expected dwell time. Each stage has typical drop-off causes. A sr broker reads their pipeline like a CFO reads a cash-flow forecast \u00b7 drops where expected, holding where expected, accelerating where expected. Anomalies trigger investigation.\n\nHealthy deal flow has shape: pipeline value at each stage should follow a known distribution. If your prospecting stage is empty, you'll have no LOIs in 90 days \u00b7 investigate now, not in 90 days. If your LOI stage is congested, your diligence team is bottlenecked \u00b7 re-allocate.",
+      "defendableos": "In DefendableOS, **deal flow** is the structured pipeline of defense engagements at every stage from prospecting to live-engagement closing-statement. Same stages as CRE, with adjusted vocabulary:\n\n- **Sourced** \u00b7 prospect identified \u00b7 ICP-fit verified \u00b7 researcher assigned\n- **Outreach** \u00b7 first dial / email / warm intro made\n- **Engaged** \u00b7 two-way conversation \u00b7 pain hypothesis tested\n- **OM delivered** \u00b7 canonical Offering Memorandum sent \u00b7 view signals tracked\n- **Sit booked** \u00b7 meeting scheduled \u00b7 digest in flight\n- **Sit delivered** \u00b7 meeting happened \u00b7 post-meeting receipt logged\n- **Appraisal delivered** \u00b7 flight sheet delivered \u00b7 pricing scenarios presented\n- **LOU signed** \u00b7 soft commitment \u00b7 diligence triggered\n- **Diligence active** \u00b7 verification phase running\n- **PSA signed** \u00b7 binding contract \u00b7 live engagement\n- **Live \u00b7 day 1-30** \u00b7 onboarding phase \u00b7 service delivery starts\n- **Live \u00b7 day 30-90** \u00b7 stabilization phase \u00b7 title insurance commitment ramping\n- **Live \u00b7 day 90+** \u00b7 stable engagement \u00b7 monthly Brief cadence\n- **Renewal review** \u00b7 approaching term-end \u00b7 renewal discussion active\n- **Renewed** \u00b7 new term locked \u00b7 pipeline cycles back\n- **Disposition** \u00b7 engagement wound down \u00b7 orderly exit\n\nThe DefendableOS pipeline differs from CRE in that the engagement persists post-PSA \u00b7 CRE pipeline ends at closing, but DefendableOS pipeline continues through retention. Retention is part of deal flow \u00b7 because the brand depends on the renewal as much as the original close.",
+      "street": "\"What's the deal flow look like this week?\" \u2014 sr broker, every Monday morning, on the pipeline review.\n\n**Deal flow** is the pipeline metric. The volume and velocity of opportunities moving through the funnel \u00b7 stage by stage \u00b7 with conversion rates calculated at each stage transition. Strong deal flow doesn't mean lots of prospects; it means high-quality prospects moving through stages at predictable rates with clean attribution back to source.\n\nIn CRE, deal flow IS the broker's business. Without flow there are no listings, no closes, no fees. In DefendableOS, deal flow is the leading indicator of every other metric \u00b7 pipeline today is revenue six months out \u00b7 pipeline quality today is retention three years out."
+    },
+    "related_terms": [
+      "probability-of-close",
+      "digest",
+      "om",
+      "loi",
+      "psa",
+      "books-and-records"
+    ],
+    "slug": "deal-flow",
+    "term": "Deal Flow"
+  },
+  "supersedes": null,
+  "term": "Deal Flow",
+  "updated_at": "2026-05-24T15:33:21.740671+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

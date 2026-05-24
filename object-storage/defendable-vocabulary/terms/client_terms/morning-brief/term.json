@@ -1,0 +1,79 @@
+{
+  "backend_representation": {
+    "enums": [],
+    "fields": [],
+    "raw_markdown": "```json\n{\n  \"morning_brief.brief_id\": {\"type\": \"string\", \"primary_key\": true},\n  \"morning_brief.engagement_id\": {\"type\": \"string\", \"fk\": \"engagement.engagement_id\"},\n  \"morning_brief.brief_date\": {\"type\": \"date\"},\n  \"morning_brief.sent_at\": {\"type\": \"timestamp\"},\n  \"morning_brief.recipients\": {\"type\": \"string_array\"},\n  \"morning_brief.dial_value\": {\"type\": \"float\", \"range\": [0,1]},\n  \"morning_brief.dial_band\": {\"type\": \"enum\"},\n  \"morning_brief.dial_7d_trajectory\": {\"type\": \"float\"},\n  \"morning_brief.deed_count_24h\": {\"type\": \"integer\"},\n  \"morning_brief.honey_rate_24h\": {\"type\": \"float\"},\n  \"morning_brief.propolis_count_24h\": {\"type\": \"integer\"},\n  \"morning_brief.cost_to_mint_7d_rolling\": {\"type\": \"float\"},\n  \"morning_brief.cost_variance_to_ceiling_pct\": {\"type\": \"float\"},\n  \"morning_brief.action_today\": {\"type\": \"string\"},\n  \"morning_brief.action_owner\": {\"type\": \"string\"},\n  \"morning_brief.action_eta\": {\"type\": \"date\", \"nullable\": true},\n  \"morning_brief.anomalies\": {\"type\": \"jsonb_array\"},\n  \"morning_brief.sample_deed_ids\": {\"type\": \"string_array\"},\n  \"morning_brief.principal_open_confirmed\": {\"type\": \"boolean\", \"nullable\": true},\n  \"morning_brief.principal_reply_count\": {\"type\": \"integer\", \"default\": 0},\n  \"morning_brief.sr_broker_reviewed\": {\"type\": \"boolean\"}\n}\n```\n\nSchema files: `docs/schemas/morning_brief.schema.json`",
+    "receipt_hooks": [],
+    "scoring_hooks": [],
+    "validator_hooks": []
+  },
+  "category": "client_terms",
+  "client_explanation": "The **Morning Brief** is your daily reconciliation email \u00b7 in your inbox at 06:00. Every day. Including weekends. Including holidays.\n\nIt's one page. Six slots: the dial \u00b7 the overnight volume \u00b7 the cost \u00b7 today's action \u00b7 any anomalies \u00b7 sample deed IDs you can verify on Hedera.\n\nThe brief is how you stay informed without having to ask. You should never have to wonder \"where are we?\" \u2014 the answer is in your inbox \u00b7 30 seconds of reading.\n\nIf we miss a Morning Brief \u00b7 that's an operational failure on our side \u00b7 and we'll tell you why in the next-day's brief. Constancy is the discipline.\n\nYou can pause the Morning Brief temporarily (vacation \u00b7 acquisition window \u00b7 etc) by writing to your sr broker. We default to ON \u00b7 pausing is opt-out.",
+  "cre_operator_meaning": "A sr broker in CRE runs a Friday pipeline brief and a Monday huddle for the team \u00b7 plus a per-client weekly call cadence. The discipline is constancy. You don't skip the Friday brief because nothing happened \u00b7 you write \"no material moves this week \u00b7 holding the line\" and you send it. The principal is reassured by the cadence \u00b7 not by the content fluctuation.\n\nThe same discipline applies to a 24/7 defense engagement \u00b7 but the cadence is daily \u00b7 not weekly \u00b7 because the apparatus runs daily. The Morning Brief is the operator's daily proof-of-life. It says \"we're here \u00b7 we ran last night \u00b7 here's what we saw \u00b7 here's what we're doing today.\" No principal is left to wonder.",
+  "deed_id": "DDEED-VOCAB-CLIENT_TERMS-MORNING-BRIEF-v1",
+  "deed_receipt_impact": {
+    "books_and_records_relevant": true,
+    "deed_eligible": true,
+    "five_proofs_touched_raw": "- **Receipt fields touched**: every brief references 1-3 sample deeds for verification (those deeds are highlighted but not modified)\n- **DDEED class impact**: the brief itself is NOT a DDEED (it's an operational artifact \u00b7 not an attested output)\n- **Books and records layer**: briefs are stored in L1 PostgreSQL + L3 NAS \u00b7 7-year retention \u00b7 NOT anchored on Hedera (cost-prohibitive per-day)\n- **5 Proofs touched**: indirectly \u00b7 the brief surfaces evidence touching all 5 Proofs but doesn't itself carry them (it's the digest \u00b7 not the deed)",
+    "receipt_required": true
+  },
+  "deed_receipt_impact_raw": "- **Receipt fields touched**: every brief references 1-3 sample deeds for verification (those deeds are highlighted but not modified)\n- **DDEED class impact**: the brief itself is NOT a DDEED (it's an operational artifact \u00b7 not an attested output)\n- **Books and records layer**: briefs are stored in L1 PostgreSQL + L3 NAS \u00b7 7-year retention \u00b7 NOT anchored on Hedera (cost-prohibitive per-day)\n- **5 Proofs touched**: indirectly \u00b7 the brief surfaces evidence touching all 5 Proofs but doesn't itself carry them (it's the digest \u00b7 not the deed)",
+  "deed_type": "DDEED_VOCABULARY_TERM",
+  "defendableos_definition": "The **Morning Brief** in DefendableOS is the daily principal-facing email \u00b7 sent automatically at **06:00 ET** (or principal's preferred timezone) to all designated recipients per LOU \u00a711. It is composed by the Defense Ops desk \u00b7 reviewed by the sr broker on T3/T4 tiers \u00b7 and delivered via the engagement's confirmed channel.\n\nThe Morning Brief has a fixed 6-slot format:\n\n1. **Dial slot** \u00b7 current Probability of Close \u00b7 band \u00b7 7-day trajectory\n2. **Volume slot** \u00b7 24-hour deed count \u00b7 Honey rate \u00b7 Propolis count \u00b7 variance to 30-day baseline\n3. **Cost slot** \u00b7 rolling 7-day cost-to-mint actual \u00b7 vs ceiling\n4. **Action slot** \u00b7 today's named action \u00b7 with owner and ETA\n5. **Anomaly slot** \u00b7 any unusual events from the overnight Tribunal cron\n6. **Receipt slot** \u00b7 1-3 sample deed IDs \u00b7 with Hedera anchor links for principal verification\n\nConstancy is sacred. The brief lands every day \u00b7 including weekends \u00b7 with the format intact. \"Nothing material\" is a valid action slot \u00b7 saying so is part of the discipline.",
+  "defendableos_notes": "- The brief is the daily proof-of-life. It's the operating discipline that makes the engagement feel managed \u00b7 not \"vendor-y.\" A principal who reads the brief feels in control.\n- Constancy beats cleverness. Don't redesign the format every quarter \u00b7 the principal's eye learns the layout \u00b7 variance creates friction.\n- A perfect brief is one the principal can scan in 30 seconds and feel updated. Anything that requires more than 30 seconds is too much. Push depth into the dashboard \u00b7 keep the brief tight.\n- The 06:00 ET ship time is calibrated to the founder's CRE-broker discipline \u00b7 principals like to read with coffee \u00b7 we mirror that. Adjust per principal's preferred timezone \u00b7 don't force ours.\n\n\ud83d\udc1d *Cadence is the discipline \u00b7 discipline is the trust \u00b7 trust is the en",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-CLIENT_TERMS-MORNING-BRIEF-v1",
+    "canon": "defendapedia.eth/client_terms/morning-brief",
+    "street_source": null
+  },
+  "evidence_required": [
+    "Sent on time (within 30 min of 06:00 target window for the engagement's timezone)",
+    "All 6 slots populated (with valid \"no material change\" entries if applicable)",
+    "Dial values match the dashboard at composition time",
+    "Sample deed IDs resolve on Hedera within 60 seconds of spot-check",
+    "Sr broker reviewed (T3/T4) \u00b7 log entry captured",
+    "Sent successfully to all recipients per LOU \u00a711"
+  ],
+  "example": "> **Morning Brief \u00b7 2026-06-15 \u00b7 06:00 ET**\n>\n> To: Jane Smith (COO) \u00b7 Mike Chen (CFO) \u00b7 Dana Park (VP Eng) \u00b7 ops-leadership@acmelogistics.com\n>\n> Engagement: ENG-DOV-LOGISTICS-ACME-0001 \u00b7 T3 White-Glove\n>\n> ---\n>\n> **DIAL**: 0.78 \u00b7 AMBER \u00b7 TRACKING \u00b7 trajectory -0.03 over 7 days\n>\n> **VOLUME**: 1,247 deeds in last 24h \u00b7 Honey rate 89.7% \u00b7 Propolis 0 \u00b7 -1.2% vs 30-day baseline\n>\n> **COST**: $0.0049/deed rolling 7d \u00b7 88.2% under T3 ceiling\n>\n> **ACTION**: Sr broker (J. Reyes) deploying routing-tune on refund-decision path 2026-06-22 \u00b7 projected to lift Honey rate back to 93% within 7 days post-deploy\n>\n> **ANOMALIES**: None overnight. One vendor-rubric reconciliation in flight (closes 2026-06-20).\n>\n> **RECEIPTS** (sample \u00b7 verify on Hedera topic 0.0.10291838):\n> - `DDEED-DOV-LOGISTICS-ACME-REFUND-000412-v1` \u00b7 seq 8401247\n> - `DDEED-DOV-LOGISTICS-ACME-INVOICE-000891-v1` \u00b7 seq 8401249\n> - `DDEED-DOV-LOGISTICS-ACME-REFUND-000413-v1` \u00b7 seq 8401253\n>\n> ---\n>\n> Sr broker (J. Reyes) reviewed and approved at 04:47 ET. Founder cc \u00b7 no action requested.\n>\n> Reply to ops@swarmandbee.ai for any questions \u00b7 J. Reyes for relationship matters.",
+  "failure_modes_raw": "| Mode | Description | Tribunal class on fail |\n|---|---|---|\n| **missed_send** | Brief not sent for a given calendar day | JELLY \u00b7 operational miss \u00b7 disclosed next day |\n| **stale_data** | Brief composed with data older than 12 hours | JELLY \u00b7 re-derive \u00b7 re-issue with corrected numbers |\n| **broken_anchor** | Sample deed ID cited but Hedera anchor doesn't resolve | PROPOLIS \u00b7 trust breach \u00b7 re-issue + investigate |\n| **silent_anomaly** | Material event happened overnight \u00b7 not surfaced in anomaly slot | PROPOLIS \u00b7 trust breach \u00b7 sr broker review |\n| **format_drift** | Brief shipped without one or more required slots | JELLY \u00b7 format restored next day \u00b7 sr broker review |\n| **principal_unsubscribed_quietly** | Principal removed from recipients without LOU \u00a711 amendment | JELLY \u00b7 audit failure \u00b7 LOU amendment captured |",
+  "hashes": {
+    "json_sha256": "sha256:d25a96b4f404a440be6bf4389a2c314be688e9f387999b83a67d65aa6ae38938",
+    "markdown_sha256": "sha256:77784c79d0c779435842434f0ff3323e5e26d64a2ccf783df6c294cffe9a326c"
+  },
+  "jr_broker_use": "When you're the operator on the Morning Brief desk:\n\n- **Compose the brief by 04:30 ET** for 06:00 delivery\n- **Pull dial \u00b7 volume \u00b7 cost from the dashboard** \u00b7 don't hand-compute (introduces drift)\n- **Compose action slot personally** \u00b7 the action slot is the only narrative slot \u00b7 everything else is data\n- **Anomaly slot must be NAMED if non-empty** \u00b7 \"minor issues\" is not a valid entry \u00b7 be specific or omit\n- **Sample deed IDs must include valid Hedera anchors** \u00b7 do a 30-second spot-check before sending\n- **Get sr broker sign-off on T3/T4 briefs** (T1/T2 can ship without \u00b7 but log the sign-off skipped)\n\nIf you miss the 06:00 window: send the brief with the actual send-time clearly noted \u00b7 plus a 1-line \"delivered late \u00b7 operational miss\" disclosure. Don't hide the miss.",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/client_terms/morning-brief/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.461208+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.461208+00:00",
+    "validator_chain": []
+  },
+  "related_terms": [
+    "engagement",
+    "assignment",
+    "closing-statement",
+    "principal",
+    "probability-of-close",
+    "pre-market-flight-sheet",
+    "letter-of-understanding"
+  ],
+  "scoring_impact": {
+    "assignment_success": "see scoring_impact_raw \u00b7 structured TBD",
+    "repair_lift": "see scoring_impact_raw \u00b7 structured TBD",
+    "risk_temperature": "see scoring_impact_raw \u00b7 structured TBD",
+    "validator_weight": "see scoring_impact_raw \u00b7 structured TBD"
+  },
+  "scoring_impact_raw": "- **assignment_success**: HIGH (cadence discipline is a strong predictor of engagement success rates)\n- **repair_lift**: MEDIUM (the brief surfaces issues early \u2192 faster repair)\n- **validator_confidence**: HIGH (the brief is the daily evidence trail of operator hygiene)\n- **risk_temperature**: INVERSE (consistent briefs = low risk \u00b7 missed briefs = elevated risk)\n- **probability_of_close**: HIGH (cadence drives `operator_hygiene` driver = 10% of dial)\n- **evidence_strength**: HIGH (the brief is a daily evidence artifact \u00b7 audit-friendly)\n- **cost_to_mint**: LOW (the brief is operator margin \u00b7 amortized \u00b7 negligible per-deed impact)",
+  "slug": "morning-brief",
+  "sr_broker_use": "The sr broker:\n\n- **Reviews and approves T3/T4 briefs** before they go out (a 5-min review \u00b7 not a redraft)\n- **Owns the Friday brief enhancement** \u00b7 the Friday brief includes the weekly sr-broker review (a 2-paragraph addendum)\n- **Authors briefs during escalations** \u00b7 YELLOW or below means the sr broker writes the brief personally \u00b7 NOT the desk\n- **Owns the post-brief follow-up** if the principal replies asking questions \u00b7 the sr broker is on the next reply\n\nThe sr broker also handles **brief pause requests** \u00b7 captures the pause reason \u00b7 sets a calendar reminder to re-confirm pause status weekly \u00b7 resumes when the principal signals.",
+  "status": "active",
+  "street_definition": "\"Did the Morning Brief land?\" \u2014 the sr broker asks at the 07:00 standup.\n\nThe **Morning Brief** is the daily 06:00 client-facing reconciliation email. One page. Three numbers. Today's dial \u00b7 today's actions \u00b7 today's anomalies. Lands in the principal's inbox before the coffee. Lands every day \u00b7 including weekends and holidays unless explicitly paused.\n\nIf the Morning Brief doesn't land \u00b7 the engagement is not running. The cadence is the discipline. The discipline is the trust.",
+  "term": "Morning Brief",
+  "tribunal_use": "The Tribunal feeds the brief but doesn't approve it:\n\n- The dial value \u00b7 band \u00b7 drivers come from the 2am Tribunal cron\n- The deed counts come from the Tribunal verdict log\n- The cost numbers come from the cost-to-mint accumulator\n- The anomalies come from the Tribunal's rule-layer flags from the overnight grading\n\nA brief that ships with stale data (older than 12 hours) triggers an operator_hygiene flag. Cadence + freshness together.",
+  "version": "v1"
+}

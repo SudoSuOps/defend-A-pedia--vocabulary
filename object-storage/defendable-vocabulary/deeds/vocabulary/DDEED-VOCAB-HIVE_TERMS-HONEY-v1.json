@@ -1,0 +1,104 @@
+{
+  "books_record_ens": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-HONEY-v1",
+  "category": "hive_terms",
+  "created_at": "2026-05-24T15:33:21.499040+00:00",
+  "deed_class": "DDEED_DOV_VOCAB",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-HONEY-v1",
+  "deed_version": "v1",
+  "ens_anchor": "defendapedia.eth/hive_terms/honey",
+  "ens_status": "RESERVED_NOT_ISSUED",
+  "five_proofs": {
+    "economics": {
+      "cost_to_mint_usd": 0.0001,
+      "energy_kwh": 1e-06,
+      "note": "Vocabulary deeds are inexpensive \u00b7 primary cost is human authoring (already paid)"
+    },
+    "origin": {
+      "hardware": "local \u00b7 operator workstation \u00b7 2026-05-24",
+      "issuer": "Swarm & Bee \u00b7 DBA Swarm & Bee AI \u00b7 Florida \u00b7 D-U-N-S 138652395",
+      "minted_by_script": "scripts/mint_vocabulary_object.py",
+      "model": null,
+      "source_file": "terms/hive_terms/honey/term.md"
+    },
+    "process": {
+      "factory_path": [
+        "Founder",
+        "defend-A-pedia repo",
+        "mint_vocabulary_object.py",
+        "DDEED_DOV_VOCAB"
+      ],
+      "linked_receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-HONEY-v1-20260524T15332149903Z"
+    },
+    "quality": {
+      "13_section_compliance": true,
+      "tribunal_grade": null,
+      "validator_chain_run": false
+    },
+    "trust": {
+      "hedera_topic_id": "0.0.10291838",
+      "merkle_batch_anchor": "pending \u00b7 single-snapshot anchor for v0.3.0 release",
+      "verifiable_at": "https://hashscan.io/#/mainnet/topic/0.0.10291838"
+    }
+  },
+  "issued_at": null,
+  "limitations": [
+    "Initial mint \u00b7 validator chain not yet executed (pending v0.4)",
+    "Hedera batch anchor pending \u00b7 single snapshot anchor for v0.3.0 only",
+    "ENS resolution not yet wired \u00b7 ENS subdomain pattern reserved"
+  ],
+  "publication_status": "NOT_PUBLISHED",
+  "record_hash": "sha256:fa09880249e0bc4686a99ba06ca4e9e67a6756b371803bdd842050e1c3047851",
+  "record_status": "PASSED_FOR_DRAFT_PACKAGING",
+  "release_version": "v0.3.0",
+  "slug": "honey",
+  "street_source_ens": null,
+  "subject": {
+    "category": "hive_terms",
+    "definitions": {
+      "client": "\"Honey\" is our production grade \u00b7 the AI work product that has cleared the full Tribunal review and is safe to ship to you with a receipt and a record-hash you can audit. Honey-grade output backs the day-to-day operating reports you receive from us \u00b7 the Morning Briefs \u00b7 the routine analyses \u00b7 the volume work that keeps your operations running. It is anchored at the batch level to the Hedera public ledger so the lineage is verifiable. When you want the apex grade for a regulatory filing or a flagship customer deliverable, we issue Royal Jelly. For everything else, Honey is the working standard.",
+      "cre_operator": "In CRE \u00b7 Honey is the Class B asset \u00b7 decent location \u00b7 adequate cap rate \u00b7 replaceable but not commodity \u00b7 the listing a brokerage runs all year long because it pays the bills. The investment-grade tenant might be one notch shy of full institutional (BBB versus BBB+) \u00b7 the comp set is solid but not trophy \u00b7 the buyer pool is core-plus rather than core \u00b7 and the deal pencils for everyone involved. You don't celebrate Honey deals at the year-end recap \u00b7 you celebrate the YEAR of Honey deals that built the book.\n\nInside DefendableOS \u00b7 Honey carries that same operating role. It is the volume tier. It is what keeps the Hive paying for itself. It is the mass of production that the customer-facing operations depend on day-to-day. Royal Jelly is the moat \u00b7 Honey is the cash flow.",
+      "defendableos": "Honey is the second-from-top Tribunal tier \u00b7 `tribunal_label = HONEY` \u00b7 JellyScore 0.70-0.84 (in the production 4-tier model) or 85-94 (in the 5-tier Genesis model \u00b7 where \"Honey\" is the same name applied to the band one step below Genesis).\n\nIn the production pipeline \u00b7 Honey is eligible for:\n\n- receipt issuance (per `deed_receipt.schema.json`) and publication to books-and-records\n- inclusion in the Morning Reconciliation Brief as part of the daily volume\n- batch-level Merkle root anchoring to Hedera HCS (NOT per-cell \u00b7 that is reserved for Royal Jelly)\n- citation in the Closing Statement when the engagement scope calls for production output\n\nHoney does NOT enter the writer-training corpus and does NOT receive a cell-level Hedera PoSg certificate. Those privileges are reserved for Royal Jelly \u00b7 contamination protection.",
+      "street": "\"That batch came back Honey \u00b7 ship it.\" Honey is production-grade AI work product. The 4-tier middle band. JellyScore 0.70 to 0.84 (or 85-94 in the original 5-tier \u00b7 \"Honey\" is the constitutional name for the production-safe band in both views). Honey clears the validator chain \u00b7 clears two judges \u00b7 ships to the customer \u00b7 gets receipted \u00b7 lands in books-and-records. It does NOT enter the writer-training corpus \u00b7 that is reserved for Royal Jelly \u00b7 but it absolutely earns its keep. Most of the volume the customer sees is Honey \u00b7 and that is fine.\n\nIf Royal Jelly is the Class A trophy listing \u00b7 Honey is the Class B with stable tenant and a clean rent roll \u00b7 the listing that pencils for core-plus money \u00b7 the listing that closes consistently without drama."
+    },
+    "related_terms": [
+      "royal-jelly",
+      "jelly",
+      "propolis",
+      "hive",
+      "tribunal",
+      "validator-chain"
+    ],
+    "slug": "honey",
+    "term": "Honey"
+  },
+  "supersedes": null,
+  "term": "Honey",
+  "updated_at": "2026-05-24T15:33:21.753113+00:00",
+  "validator_chain_v0.3": [
+    {
+      "check": "V04",
+      "result": "PASS"
+    },
+    {
+      "check": "V01",
+      "result": "PASS"
+    },
+    {
+      "check": "V02",
+      "result": "PASS"
+    },
+    {
+      "check": "V03",
+      "result": "PASS"
+    },
+    {
+      "check": "V05",
+      "result": "PASS"
+    },
+    {
+      "check": "V06",
+      "result": "PASS"
+    }
+  ],
+  "validator_status": "PASSED_FOR_DRAFT_PACKAGING"
+}

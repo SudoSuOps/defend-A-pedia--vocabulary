@@ -1,0 +1,33 @@
+{
+  "category": "hive_terms",
+  "deed_id": "DDEED-VOCAB-HIVE_TERMS-HIVE-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-HIVE_TERMS-HIVE-v1",
+    "canon": "defendapedia.eth/hive_terms/hive",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:5c7456d5dedd6885eb3af4b1348e5cb6ca403096a17b7d04d7a9f231470767ba",
+    "markdown_sha256": "sha256:3c8329a8d63f597036b6d68fe77a48af4516f64606103f376296f8ef993c7f88"
+  },
+  "minted_at": "2026-05-24T15:33:21.497901+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/hive_terms/hive/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.497769+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.497769+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-HIVE_TERMS-HIVE-v1-20260524T15332149790Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "hive",
+  "term": "Hive"
+}

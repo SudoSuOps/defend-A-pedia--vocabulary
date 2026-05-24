@@ -1,0 +1,33 @@
+{
+  "category": "scoring_terms",
+  "deed_id": "DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1",
+  "deed_status": "MINTED_PENDING_VALIDATOR",
+  "ens": {
+    "books_record": "streetledger.eth/vocabulary/v0.3.0/DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1",
+    "canon": "defendapedia.eth/scoring_terms/assignment-success",
+    "street_source": null
+  },
+  "hashes": {
+    "json_sha256": "sha256:6e768c7cd6576f960bc989b50c7f2041172f7ac53fd468eaa91d39b771e503cd",
+    "markdown_sha256": "sha256:6d9ef5a3a43b96addd291fb2ffa07585cb1abf57bbafe49189cb55268c4f77d6"
+  },
+  "minted_at": "2026-05-24T15:33:21.520212+00:00",
+  "minted_by": "scripts/mint_vocabulary_object.py",
+  "object_storage": {
+    "bucket": "defendable-vocabulary",
+    "prefix": "terms/scoring_terms/assignment-success/"
+  },
+  "provenance": {
+    "created_at": "2026-05-24T15:33:21.520075+00:00",
+    "issued_by": "Swarm & Bee / DefendableOS",
+    "issuer_address": "Donovan Mackey \u00b7 30yr CRE broker \u00b7 $8B closed \u00b7 Jupiter FL",
+    "release_version": "v0.3.0",
+    "updated_at": "2026-05-24T15:33:21.520075+00:00",
+    "validator_chain": []
+  },
+  "receipt_id": "DCLAW-VOCAB-MINT-DDEED-VOCAB-SCORING_TERMS-ASSIGNMENT-SUCCESS-v1-20260524T15332152021Z",
+  "receipt_type": "VOCABULARY_MINT_RECEIPT",
+  "release_version": "v0.3.0",
+  "slug": "assignment-success",
+  "term": "Assignment Success"
+}
