@@ -48,6 +48,7 @@ Each pass is a real artifact in this directory · NONE are deleted. The founder 
 | 6 | **[`06_REP_AGREEMENT.md`](06_REP_AGREEMENT.md)** | **DEFINITIVE executable agreement (pass 5)** | **Exclusive listing representation agreement · 11 sections · commission structure · performance gates · Hedera anchor** | ✅ **[`06_REP_AGREEMENT.pdf`](06_REP_AGREEMENT.pdf)** |
 | 7 | **[`07_QUALIFICATION_STATEMENT.md`](07_QUALIFICATION_STATEMENT.md)** | **DEFINITIVE board diligence response (pass 6)** | **Qualification statement · operator lineage doctrine · vocabulary as credential · 24 operational disciplines · 14 receipted proofs · session-shipped work · standing-by close** | ✅ **[`07_QUALIFICATION_STATEMENT.pdf`](07_QUALIFICATION_STATEMENT.pdf)** |
 | 8 | **[`08_BUYER_PROFILE.md`](08_BUYER_PROFILE.md)** | **DEFINITIVE buyer profile + ICP (pass 7)** | **Why buys / who buys · 5 buyer personas · 8 vertical targets · ~80 named target companies · clean ICP · broker outreach engine · PASS doctrine filters · persona-sequencing matrix · 90-day engagement plan** | ✅ **[`08_BUYER_PROFILE.pdf`](08_BUYER_PROFILE.pdf)** |
+| 9 | **[`09_GO_TO_MARKET_STRATEGY.md`](09_GO_TO_MARKET_STRATEGY.md)** | **DEFINITIVE go-to-market (pass 8) · OWNER-ONLY** | **Call-for-offers process · NO public price · 3-round bidder process · 8 highest-and-best qualifications · 9 required bid items · 4-phase pricing · bidder evaluation rubric · confidentiality framework · 30-day timeline · reserve/walk-away discipline · DDEED-anchored award record · BUILDER + BUYER cross-use framework** | ✅ **[`09_GO_TO_MARKET_STRATEGY.pdf`](09_GO_TO_MARKET_STRATEGY.pdf)** ⚠️ OWNER-ONLY |
 
 `build_pdf.py` regenerates the PDFs from the markdown sources: `python3 build_pdf.py --all`
 
@@ -84,6 +85,14 @@ I formalized the response with the receipted-proof layer added (14 board-verifia
 After qualification was answered · the board asked the money question: *"why buys and who buys the asset · profile of our buyer."* The founder wrote the complete ICP doctrine in response: 8 risks they avoid · the trigger sentence ("we cannot prove what our AI did") · the proof-layer positioning · 5 buyer personas (Founder/CEO=best · COO=strong · GC/Compliance=very strong in regulated · CFO=economic gate · AI Product Owner=technical champion) · 8 vertical targets · clean ICP · the close moment ("the AI agent is now part of my business · I need books and records on what it does").
 
 I formalized as `08_BUYER_PROFILE.md` and added the broker-side execution layer: persona-sequencing matrix (founder-led 60-90d vs enterprise-led 120-180d), channel-by-persona outreach matrix, per-persona OM messaging deltas, ~80 named target companies across 8 verticals, PASS doctrine filters (5 walk-from + 5 engage-hard criteria), 90-day engagement expectations. The buyer profile is the engine for Stream 3 (Generate Offers) of the rep agreement.
+
+### Pass 7 → Pass 8 (lesson: CALL FOR OFFERS · NEVER public price a novel asset)
+
+After buyer profile shipped · the board asked the strategic question: *"are we pricing the asset as public price or are we running a call for offers marketing plan · what's the path forward to highest and best with the most qualified buyers."*
+
+The founder's locked answer: *"Do not publish a public price first. Run a controlled call-for-offers process with qualified buyers only."* Classic Marcus & Millichap industrial-CRE technique for novel/premium assets. Public pricing commoditizes the asset as "a website/app build" and pulls in generic vendors. Controlled call-for-offers FORCES bidders to compete on understanding · architecture · trust · and proof — the lanes where the right firm wins.
+
+I formalized as `09_GO_TO_MARKET_STRATEGY.md` (OWNER-ONLY) and added the broker execution layer: bidder evaluation rubric (6-dim weighted scoring · 60% cut), confidentiality framework (per-round doc disclosure schedule), communication discipline (single broker POC · no info asymmetry), 30-day master calendar, reserve/walk-away triggers (5 automatic), phased award structure, DDEED-anchored award record, and the BUILDER-vs-BUYER cross-use framework (same 3-round process applies to both vendor selection and asset disposition).
 
 ---
 
@@ -162,9 +171,12 @@ For board review · read in this order:
 1. **`05_EXCLUSIVE_LISTING_PROPOSAL.pdf`** (start here · the DEFINITIVE board-facing pitch · disposition engagement)
 2. **`07_QUALIFICATION_STATEMENT.pdf`** (the board diligence response · operator lineage · 14 receipted proofs)
 3. **`08_BUYER_PROFILE.pdf`** (the money question · 5 personas · 8 verticals · ~80 target companies · broker outreach engine)
-4. **`06_REP_AGREEMENT.pdf`** (the executable exclusive listing agreement)
-5. **`04_BOARD_PROPOSAL.pdf`** (comp set + risk flags · reference only · engagement model superseded by 05)
-6. **`03_BUILD_PROPOSAL.md`** (build doctrine reference · what the broker builds as listing prep)
+4. **`09_GO_TO_MARKET_STRATEGY.pdf`** (the strategic question · call-for-offers · highest-and-best · OWNER-ONLY ⚠️)
+5. **`06_REP_AGREEMENT.pdf`** (the executable exclusive listing agreement)
+6. **`04_BOARD_PROPOSAL.pdf`** (comp set + risk flags · reference only · engagement model superseded by 05)
+7. **`03_BUILD_PROPOSAL.md`** (build doctrine reference · what the broker builds as listing prep)
+
+⚠️ **CONFIDENTIALITY**: `07_QUALIFICATION_STATEMENT` · `08_BUYER_PROFILE` · `09_GO_TO_MARKET_STRATEGY` are OWNER-ONLY. NEVER share with competing bidders / vendors at any round of the call-for-offers process. See `09_GO_TO_MARKET_STRATEGY.md` § Confidentiality Framework for the per-round doc disclosure schedule.
 
 For internal use only:
 - **`00_PRE-MARKET_FLIGHT_SHEET.md`** (operator analysis · DO NOT share with competing vendors or client legal)
@@ -177,6 +189,7 @@ Superseded (kept for record only · do NOT distribute as current):
 
 ## Cross-references (memory entries that codify this work)
 
+- `defendableos-go-to-market-call-for-offers-doctrine-2026-05-24` · **NEVER public price · 3-round controlled call-for-offers · highest-and-best NOT lowest bid · 8 quals + 9 bid items + 4-phase pricing + 30-day timeline + bidder evaluation rubric**
 - `defendableos-buyer-profile-icp-doctrine-2026-05-24` · **WHY buys / WHO buys · 5 personas · 8 verticals · ~80 named buyers · clean ICP · proof-layer positioning · broker outreach engine**
 - `defendableos-qualification-doctrine-operator-lineage-2026-05-24` · **operator lineage NOT theory · vocabulary as credential · 14 receipted proofs · qualification statement structure**
 - `defendableos-disposition-listing-engagement-2026-05-24` · **THE engagement model · disposition · exclusive broker · commission at closing**
