@@ -50,6 +50,7 @@ Each pass is a real artifact in this directory · NONE are deleted. The founder 
 | 8 | **[`08_BUYER_PROFILE.md`](08_BUYER_PROFILE.md)** | **DEFINITIVE buyer profile + ICP (pass 7)** | **Why buys / who buys · 5 buyer personas · 8 vertical targets · ~80 named target companies · clean ICP · broker outreach engine · PASS doctrine filters · persona-sequencing matrix · 90-day engagement plan** | ✅ **[`08_BUYER_PROFILE.pdf`](08_BUYER_PROFILE.pdf)** |
 | 9 | **[`09_GO_TO_MARKET_STRATEGY.md`](09_GO_TO_MARKET_STRATEGY.md)** | **DEFINITIVE go-to-market (pass 8) · OWNER-ONLY** | **Call-for-offers process · NO public price · 3-round bidder process · 8 highest-and-best qualifications · 9 required bid items · 4-phase pricing · bidder evaluation rubric · confidentiality framework · 30-day timeline · reserve/walk-away discipline · DDEED-anchored award record · BUILDER + BUYER cross-use framework** | ✅ **[`09_GO_TO_MARKET_STRATEGY.pdf`](09_GO_TO_MARKET_STRATEGY.pdf)** ⚠️ OWNER-ONLY |
 | 10 | **[`10_1031_UPLEG_STRATEGY.md`](10_1031_UPLEG_STRATEGY.md)** | **DEFINITIVE 1031 upleg (pass 9) · OWNER-ONLY** | **Parallel-track replacement-property acquisition · 45/180-day clock · 7 sourcing channels · 12-item buy box · 6 best replacement profiles · 5 QI partners · 3 IRS ID rules · DST/TIC backup · boot mitigation · DDEED-anchored upleg milestones · CRITICAL FIDUCIARY DISCLOSURE on IRC §1031 real-property-only limitation** | ✅ **[`10_1031_UPLEG_STRATEGY.pdf`](10_1031_UPLEG_STRATEGY.pdf)** ⚠️ OWNER-ONLY |
+| 11 | **[`11_NEXT_STEPS_KICKOFF.md`](11_NEXT_STEPS_KICKOFF.md)** | **🎉 EXECUTION ARC BEGINS (pass 10) · OWNER-ONLY** | **Assignment awarded · 7 work streams · 7 immediate-ask items · 5 controls · 30-day kickoff calendar · broker team staffing · external team coordination · reporting cadence · weekly board report template · 25-item Day-1 doc checklist · scope confirmation matrix · 8-item risk flag tracker · 11 milestone DDEED anchors · transition from PITCHING → EXECUTION** | ✅ **[`11_NEXT_STEPS_KICKOFF.pdf`](11_NEXT_STEPS_KICKOFF.pdf)** ⚠️ OWNER-ONLY |
 
 `build_pdf.py` regenerates the PDFs from the markdown sources: `python3 build_pdf.py --all`
 
@@ -104,6 +105,14 @@ The founder's locked answer: *"Yes our firm can run the upleg search · but we w
 **Fiduciary disclosure added**: IRC §1031 post-TCJA 2017 applies to REAL PROPERTY ONLY. Intangible AI/IP asset sales do NOT directly qualify. Tax counsel + QI own structure determination · NOT broker. Broker's lane: sourcing + 45/180-day calendar + QI coordination + DST/TIC backup. This disclosure is on the artifact and in the recommended rep agreement amendment.
 
 I formalized as `10_1031_UPLEG_STRATEGY.md` (OWNER-ONLY) with the broker execution layer: 5 QI partner shortlist (IPX1031 · Asset Preservation · First American · Accruit · Exchange Solutions), 3 IRS identification rule strategies, DST/TIC backup with 8 named sponsors, tax counsel + QI + CPA + title coordination protocol, boot mitigation strategy, Reverse 1031 + Construction 1031 considerations, closing-certainty discipline with Day 150 hard-stop, and DDEED-anchored upleg track milestones.
+
+### Pass 9 → Pass 10 (🎉 ENGAGEMENT AWARDED · PITCHING ARC COMPLETE)
+
+The board awarded dev firm the exclusive listing brokerage assignment for DefendableOS disposition + parallel-track 1031 upleg advisory. The founder responded with the 7-stream kickoff playbook: execute LOU · open books-and-records file · confirm 1031 strategy · build pre-market flight sheet · prepare market materials · launch controlled marketing · parallel upleg search. Plus 7 immediate-ask items the board must deliver and 5 operating-principle controls (story · buyer pool · clock · 1031 path · the board).
+
+I formalized as `11_NEXT_STEPS_KICKOFF.md` (OWNER-ONLY) and added the broker execution layer: 30-day kickoff calendar (Day 0 = LOU executed · Day 30 = marketing launch), team staffing (6 broker roles + 6 external coordinated parties), reporting cadence (daily/weekly/bi-weekly/monthly/milestone), 5-section weekly board report template, 25-item Day-1 document checklist, scope confirmation matrix (6 in-scope + 5 out + 5 amendment-required), 8-item risk flag tracker monitored weekly, and 11 milestone DDEED anchors scheduled on Hedera HCS topic 0.0.10291838.
+
+**This marks the transition**: the proposal/pitching arc (artifacts 00-10) is COMPLETE. From here forward · every artifact is **execution** · not pitch.
 
 ---
 
@@ -177,18 +186,22 @@ The board should WALK from any vendor that exhibits ANY of these:
 
 ## Reading order
 
-For board review · read in this order:
+### Post-award (CURRENT · execution arc)
 
-1. **`05_EXCLUSIVE_LISTING_PROPOSAL.pdf`** (start here · the DEFINITIVE board-facing pitch · disposition engagement)
-2. **`07_QUALIFICATION_STATEMENT.pdf`** (the board diligence response · operator lineage · 14 receipted proofs)
-3. **`08_BUYER_PROFILE.pdf`** (the money question · 5 personas · 8 verticals · ~80 target companies · broker outreach engine)
-4. **`09_GO_TO_MARKET_STRATEGY.pdf`** (the strategic question · call-for-offers · highest-and-best · OWNER-ONLY ⚠️)
-5. **`10_1031_UPLEG_STRATEGY.pdf`** (the tax-deferral question · parallel-track upleg · 45/180-day discipline · QI coordination · OWNER-ONLY ⚠️)
-6. **`06_REP_AGREEMENT.pdf`** (the executable exclusive listing agreement)
-7. **`04_BOARD_PROPOSAL.pdf`** (comp set + risk flags · reference only · engagement model superseded by 05)
-8. **`03_BUILD_PROPOSAL.md`** (build doctrine reference · what the broker builds as listing prep)
+1. **`11_NEXT_STEPS_KICKOFF.pdf`** (🎉 engagement awarded · the kickoff playbook · OWNER-ONLY ⚠️)
+2. **`06_REP_AGREEMENT.pdf`** (the executable exclusive listing agreement · to be signed)
+3. **`10_1031_UPLEG_STRATEGY.pdf`** (the parallel-track upleg · 45/180-day clock · OWNER-ONLY ⚠️)
+4. **`08_BUYER_PROFILE.pdf`** (the buyer pool the broker now activates · OWNER-ONLY ⚠️)
 
-⚠️ **CONFIDENTIALITY**: `07_QUALIFICATION_STATEMENT` · `08_BUYER_PROFILE` · `09_GO_TO_MARKET_STRATEGY` · `10_1031_UPLEG_STRATEGY` are OWNER-ONLY. NEVER share with competing bidders / vendors / downleg buyers at any round. See `09_GO_TO_MARKET_STRATEGY.md` § Confidentiality Framework for the per-round doc disclosure schedule.
+### Pre-award (historical · proposal arc · for reference)
+
+5. **`05_EXCLUSIVE_LISTING_PROPOSAL.pdf`** (the engagement pitch that won the assignment)
+6. **`07_QUALIFICATION_STATEMENT.pdf`** (the diligence response · OWNER-ONLY ⚠️)
+7. **`09_GO_TO_MARKET_STRATEGY.pdf`** (the call-for-offers process · OWNER-ONLY ⚠️)
+8. **`04_BOARD_PROPOSAL.pdf`** (comp set + risk flags · reference)
+9. **`03_BUILD_PROPOSAL.md`** (build doctrine reference)
+
+⚠️ **CONFIDENTIALITY**: `07_QUALIFICATION_STATEMENT` · `08_BUYER_PROFILE` · `09_GO_TO_MARKET_STRATEGY` · `10_1031_UPLEG_STRATEGY` · `11_NEXT_STEPS_KICKOFF` are OWNER-ONLY. NEVER share with competing bidders / vendors / downleg buyers at any round. See `09_GO_TO_MARKET_STRATEGY.md` § Confidentiality Framework for the per-round doc disclosure schedule.
 
 For internal use only:
 - **`00_PRE-MARKET_FLIGHT_SHEET.md`** (operator analysis · DO NOT share with competing vendors or client legal)
@@ -201,6 +214,7 @@ Superseded (kept for record only · do NOT distribute as current):
 
 ## Cross-references (memory entries that codify this work)
 
+- `defendableos-engagement-awarded-kickoff-doctrine-2026-05-24` · **🎉 ASSIGNMENT AWARDED · execution arc begins · 7 work streams · 7 immediate-ask items · 5 controls · 30-day kickoff calendar · team staffing · reporting cadence · 25-item doc checklist · 8 risk flags · 11 milestone DDEED anchors**
 - `defendableos-1031-upleg-doctrine-2026-05-24` · **parallel-track upleg · 45/180-day clock · 7 sourcing channels · 12-item buy box · 6 replacement profiles · 5 QI partners · 3 IRS ID rules · DST/TIC backup · CRITICAL FIDUCIARY DISCLOSURE on §1031 real-property-only limitation**
 - `defendableos-go-to-market-call-for-offers-doctrine-2026-05-24` · **NEVER public price · 3-round controlled call-for-offers · highest-and-best NOT lowest bid · 8 quals + 9 bid items + 4-phase pricing + 30-day timeline + bidder evaluation rubric**
 - `defendableos-buyer-profile-icp-doctrine-2026-05-24` · **WHY buys / WHO buys · 5 personas · 8 verticals · ~80 named buyers · clean ICP · proof-layer positioning · broker outreach engine**
