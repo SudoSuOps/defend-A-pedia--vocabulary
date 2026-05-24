@@ -1,0 +1,4 @@
+jsonschema>=4.20.0
+pyyaml>=6.0
+click>=8.1
+pytest>=7.4

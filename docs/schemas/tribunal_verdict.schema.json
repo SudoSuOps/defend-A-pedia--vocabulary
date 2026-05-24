@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/tribunal_verdict.schema.json",
+  "title": "Tribunal Verdict",
+  "description": "Output of the Tribunal's 2-pass Scale A + Scale B adjudication. Captures the classification, score, drift between scales, and whether the rule layer downgraded the judge layer's verdict. Drift > 0.15 forces human review.",
+  "type": "object",
+  "required": [
+    "verdict",
+    "jellyscore",
+    "scale_a_verdict",
+    "scale_b_verdict",
+    "agreement_pct",
+    "drift",
+    "downgraded"
+  ],
+  "properties": {
+    "verdict_id": {
+      "type": "string",
+      "description": "TV-{cell_hash}-{ts} · the canonical verdict id",
+      "pattern": "^TV-[A-Fa-f0-9]{8,}-[0-9]{14}$"
+    },
+    "cell_id": {
+      "type": "string",
+      "description": "The Cell (graded pair) this verdict belongs to"
+    },
+    "verdict": {
+      "type": "string",
+      "description": "Final classification after rule + judge layers",
+      "enum": ["HONEY", "JELLY", "PROPOLIS", "ROYAL_JELLY"]
+    },
+    "jellyscore": {
+      "type": "number",
+      "description": "Composite Tribunal score · 0-100",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "downgraded": {
+      "type": "boolean",
+      "description": "True if rule layer downgraded the judge-layer verdict (rule layer can only downgrade · never upgrade)"
+    },
+    "downgrade_reason": {
+      "type": "string",
+      "description": "Required if downgraded == true · names the rule that fired"
+    },
+    "drift": {
+      "type": "number",
+      "description": "Absolute difference between Scale A and Scale B normalized scores · 0.0-1.0 · > 0.15 triggers human review",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "scale_a_verdict": {
+      "type": "object",
+      "description": "First judge pass · gemma3:12b default",
+      "required": ["verdict", "score", "model"],
+      "properties": {
+        "verdict": { "type": "string", "enum": ["HONEY", "JELLY", "PROPOLIS", "ROYAL_JELLY"] },
+        "score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "model": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "scale_b_verdict": {
+      "type": "object",
+      "description": "Second judge pass · qwen2.5:32b default",
+      "required": ["verdict", "score", "model"],
+      "properties": {
+        "verdict": { "type": "string", "enum": ["HONEY", "JELLY", "PROPOLIS", "ROYAL_JELLY"] },
+        "score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "model": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "agreement_pct": {
+      "type": "number",
+      "description": "Percentage agreement between Scale A and Scale B (100 = identical verdict and score within 5pts)",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "rule_layer_checks": {
+      "type": "array",
+      "description": "Ordered list of rule-layer checks that fired",
+      "items": {
+        "type": "object",
+        "required": ["check", "fired", "severity"],
+        "properties": {
+          "check": { "type": "string" },
+          "fired": { "type": "boolean" },
+          "severity": { "type": "string", "enum": ["critical", "advisory"] },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "human_review_required": {
+      "type": "boolean",
+      "description": "True when drift > 0.15 or Royal Jelly promotion under consideration"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tribunal_version": {
+      "type": "string",
+      "default": "v1"
+    }
+  }
+}

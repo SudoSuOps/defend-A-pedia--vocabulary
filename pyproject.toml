@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "defend-a-pedia"
+version = "0.1.0"
+description = "Defend-A-Pedia · the language constitution of DefendableOS · CRE-to-software vocabulary infrastructure for the Swarm & Bee Hive ecosystem"
+readme = "README.md"
+authors = [
+    { name = "Donovan Mackey · Swarm and Bee LLC", email = "build@defendableos.com" },
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "jsonschema>=4.20.0",
+    "pyyaml>=6.0",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+defend-a-pedia = "scripts.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scripts*", "tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

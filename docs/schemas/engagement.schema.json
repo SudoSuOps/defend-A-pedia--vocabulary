@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/engagement.schema.json",
+  "title": "Engagement",
+  "description": "A DefendableOS engagement (the AI-era LOU/PSA wrapper). Tracks MAGIC funnel stages · color · digest · LOU/PSA timestamps · the full deal-lifecycle for an asset or assignment.",
+  "type": "object",
+  "required": ["engagement_id", "client", "stage"],
+  "properties": {
+    "engagement_id": {
+      "type": "string",
+      "description": "ENG-{org}-{n}",
+      "pattern": "^ENG-[A-Z0-9]+-[0-9]+$"
+    },
+    "client": {
+      "type": "object",
+      "required": ["client_id", "name"],
+      "properties": {
+        "client_id": { "type": "string" },
+        "name": { "type": "string" },
+        "ens": { "type": "string" }
+      }
+    },
+    "stage": {
+      "type": "string",
+      "description": "MAGIC funnel stage · M=Meet · A=Acknowledge · I=Inspect · C=Close",
+      "enum": ["M", "A", "I", "C"]
+    },
+    "deal_stage": {
+      "type": "string",
+      "description": "Mirror of deal_stage.schema.json · finer grained pipeline stage",
+      "enum": ["Sourcing", "Engaged", "LOU", "PSA", "DD", "Closing", "Closed", "Lost"]
+    },
+    "color_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0-1 verified-evidence score per the color term"
+    },
+    "color_status": {
+      "type": "string",
+      "enum": ["VERIFIED", "PARTIAL", "UNVERIFIED", "MISSING"]
+    },
+    "digest_v1": {
+      "type": "object",
+      "description": "Pre-meeting digest payload the agent prepared"
+    },
+    "om_id": {
+      "type": "string",
+      "description": "Offering Memorandum id (if any)"
+    },
+    "lou_signed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Letter of Understanding signed timestamp"
+    },
+    "psa_signed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Purchase and Sale Agreement signed timestamp"
+    },
+    "magic_funnel_stages": {
+      "type": "object",
+      "description": "Timestamps for each MAGIC funnel transition",
+      "properties": {
+        "meet_at": { "type": "string", "format": "date-time" },
+        "acknowledge_at": { "type": "string", "format": "date-time" },
+        "inspect_at": { "type": "string", "format": "date-time" },
+        "close_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "probability_of_close": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Cached value of the most recent probability_of_close computation"
+    },
+    "assigned_agents": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "ENS of an agent assigned to this engagement"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

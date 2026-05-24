@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/repair_lift.schema.json",
+  "title": "Repair Lift",
+  "description": "The score delta produced by SwarmFixer when a JELLY-class pair is repaired. Captures before/after scores · the repair pack used · confidence in the lift · whether the lift was sufficient to promote the repaired record to Honey.",
+  "type": "object",
+  "required": [
+    "lift_delta",
+    "before_score",
+    "after_score",
+    "pack_id",
+    "confidence",
+    "approved_for_jelly_repaired"
+  ],
+  "properties": {
+    "lift_id": {
+      "type": "string",
+      "description": "RL-{cell_hash}-{ts}",
+      "pattern": "^RL-[A-Fa-f0-9]{8,}-[0-9]{14}$"
+    },
+    "cell_id": {
+      "type": "string",
+      "description": "The Cell that was repaired"
+    },
+    "lift_delta": {
+      "type": "number",
+      "description": "after_score - before_score · can be negative (regression)",
+      "minimum": -100,
+      "maximum": 100
+    },
+    "before_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Tribunal score pre-repair"
+    },
+    "after_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Tribunal score post-repair"
+    },
+    "pack_id": {
+      "type": "string",
+      "description": "The repair pack applied (e.g., REPAIR-PACK-HALLUCINATION-v2)"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "How confident SwarmFixer is the lift is real (not noise)"
+    },
+    "approved_for_jelly_repaired": {
+      "type": "boolean",
+      "description": "True if lift_delta + confidence cleared the Jelly→Honey promotion threshold"
+    },
+    "failure_mode_targeted": {
+      "type": "string",
+      "enum": [
+        "missing_step",
+        "false_assumption",
+        "hallucination",
+        "overgeneralization",
+        "drift",
+        "schema_break",
+        "tool_misuse"
+      ]
+    },
+    "rj_tasks_emitted": {
+      "type": "array",
+      "description": "Which of the 5 Royal Jelly tasks SwarmFixer emitted for this repair",
+      "items": {
+        "type": "string",
+        "enum": ["DIAGNOSE", "REPAIR", "PREVENT", "DETECT", "COMPARE"]
+      }
+    },
+    "repaired_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "swarmfixer_version": {
+      "type": "string",
+      "default": "v1"
+    }
+  }
+}

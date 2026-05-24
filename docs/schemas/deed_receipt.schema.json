@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/deed_receipt.schema.json",
+  "title": "Deed Receipt",
+  "description": "The canonical receipt issued for every Tribunal-graded output. Receipts that qualify (Honey + Royal Jelly) become DDEEDs. The receipt carries the 5 proofs · the merkle batch · the Hedera HCS anchor timestamp · ENS resolution path.",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "agent_id",
+    "task_class",
+    "model",
+    "tribunal_verdict",
+    "record_hash",
+    "proofs"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "description": "DCLAW-{cell_hash}-{ts} canonical receipt id",
+      "pattern": "^DCLAW-[A-Fa-f0-9]{8,}-[0-9]{14}$"
+    },
+    "agent_id": {
+      "type": "string",
+      "description": "ENS subdomain of the agent that produced the output (e.g., agent001.broker.defendable.eth)",
+      "pattern": "^[a-z0-9-]+(\\.[a-z0-9-]+)+\\.eth$"
+    },
+    "task_class": {
+      "type": "string",
+      "description": "What the agent was doing (refund_decision · cre_underwriting · contract_review · etc.)"
+    },
+    "model": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "host": { "type": "string" }
+      }
+    },
+    "tribunal_verdict": {
+      "type": "object",
+      "required": ["verdict", "jellyscore"],
+      "properties": {
+        "verdict": { "type": "string", "enum": ["HONEY", "JELLY", "PROPOLIS", "ROYAL_JELLY"] },
+        "jellyscore": { "type": "number", "minimum": 0, "maximum": 100 },
+        "verdict_id": { "type": "string" }
+      }
+    },
+    "record_hash": {
+      "type": "string",
+      "description": "SHA-256 of canonical-JSON form of the receipt payload (excluding proofs.trust signatures)",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "proofs": {
+      "type": "object",
+      "description": "The 5 proofs · ORIGIN · QUALITY · PROCESS · ECONOMICS · TRUST",
+      "required": ["origin", "quality", "process", "economics", "trust"],
+      "properties": {
+        "origin": {
+          "type": "object",
+          "description": "Which model · node · hardware produced this",
+          "required": ["model", "node"],
+          "properties": {
+            "model": { "type": "string" },
+            "node": { "type": "string" },
+            "hardware": { "type": "string" }
+          }
+        },
+        "quality": {
+          "type": "object",
+          "description": "JellyScore + 6+1 gates",
+          "required": ["jellyscore", "gates_passed"],
+          "properties": {
+            "jellyscore": { "type": "number", "minimum": 0, "maximum": 100 },
+            "gates_passed": { "type": "integer", "minimum": 0, "maximum": 7 },
+            "adversarial_passed": { "type": "boolean" }
+          }
+        },
+        "process": {
+          "type": "object",
+          "description": "HoneyCard factory path · which pipeline produced this",
+          "required": ["factory_path"],
+          "properties": {
+            "factory_path": { "type": "string" },
+            "factory_version": { "type": "string" }
+          }
+        },
+        "economics": {
+          "type": "object",
+          "description": "Cost-to-mint breakdown",
+          "required": ["total_usd"],
+          "properties": {
+            "total_usd": { "type": "number", "minimum": 0 },
+            "energy_kwh": { "type": "number", "minimum": 0 },
+            "fee_tier": { "type": "string" }
+          }
+        },
+        "trust": {
+          "type": "object",
+          "description": "Hedera HCS anchor + ENS resolution",
+          "properties": {
+            "hedera_consensus_ts": { "type": "string", "format": "date-time" },
+            "hedera_topic_id": { "type": "string" },
+            "ens_path": { "type": "string" },
+            "signature": { "type": "string" }
+          }
+        }
+      }
+    },
+    "merkle_batch_id": {
+      "type": "string",
+      "description": "Identifier of the Merkle batch (50 receipts per batch) this receipt was rolled into"
+    },
+    "hedera_consensus_ts": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Hedera HCS consensus timestamp (mirrors proofs.trust.hedera_consensus_ts for convenient indexing)"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ddeed_id": {
+      "type": "string",
+      "description": "Present only if the receipt was promoted to a DDEED · the DDEED-{ORG}-{CLASS}-{N}-v{N} id"
+    }
+  }
+}

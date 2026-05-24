@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/validator_chain.schema.json",
+  "title": "Validator Chain · 12-check",
+  "description": "The 12-check validator chain · 7 critical + 5 advisory. Critical failures block deed issuance. Advisory failures attach to the receipt but do not block. Mirrors docs/doctrine/13_validator_chain_doctrine.md.",
+  "type": "object",
+  "required": [
+    "chain_id",
+    "checks",
+    "critical_passed",
+    "advisory_passed",
+    "advance_to_label"
+  ],
+  "properties": {
+    "chain_id": {
+      "type": "string",
+      "description": "VC-{cell_hash}-{ts}",
+      "pattern": "^VC-[A-Fa-f0-9]{8,}-[0-9]{14}$"
+    },
+    "subject_id": {
+      "type": "string",
+      "description": "The record (receipt id · cell id · engagement id) being validated"
+    },
+    "checks": {
+      "type": "array",
+      "description": "12 ordered checks · 7 critical (C01-C07) + 5 advisory (A01-A05)",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "severity", "passed"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "C01-C07 for critical · A01-A05 for advisory",
+            "pattern": "^(C0[1-7]|A0[1-5])$"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable check name"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "advisory"]
+          },
+          "passed": { "type": "boolean" },
+          "note": {
+            "type": "string",
+            "description": "Why the check passed or failed"
+          },
+          "evidence_pointer": {
+            "type": "string",
+            "description": "Reference to the evidence record consulted"
+          }
+        }
+      }
+    },
+    "critical_passed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 7,
+      "description": "Count of critical checks passed (must == 7 to advance)"
+    },
+    "advisory_passed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "Count of advisory checks passed (does not gate)"
+    },
+    "advance_to_label": {
+      "type": "string",
+      "enum": ["ADVANCE_TO_DEED", "ADVANCE_TO_REPAIR", "BLOCK_PROPOLIS", "HOLD_FOR_HUMAN"],
+      "description": "Routing label produced by the chain"
+    },
+    "validator_model": {
+      "type": "string",
+      "description": "Model id used for any judge-style checks"
+    },
+    "ran_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

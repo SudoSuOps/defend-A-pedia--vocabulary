@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/assignment_success.schema.json",
+  "title": "Assignment Success",
+  "description": "Per docs/doctrine/14_assignment_success_doctrine.md · the 5-grade rubric (Capability 25% · Truth 20% · Safety 20% · Numeric 15% · Efficiency 10% · Reproducibility 10%) that decides whether a job IS the job. Success requires composite ≥ 0.70 AND no critical Safety/Truth failure.",
+  "type": "object",
+  "required": [
+    "success",
+    "composite_score",
+    "breakdown"
+  ],
+  "properties": {
+    "assignment_id": {
+      "type": "string",
+      "description": "AS-{cell_hash}-{ts}",
+      "pattern": "^AS-[A-Fa-f0-9]{8,}-[0-9]{14}$"
+    },
+    "success": {
+      "type": "boolean",
+      "description": "True if the assignment was the assignment (per the doctrine)"
+    },
+    "composite_score": {
+      "type": "number",
+      "description": "Weighted sum of the 5 grades · 0-1 · the headline dial",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "breakdown": {
+      "type": "object",
+      "description": "The 5 grades · each with score (0-1) and weight (sums to 1.0)",
+      "required": ["capability", "truth", "safety", "numeric", "efficiency"],
+      "properties": {
+        "capability": {
+          "type": "object",
+          "required": ["score", "weight"],
+          "properties": {
+            "score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "weight": { "type": "number", "default": 0.25 },
+            "note": { "type": "string" }
+          }
+        },
+        "truth": {
+          "type": "object",
+          "required": ["score", "weight"],
+          "properties": {
+            "score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "weight": { "type": "number", "default": 0.20 },
+            "note": { "type": "string" },
+            "critical_failure": { "type": "boolean", "default": false }
+          }
+        },
+        "safety": {
+          "type": "object",
+          "required": ["score", "weight"],
+          "properties": {
+            "score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "weight": { "type": "number", "default": 0.20 },
+            "note": { "type": "string" },
+            "critical_failure": { "type": "boolean", "default": false }
+          }
+        },
+        "numeric": {
+          "type": "object",
+          "required": ["score", "weight"],
+          "properties": {
+            "score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "weight": { "type": "number", "default": 0.15 },
+            "note": { "type": "string" }
+          }
+        },
+        "efficiency": {
+          "type": "object",
+          "required": ["score", "weight"],
+          "properties": {
+            "score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "weight": { "type": "number", "default": 0.10 },
+            "note": { "type": "string" }
+          }
+        },
+        "reproducibility": {
+          "type": "object",
+          "properties": {
+            "score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "weight": { "type": "number", "default": 0.10 },
+            "note": { "type": "string" }
+          }
+        }
+      }
+    },
+    "failure_reason": {
+      "type": "string",
+      "description": "Required when success == false · names the dimension(s) that failed"
+    },
+    "graded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "grader": {
+      "type": "string",
+      "description": "Validator model or human reviewer id"
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "success": { "const": false } } },
+      "then": { "required": ["failure_reason"] }
+    }
+  ]
+}

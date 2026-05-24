@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/vocabulary_term.schema.json",
+  "title": "Vocabulary Term",
+  "description": "The 13-section structure enforced for every term in Defend-A-Pedia. Founder voice + CRE meaning + DefendableOS schema mapping all mandatory.",
+  "type": "object",
+  "required": [
+    "term",
+    "slug",
+    "category",
+    "street_definition",
+    "cre_operator_meaning",
+    "defendableos_definition",
+    "backend_representation",
+    "client_explanation",
+    "jr_broker_use",
+    "sr_broker_use",
+    "tribunal_use",
+    "evidence_required",
+    "failure_modes",
+    "scoring_impact",
+    "deed_receipt_impact",
+    "related_terms",
+    "example"
+  ],
+  "properties": {
+    "term": {
+      "type": "string",
+      "description": "Canonical display name of the term (e.g., 'Probability of Close')",
+      "minLength": 2,
+      "maxLength": 80
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-safe identifier (e.g., 'probability-of-close')",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "category": {
+      "type": "string",
+      "description": "The category subdirectory under docs/vocabulary/",
+      "enum": [
+        "cre_terms",
+        "defendableos_terms",
+        "hive_terms",
+        "tribunal_terms",
+        "repair_terms",
+        "minting_terms",
+        "evidence_terms",
+        "backend_terms",
+        "client_terms",
+        "scoring_terms",
+        "document_terms",
+        "risk_terms",
+        "workflow_terms",
+        "deal_stage_terms"
+      ]
+    },
+    "aliases": {
+      "type": "array",
+      "description": "Alternative names operators use for the same thing",
+      "items": { "type": "string" }
+    },
+    "street_definition": {
+      "type": "string",
+      "description": "How the term is used in real CRE/operator/founder conversation",
+      "minLength": 20
+    },
+    "cre_operator_meaning": {
+      "type": "string",
+      "description": "What an experienced broker/operator/founder actually means when saying this"
+    },
+    "defendableos_definition": {
+      "type": "string",
+      "description": "How this term exists inside DefendableOS"
+    },
+    "backend_representation": {
+      "type": "object",
+      "description": "Fields · enums · scoring hooks · schema references",
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "type"],
+            "properties": {
+              "name": { "type": "string" },
+              "type": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "enums": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "schema_files": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "scoring_hooks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "client_explanation": {
+      "type": "string",
+      "description": "Plain-English explanation for clients and non-technical users (the CFO/owner can read it)"
+    },
+    "jr_broker_use": {
+      "type": "string",
+      "description": "How a jr broker / agent / operator should identify or extract this in the field"
+    },
+    "sr_broker_use": {
+      "type": "string",
+      "description": "How a sr broker / judge / operator should interpret, challenge, or validate this"
+    },
+    "tribunal_use": {
+      "type": "object",
+      "description": "How Tribunal scores, grades, validates, or classifies this concept",
+      "properties": {
+        "classification_impact": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["HONEY", "ROYAL_JELLY", "JELLY", "PROPOLIS"]
+          }
+        },
+        "rule_layer_checks": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "judge_layer_prompt_hint": { "type": "string" },
+        "can_be_critical_failure": { "type": "boolean" }
+      }
+    },
+    "evidence_required": {
+      "type": "array",
+      "description": "What evidence, documents, receipts, or records support this term",
+      "items": { "type": "string" }
+    },
+    "failure_modes": {
+      "type": "array",
+      "description": "How this concept is misunderstood, hallucinated, manipulated, overclaimed, or failed",
+      "items": {
+        "type": "object",
+        "required": ["mode", "description"],
+        "properties": {
+          "mode": { "type": "string" },
+          "description": { "type": "string" },
+          "tribunal_class_on_fail": {
+            "type": "string",
+            "enum": ["HONEY", "ROYAL_JELLY", "JELLY", "PROPOLIS"]
+          }
+        }
+      }
+    },
+    "scoring_impact": {
+      "type": "object",
+      "description": "Effect on UI dials and scoring",
+      "properties": {
+        "assignment_success": { "type": "string" },
+        "repair_lift": { "type": "string" },
+        "validator_confidence": { "type": "string" },
+        "risk_temperature": { "type": "string" },
+        "probability_of_close": { "type": "string" },
+        "evidence_strength": { "type": "string" },
+        "cost_to_mint": { "type": "string" }
+      }
+    },
+    "deed_receipt_impact": {
+      "type": "object",
+      "description": "How this term affects receipts, DDEEDs, books and records",
+      "properties": {
+        "receipt_fields_touched": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "ddeed_class_impact": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "books_and_records_layer": {
+          "type": "string",
+          "enum": ["L1_PG", "L2_MERKLE", "L3_NAS", "L4_HEDERA_HCS", "L5_ENS"]
+        },
+        "five_proofs_touched": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["ORIGIN", "QUALITY", "PROCESS", "ECONOMICS", "TRUST"]
+          }
+        }
+      }
+    },
+    "related_terms": {
+      "type": "array",
+      "description": "Cross-links to related vocabulary (slug references)",
+      "items": { "type": "string" },
+      "minItems": 2
+    },
+    "example": {
+      "type": "string",
+      "description": "Concrete real-world CRE / DefendableOS example"
+    },
+    "defendableos_notes": {
+      "type": "string",
+      "description": "Additional operational notes"
+    },
+    "version": {
+      "type": "string",
+      "default": "v1",
+      "pattern": "^v[0-9]+(\\.[0-9]+)*$"
+    },
+    "hash": {
+      "type": "string",
+      "description": "SHA-256 of canonical JSON form (filled at validation time)",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "added_by": {
+      "type": "string",
+      "description": "Operator who contributed (the senior hack / jr broker)"
+    },
+    "added_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

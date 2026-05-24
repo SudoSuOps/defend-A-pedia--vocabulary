@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/probability_of_close.schema.json",
+  "title": "Probability of Close",
+  "description": "The deal-physics dial · CRE comp logic applied to a DefendableOS engagement. Per docs/doctrine/15_probability_of_close_doctrine.md. Combines color · stage · buyer pool depth · seller motivation · staleness into a 0-1 probability.",
+  "type": "object",
+  "required": ["prob", "drivers", "contributing_evidence"],
+  "properties": {
+    "engagement_id": {
+      "type": "string",
+      "description": "FK to engagement.schema.json"
+    },
+    "prob": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Probability of close · 0.0-1.0 · the UI dial value"
+    },
+    "drivers": {
+      "type": "array",
+      "description": "Named factors that moved the dial · ordered by weight",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "weight", "direction"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "e.g., color_score · buyer_strength · seller_motivation · stage · financing_pencils"
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Relative contribution"
+          },
+          "direction": {
+            "type": "string",
+            "enum": ["positive", "negative", "neutral"]
+          },
+          "value": {
+            "type": ["number", "string"],
+            "description": "Raw observed value for this driver"
+          }
+        }
+      }
+    },
+    "contributing_evidence": {
+      "type": "array",
+      "description": "Evidence records this probability was derived from",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "source_weight"],
+        "properties": {
+          "evidence_id": { "type": "string" },
+          "source": { "type": "string" },
+          "source_weight": { "type": "number", "minimum": 0, "maximum": 1 },
+          "captured_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "staleness_penalty": {
+      "type": "object",
+      "description": "Discount applied because contributing evidence is aging",
+      "properties": {
+        "oldest_evidence_days": { "type": "integer", "minimum": 0 },
+        "penalty_applied": { "type": "number", "minimum": 0, "maximum": 1 },
+        "stale_threshold_days": { "type": "integer", "default": 30 }
+      }
+    },
+    "computed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "model_version": {
+      "type": "string",
+      "default": "v1"
+    }
+  }
+}

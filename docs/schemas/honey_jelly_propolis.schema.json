@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/honey_jelly_propolis.schema.json",
+  "title": "Honey · Jelly · Propolis Classification",
+  "description": "The 4-tier Hive classification applied to any Tribunal-graded output. Maps directly to CRE Class A/B/C asset grading. Royal Jelly is the apex (≥0.85 or 95+). Honey is production-safe (≥0.70). Jelly is repair-candidate. Propolis is trust-break.",
+  "type": "object",
+  "required": [
+    "classification",
+    "score",
+    "score_thresholds",
+    "evidence_count",
+    "class_a_b_c_mapping"
+  ],
+  "properties": {
+    "classification": {
+      "type": "string",
+      "enum": ["ROYAL_JELLY", "HONEY", "JELLY", "PROPOLIS"],
+      "description": "The tier assigned to this output"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Numeric score that resolved to the classification (0-100 scale)"
+    },
+    "score_thresholds": {
+      "type": "object",
+      "description": "The threshold band each class sits in · stored on the record for audit",
+      "required": ["royal_jelly_min", "honey_min", "jelly_min", "propolis_max"],
+      "properties": {
+        "royal_jelly_min": { "type": "number", "default": 95 },
+        "honey_min": { "type": "number", "default": 70 },
+        "jelly_min": { "type": "number", "default": 50 },
+        "propolis_max": { "type": "number", "default": 49 }
+      }
+    },
+    "evidence_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of independent evidence sources backing the output · feeds the rule layer"
+    },
+    "failure_modes_detected": {
+      "type": "array",
+      "description": "Which of the 7 SwarmFixer failure modes were observed",
+      "items": {
+        "type": "string",
+        "enum": [
+          "missing_step",
+          "false_assumption",
+          "hallucination",
+          "overgeneralization",
+          "drift",
+          "schema_break",
+          "tool_misuse"
+        ]
+      }
+    },
+    "class_a_b_c_mapping": {
+      "type": "object",
+      "description": "Mirror to the CRE asset class system used in the doctrine",
+      "required": ["cre_class", "rationale"],
+      "properties": {
+        "cre_class": {
+          "type": "string",
+          "enum": ["A", "B", "C"]
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Why this tier maps to that CRE class for this engagement"
+        }
+      }
+    },
+    "promoted_from": {
+      "type": "string",
+      "enum": ["ROYAL_JELLY", "HONEY", "JELLY", "PROPOLIS"],
+      "description": "Prior class if this record was promoted (e.g., Jelly → Honey after repair)"
+    },
+    "repair_eligible": {
+      "type": "boolean",
+      "description": "True if the record is a SwarmFixer pair candidate (typically all JELLY)"
+    },
+    "deed_eligible": {
+      "type": "boolean",
+      "description": "True if the classification permits DDEED issuance (Honey + Royal Jelly only)"
+    },
+    "classified_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
