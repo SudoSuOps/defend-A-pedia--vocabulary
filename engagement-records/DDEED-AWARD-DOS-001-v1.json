@@ -1,0 +1,189 @@
+{
+  "deed_class": "DDEED-AWARD",
+  "deed_id": "DDEED-AWARD-DOS-001-v1",
+  "deed_version": "v1",
+  "deed_status": "TEMPLATE_PENDING_LOU_EXECUTION",
+  "_note": "This is the template populated and ready to anchor on Hedera HCS the moment the LOU executes. Fields marked PENDING are completed at LOU execution time. The award itself is locked; only timestamps + signatures + hash require LOU signing.",
+
+  "award": {
+    "asset": "DefendableOS · trust operating system + brand stack + IP + production infrastructure",
+    "engagement_type": "exclusive listing brokerage + 1031 upleg advisory",
+    "awarded_to": {
+      "firm": "dev (Swarm and Bee LLC DBA dev · acting as Exclusive Listing Broker)",
+      "authorized_signatory": "dev · Senior Architect",
+      "role": "Exclusive Listing Broker"
+    },
+    "awarded_by": {
+      "principal": "Donovan Mackey (Mr. DefendableOS · founder · sole authorized representative)",
+      "entity": "DefendableOS / Swarm and Bee LLC",
+      "authorizing_body": "The DefendableOS Board",
+      "award_decision_date": "2026-05-24",
+      "award_communication_method": "Live phone-call cadence · per session transcript · pending formal LOU signature"
+    },
+    "engagement_scope": [
+      "Asset disposition (per 05_EXCLUSIVE_LISTING_PROPOSAL.md)",
+      "1031 upleg advisory (per 10_1031_UPLEG_STRATEGY.md)",
+      "Marketing process (per 09_GO_TO_MARKET_STRATEGY.md · call-for-offers · NOT public price)",
+      "Board reporting cadence (per 11_NEXT_STEPS_KICKOFF.md · weekly Friday)"
+    ]
+  },
+
+  "engagement_terms": {
+    "executable_agreement": "06_REP_AGREEMENT.md + 1031 amendment",
+    "exclusivity_period_months": 12,
+    "tail_protection_period_months": 12,
+    "commission_structure": {
+      "deal_type_m_and_a": {"rate_pct": 5.0, "floor_usd": 250000, "cap_usd": null},
+      "deal_type_strategic_partnership_jv": {"rate_pct": 6.0, "floor_usd": 150000, "cap_usd": 2000000},
+      "deal_type_ip_license_enterprise": {"rate_pct": 8.0, "floor_usd": 100000, "cap_usd": 1000000},
+      "deal_type_spinout_carveout": {"rate_pct": 6.0, "floor_usd": 200000, "cap_usd": null}
+    },
+    "listing_premium_discount_pct": 15.0,
+    "marketing_budget_allowance_usd": 50000,
+    "performance_gates": {
+      "month_6": "Terminate without penalty if no qualified offer >= 75% of BOV",
+      "month_9": "Terminate without penalty if no LOI executed"
+    },
+    "broker_investment_estimate_usd": 127000,
+    "payment_trigger": "AT CLOSING ONLY (no hourly · no milestone invoices · no up-front fees)"
+  },
+
+  "five_proofs": {
+    "origin": {
+      "principal_attestation": "Donovan Mackey · founder · 30-year top 1% industrial CRE broker · $8B closed transactions",
+      "broker_attestation": "dev · Senior Architect · 5-pass iterative-coaching learning loop demonstrated this session",
+      "award_originated_at": "2026-05-24",
+      "award_originated_via": "Live coaching session · Mr. DefendableOS principal call · documented in proposal package 00-11"
+    },
+    "quality": {
+      "selection_process": "Call-for-offers framework per 09_GO_TO_MARKET_STRATEGY.md (controlled · highest-and-best · not lowest bid)",
+      "evaluation_dimensions": [
+        "understanding (doctrine comprehension)",
+        "proof (comparable work shown · 14 receipted proofs)",
+        "trust (founder voice preservation · V03 chain pass)",
+        "architecture (systems coherence · 5-rail design)",
+        "speed (5-pass iterative refinement in one session)",
+        "price discipline (commission-at-close · skin in the game)"
+      ],
+      "v03_voice_validator_pass": true,
+      "qualification_statement_ref": "07_QUALIFICATION_STATEMENT.md"
+    },
+    "process": {
+      "pitching_arc_artifacts": ["00_PRE-MARKET_FLIGHT_SHEET", "01_PROPOSAL", "02_LOU_DRAFT", "03_BUILD_PROPOSAL", "04_BOARD_PROPOSAL", "05_EXCLUSIVE_LISTING_PROPOSAL", "06_REP_AGREEMENT", "07_QUALIFICATION_STATEMENT", "08_BUYER_PROFILE", "09_GO_TO_MARKET_STRATEGY", "10_1031_UPLEG_STRATEGY"],
+      "execution_arc_kickoff": "11_NEXT_STEPS_KICKOFF.md",
+      "founder_corrections_absorbed": 9,
+      "memory_entries_codified": 25,
+      "pdf_artifacts_generated": 7,
+      "session_date": "2026-05-24"
+    },
+    "economics": {
+      "commission_paid": "AT_CLOSING_ONLY",
+      "owner_out_of_pocket_pre_close_usd": 0,
+      "broker_investment_pre_close_usd_estimate": 127000,
+      "expected_close_window_months": 12,
+      "probability_of_close_pct": "60-75 (broker's honest read)",
+      "earn_floor_usd": 100000,
+      "earn_base_case_usd_range": "1500000-3000000",
+      "earn_bull_case_usd_range": "2500000-12500000"
+    },
+    "trust": {
+      "publicly_verifiable": true,
+      "hedera_topic": "0.0.10291838",
+      "anchor_status": "PENDING_LOU_EXECUTION",
+      "ens_anchor": "streetledger.eth/listings/defendableos/award/v1/",
+      "books_and_records_ens": "streetledger.eth/listings/defendableos/award/v1/books-and-records",
+      "verification_url_template": "https://hashscan.io/mainnet/topic/0.0.10291838",
+      "complete_companion_package_url": "https://github.com/SudoSuOps/defend-A-pedia--vocabulary/tree/main/proposals/defendableos-website-app"
+    }
+  },
+
+  "the_5_controls_operating_principle": [
+    "Control the STORY",
+    "Control the BUYER POOL",
+    "Control the CLOCK",
+    "Control the 1031 PATH",
+    "Protect the BOARD"
+  ],
+
+  "the_5_proofs_brand_doctrine": [
+    "Origin",
+    "Quality",
+    "Process",
+    "Economics",
+    "Trust"
+  ],
+
+  "founder_voice_locked_phrases": [
+    "Ring ring · Mr. Defendable speaking",
+    "To the shed",
+    "Probability of close",
+    "Books and records",
+    "Class A 5-cap",
+    "Validate the Validator · Prove the Location",
+    "We take offense to the shed"
+  ],
+
+  "post_award_immediate_deliverables_within_24h_of_lou_execution": [
+    "Executable LOU + 1031 amendment drafted",
+    "25-item Day-1 document request memo",
+    "QI shortlist (3 firms · pros/cons matrix)",
+    "Kickoff call schedule (Day 0-3)",
+    "Data room URL provisioned at streetledger.eth/dealroom/dos/",
+    "First weekly board report template",
+    "This DDEED-AWARD-DOS-001-v1 hashed + anchored on Hedera HCS"
+  ],
+
+  "hash_pending_lou_execution": {
+    "_note": "sha256 hash computed at LOU execution time over canonical JSON form of this deed",
+    "deed_hash": "PENDING_AT_LOU_EXECUTION",
+    "lou_hash": "PENDING_AT_LOU_EXECUTION",
+    "combined_anchor_hash": "PENDING_AT_LOU_EXECUTION"
+  },
+
+  "anchor_pending_lou_execution": {
+    "hedera_tx_id": "PENDING",
+    "hedera_consensus_timestamp": "PENDING",
+    "anchored_at_iso": "PENDING",
+    "verification_url": "https://hashscan.io/mainnet/topic/0.0.10291838"
+  },
+
+  "signatures_pending_lou_execution": {
+    "owner_principal_signature": {
+      "name": "Donovan Mackey",
+      "role": "Founder / Mr. DefendableOS / Principal",
+      "signed_at_iso": "PENDING",
+      "signature_hash": "PENDING"
+    },
+    "broker_signature": {
+      "name": "dev",
+      "role": "Senior Architect · Exclusive Listing Broker",
+      "signed_at_iso": "PENDING",
+      "signature_hash": "PENDING"
+    },
+    "witness_signatures": []
+  },
+
+  "cross_references": {
+    "engagement_model_memory": "defendableos-disposition-listing-engagement-2026-05-24",
+    "build_doctrine_memory": "founder-build-doctrine-defendableos-2026-05-24",
+    "comp_set_memory": "defendableos-comp-set-board-pitch-doctrine-2026-05-24",
+    "qualification_doctrine_memory": "defendableos-qualification-doctrine-operator-lineage-2026-05-24",
+    "buyer_profile_memory": "defendableos-buyer-profile-icp-doctrine-2026-05-24",
+    "go_to_market_memory": "defendableos-go-to-market-call-for-offers-doctrine-2026-05-24",
+    "upleg_doctrine_memory": "defendableos-1031-upleg-doctrine-2026-05-24",
+    "kickoff_doctrine_memory": "defendableos-engagement-awarded-kickoff-doctrine-2026-05-24",
+    "brand_face_memory": "mrdefendable-brand-architecture-voice-doctrine-2026-05-24",
+    "brand_culture_memory": "offensetotheshed-media-layer-podcast-doctrine-2026-05-24",
+    "brand_media_memory": "painintheshed-podcast-domain-defense-lock-2026-05-24",
+    "show_thesis_memory": "pain-in-the-shed-cost-of-intelligence-scope-2026-05-24",
+    "magic_rave_class_a_memory": "founder-magic-rave-class-a-doctrine-2026-05-24"
+  },
+
+  "_meta": {
+    "schema_version": "DDEED-AWARD-v1",
+    "minted_at_iso": "2026-05-24T18:00:00+00:00",
+    "minted_by": "dev (broker · day-one reciprocity)",
+    "minted_for": "Mr. Defendable + the DefendableOS Board",
+    "license": "Confidential to the parties · books-and-records intent · publicly anchored post-LOU"
+  }
+}
