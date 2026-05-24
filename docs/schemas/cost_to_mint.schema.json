@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/cost_to_mint.schema.json",
+  "title": "Cost to Mint",
+  "description": "The economics block on every receipt. Baseline target: $0.0052/deed (per docs/doctrine/09_energy_and_cost_to_mint.md). Includes electricity · hardware depreciation · chain overhead · the resulting fee tier · gross margin.",
+  "type": "object",
+  "required": ["electricity_usd", "depreciation_usd", "chain_overhead_usd", "total_usd", "fee_tier"],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "description": "FK to the receipt this cost belongs to"
+    },
+    "electricity_usd": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Energy cost in USD for this deed (kWh × rate)"
+    },
+    "depreciation_usd": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Hardware depreciation allocated to this deed"
+    },
+    "chain_overhead_usd": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Hedera HCS submission fees + ENS amortized cost"
+    },
+    "storage_usd": {
+      "type": "number",
+      "minimum": 0,
+      "description": "NAS + L1 PostgreSQL storage cost amortized to this deed"
+    },
+    "validator_usd": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Tribunal Scale A + Scale B inference cost"
+    },
+    "total_usd": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Sum of all cost components"
+    },
+    "fee_tier": {
+      "type": "string",
+      "description": "Customer-facing pricing tier this deed lands in",
+      "enum": ["BASELINE", "STANDARD", "PREMIUM", "APEX_RJ", "ENTERPRISE"]
+    },
+    "margin_pct": {
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100,
+      "description": "Gross margin percentage at the published price for this tier"
+    },
+    "energy_kwh": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Raw kWh consumed"
+    },
+    "rate_usd_per_kwh": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Electricity rate used"
+    },
+    "computed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

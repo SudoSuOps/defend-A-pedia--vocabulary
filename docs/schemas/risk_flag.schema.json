@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/risk_flag.schema.json",
+  "title": "Risk Flag",
+  "description": "A single risk flag attached to an engagement · receipt · or agent. Classes mirror CRE due-diligence vocabulary (operational · security · compliance · financial). High-severity flags auto-escalate to a senior validator.",
+  "type": "object",
+  "required": ["flag_id", "flag_type", "severity", "class"],
+  "properties": {
+    "flag_id": {
+      "type": "string",
+      "description": "RF-{sha256:8}-{ts}",
+      "pattern": "^RF-[A-Fa-f0-9]{8,}-[0-9]{14}$"
+    },
+    "flag_type": {
+      "type": "string",
+      "description": "Specific named risk · e.g., stale_color · seller_motivation_unknown · adversarial_prompt_detected · cost_to_mint_exceeded"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "med", "high"]
+    },
+    "class": {
+      "type": "string",
+      "enum": ["operational", "security", "compliance", "financial"]
+    },
+    "auto_escalate": {
+      "type": "boolean",
+      "description": "True if this flag automatically escalates to a senior validator or human reviewer"
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": ["engagement", "receipt", "agent", "cell", "evidence"]
+    },
+    "subject_id": {
+      "type": "string",
+      "description": "The id of the subject record being flagged"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable rationale for the flag"
+    },
+    "raised_by": {
+      "type": "string",
+      "description": "Rule id · validator id · or human operator"
+    },
+    "raised_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "resolved": {
+      "type": "boolean",
+      "default": false
+    },
+    "resolution_note": {
+      "type": "string"
+    },
+    "resolved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

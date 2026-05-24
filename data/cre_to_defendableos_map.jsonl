@@ -1,0 +1,5 @@
+{"cre_term":"color","defendableos_field":"asset.color_status","schema_file":"docs/schemas/evidence_record.schema.json","notes":"Verified-evidence state · enum VERIFIED/PARTIAL/UNVERIFIED/MISSING"}
+{"cre_term":"digest","defendableos_field":"engagement.digest_v1","schema_file":"docs/schemas/engagement.schema.json","notes":"Pre-meeting digest payload the agent prepared"}
+{"cre_term":"OM","defendableos_field":"engagement.om_id","schema_file":"docs/schemas/engagement.schema.json","notes":"Offering Memorandum identifier"}
+{"cre_term":"LOI","defendableos_field":"engagement.lou_signed_at","schema_file":"docs/schemas/engagement.schema.json","notes":"DefendableOS LOI is the Letter of Understanding · signed engagement timestamp"}
+{"cre_term":"PSA","defendableos_field":"engagement.psa_signed_at","schema_file":"docs/schemas/engagement.schema.json","notes":"Purchase and Sale Agreement signed timestamp"}

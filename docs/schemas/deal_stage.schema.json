@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/deal_stage.schema.json",
+  "title": "Deal Stage",
+  "description": "Pipeline stage of an engagement · the CRE deal-flow grammar applied to DefendableOS engagements. 8 stages from Sourcing to Closed/Lost · with stage-transition timestamps and conversion-to-next percentages for funnel math.",
+  "type": "object",
+  "required": ["engagement_id", "stage"],
+  "properties": {
+    "engagement_id": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["Sourcing", "Engaged", "LOU", "PSA", "DD", "Closing", "Closed", "Lost"]
+    },
+    "previous_stage": {
+      "type": "string",
+      "enum": ["Sourcing", "Engaged", "LOU", "PSA", "DD", "Closing", "Closed", "Lost"]
+    },
+    "stage_timestamps": {
+      "type": "object",
+      "description": "Timestamps for each stage entry · only present when the stage was entered",
+      "properties": {
+        "sourcing_at": { "type": "string", "format": "date-time" },
+        "engaged_at": { "type": "string", "format": "date-time" },
+        "lou_at": { "type": "string", "format": "date-time" },
+        "psa_at": { "type": "string", "format": "date-time" },
+        "dd_at": { "type": "string", "format": "date-time" },
+        "closing_at": { "type": "string", "format": "date-time" },
+        "closed_at": { "type": "string", "format": "date-time" },
+        "lost_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "conversion_to_next_pct": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Historical conversion rate from this stage to the next (rolling 90d)"
+    },
+    "days_in_stage": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "lost_reason": {
+      "type": "string",
+      "description": "Required when stage == Lost"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "stage": { "const": "Lost" } } },
+      "then": { "required": ["lost_reason"] }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/evidence_record.schema.json",
+  "title": "Evidence Record",
+  "description": "An individual evidence record feeding the color · validator chain · Tribunal. Each record cites a source · a source weight (per EntityScorer · 0-1) · a timestamp · cross-source confirmations · the raw snapshot key (in object storage).",
+  "type": "object",
+  "required": ["evidence_id", "source", "source_weight", "timestamp"],
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "description": "EV-{sha256:8}-{ts}",
+      "pattern": "^EV-[A-Fa-f0-9]{8,}-[0-9]{14}$"
+    },
+    "source": {
+      "type": "string",
+      "description": "Named source · EDGAR · CompStak · ATTOM · OpenAlex · Brave · etc."
+    },
+    "source_weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "EntityScorer-assigned weight · EDGAR 0.90 · OpenAlex 0.85 · CRE News 0.65 · Reddit 0.50"
+    },
+    "source_class": {
+      "type": "string",
+      "enum": [
+        "REGULATORY",
+        "INSTITUTIONAL",
+        "ACADEMIC",
+        "TRADE_PRESS",
+        "COMMUNITY",
+        "INTERNAL",
+        "HUMAN_VERIFIED"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the evidence was captured (NOT when the underlying event happened)"
+    },
+    "event_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Optional · when the underlying event (a filing · a sale · a permit) occurred"
+    },
+    "staleness_days": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Days since this evidence was captured · drives staleness_penalty"
+    },
+    "cross_source_confirmations": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of independent sources that independently confirm the same fact"
+    },
+    "raw_snapshot_key": {
+      "type": "string",
+      "description": "Object storage key (Tigris / S3) for the raw captured payload · evidence-vault bucket"
+    },
+    "snapshot_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "extracted_claim": {
+      "type": "string",
+      "description": "The specific claim this evidence supports"
+    },
+    "captured_by": {
+      "type": "string",
+      "description": "Agent ENS or human operator who captured the evidence"
+    }
+  }
+}

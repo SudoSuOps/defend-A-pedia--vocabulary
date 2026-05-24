@@ -1,0 +1,1262 @@
+{
+  "edge_count": 361,
+  "generated_at": "2026-05-24T15:02:17+00:00",
+  "term_count": 59,
+  "terms": {
+    "agentbench": {
+      "category": "defendableos_terms",
+      "linked_from": [
+        "clawcheck",
+        "defendablehack",
+        "defendableos"
+      ],
+      "links_to": [
+        "defendableos",
+        "defendablerouter",
+        "clawcheck",
+        "defendablehack",
+        "pair-candidate"
+      ],
+      "slug": "agentbench",
+      "source": "docs/vocabulary/defendableos_terms/agentbench.md",
+      "term": "AgentBench"
+    },
+    "assignment": {
+      "category": "client_terms",
+      "linked_from": [
+        "closing-statement-defendable-closing-statement",
+        "engagement",
+        "letter-of-understanding-lou",
+        "morning-brief",
+        "principal"
+      ],
+      "links_to": [
+        "engagement",
+        "letter-of-understanding",
+        "closing-statement",
+        "morning-brief",
+        "assignment-success",
+        "probability-of-close",
+        "principal"
+      ],
+      "slug": "assignment",
+      "source": "docs/vocabulary/client_terms/assignment.md",
+      "term": "Assignment"
+    },
+    "assignment-failure": {
+      "category": "tribunal_terms",
+      "linked_from": [
+        "assignment-success"
+      ],
+      "links_to": [
+        "assignment-success",
+        "jelly",
+        "propolis",
+        "hallucination-event",
+        "tribunal",
+        "validator-chain"
+      ],
+      "slug": "assignment-failure",
+      "source": "docs/vocabulary/tribunal_terms/assignment-failure.md",
+      "term": "Assignment Failure"
+    },
+    "assignment-success": {
+      "category": "tribunal_terms",
+      "linked_from": [
+        "assignment",
+        "closing-statement-defendable-closing-statement",
+        "probability-of-close",
+        "client-confidence",
+        "assignment-failure",
+        "judge"
+      ],
+      "links_to": [
+        "assignment-failure",
+        "tribunal",
+        "validator-chain",
+        "confidence-weight",
+        "royal-jelly",
+        "honey"
+      ],
+      "slug": "assignment-success",
+      "source": "docs/vocabulary/tribunal_terms/assignment-success.md",
+      "term": "Assignment Success"
+    },
+    "bee": {
+      "category": "hive_terms",
+      "linked_from": [
+        "cost-to-mint",
+        "energy",
+        "hive",
+        "swarm",
+        "validator"
+      ],
+      "links_to": [
+        "hive",
+        "swarm",
+        "energy",
+        "royal-jelly",
+        "honey",
+        "tribunal",
+        "validator-chain"
+      ],
+      "slug": "bee",
+      "source": "docs/vocabulary/hive_terms/bee.md",
+      "term": "Bee"
+    },
+    "books-and-records": {
+      "category": "cre_terms",
+      "linked_from": [
+        "cap-rate",
+        "deal-flow",
+        "digest",
+        "due-diligence-dd",
+        "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+        "om-offering-memorandum",
+        "psa-purchase-and-sale-agreement",
+        "underwriting"
+      ],
+      "links_to": [
+        "color",
+        "digest",
+        "om",
+        "loi",
+        "psa",
+        "due-diligence",
+        "underwriting",
+        "probability-of-close",
+        "cap-rate"
+      ],
+      "slug": "books-and-records",
+      "source": "docs/vocabulary/cre_terms/books-and-records.md",
+      "term": "Books and Records"
+    },
+    "cap-rate": {
+      "category": "cre_terms",
+      "linked_from": [
+        "books-and-records",
+        "underwriting"
+      ],
+      "links_to": [
+        "underwriting",
+        "loi",
+        "psa",
+        "digest",
+        "probability-of-close",
+        "due-diligence",
+        "books-and-records"
+      ],
+      "slug": "cap-rate",
+      "source": "docs/vocabulary/cre_terms/cap-rate.md",
+      "term": "Cap Rate"
+    },
+    "clawcheck": {
+      "category": "defendableos_terms",
+      "linked_from": [
+        "agentbench",
+        "defendablehack",
+        "defendableos",
+        "defendablerouter",
+        "honeybox",
+        "risk-temperature"
+      ],
+      "links_to": [
+        "defendableos",
+        "defendablerouter",
+        "defendablejelly",
+        "agentbench",
+        "defendablehack",
+        "pair-candidate"
+      ],
+      "slug": "clawcheck",
+      "source": "docs/vocabulary/defendableos_terms/clawcheck.md",
+      "term": "ClawCheck"
+    },
+    "client-confidence": {
+      "category": "scoring_terms",
+      "linked_from": [
+        "probability-of-close"
+      ],
+      "links_to": [
+        "probability-of-close",
+        "assignment-success",
+        "engagement",
+        "principal",
+        "morning-brief",
+        "closing-statement",
+        "pass-doctrine"
+      ],
+      "slug": "client-confidence",
+      "source": "docs/vocabulary/scoring_terms/client-confidence.md",
+      "term": "Client Confidence"
+    },
+    "closing-statement-defendable-closing-statement": {
+      "category": "client_terms",
+      "linked_from": [],
+      "links_to": [
+        "assignment",
+        "engagement",
+        "letter-of-understanding",
+        "principal",
+        "morning-brief",
+        "assignment-success",
+        "pre-market-flight-sheet"
+      ],
+      "slug": "closing-statement-defendable-closing-statement",
+      "source": "docs/vocabulary/client_terms/closing-statement.md",
+      "term": "Closing Statement (Defendable Closing Statement)"
+    },
+    "compare-task": {
+      "category": "repair_terms",
+      "linked_from": [
+        "detect-task",
+        "diagnose-task",
+        "prevent-task",
+        "repair-lift",
+        "repair-task",
+        "swarmfixer"
+      ],
+      "links_to": [
+        "diagnose-task",
+        "repair-task",
+        "prevent-task",
+        "detect-task",
+        "repair-lift",
+        "swarmfixer"
+      ],
+      "slug": "compare-task",
+      "source": "docs/vocabulary/repair_terms/compare-task.md",
+      "term": "Compare Task"
+    },
+    "confidence-weight": {
+      "category": "tribunal_terms",
+      "linked_from": [
+        "assignment-success",
+        "judge",
+        "validator-chain",
+        "validator"
+      ],
+      "links_to": [
+        "validator",
+        "validator-chain",
+        "judge",
+        "tribunal",
+        "royal-jelly",
+        "honey"
+      ],
+      "slug": "confidence-weight",
+      "source": "docs/vocabulary/tribunal_terms/confidence-weight.md",
+      "term": "Confidence Weight"
+    },
+    "cost-to-mint": {
+      "category": "hive_terms",
+      "linked_from": [
+        "energy"
+      ],
+      "links_to": [
+        "energy",
+        "royal-jelly",
+        "honey",
+        "propolis",
+        "hive",
+        "bee"
+      ],
+      "slug": "cost-to-mint",
+      "source": "docs/vocabulary/hive_terms/cost-to-mint.md",
+      "term": "Cost to Mint"
+    },
+    "deal-flow": {
+      "category": "cre_terms",
+      "linked_from": [
+        "om-offering-memorandum"
+      ],
+      "links_to": [
+        "probability-of-close",
+        "digest",
+        "om",
+        "loi",
+        "psa",
+        "books-and-records"
+      ],
+      "slug": "deal-flow",
+      "source": "docs/vocabulary/cre_terms/deal-flow.md",
+      "term": "Deal Flow"
+    },
+    "defendablecloud-com": {
+      "category": "defendableos_terms",
+      "linked_from": [
+        "defendableos",
+        "defendablerouter",
+        "honeybox"
+      ],
+      "links_to": [
+        "defendableos",
+        "defendablerouter",
+        "honeybox",
+        "swarmjelly",
+        "defendablejelly"
+      ],
+      "slug": "defendablecloud-com",
+      "source": "docs/vocabulary/defendableos_terms/defendablecloud-com.md",
+      "term": "DefendableCloud.com"
+    },
+    "defendablehack": {
+      "category": "defendableos_terms",
+      "linked_from": [
+        "agentbench",
+        "clawcheck",
+        "defendableos"
+      ],
+      "links_to": [
+        "defendableos",
+        "clawcheck",
+        "agentbench",
+        "pair-candidate",
+        "defendablerouter"
+      ],
+      "slug": "defendablehack",
+      "source": "docs/vocabulary/defendableos_terms/defendablehack.md",
+      "term": "DefendableHack"
+    },
+    "defendablejelly": {
+      "category": "repair_terms",
+      "linked_from": [
+        "clawcheck",
+        "defendablecloud-com",
+        "defendableos",
+        "temp-0-05-rule-the-temp-five-cent-rule",
+        "pair-candidate",
+        "swarmfixer",
+        "swarmjelly",
+        "repair-lift-ui-dial"
+      ],
+      "links_to": [
+        "swarmfixer",
+        "swarmjelly",
+        "repair-lift",
+        "pair-candidate",
+        "defendableos"
+      ],
+      "slug": "defendablejelly",
+      "source": "docs/vocabulary/repair_terms/defendablejelly.md",
+      "term": "DefendableJelly"
+    },
+    "defendableos": {
+      "category": "defendableos_terms",
+      "linked_from": [
+        "agentbench",
+        "clawcheck",
+        "defendablecloud-com",
+        "defendablehack",
+        "defendablerouter",
+        "honeybox",
+        "defendablejelly"
+      ],
+      "links_to": [
+        "defendablerouter",
+        "defendablecloud-com",
+        "defendablehack",
+        "honeybox",
+        "clawcheck",
+        "agentbench",
+        "defendablejelly"
+      ],
+      "slug": "defendableos",
+      "source": "docs/vocabulary/defendableos_terms/defendableos.md",
+      "term": "DefendableOS"
+    },
+    "defendablerouter": {
+      "category": "defendableos_terms",
+      "linked_from": [
+        "agentbench",
+        "clawcheck",
+        "defendablecloud-com",
+        "defendablehack",
+        "defendableos",
+        "honeybox",
+        "pair-candidate"
+      ],
+      "links_to": [
+        "defendableos",
+        "defendablecloud-com",
+        "honeybox",
+        "clawcheck",
+        "pair-candidate",
+        "swarmfixer"
+      ],
+      "slug": "defendablerouter",
+      "source": "docs/vocabulary/defendableos_terms/defendablerouter.md",
+      "term": "DefendableRouter"
+    },
+    "detect-task": {
+      "category": "repair_terms",
+      "linked_from": [
+        "compare-task",
+        "diagnose-task",
+        "prevent-task",
+        "repair-task",
+        "swarmfixer"
+      ],
+      "links_to": [
+        "diagnose-task",
+        "repair-task",
+        "prevent-task",
+        "compare-task",
+        "swarmfixer",
+        "pair-candidate"
+      ],
+      "slug": "detect-task",
+      "source": "docs/vocabulary/repair_terms/detect-task.md",
+      "term": "Detect Task"
+    },
+    "diagnose-task": {
+      "category": "repair_terms",
+      "linked_from": [
+        "compare-task",
+        "detect-task",
+        "pair-candidate",
+        "prevent-task",
+        "repair-task",
+        "swarmfixer",
+        "swarmjelly",
+        "risk-temperature"
+      ],
+      "links_to": [
+        "swarmfixer",
+        "repair-task",
+        "prevent-task",
+        "detect-task",
+        "compare-task",
+        "pair-candidate"
+      ],
+      "slug": "diagnose-task",
+      "source": "docs/vocabulary/repair_terms/diagnose-task.md",
+      "term": "Diagnose Task"
+    },
+    "digest": {
+      "category": "cre_terms",
+      "linked_from": [
+        "books-and-records",
+        "cap-rate",
+        "deal-flow",
+        "due-diligence-dd",
+        "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+        "om-offering-memorandum",
+        "psa-purchase-and-sale-agreement",
+        "underwriting"
+      ],
+      "links_to": [
+        "color",
+        "om",
+        "loi",
+        "due-diligence",
+        "probability-of-close",
+        "books-and-records"
+      ],
+      "slug": "digest",
+      "source": "docs/vocabulary/cre_terms/digest.md",
+      "term": "Digest"
+    },
+    "due-diligence-dd": {
+      "category": "cre_terms",
+      "linked_from": [],
+      "links_to": [
+        "loi",
+        "psa",
+        "color",
+        "digest",
+        "underwriting",
+        "books-and-records"
+      ],
+      "slug": "due-diligence-dd",
+      "source": "docs/vocabulary/cre_terms/due-diligence.md",
+      "term": "Due Diligence (DD)"
+    },
+    "energy": {
+      "category": "hive_terms",
+      "linked_from": [
+        "bee",
+        "cost-to-mint",
+        "hive",
+        "swarm"
+      ],
+      "links_to": [
+        "cost-to-mint",
+        "hive",
+        "swarm",
+        "bee",
+        "honey",
+        "royal-jelly"
+      ],
+      "slug": "energy",
+      "source": "docs/vocabulary/hive_terms/energy.md",
+      "term": "Energy"
+    },
+    "engagement": {
+      "category": "client_terms",
+      "linked_from": [
+        "assignment",
+        "closing-statement-defendable-closing-statement",
+        "letter-of-understanding-lou",
+        "morning-brief",
+        "pass-doctrine",
+        "pre-market-flight-sheet",
+        "principal",
+        "client-confidence"
+      ],
+      "links_to": [
+        "assignment",
+        "letter-of-understanding",
+        "principal",
+        "closing-statement",
+        "morning-brief",
+        "probability-of-close",
+        "pass-doctrine"
+      ],
+      "slug": "engagement",
+      "source": "docs/vocabulary/client_terms/engagement.md",
+      "term": "Engagement"
+    },
+    "evidence-strength": {
+      "category": "scoring_terms",
+      "linked_from": [
+        "repair-lift",
+        "repair-lift-ui-dial",
+        "risk-temperature",
+        "validator-confidence"
+      ],
+      "links_to": [
+        "repair-lift",
+        "validator-confidence",
+        "risk-temperature",
+        "pair-candidate",
+        "swarmfixer"
+      ],
+      "slug": "evidence-strength",
+      "source": "docs/vocabulary/scoring_terms/evidence-strength.md",
+      "term": "Evidence Strength"
+    },
+    "genesis": {
+      "category": "hive_terms",
+      "linked_from": [
+        "royal-jelly"
+      ],
+      "links_to": [
+        "royal-jelly",
+        "honey",
+        "hive",
+        "propolis",
+        "tribunal",
+        "validator-chain"
+      ],
+      "slug": "genesis",
+      "source": "docs/vocabulary/hive_terms/genesis.md",
+      "term": "Genesis"
+    },
+    "hallucination-event": {
+      "category": "tribunal_terms",
+      "linked_from": [
+        "propolis",
+        "assignment-failure",
+        "judge",
+        "validator-chain"
+      ],
+      "links_to": [
+        "tribunal",
+        "judge",
+        "validator",
+        "validator-chain",
+        "propolis",
+        "jelly"
+      ],
+      "slug": "hallucination-event",
+      "source": "docs/vocabulary/tribunal_terms/hallucination-event.md",
+      "term": "Hallucination Event"
+    },
+    "hive": {
+      "category": "hive_terms",
+      "linked_from": [
+        "bee",
+        "cost-to-mint",
+        "energy",
+        "genesis",
+        "honey",
+        "jelly",
+        "propolis",
+        "royal-jelly",
+        "swarm",
+        "tribunal"
+      ],
+      "links_to": [
+        "swarm",
+        "bee",
+        "royal-jelly",
+        "honey",
+        "propolis",
+        "energy",
+        "tribunal"
+      ],
+      "slug": "hive",
+      "source": "docs/vocabulary/hive_terms/hive.md",
+      "term": "Hive"
+    },
+    "honey": {
+      "category": "hive_terms",
+      "linked_from": [
+        "bee",
+        "cost-to-mint",
+        "energy",
+        "genesis",
+        "hive",
+        "jelly",
+        "propolis",
+        "royal-jelly",
+        "swarm",
+        "assignment-success",
+        "confidence-weight",
+        "tribunal"
+      ],
+      "links_to": [
+        "royal-jelly",
+        "jelly",
+        "propolis",
+        "hive",
+        "tribunal",
+        "validator-chain"
+      ],
+      "slug": "honey",
+      "source": "docs/vocabulary/hive_terms/honey.md",
+      "term": "Honey"
+    },
+    "honeybox": {
+      "category": "defendableos_terms",
+      "linked_from": [
+        "defendablecloud-com",
+        "defendableos",
+        "defendablerouter"
+      ],
+      "links_to": [
+        "defendableos",
+        "defendablerouter",
+        "defendablecloud-com",
+        "clawcheck",
+        "swarmjelly"
+      ],
+      "slug": "honeybox",
+      "source": "docs/vocabulary/defendableos_terms/honeybox.md",
+      "term": "HoneyBox"
+    },
+    "jelly": {
+      "category": "hive_terms",
+      "linked_from": [
+        "honey",
+        "propolis",
+        "royal-jelly",
+        "assignment-failure",
+        "hallucination-event"
+      ],
+      "links_to": [
+        "honey",
+        "royal-jelly",
+        "propolis",
+        "hive",
+        "tribunal"
+      ],
+      "slug": "jelly",
+      "source": "docs/vocabulary/hive_terms/jelly.md",
+      "term": "Jelly"
+    },
+    "judge": {
+      "category": "tribunal_terms",
+      "linked_from": [
+        "confidence-weight",
+        "hallucination-event",
+        "tribunal",
+        "validator-chain",
+        "validator"
+      ],
+      "links_to": [
+        "tribunal",
+        "validator",
+        "validator-chain",
+        "hallucination-event",
+        "assignment-success",
+        "confidence-weight"
+      ],
+      "slug": "judge",
+      "source": "docs/vocabulary/tribunal_terms/judge.md",
+      "term": "Judge"
+    },
+    "letter-of-understanding-lou": {
+      "category": "client_terms",
+      "linked_from": [],
+      "links_to": [
+        "engagement",
+        "principal",
+        "assignment",
+        "closing-statement",
+        "morning-brief",
+        "pass-doctrine"
+      ],
+      "slug": "letter-of-understanding-lou",
+      "source": "docs/vocabulary/client_terms/letter-of-understanding.md",
+      "term": "Letter of Understanding (LOU)"
+    },
+    "loi-letter-of-intent-a-k-a-lou-letter-of-understanding": {
+      "category": "cre_terms",
+      "linked_from": [],
+      "links_to": [
+        "om",
+        "psa",
+        "due-diligence",
+        "digest",
+        "underwriting",
+        "books-and-records"
+      ],
+      "slug": "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+      "source": "docs/vocabulary/cre_terms/loi.md",
+      "term": "LOI \u00b7 Letter of Intent (a.k.a. LOU \u00b7 Letter of Understanding)"
+    },
+    "morning-brief": {
+      "category": "client_terms",
+      "linked_from": [
+        "assignment",
+        "closing-statement-defendable-closing-statement",
+        "engagement",
+        "letter-of-understanding-lou",
+        "pass-doctrine",
+        "principal",
+        "probability-of-close",
+        "client-confidence"
+      ],
+      "links_to": [
+        "engagement",
+        "assignment",
+        "closing-statement",
+        "principal",
+        "probability-of-close",
+        "pre-market-flight-sheet",
+        "letter-of-understanding"
+      ],
+      "slug": "morning-brief",
+      "source": "docs/vocabulary/client_terms/morning-brief.md",
+      "term": "Morning Brief"
+    },
+    "om-offering-memorandum": {
+      "category": "cre_terms",
+      "linked_from": [],
+      "links_to": [
+        "digest",
+        "loi",
+        "due-diligence",
+        "deal-flow",
+        "probability-of-close",
+        "books-and-records"
+      ],
+      "slug": "om-offering-memorandum",
+      "source": "docs/vocabulary/cre_terms/om.md",
+      "term": "OM \u00b7 Offering Memorandum"
+    },
+    "pair-candidate": {
+      "category": "repair_terms",
+      "linked_from": [
+        "agentbench",
+        "clawcheck",
+        "defendablehack",
+        "defendablerouter",
+        "defendablejelly",
+        "detect-task",
+        "diagnose-task",
+        "prevent-task",
+        "repair-lift",
+        "swarmfixer",
+        "swarmjelly",
+        "evidence-strength",
+        "risk-temperature",
+        "validator-confidence"
+      ],
+      "links_to": [
+        "swarmfixer",
+        "swarmjelly",
+        "defendablejelly",
+        "repair-lift",
+        "defendablerouter",
+        "diagnose-task"
+      ],
+      "slug": "pair-candidate",
+      "source": "docs/vocabulary/repair_terms/pair-candidate.md",
+      "term": "Pair Candidate"
+    },
+    "pass-doctrine": {
+      "category": "client_terms",
+      "linked_from": [
+        "engagement",
+        "letter-of-understanding-lou",
+        "pre-market-flight-sheet",
+        "principal",
+        "probability-of-close",
+        "client-confidence"
+      ],
+      "links_to": [
+        "engagement",
+        "letter-of-understanding",
+        "pre-market-flight-sheet",
+        "principal",
+        "closing-statement",
+        "morning-brief"
+      ],
+      "slug": "pass-doctrine",
+      "source": "docs/vocabulary/client_terms/pass-doctrine.md",
+      "term": "PASS Doctrine"
+    },
+    "pre-market-flight-sheet": {
+      "category": "client_terms",
+      "linked_from": [
+        "closing-statement-defendable-closing-statement",
+        "morning-brief",
+        "pass-doctrine",
+        "probability-of-close"
+      ],
+      "links_to": [
+        "engagement",
+        "letter-of-understanding",
+        "principal",
+        "pass-doctrine",
+        "closing-statement",
+        "color"
+      ],
+      "slug": "pre-market-flight-sheet",
+      "source": "docs/vocabulary/client_terms/pre-market-flight-sheet.md",
+      "term": "Pre-Market Flight Sheet"
+    },
+    "prevent-task": {
+      "category": "repair_terms",
+      "linked_from": [
+        "compare-task",
+        "detect-task",
+        "diagnose-task",
+        "repair-task",
+        "swarmfixer"
+      ],
+      "links_to": [
+        "diagnose-task",
+        "repair-task",
+        "detect-task",
+        "compare-task",
+        "swarmfixer",
+        "pair-candidate"
+      ],
+      "slug": "prevent-task",
+      "source": "docs/vocabulary/repair_terms/prevent-task.md",
+      "term": "Prevent Task"
+    },
+    "principal": {
+      "category": "client_terms",
+      "linked_from": [
+        "assignment",
+        "closing-statement-defendable-closing-statement",
+        "engagement",
+        "letter-of-understanding-lou",
+        "morning-brief",
+        "pass-doctrine",
+        "pre-market-flight-sheet",
+        "client-confidence"
+      ],
+      "links_to": [
+        "engagement",
+        "assignment",
+        "letter-of-understanding",
+        "closing-statement",
+        "morning-brief",
+        "pass-doctrine"
+      ],
+      "slug": "principal",
+      "source": "docs/vocabulary/client_terms/principal.md",
+      "term": "Principal"
+    },
+    "probability-of-close": {
+      "category": "scoring_terms",
+      "linked_from": [
+        "assignment",
+        "engagement",
+        "morning-brief",
+        "books-and-records",
+        "cap-rate",
+        "deal-flow",
+        "digest",
+        "om-offering-memorandum",
+        "underwriting",
+        "client-confidence"
+      ],
+      "links_to": [
+        "assignment-success",
+        "client-confidence",
+        "color",
+        "morning-brief",
+        "pre-market-flight-sheet",
+        "pass-doctrine",
+        "closing-statement"
+      ],
+      "slug": "probability-of-close",
+      "source": "docs/vocabulary/scoring_terms/probability-of-close.md",
+      "term": "Probability of Close"
+    },
+    "propolis": {
+      "category": "hive_terms",
+      "linked_from": [
+        "cost-to-mint",
+        "genesis",
+        "hive",
+        "honey",
+        "jelly",
+        "royal-jelly",
+        "assignment-failure",
+        "hallucination-event",
+        "validator-chain"
+      ],
+      "links_to": [
+        "royal-jelly",
+        "honey",
+        "jelly",
+        "hive",
+        "hallucination-event",
+        "tribunal"
+      ],
+      "slug": "propolis",
+      "source": "docs/vocabulary/hive_terms/propolis.md",
+      "term": "Propolis"
+    },
+    "psa-purchase-and-sale-agreement": {
+      "category": "cre_terms",
+      "linked_from": [],
+      "links_to": [
+        "loi",
+        "om",
+        "digest",
+        "due-diligence",
+        "books-and-records",
+        "underwriting"
+      ],
+      "slug": "psa-purchase-and-sale-agreement",
+      "source": "docs/vocabulary/cre_terms/psa.md",
+      "term": "PSA \u00b7 Purchase and Sale Agreement"
+    },
+    "repair-lift": {
+      "category": "repair_terms",
+      "linked_from": [
+        "temp-0-05-rule-the-temp-five-cent-rule",
+        "compare-task",
+        "defendablejelly",
+        "pair-candidate",
+        "repair-task",
+        "swarmfixer",
+        "swarmjelly",
+        "evidence-strength",
+        "repair-lift-ui-dial",
+        "risk-temperature",
+        "validator-confidence"
+      ],
+      "links_to": [
+        "swarmfixer",
+        "swarmjelly",
+        "pair-candidate",
+        "compare-task",
+        "validator-confidence",
+        "evidence-strength"
+      ],
+      "slug": "repair-lift",
+      "source": "docs/vocabulary/repair_terms/repair-lift.md",
+      "term": "Repair Lift"
+    },
+    "repair-lift-ui-dial": {
+      "category": "scoring_terms",
+      "linked_from": [],
+      "links_to": [
+        "repair-lift",
+        "validator-confidence",
+        "evidence-strength",
+        "risk-temperature",
+        "defendablejelly"
+      ],
+      "slug": "repair-lift-ui-dial",
+      "source": "docs/vocabulary/scoring_terms/repair-lift.md",
+      "term": "Repair Lift (UI Dial)"
+    },
+    "repair-task": {
+      "category": "repair_terms",
+      "linked_from": [
+        "compare-task",
+        "detect-task",
+        "diagnose-task",
+        "prevent-task",
+        "swarmfixer"
+      ],
+      "links_to": [
+        "diagnose-task",
+        "prevent-task",
+        "detect-task",
+        "compare-task",
+        "repair-lift",
+        "swarmfixer"
+      ],
+      "slug": "repair-task",
+      "source": "docs/vocabulary/repair_terms/repair-task.md",
+      "term": "Repair Task"
+    },
+    "risk-temperature": {
+      "category": "scoring_terms",
+      "linked_from": [
+        "evidence-strength",
+        "repair-lift-ui-dial",
+        "validator-confidence"
+      ],
+      "links_to": [
+        "repair-lift",
+        "validator-confidence",
+        "evidence-strength",
+        "pair-candidate",
+        "clawcheck",
+        "diagnose-task"
+      ],
+      "slug": "risk-temperature",
+      "source": "docs/vocabulary/scoring_terms/risk-temperature.md",
+      "term": "Risk Temperature"
+    },
+    "royal-jelly": {
+      "category": "hive_terms",
+      "linked_from": [
+        "bee",
+        "cost-to-mint",
+        "energy",
+        "genesis",
+        "hive",
+        "honey",
+        "jelly",
+        "propolis",
+        "swarm",
+        "assignment-success",
+        "confidence-weight",
+        "tribunal"
+      ],
+      "links_to": [
+        "honey",
+        "jelly",
+        "propolis",
+        "genesis",
+        "hive",
+        "tribunal",
+        "validator-chain"
+      ],
+      "slug": "royal-jelly",
+      "source": "docs/vocabulary/hive_terms/royal-jelly.md",
+      "term": "Royal Jelly"
+    },
+    "swarm": {
+      "category": "hive_terms",
+      "linked_from": [
+        "bee",
+        "energy",
+        "hive"
+      ],
+      "links_to": [
+        "hive",
+        "bee",
+        "energy",
+        "royal-jelly",
+        "honey",
+        "tribunal"
+      ],
+      "slug": "swarm",
+      "source": "docs/vocabulary/hive_terms/swarm.md",
+      "term": "Swarm"
+    },
+    "swarmfixer": {
+      "category": "repair_terms",
+      "linked_from": [
+        "defendablerouter",
+        "temp-0-05-rule-the-temp-five-cent-rule",
+        "compare-task",
+        "defendablejelly",
+        "detect-task",
+        "diagnose-task",
+        "pair-candidate",
+        "prevent-task",
+        "repair-lift",
+        "repair-task",
+        "swarmjelly",
+        "evidence-strength",
+        "validator-confidence"
+      ],
+      "links_to": [
+        "swarmjelly",
+        "defendablejelly",
+        "repair-lift",
+        "pair-candidate",
+        "diagnose-task",
+        "repair-task",
+        "prevent-task",
+        "detect-task",
+        "compare-task",
+        "temp-five-cent-rule"
+      ],
+      "slug": "swarmfixer",
+      "source": "docs/vocabulary/repair_terms/swarmfixer.md",
+      "term": "SwarmFixer"
+    },
+    "swarmjelly": {
+      "category": "repair_terms",
+      "linked_from": [
+        "defendablecloud-com",
+        "honeybox",
+        "temp-0-05-rule-the-temp-five-cent-rule",
+        "defendablejelly",
+        "pair-candidate",
+        "repair-lift",
+        "swarmfixer"
+      ],
+      "links_to": [
+        "swarmfixer",
+        "defendablejelly",
+        "pair-candidate",
+        "temp-five-cent-rule",
+        "diagnose-task",
+        "repair-lift"
+      ],
+      "slug": "swarmjelly",
+      "source": "docs/vocabulary/repair_terms/swarmjelly.md",
+      "term": "SwarmJelly"
+    },
+    "temp-0-05-rule-the-temp-five-cent-rule": {
+      "category": "defendableos_terms",
+      "linked_from": [],
+      "links_to": [
+        "swarmjelly",
+        "swarmfixer",
+        "defendablejelly",
+        "repair-lift"
+      ],
+      "slug": "temp-0-05-rule-the-temp-five-cent-rule",
+      "source": "docs/vocabulary/defendableos_terms/temp-five-cent-rule.md",
+      "term": "TEMP 0.05 Rule (the Temp Five-Cent Rule)"
+    },
+    "tribunal": {
+      "category": "tribunal_terms",
+      "linked_from": [
+        "bee",
+        "genesis",
+        "hive",
+        "honey",
+        "jelly",
+        "propolis",
+        "royal-jelly",
+        "swarm",
+        "assignment-success",
+        "assignment-failure",
+        "confidence-weight",
+        "hallucination-event",
+        "judge",
+        "validator-chain",
+        "validator"
+      ],
+      "links_to": [
+        "validator",
+        "validator-chain",
+        "judge",
+        "royal-jelly",
+        "honey",
+        "hive"
+      ],
+      "slug": "tribunal",
+      "source": "docs/vocabulary/tribunal_terms/tribunal.md",
+      "term": "Tribunal"
+    },
+    "underwriting": {
+      "category": "cre_terms",
+      "linked_from": [
+        "books-and-records",
+        "cap-rate",
+        "due-diligence-dd",
+        "loi-letter-of-intent-a-k-a-lou-letter-of-understanding",
+        "psa-purchase-and-sale-agreement"
+      ],
+      "links_to": [
+        "cap-rate",
+        "loi",
+        "psa",
+        "due-diligence",
+        "probability-of-close",
+        "digest",
+        "books-and-records"
+      ],
+      "slug": "underwriting",
+      "source": "docs/vocabulary/cre_terms/underwriting.md",
+      "term": "Underwriting"
+    },
+    "validator": {
+      "category": "tribunal_terms",
+      "linked_from": [
+        "confidence-weight",
+        "hallucination-event",
+        "judge",
+        "tribunal",
+        "validator-chain"
+      ],
+      "links_to": [
+        "validator-chain",
+        "tribunal",
+        "judge",
+        "bee",
+        "confidence-weight"
+      ],
+      "slug": "validator",
+      "source": "docs/vocabulary/tribunal_terms/validator.md",
+      "term": "Validator"
+    },
+    "validator-chain": {
+      "category": "tribunal_terms",
+      "linked_from": [
+        "bee",
+        "genesis",
+        "honey",
+        "royal-jelly",
+        "assignment-success",
+        "assignment-failure",
+        "confidence-weight",
+        "hallucination-event",
+        "judge",
+        "tribunal",
+        "validator"
+      ],
+      "links_to": [
+        "validator",
+        "tribunal",
+        "judge",
+        "confidence-weight",
+        "hallucination-event",
+        "propolis"
+      ],
+      "slug": "validator-chain",
+      "source": "docs/vocabulary/tribunal_terms/validator-chain.md",
+      "term": "Validator Chain"
+    },
+    "validator-confidence": {
+      "category": "scoring_terms",
+      "linked_from": [
+        "repair-lift",
+        "evidence-strength",
+        "repair-lift-ui-dial",
+        "risk-temperature"
+      ],
+      "links_to": [
+        "repair-lift",
+        "evidence-strength",
+        "risk-temperature",
+        "pair-candidate",
+        "swarmfixer"
+      ],
+      "slug": "validator-confidence",
+      "source": "docs/vocabulary/scoring_terms/validator-confidence.md",
+      "term": "Validator Confidence"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://defendableos.com/schemas/backend_field.schema.json",
+  "title": "Backend Field",
+  "description": "The bidirectional registry record. One row per backend field. Names the field · its type · its enum values (if any) · its scoring hook (if any) · the vocabulary term slug it back-references. Enforces the bidirectional rule from docs/doctrine/00_defendable_language_map.md.",
+  "type": "object",
+  "required": ["field_name", "type", "vocabulary_term_slug"],
+  "properties": {
+    "field_name": {
+      "type": "string",
+      "description": "Dotted path · e.g., asset.color_status · engagement.lou_signed_at"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "string",
+        "integer",
+        "float",
+        "boolean",
+        "timestamp",
+        "enum",
+        "jsonb",
+        "array",
+        "uuid",
+        "sha256"
+      ]
+    },
+    "enum_values": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Required when type == enum"
+    },
+    "scoring_hook": {
+      "type": "string",
+      "description": "Named hook this field feeds · e.g., validator_confidence_weight · probability_of_close_driver"
+    },
+    "vocabulary_term_slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Slug of the vocabulary term this field implements · MUST exist in docs/vocabulary/"
+    },
+    "schema_file": {
+      "type": "string",
+      "description": "Path to the schema file that owns this field (e.g., docs/schemas/engagement.schema.json)"
+    },
+    "nullable": {
+      "type": "boolean",
+      "default": false
+    },
+    "default": {
+      "description": "Default value if unset"
+    },
+    "description": {
+      "type": "string"
+    },
+    "added_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "added_by": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "type": { "const": "enum" } } },
+      "then": { "required": ["enum_values"] }
+    }
+  ]
+}
