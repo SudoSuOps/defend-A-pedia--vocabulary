@@ -1,7 +1,7 @@
 {
-  "edge_count": 361,
-  "generated_at": "2026-05-24T15:02:17+00:00",
-  "term_count": 59,
+  "edge_count": 371,
+  "generated_at": "2026-05-24T15:15:23+00:00",
+  "term_count": 60,
   "terms": {
     "agentbench": {
       "category": "defendableos_terms",
@@ -205,6 +205,25 @@
       "slug": "closing-statement-defendable-closing-statement",
       "source": "docs/vocabulary/client_terms/closing-statement.md",
       "term": "Closing Statement (Defendable Closing Statement)"
+    },
+    "communicator": {
+      "category": "defendableos_terms",
+      "linked_from": [],
+      "links_to": [
+        "directive",
+        "intent",
+        "meaning-alignment",
+        "communication-arbitration",
+        "book-of-business",
+        "language-asset",
+        "vocabulary-deed",
+        "round-trip-verification",
+        "tribunal",
+        "pre-market-flight-sheet"
+      ],
+      "slug": "communicator",
+      "source": "docs/vocabulary/defendableos_terms/communicator.md",
+      "term": "Communicator"
     },
     "compare-task": {
       "category": "repair_terms",
@@ -815,7 +834,8 @@
         "closing-statement-defendable-closing-statement",
         "morning-brief",
         "pass-doctrine",
-        "probability-of-close"
+        "probability-of-close",
+        "communicator"
       ],
       "links_to": [
         "engagement",
@@ -1142,6 +1162,7 @@
     "tribunal": {
       "category": "tribunal_terms",
       "linked_from": [
+        "communicator",
         "bee",
         "genesis",
         "hive",

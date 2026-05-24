@@ -2,7 +2,12 @@
 
 > *"CRE language becomes DefendableOS language. DefendableOS language becomes schema. Schema becomes scoring. Scoring becomes receipts. Receipts become deeds. Deeds become books and records. Books and records become trust."*
 
+> *"We speak first · then we have the receipts to back it up. That's DefendableOS."*
+> — Founder · 2026-05-24
+
 This is the master pipeline. Every term in this repo participates in it. Every schema. Every doctrine. Every playbook.
+
+**The Communicator LLM** (see [`16_communicator_doctrine.md`](16_communicator_doctrine.md)) sits as a bookend at BOTH ENDS of the pipeline · translating between human conversation and structured action at INTAKE · and between structured result and human explanation at OUTPUT. Every step below is bracketed by Communicator translation.
 
 ---
 
