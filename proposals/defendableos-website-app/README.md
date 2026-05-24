@@ -49,6 +49,7 @@ Each pass is a real artifact in this directory · NONE are deleted. The founder 
 | 7 | **[`07_QUALIFICATION_STATEMENT.md`](07_QUALIFICATION_STATEMENT.md)** | **DEFINITIVE board diligence response (pass 6)** | **Qualification statement · operator lineage doctrine · vocabulary as credential · 24 operational disciplines · 14 receipted proofs · session-shipped work · standing-by close** | ✅ **[`07_QUALIFICATION_STATEMENT.pdf`](07_QUALIFICATION_STATEMENT.pdf)** |
 | 8 | **[`08_BUYER_PROFILE.md`](08_BUYER_PROFILE.md)** | **DEFINITIVE buyer profile + ICP (pass 7)** | **Why buys / who buys · 5 buyer personas · 8 vertical targets · ~80 named target companies · clean ICP · broker outreach engine · PASS doctrine filters · persona-sequencing matrix · 90-day engagement plan** | ✅ **[`08_BUYER_PROFILE.pdf`](08_BUYER_PROFILE.pdf)** |
 | 9 | **[`09_GO_TO_MARKET_STRATEGY.md`](09_GO_TO_MARKET_STRATEGY.md)** | **DEFINITIVE go-to-market (pass 8) · OWNER-ONLY** | **Call-for-offers process · NO public price · 3-round bidder process · 8 highest-and-best qualifications · 9 required bid items · 4-phase pricing · bidder evaluation rubric · confidentiality framework · 30-day timeline · reserve/walk-away discipline · DDEED-anchored award record · BUILDER + BUYER cross-use framework** | ✅ **[`09_GO_TO_MARKET_STRATEGY.pdf`](09_GO_TO_MARKET_STRATEGY.pdf)** ⚠️ OWNER-ONLY |
+| 10 | **[`10_1031_UPLEG_STRATEGY.md`](10_1031_UPLEG_STRATEGY.md)** | **DEFINITIVE 1031 upleg (pass 9) · OWNER-ONLY** | **Parallel-track replacement-property acquisition · 45/180-day clock · 7 sourcing channels · 12-item buy box · 6 best replacement profiles · 5 QI partners · 3 IRS ID rules · DST/TIC backup · boot mitigation · DDEED-anchored upleg milestones · CRITICAL FIDUCIARY DISCLOSURE on IRC §1031 real-property-only limitation** | ✅ **[`10_1031_UPLEG_STRATEGY.pdf`](10_1031_UPLEG_STRATEGY.pdf)** ⚠️ OWNER-ONLY |
 
 `build_pdf.py` regenerates the PDFs from the markdown sources: `python3 build_pdf.py --all`
 
@@ -93,6 +94,16 @@ After buyer profile shipped · the board asked the strategic question: *"are we 
 The founder's locked answer: *"Do not publish a public price first. Run a controlled call-for-offers process with qualified buyers only."* Classic Marcus & Millichap industrial-CRE technique for novel/premium assets. Public pricing commoditizes the asset as "a website/app build" and pulls in generic vendors. Controlled call-for-offers FORCES bidders to compete on understanding · architecture · trust · and proof — the lanes where the right firm wins.
 
 I formalized as `09_GO_TO_MARKET_STRATEGY.md` (OWNER-ONLY) and added the broker execution layer: bidder evaluation rubric (6-dim weighted scoring · 60% cut), confidentiality framework (per-round doc disclosure schedule), communication discipline (single broker POC · no info asymmetry), 30-day master calendar, reserve/walk-away triggers (5 automatic), phased award structure, DDEED-anchored award record, and the BUILDER-vs-BUYER cross-use framework (same 3-round process applies to both vendor selection and asset disposition).
+
+### Pass 8 → Pass 9 (lesson: PARALLEL-TRACK 1031 UPLEG · plan the exchange before the closing)
+
+After the call-for-offers strategy locked · the board asked the tax-deferral question: *"our disposition will create a taxable event that we would like to defer to a 1031 exchange and will need a replacement property · does the firm hold access to inventory to identify our upleg."*
+
+The founder's locked answer: *"Yes our firm can run the upleg search · but we would not represent that we personally 'hold' enough proprietary inventory to solve the 1031 alone."* Network access · not proprietary hold. The honesty layer is critical for fiduciary cleanliness. The disposition AND the upleg run as PARALLEL TRACKS · NOT sequentially · because once the relinquished asset closes · the 45-day identification clock starts and cannot be extended.
+
+**Fiduciary disclosure added**: IRC §1031 post-TCJA 2017 applies to REAL PROPERTY ONLY. Intangible AI/IP asset sales do NOT directly qualify. Tax counsel + QI own structure determination · NOT broker. Broker's lane: sourcing + 45/180-day calendar + QI coordination + DST/TIC backup. This disclosure is on the artifact and in the recommended rep agreement amendment.
+
+I formalized as `10_1031_UPLEG_STRATEGY.md` (OWNER-ONLY) with the broker execution layer: 5 QI partner shortlist (IPX1031 · Asset Preservation · First American · Accruit · Exchange Solutions), 3 IRS identification rule strategies, DST/TIC backup with 8 named sponsors, tax counsel + QI + CPA + title coordination protocol, boot mitigation strategy, Reverse 1031 + Construction 1031 considerations, closing-certainty discipline with Day 150 hard-stop, and DDEED-anchored upleg track milestones.
 
 ---
 
@@ -172,11 +183,12 @@ For board review · read in this order:
 2. **`07_QUALIFICATION_STATEMENT.pdf`** (the board diligence response · operator lineage · 14 receipted proofs)
 3. **`08_BUYER_PROFILE.pdf`** (the money question · 5 personas · 8 verticals · ~80 target companies · broker outreach engine)
 4. **`09_GO_TO_MARKET_STRATEGY.pdf`** (the strategic question · call-for-offers · highest-and-best · OWNER-ONLY ⚠️)
-5. **`06_REP_AGREEMENT.pdf`** (the executable exclusive listing agreement)
-6. **`04_BOARD_PROPOSAL.pdf`** (comp set + risk flags · reference only · engagement model superseded by 05)
-7. **`03_BUILD_PROPOSAL.md`** (build doctrine reference · what the broker builds as listing prep)
+5. **`10_1031_UPLEG_STRATEGY.pdf`** (the tax-deferral question · parallel-track upleg · 45/180-day discipline · QI coordination · OWNER-ONLY ⚠️)
+6. **`06_REP_AGREEMENT.pdf`** (the executable exclusive listing agreement)
+7. **`04_BOARD_PROPOSAL.pdf`** (comp set + risk flags · reference only · engagement model superseded by 05)
+8. **`03_BUILD_PROPOSAL.md`** (build doctrine reference · what the broker builds as listing prep)
 
-⚠️ **CONFIDENTIALITY**: `07_QUALIFICATION_STATEMENT` · `08_BUYER_PROFILE` · `09_GO_TO_MARKET_STRATEGY` are OWNER-ONLY. NEVER share with competing bidders / vendors at any round of the call-for-offers process. See `09_GO_TO_MARKET_STRATEGY.md` § Confidentiality Framework for the per-round doc disclosure schedule.
+⚠️ **CONFIDENTIALITY**: `07_QUALIFICATION_STATEMENT` · `08_BUYER_PROFILE` · `09_GO_TO_MARKET_STRATEGY` · `10_1031_UPLEG_STRATEGY` are OWNER-ONLY. NEVER share with competing bidders / vendors / downleg buyers at any round. See `09_GO_TO_MARKET_STRATEGY.md` § Confidentiality Framework for the per-round doc disclosure schedule.
 
 For internal use only:
 - **`00_PRE-MARKET_FLIGHT_SHEET.md`** (operator analysis · DO NOT share with competing vendors or client legal)
@@ -189,6 +201,7 @@ Superseded (kept for record only · do NOT distribute as current):
 
 ## Cross-references (memory entries that codify this work)
 
+- `defendableos-1031-upleg-doctrine-2026-05-24` · **parallel-track upleg · 45/180-day clock · 7 sourcing channels · 12-item buy box · 6 replacement profiles · 5 QI partners · 3 IRS ID rules · DST/TIC backup · CRITICAL FIDUCIARY DISCLOSURE on §1031 real-property-only limitation**
 - `defendableos-go-to-market-call-for-offers-doctrine-2026-05-24` · **NEVER public price · 3-round controlled call-for-offers · highest-and-best NOT lowest bid · 8 quals + 9 bid items + 4-phase pricing + 30-day timeline + bidder evaluation rubric**
 - `defendableos-buyer-profile-icp-doctrine-2026-05-24` · **WHY buys / WHO buys · 5 personas · 8 verticals · ~80 named buyers · clean ICP · proof-layer positioning · broker outreach engine**
 - `defendableos-qualification-doctrine-operator-lineage-2026-05-24` · **operator lineage NOT theory · vocabulary as credential · 14 receipted proofs · qualification statement structure**
